@@ -20,7 +20,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
-from adaptive_swarms.logging import EventLogger
+from adaptive_swarms.logging import EventLogger, atomic_json
+from adaptive_swarms.storage import StorageConfig, StorageGuard, StorageInterrupted
+from adaptive_swarms.storage_runner import StorageRunnerMixin
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
 EVALUATION_VERSION = "search_v1_score_reciprocal"
@@ -159,16 +161,56 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
     return hashes
 
 
-def run_native(args, run_dir: Path, log):
+def prepare_storage_evaluator(run_dir: Path) -> Path:
+    """Preserve the frozen research evaluator and record the storage-only adapter."""
+    import ast
+    original = run_dir / "task_snapshot/evaluate.py"
+    current = ROOT / "tasks/adaptive_swarm/evaluate.py"
+    def scientific_nodes(path):
+        tree = ast.parse(path.read_text())
+        return {node.name: ast.dump(node, include_attributes=False) for node in tree.body
+                if isinstance(node, ast.FunctionDef) and node.name in {
+                    "load_policy", "load_cases", "case_diagnostics", "describe_case"}}
+    if scientific_nodes(original) != scientific_nodes(current):
+        raise RuntimeError("Storage evaluator changes scientific policy loading or feedback helpers.")
+    digest = file_hash(current)
+    support_sources = {p.name: file_hash(p) for p in (ROOT / "src/adaptive_swarms").glob("*.py")}
+    bundle = {"evaluator": digest, "launcher": file_hash(Path(__file__)), "support_sources": support_sources}
+    bundle_digest = hashlib.sha256(json.dumps(bundle, sort_keys=True).encode()).hexdigest()
+    folder = run_dir / "storage_runtime" / bundle_digest[:16]
+    folder.mkdir(parents=True, exist_ok=True)
+    destination = folder / "evaluate.py"
+    if not destination.exists():
+        shutil.copyfile(current, destination)
+    elif file_hash(destination) != digest:
+        raise RuntimeError("Recorded storage evaluator adapter has changed.")
+    atomic_json(folder / "provenance.json", {
+        "frozen_evaluator_sha256": file_hash(original), "storage_evaluator_sha256": digest,
+        "evaluation_version": EVALUATION_VERSION,
+        "scope": "Lossless case serialization, checkpoint reuse and storage interruption; fixed simulator and scientific feedback helpers retained",
+        "launcher_sha256": bundle["launcher"], "support_sources": support_sources,
+    })
+    # Native initialization can refresh this file even when the catalog is the
+    # same. Retain its incoming bytes independently before handing control back.
+    pricing = run_dir / "pricing_snapshot.json"
+    if pricing.exists():
+        saved_pricing = folder / ("pricing-before-resume-" + file_hash(pricing) + ".json")
+        if not saved_pricing.exists():
+            shutil.copyfile(pricing, saved_pricing)
+    return destination
+
+
+def run_native(args, run_dir: Path, log, guard):
     from shinka.core import EvolutionConfig, ShinkaEvolveRunner
     from shinka.database import DatabaseConfig
     from shinka.launch import LocalJobConfig
+    from adaptive_swarms.native_storage import NativeStorageMixin, install_native_storage
     # Upstream imports may load a local .env. The only model route below remains
     # Headless/Codex; remove API authentication variables again before spawning it.
     os.environ.pop("OPENAI_API_KEY", None)
     os.environ.pop("CODEX_API_KEY", None)
 
-    class VisibleRunner(ShinkaEvolveRunner):
+    class VisibleRunner(StorageRunnerMixin, NativeStorageMixin, ShinkaEvolveRunner):
         # These wrappers add observability only; upstream owns search and persistence.
         async def _setup_initial_program(self, code):
             if args.resume and await self.async_db.get_total_program_count_async() > 0:
@@ -238,13 +280,17 @@ def run_native(args, run_dir: Path, log):
     runner = VisibleRunner(
         evo_config=evo,
         db_config=DatabaseConfig(num_islands=2, archive_size=40, num_archive_inspirations=1, num_top_k_inspirations=1),
-        job_config=LocalJobConfig(eval_program_path=str(task_snapshot / "evaluate.py"), extra_cmd_args={"suite": str(suite_snapshot)}, time=args.evaluation_timeout),
+        job_config=LocalJobConfig(eval_program_path=str(prepare_storage_evaluator(run_dir)), extra_cmd_args={"suite": str(suite_snapshot)}, time=args.evaluation_timeout),
         max_evaluation_jobs=1,
         max_proposal_jobs=1,
         max_db_workers=1,
         verbose=True,
     )
-    runner.run()
+    runner.configure_storage(guard, log)
+    with install_native_storage(runner,
+            check_write=lambda: guard.check(force=True, activity="native output write"),
+            on_error=lambda exc: guard.disk_full(exc, activity="native output")):
+        runner.run()
 
 
 def main() -> int:
@@ -259,6 +305,12 @@ def main() -> int:
     parser.add_argument("--heartbeat-seconds", type=float, default=20)
     parser.add_argument("--evaluation-timeout", default="01:00:00", help="Native per-candidate evaluator timeout HH:MM:SS")
     parser.add_argument("--proposal-timeout-seconds", type=float, default=3600)
+    parser.add_argument("--storage-warn-gib", type=float, default=15)
+    parser.add_argument("--storage-checkpoint-gib", type=float, default=10)
+    parser.add_argument("--storage-output-checkpoint-gib", type=float, default=1)
+    parser.add_argument("--storage-worker-headroom-mib", type=float, default=64)
+    parser.add_argument("--storage-check-seconds", type=float, default=5)
+    parser.add_argument("--storage-report-seconds", type=float, default=20)
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
@@ -280,11 +332,25 @@ def main() -> int:
     os.environ.pop("CODEX_API_KEY", None)
     os.environ["PYTHONPATH"] = str(ROOT / "src") + os.pathsep + os.environ.get("PYTHONPATH", "")
     os.environ["ADAPTIVE_SWARMS_PROJECT_ROOT"] = str(ROOT)
+    os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     run_dir = args.resume or (args.results_root / (stamp + ("-seed" if args.seed_only else "-search")))
     target = 1 if args.seed_only else args.generations
     try:
         with exclusive_controller(args.results_root), EventLogger(run_dir, heartbeat_seconds=args.heartbeat_seconds) as log:
+            storage_config = StorageConfig(warn_gib=args.storage_warn_gib,
+                checkpoint_gib=args.storage_checkpoint_gib,
+                output_checkpoint_gib=args.storage_output_checkpoint_gib,
+                worker_headroom_mib=args.storage_worker_headroom_mib,
+                check_interval_seconds=args.storage_check_seconds,
+                report_interval_seconds=args.storage_report_seconds)
+            guard = StorageGuard(run_dir, config=storage_config, reporter=log.event)
+            guard.install_environment(active_workers=2)
+            # Check space before runtime initialization or any model/evaluation work.
+            if args.resume:
+                guard.clear_stop_for_resume(active_workers=2)
+            else:
+                guard.check(force=True, activity="launcher preflight", active_workers=2)
             log.set_activity("checking native runtime and subscription route")
             report = inspect_runtime(args.model, args.effort, args.seed_only)
             if args.resume:
@@ -304,12 +370,16 @@ def main() -> int:
             if "source_hashes" not in manifest:
                 manifest["source_hashes"] = hashes
             active["source_hashes"] = hashes
-            (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+            active["storage_settings"] = storage_config.as_dict()
+            active["storage_preflight"] = guard.last_snapshot
+            manifest["storage_native_configuration"] = {"embedding_model": None, "novelty_llm_models": None,
+                "max_evaluation_jobs": 1, "max_proposal_jobs": 1}
+            atomic_json(run_dir / "manifest.json", manifest)
             log.event("configuration", message="Declared native run configuration", model=args.model, inner_effort=args.effort,
                       effective_effort="unverified until Codex invocation", generation_target=target, seed_only=args.seed_only, resuming=bool(args.resume))
             if not report["ready"]:
                 active["status"] = "blocked_runtime"
-                (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+                atomic_json(run_dir / "manifest.json", manifest)
                 for error in report["errors"]:
                     log.event("runtime_error", message=error)
                 return 2
@@ -321,7 +391,7 @@ def main() -> int:
                 raise KeyboardInterrupt
             previous_term = signal.signal(signal.SIGTERM, interrupted)
             try:
-                run_native(args, run_dir, log)
+                run_native(args, run_dir, log, guard)
                 summary = summarize_database(run_dir)
                 expected = target
                 if summary["generation_records"] < expected or not summary["valid_programs"]:
@@ -331,6 +401,11 @@ def main() -> int:
                     manifest.update({"status": active["status"], "latest_summary": summary})
                 log.event("run_complete", message="Native seed evaluation complete; no mutation calls" if args.seed_only else "Native search complete; inspect scientific outcomes and descendants", **summary)
                 return 0
+            except StorageInterrupted as exc:
+                active.update(status="storage_paused", storage_checkpoint=str(guard.stop_path), storage_reason=str(exc))
+                manifest["status"] = "storage_paused"
+                log.event("storage_paused", message=str(exc), **summarize_database(run_dir))
+                return 75
             except KeyboardInterrupt:
                 active["status"] = "interrupted"
                 manifest["status"] = "interrupted"
@@ -347,7 +422,7 @@ def main() -> int:
                 signal.signal(signal.SIGTERM, previous_term)
                 stop.set()
                 monitor.join(timeout=3)
-                if active.get("status") in {"interrupted", "failed"}:
+                if active.get("status") in {"interrupted", "failed", "storage_paused"}:
                     import psutil
                     children = psutil.Process().children(recursive=True)
                     for child in children:
@@ -358,7 +433,10 @@ def main() -> int:
                         with contextlib.suppress(psutil.NoSuchProcess):
                             child.kill()
                 active["finished_at"] = datetime.now(timezone.utc).isoformat()
-                (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+                atomic_json(run_dir / "manifest.json", manifest)
+    except StorageInterrupted as exc:
+        print(f"Storage checkpoint: {exc}", file=sys.stderr, flush=True)
+        return 75
     except (OSError, RuntimeError) as exc:
         print(f"Cannot start evolution: {exc}", file=sys.stderr, flush=True)
         return 2

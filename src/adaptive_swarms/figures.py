@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 import numpy as np
 
+from .artifacts import case_artifacts, read_json
+
 COLORS = ["#187b80", "#d47b34", "#7057a3", "#bb4260", "#477ab2"]
 
 
@@ -27,7 +29,7 @@ def _save(fig, target):
 
 
 def render_run(run_dir: Path, output: Path | None = None):
-    cases = [json.loads(p.read_text()) for p in sorted(run_dir.glob("case_*.json"))]
+    cases = [read_json(p) for p in case_artifacts(run_dir)]
     if not cases:
         raise ValueError(f"No saved cases found in {run_dir}")
     output = output or run_dir / "figures"

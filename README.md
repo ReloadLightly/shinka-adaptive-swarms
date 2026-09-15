@@ -4,7 +4,7 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (15 September 2026):** the reconstruction has completed three runs of 500,000 objective evaluations. Native ShinkaEvolve has evaluated and archived the seed program. Model-generated descendants, independent comparisons and mechanism ablations are pending. This is a working research report, not a claim of discovered improvement.
+**Status (15 September 2026):** the reconstruction has completed three runs of 500,000 objective evaluations. Native ShinkaEvolve resumed from its existing checkpoint; the previously interrupted generation 3 and generation 4 have now completed. Storage protection and lossless trace compression are integrated into the continuation launcher. Independent comparisons and mechanism ablations are pending; search scores alone do not establish generalization.
 
 ## Abstract
 
@@ -91,7 +91,41 @@ bash scripts/webui.sh artifacts/evolution
 python -m adaptive_swarms figures --run artifacts/reconstruction_v1 --output assets/reconstruction
 ```
 
-Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. Native WebUI HTTP and database endpoints passed verification; the Work Mode browser could not access the local server, so visual browser verification remains unconfirmed. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
+Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. The native WebUI passed HTTP, database, browser navigation and screenshot verification on this WSL continuation; no browser errors were reported. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
+
+### Storage and resumption
+
+The real launcher verifies `/mnt/c` is Windows C:, checks host and output
+filesystem space before scheduling and during execution, and reports free space
+and run growth. Defaults warn at **15 GiB** and checkpoint at **10 GiB** free on
+C:, plus **64 MiB per worker** to finish/checkpoint in-flight work (10.125 GiB
+with two workers). The output filesystem has a separate 1 GiB floor. There is
+no 30 GiB start requirement. Worker checks run every 5 seconds; reports every
+20 seconds; allocated-byte scans cover only this run every 60 seconds.
+
+New case traces stream directly into verified gzip files at level 3. All
+consumers retain legacy JSON support. Verbose logs rotate into compressed,
+retained segments; research evidence remains separate. Native evaluation uses
+candidate/evaluator paths directly, and `best/artifacts.json` references original
+generation files. Existing results, snapshots, environments and caches are
+preserved.
+
+Low storage blocks scheduling, checkpoints completed cases and accepted native
+proposals, and cancels this launcher's workers. Exit 75 / `storage_paused` is an
+operational interruption without a fitness judgment. Resume reuses completed
+database rows and cases and retains the accepted interrupted proposal:
+
+```bash
+.venv/bin/python -u scripts/run_evolution.py \
+  --resume results/evolution/20260915T101024.562418Z-search \
+  --generations 20 --model gpt-6-astra \
+  --storage-warn-gib 15 --storage-checkpoint-gib 10 \
+  --storage-output-checkpoint-gib 1 --storage-worker-headroom-mib 64 \
+  --storage-check-seconds 5 --storage-report-seconds 20
+```
+
+The saved inner effort remains unspecified. See [storage implementation,
+checkpoint files and focused verification](docs/storage.md) for details.
 
 ## Results
 
@@ -99,13 +133,13 @@ Run only one WebUI command on a given port. The native WebUI exposes candidate s
 |---|---|
 | Baseline reconstruction | 3 × 500,000 evaluations; mean offline error **1.7024**, sample SD **0.7896** |
 | Native seed evaluation | 4 × 50,000 evaluations; mean offline error **2.7751**, selection score **0.264895** |
-| Native ShinkaEvolve descendants | **0**; no model calls have run |
+| Native ShinkaEvolve descendants | Local verification at 12:30 UTC: **4 evaluated descendants**; the same 20-slot search is continuing |
 | Frozen-program independent comparison | Not run |
 | Mechanism ablations | Not run |
 
 Individual reconstruction errors were 2.4152, 0.8536 and 1.8384. Three cases do not establish numerical equivalence to the book's 50-run result, and implementation differences remain documented in [the reproduction record](docs/reproduction.md). The seed evaluation uses a different, shorter search suite; its error should not be compared directly with the reconstruction mean. Native initialization stores the seed and an island copy: two database rows represent one evaluated program, not two discoveries.
 
-The native evaluator, archive and terminal progress relay have run successfully with installed ShinkaEvolve. Actual mutation is pending because this execution workspace lacks an authenticated Codex CLI. The WSL continuation uses the subscription route. No evolutionary improvement is claimed.
+The local WSL archive contains actual subscription-backed model mutations. Before storage continuation, generation 1 had mean search offline error **2.1054** (selection score **0.322018**), compared with the seed's **2.7751**. This is a search-suite result; independent generalization and mechanism tests remain pending. The committed artifact archive still represents the earlier seed integration check.
 
 ![Measured cumulative tracking error and swarm count over three 5D reconstruction cases](assets/reconstruction/baseline_tracking.png)
 
