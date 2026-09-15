@@ -9,6 +9,7 @@ from types import SimpleNamespace
 
 import pytest
 
+from adaptive_swarms.execution import InfrastructureError
 from adaptive_swarms.native_storage import (
     EvidenceRotatingWriter, NativeStorageMixin, install_native_storage,
     recover_pending_spec, sha256_file, write_best_reference, read_rotated_text,
@@ -38,9 +39,10 @@ def test_rotation_disk_error_keeps_complete_original_and_does_not_retry(tmp_path
         calls.append(1)
         raise OSError(28, "No space left on device")
     monkeypatch.setattr(gzip, "open", full)
-    with pytest.raises(OSError):
+    with pytest.raises(InfrastructureError) as error:
         writer.write("next error\n")
-    with pytest.raises(OSError, match="no automatic output retry"):
+    assert error.value.__cause__.errno == 28
+    with pytest.raises(InfrastructureError):
         writer.write("next error\n")
     writer.close()
     segments = list(tmp_path.glob("*.segment-*"))
@@ -99,9 +101,8 @@ def test_real_native_scheduler_uses_rotated_appending_sinks_without_tree_staging
     (result_dir / "job_log.out").write_text("historical evaluation\n")
     (result_dir / "metrics.json").write_text('{"combined_score": 0.25}')
     (result_dir / "correct.json").write_text('{"correct": true}')
-    checks = []
     try:
-        with install_native_storage(runner, check_write=lambda: checks.append(1), max_log_bytes=16):
+        with install_native_storage(runner, max_log_bytes=16):
             process = scheduler.submit_local(str(result_dir), [sys.executable, "-c", "import os; print(os.environ['PYTHONDONTWRITEBYTECODE']); print('new evaluation')"])
             assert process.wait(timeout=10) == 0
             process.cleanup_logging()
@@ -117,7 +118,6 @@ def test_real_native_scheduler_uses_rotated_appending_sinks_without_tree_staging
         current_text = (result_dir / "job_log.out").read_text()
         assert "new evaluation" in current_text + archive_text
         assert "1\n" in current_text + archive_text
-        assert checks
         assert not list(tmp_path.rglob(".venv"))
         assert not list(tmp_path.rglob("__pycache__"))
     finally:
@@ -163,25 +163,23 @@ def test_partial_rotation_prefers_complete_original(tmp_path):
     assert read_rotated_text(path) == "retained outcome\nnext\n"
 
 
-def test_native_sink_disk_full_callback_latches_once(tmp_path):
-    from adaptive_swarms.storage import StorageInterrupted
-    calls = []
-    def on_error(error):
-        calls.append(error.errno)
-        raise StorageInterrupted("paused")
-    writer = EvidenceRotatingWriter(tmp_path / "run.log", on_error=on_error)
+def test_native_sink_preserves_real_disk_error_without_retry(tmp_path):
+    writer = EvidenceRotatingWriter(tmp_path / "run.log")
     original = writer._stream
+    attempts = []
     class FullStream:
         def write(self, text):
+            attempts.append(text)
             raise OSError(28, "No space left")
         def close(self):
             original.close()
     writer._stream = FullStream()
-    with pytest.raises(StorageInterrupted):
+    with pytest.raises(InfrastructureError) as error:
         writer.write("outcome")
-    with pytest.raises(OSError, match="no automatic output retry"):
+    assert error.value.__cause__.errno == 28
+    with pytest.raises(InfrastructureError):
         writer.write("outcome")
-    assert calls == [28]
+    assert attempts == ["outcome"]
     writer.close()
 
 

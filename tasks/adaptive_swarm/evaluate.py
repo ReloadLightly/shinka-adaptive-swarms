@@ -7,7 +7,6 @@ import importlib.util
 import json
 import math
 import os
-import signal
 import statistics
 import sys
 import traceback
@@ -20,13 +19,11 @@ from adaptive_swarms.logging import EventLogger, atomic_json
 from adaptive_swarms.simulator import run_case, _validated_config
 from adaptive_swarms.artifacts import case_artifacts, read_json, resolve_json, write_compressed_json
 from adaptive_swarms.cli import simulator_fingerprint
-from adaptive_swarms.storage import StorageInterrupted, get_storage_guard
-from adaptive_swarms.storage import DISK_FULL_ERRNOS
+from adaptive_swarms.execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 
 EVALUATION_VERSION = "search_v1_score_reciprocal"
 FEEDBACK_VERSION = "tracking_diagnostics_v1"
 STORAGE_VERSION = "streaming_gzip_case_checkpoint_v1"
-STORAGE_PAUSED_EXIT_CODE = 75
 
 
 def load_policy(program_path: Path):
@@ -134,7 +131,7 @@ def prepare_checkpoint(program_path: Path, results_dir: Path, suite_path: Path) 
     return checkpoint
 
 
-def _evaluate(program_path: Path, results_dir: Path, suite_path: Path, guard) -> int:
+def _evaluate(program_path: Path, results_dir: Path, suite_path: Path) -> int:
     results_dir.mkdir(parents=True, exist_ok=True)
     # Provenance errors occur before the scientific failure handler, preventing
     # an unrelated candidate from overwriting completed experimental evidence.
@@ -167,8 +164,6 @@ def _evaluate(program_path: Path, results_dir: Path, suite_path: Path, guard) ->
                     log.event("case_reused", message=f"Reusing completed {case_id}", case_id=case_id,
                               offline_error=result["offline_error"], checkpoint=str(artifact))
                     continue
-                if guard:
-                    guard.check(force=True, activity=f"scheduling {case_id}")
                 checkpoint.update(status="running", completed_cases=outcomes, active_case=case_id)
                 atomic_json(checkpoint_path, checkpoint)
                 # A fresh module isolates any policy memory across independent cases,
@@ -178,10 +173,6 @@ def _evaluate(program_path: Path, results_dir: Path, suite_path: Path, guard) ->
                 log.event("case_start", message=f"Evaluating {case_id}", case_id=case_id, index=index + 1, total=len(cases), config=config)
 
                 def progress(event, case_id=case_id):
-                    # A final-budget event precedes run_case's return. Preserve
-                    # that completed result using the bounded checkpoint writer.
-                    if guard and event.get("evaluations", 0) < config.get("budget", float("inf")):
-                        guard.check(activity=f"evaluating {case_id}")
                     event = dict(event)
                     phase = event.pop("phase", event.pop("event", "simulation_progress"))
                     message = event.pop("message", f"{case_id}: {phase}")
@@ -193,8 +184,7 @@ def _evaluate(program_path: Path, results_dir: Path, suite_path: Path, guard) ->
                 if not math.isfinite(offline_error) or offline_error < 0:
                     raise ValueError(f"Invalid offline error for {case_id}: {offline_error}")
                 # Retain scientific traces rather than reducing the experiment to its score.
-                artifact = write_compressed_json(artifact, {"case_id": case_id, **result}, guard=guard,
-                                                 completed_case=True)
+                artifact = write_compressed_json(artifact, {"case_id": case_id, **result})
                 outcomes.append({"case_id": case_id, "offline_error": offline_error, "artifact": artifact.name, **case_diagnostics(result)})
                 checkpoint.update(completed_cases=outcomes, active_case=None)
                 atomic_json(checkpoint_path, checkpoint)
@@ -224,66 +214,31 @@ def _evaluate(program_path: Path, results_dir: Path, suite_path: Path, guard) ->
                 ),
             }
             log.event("evaluation_complete", message="Candidate evaluation complete", **metrics["public"])
-        except StorageInterrupted as exc:
-            checkpoint.update(status="storage_checkpoint", completed_cases=outcomes, interruption=str(exc))
-            atomic_json(checkpoint_path, checkpoint)
-            log.event("evaluation_storage_checkpoint", message=str(exc), cases_completed=len(outcomes),
-                      checkpoint=str(checkpoint_path))
-            return STORAGE_PAUSED_EXIT_CODE
+        except OSError:
+            # Failed reads or writes are infrastructure failures, never fitness.
+            raise
         except Exception as exc:
-            if isinstance(exc, OSError) and exc.errno in DISK_FULL_ERRNOS and guard:
-                # ENOSPC/EDQUOT are infrastructure pauses, never zero fitness.
-                try:
-                    guard.disk_full(exc, activity="candidate evaluation")
-                except StorageInterrupted as interruption:
-                    checkpoint.update(status="storage_checkpoint", completed_cases=outcomes,
-                                      interruption=str(interruption))
-                    try:
-                        atomic_json(checkpoint_path, checkpoint)
-                    except OSError:
-                        pass  # Earlier atomic per-case checkpoints remain valid.
-                    return STORAGE_PAUSED_EXIT_CODE
             error = f"{type(exc).__name__}: {exc}"
             metrics["private"].update({"error": error, "cases": outcomes})
             metrics["text_feedback"] = "Candidate evaluation failed: " + error
             (results_dir / "error.txt").write_text(traceback.format_exc())
             log.event("evaluation_failed", message=error, cases_completed=len(outcomes))
-        try:
-            if guard:
-                guard.check(force=True, activity="saving evaluation metrics")
-            for filename, value in (("metrics.json", metrics), ("correct.json", {"correct": not error, "error": error})):
-                destination = results_dir / filename
-                if not destination.exists() or read_json(destination) != value:
-                    atomic_json(destination, value)
-            checkpoint.update(status="failed" if error else "completed", completed_cases=outcomes, active_case=None)
-            atomic_json(checkpoint_path, checkpoint)
-        except StorageInterrupted as exc:
-            checkpoint.update(status="storage_checkpoint", completed_cases=outcomes, interruption=str(exc))
-            atomic_json(checkpoint_path, checkpoint)
-            return STORAGE_PAUSED_EXIT_CODE
-        except OSError as exc:
-            if guard:
-                try:
-                    guard.disk_full(exc, activity="saving evaluation metrics")
-                except StorageInterrupted:
-                    return STORAGE_PAUSED_EXIT_CODE
-            raise
+        for filename, value in (("metrics.json", metrics), ("correct.json", {"correct": not error, "error": error})):
+            destination = results_dir / filename
+            if not destination.exists() or read_json(destination) != value:
+                atomic_json(destination, value)
+        checkpoint.update(status="failed" if error else "completed", completed_cases=outcomes, active_case=None)
+        atomic_json(checkpoint_path, checkpoint)
     return 1 if error else 0
 
 
 def evaluate(program_path: Path, results_dir: Path, suite_path: Path) -> int:
-    guard = get_storage_guard(results_dir)
     try:
-        return _evaluate(program_path, results_dir, suite_path, guard)
-    except StorageInterrupted:
-        # This includes a pause during logger/checkpoint initialization. The
-        # scheduler also watches the shared stop marker and must not archive it.
-        return STORAGE_PAUSED_EXIT_CODE
-    except OSError as exc:
-        if exc.errno in DISK_FULL_ERRNOS and guard:
-            guard.request_stop("disk_full", activity="evaluator checkpoint/log write", error=str(exc))
-            return STORAGE_PAUSED_EXIT_CODE
-        raise
+        return _evaluate(program_path, results_dir, suite_path)
+    except (OSError, InfrastructureError):
+        traceback.print_exc(file=sys.stderr)
+        sys.stderr.flush()
+        return INFRASTRUCTURE_EXIT_CODE
 
 
 def main() -> int:
@@ -292,15 +247,6 @@ def main() -> int:
     parser.add_argument("--results_dir", type=Path, required=True)
     parser.add_argument("--suite", type=Path, default=ROOT / "configs" / "search.json")
     args = parser.parse_args()
-    guard = get_storage_guard(args.results_dir)
-    if guard:
-        def storage_termination(signum, frame):
-            if guard.stop_path.exists():
-                if getattr(guard, "checkpoint_write_active", False):
-                    return  # Bounded writer checks actual available bytes per chunk.
-                raise StorageInterrupted("Scheduler requested a graceful storage checkpoint")
-            raise SystemExit(128 + signum)
-        signal.signal(signal.SIGTERM, storage_termination)
     return evaluate(args.program_path.resolve(), args.results_dir.resolve(), args.suite.resolve())
 
 

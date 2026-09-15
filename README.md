@@ -4,7 +4,7 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (15 September 2026):** the reconstruction has completed three runs of 500,000 objective evaluations. Native ShinkaEvolve resumed from its existing checkpoint; the previously interrupted generation 3 and generation 4 have now completed. Storage protection and lossless trace compression are integrated into the continuation launcher. Independent comparisons and mechanism ablations are pending; search scores alone do not establish generalization.
+**Status (15 September 2026):** the reconstruction has completed three runs of 500,000 objective evaluations. Native ShinkaEvolve completed the original 20-generation target (seed plus 19 descendants) at 12:41:51 UTC. The canceled storage restrictions have been removed; existing compressed results and resume records remain supported. Independent comparisons and mechanism ablations are pending; search scores alone do not establish generalization.
 
 ## Abstract
 
@@ -93,39 +93,30 @@ python -m adaptive_swarms figures --run artifacts/reconstruction_v1 --output ass
 
 Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. The native WebUI passed HTTP, database, browser navigation and screenshot verification on this WSL continuation; no browser errors were reported. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
 
-### Storage and resumption
+### Artifacts and resumption
 
-The real launcher verifies `/mnt/c` is Windows C:, checks host and output
-filesystem space before scheduling and during execution, and reports free space
-and run growth. Defaults warn at **15 GiB** and checkpoint at **10 GiB** free on
-C:, plus **64 MiB per worker** to finish/checkpoint in-flight work (10.125 GiB
-with two workers). The output filesystem has a separate 1 GiB floor. There is
-no 30 GiB start requirement. Worker checks run every 5 seconds; reports every
-20 seconds; allocated-byte scans cover only this run every 60 seconds.
+Readers accept both legacy JSON and compressed case traces. Completed cases,
+accepted native proposals, lineage, rotated logs and `best/artifacts.json`
+references remain available. The launcher has no mandatory `/mnt/c` verification,
+free-space floors, worker storage allowances, checkpoint-write cap, or low-space
+cancellation watcher. Actual I/O failures remain errors and do not become
+scientific fitness judgments.
 
-New case traces stream directly into verified gzip files at level 3. All
-consumers retain legacy JSON support. Verbose logs rotate into compressed,
-retained segments; research evidence remains separate. Native evaluation uses
-candidate/evaluator paths directly, and `best/artifacts.json` references original
-generation files. Existing results, snapshots, environments and caches are
-preserved.
+The run `results/evolution/20260915T101024.562418Z-search` finished before the
+rollback: generations **0–19** are complete, with **21 database rows** including
+the native seed island copy. Its controller had exited, so no interruption or
+restart was needed. The existing native WebUI was left running.
 
-Low storage blocks scheduling, checkpoints completed cases and accepted native
-proposals, and cancels this launcher's workers. Exit 75 / `storage_paused` is an
-operational interruption without a fitness judgment. Resume reuses completed
-database rows and cases and retains the accepted interrupted proposal:
+For an unfinished run, retain its original target and saved scientific settings:
 
 ```bash
 .venv/bin/python -u scripts/run_evolution.py \
-  --resume results/evolution/20260915T101024.562418Z-search \
-  --generations 20 --model gpt-6-astra \
-  --storage-warn-gib 15 --storage-checkpoint-gib 10 \
-  --storage-output-checkpoint-gib 1 --storage-worker-headroom-mib 64 \
-  --storage-check-seconds 5 --storage-report-seconds 20
+  --resume "results/evolution/<unfinished-run>" \
+  --generations 20 --model gpt-6-astra
 ```
 
-The saved inner effort remains unspecified. See [storage implementation,
-checkpoint files and focused verification](docs/storage.md) for details.
+The saved inner effort for the completed run remains unspecified. See
+[artifact compatibility and rollback verification](docs/storage.md) for details.
 
 ## Results
 
@@ -133,7 +124,7 @@ checkpoint files and focused verification](docs/storage.md) for details.
 |---|---|
 | Baseline reconstruction | 3 × 500,000 evaluations; mean offline error **1.7024**, sample SD **0.7896** |
 | Native seed evaluation | 4 × 50,000 evaluations; mean offline error **2.7751**, selection score **0.264895** |
-| Native ShinkaEvolve descendants | Local verification at 12:30 UTC: **4 evaluated descendants**; the same 20-slot search is continuing |
+| Native ShinkaEvolve descendants | Completed at 12:41:51 UTC: **19 evaluated descendants**, with generations 0–19 archived |
 | Frozen-program independent comparison | Not run |
 | Mechanism ablations | Not run |
 

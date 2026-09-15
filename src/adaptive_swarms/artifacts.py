@@ -37,37 +37,20 @@ def case_artifacts(folder: Path) -> list[Path]:
     return [paths[name] for name in sorted(paths)]
 
 
-def write_compressed_json(path: Path, value, guard=None, *, completed_case=False) -> Path:
+def write_compressed_json(path: Path, value) -> Path:
     """Serialize directly into gzip, verify every byte, then publish atomically.
 
     Only this call's incomplete temporary file is removed on interruption. No
     uncompressed trace is written, and an existing immutable artifact is never
-    replaced. The simulator's per-case object remains unchanged. Completed
-    simulator cases may finish within the explicitly reserved worker allowance
-    after a storage pause; this never authorizes another simulation.
+    replaced. The simulator's per-case object remains unchanged. Actual I/O
+    failures propagate to the caller.
     """
-    from .storage import get_storage_guard
-
     path = Path(path)
     if not str(path).endswith(".json.gz"):
         path = Path(str(path) + ".gz")
-    guard = guard if guard is not None else get_storage_guard(path.parent)
-    activity = f"writing compressed case {path.name}"
     temporary = None
-    written = 0
-    previous_checkpoint_active = getattr(guard, "checkpoint_write_active", False)
-    if guard and completed_case:
-        guard.checkpoint_write_active = True
-
-    def check_write(next_bytes=0):
-        if guard:
-            if completed_case:
-                guard.check_checkpoint_write(written, next_bytes, activity=activity)
-            else:
-                guard.check(force=True, activity=activity)
 
     try:
-        check_write()
         path.parent.mkdir(parents=True, exist_ok=True)
         if path.exists():
             raise FileExistsError(f"Completed artifact already exists: {path}")
@@ -80,11 +63,8 @@ def write_compressed_json(path: Path, value, guard=None, *, completed_case=False
                 buffer = bytearray()
 
                 def flush_chunk():
-                    nonlocal written
-                    check_write(len(buffer))
                     digest.update(buffer)
                     compressed.write(buffer)
-                    written += len(buffer)
                     buffer.clear()
 
                 encoder = json.JSONEncoder(allow_nan=False, separators=(",", ":"))
@@ -106,11 +86,9 @@ def write_compressed_json(path: Path, value, guard=None, *, completed_case=False
         verified = hashlib.sha256()
         with gzip.open(temporary, "rb") as stream:
             while chunk := stream.read(WRITE_CHUNK_BYTES):
-                check_write()
                 verified.update(chunk)
         if verified.digest() != digest.digest():
             raise IOError(f"Lossless compression verification failed for {path}")
-        check_write()
         temporary.replace(path)
         directory_fd = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
         try:
@@ -118,12 +96,6 @@ def write_compressed_json(path: Path, value, guard=None, *, completed_case=False
         finally:
             os.close(directory_fd)
         return path
-    except OSError as exc:
-        if guard:
-            guard.disk_full(exc, activity=activity)
-        raise
     finally:
-        if guard and completed_case:
-            guard.checkpoint_write_active = previous_checkpoint_active
         if temporary is not None:
             temporary.unlink(missing_ok=True)

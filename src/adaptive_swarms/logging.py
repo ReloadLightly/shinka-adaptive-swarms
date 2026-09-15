@@ -7,9 +7,10 @@ from pathlib import Path
 import threading
 import time
 import os
+import sys
+import traceback
 
-from .native_storage import EvidenceRotatingWriter
-from .storage import StorageInterrupted, get_storage_guard
+from .execution import InfrastructureError
 
 
 class EventLogger:
@@ -17,7 +18,7 @@ class EventLogger:
         self.run_dir = Path(run_dir)
         self.run_dir.mkdir(parents=True, exist_ok=True)
         self._json = (self.run_dir / "events.jsonl").open("a", buffering=1)
-        self._human = EvidenceRotatingWriter(self.run_dir / "run.log")
+        self._human = (self.run_dir / "run.log").open("a", buffering=1)
         self._lock = threading.Lock()
         self._stop = threading.Event()
         self._start = time.monotonic()
@@ -25,6 +26,8 @@ class EventLogger:
         self._activity = "initializing"
         self._interval = heartbeat_seconds
         self._thread = threading.Thread(target=self._heartbeat, daemon=True)
+        self._io_error = None
+        self.on_io_error = None
 
     def __enter__(self):
         self._thread.start()
@@ -34,25 +37,35 @@ class EventLogger:
         with self._lock:
             self._activity = message
 
+    def _check_io_error(self):
+        if self._io_error is not None:
+            raise self._io_error from self._io_error.__cause__
+
+    def _fail_io(self, exc):
+        if self._io_error is None:
+            self._io_error = InfrastructureError(f"Event log I/O failure: {exc}")
+            self._io_error.__cause__ = exc
+            if self.on_io_error is not None:
+                self.on_io_error(self._io_error)
+        self._check_io_error()
+
     def event(self, event, **fields):
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         with self._lock:
+            self._check_io_error()
             record = {"time": now, "elapsed_s": round(time.monotonic()-self._start, 2),
                       "event": event, **fields}
             details = " ".join(f"{k}={v:.5g}" if isinstance(v, float) else f"{k}={v}"
                                for k, v in fields.items())
             line = f"[{now}] +{record['elapsed_s']:8.1f}s {event}: {details}"
-            print(line, flush=True)
             try:
+                print(line, flush=True)
                 self._json.write(json.dumps(record, default=str, allow_nan=False) + "\n")
                 self._json.flush()
                 self._human.write(line + "\n")
                 self._human.flush()
             except OSError as exc:
-                guard = get_storage_guard(self.run_dir)
-                if guard:
-                    guard.disk_full(exc, activity="saving operational/research event")
-                raise
+                self._fail_io(exc)
             if event != "heartbeat":
                 self._last = time.monotonic()
 
@@ -65,22 +78,27 @@ class EventLogger:
                 try:
                     self.event("heartbeat", activity=activity, seconds_since_event=round(idle, 1),
                                message="Process is alive; no new result has arrived.")
-                except StorageInterrupted:
-                    return  # The shared stop latch is enforced by the real scheduler.
+                except InfrastructureError:
+                    # Thread failures remain visible and are raised by the next
+                    # foreground event or context exit, even if space recovers.
+                    traceback.print_exc(file=sys.stderr)
+                    sys.stderr.flush()
+                    return
 
     def __exit__(self, exc_type, exc, tb):
-        if exc:
-            try:
-                self.event("storage_paused" if isinstance(exc, StorageInterrupted) else
-                           ("interrupted" if isinstance(exc, KeyboardInterrupt) else "failed"),
-                           error=f"{type(exc).__name__}: {exc}")
-            except (OSError, StorageInterrupted):
-                pass  # Disk-full cannot trigger an output/retry loop during shutdown.
         self._stop.set()
         if self._thread.is_alive():
             self._thread.join(timeout=2)
-        self._json.close()
-        self._human.close()
+        try:
+            self._check_io_error()
+            if exc:
+                self.event("interrupted" if isinstance(exc, KeyboardInterrupt) else "failed",
+                           error=f"{type(exc).__name__}: {exc}")
+        finally:
+            try:
+                self._json.close()
+            finally:
+                self._human.close()
 
 
 def atomic_json(path, value):
@@ -94,10 +112,5 @@ def atomic_json(path, value):
             stream.flush()
             os.fsync(stream.fileno())
         temporary.replace(path)
-    except OSError as exc:
-        guard = get_storage_guard(path.parent)
-        if guard:
-            guard.disk_full(exc, activity=f"checkpoint {path.name}")
-        raise
     finally:
         temporary.unlink(missing_ok=True)

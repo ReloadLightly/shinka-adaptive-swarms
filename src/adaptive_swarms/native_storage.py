@@ -1,4 +1,4 @@
-"""Storage adapters for the pinned native Shinka runner; search stays upstream.
+"""Artifact compatibility for the pinned native Shinka runner; search stays upstream.
 
 Only artifact presentation and local output sinks change. No repository, virtual
 environment, or result tree is copied into a candidate's evaluation workspace.
@@ -16,9 +16,12 @@ from pathlib import Path
 import re
 import sqlite3
 import subprocess
+import sys
 import threading
 import time
 import uuid
+
+from .execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 
 
 LOG_CHUNK_BYTES = 4 * 1024 * 1024
@@ -53,43 +56,40 @@ class EvidenceRotatingWriter:
     and leave files alone on errors. Never retry a failed write automatically.
     """
 
-    def __init__(self, path, max_bytes=LOG_CHUNK_BYTES, check_write=None, on_error=None):
+    def __init__(self, path, max_bytes=LOG_CHUNK_BYTES, on_io_error=None):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.max_bytes = max_bytes
-        self.check_write = check_write
-        self.on_error = on_error
         self._lock = threading.RLock()
         self._stream = self.path.open("a", encoding="utf-8", buffering=1)
         self._size = self.path.stat().st_size
-        self._failed = False
+        self.failure = None
+        self.on_io_error = on_io_error
+
+    def _failed_write(self, exc):
+        first_failure = self.failure is None
+        self.failure = exc
+        if first_failure and self.on_io_error is not None:
+            # Notify the controller only after an actual failed operation. The
+            # callback dispatches its failure event safely from output threads.
+            self.on_io_error(exc)
+        raise InfrastructureError(f"Native log I/O failed for {self.path}: {exc}") from exc
 
     def write(self, text):
         with self._lock:
-            if self._failed:
-                raise OSError("Previous log write failed; no automatic output retry")
+            if self.failure is not None:
+                self._failed_write(self.failure)
             try:
                 result = 0
                 for start in range(0, len(text), 256 * 1024):
                     chunk = text[start:start + 256 * 1024]
-                    if self.check_write:
-                        self.check_write()
                     if self._size >= self.max_bytes:
                         self._rotate()
                     result += self._stream.write(chunk)
                     self._size += len(chunk.encode("utf-8"))
                 return result
-            except BaseException as exc:
-                self._failed = True
-                if isinstance(exc, OSError):
-                    if self.on_error is not None:
-                        self.on_error(exc)
-                    else:
-                        from .storage import get_storage_guard
-                        guard = get_storage_guard(self.path.parent)
-                        if guard is not None:
-                            guard.disk_full(exc, activity=f"native log {self.path.name}")
-                raise
+            except OSError as exc:
+                self._failed_write(exc)
 
     def _rotate(self):
         self._stream.flush()
@@ -103,8 +103,6 @@ class EvidenceRotatingWriter:
         try:
             with segment.open("rb") as source, gzip.open(compressed, "xb", compresslevel=3) as destination:
                 for block in iter(lambda: source.read(256 * 1024), b""):
-                    if self.check_write:
-                        self.check_write()
                     digest.update(block)
                     destination.write(block)
             verified = hashlib.sha256()
@@ -122,11 +120,17 @@ class EvidenceRotatingWriter:
 
     def flush(self):
         with self._lock:
-            self._stream.flush()
+            try:
+                self._stream.flush()
+            except OSError as exc:
+                self._failed_write(exc)
 
     def close(self):
         with self._lock:
-            self._stream.close()
+            try:
+                self._stream.close()
+            except OSError as exc:
+                self._failed_write(exc)
 
 
 def read_rotated_text(path):
@@ -164,10 +168,10 @@ class NativeStorageMixin:
             try:
                 await asyncio.to_thread(write_best_reference, self.results_dir, best)
             except OSError as exc:
-                guard = getattr(self, "storage_guard", None)
-                if guard is not None:
-                    guard.disk_full(exc, activity="best artifact manifest")
-                raise
+                notify = getattr(self, "_fail_infrastructure", None)
+                if notify is not None:
+                    notify(exc)
+                raise InfrastructureError(f"Best artifact manifest I/O failed: {exc}") from exc
             self.best_program_id = best.id
             logging.getLogger(__name__).info("Best gen %s id %s references its original artifacts", best.generation, best.id)
 
@@ -231,13 +235,14 @@ class _StorageTeeConsole:
 
 
 @contextmanager
-def install_native_storage(runner, check_write=None, max_log_bytes=LOG_CHUNK_BYTES, on_error=None):
-    """Wire storage sinks into native logging and its real local submit function."""
+def install_native_storage(runner, max_log_bytes=LOG_CHUNK_BYTES):
+    """Retain compatible logs and references without any free-space checks."""
     from shinka.launch import scheduler, local
     from shinka.launch.local import ProcessWithLogging, _stream_output
 
     log_path = (Path(runner.results_dir) / "evolution_run.log").resolve()
-    writer = EvidenceRotatingWriter(log_path, max_log_bytes, check_write, on_error)
+    notify_io_error = getattr(runner, "_fail_infrastructure", None)
+    writer = EvidenceRotatingWriter(log_path, max_log_bytes, on_io_error=notify_io_error)
     root_logger = logging.getLogger()
     replaced = []
     for handler in list(root_logger.handlers):
@@ -253,34 +258,56 @@ def install_native_storage(runner, check_write=None, max_log_bytes=LOG_CHUNK_BYT
     runner.console = _StorageTeeConsole(original_console, writer)
     original_submit = scheduler.submit_local
     original_load_results = local.load_results
+    job_writers = []
+    submitted_processes = {}
+
+    def check_output_errors():
+        # Output threads cannot raise into the controller. Preserve their actual
+        # failures and surface them before native result loading or persistence.
+        for sink in (writer, *job_writers):
+            if sink.failure is not None:
+                raise InfrastructureError(f"Native log I/O failed for {sink.path}: {sink.failure}") from sink.failure
+
+    runner.check_output_errors = check_output_errors
 
     def load_results(results_dir):
+        check_output_errors()
+        process = submitted_processes.get(str(Path(results_dir).resolve()))
+        if process is not None and process.poll() in {INFRASTRUCTURE_EXIT_CODE, 75}:
+            raise InfrastructureError(f"Evaluator infrastructure failure in {results_dir} (exit {process.returncode})")
         results = original_load_results(results_dir)
         for name, key in (("job_log.out", "stdout_log"), ("job_log.err", "stderr_log")):
             results[key] = read_rotated_text(Path(results_dir) / name)
         return results
 
     local.load_results = load_results
-    job_writers = []
 
     def submit(log_dir, cmd, verbose=False, env_overrides=None):
         # Paths and environment are native inputs; no filesystem tree staging.
-        if check_write:
-            check_write()
-        out = EvidenceRotatingWriter(Path(log_dir) / "job_log.out", max_log_bytes, check_write, on_error)
-        err = EvidenceRotatingWriter(Path(log_dir) / "job_log.err", max_log_bytes, check_write, on_error)
+        out = EvidenceRotatingWriter(Path(log_dir) / "job_log.out", max_log_bytes, on_io_error=notify_io_error)
+        err = EvidenceRotatingWriter(Path(log_dir) / "job_log.err", max_log_bytes, on_io_error=notify_io_error)
         job_writers.extend((out, err))
         env = os.environ.copy()
         env.update({"PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8", "PYTHONDONTWRITEBYTECODE": "1"})
         if env_overrides:
             env.update(env_overrides)
+        env.pop("ADAPTIVE_SWARMS_STORAGE_CONFIG", None)
         try:
             process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1, env=env)
         except BaseException:
             out.close()
             err.close()
             raise
-        threads = tuple(threading.Thread(target=_stream_output, args=(pipe, sink, "STDOUT" if verbose else None), daemon=True)
+        submitted_processes[str(Path(log_dir).resolve())] = process
+
+        def stream_output(pipe, sink, prefix):
+            try:
+                _stream_output(pipe, sink, prefix)
+            except InfrastructureError as exc:
+                # The sink retains the original error for the result boundary.
+                print(str(exc), file=sys.stderr, flush=True)
+
+        threads = tuple(threading.Thread(target=stream_output, args=(pipe, sink, "STDOUT" if verbose else None), daemon=True)
                         for pipe, sink in ((process.stdout, out), (process.stderr, err)))
         for thread in threads:
             thread.start()
@@ -289,6 +316,7 @@ def install_native_storage(runner, check_write=None, max_log_bytes=LOG_CHUNK_BYT
     scheduler.submit_local = submit
     try:
         yield
+        check_output_errors()
     finally:
         scheduler.submit_local = original_submit
         local.load_results = original_load_results

@@ -15,7 +15,6 @@ import time
 
 from .logging import EventLogger, atomic_json
 from .artifacts import read_json, resolve_json, write_compressed_json
-from .storage import StorageInterrupted, get_storage_guard
 
 
 def run_id(prefix):
@@ -79,7 +78,6 @@ def baseline(args):
     if args.policy:
         (folder / "policy.py").write_text(policy_source)
     outcomes = []
-    guard = get_storage_guard(folder)
     try:
         with EventLogger(folder) as log:
             log.event("study_started", study=study, cases=len(cases), budget_per_case=config.get("budget"),
@@ -93,14 +91,10 @@ def baseline(args):
                     outcomes.append(result)
                     log.event("case_reused", case=idx + 1, offline_error=result["offline_error"])
                     continue
-                if guard:
-                    guard.check(force=True, activity=f"scheduling baseline case {idx + 1}")
                 merged = {**config, **overrides}
                 log.set_activity(f"simulating case {idx+1}/{len(cases)}")
                 log.event("case_started", case=idx + 1, total_cases=len(cases), **overrides)
                 def progress(event):
-                    if guard and event.get("evaluations", 0) < merged.get("budget", float("inf")):
-                        guard.check(activity=f"baseline case {idx + 1}")
                     event = dict(event)
                     kind = event.pop("event", "simulation_progress")
                     log.event(kind, case_index=idx + 1, **event)
@@ -109,7 +103,7 @@ def baseline(args):
                 result["wall_time_seconds"] = time.monotonic()-start
                 result["signature"] = signature
                 result["policy_source_sha256"] = hashlib.sha256(policy_source.encode()).hexdigest()
-                case_file = write_compressed_json(case_file, result, guard=guard, completed_case=True)
+                case_file = write_compressed_json(case_file, result)
                 outcomes.append(result)
                 log.event("case_completed", case=idx + 1, offline_error=result["offline_error"],
                           wall_time_s=result["wall_time_seconds"], checkpoint=str(case_file))
@@ -125,9 +119,9 @@ def baseline(args):
             manifest["status"] = "completed"
             atomic_json(manifest_file, manifest)
             log.event("study_completed", **summary)
-    except BaseException as exc:
+    except BaseException:
         manifest = json.loads(manifest_file.read_text())
-        manifest["status"] = "storage_checkpoint" if isinstance(exc, StorageInterrupted) else "interrupted_or_failed"
+        manifest["status"] = "interrupted_or_failed"
         manifest["completed_cases"] = len(outcomes)
         atomic_json(manifest_file, manifest)
         raise

@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-from adaptive_swarms import artifacts, figures, storage
+from adaptive_swarms import artifacts, figures
+from adaptive_swarms.execution import INFRASTRUCTURE_EXIT_CODE
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -125,88 +126,61 @@ def test_legacy_completed_evaluation_is_reused_byte_for_byte(
     assert len(checkpoint["completed_cases"]) == len(saved_cases)
 
 
-@pytest.mark.parametrize("low_stage", ["before_next_case", "during_completed_case_write", "at_final_progress_event"])
-def test_low_space_stops_next_case_and_resume_retains_completed_work(
-        tmp_path, monkeypatch, evaluators, saved_cases, low_stage):
+def test_io_failure_resume_reuses_completed_compressed_case(
+        tmp_path, monkeypatch, evaluators, saved_cases):
     _, evaluator = evaluators
     saved_cases = saved_cases[:2]
     program, suite = input_files(tmp_path, saved_cases)
     folder = program.parent / "results"
-    free = {"host": 33 * storage.GIB}
-    monkeypatch.setattr(storage, "verify_windows_c_mount", lambda: {"target": "/mnt/c", "source": "C:"})
-    monkeypatch.setattr(storage, "available_bytes", lambda path: free["host"] if str(path) == "/mnt/c" else 100 * storage.GIB)
-    guard = storage.StorageGuard(tmp_path, output_dir=folder)
-    monkeypatch.setattr(evaluator, "get_storage_guard", lambda path: guard)
-    check = guard.check
-    interrupt = {"armed": True}
-    def controlled_check(*args, **kwargs):
-        activity = kwargs.get("activity")
-        low_activity = "scheduling case_001" if low_stage == "before_next_case" else "writing compressed case case_000.json.gz"
-        if activity == low_activity and interrupt["armed"] and low_stage != "at_final_progress_event":
-            free["host"] = 9 * storage.GIB
-        return check(*args, **kwargs)
-    monkeypatch.setattr(guard, "check", controlled_check)
     calls = []
-    replay_case = replay(saved_cases, calls)
-    def completed_case(config, policy=None, progress=None):
-        result = replay_case(config, policy, progress)
-        if low_stage == "at_final_progress_event" and interrupt["armed"]:
-            free["host"] = 9 * storage.GIB
-            progress({"event": "run_completed", "evaluations": result["evaluations"]})
-        return result
-    monkeypatch.setattr(evaluator, "run_case", completed_case)
-    assert evaluator.evaluate(program, folder, suite) == 75
-    assert calls == [saved_cases[0]["config"]["environment_seed"]]
+    monkeypatch.setattr(evaluator, "run_case", replay(saved_cases, calls))
+    write = evaluator.write_compressed_json
+    def interrupted_write(path, result):
+        if result["case_id"] == "case_001":
+            raise OSError(errno.ENOSPC, "simulated actual output failure")
+        return write(path, result)
+    monkeypatch.setattr(evaluator, "write_compressed_json", interrupted_write)
+    assert evaluator.evaluate(program, folder, suite) == INFRASTRUCTURE_EXIT_CODE
     checkpoint = artifacts.read_json(folder / "evaluation-checkpoint.json")
-    assert checkpoint["status"] == "storage_checkpoint"
     assert len(checkpoint["completed_cases"]) == 1
     first = folder / "case_000.json.gz"
-    first_bytes = first.read_bytes()
+    first_bytes, first_mtime = first.read_bytes(), first.stat().st_mtime_ns
     assert not (folder / "metrics.json").exists()
     assert not (folder / "correct.json").exists()
-    assert guard.stop_path.is_file()
-    interrupt["armed"] = False
-    free["host"] = 33 * storage.GIB
-    guard.clear_stop_for_resume()
+    monkeypatch.setattr(evaluator, "write_compressed_json", write)
+    calls.clear()
     assert evaluator.evaluate(program, folder, suite) == 0
-    assert calls == [case["config"]["environment_seed"] for case in saved_cases]
+    assert calls == [saved_cases[1]["config"]["environment_seed"]]
     assert first.read_bytes() == first_bytes
+    assert first.stat().st_mtime_ns == first_mtime
     assert artifacts.read_json(folder / "metrics.json")["public"]["cases_completed"] == 2
 
 
-def test_guard_interrupts_bulk_writer_and_removes_only_its_temporary(tmp_path):
+def test_atomic_writer_io_failure_preserves_existing_artifacts(tmp_path, monkeypatch):
     historical = tmp_path / "historical.json"
     historical.write_text('{"keep": true}')
-    class Guard:
-        checks = 0
-        def check(self, **kwargs):
-            self.checks += 1
-            if self.checks == 3:
-                raise storage.StorageInterrupted("synthetic low space")
-    guard = Guard()
-    with pytest.raises(storage.StorageInterrupted):
-        artifacts.write_compressed_json(tmp_path / "case_000.json", ["trace" * 100] * 6000, guard)
-    assert guard.checks == 3
+    def full(*args, **kwargs):
+        raise OSError(errno.ENOSPC, "simulated full disk")
+    monkeypatch.setattr(artifacts.os, "replace", full)
+    with pytest.raises(OSError) as error:
+        artifacts.write_compressed_json(tmp_path / "case_000.json", {"trace": [1, 2, 3]})
+    assert error.value.errno == errno.ENOSPC
     assert sorted(path.name for path in tmp_path.iterdir()) == ["historical.json"]
 
 
-def test_disk_full_is_single_storage_pause_without_fitness(
+def test_disk_full_has_no_fitness_judgment_or_automatic_retry(
         tmp_path, monkeypatch, evaluators, saved_cases):
     _, evaluator = evaluators
     program, suite = input_files(tmp_path, saved_cases[:1])
     folder = program.parent / "results"
-    guard = storage.StorageGuard(tmp_path, output_dir=folder)
-    monkeypatch.setattr(guard, "check", lambda **kwargs: {})
-    monkeypatch.setattr(evaluator, "get_storage_guard", lambda path: guard)
     monkeypatch.setattr(evaluator, "run_case", replay(saved_cases, []))
     attempts = []
     def disk_full(*args, **kwargs):
         attempts.append(1)
         raise OSError(errno.ENOSPC, "simulated disk full")
     monkeypatch.setattr(evaluator, "write_compressed_json", disk_full)
-    assert evaluator.evaluate(program, folder, suite) == 75
+    assert evaluator.evaluate(program, folder, suite) == INFRASTRUCTURE_EXIT_CODE
     assert attempts == [1]
-    assert guard.stop_path.is_file()
     assert not (folder / "metrics.json").exists()
     assert not (folder / "correct.json").exists()
 

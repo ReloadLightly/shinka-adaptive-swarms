@@ -1,24 +1,25 @@
-"""Focused scheduler/real-entrypoint checks; no experimental model calls."""
-import argparse
+"""Focused rollback/resume checks; native evaluation and model calls are mocked."""
 import asyncio
+import errno
 import importlib.util
 import json
+import os
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 
-from adaptive_swarms import storage
-from adaptive_swarms.storage_runner import StorageRunnerMixin
+from adaptive_swarms.execution import INFRASTRUCTURE_EXIT_CODE, InfrastructureError
+from adaptive_swarms.storage_runner import ResumeRunnerMixin
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def mocked_space(monkeypatch, gib=30):
-    reading = {"gib": gib}
-    monkeypatch.setattr(storage, "verify_windows_c_mount", lambda: {"target": "/mnt/c", "source": "C:\\", "fstype": "9p"})
-    monkeypatch.setattr(storage, "available_bytes", lambda path: reading["gib"] * storage.GIB)
-    return reading
+def launcher_module():
+    spec = importlib.util.spec_from_file_location("rollback_test_launcher", ROOT / "scripts/run_evolution.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class FakeNative:
@@ -39,134 +40,83 @@ class FakeNative:
         self.persisted += 1
 
 
-class GuardedFake(StorageRunnerMixin, FakeNative):
+class ResumableFake(ResumeRunnerMixin, FakeNative):
     pass
 
 
-def test_scheduler_blocks_new_work_and_never_scores_storage_pause(tmp_path, monkeypatch):
-    space = mocked_space(monkeypatch)
-    guard = storage.StorageGuard(tmp_path)
-    runner = GuardedFake()
-    runner.configure_storage(guard, SimpleNamespace(event=lambda *a, **k: None))
+def test_scheduler_accepts_work_with_historical_storage_stop(tmp_path, monkeypatch):
+    (tmp_path / "storage-stop.json").write_text('{"status":"storage_paused"}')
+    monkeypatch.setenv("ADAPTIVE_SWARMS_STORAGE_CONFIG", '{"checkpoint_gib":10}')
+    monkeypatch.setattr(os, "statvfs", lambda path: SimpleNamespace(f_bavail=0, f_frsize=4096))
+    runner = ResumableFake()
+    runner.results_dir = tmp_path
+    runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
     asyncio.run(runner._start_proposals(1))
-    assert runner.scheduled == 1
-    space["gib"] = 9
-    with pytest.raises(asyncio.CancelledError):
-        asyncio.run(runner._submit_evaluation_job_with_slot("gen_3/main.py", "results", None))
-    assert runner.scheduled == 1
-    assert runner.should_stop.is_set()
-    assert json.loads(guard.stop_path.read_text())["status"] == "storage_paused"
-    job = SimpleNamespace(results_dir=str(tmp_path), job_id=SimpleNamespace(returncode=75), generation=3)
-    with pytest.raises(asyncio.CancelledError):
-        asyncio.run(runner._persist_completed_job(job))
-    assert runner.persisted == 0
-    space["gib"] = 30
-    guard.clear_stop_for_resume()
-    asyncio.run(runner._start_proposals(1))
+    asyncio.run(runner._submit_evaluation_job_with_slot("gen_3/main.py", "results", None))
     assert runner.scheduled == 2
+    assert not runner.should_stop.is_set()
+    assert (tmp_path / "storage-stop.json").is_file()
 
 
-def test_low_space_real_entrypoint_stops_before_runtime_or_models(tmp_path, monkeypatch):
-    monkeypatch.setenv(storage.ENV_CONFIG, "")
-    mocked_space(monkeypatch, gib=9)
-    spec = importlib.util.spec_from_file_location("storage_test_launcher", ROOT / "scripts/run_evolution.py")
-    launcher = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(launcher)
-    monkeypatch.setattr(launcher, "inspect_runtime", lambda *args: pytest.fail("low-space launch must not inspect or invoke model runtime"))
+def test_launcher_reaches_native_with_zero_reported_space_and_no_mount_probe(tmp_path, monkeypatch):
+    launcher = launcher_module()
+    monkeypatch.setattr(os, "statvfs", lambda path: SimpleNamespace(f_bavail=0, f_frsize=4096))
+    monkeypatch.setenv("ADAPTIVE_SWARMS_STORAGE_CONFIG", '{"checkpoint_gib":10}')
+    monkeypatch.setattr(launcher, "inspect_runtime", lambda *a: {"ready": True, "errors": [], "model_calls_performed_by_check": 0})
+    monkeypatch.setattr(launcher, "prepare_snapshot", lambda *a: {})
+    monkeypatch.setattr(launcher, "summarize_database", lambda *a: {"generation_records": 1, "valid_programs": 1, "valid_descendants": 0})
+    calls = []
+    def native(*args):
+        assert "ADAPTIVE_SWARMS_STORAGE_CONFIG" not in os.environ
+        calls.append(args)
+    monkeypatch.setattr(launcher, "run_native", native)
+    monkeypatch.setattr("subprocess.run", lambda *a, **k: pytest.fail("No mount or external runtime probe is needed after the mocked runtime check"))
     monkeypatch.setattr("sys.argv", ["run_evolution.py", "--seed-only", "--results-root", str(tmp_path)])
-    assert launcher.main() == 75
-    markers = list(tmp_path.glob("*/storage-stop.json"))
-    assert len(markers) == 1
-    assert json.loads(markers[0].read_text())["status"] == "storage_paused"
+    assert launcher.main() == 0
+    assert len(calls) == 1
+    assert not list(tmp_path.glob("*/storage-stop.json"))
     assert not list(tmp_path.glob("*/programs.sqlite"))
 
 
 def test_frozen_scientific_evaluator_helpers_are_preserved(tmp_path):
-    spec = importlib.util.spec_from_file_location("storage_adapter_launcher", ROOT / "scripts/run_evolution.py")
-    launcher = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(launcher)
-    frozen = ROOT / "results/evolution/20260915T101024.562418Z-search/task_snapshot/evaluate.py"
-    if not frozen.exists():
-        frozen = ROOT / "tasks/adaptive_swarm/evaluate.py"
+    launcher = launcher_module()
+    frozen = ROOT / "tests/fixtures/evaluate_pre_storage.py"
     (tmp_path / "task_snapshot").mkdir()
     (tmp_path / "task_snapshot/evaluate.py").write_bytes(frozen.read_bytes())
     path = launcher.prepare_storage_evaluator(tmp_path)
     assert path.is_file()
+    assert path.parent.parent.name == "storage_runtime"
     record = json.loads((path.parent / "provenance.json").read_text())
     assert record["evaluation_version"] == launcher.EVALUATION_VERSION
     assert (tmp_path / "task_snapshot/evaluate.py").read_bytes() == frozen.read_bytes()
 
 
-def test_native_seed_result_boundary_rejects_paused_missing_metrics(tmp_path, monkeypatch):
-    mocked_space(monkeypatch)
-    guard = storage.StorageGuard(tmp_path)
-    runner = GuardedFake()
-    def seed_run(*args, **kwargs):
-        (tmp_path / "evaluation-checkpoint.json").write_text(json.dumps({"status": "storage_paused"}))
-        return {}, 0.01
-    runner.scheduler = SimpleNamespace(run=seed_run, get_job_results_async=lambda *a: None)
-    runner.configure_storage(guard, SimpleNamespace(event=lambda *a, **k: None))
-    with pytest.raises(storage.StorageInterrupted):
-        runner.scheduler.run("gen_0/main.py", str(tmp_path))
-    assert guard.stopped
+@pytest.mark.parametrize("status,returncode", [("infrastructure_error", INFRASTRUCTURE_EXIT_CODE), ("storage_paused", 75)])
+def test_native_result_boundary_never_scores_infrastructure_failure(tmp_path, status, returncode):
+    (tmp_path / "evaluation-checkpoint.json").write_text(json.dumps({"status": status}))
+    runner = ResumableFake()
+    runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
+    job = SimpleNamespace(results_dir=str(tmp_path), job_id=SimpleNamespace(returncode=returncode), generation=3)
+    with pytest.raises(InfrastructureError):
+        asyncio.run(runner._persist_completed_job(job))
     assert runner.persisted == 0
 
 
-def test_native_seed_result_boundary_maps_enospc_to_pause(tmp_path, monkeypatch):
-    import errno
-    mocked_space(monkeypatch)
-    guard = storage.StorageGuard(tmp_path)
-    runner = GuardedFake()
+def test_native_seed_result_boundary_preserves_enospc(tmp_path):
+    runner = ResumableFake()
     def seed_run(*args, **kwargs):
         raise OSError(errno.ENOSPC, "simulated native output full")
     runner.scheduler = SimpleNamespace(run=seed_run, get_job_results_async=lambda *a: None)
-    runner.configure_storage(guard, SimpleNamespace(event=lambda *a, **k: None))
-    with pytest.raises(storage.StorageInterrupted):
+    runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
+    with pytest.raises(InfrastructureError) as error:
         runner.scheduler.run("gen_0/main.py", str(tmp_path))
-    assert guard.stopped
+    assert isinstance(error.value.__cause__, OSError)
+    assert error.value.__cause__.errno == errno.ENOSPC
     assert runner.persisted == 0
-
-
-def test_real_native_entrypoint_preserves_seed_after_storage_resume(tmp_path, monkeypatch):
-    """A real 31-query fixture, then low/healthy resume with no repeated evaluator."""
-    import sqlite3
-    monkeypatch.setenv(storage.ENV_CONFIG, "")
-    space = mocked_space(monkeypatch)
-    spec = importlib.util.spec_from_file_location("storage_native_launcher", ROOT / "scripts/run_evolution.py")
-    launcher = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(launcher)
-    monkeypatch.setattr(launcher, "inspect_runtime", lambda *a: {"ready": True, "errors": [], "model_calls_performed_by_check": 0})
-    suite = tmp_path / "tiny-suite.json"
-    suite.write_text(json.dumps({"budget": 31, "period": 10, "cases": [{}]}))
-    root = tmp_path / "runs"
-    monkeypatch.setattr("sys.argv", ["run_evolution.py", "--seed-only", "--suite", str(suite), "--results-root", str(root)])
-    assert launcher.main() == 0
-    run = next(root.glob("*-seed"))
-    case = run / "gen_0/results/case_000.json.gz"
-    case_before = case.read_bytes()
-    mtime_before = case.stat().st_mtime_ns
-    with sqlite3.connect(run / "programs.sqlite") as db:
-        rows_before = db.execute("SELECT id,generation,correct,combined_score FROM programs ORDER BY id").fetchall()
-    assert rows_before and all(row[1] == 0 and row[2] for row in rows_before)
-    monkeypatch.setattr("sys.argv", ["run_evolution.py", "--seed-only", "--resume", str(run)])
-    space["gib"] = 9
-    assert launcher.main() == 75
-    assert (run / "storage-stop.json").exists()
-    space["gib"] = 30
-    from shinka.launch.scheduler import JobScheduler
-    monkeypatch.setattr(JobScheduler, "run", lambda *a, **k: pytest.fail("completed native seed must not be evaluated on resume"))
-    assert launcher.main() == 0
-    assert not (run / "storage-stop.json").exists()
-    assert list(run.glob("storage-stop-*.json"))
-    assert case.read_bytes() == case_before
-    assert case.stat().st_mtime_ns == mtime_before
-    with sqlite3.connect(run / "programs.sqlite") as db:
-        assert db.execute("SELECT id,generation,correct,combined_score FROM programs ORDER BY id").fetchall() == rows_before
 
 
 def test_pending_resume_returns_before_second_slot_and_retains_lineage(tmp_path, monkeypatch):
     from adaptive_swarms import native_storage
-    mocked_space(monkeypatch)
     for generation in (1, 2):
         folder = tmp_path / f"gen_{generation}"
         folder.mkdir()
@@ -180,7 +130,7 @@ def test_pending_resume_returns_before_second_slot_and_retains_lineage(tmp_path,
     monkeypatch.setattr(native_storage, "recover_pending_spec", recover)
 
     async def exercise():
-        runner = GuardedFake()
+        runner = ResumableFake()
         runner.results_dir = tmp_path
         runner.db = object()
         runner.evo_config = SimpleNamespace(num_generations=3)
@@ -189,13 +139,13 @@ def test_pending_resume_returns_before_second_slot_and_retains_lineage(tmp_path,
         runner.next_generation_to_submit = 1
         runner.submitted_jobs = {}
         runner.slot_available = asyncio.Event()
-        runner.configure_storage(storage.StorageGuard(tmp_path), SimpleNamespace(event=lambda *a, **k: None))
+        runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
         slot = asyncio.Semaphore(1)
         async def submit(exec_fname, results_dir, sampling_worker_id):
             await slot.acquire()
             return exec_fname, 0, 2.0, 2.0, 1
         runner._submit_evaluation_job_with_slot = submit
-        await asyncio.wait_for(runner._restore_storage_jobs(), timeout=0.1)
+        await asyncio.wait_for(runner._restore_pending_jobs(), timeout=0.1)
         tasks = list(runner.active_proposal_tasks.values())
         assert len(tasks) == 2
         await asyncio.sleep(0)
@@ -210,32 +160,50 @@ def test_pending_resume_returns_before_second_slot_and_retains_lineage(tmp_path,
     asyncio.run(exercise())
 
 
-def test_storage_stop_calls_native_cancellation_without_scoring(tmp_path, monkeypatch):
-    from shinka.core.async_runner import AsyncRunningJob
-    import psutil
-    mocked_space(monkeypatch)
-    monkeypatch.setattr(psutil, "Process", lambda: SimpleNamespace(children=lambda **kwargs: []))
-    original_sleep = asyncio.sleep
-    async def immediate_sleep(seconds): await original_sleep(0)
-    monkeypatch.setattr(asyncio, "sleep", immediate_sleep)
+def test_background_io_failure_wakes_controller_without_scientific_result():
+    class BackgroundNative(FakeNative):
+        async def _run_async(self):
+            def failed_output():
+                try:
+                    self._fail_infrastructure(OSError(errno.ENOSPC, "background output full"))
+                except InfrastructureError:
+                    # Native output threads can consume their own exception.
+                    pass
+            await asyncio.to_thread(failed_output)
+            await asyncio.Event().wait()
+
+    class Runner(ResumeRunnerMixin, BackgroundNative):
+        pass
+
     async def exercise():
-        runner = GuardedFake()
-        runner.configure_storage(storage.StorageGuard(tmp_path), SimpleNamespace(event=lambda *a, **k: None))
-        candidate = tmp_path / "gen_1/main.py"
-        candidate.parent.mkdir()
-        candidate.write_text("def choose_response(o): return {}")
-        job = AsyncRunningJob(job_id=SimpleNamespace(poll=lambda: None), exec_fname=str(candidate),
-            results_dir=str(candidate.parent / "results"), start_time=0, proposal_started_at=0,
-            evaluation_submitted_at=0, generation=1)
-        runner.running_jobs = [job]
-        runner.submitted_jobs = {"job1": job}
-        runner.completed_generations = 1
-        cancelled = []
-        async def cancel(jid): cancelled.append(jid)
-        runner.scheduler = SimpleNamespace(cancel_job_async=cancel)
-        runner.storage_guard.request_stop("simulated")
-        await runner._stop_storage_workers()
-        assert cancelled == [job.job_id]
-        assert json.loads((candidate.parent / "storage-job.json").read_text())["generation"] == 1
+        runner = Runner()
+        runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
+        with pytest.raises(InfrastructureError) as error:
+            await asyncio.wait_for(runner._run_async(), timeout=1)
+        assert error.value.__cause__.errno == errno.ENOSPC
+        assert runner.should_stop.is_set()
         assert runner.persisted == 0
-    asyncio.run(exercise())
+    asyncio.run(exercise(), debug=True)
+
+
+def test_event_log_io_failure_stays_visible_without_retry(tmp_path):
+    from adaptive_swarms.logging import EventLogger
+    log = EventLogger(tmp_path)
+    original = log._json
+    writes, failures = [], []
+    class FullStream:
+        def write(self, text):
+            writes.append(text)
+            raise OSError(errno.ENOSPC, "event log full")
+        def close(self):
+            original.close()
+    log._json = FullStream()
+    log.on_io_error = failures.append
+    with pytest.raises(InfrastructureError) as error:
+        log.event("case_complete", case_id="saved-case")
+    assert error.value.__cause__.errno == errno.ENOSPC
+    with pytest.raises(InfrastructureError):
+        log.event("case_complete", case_id="saved-case")
+    with pytest.raises(InfrastructureError):
+        log.__exit__(None, None, None)
+    assert len(writes) == len(failures) == 1

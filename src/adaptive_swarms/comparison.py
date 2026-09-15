@@ -24,7 +24,6 @@ from .cli import load_policy, simulator_fingerprint, source_revision
 from .logging import EventLogger, atomic_json
 from .simulator import run_case, _validated_config
 from .artifacts import read_json, resolve_json, write_compressed_json
-from .storage import StorageInterrupted, get_storage_guard
 
 
 ANALYSIS_VERSION = "paired_stratified_bootstrap_v1"
@@ -223,7 +222,6 @@ def run_comparison(folder: Path, suite_path: Path, resume: bool = False) -> dict
     atomic_json(manifest_path, manifest)
     outcomes = {name: [] for name in frozen["methods"]}
     summary = None
-    guard = get_storage_guard(folder)
     try:
         with EventLogger(folder) as log:
             log.event("comparison_started", study=study, cases=len(cases), methods=list(outcomes),
@@ -237,16 +235,12 @@ def run_comparison(folder: Path, suite_path: Path, resume: bool = False) -> dict
                             raise ValueError(f"Saved case provenance differs: {case_path}")
                         log.event("case_reused", method=method, case=index + 1, offline_error=result["offline_error"])
                     else:
-                        if guard:
-                            guard.check(force=True, activity=f"scheduling comparison {method} case {index + 1}")
                         verify_frozen_sources(folder)
                         log.set_activity(f"{method}, independent case {index + 1}/{len(cases)}")
                         log.event("case_started", method=method, case=index + 1, budget=config["budget"],
                                   completed_method_cases=sum(map(len, outcomes.values())),
                                   environment_seed=config["environment_seed"], optimizer_seed=config["optimizer_seed"])
                         def progress(event):
-                            if guard and event.get("evaluations", 0) < config["budget"]:
-                                guard.check(activity=f"comparison {method} case {index + 1}")
                             event = dict(event)
                             kind = event.pop("event", "simulation_progress")
                             # Config and latent environment remain in the evaluator, never in policy arguments.
@@ -259,7 +253,7 @@ def run_comparison(folder: Path, suite_path: Path, resume: bool = False) -> dict
                                       wall_time_seconds=time.monotonic() - start,
                                       policy_source_sha256=metadata.get("sha256"))
                         # Checkpoint immediately even if later pairing validation reveals a problem.
-                        case_path = write_compressed_json(case_path, result, guard=guard, completed_case=True)
+                        case_path = write_compressed_json(case_path, result)
                         log.event("case_completed", method=method, case=index + 1,
                                   offline_error=result["offline_error"], checkpoint=str(case_path),
                                   wall_time_s=result["wall_time_seconds"])
@@ -278,7 +272,7 @@ def run_comparison(folder: Path, suite_path: Path, resume: bool = False) -> dict
                       method_mean_offline_errors=summary["method_mean_offline_errors"],
                       selected_minus_baseline=summary["comparisons"]["selected_minus_baseline"]["mean_delta"])
     except BaseException as exc:
-        manifest["status"] = "storage_checkpoint" if isinstance(exc, StorageInterrupted) else "interrupted_or_failed"
+        manifest["status"] = "interrupted_or_failed"
         manifest["completed_method_cases"] = {name: len(values) for name, values in outcomes.items()}
         manifest["last_error"] = f"{type(exc).__name__}: {exc}"
         atomic_json(manifest_path, manifest)
