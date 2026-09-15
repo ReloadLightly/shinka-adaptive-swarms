@@ -1,0 +1,23 @@
+{
+  "study": "change_response_heldout_v1",
+  "dimension": 5,
+  "npeaks": 10,
+  "period": 5000,
+  "move_severity": 1.0,
+  "correlation": 0.0,
+  "budget": 100000,
+  "particles_per_swarm": 5,
+  "nexcess": 1,
+  "trace_interval": 500,
+  "snapshot_interval": 0,
+  "cases": [
+    {"environment_seed": 501, "optimizer_seed": 1501, "move_severity": 1.0},
+    {"environment_seed": 502, "optimizer_seed": 1502, "move_severity": 1.0},
+    {"environment_seed": 503, "optimizer_seed": 1503, "move_severity": 3.0},
+    {"environment_seed": 504, "optimizer_seed": 1504, "move_severity": 3.0},
+    {"environment_seed": 505, "optimizer_seed": 1505, "move_severity": 2.0, "period": 2500},
+    {"environment_seed": 506, "optimizer_seed": 1506, "move_severity": 2.0, "period": 2500},
+    {"environment_seed": 507, "optimizer_seed": 1507, "move_severity": 5.0},
+    {"environment_seed": 508, "optimizer_seed": 1508, "move_severity": 5.0}
+  ]
+}

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shinka-adaptive-swarms"
+version = "0.1.0"
+description = "Reproducible multi-swarm search and interpretable program evolution in changing environments"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+evolution = ["shinka-evolve @ git+https://github.com/SakanaAI/ShinkaEvolve.git@9912af12d423504b8d580f4179fd15f5f88b8c50"]
+
+[project.scripts]
+adaptive-swarms = "adaptive_swarms.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

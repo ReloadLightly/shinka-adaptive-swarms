@@ -1,0 +1,19 @@
+{
+  "study": "change_response_search_v1",
+  "dimension": 5,
+  "npeaks": 10,
+  "period": 5000,
+  "move_severity": 1.0,
+  "correlation": 0.0,
+  "budget": 50000,
+  "particles_per_swarm": 5,
+  "nexcess": 1,
+  "trace_interval": 500,
+  "snapshot_interval": 0,
+  "cases": [
+    {"environment_seed": 11, "optimizer_seed": 1011, "move_severity": 1.0},
+    {"environment_seed": 22, "optimizer_seed": 1022, "move_severity": 1.0},
+    {"environment_seed": 33, "optimizer_seed": 1033, "move_severity": 3.0},
+    {"environment_seed": 44, "optimizer_seed": 1044, "move_severity": 3.0}
+  ]
+}

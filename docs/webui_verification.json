@@ -1,0 +1,42 @@
+{
+  "command": [
+    "/workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/.venv/bin/python",
+    "-u",
+    "-m",
+    "shinka.webui.visualization",
+    "/workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution",
+    "--port",
+    "8889"
+  ],
+  "database": "/workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution/20260915T094647.219057Z-seed/programs.sqlite",
+  "browser_visual_verification": false,
+  "method": "HTTP requests from same execution process namespace",
+  "status": "passed",
+  "list_databases_response": [
+    {
+      "path": "20260915T094509.711861Z-seed/programs.sqlite",
+      "name": "20260915T094509.711861Z-seed",
+      "task": "20260915T094509.711861Z-seed",
+      "actual_path": "20260915T094509.711861Z-seed/programs.sqlite"
+    },
+    {
+      "path": "20260915T094647.219057Z-seed/programs.sqlite",
+      "name": "20260915T094647.219057Z-seed",
+      "task": "20260915T094647.219057Z-seed",
+      "actual_path": "20260915T094647.219057Z-seed/programs.sqlite"
+    }
+  ],
+  "get_programs_response_type": "list",
+  "program_count": 2,
+  "scores": [
+    0.26489523924021363,
+    0.26489523924021363
+  ],
+  "correct_values": [
+    1,
+    1
+  ],
+  "verification_server_stopped": true,
+  "server_exit_code": -15,
+  "server_log_tail": " Search root directory: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution\n\n[*] Serving http://0.0.0.0:8889  (Ctrl+C to stop)\n\n[SERVER] Received GET request for: /list_databases\n[SERVER] Received request for database list, searching in: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution\n[SERVER] Scanning for .db files in: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution\n[SERVER] Found DB: 20260915T094509.711861Z-seed/programs.sqlite (task: '20260915T094509.711861Z-seed', result: '20260915T094509.711861Z-seed')\n[SERVER] Found DB: 20260915T094647.219057Z-seed/programs.sqlite (task: '20260915T094647.219057Z-seed', result: '20260915T094647.219057Z-seed')\n[SERVER] Sending 2 databases:\n  [0] task='20260915T094509.711861Z-seed', result='20260915T094509.711861Z-seed'\n  [1] task='20260915T094647.219057Z-seed', result='20260915T094647.219057Z-seed'\n\n[SERVER] \"GET /list_databases HTTP/1.1\" 200 -\n[SERVER] Served DB list with 2 entries, sorted by date.\n\n[SERVER] Received GET request for: /get_programs?db_path=%2Fworkspace%2Fscratch%2F3af34c10a1e1%2Fshinka-adaptive-swarms%2Fresults%2Fevolution%2F20260915T094647.219057Z-seed%2Fprograms.sqlite\n[SERVER] Fetching programs from DB: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution/20260915T094647.219057Z-seed/programs.sqlite\n[SERVER] Absolute DB path: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution/20260915T094647.219057Z-seed/programs.sqlite (from /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution/20260915T094647.219057Z-seed/programs.sqlite)\n\n[SERVER] \"GET /get_programs?db_path=%2Fworkspace%2Fscratch%2F3af34c10a1e1%2Fshinka-adaptive-swarms%2Fresults%2Fevolution%2F20260915T094647.219057Z-seed%2Fprograms.sqlite HTTP/1.1\" 200 -\n[SERVER] Successfully served 2 programs from /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/evolution/20260915T094647.219057Z-seed/programs.sqlite (attempt 1)\n"
+}

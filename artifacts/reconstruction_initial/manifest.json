@@ -1,0 +1,40 @@
+{
+  "study": "book_mpsO_5neutral_reconstruction_v1",
+  "signature": "f2e47967235f9bdb21fdff2b0816d487c203c18de7755185bff9193e58482d8c",
+  "config": {
+    "dimension": 5,
+    "npeaks": 10,
+    "period": 5000,
+    "move_severity": 1.0,
+    "correlation": 0.0,
+    "budget": 50000,
+    "particles_per_swarm": 5,
+    "nexcess": 1,
+    "trace_interval": 500,
+    "snapshot_interval": 0
+  },
+  "cases": [
+    {
+      "environment_seed": 101,
+      "optimizer_seed": 1101
+    },
+    {
+      "environment_seed": 202,
+      "optimizer_seed": 1202
+    },
+    {
+      "environment_seed": 303,
+      "optimizer_seed": 1303
+    }
+  ],
+  "policy": "baseline",
+  "source_revision": "uncommitted-initial-build",
+  "python": "3.12.14",
+  "status": "completed",
+  "simulator_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4"
+  },
+  "provenance_note": "Source hashes recorded after this run, during the same initial build; numerical simulator and policy unchanged."
+}

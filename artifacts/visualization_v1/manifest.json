@@ -1,0 +1,32 @@
+{
+  "study": "illustrative_2d_baseline_v1",
+  "signature": "72f3b952359c3cfc8e3b87f1a45dbbf014c35405bdf6fab3dbbe6dffd14acc6a",
+  "config": {
+    "dimension": 2,
+    "npeaks": 5,
+    "period": 1500,
+    "move_severity": 3.0,
+    "correlation": 0.0,
+    "budget": 9000,
+    "particles_per_swarm": 5,
+    "nexcess": 1,
+    "trace_interval": 100,
+    "snapshot_interval": 100
+  },
+  "cases": [
+    {
+      "environment_seed": 71,
+      "optimizer_seed": 1071
+    }
+  ],
+  "policy": "baseline",
+  "source_revision": "uncommitted-initial-build",
+  "python": "3.12.14",
+  "status": "completed",
+  "simulator_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4"
+  },
+  "provenance_note": "Source hashes recorded after this run, during the same initial build; numerical simulator and policy unchanged."
+}
