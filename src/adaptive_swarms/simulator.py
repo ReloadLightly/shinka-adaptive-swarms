@@ -115,13 +115,18 @@ def _validated_config(config: dict) -> dict:
 
 
 def run_case(config: dict, policy: Callable | None = None,
-             progress: Callable | None = None) -> dict:
+             progress: Callable | None = None, *, retention_priority: Callable | None = None) -> dict:
     """Execute one case and return JSONable measurements and behavioral traces.
 
     ``policy(observation)`` is called only after change is detected by an
     ordinary, counted reevaluation. It returns radius_scale, fraction, memory
     and reset_velocity; omitted fields use the book policy defaults. Candidate
     observations contain no true peak positions, optimum, error or RNG seed.
+
+    The optional particle-retention hook scores immutable refreshed snapshots
+    after all five memory queries and before movement. It requires the fixed
+    four-particle, radius-1.25, reevaluate/retain response. Omitted hooks preserve
+    the original numerical path, including its optimizer RNG consumption.
 
     ``progress(event_dict)`` receives run_started, environment_change, progress,
     and run_completed events. Exceptions from policies/callbacks are propagated.
@@ -132,6 +137,13 @@ def run_case(config: dict, policy: Callable | None = None,
     choose_response = policy or book_response
     rng = random.Random(cfg["optimizer_seed"])
     env_rng = random.Random(cfg["environment_seed"])
+    if retention_priority is not None:
+        if not callable(retention_priority) or cfg["particles_per_swarm"] != 5:
+            raise ValueError("Retention hook requires a callable priority and five particles")
+        from .particle_retention import (retention_snapshot, select_retained_particle,
+                                         selection_rng_for_seed)
+        selection_rng = selection_rng_for_seed(cfg["optimizer_seed"])
+    retention_example_initial_done = retention_example_late_done = False
     scenario = dict(_MPB.SCENARIO_2)
     scenario.update(npeaks=cfg["npeaks"], period=cfg["period"],
                     move_severity=cfg["move_severity"], lambda_=cfg["correlation"],
@@ -236,6 +248,7 @@ def run_case(config: dict, policy: Callable | None = None,
             update_attractors(swarm, particle, evaluate(particle.position, kind))
 
     def update_swarm(swarm):
+        nonlocal retention_example_initial_done, retention_example_late_done
         response_entry = None
         selected = set()
         decision = None
@@ -264,8 +277,12 @@ def run_case(config: dict, policy: Callable | None = None,
                     if not math.isfinite(radius):
                         raise ValueError("Response radius overflow")
                     nselected = math.ceil(decision["fraction"] * len(swarm.particles))
-                    selected = set(range(len(swarm.particles))) if nselected == len(swarm.particles) else set(
-                        rng.sample(range(len(swarm.particles)), nselected))
+                    if retention_priority is None:
+                        selected = set(range(len(swarm.particles))) if nselected == len(swarm.particles) else set(
+                            rng.sample(range(len(swarm.particles)), nselected))
+                    elif (nselected != 4 or decision["radius_scale"] != 1.25
+                          or decision["memory"] != "reevaluate" or decision["reset_velocity"]):
+                        raise ValueError("Retention hook requires count four, radius 1.25, memory reevaluation and retained velocity")
                     response_entry = {"swarm_id": swarm.identifier,
                                       "detected_at_evaluation": landscape.nevals,
                                       "observation": observation, "decision": decision,
@@ -282,6 +299,31 @@ def run_case(config: dict, policy: Callable | None = None,
                         best_particle = max(swarm.particles, key=lambda p: p.best_fitness
                                             if p.best_fitness is not None else -math.inf)
                         swarm.best, swarm.best_fitness = list(best_particle.best), best_particle.best_fitness
+                        if retention_priority is not None:
+                            try:
+                                features, shared = retention_snapshot(swarm.particles, swarm.best, observation)
+                                retention = select_retained_particle(retention_priority, features, shared, selection_rng)
+                            except Exception as exc:
+                                exc.objective_queries = landscape.nevals
+                                exc.evaluation_counts = dict(counts)
+                                raise
+                            retained_index = retention["selected_index"]
+                            selected = set(range(5)) - {retained_index}
+                            response_entry["relocated_indices"] = sorted(selected)
+                            retained = swarm.particles[retained_index]
+                            retention.update(decided_at_evaluation=landscape.nevals,
+                                selected_before={"position": list(retained.position), "velocity": list(retained.velocity)},
+                                selected_after=None, selected_update_reached=False, selected_objective_queried=False)
+                            criteria = []
+                            if not retention_example_initial_done:
+                                criteria.append("first_completed_response")
+                            if landscape.nevals >= 50000 and not retention_example_late_done:
+                                criteria.append("first_completed_response_at_or_after_50000_queries")
+                            if criteria:
+                                retention["example"] = {"criteria": criteria,
+                                    "particles_before": [{"position": list(p.position), "velocity": list(p.velocity)}
+                                                         for p in swarm.particles], "particles_after": None}
+                            response_entry["retention"] = retention
                     else:
                         for particle in swarm.particles:
                             particle.best = particle.best_fitness = None
@@ -289,6 +331,9 @@ def run_case(config: dict, policy: Callable | None = None,
 
             swarm.recent_improvement = 0.0
             for index, particle in enumerate(swarm.particles):
+                if (response_entry is not None and "retention" in response_entry
+                        and index == response_entry["retention"]["selected_index"]):
+                    response_entry["retention"]["selected_update_reached"] = True
                 if index in selected:
                     center = (swarm.best if swarm.best is not None
                               else response_entry["center_before_refresh"])
@@ -302,12 +347,29 @@ def run_case(config: dict, policy: Callable | None = None,
                         particle.velocity[dim] = cfg["chi"] * (particle.velocity[dim] + attraction)
                         particle.position[dim] += particle.velocity[dim]
                 update_attractors(swarm, particle, evaluate(particle.position, "particle"))
+                if (response_entry is not None and "retention" in response_entry
+                        and index == response_entry["retention"]["selected_index"]):
+                    response_entry["retention"]["selected_objective_queried"] = True
             if response_entry is not None:
                 response_entry["completed"] = True
+                if "retention" in response_entry and "example" in response_entry["retention"]:
+                    criteria = response_entry["retention"]["example"]["criteria"]
+                    retention_example_initial_done |= "first_completed_response" in criteria
+                    retention_example_late_done |= "first_completed_response_at_or_after_50000_queries" in criteria
         finally:
             if response_entry is not None:
                 response_entry["finished_at_evaluation"] = landscape.nevals
                 response_entry["evaluations_after_detection"] = landscape.nevals - response_entry["detected_at_evaluation"]
+                if "retention" in response_entry:
+                    retention = response_entry["retention"]
+                    retained = swarm.particles[retention["selected_index"]]
+                    retention["selected_after"] = {"position": list(retained.position), "velocity": list(retained.velocity)}
+                    if "example" in retention:
+                        if response_entry["completed"]:
+                            retention["example"]["particles_after"] = [
+                                {"position": list(p.position), "velocity": list(p.velocity)} for p in swarm.particles]
+                        else:
+                            del retention["example"]
 
     variant = f"book_mpso_{cfg['particles_per_swarm']}_plus_0"
     emit("run_started", config=cfg, baseline=variant, budget=cfg["budget"])

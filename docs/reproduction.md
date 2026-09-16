@@ -132,6 +132,27 @@ Invalid keys or values fail explicitly. Candidate policies may implement
 conditions and formulas over the observations; research interpretation must
 describe the behavior of the evolved program, not only its fitness value.
 
+## Optional particle-retention experiment
+
+The separate `particle_retention_v1` task adds an optional `retention_priority`
+keyword to `run_case`. Calls without that hook retain the historical numerical
+path and RNG consumption, checked against the preceding published simulator.
+After all existing counted personal-best reevaluations, the hook scores one
+immutable snapshot of all five particles and exempts one from relocation. That
+particle continues ordinary PSO movement; all five memories survive. The other
+four relocate at radius multiplier 1.25 with velocities retained. Movement order,
+asynchronous attractor updates and objective accounting remain unchanged.
+
+The [task contract](../tasks/particle_retention_v1/task_prompt.txt) defines refreshed
+personal-best quality/rank, normalized position and motion features, zero-distance
+alignment and the separate selection RNG. No index, hidden optimum, error or new
+objective query supplies a feature. Every selection draws the same kind of random
+permutation whether tied or not. Its random reference is therefore newly evaluated,
+not substituted from historical trajectories. The benchmark still supplies the
+environmental scale through `default_radius = 0.5 * move_severity`.
+See the [prospective protocol](particle_retention_v1_protocol.md); the eight-case
+suite is development data, with no automatic fresh validation campaign.
+
 ## Measurement, reproducibility and records
 
 `run_case(config, policy=None, progress=None)` returns JSONable configuration,

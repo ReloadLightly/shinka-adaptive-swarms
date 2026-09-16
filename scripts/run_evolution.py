@@ -35,9 +35,10 @@ TASK_VERSIONS = {
     "relocation_allocation_v2": "relocation_allocation_v2_score_reciprocal",
     "joint_relocation_v3": "joint_relocation_v3_score_reciprocal",
     "radius_velocity_sprint": "fixed_four_radius_velocity_sprint_score_reciprocal_v1",
+    "particle_retention_v1": "particle_retention_v1_reciprocal_v1",
 }
-TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py"}
-TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md"}
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
