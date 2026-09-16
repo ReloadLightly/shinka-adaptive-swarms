@@ -26,3 +26,12 @@ fresh validation automatically follows this bounded search.
 
 A landscape change can occur during sequential memory refresh. Features report
 the latest actual counted reevaluations, not oracle-synchronized current fitnesses.
+
+# Measured reference feedback before native descendants
+
+On these same eight development cases, random mean offline error is 3.722188;
+the strongest-refreshed-personal-best heuristic mean is 3.901685.
+Heuristic minus random is +0.179497, paired SD 0.575626;
+2/8 cases favor the heuristic. Individual paired effects in fixed case order:
+[0.08711296308851235, 0.26234381766249326, -0.8640523282206134, 1.005068018856809, 0.19099570316085135, -0.10475598318152501, 0.8342248521209767, 0.025036589168600187]. These are development observations, not fresh validation.
+Native initial feedback supplies the complete paired outcomes and measured behavior.
