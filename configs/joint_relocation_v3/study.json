@@ -1,6 +1,6 @@
 {
   "study": "joint_relocation_v3",
-  "status": "proposed_not_run",
+  "status": "prospective_ready",
   "protocol": "docs/followup_joint_relocation_v3.md",
   "task": "joint_relocation_v3",
   "engine_profile": "configs/shinka/research_v3.json",
@@ -43,6 +43,8 @@
   "bootstrap_resamples": 20000,
   "analysis_seed": 2026091603,
   "final_seed_generation": "after_frozen_selection_excluding_all_previous_rng_seed_values",
-  "comparison_controller_status": "not_implemented",
-  "model_calls_performed": 0
+  "comparison_controller_status": "implemented",
+  "model_calls_performed": 0,
+  "resolved_engine": "configs/joint_relocation_v3/resolved_engine.json",
+  "execution_settings": "docs/v3_execution_settings.md"
 }

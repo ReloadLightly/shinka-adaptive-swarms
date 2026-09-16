@@ -1,0 +1,107 @@
+{
+  "declared_at": "2026-09-16T03:23:39.458614+00:00",
+  "sources": {
+    "baseline": "def choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 1.0}\n",
+    "conditional": "def choose_relocation(observation):\n    count = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] > observation[\"recent_improvement\"]:\n        count = 5\n        radius = 2.0\n    return {\"count\": count, \"radius_scale\": radius}\n",
+    "identical": "def choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 1.0}\n",
+    "whitespace": "def choose_relocation( observation ):\n\n    return { \"count\" : 5, \"radius_scale\" : 1.0 }\n",
+    "comment": "# Relocate every particle at the baseline radius.\ndef choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 1.0}\n",
+    "docstring": "def choose_relocation(observation):\n    \"\"\"Choose the fixed baseline relocation response.\"\"\"\n    return {\"count\": 5, \"radius_scale\": 1.0}\n",
+    "argument_rename": "def choose_relocation(state):\n    return {\"count\": 5, \"radius_scale\": 1.0}\n",
+    "dictionary_order": "def choose_relocation(observation):\n    return {\"radius_scale\": 1.0, \"count\": 5}\n",
+    "local_assignment": "def choose_relocation(observation):\n    answer = {\"count\": 5, \"radius_scale\": 1.0}\n    return answer\n",
+    "count_four": "def choose_relocation(observation):\n    return {\"count\": 4, \"radius_scale\": 1.0}\n",
+    "count_three": "def choose_relocation(observation):\n    return {\"count\": 3, \"radius_scale\": 1.0}\n",
+    "count_zero": "def choose_relocation(observation):\n    return {\"count\": 0, \"radius_scale\": 1.0}\n",
+    "radius_half": "def choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 0.5}\n",
+    "radius_two": "def choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 2.0}\n",
+    "radius_four": "def choose_relocation(observation):\n    return {\"count\": 5, \"radius_scale\": 4.0}\n",
+    "conditional_comment": "# Observed deterioration can increase exploration.\ndef choose_relocation(observation):\n    count = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] > observation[\"recent_improvement\"]:\n        count = 5\n        radius = 2.0\n    return {\"count\": count, \"radius_scale\": radius}\n",
+    "conditional_rename": "def choose_relocation(observation):\n    allocation = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] > observation[\"recent_improvement\"]:\n        allocation = 5\n        radius = 2.0\n    return {\"count\": allocation, \"radius_scale\": radius}\n",
+    "conditional_count_four": "def choose_relocation(observation):\n    count = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] > observation[\"recent_improvement\"]:\n        count = 4\n        radius = 2.0\n    return {\"count\": count, \"radius_scale\": radius}\n",
+    "conditional_radius_four": "def choose_relocation(observation):\n    count = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] > observation[\"recent_improvement\"]:\n        count = 5\n        radius = 4.0\n    return {\"count\": count, \"radius_scale\": radius}\n",
+    "conditional_reversed_sign": "def choose_relocation(observation):\n    count = 3\n    radius = 1.0\n    if observation[\"fitness_drop\"] < observation[\"recent_improvement\"]:\n        count = 5\n        radius = 2.0\n    return {\"count\": count, \"radius_scale\": radius}\n"
+  },
+  "cosmetic_pairs": [
+    [
+      "baseline",
+      "identical"
+    ],
+    [
+      "baseline",
+      "whitespace"
+    ],
+    [
+      "baseline",
+      "comment"
+    ],
+    [
+      "baseline",
+      "docstring"
+    ],
+    [
+      "baseline",
+      "argument_rename"
+    ],
+    [
+      "baseline",
+      "dictionary_order"
+    ],
+    [
+      "baseline",
+      "local_assignment"
+    ],
+    [
+      "conditional",
+      "conditional_comment"
+    ],
+    [
+      "conditional",
+      "conditional_rename"
+    ]
+  ],
+  "meaningful_pairs": [
+    [
+      "baseline",
+      "count_four"
+    ],
+    [
+      "baseline",
+      "count_three"
+    ],
+    [
+      "baseline",
+      "count_zero"
+    ],
+    [
+      "baseline",
+      "radius_half"
+    ],
+    [
+      "baseline",
+      "radius_two"
+    ],
+    [
+      "baseline",
+      "radius_four"
+    ],
+    [
+      "baseline",
+      "conditional"
+    ],
+    [
+      "conditional",
+      "conditional_count_four"
+    ],
+    [
+      "conditional",
+      "conditional_radius_four"
+    ],
+    [
+      "conditional",
+      "conditional_reversed_sign"
+    ]
+  ],
+  "threshold_rule": "If max meaningful similarity < min cosmetic similarity, use their midpoint. Otherwise use min cosmetic similarity minus 0.000001, clipped to [0,1], forwarding every listed cosmetic duplicate to the native LLM judge; report overlapping meaningful changes.",
+  "scope": "Authored development code only; no simulator runs, benchmark cases or Codex inference"
+}

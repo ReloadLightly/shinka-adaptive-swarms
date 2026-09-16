@@ -24,7 +24,7 @@ from adaptive_swarms.logging import EventLogger, atomic_json
 from adaptive_swarms.execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 from adaptive_swarms.storage_runner import ResumeRunnerMixin
 from adaptive_swarms.engine_config import resolve_engine, native_settings, feature_state, check_embedding_endpoint
-from adaptive_swarms.engine_runtime import install_engine_observers
+from adaptive_swarms.engine_runtime import install_engine_observers, install_sampling_observer
 from adaptive_swarms.engine_progress import terminal_failure_generations
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
@@ -267,6 +267,10 @@ def run_native(args, run_dir: Path, log):
 
     class VisibleRunner(ResumeRunnerMixin, NativeStorageMixin, ShinkaEvolveRunner):
         # These wrappers add observability only; upstream owns search and persistence.
+        async def _setup_async(self):
+            await super()._setup_async()
+            install_sampling_observer(self, log)
+
         async def _setup_initial_program(self, code):
             if args.resume and await self.async_db.get_total_program_count_async() > 0:
                 # Pinned upstream recognizes resumes only at last_iteration > 0.
@@ -336,7 +340,7 @@ def run_native(args, run_dir: Path, log):
         verbose=True,
     )
     runner.configure_resume(log)
-    install_engine_observers(runner, log, run_dir)
+    remove_observers = install_engine_observers(runner, log, run_dir)
     log.event("engine_initialized", message="Native engine components initialized; subsequent events establish actual use",
               meta_created=runner.meta_summarizer is not None, novelty_created=runner.novelty_judge is not None,
               embedding_created=runner.embedding_client is not None, resolved_native_config=str(config_path))
@@ -346,6 +350,7 @@ def run_native(args, run_dir: Path, log):
             runner.run()
     finally:
         log.on_io_error = None
+        remove_observers()
 
 
 def main() -> int:
@@ -362,7 +367,9 @@ def main() -> int:
     parser.add_argument("--search-seed", type=int, default=None, help="Seed Python/NumPy native search sampling on a new run; resume retains provenance without reseeding")
     parser.add_argument("--suite", type=Path, default=None, help="Defaults to configs/search.json, or the saved suite when resuming")
     parser.add_argument("--results-root", type=Path, default=None)
-    parser.add_argument("--resume", type=Path, help="Resume an existing native run directory, preserving completed records")
+    destinations = parser.add_mutually_exclusive_group()
+    destinations.add_argument("--resume", type=Path, help="Resume an existing native run directory, preserving completed records")
+    destinations.add_argument("--run-dir", type=Path, help="Predeclared new run identity; must be absent or empty. Use --resume for saved work.")
     parser.add_argument("--heartbeat-seconds", type=float, default=20)
     parser.add_argument("--evaluation-timeout", default="01:00:00", help="Native per-candidate evaluator timeout HH:MM:SS")
     parser.add_argument("--proposal-timeout-seconds", type=float, default=3600)
@@ -402,7 +409,11 @@ def main() -> int:
                           "features": engine_features, "model_calls": 0}, indent=2), flush=True)
         return 0
     default_results = ROOT / ("results/evolution" if args.task == "adaptive_swarm" else f"results/{args.task}/evolution")
-    args.results_root = (args.resume.parent if args.resume else args.results_root or default_results).resolve()
+    if args.run_dir:
+        args.run_dir = args.run_dir.resolve()
+        if args.results_root and args.results_root.resolve() != args.run_dir.parent:
+            parser.error("--results-root must be the parent of --run-dir.")
+    args.results_root = (args.resume.parent if args.resume else args.run_dir.parent if args.run_dir else args.results_root or default_results).resolve()
     default_suite = ROOT / ("configs/search.json" if args.task == "adaptive_swarm" else f"configs/{args.task}/search.json")
     args.suite = (args.suite or (args.resume / "search-suite.json" if args.resume else default_suite)).resolve()
     if not args.suite.is_file():
@@ -419,9 +430,11 @@ def main() -> int:
     os.environ["ADAPTIVE_SWARMS_PROJECT_ROOT"] = str(ROOT)
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-    run_dir = args.resume or (args.results_root / (stamp + ("-seed" if args.seed_only else "-search")))
+    run_dir = args.resume or args.run_dir or (args.results_root / (stamp + ("-seed" if args.seed_only else "-search")))
     target = 1 if args.seed_only else args.generations
     try:
+        if not args.resume and run_dir.exists() and (not run_dir.is_dir() or any(run_dir.iterdir())):
+            parser.error("New run directory contains saved work; use --resume instead of overwriting it.")
         with exclusive_controller(args.results_root), EventLogger(run_dir, heartbeat_seconds=args.heartbeat_seconds) as log:
             log.set_activity("checking native runtime and subscription route")
             report = inspect_runtime(args.model, args.effort, args.seed_only)
@@ -441,6 +454,12 @@ def main() -> int:
             manifest.setdefault("engine_config", args.engine_config)
             manifest.setdefault("search_seed", args.search_seed)
             active["engine_features"] = engine_features
+            active["execution_support_sha256"] = {
+                str(path.relative_to(ROOT)): file_hash(path)
+                for path in [Path(__file__), ROOT / "scripts/check_runtime.py",
+                             *[ROOT / "src/adaptive_swarms" / name for name in
+                               ("engine_config.py", "engine_runtime.py", "engine_progress.py", "storage_runner.py", "native_storage.py")]]
+            }
             active["search_randomness"] = {"search_seed": args.search_seed,
                                           "seed_applied": args.search_seed is not None and not bool(args.resume),
                                           "resume_rng_state_restored": False,

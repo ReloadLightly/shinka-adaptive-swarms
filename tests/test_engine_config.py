@@ -11,7 +11,7 @@ import pytest
 from adaptive_swarms.engine_config import (
     build_engine, check_embedding_endpoint, feature_state, native_settings, resolve_engine,
 )
-from adaptive_swarms.engine_runtime import install_engine_observers
+from adaptive_swarms.engine_runtime import install_engine_observers, install_sampling_observer
 from adaptive_swarms.engine_progress import terminal_failure_generations
 from adaptive_swarms.storage_runner import ResumeRunnerMixin
 from adaptive_swarms.logging import EventLogger
@@ -169,8 +169,9 @@ def test_missing_novelty_response_is_logged_without_changing_native_fallback(tmp
                              novelty_judge=SimpleNamespace(async_llm_client=client,
                                  assess_novelty_with_rejection_sampling_async=client.query))
     with EventLogger(tmp_path, heartbeat_seconds=20) as log:
-        install_engine_observers(runner, log, tmp_path)
+        cleanup = install_engine_observers(runner, log, tmp_path)
         assert asyncio.run(client.query(msg="candidate code", system_msg="novelty instructions")) is None
+        cleanup()
     receipt = json.loads(next((tmp_path / "engine_calls").glob("*.json")).read_text())
     assert receipt["role"] == "novelty" and receipt["valid_responses"] == 0
     assert receipt["system_msg"] == "novelty instructions"
@@ -187,8 +188,9 @@ def test_empty_embedding_preserves_native_behavior_with_explicit_degradation(tmp
     runner = SimpleNamespace(llm=FakeClient(), meta_summarizer=None, novelty_judge=None,
                              embedding_client=object(), _get_code_embedding_async=embedding, _fail_infrastructure=fail)
     with EventLogger(tmp_path, heartbeat_seconds=20) as log:
-        install_engine_observers(runner, log, tmp_path)
+        cleanup = install_engine_observers(runner, log, tmp_path)
         assert asyncio.run(runner._get_code_embedding_async("initial.py")) == ([], 0.0)
+        cleanup()
     events = [json.loads(line) for line in (tmp_path / "events.jsonl").read_text().splitlines()]
     assert any(event["event"] == "engine_feature_degraded" and event["role"] == "embedding" for event in events)
 
@@ -256,3 +258,60 @@ def test_resume_assignment_skips_retained_terminal_slots():
     runner.assigned = []
     asyncio.run(runner._start_proposals(2))
     assert runner.assigned == [1, 4]
+
+
+def test_predeclared_directory_never_overwrites_saved_work(tmp_path, monkeypatch):
+    launcher = load_launcher()
+    evidence = tmp_path / "saved.txt"
+    evidence.write_text("preserved evidence")
+    monkeypatch.setattr(launcher, "inspect_runtime", lambda *a: pytest.fail("No inference/runtime preflight"))
+    monkeypatch.setattr("sys.argv", ["run_evolution.py", "--task", "joint_relocation_v3", "--run-dir", str(tmp_path)])
+    with pytest.raises(SystemExit) as exc:
+        launcher.main()
+    assert exc.value.code == 2
+    assert evidence.read_text() == "preserved evidence"
+    assert not (tmp_path / "run.log").exists()
+
+
+def test_native_budget_stops_with_terminal_failure_without_filling_extra_slot(tmp_path):
+    from shinka.core.async_runner import ShinkaEvolveRunner
+    runner = ShinkaEvolveRunner.__new__(ShinkaEvolveRunner)
+    runner.should_stop = asyncio.Event()
+    runner.slot_available = asyncio.Event()
+    runner.finalization_complete = asyncio.Event()
+    runner.completed_generations = 2  # Evaluated programs remain distinct from slots.
+    runner.next_generation_to_submit = 3
+    runner.evo_config = SimpleNamespace(num_generations=3)
+    runner._is_system_stuck = lambda: False
+    runner._get_in_flight_work_count = lambda: 0
+    async def persisted():
+        return [0, 2]
+    runner.async_db = SimpleNamespace(get_persisted_generation_ids_async=persisted)
+    events = []
+    async def event(**kwargs):
+        events.append(kwargs)
+    async def forbidden(*args):
+        pytest.fail("A failed terminal slot must not cause an extra proposal")
+    runner._record_generation_event = event
+    runner._start_proposals = forbidden
+    asyncio.run(runner._proposal_coordinator_task())
+    assert runner.should_stop.is_set() and runner.finalization_complete.is_set()
+    assert events[0]["status"] == "stopped_generation_budget_exhausted"
+    assert runner.completed_generations == 2 and runner.next_generation_to_submit == 3
+
+
+def test_sampling_receipt_preserves_native_parent_and_context(tmp_path):
+    parent = SimpleNamespace(id="parent", generation=7)
+    returned = (parent, [SimpleNamespace(id="archive")], [SimpleNamespace(id="top")], False)
+    calls = []
+    async def native(**kwargs):
+        calls.append(kwargs)
+        return returned
+    runner = SimpleNamespace(async_db=SimpleNamespace(sample_with_fix_mode_async=native))
+    with EventLogger(tmp_path) as log:
+        install_sampling_observer(runner, log)
+        assert asyncio.run(runner.async_db.sample_with_fix_mode_async(target_generation=9, novelty_attempt=2)) is returned
+    assert len(calls) == 1
+    receipt = json.loads((tmp_path / "events.jsonl").read_text().splitlines()[0])
+    assert receipt["parent_id"] == "parent" and receipt["archive_inspiration_ids"] == ["archive"]
+    assert receipt["top_k_inspiration_ids"] == ["top"] and receipt["generation"] == 9

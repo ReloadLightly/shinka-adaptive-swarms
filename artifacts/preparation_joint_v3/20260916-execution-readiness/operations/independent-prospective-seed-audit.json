@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-09-16T03:35:05.004013+00:00",
+  "status": "passed",
+  "auditor": "independent v3 review agent",
+  "scope": "Recursive JSON/GZ under configs, results and artifacts; exclude only exact proposed search and validation suite paths; reserve all observed environment and optimizer numeric values across both roles",
+  "json_files_inspected": 2153,
+  "historical_numeric_seed_values": 192,
+  "proposed_environment_optimizer_values": 96,
+  "unique_proposed_values": 96,
+  "collisions": [],
+  "replacements": [],
+  "suite_sha256": {
+    "configs/joint_relocation_v3/search.json": "561edead300b2cf6f6c17cb159080c6256f62df077341bfb95098704ec5d70ba",
+    "configs/joint_relocation_v3/validation.json": "840b7c21c50d345cb9daafb3ae00a90c34dd7675c7c2f05aba786507f93be42b"
+  },
+  "auditor_source_sha256": "8bb7d0f10fe2232f8519fde8fcd1d5aac509d941d63d4fd410b91eab8bf50374",
+  "inventory": "independent-prospective-seed-inventory.json.gz",
+  "inventory_sha256": "d030b0c3919daeba332e07bb284929981a59ac7464b2ac046bef7179c2b0606d",
+  "candidate_or_objective_calls": 0,
+  "final_rule": "Fresh final seeds generated only after selection/control/analysis freeze with new inventory across all then-existing evidence"
+}

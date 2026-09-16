@@ -6,14 +6,50 @@ They record logical requests (not hidden provider retry or token-stream counts).
 from __future__ import annotations
 
 import math
+import logging
 import time
 import uuid
+from datetime import datetime, timezone
 from pathlib import Path
+from typing import Callable
 
 from .logging import atomic_json
 
 
-def install_engine_observers(runner, log, run_dir: Path) -> None:
+def install_sampling_observer(runner, log) -> None:
+    """Record the exact native sampling result without drawing additional RNGs."""
+    database = runner.async_db
+    original = database.sample_with_fix_mode_async
+
+    async def sample(*args, **kwargs):
+        result = await original(*args, **kwargs)
+        parent, archive, top, needs_fix = result
+        log.event("native_sampling", message="Native parent and inspiration selection completed",
+                  generation=kwargs.get("target_generation"),
+                  novelty_attempt=kwargs.get("novelty_attempt"),
+                  resample_attempt=kwargs.get("resample_attempt"),
+                  parent_id=getattr(parent, "id", None),
+                  parent_generation=getattr(parent, "generation", None),
+                  archive_inspiration_ids=[p.id for p in archive],
+                  top_k_inspiration_ids=[p.id for p in top], needs_fix=needs_fix)
+        return result
+
+    database.sample_with_fix_mode_async = sample
+
+
+def install_engine_observers(runner, log, run_dir: Path) -> Callable[[], None]:
+    class MigrationLogBridge(logging.Handler):
+        def emit(self, record):
+            message = record.getMessage()
+            if "migration" in message.lower() or "migrated" in message.lower():
+                log.event("native_migration_log", message=message,
+                          native_logger=record.name, level=record.levelname,
+                          evidence_scope="native message; exact transfers remain in database migration_history")
+
+    migration_logger = logging.getLogger("shinka.database.islands")
+    migration_bridge = MigrationLogBridge(level=logging.INFO)
+    migration_logger.addHandler(migration_bridge)
+
     def degraded(message, **details):
         log.event("engine_feature_degraded", message=message, native_fallback_preserved=True, **details)
 
@@ -30,8 +66,13 @@ def install_engine_observers(runner, log, run_dir: Path) -> None:
                     batch = method_name == "batch_kwargs_query"
                     requested = kwargs.get("num_samples", args[0] if args and batch else 1)
                     receipt = {"call_id": call_id, "role": role, "method": method_name,
+                               "started_at": datetime.now(timezone.utc).isoformat(),
                                "requested_logical_responses": requested,
                                "configured_models": list(client.model_names), "status": "started",
+                               "configured_client_settings": {key: getattr(client, key, None)
+                                                              for key in ("temperatures", "max_tokens", "reasoning_efforts")},
+                               "explicit_request_kwargs": kwargs.get("llm_kwargs", args[3] if not batch and len(args) > 3 else None),
+                               "effective_provider_effort": "unverified; configured/requested values are recorded separately",
                                "system_msg": kwargs.get("system_msg", args[2 if batch else 1] if len(args) > (2 if batch else 1) else None),
                                "msg": kwargs.get("msg", args[1 if batch else 0] if len(args) > (1 if batch else 0) else None),
                                "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown"}
@@ -43,7 +84,7 @@ def install_engine_observers(runner, log, run_dir: Path) -> None:
                     try:
                         result = await original(*args, **kwargs)
                     except Exception as exc:
-                        receipt.update(status="failed", error=f"{type(exc).__name__}: {exc}", elapsed_seconds=time.monotonic() - started)
+                        receipt.update(status="failed", finished_at=datetime.now(timezone.utc).isoformat(), error=f"{type(exc).__name__}: {exc}", elapsed_seconds=time.monotonic() - started)
                         atomic_json(path, receipt)
                         log.event("engine_role_call_failed", message=f"{role}: native request failed", call_id=call_id, role=role, error=receipt["error"])
                         if required:
@@ -51,7 +92,7 @@ def install_engine_observers(runner, log, run_dir: Path) -> None:
                         raise
                     responses = result if batch else [result]
                     valid = [response for response in responses or [] if response is not None and getattr(response, "content", None)]
-                    receipt.update(status="returned", elapsed_seconds=time.monotonic() - started,
+                    receipt.update(status="returned", finished_at=datetime.now(timezone.utc).isoformat(), elapsed_seconds=time.monotonic() - started,
                                    valid_responses=len(valid), responses=[{
                                        "model_reported_by_native_client": getattr(response, "model_name", None),
                                        "input_tokens": getattr(response, "input_tokens", None),
@@ -124,3 +165,5 @@ def install_engine_observers(runner, log, run_dir: Path) -> None:
             return vector, cost
 
         runner._get_code_embedding_async = code_embedding
+
+    return lambda: migration_logger.removeHandler(migration_bridge)
