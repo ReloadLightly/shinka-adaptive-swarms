@@ -1,0 +1,459 @@
+{
+  "created_at": "2026-09-16T18:58:17.153576+00:00",
+  "label": "1",
+  "scope": "Read-only native machinery snapshot; zero model or numerical executions. Live files can advance between reads; hashes describe each captured read.",
+  "status": "snapshot",
+  "run": "evolution/search_seed_650001",
+  "native": {
+    "run": "evolution/search_seed_650001",
+    "status": "preflight",
+    "started_at": "20260916T185631.207604Z",
+    "finished_at": null,
+    "original_evaluated_generation_ids": [
+      0
+    ],
+    "database_rows_including_copies": 1,
+    "database_row_identity_digest": "82829e166e80c8c314ba38ca06bbed9b5094a7cdb63ff2d2ce21d210416a8b9f",
+    "database_rows": [
+      {
+        "native_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+        "island_at_snapshot": 0,
+        "patch_type": "init",
+        "correct": true
+      }
+    ],
+    "model_requested": "gpt-6-astra",
+    "inner_effort_requested": "xhigh",
+    "inner_effort_effective_manifest": null,
+    "inner_effort_status_manifest": "requested; no model invocation performed",
+    "role_totals": {
+      "mutation": {
+        "native_wrapper_invocations": 1,
+        "requested_logical_responses": 1,
+        "usable_responses_returned": 1,
+        "status_counts": {
+          "returned": 1
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.452532,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 1,
+        "native_dispatch_status_counts": {
+          "returned": 1
+        }
+      },
+      "novelty": {
+        "native_wrapper_invocations": 1,
+        "requested_logical_responses": 1,
+        "usable_responses_returned": 1,
+        "status_counts": {
+          "returned": 1
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.05838,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 1,
+        "native_dispatch_status_counts": {
+          "returned": 1
+        }
+      },
+      "meta": {
+        "native_wrapper_invocations": 0,
+        "requested_logical_responses": 0,
+        "usable_responses_returned": 0,
+        "status_counts": {},
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0,
+        "native_reported_routes": [],
+        "initial_logical_responses": 0,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 0,
+        "native_dispatch_status_counts": {}
+      }
+    },
+    "role_receipts": [
+      {
+        "path": "evolution/search_seed_650001/engine_calls/mutation-6e17a1abfd7c48d09b9c6be46cae0896.json",
+        "call_id": "mutation-6e17a1abfd7c48d09b9c6be46cae0896",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T18:56:48.153030+00:00",
+        "finished_at": "2026-09-16T18:57:45.173993+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "e5c48c6ca82a7704c11804c06191b4b61ab19a78dbf356e6d714e1a9449b984e",
+        "message_sha256": "27c5846fedcbcd1f1a44fb8948048fcae95a201b2bf25013df9f42b0d7b8d356",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 28557,
+            "output_tokens": 1153,
+            "reported_api_cost": 0.452532
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T18:56:48.162643+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T18:57:45.157905+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 36,
+        "run_reserved_logical_responses_at_reservation": 1
+      },
+      {
+        "path": "evolution/search_seed_650001/engine_calls/novelty-a08f258ea6ed432986a45117b548d981.json",
+        "call_id": "novelty-a08f258ea6ed432986a45117b548d981",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T18:57:45.383787+00:00",
+        "finished_at": "2026-09-16T18:57:58.419812+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "2bc277a742dcf5d053b5a1731bb2c02d0215f38093e234d4d2e4f1f55fd2db11",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4002,
+            "output_tokens": 124,
+            "reported_api_cost": 0.05838
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T18:57:45.391828+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T18:57:58.409847+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 36,
+        "run_reserved_logical_responses_at_reservation": 2
+      }
+    ],
+    "event_receipt_coverage": {
+      "native_wrapper_starts_without_receipt": [],
+      "receipts_without_observed_start_event": []
+    },
+    "mutation_wrapper_counts_by_generation": {
+      "1": 1
+    },
+    "sampling_attempt_counts_by_generation": {
+      "1": 1
+    },
+    "retry_context_association": "Most recent native_sampling event before wrapper start; this sprint uses one proposal worker. Full saved prompt source/feedback checks verify context separately.",
+    "degradation_events": [],
+    "patch_types_original_evaluated_rows": {
+      "init": 1
+    },
+    "native_sampling": [
+      {
+        "time": "2026-09-16T18:56:48+00:00",
+        "elapsed_s": 16.94,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_650001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+                "full_source_present": true,
+                "feedback_sha256": "35d1a87654e22982874da0c1fc7abca356790ffec1ba7151880932aab9747fc7",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      }
+    ],
+    "novelty": {
+      "decision_count": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T18:57:58+00:00",
+          "elapsed_s": 82.74,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05838,
+          "novelty_explanation": "NOVEL: The neutral-particle count changes from 5 to 4. This is a meaningful hyperparameter change that can affect swarm behavior and optimization performance.",
+          "max_similarity": 0.9905349612236023,
+          "similarity_scores": [
+            0.9905349612236023
+          ]
+        }
+      ]
+    },
+    "native_embeddings": {
+      "starts": 2,
+      "completions": 2,
+      "dimensions": {
+        "768": 2
+      },
+      "events": [
+        {
+          "time": "2026-09-16T18:56:44+00:00",
+          "elapsed_s": 12.97,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T18:57:45+00:00",
+          "elapsed_s": 69.54,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T18:56:48+00:00",
+          "elapsed_s": 16.85,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T18:57:45+00:00",
+          "elapsed_s": 69.68,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_1/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta": {
+      "updates_started": [],
+      "updates_completed": [],
+      "updates_noop": [],
+      "saved_artifacts": [],
+      "mutation_prompt_injections": [
+        {
+          "receipt": "evolution/search_seed_650001/engine_calls/mutation-6e17a1abfd7c48d09b9c6be46cae0896.json",
+          "started_at": "2026-09-16T18:56:48.153030+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 1,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        }
+      ]
+    },
+    "migration_history": [],
+    "native_migration_logs": [],
+    "prompt_verification_summary": {
+      "saved_attempt_prompts": 1,
+      "full_frozen_task_context_present": 1,
+      "source_context_references": 1,
+      "full_sources_present": 1,
+      "full_feedback_present": 1,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "terminal_failed_slots": [],
+    "terminal_rejected_without_archive": [],
+    "archived_invalid_generations": [],
+    "terminal_slots": 1,
+    "evaluated_descendants": 0,
+    "valid_descendants": 0,
+    "generation_progress": [
+      {
+        "generation": 0,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 0,
+        "new_completed_objective_queries": 0,
+        "reuse_events": 8,
+        "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+        "mean_offline_error": 1.7445687815149309,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 8,
+            "mean_offline_error": 1.7445687815149309,
+            "best_tested_fixed_target": "target_5",
+            "target_3_mean_difference": -0.061771555757156815,
+            "target_3_difference_sd": 0.27599069133623494,
+            "target_5_mean_difference": 0.0,
+            "target_5_difference_sd": 0.0,
+            "target_7_mean_difference": -0.12708862618543582,
+            "target_7_difference_sd": 0.27816749035801897
+          }
+        ],
+        "subswarm_updates": 546693,
+        "population_policy_calls": 6602,
+        "particle_additions": 0,
+        "particle_removals": 0,
+        "feedback_sha256": "35d1a87654e22982874da0c1fc7abca356790ffec1ba7151880932aab9747fc7"
+      },
+      {
+        "generation": 1,
+        "checkpoint_status": "running",
+        "completed_cases": 1,
+        "completed_new_cases": 1,
+        "new_completed_objective_queries": 500000,
+        "reuse_events": 0,
+        "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+      }
+    ],
+    "evaluated_descendants_semantics": "All archived descendant outcomes including evaluator-rejected invalid source; valid_descendants counts only correct archived descendants."
+  },
+  "input_evidence": {
+    "evolution/search_seed_650001/manifest.json": {
+      "bytes_read": 9345,
+      "sha256_at_read": "61c6a4de96232e3bb58b74f48772e90a801ab2f66f4340cee2a2235ffbc2a82b"
+    },
+    "evolution/search_seed_650001/events.jsonl": {
+      "bytes_read": 79614,
+      "sha256_at_read": "41f0f8b5b6327ecf2d42097d22e9188d58347419f864252b799a9de4ae19891a"
+    },
+    "evolution/search_seed_650001/engine_calls/mutation-6e17a1abfd7c48d09b9c6be46cae0896.json": {
+      "bytes_read": 28901,
+      "sha256_at_read": "43618a1bda665cf0c5d07fed50345ea38e25924c2f0cf06344944d390c5bed6e"
+    },
+    "evolution/search_seed_650001/engine_calls/novelty-a08f258ea6ed432986a45117b548d981.json": {
+      "bytes_read": 3531,
+      "sha256_at_read": "261ceaed82c7dbd46df24d536b98be3e088399ad5666fa20d514f2654b674a9e"
+    },
+    "evolution/search_seed_650001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 25490,
+      "sha256_at_read": "b43c1b09771164c92b370a9e441e8b64ff06916f9cc5d6f1cd3893722f1a5648"
+    },
+    "evolution/search_seed_650001/headless_prompts/prompt_95d4827326d84405b8c478368bcc99a6.md": {
+      "bytes_read": 25490,
+      "sha256_at_read": "b43c1b09771164c92b370a9e441e8b64ff06916f9cc5d6f1cd3893722f1a5648"
+    },
+    "evolution/search_seed_650001/headless_prompts/prompt_ba5119ade60644778dc49927d381afaf.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "5ac565228350c2e1a511f776432dc9534f26a3755e4e1237ea6a8ddc1777dac1"
+    },
+    "evolution/search_seed_650001/task_snapshot/task_system_prompt.txt": {
+      "bytes_read": 8611,
+      "sha256_at_read": "5d6496a802596fd404706e79ffff45f957013e5f1c7bd438985f55f1a7748924"
+    },
+    "evolution/search_seed_650001/gen_0/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    "evolution/search_seed_650001/gen_1/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+    },
+    "evolution/search_seed_650001/gen_0/results/evaluation-checkpoint.json": {
+      "bytes_read": 33584,
+      "sha256_at_read": "16a0b984c8ed30d48af46b5c368bdb6e8849e0c854209d78714abadc7aaec8d8"
+    },
+    "evolution/search_seed_650001/gen_0/results/events.jsonl": {
+      "bytes_read": 5189,
+      "sha256_at_read": "71fb230dcc0c2bdf73e6113566bc6e4310c71a075964cefdf2c1a3add2f2f260"
+    },
+    "evolution/search_seed_650001/gen_0/results/metrics.json": {
+      "bytes_read": 43735,
+      "sha256_at_read": "45bc12182bdd80bb83da641eabfe6407d3eb05e965b5981a1c9caa7d52536b1c"
+    },
+    "evolution/search_seed_650001/gen_1/results/evaluation-checkpoint.json": {
+      "bytes_read": 10801,
+      "sha256_at_read": "c128b4022dbfdb935e2eff637007800c6971d19459b79bba3ff7f6cfa624538d"
+    },
+    "evolution/search_seed_650001/gen_1/results/events.jsonl": {
+      "bytes_read": 63050,
+      "sha256_at_read": "c25bb79a319ef93bcace9955ad2094a61deb601518c9ecf7d847364df23df60a"
+    }
+  },
+  "limitations": [],
+  "scripts": {
+    "scripts/audit_joint_machinery.py": "f93fe8abcb26b117ddb1251c2a6338e72737f91861e2a8446e2fe7adb5cfe95a",
+    "operations/audit_native_book.py": "84a06a7c583b01c88ec87ec3296ade36f135b8a3d7af62c05ec05867f86da45e"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "book-population-small-fixtures-v1",
+  "executions": [
+    {
+      "command": ".venv/bin/python -m pytest -q -s tests/test_book_population.py",
+      "passed": 9,
+      "failed": 0,
+      "objective_queries": 11878
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q tests/test_book_population.py tests/test_population_policy.py tests/test_population_evaluator.py tests/test_book_population_runner.py",
+      "passed": 54,
+      "failed": 0,
+      "objective_queries": 11878,
+      "purpose": "Focused final regression; non-engine tests use synthetic artifacts and add zero queries."
+    }
+  ],
+  "total_objective_queries": 23756
+}

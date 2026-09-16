@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "recorded_at": "2026-09-16T18:43:06.321839+00:00",
+  "command": ".venv/bin/python -m pytest -q -s tests/test_book_population.py",
+  "result": "9 passed in 0.33s; BOOK_POPULATION_SMALL_FIXTURE_OBJECTIVE_QUERIES=11878",
+  "small_fixture_objective_queries": 11878,
+  "attempts": 1,
+  "failed_attempts": 0,
+  "source_sha256": {
+    "src/adaptive_swarms/book_population.py": "bf6e5266783b2628274c602eb27d6e73da09d1049b89c03fe9234b23c8a46baf",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4",
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "tests/test_book_population.py": "cd14c9135e8a498f98756c31db6f3c51707b0fccaf510d17d04754bd01e24cf5"
+  },
+  "compatibility_helper": "adaptive_swarms.book_population.from_compatible_fixed_five_result",
+  "numerical_proof": {
+    "fixtures": [
+      {
+        "budget": 2501,
+        "period": 173
+      },
+      {
+        "budget": 101,
+        "period": 7
+      },
+      {
+        "budget": 6,
+        "period": 7
+      }
+    ],
+    "comparison": "Entire enriched prior chapter 5+1 result versus new target-5 result; only policy_name, compatible_engine_origin and diagnostic_origin labels excluded",
+    "invariants": [
+      "All original landscape initialization and evaluation operations are copied in the same order.",
+      "Initial swarm remains five neutrals then one permanent quantum particle.",
+      "Constant-five policy causes no resize and consumes no simulator RNG.",
+      "All neutral movement and selection RNG calls use unchanged book_mpso functions and original permutation seed namespace.",
+      "All neutral counts equal five, preserving movement, convergence, exclusion and swarm birth/removal paths.",
+      "Extra population diagnostics are pure observations with no evaluations or random draws."
+    ],
+    "scope": "Numerical compatibility under identical configuration and seeds; population metadata is derived exactly for cache import, not newly measured."
+  },
+  "old_engine_unchanged": true,
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+    "src/adaptive_swarms/book_population.py": "bf6e5266783b2628274c602eb27d6e73da09d1049b89c03fe9234b23c8a46baf",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+  }
+}

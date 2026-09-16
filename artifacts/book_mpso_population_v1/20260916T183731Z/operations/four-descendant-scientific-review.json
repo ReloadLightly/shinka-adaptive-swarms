@@ -1,0 +1,31 @@
+{
+  "at": "2026-09-16T19:15:12.357241+00:00",
+  "stage": "four_complete_descendants",
+  "programs": [
+    {
+      "generation": 1,
+      "mean_error": 2.05263705974142,
+      "source": "evolution/search_seed_650001/gen_1/main.py"
+    },
+    {
+      "generation": 2,
+      "mean_error": 1.8082577784910272,
+      "source": "evolution/search_seed_650001/gen_2/main.py"
+    },
+    {
+      "generation": 3,
+      "mean_error": 1.9528805851043245,
+      "source": "evolution/search_seed_650001/gen_3/main.py"
+    },
+    {
+      "generation": 4,
+      "mean_error": 2.008301179090116,
+      "source": "evolution/search_seed_650001/gen_4/main.py"
+    }
+  ],
+  "best_reference_mean": 1.7445687815149309,
+  "finding": "None improves target5. Constant shrinkage, fitness-conditioned shrinkage and loss-conditioned growth changed populations but did not improve mean tracking. Narrowing shrinkage did not remove large unfavorable histories.",
+  "decision": "Continue the remaining two original native slots; no extra generations, cases, task change or restart.",
+  "uncertainty": "Whether native proposals informed by measured losses and its pending meta review find a more useful allocation rule within this same frozen response space. The current three conditional descendants share compact/slow geometry gates; the space is not exhausted.",
+  "p_value_gate": false
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-09-16T19:29:31.101176+00:00",
+  "objective_queries": 0,
+  "model_calls": 0,
+  "frozen_source_hashes_verified": {
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+    "src/adaptive_swarms/book_population.py": "bf6e5266783b2628274c602eb27d6e73da09d1049b89c03fe9234b23c8a46baf",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4",
+    "docs/book_mpso_population_v1_protocol.md": "881c49b0d8b21acdce25adc1a26817f18d7f650a8097e20c75d17b551582ede3",
+    "tasks/book_mpso_population_v1/evaluate.py": "66f792ad02d4b4180eb270aa97471a2973af182a2120f88f214be88433bf3fc3",
+    "scripts/run_book_population.py": "3d3df364eda25a747409b0c2be267682c34390a236e32b42658f7b879579f608",
+    "docs/studies/book_mpso_population_v1/analysis_specification.json": "bc562286ba687369a4b3353ff28e3e76ca4679145acb487d185268829bd0b1fe",
+    "docs/book_mpso_source_record.md": "1332f93342d0dbbb6c112b03428392932e641189b5b269555f1239506dd741ec",
+    "configs/shinka/book_mpso_population_v1.json": "67e612005c56a96353d51ba46d62eea61849ea50d0a3855275d0487ab3c931d8",
+    "configs/book_mpso_population_v1/study.json": "35455373af93a993279d9679f81677ccabbac6863115970abdf2042872ac1811",
+    "configs/book_mpso_population_v1/development.json": "dd40f74d85b80f488d097105e562b1f70ee364ee52250986350c43a7c07ac40f"
+  },
+  "source_anchor": "Actual existing author-chapter extraction, printed p.215, conclusion proposes adapting particle counts within MPSO subswarms; this is motivation rather than a reported successful mechanism.",
+  "mechanical_review": [
+    "No population policy calls on nondetected updates",
+    "Counted detector and full existing-memory refresh precede observation and resizing",
+    "Fixed start-five neutral roles plus permanent quantum role",
+    "At most one neutral added/removed; deterministic last-index worst-memory tie; survivor order retained",
+    "New velocity only initialization, no copied fitness or extra objective query",
+    "Published quantum response applies to all current neutrals; permanent role samples every update",
+    "Neutral-only variable-count diameter; chapter exclusion/birth/removal formulas preserved",
+    "No-op fixed-five keeps movement/update/selection RNG order numerically compatible",
+    "All query categories share full budget; partial final updates remain marked incomplete"
+  ],
+  "privacy_review": "No credentials, authentication files, model weights or copyrighted chapter introduced by implementation. Publication copier excludes process/cache files and snapshots actual database.",
+  "scope_limit": "Review covers frozen implementation plus saved evidence and existing focused fixtures; no new numerical tests or simulation replays were performed."
+}

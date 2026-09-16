@@ -1,25 +1,24 @@
 # Evolving Cooperative Search in Changing Environments
 
-**Can native ShinkaEvolve improve the diversification schedule of a published multi-swarm optimizer?**
+**Can native ShinkaEvolve improve a published multi-swarm optimizer under matched conditions and evaluation budgets?**
 
-[Matched chapter comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
+[Population study](docs/studies/book_mpso_population_v1/REPORT.md) · [Chapter schedule comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
 
 ## Abstract
 
-We ask whether native ShinkaEvolve can improve the human-designed diversification schedule of
-Blackwell, Branke and Li's multi-swarm optimizer. A separate chapter-aligned reconstruction
-implements both **MPSO 5+0 and 5+1**, including permanent quantum sampling, temporary conversion
-and exclusion after each subswarm update. One bounded native search evaluated eight descendants
-on eight shared five-dimensional, ten-peak histories of **500,000 objective queries** each.
-**No distinct evolved schedule improved either reference's mean development error.** The published
-5+1 seed remained best among native programs, at **1.744569**, versus **1.743485** for 5+0;
-their paired difference was **+0.001084 [−0.306345,+0.285559]** (descriptive 95%).
-Longer, weaker and locally gated conversion schedules were worse in this batch. One descendant
-repeated an earlier behavior and its numerical work remains counted. The fresh-comparison trigger
-was not met, so no duplicate validation was launched. This negative discovery result supports
-retaining the published schedule for now; it does not establish optimality, equivalence of the
-references or superiority of any search method. Earlier relocation and retention studies remain
-cumulative evidence, including V3's null result.
+We ask whether native ShinkaEvolve can improve Blackwell, Branke and Li's multi-swarm optimizer
+under matched dynamic landscapes and counted objective budgets. A chapter-aligned reconstruction
+implements MPSO **5+0 and 5+1**. The preceding search found no better temporary-conversion schedule;
+we retain that response and investigate the chapter's proposed future direction of changing particle
+numbers within subswarms. One native search evaluated **six valid population-rule descendants** on
+eight reused five-dimensional, ten-peak histories of **500,000 queries** each. **None improved the
+reconstructed 5+1 seed's mean development error, 1.744569.** Fixed targets three and seven scored
+1.806340 and 1.871657. The closest descendant was the simple constant target six, at **1.776112**:
+paired difference **+0.031543 [−0.185736,+0.250921]**, descriptive 95%, with three wins/five losses.
+Conditional shrinking and growth changed actual population and query allocation but did not improve
+the mean. We retain five; the fresh-comparison trigger was not met. These results establish neither
+optimality nor equivalence, and reused development data do not establish generalization. Earlier
+relocation and retention studies remain cumulative evidence, including V3's null result.
 
 ## 1. Introduction
 
@@ -30,10 +29,11 @@ optimizer supplies a concrete, human-designed solution: particles share discover
 subswarms, while exclusion and the creation and removal of swarms distribute search effort between
 promising regions. A short burst of exploratory sampling follows detected environmental change.
 
-Our central empirical question is **whether native ShinkaEvolve can improve that diversification
-schedule under matched dynamic-optimization conditions**. We investigate improvements to an existing cooperative
+Our central empirical question is **whether native ShinkaEvolve can improve the chapter’s
+multi-swarm optimizer under matched dynamic-optimization conditions and objective budgets**. We investigate improvements to an existing cooperative
 optimizer; this study does not separately establish cooperation's causal advantage over independent
-search. Communication topology, swarm membership rules and the landscape remain fixed.
+search. Communication topology and the landscape remain fixed. After a negative search over temporary
+conversion schedules, the present study changes only how many ordinary particles each subswarm maintains.
 
 Three distinctions organize the evidence. A faithful reconstruction must first implement and count
 the intended operations. A useful evolved program must then improve optimizer performance under
@@ -55,8 +55,8 @@ new chapter-aligned study uses five dimensions.*
 tracking moving optima. Ordinary particles use remembered personal and shared best positions to
 converge. The chapter's “quantum” particles instead sample spatially around the swarm best; the
 term denotes a probability distribution, not quantum hardware. MPSO combines cooperation within
-subswarms with diversity between them. We study its temporary particle-conversion schedule,
-without implementing a comparison across the chapter's algorithm families.
+subswarms with diversity between them. We first studied its temporary particle-conversion schedule and now investigate population
+allocation within subswarms, without comparing all of the chapter’s algorithm families.
 
 The chapter proposes converting all neutral particles to quantum sampling for one iteration
 following detected change. This may reduce the permanent exploratory population while retaining
@@ -75,8 +75,11 @@ and SPSO. We do not label 5+1 / `nexcess=1` its best overall setting.*
 
 Our cumulative studies used pinned DEAP source to examine memory response, relocation count and
 radius, velocity retention, and trajectory continuation. They provide implementation and empirical
-lessons, including a substantial V3 null result. The present comparison adds the previously missing
-permanent quantum particle and restores the original schedule as the unit of evolution. Earlier
+lessons, including a substantial V3 null result. The preceding chapter comparison added the previously missing
+permanent quantum particle and found no better conversion schedule. The present study retains
+that published schedule and investigates the authors’ stated future direction on printed p.215:
+adapting particle numbers within an MPSO subswarm. This does not conserve an overall particle
+budget or transfer particles between groups. The objective-query budget remains matched. Earlier
 findings remain reported below under their original conditions.
 
 ## 3. Method
@@ -89,7 +92,7 @@ counted-query measurement and checkpoint infrastructure with the historical stud
 simulator and completed research remain intact; the new comparisons do not substitute their
 results for historical baselines.
 
-| Mechanism | Reconstructed MPSO 5+0 | Reconstructed MPSO 5+1 and evolved schedules |
+| Mechanism | Reconstructed MPSO 5+0 | Reconstructed MPSO 5+1 / preceding schedule study |
 |---|---|---|
 | Designated neutral particles | Five | Five |
 | Permanent quantum particles | None | One additional particle |
@@ -130,62 +133,80 @@ its intended branches unreachable. That historical correction belongs to the bas
 the 5+1 reference and correcting update ordering are likewise implementation work, not discoveries
 made by evolution.
 
-### 3.2 What Shinka is allowed to change
+### 3.2 Retaining the published response; evolving population allocation
 
-The separate task [`book_mpso_schedule_v1`](tasks/book_mpso_schedule_v1) evolves one function:
+The separate task [`book_mpso_population_v1`](tasks/book_mpso_population_v1) evolves only:
 
 ```python
-def choose_temporary_quantum_count(observation) -> int:
-    return 5 if observation["change_detected"] else 0
+def choose_neutral_count(observation) -> int:
+    return 5
 ```
 
-This exact initial program expresses the published 5+1 temporary schedule. Its eight native seed
-outcomes reuse the standalone 5+1 evaluations only after source, engine, configuration and case
-identity checks. Candidates choose an integer from zero through five on **every** subswarm update,
-after detection and any memory refresh and before movement. The permanent quantum particle always
-samples; radius, PSO coefficients, memory processing, birth/removal, exclusion and accounting stay
-fixed. Constants and conditional schedules are equally legitimate.
+Here **neutral count means structural ordinary-particle population**, not the relocation count
+used by earlier recovery studies. The published response converts all current neutrals after detection.
+The returned target is an integer from **two through eight**. Every newborn or excluded-and-reinitialized
+subswarm starts with **five neutrals plus one permanent quantum particle**. The population policy is called
+only after a counted best-point check detects change and every existing personal memory has been
+reevaluated. Before movement, the adapter changes the neutral population by at most one toward the target.
+This target-five seed reproduces the reconstructed chapter 5+1 algorithm; requesting five at five performs
+no population mutation or extra random draw.
+
+Shrinking removes the neutral with the worst freshly reevaluated personal-best fitness, breaking ties by
+its last current neutral position in the update order. The permanent quantum particle is ineligible.
+The shared best is rebuilt from surviving initialized memories. Growing inserts one neutral immediately
+before the permanent quantum particle. Its velocity follows the existing uniform initialization convention;
+its first position and fitness come from the ensuing counted quantum-response move, without a copied
+fitness or an extra initialization evaluation. Surviving positions, velocities, memories and order persist.
+
+All current neutrals receive quantum movement on the detected-change update and ordinary PSO otherwise;
+the permanent quantum particle always samples. Radius, memory handling, PSO coefficients, birth/removal,
+exclusion and accounting remain fixed. Convergence uses all current neutrals and excludes the permanent
+quantum particle, retaining the documented pairwise-diameter approximation.
 
 ```mermaid
 flowchart LR
     C[Counted shared-best reevaluation] --> D{Change detected?}
-    D -->|Yes| R[Counted refresh of all personal bests]
-    D -->|No| O[Public subswarm observation]
-    R --> O
-    O --> K[Native program chooses temporary count k]
-    K --> N[Five fixed neutral roles: k quantum, 5-k ordinary]
-    K --> Q[One permanent quantum role: always samples]
-    N --> B[Counted evaluations and asynchronous best updates]
-    Q --> B
-    B --> E[Exclusion after this subswarm update]
+    D -->|Yes| R[Counted refresh of every existing personal best]
+    R --> T[Native rule requests a neutral target: 2 through 8]
+    T --> A[Fixed adapter adds or removes at most one neutral]
+    A --> Q[All current neutrals take quantum-response moves]
+    D -->|No| N[Current neutrals take ordinary PSO steps]
+    Q --> P[Permanent quantum particle samples]
+    N --> P
+    P --> E[Exclusion after this subswarm update]
 ```
 
-*Mechanism schematic, not measured data. The 5+0 comparator omits the permanent quantum role.
-Quantum movement replaces PSO; ordinary movement resumes later with retained neutral velocity.*
+*Mechanism schematic, not measured data. Every movement is counted; all retained personal memories
+remain active. Population adaptation is within a subswarm, not a redistribution of a conserved total.*
 
-The public observation reports the current counted detection flag, observed deterioration and recent
-improvement, updates and evaluations since that swarm's last detection, neutral spread and motion,
-previous count, known radius and relevant swarm state. It contains no true peak coordinates, hidden
-optimum, benchmark error, future change, seed or evaluator internals. One dedicated task RNG draws
-a permutation of the five neutral indices at **every** update, regardless of count; the first `k`
-receive temporary quantum moves. It is independent of environment and movement RNGs. The same
-arrangement applies to the references. Complete trajectories can still diverge.
+The immutable public observation is captured **after refresh and before resizing or movement**. It includes
+current neutral count, spread and motion, measured fitness deterioration, recent improvement, current
+swarm and total particle counts, previous requested target and known default radius. It contains no hidden
+peak locations/counts, optimum, benchmark error, future changes, seeds or protected outcomes. The
+[task prompt](tasks/book_mpso_population_v1/task_prompt.txt) defines timing, signs and normalization.
+The checker admits its documented pure numerical expressions and math operations. Constants are valid;
+fitness contains no reward for complexity, conditional branches or population variability.
+
+The older schedule engine and every historical experiment remain preserved. Compatible target-five
+outcomes are reused only after numerical/RNG-order checks; known fixed-five diagnostic fields are derived
+explicitly from their archived traces rather than represented as new measurements.
 
 ### 3.3 Native evolution and measured feedback
 
 Pinned ShinkaEvolve `9912af12d423504b8d580f4179fd15f5f88b8c50` controls parent selection,
 archive/top inspiration, mutation, novelty decisions and lineage. The existing research profile
-uses weighted parents, two islands, diff/full/crossover mutation, local code embeddings plus native
-LLM novelty judging, and meta-memory. Shinka islands partition candidate programs; they are
+uses weighted parents, archive/top inspirations, diff/full/crossover mutation, local code embeddings plus
+native LLM novelty judging, and meta-memory at the five-program interval. This short population batch uses
+one island: the preceding two-island novelty pool missed a cross-island duplicate. A single island removes
+that separation, but does not guarantee behavioral novelty; migration is inactive. Shinka islands partition candidate programs; they are
 not the optimizer subswarms inside a simulation. Prompt co-evolution stays off; a fixed mutation model is not
 an adaptive model ensemble. Evidence comes from actual prompts, database records and model receipts.
 
-Feedback reports paired development differences from **both** references, all case errors,
-conversion intensity and its timing after detected change, ordinary and quantum shared-best
-improvements, and favorable and unfavorable recovery episodes. It offers competing explanations
-rather than rewarding complexity or requiring a preferred adaptive rule. The checker now permits
-documented pure numerical math imports, including inside functions; external access remains
-excluded. This resolves the previous retention task's undocumented function-local import rejection.
+Feedback reports paired development differences from **target five and fixed targets three/seven**, all
+case errors, requested/realized population distributions, additions/removals, objective-query shares and
+favorable/unfavorable recovery episodes. It offers competing explanations without prescribing a useful
+population size. Actual parent/inspiration source inclusion and meta-recommendation insertion are verified
+from saved prompts; configuration alone is not evidence that a mechanism ran.
 
 All internal roles use the authorized subscription-backed Codex route with `gpt-6-astra`, without
 paid fallback. Actual CLI invocation verifies task-local **xhigh**, the strongest effort supported by the pinned
@@ -201,13 +222,13 @@ provider-internal retries and supervising usage are not observable in native log
 | Changes | Severity 1, every 5,000 counted queries, movement correlation zero |
 | Heights and widths | Heights `[30,70]`, widths `[1,12]`; change severities 7 and 1 |
 | Initialization convention | Initial heights 50; widths and positions sampled as in pinned DEAP |
-| Swarm allocation | Five designated neutrals, `nexcess=1`; zero or one permanent quantum |
+| Swarm allocation | Start five neutrals + one permanent quantum per subswarm; neutral target 2–8, step at most one on detected change; `nexcess=1` |
 | Per-case horizon | Exactly 500,000 objective queries, matching the chapter's horizon |
-| Development | Eight frozen environment/optimizer seed pairs, shared by every method |
-| Native search | Published 5+1 seed plus at most eight descendant slots |
-| Independent comparison | Eight fresh pairs, three frozen methods, only if a distinct descendant wins development |
+| Development | Reuse all eight prior chapter-schedule seed pairs; explicitly development data |
+| Native search | Exact target-five seed plus at most six descendant slots; one island |
+| Independent comparison | Eight fresh pairs only if a distinct native winner beats target five and the best tested fixed target |
 | Selection / fitness | Lowest mean error; `combined_score = 1 / (1 + mean_offline_error)` |
-| Descriptive uncertainty | 20,000 independent paired-case bootstrap resamples, seed 2026091608, 95% intervals |
+| Descriptive uncertainty | 20,000 independent paired-case bootstrap resamples, seed 2026091609, 95% intervals |
 
 Offline error averages, over **every counted query**, the gap between the current optimum and the
 best value discovered since the latest environmental change. Initialization, change detection,
@@ -219,13 +240,22 @@ Environment randomness is independent of optimizer and subset-selection randomne
 and saved landscape hashes establish matching environmental histories; they do not imply identical
 later particle perturbations or decision states. Effects compare complete closed-loop methods.
 
-Prospective implementation, suite identities, analysis and resolved settings were committed before
-evolution. A first planned full reference case measured throughput; its saved result remained in
-the comparison. The bound was 104 new full executions / 52 million queries and 40 requested native
-logical responses, with an overall 180-minute ceiling. Terminal failures consume descendant slots.
-Selection includes the seed, with earlier generation and then source hash breaking ties. Any fresh
-case identities are generated only after source and analysis freezes; fresh results never return
-to mutation or meta-memory.
+Three controls request fixed targets **three, five and seven**. All start at five and use the same
+step-one adapter; targets three/seven are not historical variants initialized at those sizes. They help
+separate size tuning from conditional allocation, but do not exhaust constant targets or policies.
+
+Prospective implementation, reused suite identities, analysis and resolved settings were committed before
+new outcomes. The bounds are **six descendant slots, 36 requested native logical responses, 96 new full
+executions / 48 million queries, and 120 minutes including publication**. Certified target-five reuse lowers
+the physical numerical ceiling to 88 / 44 million. Native seed reuse adds no queries. Failed terminal slots
+consume their allocation; partial programs cannot enter selection. Small implementation fixtures are
+counted separately. The model counter excludes supervising usage and unexposed provider retries.
+
+Selection includes the seed and ranks complete valid programs by mean error, then earlier generation and
+source hash. The best fixed target is chosen by mean error and then lower numeric target. Only a distinct
+native candidate with a development advantage over **both** target five and the best tested fixed control
+triggers fresh evaluation. Sources, comparator and paired-bootstrap settings are frozen before generating
+fresh identities, with existing identical methods executed once. No fresh outcomes return to evolution.
 
 This is a **chapter-aligned reconstruction and comparison**, not reproduction of all of Table 3.
 It preserves the core scenario and horizon but uses eight paired repetitions rather than 50,
@@ -234,7 +264,113 @@ matched references, never against unmatched printed values as a claim to have �
 
 ## 5. Results
 
-### 5.1 The chapter schedule remains the selected program
+### 5.1 Population adaptation did not improve the reference in this batch
+
+**The selected program is still the human-designed target five.** Native evolution explored a
+neighboring constant and conditional shrink/grow rules; none improved its mean development error.
+The exact selected executable remains:
+
+```python
+def choose_neutral_count(observation) -> int:
+    return 5
+```
+
+This source aliases reconstructed MPSO 5+1. It is a retained reference, not a newly discovered
+collective mechanism. [The completed population report](docs/studies/book_mpso_population_v1/REPORT.md)
+contains every case, exact sources, native lineage, response behavior and accounting.
+
+| Method, all starting at five neutrals | Mean error ↓ | Method − target five | Descriptive 95% interval | Wins / losses |
+|---|---:|---:|---|---:|
+| Fixed target three | 1.806340 | +0.061772 | [−0.092645,+0.257007] | 4 / 4 |
+| **Target five / selected seed** | **1.744569** | Execution reference | — | — |
+| Fixed target seven | 1.871657 | +0.127089 | [−0.058890,+0.296543] | 2 / 6 |
+| Best native descendant: constant target six | 1.776112 | +0.031543 | [−0.185736,+0.250921] | 3 / 5 |
+
+All comparisons use the same **eight reused development histories**. The native winner includes the
+seed, so the closest descendant is not promoted to the selected method. No distinct winner beat
+both target five and the best tested fixed control; **no fresh identities or evaluation were generated**.
+The intervals are descriptive and do not remove selection bias or establish equivalence.
+
+![Measured MPSO populations and tracking](assets/book_mpso_population_v1/population_and_tracking.png)
+
+*Figure 2. Measured **5D development** trajectories over counted objective evaluations. Target
+six is shown as the best tested descendant, while target five remains selected. Bands give mean
+within-case population minima/maxima, not uncertainty. The paired panel retains all eight target-six
+minus target-five effects. Tracking uses a logarithmic error axis to retain both initialization and
+late behavior; no horizon or unfavorable case is omitted.*
+
+Generation six simply returns `6`. Each newborn or excluded-and-reinitialized swarm starts at five;
+its first detected change adds one neutral, and subsequent requests leave it at six. Across eight
+cases this produced **789 additions, zero removals**, with six neutrals on **86.72%** of subswarm
+updates. It requested six on all **6,676** detected decisions. About **97.22%** of saved query-grid
+points nevertheless contain both five- and six-neutral swarms, because their birth/exclusion and
+detection times differ. That variation is an effect of the fixed adapter, not learned conditionality.
+
+| Measured allocation | Target three | Target five | Target seven | Native target six |
+|---|---:|---:|---:|---:|
+| Mean total particles at saved query grid | 37.48 | 51.63 | 64.91 | 59.66 |
+| Mean subswarms | 8.800 | 8.605 | 8.393 | 8.672 |
+| Ordinary movement share | 58.58% | 67.51% | 72.81% | 70.49% |
+| Permanent quantum share | 18.05% | 13.67% | 11.03% | 12.19% |
+| Detection share | 18.05% | 13.67% | 11.03% | 12.19% |
+| Memory-refresh share | 0.72% | 0.99% | 1.25% | 1.15% |
+
+More neutrals spent more of the common budget on ordinary PSO and less on permanent sampling and
+detection cycles. Mean swarm counts stayed similar for targets five/six. Complete trajectories,
+memory content after removals and birth/removal opportunities also differ; these measurements do
+not identify one pathway as the cause of a performance change.
+
+![Measured target requests, realized sizes and recovery](assets/book_mpso_population_v1/population_behavior.png)
+
+*Figure 3. Requested targets at counted changes, actual populations over subswarm updates,
+and recovery at saved query offsets. Cases receive equal weight. Initial environment is excluded
+from recovery averages, and unrecorded immediate error is not interpolated. All methods retain
+the published quantum response and the known-scale radius.*
+
+The best descendant's small positive mean hides opposing effects. Case 007's **+0.609107** loss
+contributes **+0.076138** to the mean; the other seven average **−0.050966**. Its median is
+**+0.109155** and paired SD **0.336846**. Every history remains included. The predetermined
+quarter-budget example in case 000 reaches query **125,014** already at six, with no resize;
+recorded errors at environment offsets 100/500/1,000 are **3.3561/0.8849/0.6924**, versus
+five's **2.0909/1.1581/0.4326**. A fixed target does not imply a uniformly better trajectory.
+
+The frozen extreme-episode rule finds both a large benefit—case 001/environment 88, mean difference
+**−14.405564**—and a large loss—case 000/environment 14, **+13.345129**. These are explicitly post hoc
+examples of whole closed-loop histories, not isolated effects of an individual added particle. The
+report retains their complete measured recovery and the prospective examples from every case.
+
+![Measured native population search and behavior](assets/book_mpso_population_v1/native_search.png)
+
+*Figure 4. Every native program uses all eight full-horizon development cases. The right panel
+shows actual requested-target frequencies, with percentages printed in nonzero cells. Only targets
+four, five and six appeared in accepted native programs; the available response space was larger.
+Complexity and population variability earn no fitness bonus.*
+
+The conditional programs were materially active. Generation two shrank compact, slow swarms only
+after a non-deteriorating checked best (four requested on **15.51%** of detections); generation three
+grew compact, slow swarms after a refreshed-best loss above 5% (six on **58.25%**). Generations four
+and five narrowed the improvement gate or reversed the loss response toward shrinking. They all
+had higher mean error than five. These rules repeatedly added and removed particles; a selective
+looking source condition was sometimes common in execution. Fitness deterioration is not the
+benchmark's movement severity, which stayed one.
+
+Generation six descends from **seed 0**, with **generation 4 as archive inspiration and generation 2
+as top inspiration**. Native meta-memory's recommendation to try the neighboring constant six is
+present in its actual prompt, alongside the complete parent/inspiration sources and measured
+feedback. It was a native proposal. That confirms machinery execution, not a causal performance
+benefit from meta-memory. Novelty rejected two exact repeats before numerical evaluation; all
+attempts remain recorded. One island removes the earlier cross-island separation without
+promising perfect behavioral deduplication.
+
+The population study completed **64 new full executions / 32 million objective queries**, plus
+**16 cache uses of the same eight prior target-five cases** for control and native seed. There
+were seven valid terminal slots, six valid descendants and no failed/partial numerical cases.
+The **27 requested native logical responses** comprise eight mutation, eight novelty and eleven
+meta responses, including proposal retries. Small focused fixtures used **23,756 additional
+queries**. No fresh comparison or follow-on campaign was added; the broader response space and
+fresh-history performance remain unresolved.
+
+### 5.2 The preceding chapter schedule search retained its seed
 
 **None of the eight evaluated descendants improved on the published 5+1 seed or the matched
 5+0 reference in mean development error.** The simplest relevant executable remains:
@@ -263,7 +399,7 @@ new histories neither recover the historical ranking convincingly nor establish 
 
 ![Measured chapter comparison and native schedule behavior](assets/book_mpso_schedule_v1/schedule_and_performance.png)
 
-*Figure 2. **Measured 5D development results**, eight paired 500,000-query histories. The upper-left
+*Figure 5. **Measured 5D development results**, eight paired 500,000-query histories. The upper-left
 panel compares contemporaneous references; the native search and heatmap retain every evaluated
 program. Both published temporary schedules coincide, though only 5+1 has a permanent quantum
 particle. Generation 8 repeats generation 6's behavior. Recovery uses actual saved query offsets,
@@ -298,7 +434,7 @@ new behaviors. Parent selection, inspiration, novelty and meta-memory remained n
 
 ![Measured ordinary and quantum contributions](assets/book_mpso_schedule_v1/schedule_contributions.png)
 
-*Figure 3. Saved query-normalized shared-best improvements for the two reconstructed references.
+*Figure 6. Saved query-normalized shared-best improvements for the two reconstructed references.
 The selected program aliases 5+1 and is not shown as a third method. Temporary conversion accounts
 for 1.04% and 1.21% of neutral updates in 5+0 and 5+1, respectively. The permanent role in 5+1
 used 546,686 queries and supplied 44,666 shared-best improvements across eight cases. Attribution
@@ -307,7 +443,7 @@ advantage for that particle type or include memory refresh as movement discovery
 
 ![Measured native chapter-schedule search](assets/book_mpso_schedule_v1/native_search.png)
 
-*Figure 4. One native seed plus eight valid descendants. The seed's eight cases were reused
+*Figure 7. One native seed plus eight valid descendants. The seed's eight cases were reused
 exactly; generation 8 repeated generation 6's decisions and outcomes but consumed eight new
 executions. Native parent/inspiration identities and the actual supplied feedback are retained in
 the [complete report](docs/studies/book_mpso_schedule_v1/REPORT.md) and archive.*
@@ -319,7 +455,7 @@ remained best, the predeclared fresh-comparison condition was not met. No duplic
 comparison, replacement slot, new regime or follow-up campaign was added.
 
 
-### 5.2 Cumulative evidence from earlier studies
+### 5.3 Cumulative evidence from earlier studies
 
 #### Particle retention: a development-only discovery
 
@@ -346,7 +482,7 @@ received the seed as archive inspiration. These were native proposals, not manua
 
 ![Measured native particle-retention search](assets/particle_retention_v1/native/search_progress.png)
 
-*Figure 5. Eight valid numerical programs: the seed and seven descendants, each scored on the same
+*Figure 8. Eight valid numerical programs: the seed and seven descendants, each scored on the same
 eight **5D development histories**. Generation 3 consumed a terminal slot but failed static checking
 before objective execution, so it has no numerical point; its source and lineage remain in the
 native database. Generation 1 rediscovered the random reference and its repeated work stays counted.*
@@ -366,7 +502,7 @@ Every case is retained in the table and figures in the [full report](docs/sprint
 
 ![Measured particle-retention effects and recovery](assets/particle_retention_v1/paired_effects_recovery.png)
 
-*Figure 6. All eight paired effects, regime means and measured recovery curves. Error differences
+*Figure 9. All eight paired effects, regime means and measured recovery curves. Error differences
 are selected minus comparator; negative values favor the selected rule. Recovery uses actual saved
 query offsets, averaging environments within each case and then cases. No immediate, unrecorded
 recovery value is interpolated. The longer-period advantage is a development observation.*
@@ -379,7 +515,7 @@ they neither imply positive alignment nor isolate a causal benefit of any one fe
 
 ![Measured retained-particle characteristics](assets/particle_retention_v1/retention_behavior.png)
 
-*Figure 7. Choice frequencies and state characteristics from saved decisions. Dots summarize cases,
+*Figure 10. Choice frequencies and state characteristics from saved decisions. Dots summarize cases,
 not independent particle-level replications. Agreement uses a counterfactual heuristic choice on
 the same reached snapshot and tie permutation. All memories are reevaluated under every method.*
 
@@ -427,7 +563,7 @@ three times default radius; otherwise it chose four. Radius was always 1.5.
 
 ![Measured V3 primary paired contrasts](assets/joint_relocation_v3/primary_effects.png)
 
-*Figure 8. **5D final comparison** on 80 fresh histories. Dots are independent paired cases;
+*Figure 11. **5D final comparison** on 80 fresh histories. Dots are independent paired cases;
 intervals use 20,000 within-regime bootstrap resamples with equal regime weights. The two primary
 control labels share one execution class, so they do not provide independent corroboration.
 All cases, including large losses, are included.*
@@ -451,7 +587,7 @@ the small mean; no overshoot mediator was measured.
 
 ![Measured radius–velocity interaction and recovery](assets/radius_velocity_sprint/phase_a_interaction_recovery.png)
 
-*Figure 9. **5D development diagnostic**; six methods share eight recorded histories. Recovery
+*Figure 12. **5D development diagnostic**; six methods share eight recorded histories. Recovery
 uses actual saved query offsets, excluding the initial environment and averaging environments
 within each case before cases. There is no interpolation of unrecorded immediate recovery.*
 
@@ -471,11 +607,11 @@ contrasts, native recommendations and uncertainty. An isolated radius-one versus
 score remain unexecuted questions. Neither was automatically chained into the present chapter study.
 
 
-### 5.3 The original reconstruction record
+### 5.4 The original reconstruction record
 
 ![Measured five-dimensional historical baseline tracking and swarm population](assets/reconstruction/baseline_tracking.png)
 
-*Figure 10. Historical **5D reconstruction measurements**, retained without rerunning them: three
+*Figure 13. Historical **5D reconstruction measurements**, retained without rerunning them: three
 500,000-query histories, cumulative offline error and active swarm count. Their mean error was
 1.7024 (sample SD 0.7896). Those seeds and the older simulator path differ from this new matched
 chapter comparison; this figure is neither an evolved-versus-reference contrast nor numerical
@@ -483,36 +619,51 @@ replication of the printed table.*
 
 ## 6. Discussion and Limitations
 
-The bounded search did **not** find a better diversification schedule in this chapter setting.
-This is a substantive negative result for the tested programs, not proof that the human schedule
-is optimal or that conditional recovery cannot help. Every tested descendant had a higher mean
-development error than both references. Some improved individual histories substantially, while
-others incurred influential losses; the complete distribution matters more than a selected example.
+The population search found **no development improvement over reconstructed 5+1**, and the
+preceding schedule search likewise retained its seed. The current decision is to keep **five neutrals,
+one permanent quantum particle and the published change response** in this setting. This is a
+negative result for the tested programs, not proof that either human choice is optimal or that
+conditional population allocation cannot help. The two searches reuse the same eight development
+histories and must not be counted as independent fresh confirmation.
 
-The immediate decision is to **retain the published 5+1 schedule**. A justified next experiment
-is an independent paired comparison of the reconstructed **5+0 and 5+1 references** in the same
-core setting before further schedule tuning: their nearly equal development mean conceals large,
-opposing case effects, leaving the value of permanent sampling uncertain. That comparison is a
-recommendation, not an automatically launched campaign. No fresh results are claimed here.
+Population measurements clarify the intervention. More neutral trajectories shift queries away
+from permanent sampling and detection; conditional rules can induce repeated removal/regrowth.
+The closest descendant was constant six and therefore ordinary size tuning. Its mixed case effects
+and higher mean did not meet the fresh-comparison trigger. Population heterogeneity alone is not
+evidence of learned adaptation: even a uniform target produces different realized sizes because
+new swarms start at five. None of the accepted rules used the available global workload or
+previous-target fields, so the search did not exhaust the documented response space.
+
+A justified next experiment would examine **the chapter's 200-peak condition using simple fixed-target
+controls before another adaptive search**, where the authors' convergence/coverage tradeoff may differ.
+This is a recommendation only; no new condition, baseline-validation study or further campaign was
+launched. The present result covers one severity-one, ten-peak condition and the existing known-scale
+radius. It does not establish a direction-wide impossibility.
 
 The cumulative studies support explicit competent controls and behavior inspection. V2 improved a
 selected constant yet did not improve the corrected original baseline on average; V3's larger
 frozen comparison did not establish useful state dependence. The radius/velocity pilot remained
 inconclusive, and retention's apparent improvement is still development-only. These results do
 not become positive evidence merely because the organizing question has returned to the chapter.
-They motivate testing an interpretable schedule against both original-style references.
+They motivate inspecting executed behavior and testing against competent, matched controls rather than
+reading sophisticated collective behavior into source-code complexity.
 
-This one bounded native search cannot establish that ShinkaEvolve is superior to another search
+These bounded native searches cannot establish that ShinkaEvolve is superior to another search
 method, that any single engine feature caused a gain, or that adaptive branching is necessary.
 The chapter includes other MPSO settings and SPSO; none was silently replaced by our two references.
 Known severity, one ten-peak synthetic setting, eight histories per stage and reconstruction
 conventions constrain transfer. Particle positions are not bounded by the peak domain. A shared-best
 improvement attributed to an update records its immediate occurrence, not an isolated causal value
-for that particle type. Conversion changes later trajectories, query allocation and opportunities.
+for that particle type. Conversion and population changes alter later trajectories, query allocation, swarm birth/removal
+opportunities and the relative cost of detection and memory. The population experiment does not isolate
+those pathways, establish an advantage over every constant size, or compare Shinka with another search method.
 
 ## 7. Reproducibility
 
-The [completed study report](docs/studies/book_mpso_schedule_v1/REPORT.md),
+The [population report](docs/studies/book_mpso_population_v1/REPORT.md),
+[population protocol](docs/book_mpso_population_v1_protocol.md),
+[population analysis specification](docs/studies/book_mpso_population_v1/analysis_specification.json),
+and preceding [schedule report](docs/studies/book_mpso_schedule_v1/REPORT.md),
 [prospective protocol](docs/book_mpso_schedule_v1_protocol.md),
 [source-to-implementation record](docs/book_mpso_source_record.md) and
 [frozen analysis specification](docs/studies/book_mpso_schedule_v1/analysis_specification.json)
@@ -530,9 +681,9 @@ retries, hidden reasoning or supervising usage.
 ```bash
 # Recreate the new measured figures from saved cases, without objective or model calls.
 source .venv/bin/activate
-python scripts/analyze_book_mpso.py \
-  --run artifacts/book_mpso_schedule_v1/20260916T154109Z \
-  --phase development --output /tmp/book-mpso-development
+python scripts/analyze_book_population.py \
+  --run artifacts/book_mpso_population_v1/20260916T183731Z \
+  --phase development --output /tmp/book-mpso-population
 
 ```
 

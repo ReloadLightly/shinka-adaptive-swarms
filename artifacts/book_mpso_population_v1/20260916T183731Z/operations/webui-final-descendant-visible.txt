@@ -1,0 +1,83 @@
+← Dashboard
+🎏 ShinkaEvolve: Program Evolution 🎏
+📊
+⏱️
+Loaded 7 programs [09:30:16 PM]
+💾
+Tree
+PromptEvo
+Programs
+Metrics
+Embed
+Clusters
+Islands
+Ensembling
+Path
+MAPs
+Transpose Tree (Left→Right)
+Animate Tree
+0
+I0
+1
+I0
+2
+I0
+6
+I0
+3
+I0
+4
+I0
+5
+I0
+Nodes
+Best
+Error
+Patches
+init
+diff
+cross
+Performance
+0.33
+0.36
+▶
+1 Island
+fixed_six_neutrals (Gen 6)
+
+ID: 9d9563c1-ab29-48fc-bbac-41bc2253626b
+
+Parent ID: ec98378b-3a90-45f5-a22a-46be99e49bfb
+
+Score: 0.360216
+
+Meta
+Pareto
+Scratch
+Node
+Code
+Diff
+Eval
+LLM
+Analysis
+Usage
+📋 Copy
+💾 Download
+1
+2
+3
+4
+5
+6
+7
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    return 6
+# EVOLVE-BLOCK-END
+
+fixed_six_neutrals
+Score: 0.360216
+Type: diff
+Island: 0
+Model: headless/codex@gpt-6-astra?effort=xhigh

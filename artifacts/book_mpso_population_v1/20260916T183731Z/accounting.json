@@ -1,0 +1,160 @@
+{
+  "status": "research_complete",
+  "recorded_at": "2026-09-16T19:31:45.440644+00:00",
+  "run_id": "20260916T183731Z",
+  "stages": {
+    "references": {
+      "attempts": 24,
+      "physical_full_executions": 16,
+      "reused_case_records": 8,
+      "failed_or_partial_attempts": 0,
+      "running_attempts": 0,
+      "exact_objective_queries": 8000000,
+      "unknown_query_attempts": 0,
+      "reserved_queries": 8000000,
+      "failures": []
+    },
+    "native": {
+      "attempts": 48,
+      "physical_full_executions": 48,
+      "reused_case_records": 0,
+      "failed_or_partial_attempts": 0,
+      "running_attempts": 0,
+      "exact_objective_queries": 24000000,
+      "unknown_query_attempts": 0,
+      "reserved_queries": 24000000,
+      "failures": [],
+      "completed_case_records": 56,
+      "exact_cache_records": 8
+    }
+  },
+  "terminal_slots": [
+    {
+      "generation": 0,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 1,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 2,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 3,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 4,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 5,
+      "status": "completed",
+      "case_records": 8
+    },
+    {
+      "generation": 6,
+      "status": "completed",
+      "case_records": 8
+    }
+  ],
+  "valid_descendants": 6,
+  "totals": {
+    "physical_full_executions": 64,
+    "research_objective_queries": 32000000,
+    "failed_or_partial_attempts": 0,
+    "unknown_query_attempts": 0,
+    "exact_native_seed_cache_records": 8,
+    "historical_target5_cache_records": 8,
+    "repeated_full_executions_included": 0,
+    "repeated_objective_queries_included": 0
+  },
+  "model": {
+    "roles": {
+      "novelty": {
+        "native_wrappers": 8,
+        "requested_logical_responses": 8,
+        "usable_responses": 8,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 8
+        }
+      },
+      "mutation": {
+        "native_wrappers": 8,
+        "requested_logical_responses": 8,
+        "usable_responses": 8,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 8
+        }
+      },
+      "meta": {
+        "native_wrappers": 6,
+        "requested_logical_responses": 11,
+        "usable_responses": 11,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 6
+        }
+      }
+    },
+    "requested_logical_responses": 27,
+    "limit": 36,
+    "hidden_provider_retries": "unobserved",
+    "supervising_usage": "unobserved by native counter"
+  },
+  "small_fixture_queries": {
+    "schema": "book-population-small-fixtures-v1",
+    "executions": [
+      {
+        "command": ".venv/bin/python -m pytest -q -s tests/test_book_population.py",
+        "passed": 9,
+        "failed": 0,
+        "objective_queries": 11878
+      },
+      {
+        "command": ".venv/bin/python -m pytest -q tests/test_book_population.py tests/test_population_policy.py tests/test_population_evaluator.py tests/test_book_population_runner.py",
+        "passed": 54,
+        "failed": 0,
+        "objective_queries": 11878,
+        "purpose": "Focused final regression; non-engine tests use synthetic artifacts and add zero queries."
+      }
+    ],
+    "total_objective_queries": 23756
+  },
+  "session_elapsed_seconds_utc": 3254.440644,
+  "hard_ceiling_seconds": 7200,
+  "runtime_note": "UTC session elapsed and each controller monotonic elapsed are retained separately; native provider latency includes waiting, not hidden-token streaming.",
+  "native_independent_accounting": "operations/native-accounting-summary.json",
+  "fresh_comparison": {
+    "required": false,
+    "identities_generated": false,
+    "physical_cases": 0
+  },
+  "zero_query_launch_failures": [
+    {
+      "pid": 1016525,
+      "command": [
+        "/home/roland/.local/share/uv/python/cpython-3.13.5-linux-x86_64-gnu/bin/python3.13",
+        "-u",
+        "scripts/run_book_population.py",
+        "references",
+        "--run",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z"
+      ],
+      "launched_at": "2026-09-16T18:49:53.010215+00:00",
+      "prospective_commit": "aa89058e07cc301ff75c3c887b3a0588a685370b",
+      "status": "failed_before_case_start",
+      "error": "Launch dereferenced venv interpreter symlink; base Python lacked numpy",
+      "objective_queries": 0
+    }
+  ]
+}

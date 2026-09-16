@@ -1,0 +1,1114 @@
+{
+  "recorded_at": "2026-09-16T19:30:12.406923+00:00",
+  "status": "search_complete",
+  "terminal_slots": 7,
+  "valid_descendants": 6,
+  "terminal_failed_slots": [],
+  "role_accounting": {
+    "mutation": {
+      "native_wrappers": 8,
+      "requested_logical_responses": 8,
+      "returned_usable_responses": 8,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 8
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "novelty": {
+      "native_wrappers": 8,
+      "requested_logical_responses": 8,
+      "returned_usable_responses": 8,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 8
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "meta": {
+      "native_wrappers": 6,
+      "requested_logical_responses": 11,
+      "returned_usable_responses": 11,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 6
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    }
+  },
+  "totals": {
+    "native_wrappers": 22,
+    "requested_logical_responses": 27,
+    "returned_usable_responses": 27,
+    "allowance": 36,
+    "exposed_native_retry_responses": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_usage": "excluded/unobserved by native receipts",
+    "native_cost_estimates": "not subscription charges or paid API usage"
+  },
+  "model_and_effort": {
+    "requested_supervising": "gpt-6-astra / Ultra",
+    "supervising_mode_independently_inspected": false,
+    "requested_inner": "gpt-6-astra / xhigh",
+    "explicit_supported_selected": "gpt-6-astra / xhigh",
+    "CLI_evidence": "operations/native-codex-process-settings-observed.json",
+    "provider_independent_attestation": false,
+    "native_reasoning_efforts_disabled_is_provider_effort": false,
+    "limitation": "The installed pinned native provider accepts low,medium,high,xhigh; strongest supported task-local xhigh was prospectively selected. Inner xhigh is not relabeled supervising Ultra.",
+    "observed_roles_from_exact_prompt_receipt_matches": [
+      "meta",
+      "mutation",
+      "novelty"
+    ],
+    "observed_visible_model_settings": [
+      [
+        "--model",
+        "gpt-6-astra"
+      ],
+      [
+        "-c",
+        "model_reasoning_effort=\"xhigh\""
+      ]
+    ],
+    "process_observation_count_not_request_count": 54
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 8,
+      "full_frozen_task_context_present": 8,
+      "source_context_references": 21,
+      "full_sources_present": 21,
+      "full_feedback_present": 21,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 8,
+      "accepted": 6,
+      "rejected": 2,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T18:57:58+00:00",
+          "elapsed_s": 82.74,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05838,
+          "novelty_explanation": "NOVEL: The neutral-particle count changes from 5 to 4. This is a meaningful hyperparameter change that can affect swarm behavior and optimization performance.",
+          "max_similarity": 0.9905349612236023,
+          "similarity_scores": [
+            0.9905349612236023
+          ]
+        },
+        {
+          "time": "2026-09-16T19:01:33+00:00",
+          "elapsed_s": 284.97,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06138,
+          "novelty_explanation": "**NOVEL**: The existing code always returns 5. The proposed code conditionally returns 4 based on fitness drop, particle spread, distance to the best particle, and speed relative to a radius threshold. This introduces adaptive population sizing that can change search behavior and performance.",
+          "max_similarity": 0.9223120808601379,
+          "similarity_scores": [
+            0.9223120808601379,
+            0.9214244484901428
+          ]
+        },
+        {
+          "time": "2026-09-16T19:04:36+00:00",
+          "elapsed_s": 453.56,
+          "event": "novelty_decision",
+          "message": "Native novelty rejected candidate",
+          "accepted": false,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05698,
+          "novelty_explanation": "NOT_NOVEL: The snippets are identical. Both return a fixed neutral count of 5 regardless of the observation, with no algorithmic, structural, functional, or hyperparameter differences.",
+          "max_similarity": 1.0,
+          "similarity_scores": [
+            1.0,
+            0.9905349612236023,
+            0.9223120808601379
+          ]
+        },
+        {
+          "time": "2026-09-16T19:06:09+00:00",
+          "elapsed_s": 541.64,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.0616,
+          "novelty_explanation": "**NOVEL**: The existing code reduces the neutral count to 4 when `fitness_drop <= 0` and the swarm is compact and slow. The proposed code instead increases it to 6 when the loss computed from previous and current best fitness exceeds `0.05 * max(1, abs(previous_best))`, under the same swarm conditions. This changes both the trigger and the population adjustment strategy.",
+          "max_similarity": 0.974973201751709,
+          "similarity_scores": [
+            0.8982152938842773,
+            0.8960579633712769,
+            0.974973201751709
+          ]
+        },
+        {
+          "time": "2026-09-16T19:09:41+00:00",
+          "elapsed_s": 738.45,
+          "event": "novelty_decision",
+          "message": "Native novelty rejected candidate",
+          "accepted": false,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05423,
+          "novelty_explanation": "NOT_NOVEL: The snippets are identical. Both ignore `observation` and return the constant `4`, with no algorithmic, structural, functional, or hyperparameter differences.",
+          "max_similarity": 1.0,
+          "similarity_scores": [
+            0.9905349612236023,
+            1.0,
+            0.9214244484901428,
+            0.8960579633712769
+          ]
+        },
+        {
+          "time": "2026-09-16T19:11:38+00:00",
+          "elapsed_s": 849.18,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.0615,
+          "novelty_explanation": "**NOVEL**: The proposed code replaces `fitness_drop <= 0.0` with `relative_fitness_drop <= -0.05`, changing both the input metric and threshold for selecting four neutral particles. This can change population decisions and optimizer behavior, even though the spatial and speed conditions remain unchanged.",
+          "max_similarity": 0.9893300533294678,
+          "similarity_scores": [
+            0.9212263822555542,
+            0.9252859354019165,
+            0.9893300533294678,
+            0.9727305769920349
+          ]
+        },
+        {
+          "time": "2026-09-16T19:19:04+00:00",
+          "elapsed_s": 1267.65,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05977,
+          "novelty_explanation": "**NOVEL**: Under the same condition, the proposed code returns 4 neutral particles instead of 6. This reverses the adjustment from increasing the default count of 5 to decreasing it, meaningfully changing swarm allocation and potentially search performance.",
+          "max_similarity": 0.9924467206001282,
+          "similarity_scores": [
+            0.9035338163375854,
+            0.9015776515007019,
+            0.9720640182495117,
+            0.9924467206001282,
+            0.9696561694145203
+          ]
+        },
+        {
+          "time": "2026-09-16T19:21:54+00:00",
+          "elapsed_s": 1425.39,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05743,
+          "novelty_explanation": "**NOVEL**: The return value changes from 4 to 6, altering the neutral-particle count. This is a meaningful hyperparameter change that can affect swarm behavior and optimization performance.",
+          "max_similarity": 0.9913513660430908,
+          "similarity_scores": [
+            0.9899903535842896,
+            0.9913513660430908,
+            0.9259918928146362,
+            0.9028934240341187,
+            0.9287711381912231,
+            0.9039439558982849
+          ]
+        }
+      ]
+    },
+    "embeddings": {
+      "starts": 9,
+      "completions": 9,
+      "dimensions": {
+        "768": 9
+      },
+      "events": [
+        {
+          "time": "2026-09-16T18:56:44+00:00",
+          "elapsed_s": 12.97,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T18:57:45+00:00",
+          "elapsed_s": 69.54,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T19:01:20+00:00",
+          "elapsed_s": 271.32,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-16T19:04:21+00:00",
+          "elapsed_s": 441.54,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-16T19:05:57+00:00",
+          "elapsed_s": 529.98,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-16T19:09:30+00:00",
+          "elapsed_s": 729.5,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-16T19:11:26+00:00",
+          "elapsed_s": 836.8,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-16T19:17:10+00:00",
+          "elapsed_s": 1159.58,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_5/main.py"
+        },
+        {
+          "time": "2026-09-16T19:21:40+00:00",
+          "elapsed_s": 1413.62,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_6/main.py"
+        },
+        {
+          "time": "2026-09-16T18:56:48+00:00",
+          "elapsed_s": 16.85,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T18:57:45+00:00",
+          "elapsed_s": 69.68,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:01:20+00:00",
+          "elapsed_s": 271.67,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_2/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:04:21+00:00",
+          "elapsed_s": 441.61,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:05:57+00:00",
+          "elapsed_s": 530.22,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:09:30+00:00",
+          "elapsed_s": 729.68,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:11:26+00:00",
+          "elapsed_s": 836.96,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:17:10+00:00",
+          "elapsed_s": 1159.8,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_5/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T19:21:40+00:00",
+          "elapsed_s": 1413.68,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_6/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta_updates": 2,
+    "exact_meta_injections": 1,
+    "meta_examples": [
+      {
+        "generation": 6,
+        "receipt": "evolution/search_seed_650001/engine_calls/mutation-70bba7beb320424fb174a2504c68fb05.json",
+        "artifact": "evolution/search_seed_650001/meta/meta_5.txt",
+        "recommendation_index": 4,
+        "actual_injected_text": "**Try the unexplored neighboring constant `return 6`.** Fixed five\u2019s lead supports keeping simple population targets competitive, and the tested constants do not establish its optimality. Constant six also differs materially from loss-triggered expansion: it maintains the target across detected events instead of repeatedly switching between five and six."
+      }
+    ],
+    "migration_transfers": 0,
+    "migration_interpretation": "One native island makes migration inactive; the short batch is not enlarged to exercise migration.",
+    "degradation_events": [],
+    "patch_types": {
+      "init": 1,
+      "diff": 4,
+      "cross": 2
+    },
+    "actual_sampling_context_counts": {
+      "sampling_attempts": 8,
+      "parent_contexts": 8,
+      "archive_inspiration_contexts": 7,
+      "top_ranked_inspiration_contexts": 6
+    },
+    "patch_types_all_proposal_attempts": {
+      "diff": 5,
+      "cross": 2,
+      "full": 1
+    },
+    "patch_type_evidence": {
+      "source": "evolution/search_seed_650001/evolution_run.log",
+      "selector": "Generated patch type",
+      "attempts": 8,
+      "rejected_attempts": [
+        {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "patch_type": "full",
+          "patch_name": "fixed_five_restore"
+        },
+        {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "patch_type": "diff",
+          "patch_name": "fixed_four_neutrals"
+        }
+      ]
+    },
+    "within_slot_novelty_resamples": 2
+  },
+  "selected_native_program": {
+    "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+    "generation": 0,
+    "island_idx": 0,
+    "parent_id": null,
+    "is_island_copy": false,
+    "patch_type": "init",
+    "combined_score": 0.3643559624867648,
+    "mean_offline_error": 1.7445687815149309,
+    "source": "\"\"\"Reconstructed MPSO 5+1: maintain five neutral particles.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_neutral_count(observation) -> int:\n    return 5\n# EVOLVE-BLOCK-END\n",
+    "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+    "parent": null,
+    "archive_inspirations": [],
+    "top_ranked_inspirations": [],
+    "actual_feedback_examples": [
+      {
+        "prompt": "evolution/search_seed_650001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "native_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "generation": 0,
+        "full_feedback_supplied": true,
+        "excerpt": "Reused development cases only. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Target5 is the reconstructed chapter5+1 and native seed. Fixed targets3/7 start at five and resize by at most one per detected event using exactly the same adapter. Best tested fixed target by development mean (numeric target breaks ties): target_5. Only neutral population targets change. Every current neutral quantum-samples on detected change, otherwise uses ordinary PSO; one permanent quantum particle always samples. Whole trajectories, convergence/birth timing and later random draws can diverge.\ncase_000 severity=1.0,period=5000: error=2.050730, deltatarget_3=+0.120001, deltatarget_5=+0.000000, deltatarget_7=-0.318497; interval-end error=1.3488386340270624; incomplete responses=0.\nMeasured population behavior: {\"additions\": 0, \"diagnostic_origin\": \"derived_exactly_from_certified_fixed_five_archive\", \"mean_neutral_count_per_subswarm_update\": 5.0, \"neutral_count_sum\": 341060, \"no_change_requests\": 762, \"policy_calls\": 762, \"population_decisions\": 762, \"realized_neutral_count_histogram\": {\"2\": 0, \"3\": 0, \"4\": 0, \"5\": 68212, \"6\": 0, \"7\": 0, \"8\": 0}, \"recorded_swarm_count_range\": [1, 11], \"recorded_total_particle_count_range\": [6, 66], \"removals\": 0, \"requested_target_histogram\": {\"2\": 0, \"3\": 0, \"4\": 0, \"5\": 762, \"6\": 0,"
+      }
+    ]
+  },
+  "work": {
+    "by_generation": [
+      {
+        "generation": 0,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 0,
+        "physical_completed_queries": 0,
+        "attempts": [],
+        "case_cache_reuses": 8,
+        "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+      },
+      {
+        "generation": 1,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+      },
+      {
+        "generation": 2,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "34d974738b533da830344c7d838d392ae72be2277f41e261cf004b2f99c84dd5"
+      },
+      {
+        "generation": 3,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "f7f9a85d9575471468ebbcbd3058776d2482bf444290faf9e9f697c051219afb"
+      },
+      {
+        "generation": 4,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "e9f547b922c256be46ee27655b33e8ed273ca57d8045b3ec66b9a7aabac4f8b1"
+      },
+      {
+        "generation": 5,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "a34b7b3c81d0c9936327058b9ebf3bb56d5e9c135029ae7e84648c8fc534351e"
+      },
+      {
+        "generation": 6,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "dc6f14455aca90b62a3fc5a92cd7931cf5bcf1b35c90d843b000c63c5fc41644"
+      }
+    ],
+    "physical_full_cases": 48,
+    "physical_completed_queries": 24000000,
+    "cached_case_reuses": 8,
+    "exact_control_repetition_comparison": [],
+    "repeated_cases_included": 0,
+    "repeated_queries_included": 0
+  },
+  "runtime": {
+    "started_at": "20260916T185631.207604Z",
+    "finished_at": "2026-09-16T19:28:42.311553+00:00",
+    "UTC_wall_seconds": 1931.103949,
+    "UTC_wall_hours": 0.5364177636111112,
+    "last_logged_monotonic_elapsed_seconds": 1804.35,
+    "resume_attempts": 0,
+    "clock_note": "UTC wall interval and logger monotonic elapsed differ; both are retained, with no inferred cause."
+  },
+  "limitations": [
+    "This task permits function-local math imports and documented numerical builtins, including zip; any actual failed slots are counted from saved evidence, not repaired or replaced.",
+    "CLI wrapper and binary subprocesses can both appear in process observations; these are not separate logical requests. Receipt counts govern request accounting.",
+    "Native proposal RNG state is not restored across process restarts; inspect continuation records before claiming an uninterrupted proposal sequence."
+  ],
+  "audit_model_calls": 0,
+  "audit_objective_queries": 0,
+  "all_programs": [
+    {
+      "generation": 0,
+      "native_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+      "correct": true,
+      "island": 0,
+      "parent": null,
+      "archive_inspirations": [],
+      "top_ranked_inspirations": [],
+      "patch_type": "init",
+      "patch_name": "initial_program",
+      "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+      "mean_offline_error": 1.7445687815149309
+    },
+    {
+      "generation": 1,
+      "native_id": "1b682f90-a2b2-45e6-985e-6d3946161ecd",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "generation": 0,
+        "island_idx": 0,
+        "parent_id": null,
+        "is_island_copy": false
+      },
+      "archive_inspirations": [],
+      "top_ranked_inspirations": [],
+      "patch_type": "diff",
+      "patch_name": "fixed_four_neutrals",
+      "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+      "mean_offline_error": 2.05263705974142
+    },
+    {
+      "generation": 2,
+      "native_id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "generation": 0,
+        "island_idx": 0,
+        "parent_id": null,
+        "is_island_copy": false
+      },
+      "archive_inspirations": [
+        {
+          "id": "1b682f90-a2b2-45e6-985e-6d3946161ecd",
+          "generation": 1,
+          "island_idx": 0,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "is_island_copy": false
+        }
+      ],
+      "top_ranked_inspirations": [],
+      "patch_type": "cross",
+      "patch_name": "compact_four_default_five",
+      "source_sha256": "34d974738b533da830344c7d838d392ae72be2277f41e261cf004b2f99c84dd5",
+      "mean_offline_error": 1.8082577784910272
+    },
+    {
+      "generation": 3,
+      "native_id": "096c1dd0-8fcd-4d1e-8b48-9f48a50ca0a0",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+        "generation": 2,
+        "island_idx": 0,
+        "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "is_island_copy": false
+      },
+      "archive_inspirations": [
+        {
+          "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "generation": 0,
+          "island_idx": 0,
+          "parent_id": null,
+          "is_island_copy": false
+        }
+      ],
+      "top_ranked_inspirations": [
+        {
+          "id": "1b682f90-a2b2-45e6-985e-6d3946161ecd",
+          "generation": 1,
+          "island_idx": 0,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "is_island_copy": false
+        }
+      ],
+      "patch_type": "diff",
+      "patch_name": "expand_after_unrecovered_loss",
+      "source_sha256": "f7f9a85d9575471468ebbcbd3058776d2482bf444290faf9e9f697c051219afb",
+      "mean_offline_error": 1.9528805851043245
+    },
+    {
+      "generation": 4,
+      "native_id": "602d966b-e56d-4631-b5cd-a5f9f3c26700",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+        "generation": 2,
+        "island_idx": 0,
+        "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "is_island_copy": false
+      },
+      "archive_inspirations": [
+        {
+          "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "generation": 0,
+          "island_idx": 0,
+          "parent_id": null,
+          "is_island_copy": false
+        }
+      ],
+      "top_ranked_inspirations": [
+        {
+          "id": "096c1dd0-8fcd-4d1e-8b48-9f48a50ca0a0",
+          "generation": 3,
+          "island_idx": 0,
+          "parent_id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+          "is_island_copy": false
+        }
+      ],
+      "patch_type": "cross",
+      "patch_name": "five_default_selective_shrink",
+      "source_sha256": "e9f547b922c256be46ee27655b33e8ed273ca57d8045b3ec66b9a7aabac4f8b1",
+      "mean_offline_error": 2.008301179090116
+    },
+    {
+      "generation": 5,
+      "native_id": "4b2e46cc-fb8d-483f-8f6b-93757ce6ff87",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "096c1dd0-8fcd-4d1e-8b48-9f48a50ca0a0",
+        "generation": 3,
+        "island_idx": 0,
+        "parent_id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+        "is_island_copy": false
+      },
+      "archive_inspirations": [
+        {
+          "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "generation": 0,
+          "island_idx": 0,
+          "parent_id": null,
+          "is_island_copy": false
+        }
+      ],
+      "top_ranked_inspirations": [
+        {
+          "id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+          "generation": 2,
+          "island_idx": 0,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "is_island_copy": false
+        }
+      ],
+      "patch_type": "diff",
+      "patch_name": "shrink_compact_swarms_after_loss",
+      "source_sha256": "a34b7b3c81d0c9936327058b9ebf3bb56d5e9c135029ae7e84648c8fc534351e",
+      "mean_offline_error": 1.9407241332546394
+    },
+    {
+      "generation": 6,
+      "native_id": "9d9563c1-ab29-48fc-bbac-41bc2253626b",
+      "correct": true,
+      "island": 0,
+      "parent": {
+        "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+        "generation": 0,
+        "island_idx": 0,
+        "parent_id": null,
+        "is_island_copy": false
+      },
+      "archive_inspirations": [
+        {
+          "id": "602d966b-e56d-4631-b5cd-a5f9f3c26700",
+          "generation": 4,
+          "island_idx": 0,
+          "parent_id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+          "is_island_copy": false
+        }
+      ],
+      "top_ranked_inspirations": [
+        {
+          "id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+          "generation": 2,
+          "island_idx": 0,
+          "parent_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "is_island_copy": false
+        }
+      ],
+      "patch_type": "diff",
+      "patch_name": "fixed_six_neutrals",
+      "source_sha256": "dc6f14455aca90b62a3fc5a92cd7931cf5bcf1b35c90d843b000c63c5fc41644",
+      "mean_offline_error": 1.776111985686017
+    }
+  ]
+}

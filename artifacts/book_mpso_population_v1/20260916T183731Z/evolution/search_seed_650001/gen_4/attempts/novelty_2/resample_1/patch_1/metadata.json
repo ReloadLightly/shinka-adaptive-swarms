@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 2,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "five_default_selective_shrink",
+  "patch_description": "Keeps the better-scoring fixed-five default and retains the current program\u2019s compactness and speed checks. Requests four only when relative_fitness_drop is at most -0.05, narrowing the shrink trigger to stronger observed improvements. Syntax and immutable-observation checks passed; improved benchmark performance remains unverified.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T21:11:26.194737",
+  "llm_cost": 0.608558,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/attempts/novelty_2/resample_1/patch_1/headless_prompt.md"
+}

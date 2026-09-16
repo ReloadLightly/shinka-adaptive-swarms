@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "fixed_five_restore",
+  "patch_description": "Restore target five, whose supplied development mean error was 1.744569 versus 1.808258 for the current conditional rule. This removes conditional shrinking and subsequent regrowth while preserving the fixed adapter and movement schedule. It reuses the strongest supplied baseline; it is not a new adaptive discovery or evidence of fresh-case improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T21:04:21.877300",
+  "llm_cost": 0.489562,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

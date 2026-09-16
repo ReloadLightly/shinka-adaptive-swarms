@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-16T19:37:30.376417+00:00",
+  "archive": "artifacts/book_mpso_population_v1/20260916T183731Z",
+  "archive_status": "read-only; no changes made",
+  "manifest_payloads_checked": 378,
+  "payload_bytes_checked": 104945989,
+  "manifest_sha256": "9d2b0f112177e859c605c3e0046baaedf29626c305e3a068c14a856229ab75a4",
+  "manifest_failures": [],
+  "sqlite_integrity_check": "ok",
+  "sqlite_program_rows": 7,
+  "sqlite_unique_generation_slots": 7,
+  "portable_analysis": {
+    "development": {
+      "command": [
+        "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+        "scripts/analyze_book_population.py",
+        "--run",
+        "/home/roland/actir/shinka-adaptive-swarms/artifacts/book_mpso_population_v1/20260916T183731Z",
+        "--phase",
+        "development",
+        "--output",
+        "/tmp/book-population-portable-development"
+      ],
+      "exit_code": 0,
+      "all_numerical_and_other_analysis_payloads_exactly_equal": true,
+      "ignored_generated_fields": [
+        "analyzed_at"
+      ],
+      "PNG_byte_reproducibility": {
+        "population_behavior.png": true,
+        "population_and_tracking.png": true,
+        "native_search.png": true
+      }
+    }
+  },
+  "objective_queries": 0,
+  "model_requests": 0
+}

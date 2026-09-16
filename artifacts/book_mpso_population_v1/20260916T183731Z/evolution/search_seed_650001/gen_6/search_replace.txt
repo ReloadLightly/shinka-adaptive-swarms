@@ -1,0 +1,15 @@
+<NAME>
+fixed_six_neutrals
+</NAME>
+<DESCRIPTION>
+Request six neutrals at every detected change, testing the unexplored neighboring constant. Each subswarm still starts at five and grows through the existing adapter. The extra trajectory may improve tracking enough to offset fewer subswarm updates under the shared query budget. This tests sustained expansion without fitness-triggered switching; improvement over target five remains an empirical question.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_neutral_count(observation) -> int:
+    return 5
+=======
+def choose_neutral_count(observation) -> int:
+    return 6
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,23 @@
+<NAME>
+fixed_four_neutrals
+</NAME>
+<DESCRIPTION>
+Test a constant target of four, which is absent from the supplied fixed controls. Each subswarm shrinks once after its first detection, avoiding repeated shrinking and regrowth while reducing particle queries per update. Four retains more neutral trajectories than target three. This tests a simple budget-allocation hypothesis; improvement over target five remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_neutral_count(observation) -> int:
+    radius = max(observation["default_radius"], 1e-12)
+    if (
+        observation["fitness_drop"] <= 0.0
+        and observation["neutral_diameter"] <= 2.0 * radius
+        and observation["mean_neutral_distance_to_best"] <= radius
+        and observation["mean_neutral_speed"] <= radius
+    ):
+        return 4
+    return 5
+=======
+def choose_neutral_count(observation) -> int:
+    return 4
+>>>>>>> REPLACE
+</DIFF>

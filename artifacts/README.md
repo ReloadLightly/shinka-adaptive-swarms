@@ -31,6 +31,42 @@ itself and disposable Python bytecode caches.
 | `particle_retention_v1_publication` | Read-only portable archive verification | Payload hashes, consistent SQLite contents and saved-data analysis; no numerical/model calls |
 | `book_mpso_schedule_v1_publication` | Read-only archive, portable analysis and remote publication verification | No objective or model calls |
 | `book_mpso_schedule_v1/20260916T154109Z` | Chapter-aligned MPSO 5+0/5+1 reconstruction and native temporary-conversion search | 16 reference + 64 descendant executions = 40 million queries; eight cached seed records; seed + eight valid descendants; 31 logical model responses |
+| `book_mpso_population_v1/20260916T183731Z` | Chapter-aligned within-subswarm population targets; published response fixed | 16 new control + 48 descendant executions = 32 million queries; eight historical target-five reuses plus eight native seed-cache records; seed + six valid descendants |
+| `book_mpso_population_v1_publication` | Closed-archive, portable analysis and remote publication verification | No objective evaluations or model requests |
+
+The [population study](../docs/studies/book_mpso_population_v1/REPORT.md) retains
+the reconstructed chapter 5+1 seed, `return 5`, with mean development error
+**1.744569**. Fixed targets three and seven obtain **1.806340** and **1.871657**;
+the best native descendant is constant target six, **1.776112**. No descendant
+improves on target five, so the registered fresh-comparison trigger is false and
+no fresh identities or executions are generated. Conditional rules changed
+population and caused repeated additions/removals without improving mean tracking.
+This is a bounded negative result on eight reused development histories, not an
+optimality or equivalence claim.
+
+All controls use the same adapter: every subswarm starts with five neutrals and
+one permanent quantum particle, then moves at most one neutral toward its target
+after a counted detection and memory refresh. Targets three/seven are not
+historical variants initialized at those sizes. Exact target-five reuse follows
+recorded numerical, RNG and update-order compatibility checks. The 80 saved case
+records comprise 64 new physical executions and 16 cache records; the latter
+represent eight original target-five histories copied into the reference and
+native-seed stages. Small numerical fixtures add **23,756** separately counted
+queries. All six descendant slots complete without numerical failure; two exact
+duplicate proposals are rejected by native novelty before evaluation.
+All **27 requested logical responses** return: eight mutation, eight novelty and
+eleven meta responses across 22 native wrappers. Actual subscription CLI arguments
+verify `gpt-6-astra / xhigh` for every role; supervising usage and hidden provider
+retries are unobserved. Nine local embeddings, two meta updates and one verified
+recommendation insertion execute; migration is inactive with one island. Native
+monotonic duration is 30m04s, while UTC event timestamps span 32m11s; both clocks
+are preserved explicitly. The scientific and portable-publication audits retain
+all unfavorable cases and add no objective or model calls.
+
+```bash
+# Open the published archive when port 8897 is free; keep an existing viewer intact.
+bash scripts/webui.sh artifacts/book_mpso_population_v1/20260916T183731Z/evolution 8897
+```
 
 The [chapter-aligned report](../docs/studies/book_mpso_schedule_v1/REPORT.md)
 restores the original-versus-evolved MPSO comparison as the project's central

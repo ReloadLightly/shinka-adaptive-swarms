@@ -1,0 +1,289 @@
+← Dashboard
+🎏 ShinkaEvolve: Program Evolution 🎏
+📊
+⏱️
+Loaded 7 programs [09:30:16 PM]
+💾
+Tree
+PromptEvo
+Programs
+Metrics
+Embed
+Clusters
+Islands
+Ensembling
+Path
+MAPs
+Transpose Tree (Left→Right)
+Animate Tree
+0
+I0
+1
+I0
+2
+I0
+6
+I0
+3
+I0
+4
+I0
+5
+I0
+Nodes
+Best
+Error
+Patches
+init
+diff
+cross
+Performance
+0.33
+0.36
+▶
+1 Island
+fixed_six_neutrals (Gen 6)
+
+ID: 9d9563c1-ab29-48fc-bbac-41bc2253626b
+
+Parent ID: ec98378b-3a90-45f5-a22a-46be99e49bfb
+
+Score: 0.360216
+
+Meta
+Pareto
+Scratch
+Node
+Code
+Diff
+Eval
+LLM
+Analysis
+Usage
+Selected Node Details
+General
+
+Language: python
+
+Island: 0
+
+Timestamp: 2026-09-16 21:23:52
+
+Correct: Yes
+
+Children: 0
+
+Complexity: 0.088
+
+Performance Score
+
+Combined Score: 0.360216
+
+Public Metrics
+
+mean_offline_error: 1.776112
+
+worst_case_offline_error: 2.277798
+
+case_error_std: 0.519281
+
+cases_completed: 8.000000
+
+Private Metrics & Feedback
+
+cases: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+regime_paired_summaries: [object Object]
+
+suite_sha256: ec684d3df6f8b3b3b37e52b42b8d05a8663467145d156470b09f05e72f0efc16
+
+evaluation_version: book_mpso_population_v1_reciprocal_v1
+
+feedback_version: paired_book_population_and_recovery_v1
+
+Meta Analysis:
+
+novelty_explanation:
+
+Expand to view
+
+meta_recommendations:
+
+Expand to view
+
+meta_summary:
+
+Expand to view
+
+meta_scratch_pad:
+
+Expand to view
+
+📝 Text Feedback
+Metadata
+
+api_costs: 0.424458
+
+patch_type: diff
+
+patch_name: fixed_six_neutrals
+
+num_applied: 1
+
+error_attempt: null
+
+diff_summary:
+{
+  "added": 0,
+  "deleted": 0,
+  "modified": 1
+}
+
+novelty_attempt: 1
+
+resample_attempt: 1
+
+patch_attempt: 1
+
+system_prompt_id: null
+
+model_name: headless/codex@gpt-6-astra?effort=xhigh
+
+headless_work_dir: /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001
+
+novelty_checks_performed: 1
+
+novelty_cost: 0.05743
+
+max_similarity: 0.9913513660430908
+
+similarity_scores:
+[
+  0.9899903535842896,
+  0.9913513660430908,
+  0.9259918928146362,
+  0.9028934240341187,
+  0.9287711381912231,
+  0.9039439558982849
+]
+
+embed_cost: 0
+
+results_missing: false
+
+safe_processing: true
+
+source_job_id: ProcessWithLogging(PID: 1042192)
+
+source_generation: 6
+
+timeline_lane_mode: pool_slots
+
+sampling_worker_id: null
+
+evaluation_worker_id: 1
+
+postprocess_worker_id: 1
+
+active_proposals_at_start: 1
+
+running_eval_jobs_at_submit: 1
+
+db_workers_in_use_at_postprocess_start: 1
+
+sampling_worker_capacity: 1
+
+evaluation_worker_capacity: 1
+
+postprocess_worker_capacity: 1
+
+pipeline_started_at: 1789586462.817088
+
+sampling_started_at: 1789586462.817088
+
+sampling_finished_at: 1789586514.04784
+
+evaluation_started_at: 1789586514.04784
+
+evaluation_finished_at: 1789586632.0263755
+
+postprocess_started_at: 1789586632.0282438
+
+postprocess_finished_at: 1789586632.0722148
+
+sampling_seconds: 51.23075222969055
+
+evaluation_seconds: 117.97853541374207
+
+postprocess_seconds: 0.04397106170654297
+
+pipeline_seconds: 169.255126953125
+
+post_eval_queue_wait_seconds: 0.0018682479858398438
+
+pipeline_accounted_seconds: 169.255126953125
+
+pipeline_unaccounted_seconds: 0
+
+compute_time: 117.97853541374207
+
+postprocess_db_maintenance_applied: true
+
+postprocess_db_maintenance_started_at: 1789586632.0792906
+
+postprocess_db_maintenance_finished_at: 1789586632.09105
+
+postprocess_db_maintenance_seconds: 0.011759281158447266
+
+postprocess_apply_started_at: 1789586632.072272
+
+postprocess_apply_finished_at: 1789586632.132629
+
+postprocess_apply_wait_seconds: 0.000057220458984375
+
+postprocess_apply_seconds: 0.060356855392456055
+
+end_to_end_with_side_effects_seconds: 169.31554102897644
+
+end_to_end_accounted_seconds: 169.31554102897644
+
+end_to_end_unaccounted_seconds: 0
+
+postprocess_side_effects_applied: true
+
+Code Analysis
+Metric	Value
+Cyclomatic Complexity	1.00
+Average Cyclomatic Complexity	1.00
+Halstead Volume	0.00
+Halstead Difficulty	0.00
+Halstead Effort	0.00
+Lines Of Code	6.00
+Logical Lines Of Code	3.00
+Comments	2.00
+Maintainability Index	128.89
+Max Nesting Depth	1.00
+Complexity Score	0.09
+Patch Information
+
+Patch Type: diff
+
+Patch Name: fixed_six_neutrals
+
+Description: 
+Request six neutrals at every detected change, testing the unexplored neighboring constant. Each subswarm still starts at five and grows through the existing adapter. The extra trajectory may improve tracking enough to offset fewer subswarm updates under the shared query budget. This tests sustained expansion without fitness-triggered switching; improvement over target five remains an empirical question.
+
+Inspiration
+Type	Node ID	Gen	I	Score
+Parent	ec98378b...	0	0	0.36
+Top-K	bdcfd4d4...	2	0	0.36
+Archive	602d966b...	4	0	0.33
+Migration History
+
+No migration history.
+
+fixed_six_neutrals
+Score: 0.360216
+Type: diff
+Island: 0
+Model: headless/codex@gpt-6-astra?effort=xhigh

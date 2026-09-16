@@ -1,0 +1,120 @@
+{
+  "frozen_at": "2026-09-16T19:29:07.380959+00:00",
+  "selection_basis": "development mean, earlier generation, source SHA256",
+  "ranking": [
+    {
+      "generation": 0,
+      "source": "evolution/search_seed_650001/gen_0/main.py",
+      "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+      "mean_offline_error": 1.7445687815149309,
+      "result_directory": "evolution/search_seed_650001/gen_0/results"
+    },
+    {
+      "generation": 6,
+      "source": "evolution/search_seed_650001/gen_6/main.py",
+      "sha256": "dc6f14455aca90b62a3fc5a92cd7931cf5bcf1b35c90d843b000c63c5fc41644",
+      "mean_offline_error": 1.776111985686017,
+      "result_directory": "evolution/search_seed_650001/gen_6/results"
+    },
+    {
+      "generation": 2,
+      "source": "evolution/search_seed_650001/gen_2/main.py",
+      "sha256": "34d974738b533da830344c7d838d392ae72be2277f41e261cf004b2f99c84dd5",
+      "mean_offline_error": 1.8082577784910272,
+      "result_directory": "evolution/search_seed_650001/gen_2/results"
+    },
+    {
+      "generation": 5,
+      "source": "evolution/search_seed_650001/gen_5/main.py",
+      "sha256": "a34b7b3c81d0c9936327058b9ebf3bb56d5e9c135029ae7e84648c8fc534351e",
+      "mean_offline_error": 1.9407241332546394,
+      "result_directory": "evolution/search_seed_650001/gen_5/results"
+    },
+    {
+      "generation": 3,
+      "source": "evolution/search_seed_650001/gen_3/main.py",
+      "sha256": "f7f9a85d9575471468ebbcbd3058776d2482bf444290faf9e9f697c051219afb",
+      "mean_offline_error": 1.9528805851043245,
+      "result_directory": "evolution/search_seed_650001/gen_3/results"
+    },
+    {
+      "generation": 4,
+      "source": "evolution/search_seed_650001/gen_4/main.py",
+      "sha256": "e9f547b922c256be46ee27655b33e8ed273ca57d8045b3ec66b9a7aabac4f8b1",
+      "mean_offline_error": 2.008301179090116,
+      "result_directory": "evolution/search_seed_650001/gen_4/results"
+    },
+    {
+      "generation": 1,
+      "source": "evolution/search_seed_650001/gen_1/main.py",
+      "sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+      "mean_offline_error": 2.05263705974142,
+      "result_directory": "evolution/search_seed_650001/gen_1/results"
+    }
+  ],
+  "selected": {
+    "generation": 0,
+    "source": "programs/selected.py",
+    "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+    "mean_offline_error": 1.7445687815149309,
+    "result_directory": "evolution/search_seed_650001/gen_0/results",
+    "native_source": "evolution/search_seed_650001/gen_0/main.py"
+  },
+  "native_seed": {
+    "generation": 0,
+    "source": "evolution/search_seed_650001/gen_0/main.py",
+    "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+    "mean_offline_error": 1.7445687815149309,
+    "result_directory": "evolution/search_seed_650001/gen_0/results"
+  },
+  "methods": {
+    "target_5": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 5,
+      "source": "programs/target_5.py",
+      "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    "selected": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "source": "programs/selected.py",
+      "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    }
+  },
+  "selected_fixed_target": 5,
+  "fixed_target_ranking": [
+    {
+      "target": 5,
+      "method": "target_5",
+      "mean_offline_error": 1.7445687815149309
+    },
+    {
+      "target": 3,
+      "method": "target_3",
+      "mean_offline_error": 1.8063403372720876
+    },
+    {
+      "target": 7,
+      "method": "target_7",
+      "mean_offline_error": 1.8716574077003667
+    }
+  ],
+  "fixed_target_tie_break": "mean error then numeric target ascending",
+  "execution_aliases": {
+    "development_selected_fixed_target": "target_5",
+    "selected": "target_5"
+  },
+  "analysis_specification": "docs/studies/book_mpso_population_v1/analysis_specification.json",
+  "analysis_sha256": "bc562286ba687369a4b3353ff28e3e76ca4679145acb487d185268829bd0b1fe",
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+    "src/adaptive_swarms/book_population.py": "bf6e5266783b2628274c602eb27d6e73da09d1049b89c03fe9234b23c8a46baf",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+  },
+  "fresh_comparison_required": false,
+  "fresh_case_identities_generated": false
+}

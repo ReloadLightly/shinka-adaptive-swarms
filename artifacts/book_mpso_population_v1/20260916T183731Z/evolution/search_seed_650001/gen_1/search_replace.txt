@@ -1,0 +1,15 @@
+<NAME>
+fixed_four_neutrals
+</NAME>
+<DESCRIPTION>
+Test target four, the untested neighbor between targets three and five. Removing one neutral at the first detected change reduces subsequent movement and refresh costs, potentially allowing faster subswarm cycling while retaining four ordinary trajectories and permanent quantum sampling. Five currently beats both tested alternatives on mean error, so this modest reduction tests a plausible budget tradeoff. Syntax and integer-return checks pass; performance improvement remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_neutral_count(observation) -> int:
+    return 5
+=======
+def choose_neutral_count(observation) -> int:
+    return 4
+>>>>>>> REPLACE
+</DIFF>

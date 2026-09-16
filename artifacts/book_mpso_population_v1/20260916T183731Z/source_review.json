@@ -1,0 +1,16 @@
+{
+  "reviewed_at": "2026-09-16T19:30:05.501950+00:00",
+  "approved_source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+  "selected_generation": 0,
+  "source": "programs/selected.py",
+  "exact_source": "\"\"\"Reconstructed MPSO 5+1: maintain five neutral particles.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_neutral_count(observation) -> int:\n    return 5\n# EVOLVE-BLOCK-END\n",
+  "behavior": "Always request five neutrals; every swarm already starts at five, so no resizing or extra movement RNG occurs. The permanent quantum particle and published change-response schedule are retained.",
+  "best_descendant": {
+    "generation": 6,
+    "source": "evolution/search_seed_650001/gen_6/main.py",
+    "behavior": "Always request six; grow once after first counted detected change in each surviving new swarm, with no explicit shrinking. This is constant population-target tuning."
+  },
+  "fresh_condition": false,
+  "fresh_cases_generated": false,
+  "decision": "Retain reconstructed chapter5+1; no promising distinct native candidate satisfies the registered fresh trigger. No protected comparison launched."
+}

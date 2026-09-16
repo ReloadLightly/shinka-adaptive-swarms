@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-09-16T19:29:39.999778+00:00",
+  "new_objective_queries": 0,
+  "new_model_calls": 0,
+  "scope": "Independent computations over saved raw cases, frozen sources, native receipts and final analysis; no rerun.",
+  "reference_and_native_cases_verified": 80,
+  "valid_native_programs_including_seed": 7,
+  "terminal_failed_evaluation_slots": [],
+  "failed_slot_completed_cases_verified": 0,
+  "selected_generation": 0,
+  "selected_mean_offline_error": 1.7445687815149309,
+  "development_selected_fixed_target": 5,
+  "seed_cache_content_exact": true,
+  "fresh_comparison_performed": false,
+  "freeze_source_identity_and_order_verified": true,
+  "stages": {
+    "references": {
+      "full_executions": 16,
+      "queries": 8000000
+    },
+    "native": {
+      "full_executions": 48,
+      "queries": 24000000,
+      "seed_cache_records": 8,
+      "failed_attempts": 0,
+      "unknown_query_attempts": 0,
+      "unknown_reserved_query_upper_bound": 0
+    }
+  },
+  "physical_full_executions": 64,
+  "research_objective_queries": 32000000,
+  "native_logical_responses_by_role": {
+    "novelty": 8,
+    "mutation": 8,
+    "meta": 11
+  },
+  "native_receipt_statuses": {
+    "returned": 22
+  },
+  "analyses": [
+    {
+      "analysis_file": "analysis/development/analysis.json",
+      "sha256": "aee025e68cf240321f17671f70dc852d12c9231130e75278481bd7dbea9005eb",
+      "all_saved_case_statistics_and_bootstraps_independently_verified": true,
+      "contrasts": {
+        "target_3_minus_target_5": {
+          "mean": 0.061771555757156815,
+          "median": -0.0007236292494425811,
+          "descriptive_95_percent_interval": [
+            -0.09264498901942617,
+            0.2570072706847156
+          ],
+          "wins": 4,
+          "losses": 4,
+          "ties": 0
+        },
+        "target_7_minus_target_5": {
+          "mean": 0.12708862618543582,
+          "median": 0.17041304540544278,
+          "descriptive_95_percent_interval": [
+            -0.058890113425091345,
+            0.2965426768664805
+          ],
+          "wins": 2,
+          "losses": 6,
+          "ties": 0
+        },
+        "selected_minus_target_5": {
+          "mean": 0.0,
+          "median": 0.0,
+          "descriptive_95_percent_interval": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 8
+        }
+      }
+    }
+  ],
+  "best_descendant_descriptive_analysis": {
+    "generation": 6,
+    "selected_as_final_policy": false,
+    "mean_error": 1.776111985686017,
+    "paired_mean_minus_target5": 0.031543204171086206,
+    "descriptive_95_percent_interval": [
+      -0.18573611272074253,
+      0.25092106592959373
+    ],
+    "wins": 3,
+    "losses": 5,
+    "all_case_effects": [
+      0.12438056758507088,
+      -0.21195628758042862,
+      -0.5106476237237365,
+      -0.2008359719970808,
+      0.09392878955062622,
+      0.18444125918254706,
+      0.16392762091436897,
+      0.6091072794373225
+    ],
+    "population_histograms_and_prespecified_extreme_episode_selection_verified": true
+  },
+  "behavioral_repetitions": [],
+  "limitations": [
+    "Development outcomes informed search and selection; descriptive intervals do not correct selection bias.",
+    "No conclusion about other chapter scenarios or algorithm families, cooperation causality, or search-method superiority follows.",
+    "Shared-best gains describe reached trajectories, not isolated causal effects of quantum versus ordinary movement."
+  ]
+}

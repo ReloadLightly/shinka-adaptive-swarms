@@ -1,0 +1,78 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Fixed Five-Neutral MPSO**
+- **Implementation**: `choose_neutral_count` ignores its observation and always returns 5, producing no particle additions or removals. Each subswarm retains five neutral particles plus one permanent quantum particle; neutral particles quantum-sample on detected changes and otherwise use ordinary PSO.
+- **Performance**: Combined score: 0.36; mean offline error: 1.7446; worst-case error: 2.2709; case-error standard deviation: 0.49 across eight completed cases, with all validation tests passing.
+- **Feedback**: Results exactly match target_5, with mean error lower than target_3 by 0.0618 and target_7 by 0.1271, although individual-case comparisons vary. Evaluation reused development cases only, establishing fixed-baseline performance without demonstrating evolutionary improvement or held-out generalization.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: MPSO with Four Neutral Particles**
+- **Implementation**: Always returns `4`, ignoring observations despite the docstring specifying five neutral particles. The shared adapter starts subswarms at five neutrals and resizes by at most one per detected change, retaining one permanent quantum particle.
+- **Performance**: Passed all validation tests across eight cases, scoring 0.33 with mean offline error 2.05, worst-case error 3.50, and case error standard deviation 0.81.
+- **Feedback**: Realized neutral counts averaged 4.11–4.16, with removals and no additions. Mean error exceeded all three fixed comparators, including target_5 by 0.308 with losses in seven of eight cases; evaluation used reused development cases only.
+**Program Identifier:** Generation 1 - Patch Name fixed_four_neutrals - Correct Program: True
+
+**Program Name: Compact-Swarm Four-or-Five Neutral Particle Policy**
+- **Implementation**: Floors the radius at `1e-12` and requests four neutral particles when fitness drop is nonpositive, diameter is at most twice the radius, and mean distance to best and mean speed are each at most the radius; otherwise requests five. The shared adapter resizes by at most one per detected event, retaining one permanent quantum particle.
+- **Performance**: Passed all validation and completed eight cases, scoring **0.36**, with mean offline error **1.81**, worst-case error **2.42**, and case-error standard deviation **0.53**.
+- **Feedback**: Realized neutral counts averaged 4.83–4.87 across cases, but mean error was **0.0637 worse** than fixed target five, improving in only three of eight cases. Evaluation reused development cases, so the modest population reduction demonstrates working adaptation without establishing a performance advantage or held-out generalization.
+**Program Identifier:** Generation 2 - Patch Name compact_four_default_five - Correct Program: True
+
+**Program Name: Loss Triggered Neutral Population Adjustment**
+- **Implementation**: Requests six neutral particles when fitness loss exceeds `0.05 × max(1, |previous_best|)`, neutral diameter is ≤2 radii, and mean distance to best and mean speed are each ≤1 radius; otherwise requests five. The radius is floored at `1e-12`, and existing PSO and quantum sampling rules remain unchanged.
+- **Performance**: Score was **0.34**, with mean offline error **1.95**, worst-case error **3.70**, and case-error standard deviation **0.79** across eight completed cases; all validation tests passed.
+- **Feedback**: Realized neutral populations averaged **5.49–5.59**, but mean error exceeded fixed target five by **0.208**, with improvements in only **3/8 cases** and the largest regression in case_002. Evaluation reused development cases, so the results demonstrate valid execution but no consistent performance advantage or established generalization.
+**Program Identifier:** Generation 3 - Patch Name expand_after_unrecovered_loss - Correct Program: True
+
+**Program Name: Conditional Neutral Population Reduction**
+- **Implementation**: Returns four neutral particles when `relative_fitness_drop ≤ -0.05`, neutral diameter ≤ twice the radius, and both mean distance to best and mean speed ≤ the radius; otherwise returns five. The radius is floored at `1e-12`, and the permanent quantum particle remains unchanged.
+- **Performance**: Score 0.33; mean offline error 2.01, worst-case error 3.35, and case error standard deviation 0.77 across eight completed cases, with all validation tests passing.
+- **Feedback**: Mean neutral counts stayed near 4.9, but mean error was 0.264 higher than fixed target five, improving on it in only three of eight cases. Case_004 showed the largest regression; evaluation used reused development cases only, so generalization remains untested.
+**Program Identifier:** Generation 4 - Patch Name five_default_selective_shrink - Correct Program: True
+
+**Program Name: Loss-Triggered Neutral Population Adjustment**
+- **Implementation**: Requests four neutral particles when fitness loss exceeds 5% of max(1, |previous best|), neutral diameter is ≤2r, and mean distance to best and mean speed are both ≤r; otherwise requests five, using r=max(default_radius, 10⁻¹²). Only neutral population targets change; the permanent quantum particle remains.
+- **Performance**: Scored 0.34 across eight cases, with mean offline error 1.94, worst-case error 3.33, and case error standard deviation 0.72.
+- **Feedback**: Passed all validation and outperformed fixed target five in five cases, but mean error was 0.196 higher overall, with case_004 contributing a substantial regression. Average neutral counts ranged from 4.38–4.47 across cases; evaluation reused development cases only, so generalization remains untested.
+**Program Identifier:** Generation 5 - Patch Name shrink_compact_swarms_after_loss - Correct Program: True
+
+**Program Name: Fixed Six-Neutral-Particle MPSO**
+- **Implementation**: `choose_neutral_count` ignores its observation and always returns six, although the docstring describes five neutral particles. The shared adapter starts subswarms at five and increases population by at most one per detected event, retaining one permanent quantum particle.
+- **Performance**: Score **0.36**, mean offline error **1.78**, worst-case error **2.28**, and case error standard deviation **0.52** across eight completed cases; all validation tests passed.
+- **Feedback**: Mean error was **0.0315 worse than target_5**, but **0.0302 better than target_3** and **0.0955 better than target_7**, with substantial case-dependent variation. This is a fixed population policy, and evaluation used only reused development cases, so it establishes neither adaptive behavior nor generalization.
+**Program Identifier:** Generation 6 - Patch Name fixed_six_neutrals - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+**Successful Algorithmic Patterns**
+- **Fixed Five-Neutral MPSO remains best:** `return 5` scores **0.364356**, with mean error **1.744569**, worst-case error **2.270948**, and case-error SD **0.485328**. It preserves five neutrals, change-triggered quantum sampling, and one permanent quantum particle. No evaluated mutation improves its mean.
+- **Fixed Six-Neutral-Particle MPSO is now the strongest descendant**, replacing compact four-or-five in that position. Its score **0.360216** and mean error **1.776112** improve on compact shrinking by **0.032146** mean error, but remain **0.031543 worse than fixed five**. It also beats fixed targets three and seven by **0.030228** and **0.095545**, respectively.
+- **Compact shrinking remains the strongest conditional policy.** Requesting four only for compact, slow swarms with nonpositive fitness drop improved fixed four’s score from **0.327586 to 0.356093**, reducing mean error by **0.244379**. Conditional shrinking recovered much of unconditional shrinking’s deficit without surpassing fixed five.
+**Ineffective Approaches**
+- **Generation 5’s Loss-Triggered Neutral Population Adjustment loses despite winning 5/8 cases.** Shrinking after substantial refreshed fitness loss scores **0.340052**, with mean error **1.940724**, **11.24% above fixed five**. Its **case_004 regression of +1.430292** accounts for approximately **91% of the net error increase**; excluding that case still leaves mean error **0.019850 higher**.
+- **Reversing the loss-triggered action did not establish a useful trigger.** Generation 5 requests four where generation 3 requested six under the same predicate. Shrinking slightly improves expansion’s score, **0.338652 → 0.340052**, but both trail fixed five substantially. Their largest case regressions differ: expansion loses **1.431403** on case_002, while shrinking loses **1.430292** on case_004.
+- **Neither unconditional reduction nor stricter improvement gating worked well.** Fixed four loses **7/8 cases**, with mean error **2.052637**. Restricting compact shrinking to `relative_fitness_drop ≤ -0.05` scores **0.332414**, below the broader compact policy’s **0.356093**. Staying closer to five particles did not reliably preserve performance.
+**Implementation Insights**
+- **Fixed five makes resizing a no-op.** Subswarms start at five neutrals, so the winning function causes zero additions or removals and preserves the reconstructed baseline trajectory. Its exact target-five match comes from certified archive reuse, with derived population diagnostics; it supplies no independent replication or evolutionary improvement.
+- **Targets differ from realized populations.** Decisions occur after detected change and counted memory refresh, with at most one addition or removal. Fixed six therefore averages **5.84–5.88** neutrals, while generation 5 averages **4.38–4.47**. Shrinking removes the worst refreshed neutral memory; additions first evaluate through quantum sampling. Fixed six’s executable `return 6` determines behavior despite its stale five-particle docstring.
+- **The fitness predicates measure different events.** Compact shrinking and selective shrinking use reevaluation of the previously remembered best. Generations 3 and 5 compare previous fitness with the best recovered after all memory refreshes. Consequently, their “loss” conditions cannot be interpreted as interchangeable thresholds.
+- **Population changes redistribute queries without a monotonic performance benefit.** Ordinary-search shares are **63.61%** for fixed four, **65.04%** for generation 5, **67.51%** for fixed five, and **70.49%** for fixed six. Fixed six reduces detection’s share to **12.19%**, versus **13.67%** for fixed five, yet has higher error. These allocations accompany changes in trajectories, update cycling, and convergence; they do not isolate causation.
+**Performance Analysis**
+- **Rounded scores conceal meaningful ordering:** fixed five **0.364356**, fixed six **0.360216**, and compact shrinking **0.356093** all display **0.36**. Their mean errors are **1.744569**, **1.776112**, and **1.808258**, respectively.
+- **Fixed five retains the lowest observed worst-case error and variability.** Fixed six approaches it at worst-case error **2.277798** and SD **0.519281**; generation 5 is substantially worse at **3.334226** and **0.718831**.
+- **Case sensitivity remains substantial.** Fixed six beats fixed five in only **3/8 cases**. Its **+0.609107** regression on case_007 reverses the aggregate ranking: excluding that case gives fixed six a **0.050966** mean advantage. Conversely, generation 5’s majority of case wins fails to offset its larger losses.
+- **The evidence establishes a development ranking only.** All seven programs passed validation on eight reused cases, each using **500,000 queries**, severity **1**, and period **5,000**. Execution correctness is established; adaptive superiority, held-out generalization, and optimality across all constant targets are not.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Tighten compact shrinking through geometry.** Set `r = max(observation["default_radius"], 1e-12)` and retain the successful conditional rule’s `fitness_drop <= 0`, diameter `<= 2*r`, and distance `<= r`, but reduce its speed threshold to `0.5*r`; separately try halving only the distance threshold. Compact shrinking remains the strongest conditional policy, making these focused variants more justified than repeating the unsuccessful stricter fitness threshold.
+2. **Limit shrinking to one detected-change interval.** Before the original compact rule, add `if observation["neutral_count"] < 5: return 5`; otherwise request four when that rule matches and five elsewhere. This tests whether temporary reductions can capture its benefits while limiting sustained exposure to four particles, although restoring the count does not recover the removed particle’s memory.
+3. **Protect swarms showing recent progress.** Extend the original compact-shrinking predicate with `recent_improvement <= 0` and `mean_velocity_alignment_to_best <= 0`, returning five otherwise. This preserves the winning population whenever the preceding update improved fitness or average motion points toward the refreshed best; these additional signals remain untested hypotheses.
+4. **Allocate a sixth neutral only under low swarm load.** Implement `return 6 if observation["swarm_count"] <= 2 else 5`, maintaining six across detected events while the condition holds. Fixed six’s mean error of **1.776112**, versus five’s **1.744569**, makes selective expansion worth exploring, but neither the load threshold nor its ability to select beneficial expansion states is established.
+5. **Test persistence with separate expansion and contraction thresholds.** As a distinct five/six variant, request six when `swarm_count <= 2`, five when `swarm_count >= 4`, and otherwise return `6 if neutral_count == 6 else 5`. This uses observed population size to avoid repeated resizing near one threshold and tests whether sustained allocation can retain fixed six’s strengths while preserving five across higher-load states.

@@ -1,0 +1,31 @@
+{
+  "pid": 1019646,
+  "command": [
+    "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+    "-u",
+    "scripts/run_evolution.py",
+    "--task",
+    "book_mpso_population_v1",
+    "--generations",
+    "7",
+    "--search-seed",
+    "650001",
+    "--model",
+    "gpt-6-astra",
+    "--effort",
+    "xhigh",
+    "--engine-profile",
+    "configs/shinka/book_mpso_population_v1.json",
+    "--embedding-model",
+    "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "--logical-response-limit",
+    "36",
+    "--suite",
+    "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/search_suite.json",
+    "--run-dir",
+    "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001"
+  ],
+  "launched_at": "2026-09-16T18:56:31.067230+00:00",
+  "prospective_commit": "aa89058e07cc301ff75c3c887b3a0588a685370b",
+  "remaining_time_assessment": "Over100minutes beforehardstop; observedcontrolthroughput and prior33minnativebatch support6descendants, conditionalfresh up24cases andpublication."
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "fixed_four_neutrals",
+  "patch_description": "Test a constant target of four, which is absent from the supplied fixed controls. Each subswarm shrinks once after its first detection, avoiding repeated shrinking and regrowth while reducing particle queries per update. Four retains more neutral trajectories than target three. This tests a simple budget-allocation hypothesis; improvement over target five remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T21:09:30.582129",
+  "llm_cost": 0.555704,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

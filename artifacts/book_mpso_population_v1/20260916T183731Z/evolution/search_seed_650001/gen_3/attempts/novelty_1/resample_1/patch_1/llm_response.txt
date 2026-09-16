@@ -1,0 +1,15 @@
+<NAME>
+fixed_five_restore
+</NAME>
+<DESCRIPTION>
+Restore target five, whose supplied development mean error was 1.744569 versus 1.808258 for the current conditional rule. This removes conditional shrinking and subsequent regrowth while preserving the fixed adapter and movement schedule. It reuses the strongest supplied baseline; it is not a new adaptive discovery or evidence of fresh-case improvement.
+</DESCRIPTION>
+<CODE>
+```python
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    return 5
+# EVOLVE-BLOCK-END
+```
+</CODE>

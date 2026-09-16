@@ -1,0 +1,21 @@
+{
+  "at": "2026-09-16T18:57:14.181028+00:00",
+  "command": [
+    "/mnt/c/Users/nikol/AppData/Local/Microsoft/WindowsApps/wt.exe",
+    "new-tab",
+    "--title",
+    "Shinka population native search 650001",
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--cd",
+    "/home/roland/actir/shinka-adaptive-swarms",
+    "bash",
+    "scripts/progress.sh",
+    "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "<3>WSL (1020339 - ) ERROR: UtilAcceptVsock:273: accept4 failed 110\n",
+  "scope": "Visible native progress attachment only; controller already running."
+}

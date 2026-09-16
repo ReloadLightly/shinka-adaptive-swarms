@@ -1,0 +1,138 @@
+{
+  "at": "2026-09-16T19:27:06.260218+00:00",
+  "scope": "All numerical programs archived; final meta calls still closing; lineage immutable",
+  "programs": [
+    {
+      "generation": 0,
+      "id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+      "parent_generation": null,
+      "archive_inspiration_generations": [],
+      "top_ranked_inspiration_generations": [],
+      "patch_type": "init",
+      "patch_name": "initial_program",
+      "mean_offline_error": 1.7445687815149309,
+      "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    {
+      "generation": 1,
+      "id": "1b682f90-a2b2-45e6-985e-6d3946161ecd",
+      "parent_generation": 0,
+      "archive_inspiration_generations": [],
+      "top_ranked_inspiration_generations": [],
+      "patch_type": "diff",
+      "patch_name": "fixed_four_neutrals",
+      "mean_offline_error": 2.05263705974142,
+      "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+    },
+    {
+      "generation": 2,
+      "id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+      "parent_generation": 0,
+      "archive_inspiration_generations": [
+        1
+      ],
+      "top_ranked_inspiration_generations": [],
+      "patch_type": "cross",
+      "patch_name": "compact_four_default_five",
+      "mean_offline_error": 1.8082577784910272,
+      "source_sha256": "34d974738b533da830344c7d838d392ae72be2277f41e261cf004b2f99c84dd5"
+    },
+    {
+      "generation": 3,
+      "id": "096c1dd0-8fcd-4d1e-8b48-9f48a50ca0a0",
+      "parent_generation": 2,
+      "archive_inspiration_generations": [
+        0
+      ],
+      "top_ranked_inspiration_generations": [
+        1
+      ],
+      "patch_type": "diff",
+      "patch_name": "expand_after_unrecovered_loss",
+      "mean_offline_error": 1.9528805851043245,
+      "source_sha256": "f7f9a85d9575471468ebbcbd3058776d2482bf444290faf9e9f697c051219afb"
+    },
+    {
+      "generation": 4,
+      "id": "602d966b-e56d-4631-b5cd-a5f9f3c26700",
+      "parent_generation": 2,
+      "archive_inspiration_generations": [
+        0
+      ],
+      "top_ranked_inspiration_generations": [
+        3
+      ],
+      "patch_type": "cross",
+      "patch_name": "five_default_selective_shrink",
+      "mean_offline_error": 2.008301179090116,
+      "source_sha256": "e9f547b922c256be46ee27655b33e8ed273ca57d8045b3ec66b9a7aabac4f8b1"
+    },
+    {
+      "generation": 5,
+      "id": "4b2e46cc-fb8d-483f-8f6b-93757ce6ff87",
+      "parent_generation": 3,
+      "archive_inspiration_generations": [
+        0
+      ],
+      "top_ranked_inspiration_generations": [
+        2
+      ],
+      "patch_type": "diff",
+      "patch_name": "shrink_compact_swarms_after_loss",
+      "mean_offline_error": 1.9407241332546394,
+      "source_sha256": "a34b7b3c81d0c9936327058b9ebf3bb56d5e9c135029ae7e84648c8fc534351e"
+    },
+    {
+      "generation": 6,
+      "id": "9d9563c1-ab29-48fc-bbac-41bc2253626b",
+      "parent_generation": 0,
+      "archive_inspiration_generations": [
+        4
+      ],
+      "top_ranked_inspiration_generations": [
+        2
+      ],
+      "patch_type": "diff",
+      "patch_name": "fixed_six_neutrals",
+      "mean_offline_error": 1.776111985686017,
+      "source_sha256": "dc6f14455aca90b62a3fc5a92cd7931cf5bcf1b35c90d843b000c63c5fc41644"
+    }
+  ],
+  "gen6_actual_prompt_verification": [
+    {
+      "prompt": "evolution/search_seed_650001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "frozen_task_context_present": true,
+      "sources": [
+        {
+          "native_id": "ec98378b-3a90-45f5-a22a-46be99e49bfb",
+          "row_present": true,
+          "generation": 0,
+          "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+          "full_source_present": true,
+          "feedback_sha256": "35d1a87654e22982874da0c1fc7abca356790ffec1ba7151880932aab9747fc7",
+          "full_feedback_present": true
+        },
+        {
+          "native_id": "602d966b-e56d-4631-b5cd-a5f9f3c26700",
+          "row_present": true,
+          "generation": 4,
+          "source_sha256": "e9f547b922c256be46ee27655b33e8ed273ca57d8045b3ec66b9a7aabac4f8b1",
+          "full_source_present": true,
+          "feedback_sha256": "ec6bbe72a861c18bbea72bac945b2f4fa5a919f136abeae117dac1b6c500e0b9",
+          "full_feedback_present": true
+        },
+        {
+          "native_id": "bdcfd4d4-5225-40c2-8c25-ab0b42e9ff33",
+          "row_present": true,
+          "generation": 2,
+          "source_sha256": "34d974738b533da830344c7d838d392ae72be2277f41e261cf004b2f99c84dd5",
+          "full_source_present": true,
+          "feedback_sha256": "4367051e925379c6137a8683d118870f0269700ac951cbc4f1233747ea486cf2",
+          "full_feedback_present": true
+        }
+      ]
+    }
+  ],
+  "actually_supplied_seed_feedback_excerpt": "case_000 severity=1.0,period=5000: error=2.050730, deltatarget_3=+0.120001, deltatarget_5=+0.000000, deltatarget_7=-0.318497; interval-end error=1.3488386340270624; incomplete responses=0.\nPaired regime summary: {\"best_tested_fixed_target\": \"target_5\", \"cases\": 8, \"mean_offline_error\": 1.7445687815149309, \"regime\": \"severity=1.0,period=5000\", \"target_3_difference_sd\": 0.27599069133623494, \"target_3_mean_difference\": -0.061771555757156815, \"target_5_difference_sd\": 0.0, \"target_5_mean_difference\": 0.0, \"target_7_difference_sd\": 0.27816749035801897, \"target_7_mean_difference\": -0.12708862618543582}",
+  "exact_injected_recommendation": "**Try the unexplored neighboring constant `return 6`.** Fixed five\u2019s lead supports keeping simple population targets competitive, and the tested constants do not establish its optimality. Constant six also differs materially from loss-triggered expansion: it maintains the target across detected events instead of repeatedly switching between five and six."
+}

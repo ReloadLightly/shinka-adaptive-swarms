@@ -25,8 +25,8 @@ import numpy as np
 SPEC_PATH = ROOT / 'docs/studies/book_mpso_population_v1/analysis_specification.json'
 CONTROLS = ('target_3', 'target_5', 'target_7')
 LABELS = {'target_3': 'Fixed target 3', 'target_5': 'Chapter 5+1 / target 5',
-          'target_7': 'Fixed target 7', 'selected': 'Selected native rule'}
-COLORS = {'target_3': '#596faf', 'target_5': '#d47b34', 'target_7': '#8c669c', 'selected': '#187b80'}
+          'target_7': 'Fixed target 7', 'selected': 'Selected native rule', 'best_descendant': 'Best tested descendant'}
+COLORS = {'target_3': '#596faf', 'target_5': '#d47b34', 'target_7': '#8c669c', 'selected': '#187b80', 'best_descendant': '#187b80'}
 
 
 def population_behavior(cases):
@@ -149,6 +149,7 @@ def analyze(run,phase='development',output=None,references_only=False):
     configs=configs_from(manifest)
     hashes={}
     programs,slots=[],[]
+    best_descendant, descendant_cases = None, None
     selection=read_json(run/'selection.json') if (run/'selection.json').exists() else {}
     if phase=='development':
         outcomes={method:load_cases(run/'references'/method,configs,hashes,run) for method in CONTROLS}
@@ -160,6 +161,10 @@ def analyze(run,phase='development',output=None,references_only=False):
                 raise ValueError('No completed valid native program')
             selected=min(programs,key=lambda r:(r['mean_offline_error'],r['generation'],r['source_sha256']))
             outcomes['selected']=load_cases(search/f"gen_{selected['generation']}/results",configs,hashes,run)
+            descendants = [row for row in programs if row['generation'] > 0]
+            if descendants:
+                best_descendant = min(descendants,key=lambda r:(r['mean_offline_error'],r['generation'],r['source_sha256']))
+                descendant_cases = load_cases(search/f"gen_{best_descendant['generation']}/results",configs,hashes,run)
     else:
         best_fixed=selection.get('selected_fixed_target',selection.get('best_fixed_target'))
         if isinstance(best_fixed,int):
@@ -189,6 +194,13 @@ def analyze(run,phase='development',output=None,references_only=False):
             'analysis_settings':spec,'analysis_specification_sha256':sha(SPEC_PATH),'analysis_source_sha256':sha(__file__),
             'case_manifest_sha256':sha(manifest),'input_sha256':hashes,'configs':configs,
             'selected':{k:v for k,v in selected.items() if k!='behavior'} if selected else None,
+            'best_descendant': {k:v for k,v in best_descendant.items() if k!='behavior'} if best_descendant else None,
+            'best_descendant_interpretation': 'Lowest-error complete descendant, even if worse than the seed. This is an explanatory comparison and does not replace selection including the seed.',
+            'best_descendant_behavior': population_behavior(descendant_cases) if descendant_cases else None,
+            'best_descendant_population_trajectories': population_curves(descendant_cases) if descendant_cases else None,
+            'best_descendant_recovery': aggregate_recovery(descendant_cases) if descendant_cases else None,
+            'best_descendant_versus_target_5': {'method':'best_descendant','reference':'target_5',**paired_effect([a['offline_error']-b['offline_error'] for a,b in zip(descendant_cases,outcomes['target_5'])],spec)} if descendant_cases else None,
+            'best_descendant_episode_influence': population_episode_effects(descendant_cases,outcomes['target_5']) if descendant_cases else None,
             'best_fixed_target':best_fixed,'fresh_comparison_required':fresh_trigger,'execution_aliases':aliases,
             'native_programs':programs,'native_slots':slots,'pair_checks':checks,
             'method_errors':{m:describe(v) for m,v in errors.items()},'contrasts':contrasts,
@@ -207,29 +219,46 @@ def analyze(run,phase='development',output=None,references_only=False):
 
 
 def markdown_tables(data):
-    methods=list(data['method_errors'])
-    lines=[f"## {data['phase'].capitalize()} paired outcomes",'', '| Case | '+' | '.join(LABELS[m] for m in methods)+' |', '|---|'+'---:|'*len(methods)]
+    methods=[m for m in data['method_errors'] if m not in data['execution_aliases']]
+    lines=[f"## {data['phase'].capitalize()} paired outcomes",'']
+    if data['execution_aliases']:
+        lines += [f"Selected execution aliases {data['execution_aliases']['selected']} on the complete saved suite; it is not an additional distinct method.",'']
+    lines += ['| Case | '+' | '.join(LABELS[m] for m in methods)+' |', '|---|'+'---:|'*len(methods)]
     for index in range(8):
         lines.append(f'| {index:03d} | '+' | '.join(f"{data['method_errors'][m]['values'][index]:.6f}" for m in methods)+' |')
-    lines += ['', '| Contrast | Every paired effect, cases 000–007 | Mean | Median | SD | Descriptive 95% interval | W / L / T |', '|---|---|---:|---:|---:|---|---:|']
-    for name,row in data['contrasts'].items():
+    contrasts={k:v for k,v in data['contrasts'].items() if not (v['method']=='selected' and data['execution_aliases'].get('selected')==v['reference'])}
+    lines += ['', '| Case | '+' | '.join(k.replace('_',' ') for k in contrasts)+' |', '|---|'+'---:|'*len(contrasts)]
+    for index in range(8):
+        lines.append(f'| {index:03d} | '+' | '.join(f"{row['values'][index]:+.6f}" for row in contrasts.values())+' |')
+    lines += ['', '| Contrast | Mean | Median | SD | Descriptive 95% interval | W / L / T |', '|---|---:|---:|---:|---|---:|']
+    for name,row in contrasts.items():
         low,high=row['descriptive_95_percent_interval']
-        lines.append(f"| {name} | "+', '.join(f'{v:+.6f}' for v in row['values'])+f" | {row['mean']:+.6f} | {row['median']:+.6f} | {row['sd']:.6f} | [{low:+.6f}, {high:+.6f}] | {row['wins']} / {row['losses']} / {row['ties']} |")
+        lines.append(f"| {name.replace('_',' ')} | {row['mean']:+.6f} | {row['median']:+.6f} | {row['sd']:.6f} | [{low:+.6f}, {high:+.6f}] | {row['wins']} / {row['losses']} / {row['ties']} |")
     return '\n'.join(lines)+'\n'
 
 
 def render(data,output):
     _style()
     methods=[m for m in data['method_errors'] if m not in data['execution_aliases']]
+    population_trajectories = dict(data['population_trajectories'])
+    behavior_data, recovery_data = dict(data['behavior']), dict(data['recovery'])
+    explanatory_descendant = bool(data['execution_aliases'].get('selected') and data.get('best_descendant'))
+    if explanatory_descendant:
+        methods.append('best_descendant')
+        LABELS['best_descendant'] = f"Best descendant (g{data['best_descendant']['generation']}; seed retained)"
+        population_trajectories['best_descendant'] = data['best_descendant_population_trajectories']
+        behavior_data['best_descendant'] = data['best_descendant_behavior']
+        recovery_data['best_descendant'] = data['best_descendant_recovery']
     fig,axes=plt.subplots(2,2,figsize=(12,8.4),constrained_layout=True)
     for method in methods:
-        rows=data['population_trajectories'][method]
+        rows=population_trajectories[method]
         queries=[r['evaluations'] for r in rows]
+        axes[0,0].fill_between(queries,[r['neutral_count_min'] for r in rows],[r['neutral_count_max'] for r in rows],color=COLORS[method],alpha=.075,lw=0)
         for ax,field in ((axes[0,0],'mean_neutral_count'),(axes[0,1],'total_particle_count'),(axes[1,0],'offline_error')):
             ax.plot(queries,[r[field] for r in rows],color=COLORS[method],label=LABELS[method],lw=1.65)
     axes[0,0].set(title='Realized neutral population per subswarm',ylabel='Mean neutral particles',ylim=(1.8,8.2))
     axes[0,1].set(title='Total optimizer population',ylabel='Neutral + permanent quantum particles')
-    axes[1,0].set(title='Tracking over the full counted horizon',ylabel='Cumulative offline error')
+    axes[1,0].set(title='Tracking over the full counted horizon',ylabel='Cumulative offline error (log scale)',yscale='log')
     for ax in (axes[0,0],axes[0,1],axes[1,0]):
         ax.set(xlabel='Counted objective evaluations',xlim=(0,500000))
         ax.ticklabel_format(axis='x',style='sci',scilimits=(0,0))
@@ -238,27 +267,32 @@ def render(data,output):
     contrast_keys=([k for k in data['contrasts'] if k.startswith('selected_')] if 'selected' not in data['execution_aliases'] else [])
     if not contrast_keys:
         contrast_keys=[k for k in data['contrasts'] if not k.startswith('selected_')]
-    for index,key in enumerate(contrast_keys):
-        row=data['contrasts'][key]
+    contrast_rows = ([data['best_descendant_versus_target_5']] if explanatory_descendant else [data['contrasts'][key] for key in contrast_keys])
+    for index,row in enumerate(contrast_rows):
         axes[1,1].scatter(row['values'],np.arange(8)+index*.17,s=25,color=COLORS[row['method']],label=f"{LABELS[row['method']]} − {LABELS[row['reference']]}")
         axes[1,1].plot(row['descriptive_95_percent_interval'],[-1-index*.55]*2,color=COLORS[row['method']],lw=2)
         axes[1,1].scatter(row['mean'],-1-index*.55,marker='D',color=COLORS[row['method']],s=40)
     axes[1,1].axvline(0,color='#8796a5',ls='--',lw=1)
     axes[1,1].set(title='Every paired case, mean and descriptive 95% interval',xlabel='Paired offline-error difference (negative favors first)',yticks=range(8),yticklabels=[f'{i:03d}' for i in range(8)])
-    axes[1,1].legend(frameon=False,fontsize=7,loc='best')
+    if len(contrast_rows)==1:
+        row=contrast_rows[0]
+        first=(f"Best descendant g{data['best_descendant']['generation']}" if row['method']=='best_descendant' else 'Selected rule')
+        axes[1,1].set_title(f"{first} − {LABELS[row['reference']]}\nEight paired cases, mean and descriptive 95% interval",fontsize=11)
+    else:
+        axes[1,1].legend(frameon=False,fontsize=7,loc='best')
     axes[1,1].grid(alpha=.15)
     fig.suptitle(f"MPSO population allocation · eight {data['phase']} pairs · 500,000 queries per case",fontsize=14)
-    fig.supxlabel('Five dimensions, ten peaks, severity 1, period 5,000. All methods start with five neutrals per new swarm.\n'+('Reused development histories informed selection; intervals are descriptive, not fresh confirmation.' if data['phase']=='development' else 'Frozen rules on fresh histories; exploratory comparison in one chapter condition.'),fontsize=9)
+    fig.supxlabel('Five dimensions, ten peaks, severity 1, period 5,000. Shading: average within-case population min/max, not uncertainty.\n'+('Reused development histories informed selection; intervals are descriptive, not fresh confirmation.' if data['phase']=='development' else 'Frozen rules on fresh histories; exploratory comparison in one chapter condition.'),fontsize=9)
     _save(fig,output/'population_and_tracking')
     fig,axes=plt.subplots(1,3,figsize=(13,4.5),constrained_layout=True)
     x=np.arange(2,9)
     width=.8/len(methods)
     for i,method in enumerate(methods):
-        behavior=data['behavior'][method]
+        behavior=behavior_data[method]
         shift=(i-(len(methods)-1)/2)*width
         for panel,field in ((0,'equal_case_requested_target_probabilities'),(1,'equal_case_realized_neutral_count_probabilities')):
             axes[panel].bar(x+shift,[100*behavior[field][str(k)] for k in x],width=width,color=COLORS[method],label=LABELS[method])
-        curve=data['recovery'][method]
+        curve=recovery_data[method]
         axes[2].plot([r['offset'] for r in curve],[r['mean_error'] for r in curve],color=COLORS[method],lw=1.8,label=LABELS[method])
     axes[0].set(title='Requested population at counted detections',xlabel='Requested target',ylabel='Within-case decisions (%)',xticks=x)
     axes[1].set(title='Realized neutral population',xlabel='Neutral particles',ylabel='Within-case subswarm updates (%)',xticks=x)
@@ -269,13 +303,26 @@ def render(data,output):
     fig.supxlabel('Equal case weight. Dynamics include births, exclusions and detection; no particle transfers between subswarms.\nRecovery excludes initialization and uses saved actual query offsets without replay.',fontsize=9)
     _save(fig,output/'population_behavior')
     if data['native_programs']:
-        fig,ax=plt.subplots(figsize=(9.5,4.5),constrained_layout=True)
+        fig,(ax,heat_ax)=plt.subplots(1,2,figsize=(12.6,4.8),constrained_layout=True)
         rows=data['native_programs']
         ax.scatter([r['generation'] for r in rows],[r['mean_offline_error'] for r in rows],color=COLORS['selected'],s=55,label='Native program',zorder=3)
         for method in CONTROLS:
             if method in data['method_errors']:ax.axhline(data['method_errors'][method]['mean'],color=COLORS[method],ls='--',label=LABELS[method])
+        valid_generations = {row['generation'] for row in rows}
+        failed = [row['generation'] for row in data['native_slots'] if row['generation'] not in valid_generations and ('failed' in row['status'] or row['status']=='failure')]
+        if failed:
+            ax.scatter(failed,[.05]*len(failed),transform=ax.get_xaxis_transform(),marker='x',color='#bb4260',label='Terminal failure: no numerical score')
         ax.set(title='One bounded native population search',xlabel='Generation slot (zero is target 5)',ylabel='Mean development offline error',xticks=range(max(r['generation'] for r in data['native_slots'])+1))
         ax.legend(frameon=False,fontsize=8);ax.grid(alpha=.15)
+        matrix=np.array([[row['behavior']['equal_case_requested_target_probabilities'][str(k)] for k in range(2,9)] for row in rows])
+        heat=heat_ax.imshow(matrix,vmin=0,vmax=1,cmap='viridis',aspect='auto')
+        for y,row in enumerate(matrix):
+            for x,value in enumerate(row):
+                if value:
+                    heat_ax.text(x,y,f'{100*value:.1f}',ha='center',va='center',fontsize=8,color='black' if value>.55 else 'white')
+        heat_ax.set(title='Actual requested-target behavior',xlabel='Requested neutral target',ylabel='Native program',xticks=range(7),xticklabels=range(2,9),yticks=range(len(rows)),yticklabels=[f"g{row['generation']}" for row in rows])
+        fig.colorbar(heat,ax=heat_ax,label='Equal-case fraction of detected decisions',shrink=.8)
+        fig.supxlabel('Every numerical program uses all eight reused development cases. Heatmap labels show percentages, not fitness rewards.',fontsize=9)
         _save(fig,output/'native_search')
     atomic_json(output/'figure_provenance.json',{'analysis_sha256':sha(output/'analysis.json'),'source_sha256':sha(__file__),'dimension':5,'phase':data['phase'],'objective_calls':0,'model_calls':0,'files':{p.name:sha(p) for p in sorted(output.glob('*.png'))+sorted(output.glob('*.svg'))}})
 

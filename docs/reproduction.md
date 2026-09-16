@@ -1,7 +1,7 @@
 # Source fidelity and experimental interpretation
 
 This project reconstructs a specific published swarm algorithm and evolves
-its response to environmental change. It is not a claim to have reproduced
+selected decisions under matched dynamic conditions and objective budgets. It is not a claim to have reproduced
 the book's numerical tables, and it does not interpret synthetic landscape
 peaks as measured geopolitical entities.
 
@@ -93,7 +93,7 @@ actual horizon and repetitions. They are not table reproductions.
    response is retained with `completed=false`. DEAP's loop can overshoot a
    budget; equal experimental accounting takes precedence here.
 
-## Candidate-program interface
+## Historical relocation-program interface
 
 The fixed simulator calls `choose_response(observation)` only when a counted
 reevaluation of a swarm's remembered best changes its observed fitness.
@@ -153,6 +153,40 @@ not substituted from historical trajectories. The benchmark still supplies the
 environmental scale through `default_radius = 0.5 * move_severity`.
 See the [prospective protocol](particle_retention_v1_protocol.md); the eight-case
 suite is development data, with no automatic fresh validation campaign.
+
+## Chapter schedule and population tasks
+
+The versioned `book_mpso.py` path implements reconstructed 5+0 and 5+1 with
+quantum sampling replacing ordinary movement for that update, permanent quantum
+discoveries entering the shared best, and exclusion after each subswarm update.
+It preserves the older simulator and its results. Neutral particles precede the
+permanent quantum particle; convergence excludes the permanent role. The
+[source record](book_mpso_source_record.md) separates chapter mechanisms from
+initialization, ordering and diameter conventions. The schedule experiment changes
+only temporary conversion count; its selected program remains the published
+change-triggered schedule.
+
+The separate `book_population.py` path retains that schedule and calls
+`choose_neutral_count(observation)` only after detected change and counted memory
+refresh. Targets are exact integers 2–8. Every new subswarm starts with five
+neutrals and one permanent quantum particle. At most one neutral is added or
+removed per detected event. Shrinking removes the worst refreshed neutral memory
+(last neutral in stable order on ties); growing inserts an uninitialized neutral
+before the permanent role, with its first evaluation supplied by the ensuing
+quantum response. A no-op uses no extra movement randomness or objective query.
+This changes population within groups without transfers or a fixed global total.
+
+The [population contract](../tasks/book_mpso_population_v1/task_prompt.txt) defines
+the immutable public observation, timing and allowed pure mathematics. The
+[prospective protocol](book_mpso_population_v1_protocol.md) freezes development
+cases, controls, selection and conditional fresh comparison. Target five is
+numerically compatible with the prior 5+1 path: the archive records structural
+RNG/order review, exact small-fixture comparisons and source hashes before reuse
+of its eight full cases. Added fixed-five population diagnostics are explicitly
+marked as algebraically derived. Targets three and seven start at five and resize
+gradually; they are fixed-target controls, not historical configurations
+initialized at those sizes. The chapter's known-scale radius and the documented
+diameter approximation remain fixed throughout.
 
 ## Measurement, reproducibility and records
 

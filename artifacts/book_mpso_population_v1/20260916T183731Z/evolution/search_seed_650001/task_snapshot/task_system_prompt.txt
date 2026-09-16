@@ -1,0 +1,123 @@
+Evolve only choose_neutral_count(observation) inside the marked block.
+Return a Python integer from 2 through 8 (not bool): requested neutral population.
+The function runs ONLY when the existing counted shared-best check detects change,
+after all existing personal-best memories have been reevaluated and before movement.
+The seed returns 5. Every newborn/replacement subswarm starts with FIVE neutral
+particles and ONE permanent quantum particle, regardless of policy target.
+
+A fixed adapter moves the current neutral population at most ONE particle toward
+this requested target. Shrinking removes the neutral with lowest freshly refreshed
+personal-best fitness; ties remove the last surviving neutral in update order.
+Permanent quantum particles cannot be removed. Survivor order, positions, velocities
+and personal memories are preserved; the shared best is rebuilt from surviving
+initialized memories. Growing inserts one new neutral just before the permanent
+quantum role. Its velocity uses the existing initialization convention and its
+first position is evaluated by the ensuing chapter quantum-response movement.
+No fitness is copied and no extra initialization evaluation is added. Requesting
+five when five are present changes nothing and consumes no extra movement RNG.
+
+Retain the published schedule: ALL current neutrals receive one quantum movement
+on this detected-change update and ordinary PSO on other updates. One permanent
+quantum particle always samples. A quantum move samples uniformly by volume around
+the asynchronous current shared best and REPLACES ordinary PSO, retaining neutral
+velocity for later PSO. Radius stays 0.5*known benchmark movement severity.
+All personal memories survive and refresh, including the permanent quantum role.
+Convergence uses all current neutrals (excluding the permanent role), retaining
+the declared pairwise-diameter approximation. PSO, exclusion after each subswarm
+update, swarm birth/removal and objective accounting remain fixed. This changes
+population WITHIN subswarms: it does not transfer particles or conserve their
+number across subswarms. Larger populations spend more of the shared query budget.
+
+Public immutable observation keys, sampled after refresh and BEFORE resizing:
+- neutral_count: current number of ordinary-role particles; swarm_size is this
+  count plus the one permanent quantum role; permanent_quantum_count=1.
+- swarm_count and total_particle_count: current whole-optimizer counts, before
+  this policy call's resize. New/excluded swarms use their actual current sizes.
+- previous_requested_target: preceding target requested by this subswarm; 5 at birth.
+- change_detected: always True for this hook, from the current counted check;
+  has_detected_change is True. No hidden environment signal is exposed.
+- updates_since_detected_change: zero on this currently detected update.
+- evaluations_since_detected_change: counted queries since this detection,
+  including its memory refresh. They do not report the oracle time of change.
+- fitness_drop: remembered best fitness before the check minus its counted
+  reevaluation; relative_fitness_drop divides it by max(1,abs(previous_best_fitness)).
+  Positive means observed deterioration; negative means improvement.
+- previous_best_fitness: best remembered quality before the detector check.
+- current_best_fitness: shared-best quality rebuilt after the memory refresh.
+  Personal-best quality is NOT necessarily current-position fitness.
+- recent_improvement: shared-best improvement during this swarm's preceding update.
+- neutral_diameter: maximum pairwise distance among current neutral positions.
+- mean_neutral_distance_to_best: mean Euclidean current-position distance to the
+  refreshed shared best; mean_neutral_speed: mean Euclidean velocity length.
+- mean_velocity_alignment_to_best: mean cosine of velocity toward refreshed best,
+  zero contribution if either vector has zero length, otherwise in [-1,1].
+- previous_conversion_count: neutrals temporarily converted in the preceding update.
+- default_radius, dimension, bounds_width: existing known numerical settings.
+Geometry is in coordinate units; normalization by max(default_radius,1e-12) is
+permitted. Features add no objective queries. Do not access hidden peaks/counts,
+optima, benchmark error, future changes, seeds, case identity or evaluator data.
+The known-scale radius is supplied by this benchmark, not inferred online.
+
+The function must be deterministic and stateless. Permitted: pure arithmetic,
+comparisons, branches, finite for loops/comprehensions, helper functions,
+immutable literal module constants; import math or explicit math imports at
+MODULE OR FUNCTION scope (aliases supported); public math functions/constants;
+mapping.get; builtins abs,all,any,bool,dict,enumerate,float,int,len,list,max,min,
+pow,range,reversed,round,sorted,sum,tuple,zip. Function defaults may be immutable
+literals. No random numbers, I/O, clocks, environment variables, external imports,
+reflection, global/nonlocal mutations, classes, yield or while loops. Only local
+temporary state is allowed; observation mutation fails. Return an exact int 2..8.
+
+Fitness=1/(1+mean offline error), using the eight REUSED DEVELOPMENT cases, each
+500,000 counted objective queries: five dimensions, ten conical peaks, severity1,
+period5000, correlation0,nexcess1. Every evaluation category shares this budget.
+References are fixed targets3,5,7 with the SAME start-at-five/one-step adapter;
+3 and7 are not historical chapter configurations initialized at those sizes.
+Feedback supplies paired errors against all three, the development-best tested
+fixed target, population diagnostics and favorable/unfavorable episodes. These
+three controls do not exhaust constant rules. Constants are legitimate and no
+complexity, conditionality or population-variability bonus is supplied. Fresh
+outcomes, if any, remain unavailable to mutation, novelty and meta-memory.
+
+
+# Scientific context supplied to mutation
+
+# Chapter-grounded population allocation within subswarms
+
+Blackwell, Branke and Li, "Particle Swarms for Dynamic Optimization Problems"
+(2008), describe cooperative MPSO: personal/shared memories support convergence
+inside subswarms, while exclusion and swarm birth/removal sustain diversity.
+Their stated future direction includes adapting particle counts within a swarm.
+The central question is whether native Shinka can improve this optimizer under
+matched changing landscapes and objective-query budgets.
+
+The preceding chapter-aligned schedule search found no descendant with better
+mean development error than the published 5+1 seed (1.744569). Reconstructed5+0
+was1.743485, with no clear paired difference across eight cases. Longer, weaker
+and fitness-gated temporary conversions were worse in that bounded batch. We
+therefore KEEP the published temporary schedule and evolve only a neutral-count
+target at detected changes. Earlier relocation and retention findings remain
+historical evidence, not numerical results from this new population contract.
+
+A fixed population of five neutrals may allocate effort poorly: additional
+ordinary trajectories could help some states, while fewer particles could allow
+more frequent subswarm updates under the same counted budget. The permanent
+quantum particle continues sampling and all memories are refreshed. Competing
+explanations include constant-size tuning, changed budget allocation, altered
+convergence/birth/removal timing, best-memory quality, closed-loop random effects
+and population-state dependence. A conditional expression alone identifies none
+of these mechanisms. This is NOT particle transfer or conservation across groups.
+
+All candidates share the documented new adapter; only the target2..8 changes,
+with at most one neutral addition/removal per detected event. Reference target5
+reconstructs the existing5+1 execution. References3/7 start at5 too. Target5's
+native seed reuses compatible control evaluations. Candidates cannot change the
+radius, permanent role, memory handling, quantum response schedule, coefficients,
+exclusion, swarm management or objective accounting.
+
+The same eight previously registered development cases retain chapter conditions
+5D,tenpeaks,severity1,period5000,500000queries. Reusing these cases does not create
+fresh evidence or reproduce the chapter's50-run tables. No superiority over all
+constants, all chapter algorithms, independent search or other program-search
+methods follows from this one bounded experiment. Explain observed decisions
+and uncertainty; neither adaptation nor more particles is presumed beneficial.

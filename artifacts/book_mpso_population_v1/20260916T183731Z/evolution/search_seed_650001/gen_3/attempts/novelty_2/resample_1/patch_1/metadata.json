@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 2,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "expand_after_unrecovered_loss",
+  "patch_description": "Keep five neutrals by default, since both tested shrinking rules underperformed fixed five. Request six when refreshed memories still show more than 5% fitness deterioration and the neutral cloud is compact and slow. This tests whether one additional trajectory helps recover from substantial observed loss while limiting population costs elsewhere. Improvement remains untested; fitness deterioration does not establish spatial displacement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T21:05:57.348412",
+  "llm_cost": 0.52246,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001/gen_3/attempts/novelty_2/resample_1/patch_1/headless_prompt.md"
+}

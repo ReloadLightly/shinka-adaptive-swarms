@@ -1,0 +1,13 @@
+<NAME>
+shrink_compact_swarms_after_loss
+</NAME>
+<DESCRIPTION>
+Request four instead of six when refreshed best quality deteriorates substantially while neutral positions and velocities remain compact. This tests whether reducing potentially redundant trajectories permits faster subswarm update cycling under the shared query budget. The current expansion rule increased mean development error by 0.208312 versus target five; that motivates testing the opposite allocation, but does not establish its benefit. Preserve the existing trigger and default target to isolate this change. Syntax verified; performance remains untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+        return 6
+=======
+        return 4
+>>>>>>> REPLACE
+</DIFF>
