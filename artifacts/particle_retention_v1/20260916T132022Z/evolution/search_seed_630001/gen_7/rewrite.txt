@@ -1,0 +1,9 @@
+"""Retain the strongest refreshed personal-best particle for ordinary PSO."""
+# EVOLVE-BLOCK-START
+def retention_priority(particle_features, swarm_features) -> float:
+    """Favor proximity with a reduced penalty on retained speed."""
+    distance = particle_features["distance_to_best_normalized"]
+    speed = particle_features["speed_normalized"]
+    speed_weight = 0.5
+    return 1.0 / (1.0 + distance + speed_weight * speed)
+# EVOLVE-BLOCK-END

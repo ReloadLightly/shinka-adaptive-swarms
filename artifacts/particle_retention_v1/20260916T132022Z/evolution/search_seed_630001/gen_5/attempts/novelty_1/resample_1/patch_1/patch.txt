@@ -1,0 +1,35 @@
+--- a/original.py
++++ b/original.py
+@@ -1,7 +1,30 @@
+ """Retain the strongest refreshed personal-best particle for ordinary PSO."""
+ 
+ # EVOLVE-BLOCK-START
+ def retention_priority(particle_features, swarm_features) -> float:
+-    """Assign equal priorities; the existing tie permutation selects exemption."""
+-    return 0.0
++    """Score a moment approximation of distance after ordinary PSO movement."""
++    distance = max(0.0, float(particle_features["distance_to_best_normalized"]))
++    speed = max(0.0, float(particle_features["speed_normalized"]))
++    alignment = max(
++        -1.0, min(1.0, float(particle_features["velocity_alignment"]))
++    )
++    # Normalize before computing squared quantities.
++    scale = max(1.0, distance, speed)
++    d = distance / scale
++    inertia = 0.729843788
++    travel = inertia * (speed / scale)
++    # Proxy: both attraction targets coincide with the refreshed swarm best.
++    # Two independent uniform attraction coefficients give these moments.
++    attraction = inertia * 2.05
++    radial_mean = (1.0 - attraction) * d - alignment * travel
++    transverse_energy = (1.0 - alignment * alignment) * travel * travel
++    attraction_variance = (attraction * attraction / 6.0) * d * d
++    expected_squared_distance = (
++        radial_mean * radial_mean + transverse_energy + attraction_variance
++    )
++    # Equivalent to 1 / (1 + RMS distance), without rescaling overflow.
++    inverse_scale = 1.0 / scale
++    return inverse_scale / (
++        inverse_scale + expected_squared_distance ** 0.5
++    )
+ # EVOLVE-BLOCK-END

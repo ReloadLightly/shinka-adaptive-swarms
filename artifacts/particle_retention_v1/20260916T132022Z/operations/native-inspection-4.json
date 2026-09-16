@@ -1,0 +1,1662 @@
+{
+  "created_at": "2026-09-16T13:50:59.154878+00:00",
+  "label": "4",
+  "scope": "Read-only native machinery snapshot; zero model or numerical executions. Live files can advance between reads; hashes describe each captured read.",
+  "status": "snapshot",
+  "run": "evolution/search_seed_630001",
+  "native": {
+    "run": "evolution/search_seed_630001",
+    "status": "preflight",
+    "started_at": "20260916T133931.882309Z",
+    "finished_at": null,
+    "original_evaluated_generation_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "database_rows_including_copies": 6,
+    "database_row_identity_digest": "d4a71d01823e12545b3fc9f488d7ca2751e85bb22c6462ff5a0e9dfa7b4bf451",
+    "database_rows": [
+      {
+        "native_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+        "island_at_snapshot": 0,
+        "patch_type": "init",
+        "correct": true
+      },
+      {
+        "native_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+        "island_at_snapshot": 1,
+        "patch_type": "init",
+        "correct": true
+      },
+      {
+        "native_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "generation": 1,
+        "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+        "code_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+        "island_at_snapshot": 0,
+        "patch_type": "full",
+        "correct": true
+      },
+      {
+        "native_id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f",
+        "generation": 2,
+        "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "code_sha256": "c03ab38195105e9d6aa35590c74993644f895ad13fbf7960882b20df9c10a941",
+        "island_at_snapshot": 1,
+        "patch_type": "diff",
+        "correct": true
+      },
+      {
+        "native_id": "68a2ca73-dd90-4dd0-8c28-2439dcf4d3a7",
+        "generation": 3,
+        "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "code_sha256": "6432c43d4f7ef882966d9cd8ab33e82a6ac472b324ad7067fe09b84ac7897c86",
+        "island_at_snapshot": 0,
+        "patch_type": "diff",
+        "correct": false
+      },
+      {
+        "native_id": "ed6fbaed-4ada-4f22-a7b1-16fed30bf055",
+        "generation": 4,
+        "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "code_sha256": "6d4e56fcf64dccdb9b9861affc05e71e2fc34f41c1a51f27b67749314ff14a23",
+        "island_at_snapshot": 0,
+        "patch_type": "full",
+        "correct": true
+      }
+    ],
+    "model_requested": "gpt-6-astra",
+    "inner_effort_requested": "xhigh",
+    "inner_effort_effective_manifest": null,
+    "inner_effort_status_manifest": "requested; no model invocation performed",
+    "role_totals": {
+      "mutation": {
+        "native_wrapper_invocations": 5,
+        "requested_logical_responses": 5,
+        "usable_responses_returned": 4,
+        "status_counts": {
+          "returned": 4,
+          "started": 1
+        },
+        "unclosed_wrapper_invocations": 1,
+        "logical_responses_in_unclosed_wrappers": 1,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 2.12331,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 5,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 5,
+        "native_dispatch_status_counts": {
+          "returned": 4,
+          "started": 1
+        }
+      },
+      "novelty": {
+        "native_wrapper_invocations": 4,
+        "requested_logical_responses": 4,
+        "usable_responses_returned": 4,
+        "status_counts": {
+          "returned": 4
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.24270999999999998,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 4,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 4,
+        "native_dispatch_status_counts": {
+          "returned": 4
+        }
+      },
+      "meta": {
+        "native_wrapper_invocations": 2,
+        "requested_logical_responses": 6,
+        "usable_responses_returned": 5,
+        "status_counts": {
+          "started": 1,
+          "returned": 1
+        },
+        "unclosed_wrapper_invocations": 1,
+        "logical_responses_in_unclosed_wrappers": 1,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.50213,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 6,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 6,
+        "native_dispatch_status_counts": {
+          "started": 1,
+          "returned": 5
+        }
+      }
+    },
+    "role_receipts": [
+      {
+        "path": "evolution/search_seed_630001/engine_calls/meta-4d9e5cd4444a4210b3c94c69770b9828.json",
+        "call_id": "meta-4d9e5cd4444a4210b3c94c69770b9828",
+        "role": "meta",
+        "method": "query",
+        "status": "started",
+        "started_at": "2026-09-16T13:50:25.452990+00:00",
+        "finished_at": null,
+        "requested_logical_responses": 1,
+        "valid_responses": null,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "ec03b7e4936fe28ecf47f5b75ab3e48d53c128c3cd0b99cd4da8c8f20b99e20d",
+        "message_sha256": "48590871a72f9680b1ee1a674c2df34f143767c08ee43021b7015a972300dfe7",
+        "responses": [],
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:50:25.462058+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "started"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 15
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/meta-cc7c2af2e6db4f63964ca1a2e719e2cf.json",
+        "call_id": "meta-cc7c2af2e6db4f63964ca1a2e719e2cf",
+        "role": "meta",
+        "method": "batch_kwargs_query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:48:18.359419+00:00",
+        "finished_at": "2026-09-16T13:50:25.443471+00:00",
+        "requested_logical_responses": 5,
+        "valid_responses": 5,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "4b3a928dfb8d5ffbf8cd5cb234b30a7894888df99d0c9bf7b556765b26533d64",
+        "message_sha256": "831f5ad549bf6485abc4cddecf6fdac151d6dab52eb94e16a61a74949bc1b71d",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 6377,
+            "output_tokens": 639,
+            "reported_api_cost": 0.10788
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 6708,
+            "output_tokens": 494,
+            "reported_api_cost": 0.10394
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 6762,
+            "output_tokens": 599,
+            "reported_api_cost": 0.10973
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 3997,
+            "output_tokens": 233,
+            "reported_api_cost": 0.06378
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 6974,
+            "output_tokens": 698,
+            "reported_api_cost": 0.1168
+          }
+        ],
+        "initial_logical_responses": 5,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:48:18.375832+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:48:46.863606+00:00"
+          },
+          {
+            "index": 2,
+            "started_at": "2026-09-16T13:48:18.391118+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:49:12.036310+00:00"
+          },
+          {
+            "index": 3,
+            "started_at": "2026-09-16T13:48:18.400492+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:49:38.678110+00:00"
+          },
+          {
+            "index": 4,
+            "started_at": "2026-09-16T13:48:18.415445+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:49:55.022360+00:00"
+          },
+          {
+            "index": 5,
+            "started_at": "2026-09-16T13:48:18.429915+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:50:25.421866+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 13
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/mutation-452feb9ba5204ef3b1c1bec003a07d0c.json",
+        "call_id": "mutation-452feb9ba5204ef3b1c1bec003a07d0c",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:44:28.082004+00:00",
+        "finished_at": "2026-09-16T13:45:45.009666+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "ae2f90b47de428dc8306504dfe9d4a5a5971d66c0d394c3acf9a70a7302dc287",
+        "message_sha256": "5626d6b3cb2f852a83bfb5463fe76033f84351a9f6736fd813a92637f7f0d8dc",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 27274,
+            "output_tokens": 1942,
+            "reported_api_cost": 0.499376
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:44:28.097175+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:45:45.001948+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 5
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/mutation-63b38119632f479f8918b454ed7902af.json",
+        "call_id": "mutation-63b38119632f479f8918b454ed7902af",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:45:59.276212+00:00",
+        "finished_at": "2026-09-16T13:47:44.563625+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "2136ad71850d1b25eccbc9291687bfa6964384647db87e33e7ba06cf75c2ca3f",
+        "message_sha256": "91f5d5d7e6304a4d20ce810803e6fa8bc705632b83f8b83f9c1b6c6ae48cb76b",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 27280,
+            "output_tokens": 2760,
+            "reported_api_cost": 0.538416
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:45:59.289634+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:47:44.550036+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 7
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/mutation-a460ee7f261a4d698f02aa1e5aaa66b6.json",
+        "call_id": "mutation-a460ee7f261a4d698f02aa1e5aaa66b6",
+        "role": "mutation",
+        "method": "query",
+        "status": "started",
+        "started_at": "2026-09-16T13:48:24.896743+00:00",
+        "finished_at": null,
+        "requested_logical_responses": 1,
+        "valid_responses": null,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "cf811512fb6016707131e1e94133f81618befa875593b6c8531f287ce98cc7ec",
+        "message_sha256": "5c8c4de949f5689883edb8af66aad70d61c7f24e406c81b4f8121b4684ebd7e6",
+        "responses": [],
+        "preceding_native_sampling_context": {
+          "generation": 5,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:48:24.916603+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "started"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 14
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/mutation-b94b0157e48d41c78b781e0aed2da8a1.json",
+        "call_id": "mutation-b94b0157e48d41c78b781e0aed2da8a1",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:40:10.269792+00:00",
+        "finished_at": "2026-09-16T13:41:41.190304+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "c4f29754076ae68163ab0951315d3070a12225a7337fe9bc9730f5eb28e6af8d",
+        "message_sha256": "45e03ba556cdb91598461828133feee39dd65f3b11783136644fed995d19e76d",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 26256,
+            "output_tokens": 1923,
+            "reported_api_cost": 0.454198
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:40:10.283416+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:41:41.081672+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 1
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/mutation-edfd05e5c94a4460ab342327419cc684.json",
+        "call_id": "mutation-edfd05e5c94a4460ab342327419cc684",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:42:18.891599+00:00",
+        "finished_at": "2026-09-16T13:43:57.225743+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "ae2f90b47de428dc8306504dfe9d4a5a5971d66c0d394c3acf9a70a7302dc287",
+        "message_sha256": "467e9c81eb8861d6d703f239d2cb841b4eac718e80ca0e07392ad17d77eaf274",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 41867,
+            "output_tokens": 2653,
+            "reported_api_cost": 0.63132
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:42:18.903977+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:43:57.211788+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 3
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/novelty-5420e5d72af546738056702922d2a894.json",
+        "call_id": "novelty-5420e5d72af546738056702922d2a894",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:41:42.254818+00:00",
+        "finished_at": "2026-09-16T13:41:57.572361+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "1004f32062ed29e629fa8e999a4bb72ef78fde4292ef8b5c9fb7e17556cccd3e",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4022,
+            "output_tokens": 121,
+            "reported_api_cost": 0.05843
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:41:42.268204+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:41:57.368364+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 2
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/novelty-b787fede89d74e89a1355ac76e4ec246.json",
+        "call_id": "novelty-b787fede89d74e89a1355ac76e4ec246",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:47:45.398502+00:00",
+        "finished_at": "2026-09-16T13:48:03.085310+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "38e7ec5f9326882e7115008019667ca5245651223ff31f00ba0d3ea2e5826d6d",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4320,
+            "output_tokens": 206,
+            "reported_api_cost": 0.06566
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:47:45.408589+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:48:03.076402+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 8
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/novelty-badbb42cddbd44878b423a2528a5e8d7.json",
+        "call_id": "novelty-badbb42cddbd44878b423a2528a5e8d7",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:43:57.551884+00:00",
+        "finished_at": "2026-09-16T13:44:11.311909+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "576ea5390615e6d4c950514c05f8f89b7f7c829d30c2b5f8a16813bffa4f0bed",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4040,
+            "output_tokens": 143,
+            "reported_api_cost": 0.05971
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:43:57.566693+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:44:11.303902+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 4
+      },
+      {
+        "path": "evolution/search_seed_630001/engine_calls/novelty-fcf12ebe0ee44f718b15f2a6dea67ee8.json",
+        "call_id": "novelty-fcf12ebe0ee44f718b15f2a6dea67ee8",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T13:45:45.491183+00:00",
+        "finished_at": "2026-09-16T13:45:58.357852+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "57b3df443f3e012a8fa8eb54b66aa44a26eb34333010088099c6b54299691d46",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4090,
+            "output_tokens": 117,
+            "reported_api_cost": 0.05891
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T13:45:45.501433+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T13:45:58.348393+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 6
+      }
+    ],
+    "event_receipt_coverage": {
+      "native_wrapper_starts_without_receipt": [],
+      "receipts_without_observed_start_event": []
+    },
+    "mutation_wrapper_counts_by_generation": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "1": 1,
+      "2": 1
+    },
+    "sampling_attempt_counts_by_generation": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "retry_context_association": "Most recent native_sampling event before wrapper start; this sprint uses one proposal worker. Full saved prompt source/feedback checks verify context separately.",
+    "degradation_events": [],
+    "patch_types_original_evaluated_rows": {
+      "init": 1,
+      "full": 2,
+      "diff": 2
+    },
+    "native_sampling": [
+      {
+        "time": "2026-09-16T13:40:10+00:00",
+        "elapsed_s": 36.79,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_630001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+                "full_source_present": true,
+                "feedback_sha256": "09f46f4927fc40c796ca48502070fd8f6f1a3af3c7758de100250f02fb664d61",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-16T13:42:18+00:00",
+        "elapsed_s": 158.89,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 2,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_630001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+                "full_source_present": true,
+                "feedback_sha256": "09f46f4927fc40c796ca48502070fd8f6f1a3af3c7758de100250f02fb664d61",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-16T13:44:28+00:00",
+        "elapsed_s": 281.27,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 3,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "parent_generation": 1,
+        "archive_inspiration_ids": [
+          "d2446549-088f-4ced-b329-8eba1e75cb1b"
+        ],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_630001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+                "full_source_present": true,
+                "feedback_sha256": "0aaeccd0e60d89842a9d2fc624865148dd91d51062f875fd849d9649c47aa4b9",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+                "full_source_present": true,
+                "feedback_sha256": "09f46f4927fc40c796ca48502070fd8f6f1a3af3c7758de100250f02fb664d61",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-16T13:45:59+00:00",
+        "elapsed_s": 368.73,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 4,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "parent_generation": 1,
+        "archive_inspiration_ids": [
+          "d2446549-088f-4ced-b329-8eba1e75cb1b"
+        ],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_630001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+                "full_source_present": true,
+                "feedback_sha256": "0aaeccd0e60d89842a9d2fc624865148dd91d51062f875fd849d9649c47aa4b9",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+                "full_source_present": true,
+                "feedback_sha256": "09f46f4927fc40c796ca48502070fd8f6f1a3af3c7758de100250f02fb664d61",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-16T13:48:24+00:00",
+        "elapsed_s": 505.5,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 5,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+        "parent_generation": 1,
+        "archive_inspiration_ids": [
+          "ed6fbaed-4ada-4f22-a7b1-16fed30bf055"
+        ],
+        "top_k_inspiration_ids": [
+          "d2446549-088f-4ced-b329-8eba1e75cb1b"
+        ],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [],
+        "coverage": "no saved attempt prompt available yet; not verified"
+      }
+    ],
+    "novelty": {
+      "decision_count": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T13:41:57+00:00",
+          "elapsed_s": 139.52,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05843,
+          "novelty_explanation": "NOVEL \u2014 The existing code prioritizes particles by personal-best rank. The proposed code assigns every particle equal priority, leaving retention to tie-breaking. This changes the selection strategy and can affect optimizer performance.",
+          "max_similarity": 0.9588190317153931,
+          "similarity_scores": [
+            0.9588190317153931
+          ]
+        },
+        {
+          "time": "2026-09-16T13:44:11+00:00",
+          "elapsed_s": 266.26,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05971,
+          "novelty_explanation": "NOVEL: The existing code prioritizes particles by personal-best rank. The proposed code instead favors particles with smaller normalized distance to the best and lower normalized speed. This changes the retention criterion and can select different particles, affecting search behavior.",
+          "max_similarity": 0.9666087627410889,
+          "similarity_scores": [
+            0.9666087627410889
+          ]
+        },
+        {
+          "time": "2026-09-16T13:45:58+00:00",
+          "elapsed_s": 367.83,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05891,
+          "novelty_explanation": "**NOVEL**: The existing code prioritizes particles by personal-best rank. The proposed code instead favors smaller projected distances, calculated from normalized relative position plus velocity scaled by 0.73. This changes the retention strategy and can select different particles.",
+          "max_similarity": 0.9233625531196594,
+          "similarity_scores": [
+            0.9233625531196594,
+            0.913716733455658
+          ]
+        },
+        {
+          "time": "2026-09-16T13:48:03+00:00",
+          "elapsed_s": 485.42,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06566,
+          "novelty_explanation": "**NOVEL**: The existing code scores distance at the end of a damped inertial step; the proposed code scores RMS distance over the entire trajectory. This changes how distance, speed, and alignment affect priority and can produce different particle rankings. It also adds alignment clamping and numerical scaling for stability.",
+          "max_similarity": 0.9374507069587708,
+          "similarity_scores": [
+            0.8803386092185974,
+            0.8794313073158264,
+            0.9374507069587708
+          ]
+        }
+      ]
+    },
+    "native_embeddings": {
+      "starts": 5,
+      "completions": 5,
+      "dimensions": {
+        "768": 5
+      },
+      "events": [
+        {
+          "time": "2026-09-16T13:40:01+00:00",
+          "elapsed_s": 28.09,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T13:41:41+00:00",
+          "elapsed_s": 123.01,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T13:43:57+00:00",
+          "elapsed_s": 252.21,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-16T13:45:45+00:00",
+          "elapsed_s": 354.5,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-16T13:47:44+00:00",
+          "elapsed_s": 468.7,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-16T13:40:10+00:00",
+          "elapsed_s": 36.66,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:41:42+00:00",
+          "elapsed_s": 123.87,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:43:57+00:00",
+          "elapsed_s": 252.48,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_2/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:45:45+00:00",
+          "elapsed_s": 354.93,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:47:45+00:00",
+          "elapsed_s": 469.5,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_4/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta": {
+      "updates_started": [
+        {
+          "time": "2026-09-16T13:48:18+00:00",
+          "elapsed_s": 500.68,
+          "event": "meta_update_start",
+          "message": "Native meta-scratchpad update started",
+          "pending_programs": 5
+        }
+      ],
+      "updates_completed": [],
+      "updates_noop": [],
+      "saved_artifacts": [],
+      "mutation_prompt_injections": [
+        {
+          "receipt": "evolution/search_seed_630001/engine_calls/mutation-452feb9ba5204ef3b1c1bec003a07d0c.json",
+          "started_at": "2026-09-16T13:44:28.082004+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 3,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_630001/engine_calls/mutation-63b38119632f479f8918b454ed7902af.json",
+          "started_at": "2026-09-16T13:45:59.276212+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 4,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_630001/engine_calls/mutation-a460ee7f261a4d698f02aa1e5aaa66b6.json",
+          "started_at": "2026-09-16T13:48:24.896743+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 5,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_630001/engine_calls/mutation-b94b0157e48d41c78b781e0aed2da8a1.json",
+          "started_at": "2026-09-16T13:40:10.269792+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 1,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_630001/engine_calls/mutation-edfd05e5c94a4460ab342327419cc684.json",
+          "started_at": "2026-09-16T13:42:18.891599+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 2,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        }
+      ]
+    },
+    "migration_history": [],
+    "native_migration_logs": [],
+    "prompt_verification_summary": {
+      "saved_attempt_prompts": 4,
+      "full_frozen_task_context_present": 4,
+      "source_context_references": 6,
+      "full_sources_present": 6,
+      "full_feedback_present": 6,
+      "sampling_events_without_saved_prompt_yet": 1
+    },
+    "terminal_failed_slots": [
+      3
+    ],
+    "terminal_rejected_without_archive": [],
+    "archived_invalid_generations": [
+      3
+    ],
+    "terminal_slots": 5,
+    "evaluated_descendants": 4,
+    "valid_descendants": 3,
+    "generation_progress": [
+      {
+        "generation": 0,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 0,
+        "new_completed_objective_queries": 0,
+        "reuse_events": 8,
+        "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+        "mean_offline_error": 3.9016851938394685,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 3.38606776281405,
+            "random_mean_difference": 0.1747283903755028,
+            "random_difference_sd": 0.12390692554237565,
+            "seed_mean_difference": 0.0,
+            "seed_difference_sd": 0.0
+          },
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.898627734526179,
+            "random_mean_difference": 0.07050784531809784,
+            "random_difference_sd": 1.3216676722721987,
+            "seed_mean_difference": 0.0,
+            "seed_difference_sd": 0.0
+          },
+          {
+            "regime": "severity=3.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 4.596924146208887,
+            "random_mean_difference": 0.04311985998966317,
+            "random_difference_sd": 0.20912802296005115,
+            "seed_mean_difference": 0.0,
+            "seed_difference_sd": 0.0
+          },
+          {
+            "regime": "severity=3.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.7251211318087587,
+            "random_mean_difference": 0.42963072064478847,
+            "random_difference_sd": 0.5721825079901887,
+            "seed_mean_difference": 0.0,
+            "seed_difference_sd": 0.0
+          }
+        ],
+        "response_count": 0,
+        "reset_velocity_count": 0,
+        "feedback_sha256": "09f46f4927fc40c796ca48502070fd8f6f1a3af3c7758de100250f02fb664d61"
+      },
+      {
+        "generation": 1,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 8,
+        "new_completed_objective_queries": 800000,
+        "reuse_events": 0,
+        "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+        "mean_offline_error": 3.7221884897574555,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 3.211339372438547,
+            "random_mean_difference": 0.0,
+            "random_difference_sd": 0.0,
+            "seed_mean_difference": -0.1747283903755028,
+            "seed_difference_sd": 0.12390692554237565
+          },
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.8281198892080814,
+            "random_mean_difference": 0.0,
+            "random_difference_sd": 0.0,
+            "seed_mean_difference": -0.07050784531809784,
+            "seed_difference_sd": 1.3216676722721987
+          },
+          {
+            "regime": "severity=3.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 4.553804286219224,
+            "random_mean_difference": 0.0,
+            "random_difference_sd": 0.0,
+            "seed_mean_difference": -0.04311985998966317,
+            "seed_difference_sd": 0.20912802296005115
+          },
+          {
+            "regime": "severity=3.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.2954904111639705,
+            "random_mean_difference": 0.0,
+            "random_difference_sd": 0.0,
+            "seed_mean_difference": -0.42963072064478847,
+            "seed_difference_sd": 0.5721825079901887
+          }
+        ],
+        "response_count": 0,
+        "reset_velocity_count": 0,
+        "feedback_sha256": "0aaeccd0e60d89842a9d2fc624865148dd91d51062f875fd849d9649c47aa4b9"
+      },
+      {
+        "generation": 2,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 8,
+        "new_completed_objective_queries": 800000,
+        "reuse_events": 0,
+        "source_sha256": "c03ab38195105e9d6aa35590c74993644f895ad13fbf7960882b20df9c10a941",
+        "mean_offline_error": 3.680712176667683,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 3.2344227747801577,
+            "random_mean_difference": 0.023083402341611103,
+            "random_difference_sd": 0.13055909577254843,
+            "seed_mean_difference": -0.1516449880338917,
+            "seed_difference_sd": 0.006652170230172764
+          },
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 4.003104796626859,
+            "random_mean_difference": 0.17498490741877815,
+            "random_difference_sd": 1.5806404426300158,
+            "seed_mean_difference": 0.1044770621006803,
+            "seed_difference_sd": 0.25897277035781713
+          },
+          {
+            "regime": "severity=3.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 4.326640169596648,
+            "random_mean_difference": -0.22716411662257596,
+            "random_difference_sd": 0.48581793776056154,
+            "seed_mean_difference": -0.27028397661223913,
+            "seed_difference_sd": 0.6949459607206127
+          },
+          {
+            "regime": "severity=3.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.1586809656670662,
+            "random_mean_difference": -0.136809445496904,
+            "random_difference_sd": 0.3801413469797772,
+            "seed_mean_difference": -0.5664401661416925,
+            "seed_difference_sd": 0.1920411610104114
+          }
+        ],
+        "response_count": 0,
+        "reset_velocity_count": 0,
+        "feedback_sha256": "afc04983468fc98275cfc194244637d5d28214d87a225e2494b6807c207afaae"
+      },
+      {
+        "generation": 3,
+        "checkpoint_status": "failed",
+        "completed_cases": 0,
+        "completed_new_cases": 0,
+        "new_completed_objective_queries": 0,
+        "reuse_events": 0,
+        "source_sha256": "6432c43d4f7ef882966d9cd8ab33e82a6ac472b324ad7067fe09b84ac7897c86",
+        "mean_offline_error": null,
+        "regime_summaries": null,
+        "response_count": 0,
+        "reset_velocity_count": 0,
+        "feedback_sha256": "3b77ffcb04a8dbdf77552a896c42c55b8c68eb751a655b0365bc9e0d3e7fac47"
+      },
+      {
+        "generation": 4,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 8,
+        "new_completed_objective_queries": 800000,
+        "reuse_events": 0,
+        "source_sha256": "6d4e56fcf64dccdb9b9861affc05e71e2fc34f41c1a51f27b67749314ff14a23",
+        "mean_offline_error": 3.724535554695695,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 3.2722258822090318,
+            "random_mean_difference": 0.06088650977048515,
+            "random_difference_sd": 0.08507413254817449,
+            "seed_mean_difference": -0.11384188060501765,
+            "seed_difference_sd": 0.03883279299420116
+          },
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.6824685604005953,
+            "random_mean_difference": -0.14565132880748566,
+            "random_difference_sd": 1.1077731569936453,
+            "seed_mean_difference": -0.2161591741255835,
+            "seed_difference_sd": 0.2138945152785534
+          },
+          {
+            "regime": "severity=3.0,period=2500",
+            "cases": 2,
+            "mean_offline_error": 4.5892814679287035,
+            "random_mean_difference": 0.03547718170947922,
+            "random_difference_sd": 0.16059557049812034,
+            "seed_mean_difference": -0.0076426782801839455,
+            "seed_difference_sd": 0.3697235934581715
+          },
+          {
+            "regime": "severity=3.0,period=5000",
+            "cases": 2,
+            "mean_offline_error": 3.3541663082444497,
+            "random_mean_difference": 0.05867589708047949,
+            "random_difference_sd": 0.018768111044570317,
+            "seed_mean_difference": -0.370954823564309,
+            "seed_difference_sd": 0.5534143969456183
+          }
+        ],
+        "response_count": 0,
+        "reset_velocity_count": 0,
+        "feedback_sha256": "8ff16b1fd30c2964a3791a45836ffe7d23fc225c724becc8028e0d48a6db382c"
+      }
+    ]
+  },
+  "input_evidence": {
+    "evolution/search_seed_630001/manifest.json": {
+      "bytes_read": 9153,
+      "sha256_at_read": "94eaf013178cf8ccfe05c0a371d8371bfa972f086d769357ab5349bddca25028"
+    },
+    "evolution/search_seed_630001/events.jsonl": {
+      "bytes_read": 405269,
+      "sha256_at_read": "24ee9913d3424d8e898a333c8b3a7104e2c170ee91ed32bdd01c3c924db52fc7"
+    },
+    "evolution/search_seed_630001/engine_calls/meta-4d9e5cd4444a4210b3c94c69770b9828.json": {
+      "bytes_read": 18777,
+      "sha256_at_read": "ed032ee9d5295867823792695ac064a0631a77139693685724067174021ba219"
+    },
+    "evolution/search_seed_630001/engine_calls/meta-cc7c2af2e6db4f63964ca1a2e719e2cf.json": {
+      "bytes_read": 53362,
+      "sha256_at_read": "f2b651d6d53b026f2168060db23976359032fee197e55344a4e8bc743beb0aff"
+    },
+    "evolution/search_seed_630001/engine_calls/mutation-452feb9ba5204ef3b1c1bec003a07d0c.json": {
+      "bytes_read": 30840,
+      "sha256_at_read": "d57e71952c73ebfa5634b6e1dde2d9efd6b578cc166bd5b5a2177076828dca29"
+    },
+    "evolution/search_seed_630001/engine_calls/mutation-63b38119632f479f8918b454ed7902af.json": {
+      "bytes_read": 30455,
+      "sha256_at_read": "6eba15e6987712471ce925a2fb45c83137affce6bde13c491d1bdb2985ceb70a"
+    },
+    "evolution/search_seed_630001/engine_calls/mutation-a460ee7f261a4d698f02aa1e5aaa66b6.json": {
+      "bytes_read": 39511,
+      "sha256_at_read": "f6ce1310ea012a4101e6f6ada180e01a7ee49d7c6cabed4428405c91c3b3acdb"
+    },
+    "evolution/search_seed_630001/engine_calls/mutation-b94b0157e48d41c78b781e0aed2da8a1.json": {
+      "bytes_read": 19619,
+      "sha256_at_read": "31df603021b56702492e8840f5dd90242106ddf175eed0ebff6355600790f8c7"
+    },
+    "evolution/search_seed_630001/engine_calls/mutation-edfd05e5c94a4460ab342327419cc684.json": {
+      "bytes_read": 20315,
+      "sha256_at_read": "b25839003acca383a4d768fc9a94a28cbff650e7fa048d53f15676dc802c91a9"
+    },
+    "evolution/search_seed_630001/engine_calls/novelty-5420e5d72af546738056702922d2a894.json": {
+      "bytes_read": 3821,
+      "sha256_at_read": "33cd863fda777d82372004e02e5feaa400aa1f3378b62dcc1715b1489b0d1c35"
+    },
+    "evolution/search_seed_630001/engine_calls/novelty-b787fede89d74e89a1355ac76e4ec246.json": {
+      "bytes_read": 5027,
+      "sha256_at_read": "bcd8a0d670e3942b85008f57a402e11188d732d43e39bc5665e77f0ea76bcdc1"
+    },
+    "evolution/search_seed_630001/engine_calls/novelty-badbb42cddbd44878b423a2528a5e8d7.json": {
+      "bytes_read": 3922,
+      "sha256_at_read": "05428ccfa76e537e850cfc4f549022cce6e79ec9c374af3e6ae018808886cd78"
+    },
+    "evolution/search_seed_630001/engine_calls/novelty-fcf12ebe0ee44f718b15f2a6dea67ee8.json": {
+      "bytes_read": 4157,
+      "sha256_at_read": "8c1b5ade468947e3cb5244a57db828e1b5b62f5cbe1fc80fdea228c3872c1db2"
+    },
+    "evolution/search_seed_630001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 16767,
+      "sha256_at_read": "d74b430b2920783bb1aca373e0051870c4022358cfcb606adaee6226e8cebcdd"
+    },
+    "evolution/search_seed_630001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 17374,
+      "sha256_at_read": "6026d719378bdbb22c480c51e4f13d7bf09ed41b5dae90485a0aaa224feef6eb"
+    },
+    "evolution/search_seed_630001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 27343,
+      "sha256_at_read": "574e1b813709e603783bb1cb0ab51f303776b0bbb1219b7053befb170ff5b997"
+    },
+    "evolution/search_seed_630001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 26631,
+      "sha256_at_read": "3169bba246ac8ab72c20be6d5150eb0036ff226ee55f48c19207abe5d095e0a3"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_248bed0426c64ae0bd18fdd1a75d373e.md": {
+      "bytes_read": 11818,
+      "sha256_at_read": "3099c7176bd27019459e819cfc5d43938e8c11794b04252d91cda28427b402ca"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_3c267cfbb6654520b690237dacda1955.md": {
+      "bytes_read": 1966,
+      "sha256_at_read": "7f245560d57483988b366ac42e9303b3452d8cac5638158bcca56b100266e777"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_6579e5341cf642f98d410fc7cfc541fb.md": {
+      "bytes_read": 16767,
+      "sha256_at_read": "d74b430b2920783bb1aca373e0051870c4022358cfcb606adaee6226e8cebcdd"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_693ab5d8a8f44286a1e32a2746282b02.md": {
+      "bytes_read": 3049,
+      "sha256_at_read": "4354646fd6df6d48073a151bf52ec42ac8e1908ad5c97dc7ca187d4795d9c4d8"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_8ba3a009db0f43eba96ed35dda7bb3ae.md": {
+      "bytes_read": 2024,
+      "sha256_at_read": "50fb4acb479a835098b9c59569530987c50603ec3bf53bf33a155c68a8d129fc"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_9057a9b67d7241d48830032d4369c515.md": {
+      "bytes_read": 37372,
+      "sha256_at_read": "b2a517165f8e8667353fd98c62e8cdd08e203d32f22f947c3a98a7e20671105b"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_920b8f8366294ec681d50b8ec87e7f90.md": {
+      "bytes_read": 1831,
+      "sha256_at_read": "2991cb971956865c1471fb08d0390f40e123d4dcdea67cec9c02d4c29d285688"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_a4f9e50da39a489cacc93917ae79a334.md": {
+      "bytes_read": 17289,
+      "sha256_at_read": "1bd0e1b6ce91729689b479e484e68ec63c909f2f033988a89102ae69b869ec52"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_bd94285983764a1b90d1a975f43e3d7a.md": {
+      "bytes_read": 17374,
+      "sha256_at_read": "6026d719378bdbb22c480c51e4f13d7bf09ed41b5dae90485a0aaa224feef6eb"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_c8eab928b63645dc8734ed7573883096.md": {
+      "bytes_read": 10933,
+      "sha256_at_read": "99f72407b6ef75c8494ba90db4f2e8d60a098617ee43ffeddae931ad464f0ca7"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_dfd9540ee85a437ba728ae56358a7b8e.md": {
+      "bytes_read": 27343,
+      "sha256_at_read": "574e1b813709e603783bb1cb0ab51f303776b0bbb1219b7053befb170ff5b997"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_e2a6b0ef49854db1a57e28cf0d7eaec1.md": {
+      "bytes_read": 2251,
+      "sha256_at_read": "fd7af04f6bffbd04282949e8e5f0f2c2b965ebdc9ab3f712aeff0b6997a73e7f"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_e4c2d667d08c4ceea9682e739dd41a27.md": {
+      "bytes_read": 11117,
+      "sha256_at_read": "7b473b6e91811a20ea10d9ed0f9204ac4b552a8db6bf0031d1803362af10a120"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_eecb88d0e415464e93ba836422cc60a0.md": {
+      "bytes_read": 10221,
+      "sha256_at_read": "f858a8f4ed111a122fcd0001979ec653250e155c9f01ee008210b8d5f583ae21"
+    },
+    "evolution/search_seed_630001/headless_prompts/prompt_f8c263a57cd94566ba3b1be2b38c0ec7.md": {
+      "bytes_read": 26631,
+      "sha256_at_read": "3169bba246ac8ab72c20be6d5150eb0036ff226ee55f48c19207abe5d095e0a3"
+    },
+    "evolution/search_seed_630001/task_snapshot/task_system_prompt.txt": {
+      "bytes_read": 5811,
+      "sha256_at_read": "ecb9ce284a80347528696372c162815c00224a80d9b13ce99cb72f4f1b60a88c"
+    },
+    "evolution/search_seed_630001/gen_0/main.py": {
+      "bytes_read": 239,
+      "sha256_at_read": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9"
+    },
+    "evolution/search_seed_630001/gen_1/main.py": {
+      "bytes_read": 285,
+      "sha256_at_read": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf"
+    },
+    "evolution/search_seed_630001/gen_2/main.py": {
+      "bytes_read": 343,
+      "sha256_at_read": "c03ab38195105e9d6aa35590c74993644f895ad13fbf7960882b20df9c10a941"
+    },
+    "evolution/search_seed_630001/gen_3/main.py": {
+      "bytes_read": 570,
+      "sha256_at_read": "6432c43d4f7ef882966d9cd8ab33e82a6ac472b324ad7067fe09b84ac7897c86"
+    },
+    "evolution/search_seed_630001/gen_4/main.py": {
+      "bytes_read": 1037,
+      "sha256_at_read": "6d4e56fcf64dccdb9b9861affc05e71e2fc34f41c1a51f27b67749314ff14a23"
+    },
+    "evolution/search_seed_630001/gen_0/results/evaluation-checkpoint.json": {
+      "bytes_read": 22715,
+      "sha256_at_read": "b967d8c71735f499092dd129797d1c633d6a3a04ac5743237edb46d46c3a4f10"
+    },
+    "evolution/search_seed_630001/gen_0/results/events.jsonl": {
+      "bytes_read": 5177,
+      "sha256_at_read": "9ef082808db28ad3fabefa88a63118895457b55407d57661db962840a9d65e0a"
+    },
+    "evolution/search_seed_630001/gen_0/results/metrics.json": {
+      "bytes_read": 29276,
+      "sha256_at_read": "733fa58f539032312ab70005e19ed35d84adaf27c85e66bb2673ab7bc2988e49"
+    },
+    "evolution/search_seed_630001/gen_1/results/evaluation-checkpoint.json": {
+      "bytes_read": 23509,
+      "sha256_at_read": "3de3c8873823028648e582e2ad81d1e5add89412de51a1c18c20538051049a1e"
+    },
+    "evolution/search_seed_630001/gen_1/results/events.jsonl": {
+      "bytes_read": 113001,
+      "sha256_at_read": "a2187dc44addf4c5b6554c07cea576a159b798f02884bedf6e45679f9246f4db"
+    },
+    "evolution/search_seed_630001/gen_1/results/metrics.json": {
+      "bytes_read": 30806,
+      "sha256_at_read": "1efb7a90f994ab67fa4beb6f2b7fe0152e00fae4e1de43d6039340b9f1b06d25"
+    },
+    "evolution/search_seed_630001/gen_2/results/evaluation-checkpoint.json": {
+      "bytes_read": 23892,
+      "sha256_at_read": "3fa36f092732874525035aed75f18eaddb6c15678bae1dfb081c941478f9b9ac"
+    },
+    "evolution/search_seed_630001/gen_2/results/events.jsonl": {
+      "bytes_read": 113038,
+      "sha256_at_read": "2b88d57adcd08e6f5b3a0df78da90cb6e0a2d2fbad5c27b6c66d204beb4561d8"
+    },
+    "evolution/search_seed_630001/gen_2/results/metrics.json": {
+      "bytes_read": 31437,
+      "sha256_at_read": "df4bbe5f356f3fca01ae9d5c8618d37a5ac1022a45f7704fbe9b66cc8234d12e"
+    },
+    "evolution/search_seed_630001/gen_3/results/evaluation-checkpoint.json": {
+      "bytes_read": 5197,
+      "sha256_at_read": "0614345274cd8468579b5fbea6f37ffa8aa55775289f135b5f07a23b02ed0364"
+    },
+    "evolution/search_seed_630001/gen_3/results/events.jsonl": {
+      "bytes_read": 369,
+      "sha256_at_read": "14254be185a1db73f672b2d64f1742ed537379cdf6c6564fc9e08d7e353f526f"
+    },
+    "evolution/search_seed_630001/gen_3/results/metrics.json": {
+      "bytes_read": 394,
+      "sha256_at_read": "1ca3105b84637f2c27b06e147c86991f762afd5d74c8c5c7b29519611a130dc3"
+    },
+    "evolution/search_seed_630001/gen_4/results/evaluation-checkpoint.json": {
+      "bytes_read": 23903,
+      "sha256_at_read": "5ec45912b6dd58290f8677333012f8f67d39279e355d6eb07b992aab28e7cb40"
+    },
+    "evolution/search_seed_630001/gen_4/results/events.jsonl": {
+      "bytes_read": 113025,
+      "sha256_at_read": "187bcd5dc0a08c9483925d545513c4d27a9bf95d1ff97529270adbb687e16117"
+    },
+    "evolution/search_seed_630001/gen_4/results/metrics.json": {
+      "bytes_read": 31461,
+      "sha256_at_read": "175f982f7324c760e8317df5dbc2e7c4e971ba3260c7b3c1eb9cd90e1205a54f"
+    }
+  },
+  "limitations": [],
+  "scripts": {
+    "scripts/audit_joint_machinery.py": "f93fe8abcb26b117ddb1251c2a6338e72737f91861e2a8446e2fe7adb5cfe95a",
+    "operations/audit_native_retention.py": "4e94684da38d406d1272ff547b88d7d615a716a02e46b8249bf7a27aff1b0406"
+  }
+}

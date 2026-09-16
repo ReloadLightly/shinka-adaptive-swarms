@@ -1,0 +1,22 @@
+<NAME>
+binned_continuity
+</NAME>
+<DESCRIPTION>
+Replace constant priorities with a proximity penalty weighted 1.0 and speed penalty weighted 0.5, normalized by one plus mean swarm speed. Bin width 0.25 lets similarly scored particles share the existing random tie breaker. This favors nearby, slower trajectories while preserving variation within bins. The speed weighting follows the stronger saved generation 7 result; improvement from binning remains untested.
+</DESCRIPTION>
+<CODE>
+```python
+"""Retain the strongest refreshed personal-best particle for ordinary PSO."""
+# EVOLVE-BLOCK-START
+def retention_priority(particle_features, swarm_features) -> float:
+    """Prefer the lowest motion-cost bin; existing ties select exemption."""
+    distance = max(0.0, float(particle_features["distance_to_best_normalized"]))
+    speed = max(0.0, float(particle_features["speed_normalized"]))
+    mean_speed = max(0.0, float(swarm_features["mean_speed_normalized"]))
+    speed_weight = 0.5
+    bin_width = 0.25
+    cost = (distance + speed_weight * speed) / (1.0 + mean_speed)
+    return -float(int(cost / bin_width))
+# EVOLVE-BLOCK-END
+```
+</CODE>

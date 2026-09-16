@@ -70,6 +70,7 @@ def render(run: Path, output: Path) -> dict:
                    linewidth=1.2, label={
                        "relocation_allocation_v2": "Radius multiplier 2 / count 3 seed",
                        "radius_velocity_sprint": "Development-selected fixed seed (count 4 / radius 1 / retain)",
+                       "particle_retention_v1": "Refreshed-pbest heuristic seed",
                    }.get(task, "Corrected baseline seed"))
     best = min(points, key=lambda p: p["mean_offline_error"])
     ax.scatter([best["generation"]], [best["mean_offline_error"]],
@@ -92,8 +93,11 @@ def render(run: Path, output: Path) -> dict:
     if any(case.get("budget", case_budget) != case_budget or
            case.get("dimension", dimension) != dimension for case in suite["cases"]):
         raise ValueError("Search plot requires a common case budget and dimension")
+    scope_note = ("development only; no independent validation in this study"
+                  if task == "particle_retention_v1"
+                  else "repeated search suite; generalization assessed separately")
     fig.supxlabel(f"{len(suite['cases'])} search cases × {case_budget:,} objective queries per program"
-                  " · repeated search suite; generalization assessed separately", fontsize=9)
+                  f" · {scope_note}", fontsize=9)
     artifacts = []
     for suffix in ("png", "svg"):
         target = output / f"search_progress.{suffix}"

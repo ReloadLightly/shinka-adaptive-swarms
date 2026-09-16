@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "inertial_path_energy",
+  "patch_description": "Favor trajectories with low average squared distance from the refreshed swarm best along a damped inertial step. This rewards approaching motion while penalizing distance and overshoot, potentially allocating continuity better than random selection or memory rank. It approximates motion before PSO attraction; benchmark improvement remains untested. Finite-output and determinism checks passed.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:47:44.586269",
+  "llm_cost": 0.538416,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

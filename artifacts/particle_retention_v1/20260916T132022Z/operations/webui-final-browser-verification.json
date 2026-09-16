@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-16T14:04:51.287532+00:00",
+  "status": "passed",
+  "url": "http://127.0.0.1:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=626b0267-9e2b-44e4-aed7-b470707d0143&left_tab=tree-view&right_tab=agent-code",
+  "initial_check_note": "Initial selected-source assertion ran before asynchronous node details had rendered. Subsequent body inspection verified source and lineage; service was not restarted.",
+  "prior_inspection": "webui-final-browser-retry-state.json",
+  "selected_source_visible": true,
+  "commands": [
+    {
+      "args": [
+        "screenshot",
+        "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-final-selected.png"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Screenshot saved to /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-final-selected.png\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "errors"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "close"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Browser closed\n",
+      "stderr": ""
+    }
+  ]
+}

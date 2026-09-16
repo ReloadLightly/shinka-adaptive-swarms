@@ -1,0 +1,21 @@
+[
+  {
+    "args": [
+      "get",
+      "text",
+      "body"
+    ],
+    "returncode": 0,
+    "stdout": "\u2190 Dashboard\n\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n\ud83d\udcca\n\u23f1\ufe0f\nLoaded 10 programs [04:04:02 PM]\n\ud83d\udcbe\nTree\nPromptEvo\nPrograms\nMetrics\nEmbed\nClusters\nIslands\nEnsembling\nPath\nMAPs\nTranspose Tree (Left\u2192Right)\nAnimate Tree\n0\n0\nI0\n0\nI1\n1\nI0\n2\nI1\n3\nI0\n4\nI0\n5\nI0\n8\nI0\n7\nI1\n6\nI0\nNodes\nBest\nError\nPatches\ninit\nfull\ndiff\nPerformance\n0.20\n0.22\n\u25b6\n2 Islands\nhalf_speed_penalty (Gen 7)\n\nID: 626b0267-9e2b-44e4-aed7-b470707d0143\n\nParent ID: d3c896c4-6e43-4a69-8c8e-7ba17aa9779f\n\nScore: 0.218938\n\nMeta\nPareto\nScratch\nNode\nCode\nDiff\nEval\nLLM\nAnalysis\nUsage\n\ud83d\udccb Copy\n\ud83d\udcbe Download\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Favor proximity with a reduced penalty on retained speed.\"\"\"\n    distance = particle_features[\"distance_to_best_normalized\"]\n    speed = particle_features[\"speed_normalized\"]\n    speed_weight = 0.5\n    return 1.0 / (1.0 + distance + speed_weight * speed)\n# EVOLVE-BLOCK-END\n\nhalf_speed_penalty\nScore: 0.218938\nType: full\nIsland: 1\nModel: headless/codex@gpt-6-astra?effort=xhigh\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "stdout": "- link \"\u2190 Dashboard\" [ref=e1]\n- heading \"\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\" [level=2, ref=e2]\n- button \"\ud83d\udcca\" [ref=e3]\n- button \"\u23f1\ufe0f\" [ref=e4]\n- button \"\ud83d\udcbe\" [ref=e5]\n- generic \"Tree\" [ref=e6] clickable [cursor:pointer]\n- generic \"PromptEvo\" [ref=e7] clickable [cursor:pointer]\n- generic \"Programs\" [ref=e8] clickable [cursor:pointer]\n- generic \"Metrics\" [ref=e9] clickable [cursor:pointer]\n- generic \"Embed\" [ref=e10] clickable [cursor:pointer]\n- generic \"Clusters\" [ref=e11] clickable [cursor:pointer]\n- generic \"Islands\" [ref=e12] clickable [cursor:pointer]\n- generic \"Ensembling\" [ref=e13] clickable [cursor:pointer]\n- generic \"Path\" [ref=e14] clickable [cursor:pointer]\n- generic \"MAPs\" [ref=e15] clickable [cursor:pointer]\n- LabelText \"Transpose Tree (Left\u2192Right)\" [ref=e33] clickable [cursor:pointer]\n  - checkbox \"Transpose Tree (Left\u2192Right)\" [checked=false, ref=e36]\n- LabelText \"Animate Tree\" [ref=e34] clickable [cursor:pointer]\n  - checkbox \"Animate Tree\" [checked=false, ref=e37]\n- group \"0\" [ref=e38] clickable [cursor:pointer]\n- group \"0I0\" [ref=e39] clickable [cursor:pointer]\n- group \"0I1\" [ref=e40] clickable [cursor:pointer]\n- group \"1I0\" [ref=e41] clickable [cursor:pointer]\n- group \"2I1\" [ref=e42] clickable [cursor:pointer]\n- group \"3I0\" [ref=e43] clickable [cursor:pointer]\n- group \"4I0\" [ref=e44] clickable [cursor:pointer]\n- group \"5I0\" [ref=e45] clickable [cursor:pointer]\n- group \"8I0\" [ref=e46] clickable [cursor:pointer]\n- group \"7I1\" [ref=e47] clickable [cursor:pointer]\n- group \"6I0\" [ref=e48] clickable [cursor:pointer]\n- heading \"Nodes\" [level=5, ref=e16]\n- heading \"Patches\" [level=5, ref=e29]\n- heading \"Performance\" [level=5, ref=e17]\n- generic \"\u25b6\\n                                2 Islands\" [ref=e30] clickable [cursor:pointer]\n  - heading \"2 Islands\" [level=5, ref=e35]\n- heading \"half_speed_penalty (Gen 7)\" [level=3, ref=e18]\n- generic \"Meta\" [ref=e19] clickable [cursor:pointer]\n- generic \"Pareto\" [ref=e20] clickable [cursor:pointer]\n- generic \"Scratch\" [ref=e21] clickable [cursor:pointer]\n- generic \"Node\" [ref=e22] clickable [cursor:pointer]\n- generic \"Code\" [ref=e23] clickable [cursor:pointer]\n- generic \"Diff\" [ref=e24] clickable [cursor:pointer]\n- generic \"Eval\" [ref=e25] clickable [cursor:pointer]\n- generic \"LLM\" [ref=e26] clickable [cursor:pointer]\n- generic \"Analysis\" [ref=e27] clickable [cursor:pointer]\n- generic \"Usage\" [ref=e28] clickable [cursor:pointer]\n- button \"\ud83d\udccb Copy\" [ref=e31]\n- button \"\ud83d\udcbe Download\" [ref=e32]\n",
+    "stderr": ""
+  }
+]

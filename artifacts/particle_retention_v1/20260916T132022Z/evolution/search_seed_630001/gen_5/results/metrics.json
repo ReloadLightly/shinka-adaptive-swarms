@@ -1,0 +1,583 @@
+{
+  "combined_score": 0.21068995860044676,
+  "public": {
+    "mean_offline_error": 3.74631067680071,
+    "worst_case_offline_error": 5.260632700894116,
+    "case_error_std": 0.9104096143000546,
+    "cases_completed": 8
+  },
+  "private": {
+    "cases": [
+      {
+        "case_id": "case_000",
+        "offline_error": 4.172898537818846,
+        "artifact": "case_000.json.gz",
+        "regime": "severity=1.0,period=2500",
+        "paired_differences": {
+          "random": 0.1399084694852677,
+          "seed": 0.05279550639675534
+        },
+        "mean_interval_end_error": 3.1928907184490125,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15726,
+          "particle": 0.79149,
+          "exclusion": 0.039,
+          "memory": 0.0122
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 20,
+              "difference": -0.8492360356023085,
+              "candidate_environment_error": 0.8280921029460429,
+              "reference_environment_error": 1.6773281385483514
+            },
+            "most_unfavorable": {
+              "completed_environment": 10,
+              "difference": 1.2980996857898819,
+              "candidate_environment_error": 4.464650605363002,
+              "reference_environment_error": 3.1665509195731203
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 21,
+              "difference": -0.719373583137344,
+              "candidate_environment_error": 1.0297852221985504,
+              "reference_environment_error": 1.7491588053358944
+            },
+            "most_unfavorable": {
+              "completed_environment": 10,
+              "difference": 1.3328546085184994,
+              "candidate_environment_error": 4.464650605363002,
+              "reference_environment_error": 3.131795996844503
+            }
+          }
+        },
+        "retention_decisions": 244,
+        "heuristic_agreements": 60,
+        "heuristic_agreement_fraction": 0.2459016393442623,
+        "selected_rank_counts": {
+          "5": 15,
+          "1": 60,
+          "3": 63,
+          "4": 34,
+          "2": 72
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.4754098360655736,
+          "distance_to_best_normalized": 10.096249295222428,
+          "speed_normalized": 16.204380212893792,
+          "velocity_alignment": -0.29529333211659986
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_001",
+        "offline_error": 2.9329982005441892,
+        "artifact": "case_001.json.gz",
+        "regime": "severity=1.0,period=2500",
+        "paired_differences": {
+          "random": 0.5433095240006742,
+          "seed": 0.28096570633818096
+        },
+        "mean_interval_end_error": 1.901222017925834,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15798,
+          "particle": 0.79587,
+          "exclusion": 0.0333,
+          "memory": 0.0128
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 39,
+              "difference": -1.2128773702703253,
+              "candidate_environment_error": 2.936496158446606,
+              "reference_environment_error": 4.149373528716931
+            },
+            "most_unfavorable": {
+              "completed_environment": 10,
+              "difference": 5.922737462714197,
+              "candidate_environment_error": 7.275111606841505,
+              "reference_environment_error": 1.3523741441273072
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 33,
+              "difference": -1.4338786932438863,
+              "candidate_environment_error": 1.1663172799092365,
+              "reference_environment_error": 2.600195973153123
+            },
+            "most_unfavorable": {
+              "completed_environment": 10,
+              "difference": 6.3238042875746485,
+              "candidate_environment_error": 7.275111606841505,
+              "reference_environment_error": 0.9513073192668562
+            }
+          }
+        },
+        "retention_decisions": 256,
+        "heuristic_agreements": 78,
+        "heuristic_agreement_fraction": 0.3046875,
+        "selected_rank_counts": {
+          "5": 17,
+          "1": 78,
+          "2": 62,
+          "3": 53,
+          "4": 46
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.4609375,
+          "distance_to_best_normalized": 7.742947951898796,
+          "speed_normalized": 13.667565224669556,
+          "velocity_alignment": -0.3188196642408661
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_002",
+        "offline_error": 3.441493947119546,
+        "artifact": "case_002.json.gz",
+        "regime": "severity=1.0,period=5000",
+        "paired_differences": {
+          "random": 0.07986193810212905,
+          "seed": 0.9439142663227424
+        },
+        "mean_interval_end_error": 2.9621037551697005,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15868,
+          "particle": 0.79742,
+          "exclusion": 0.03875,
+          "memory": 0.0051
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 8,
+              "difference": -1.3004102471380257,
+              "candidate_environment_error": 0.5349021825836802,
+              "reference_environment_error": 1.8353124297217058
+            },
+            "most_unfavorable": {
+              "completed_environment": 3,
+              "difference": 1.6226978873588482,
+              "candidate_environment_error": 1.9770350692080036,
+              "reference_environment_error": 0.3543371818491553
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 7,
+              "difference": -1.1764878517929256,
+              "candidate_environment_error": 1.8701801044548778,
+              "reference_environment_error": 3.0466679562478034
+            },
+            "most_unfavorable": {
+              "completed_environment": 19,
+              "difference": 7.500309302308306,
+              "candidate_environment_error": 8.38583993235919,
+              "reference_environment_error": 0.8855306300508833
+            }
+          }
+        },
+        "retention_decisions": 102,
+        "heuristic_agreements": 35,
+        "heuristic_agreement_fraction": 0.3431372549019608,
+        "selected_rank_counts": {
+          "2": 25,
+          "1": 35,
+          "5": 11,
+          "4": 15,
+          "3": 16
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.4313725490196076,
+          "distance_to_best_normalized": 8.551075957012147,
+          "speed_normalized": 12.648791087157246,
+          "velocity_alignment": -0.33214014997671276
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_003",
+        "offline_error": 4.250972315594744,
+        "artifact": "case_003.json.gz",
+        "regime": "severity=1.0,period=5000",
+        "paired_differences": {
+          "random": -0.04363545380400158,
+          "seed": -1.0487034726608107
+        },
+        "mean_interval_end_error": 3.3347494970788096,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15601,
+          "particle": 0.78584,
+          "exclusion": 0.05355,
+          "memory": 0.00455
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 12,
+              "difference": -3.0348816716601537,
+              "candidate_environment_error": 8.688694015173379,
+              "reference_environment_error": 11.723575686833533
+            },
+            "most_unfavorable": {
+              "completed_environment": 1,
+              "difference": 1.9853731944303217,
+              "candidate_environment_error": 6.3578355597089855,
+              "reference_environment_error": 4.372462365278664
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 12,
+              "difference": -12.300177695868665,
+              "candidate_environment_error": 8.688694015173379,
+              "reference_environment_error": 20.988871711042044
+            },
+            "most_unfavorable": {
+              "completed_environment": 17,
+              "difference": 0.18989358101716974,
+              "candidate_environment_error": 0.5685243314054769,
+              "reference_environment_error": 0.3786307503883071
+            }
+          }
+        },
+        "retention_decisions": 91,
+        "heuristic_agreements": 30,
+        "heuristic_agreement_fraction": 0.32967032967032966,
+        "selected_rank_counts": {
+          "1": 30,
+          "3": 22,
+          "2": 21,
+          "4": 15,
+          "5": 3
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.340659340659341,
+          "distance_to_best_normalized": 9.372882466547313,
+          "speed_normalized": 18.738878248983173,
+          "velocity_alignment": -0.3812661285076873
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_004",
+        "offline_error": 5.260632700894116,
+        "artifact": "case_004.json.gz",
+        "regime": "severity=3.0,period=2500",
+        "paired_differences": {
+          "random": -0.022071636294890062,
+          "seed": -0.2130673394557414
+        },
+        "mean_interval_end_error": 3.783012207732732,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15756,
+          "particle": 0.79534,
+          "exclusion": 0.0357,
+          "memory": 0.01135
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 39,
+              "difference": -2.417293625947467,
+              "candidate_environment_error": 5.731786996725605,
+              "reference_environment_error": 8.149080622673072
+            },
+            "most_unfavorable": {
+              "completed_environment": 28,
+              "difference": 7.420780622437164,
+              "candidate_environment_error": 9.565585878892522,
+              "reference_environment_error": 2.144805256455358
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 39,
+              "difference": -2.8411275582727704,
+              "candidate_environment_error": 5.731786996725605,
+              "reference_environment_error": 8.572914554998375
+            },
+            "most_unfavorable": {
+              "completed_environment": 12,
+              "difference": 1.0618107557306535,
+              "candidate_environment_error": 3.1715553194906874,
+              "reference_environment_error": 2.109744563760034
+            }
+          }
+        },
+        "retention_decisions": 227,
+        "heuristic_agreements": 63,
+        "heuristic_agreement_fraction": 0.2775330396475771,
+        "selected_rank_counts": {
+          "5": 17,
+          "1": 63,
+          "4": 37,
+          "2": 62,
+          "3": 48
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.484581497797357,
+          "distance_to_best_normalized": 3.6201996374719663,
+          "speed_normalized": 4.954241381205729,
+          "velocity_alignment": -0.323990508007664
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_005",
+        "offline_error": 3.8996667502249096,
+        "artifact": "case_005.json.gz",
+        "regime": "severity=3.0,period=2500",
+        "paired_differences": {
+          "random": 0.07476251497546782,
+          "seed": 0.17951849815699283
+        },
+        "mean_interval_end_error": 1.2189942423133497,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15927,
+          "particle": 0.80048,
+          "exclusion": 0.02275,
+          "memory": 0.01745
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 21,
+              "difference": -2.8470910336894866,
+              "candidate_environment_error": 3.3989603524694685,
+              "reference_environment_error": 6.246051386158955
+            },
+            "most_unfavorable": {
+              "completed_environment": 23,
+              "difference": 4.259367037038672,
+              "candidate_environment_error": 7.198034374213745,
+              "reference_environment_error": 2.9386673371750733
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 21,
+              "difference": -2.540014595899395,
+              "candidate_environment_error": 3.3989603524694685,
+              "reference_environment_error": 5.938974948368863
+            },
+            "most_unfavorable": {
+              "completed_environment": 25,
+              "difference": 4.4850188467900995,
+              "candidate_environment_error": 7.4741820202036715,
+              "reference_environment_error": 2.9891631734135724
+            }
+          }
+        },
+        "retention_decisions": 349,
+        "heuristic_agreements": 106,
+        "heuristic_agreement_fraction": 0.3037249283667622,
+        "selected_rank_counts": {
+          "3": 73,
+          "4": 58,
+          "1": 106,
+          "2": 80,
+          "5": 32
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.512893982808023,
+          "distance_to_best_normalized": 1.676540350785969,
+          "speed_normalized": 3.4006235214612377,
+          "velocity_alignment": -0.2952165190746869
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_006",
+        "offline_error": 2.2320260085642065,
+        "artifact": "case_006.json.gz",
+        "regime": "severity=3.0,period=5000",
+        "paired_differences": {
+          "random": -0.02969094082520085,
+          "seed": -0.8639157929461776
+        },
+        "mean_interval_end_error": 0.6670725840199931,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.1589,
+          "particle": 0.80085,
+          "exclusion": 0.03365,
+          "memory": 0.00655
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 13,
+              "difference": -4.1642206912567135,
+              "candidate_environment_error": 1.5619311268861054,
+              "reference_environment_error": 5.726151818142819
+            },
+            "most_unfavorable": {
+              "completed_environment": 11,
+              "difference": 7.5411113285155995,
+              "candidate_environment_error": 8.566078451132192,
+              "reference_environment_error": 1.0249671226165928
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 12,
+              "difference": -6.313657176427192,
+              "candidate_environment_error": 8.224835453357258,
+              "reference_environment_error": 14.53849262978445
+            },
+            "most_unfavorable": {
+              "completed_environment": 14,
+              "difference": 2.480932021588848,
+              "candidate_environment_error": 2.963280839594518,
+              "reference_environment_error": 0.48234881800566964
+            }
+          }
+        },
+        "retention_decisions": 131,
+        "heuristic_agreements": 33,
+        "heuristic_agreement_fraction": 0.25190839694656486,
+        "selected_rank_counts": {
+          "4": 19,
+          "1": 33,
+          "2": 36,
+          "3": 31,
+          "5": 12
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.549618320610687,
+          "distance_to_best_normalized": 3.021012921668218,
+          "speed_normalized": 3.6925010514339345,
+          "velocity_alignment": -0.3469404371553681
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      },
+      {
+        "case_id": "case_007",
+        "offline_error": 3.77979695364512,
+        "artifact": "case_007.json.gz",
+        "regime": "severity=3.0,period=5000",
+        "paired_differences": {
+          "random": -0.5494669192934132,
+          "seed": -0.5745035084620134
+        },
+        "mean_interval_end_error": 2.934787745716215,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15935,
+          "particle": 0.80215,
+          "exclusion": 0.03335,
+          "memory": 0.0051
+        },
+        "recovery_episodes": {
+          "random": {
+            "most_favorable": {
+              "completed_environment": 7,
+              "difference": -5.577914178118228,
+              "candidate_environment_error": 0.657767520079646,
+              "reference_environment_error": 6.235681698197874
+            },
+            "most_unfavorable": {
+              "completed_environment": 18,
+              "difference": 0.545981091425872,
+              "candidate_environment_error": 1.552429625976134,
+              "reference_environment_error": 1.006448534550262
+            }
+          },
+          "seed": {
+            "most_favorable": {
+              "completed_environment": 7,
+              "difference": -5.840730496286878,
+              "candidate_environment_error": 0.657767520079646,
+              "reference_environment_error": 6.498498016366524
+            },
+            "most_unfavorable": {
+              "completed_environment": 11,
+              "difference": 0.6260060362606144,
+              "candidate_environment_error": 1.1242923946226662,
+              "reference_environment_error": 0.4982863583620519
+            }
+          }
+        },
+        "retention_decisions": 102,
+        "heuristic_agreements": 32,
+        "heuristic_agreement_fraction": 0.3137254901960784,
+        "selected_rank_counts": {
+          "3": 20,
+          "2": 30,
+          "1": 32,
+          "4": 14,
+          "5": 6
+        },
+        "selected_feature_means": {
+          "personal_best_rank": 2.3333333333333335,
+          "distance_to_best_normalized": 2.7205213448630725,
+          "speed_normalized": 4.807631942907405,
+          "velocity_alignment": -0.30332782404992703
+        },
+        "incomplete_responses": 0,
+        "interpretation": "Heuristic agreement is a counterfactual choice on this method's same snapshot/tie order, not particle matching across diverged trajectories."
+      }
+    ],
+    "regime_paired_summaries": [
+      {
+        "regime": "severity=1.0,period=2500",
+        "cases": 2,
+        "mean_offline_error": 3.552948369181518,
+        "random_mean_difference": 0.34160899674297096,
+        "random_difference_sd": 0.2852476211856481,
+        "seed_mean_difference": 0.16688060636746815,
+        "seed_difference_sd": 0.16134069564327244
+      },
+      {
+        "regime": "severity=1.0,period=5000",
+        "cases": 2,
+        "mean_offline_error": 3.846233131357145,
+        "random_mean_difference": 0.018113242149063735,
+        "random_difference_sd": 0.08732584327567762,
+        "seed_mean_difference": -0.052394603169034104,
+        "seed_difference_sd": 1.4089935155478763
+      },
+      {
+        "regime": "severity=3.0,period=2500",
+        "cases": 2,
+        "mean_offline_error": 4.580149725559513,
+        "random_mean_difference": 0.02634543934028888,
+        "random_difference_sd": 0.06847208501371399,
+        "seed_mean_difference": -0.01677442064937429,
+        "seed_difference_sd": 0.27760010797376516
+      },
+      {
+        "regime": "severity=3.0,period=5000",
+        "cases": 2,
+        "mean_offline_error": 3.005911481104663,
+        "random_mean_difference": -0.289578930059307,
+        "random_difference_sd": 0.36753711907274583,
+        "seed_mean_difference": -0.7192096507040955,
+        "seed_difference_sd": 0.20464538891744277
+      }
+    ],
+    "suite_sha256": "ff3d7c2f713f3a7320f15a51e73c900df77ff03f03fa50c648253ccedba3aa09",
+    "evaluation_version": "particle_retention_v1_reciprocal_v1",
+    "feedback_version": "paired_retention_features_and_recovery_v1"
+  },
+  "text_feedback": "Development feedback only. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Random reference is random; heuristic seed is heuristic. All personal-best memories survive and are reevaluated. The exempted particle continues ordinary PSO; it is neither stationary nor a permanent leader. Choices change complete closed-loop trajectories. Agreement is measured against the heuristic on each candidate snapshot, not across reference trajectories.\ncase_000 severity=1.0,period=2500: error=4.172899, delta random=+0.139908, delta heuristic=+0.052796; heuristic agreements=60/244; selected ranks={'5': 15, '1': 60, '3': 63, '4': 34, '2': 72}; selected feature means={'personal_best_rank': 2.4754098360655736, 'distance_to_best_normalized': 10.096249295222428, 'speed_normalized': 16.204380212893792, 'velocity_alignment': -0.29529333211659986}; interval-end error=3.1928907184490125; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 1.0297852221985504, \"completed_environment\": 21, \"difference\": -0.719373583137344, \"reference_environment_error\": 1.7491588053358944}, \"most_unfavorable\": {\"candidate_environment_error\": 4.464650605363002, \"completed_environment\": 10, \"difference\": 1.3328546085184994, \"reference_environment_error\": 3.131795996844503}}\ncase_001 severity=1.0,period=2500: error=2.932998, delta random=+0.543310, delta heuristic=+0.280966; heuristic agreements=78/256; selected ranks={'5': 17, '1': 78, '2': 62, '3': 53, '4': 46}; selected feature means={'personal_best_rank': 2.4609375, 'distance_to_best_normalized': 7.742947951898796, 'speed_normalized': 13.667565224669556, 'velocity_alignment': -0.3188196642408661}; interval-end error=1.901222017925834; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 1.1663172799092365, \"completed_environment\": 33, \"difference\": -1.4338786932438863, \"reference_environment_error\": 2.600195973153123}, \"most_unfavorable\": {\"candidate_environment_error\": 7.275111606841505, \"completed_environment\": 10, \"difference\": 6.3238042875746485, \"reference_environment_error\": 0.9513073192668562}}\ncase_002 severity=1.0,period=5000: error=3.441494, delta random=+0.079862, delta heuristic=+0.943914; heuristic agreements=35/102; selected ranks={'2': 25, '1': 35, '5': 11, '4': 15, '3': 16}; selected feature means={'personal_best_rank': 2.4313725490196076, 'distance_to_best_normalized': 8.551075957012147, 'speed_normalized': 12.648791087157246, 'velocity_alignment': -0.33214014997671276}; interval-end error=2.9621037551697005; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 1.8701801044548778, \"completed_environment\": 7, \"difference\": -1.1764878517929256, \"reference_environment_error\": 3.0466679562478034}, \"most_unfavorable\": {\"candidate_environment_error\": 8.38583993235919, \"completed_environment\": 19, \"difference\": 7.500309302308306, \"reference_environment_error\": 0.8855306300508833}}\ncase_003 severity=1.0,period=5000: error=4.250972, delta random=-0.043635, delta heuristic=-1.048703; heuristic agreements=30/91; selected ranks={'1': 30, '3': 22, '2': 21, '4': 15, '5': 3}; selected feature means={'personal_best_rank': 2.340659340659341, 'distance_to_best_normalized': 9.372882466547313, 'speed_normalized': 18.738878248983173, 'velocity_alignment': -0.3812661285076873}; interval-end error=3.3347494970788096; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 8.688694015173379, \"completed_environment\": 12, \"difference\": -12.300177695868665, \"reference_environment_error\": 20.988871711042044}, \"most_unfavorable\": {\"candidate_environment_error\": 0.5685243314054769, \"completed_environment\": 17, \"difference\": 0.18989358101716974, \"reference_environment_error\": 0.3786307503883071}}\ncase_004 severity=3.0,period=2500: error=5.260633, delta random=-0.022072, delta heuristic=-0.213067; heuristic agreements=63/227; selected ranks={'5': 17, '1': 63, '4': 37, '2': 62, '3': 48}; selected feature means={'personal_best_rank': 2.484581497797357, 'distance_to_best_normalized': 3.6201996374719663, 'speed_normalized': 4.954241381205729, 'velocity_alignment': -0.323990508007664}; interval-end error=3.783012207732732; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 5.731786996725605, \"completed_environment\": 39, \"difference\": -2.8411275582727704, \"reference_environment_error\": 8.572914554998375}, \"most_unfavorable\": {\"candidate_environment_error\": 3.1715553194906874, \"completed_environment\": 12, \"difference\": 1.0618107557306535, \"reference_environment_error\": 2.109744563760034}}\ncase_005 severity=3.0,period=2500: error=3.899667, delta random=+0.074763, delta heuristic=+0.179518; heuristic agreements=106/349; selected ranks={'3': 73, '4': 58, '1': 106, '2': 80, '5': 32}; selected feature means={'personal_best_rank': 2.512893982808023, 'distance_to_best_normalized': 1.676540350785969, 'speed_normalized': 3.4006235214612377, 'velocity_alignment': -0.2952165190746869}; interval-end error=1.2189942423133497; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 3.3989603524694685, \"completed_environment\": 21, \"difference\": -2.540014595899395, \"reference_environment_error\": 5.938974948368863}, \"most_unfavorable\": {\"candidate_environment_error\": 7.4741820202036715, \"completed_environment\": 25, \"difference\": 4.4850188467900995, \"reference_environment_error\": 2.9891631734135724}}\ncase_006 severity=3.0,period=5000: error=2.232026, delta random=-0.029691, delta heuristic=-0.863916; heuristic agreements=33/131; selected ranks={'4': 19, '1': 33, '2': 36, '3': 31, '5': 12}; selected feature means={'personal_best_rank': 2.549618320610687, 'distance_to_best_normalized': 3.021012921668218, 'speed_normalized': 3.6925010514339345, 'velocity_alignment': -0.3469404371553681}; interval-end error=0.6670725840199931; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 8.224835453357258, \"completed_environment\": 12, \"difference\": -6.313657176427192, \"reference_environment_error\": 14.53849262978445}, \"most_unfavorable\": {\"candidate_environment_error\": 2.963280839594518, \"completed_environment\": 14, \"difference\": 2.480932021588848, \"reference_environment_error\": 0.48234881800566964}}\ncase_007 severity=3.0,period=5000: error=3.779797, delta random=-0.549467, delta heuristic=-0.574504; heuristic agreements=32/102; selected ranks={'3': 20, '2': 30, '1': 32, '4': 14, '5': 6}; selected feature means={'personal_best_rank': 2.3333333333333335, 'distance_to_best_normalized': 2.7205213448630725, 'speed_normalized': 4.807631942907405, 'velocity_alignment': -0.30332782404992703}; interval-end error=2.934787745716215; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 0.657767520079646, \"completed_environment\": 7, \"difference\": -5.840730496286878, \"reference_environment_error\": 6.498498016366524}, \"most_unfavorable\": {\"candidate_environment_error\": 1.1242923946226662, \"completed_environment\": 11, \"difference\": 0.6260060362606144, \"reference_environment_error\": 0.4982863583620519}}\nPaired regime summary: {\"cases\": 2, \"mean_offline_error\": 3.552948369181518, \"random_difference_sd\": 0.2852476211856481, \"random_mean_difference\": 0.34160899674297096, \"regime\": \"severity=1.0,period=2500\", \"seed_difference_sd\": 0.16134069564327244, \"seed_mean_difference\": 0.16688060636746815}\nPaired regime summary: {\"cases\": 2, \"mean_offline_error\": 3.846233131357145, \"random_difference_sd\": 0.08732584327567762, \"random_mean_difference\": 0.018113242149063735, \"regime\": \"severity=1.0,period=5000\", \"seed_difference_sd\": 1.4089935155478763, \"seed_mean_difference\": -0.052394603169034104}\nPaired regime summary: {\"cases\": 2, \"mean_offline_error\": 4.580149725559513, \"random_difference_sd\": 0.06847208501371399, \"random_mean_difference\": 0.02634543934028888, \"regime\": \"severity=3.0,period=2500\", \"seed_difference_sd\": 0.27760010797376516, \"seed_mean_difference\": -0.01677442064937429}\nPaired regime summary: {\"cases\": 2, \"mean_offline_error\": 3.005911481104663, \"random_difference_sd\": 0.36753711907274583, \"random_mean_difference\": -0.289578930059307, \"regime\": \"severity=3.0,period=5000\", \"seed_difference_sd\": 0.20464538891744277, \"seed_mean_difference\": -0.7192096507040955}\nExactly four of five particles relocate at radius1.25 with retained velocities and fixed memory reevaluation. Only the per-particle retention priority evolves. Simple rules and constants are legitimate. Competing explanations include trajectory continuity, geometric diversity, later asynchronous attractor updates, query allocation and stochastic closed-loop variation. No fresh validation is planned in this bounded development experiment."
+}

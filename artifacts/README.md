@@ -27,6 +27,28 @@ itself and disposable Python bytecode caches.
 | `joint_relocation_v3/operations` | V3 calibration, model receipts audit, freeze/seed checks, independent statistical verification and operational evidence | 236 native wrappers/308 usable logical responses; 94 research embeddings; preserved clock, browser and supervision limitations |
 | `joint_relocation_v3_publication` | Read-only checks after closing the immutable research archive | Portable archive/accounting/statistical verification and final browser-address evidence; no new research executions |
 | `radius_velocity_sprint/20260916T113359Z` | Bounded radius/velocity diagnostic, native discovery and frozen transfer probe | 48 diagnostic + 96 new native + 16 pilot executions = 16 million queries; eight cached seed cases; 13 valid native slots including seed; 45 logical model responses |
+| `particle_retention_v1/20260916T132022Z` | Bounded particle-selection discovery; count four/radius 1.25/retained velocity fixed | 16 reference + 56 new native executions = 7.2 million queries; eight cached seed records; seed + seven valid descendants + one zero-query rejection; 29 logical model responses |
+| `particle_retention_v1_publication` | Read-only portable archive verification | Payload hashes, consistent SQLite contents and saved-data analysis; no numerical/model calls |
+
+The [particle-retention report](../docs/sprints/particle_retention_20260916/REPORT.md)
+selects generation 7, which minimizes distance to the refreshed swarm best plus
+half the particle's speed. Mean development error is **3.567500**, against random
+**3.722188** and refreshed-personal-best heuristic **3.901685**. Selected minus
+random is **−0.154688 [−0.305334, −0.006405]**, a descriptive 95% interval from the
+same eight histories used for selection. All four longer-period histories improve,
+all four shorter-period histories worsen, and one history contributes 80.3% of the
+net mean benefit. This is not fresh validation or an established causal mechanism.
+
+All 80 case records, exact sources, selection, lineage, feedback, model receipts,
+decision examples and measured figures are preserved. The 72 physical executions
+include eight repeated random-reference outcomes; the eight exact native seed-cache
+reuses add no queries. Small fixtures add 5,109 separately recorded queries.
+The archive uses a consistent SQLite backup and hashes every payload. Its final
+audits verify seven valid descendants, one zero-query checker rejection, nine local
+embeddings, two native meta updates and three actual recommendation insertions.
+All model roles visibly use subscription Codex `gpt-6-astra / xhigh`; requested Ultra
+is unsupported by the pinned route. The [publication verification](particle_retention_v1_publication/verification.json)
+checks the closed archive and reproduces its analysis without new research.
 
 The [radius/velocity sprint report](../docs/sprints/radius_velocity_20260916/REPORT.md)
 records a heterogeneous exploratory interaction and a native-selected constant

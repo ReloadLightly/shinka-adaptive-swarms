@@ -1,0 +1,47 @@
+{
+  "call_id": "novelty-b787fede89d74e89a1355ac76e4ec246",
+  "role": "novelty",
+  "method": "query",
+  "started_at": "2026-09-16T13:47:45.398502+00:00",
+  "requested_logical_responses": 1,
+  "configured_models": [
+    "headless/codex@gpt-6-astra?effort=xhigh"
+  ],
+  "status": "returned",
+  "configured_client_settings": {
+    "temperatures": 0.75,
+    "max_tokens": 4096,
+    "reasoning_efforts": "disabled"
+  },
+  "explicit_request_kwargs": null,
+  "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+  "system_msg": "You are an expert code reviewer tasked with determining if two code snippets are meaningfully different from each other.\n\nYour job is to analyze both programs and determine if the proposed code introduces meaningful changes compared to the existing code. Consider:\n\n1. **Algorithmic differences**: Different approaches, logic, or strategies\n2. **Structural changes**: Different data structures, control flow, or organization\n3. **Functional improvements**: New features, optimizations, or capabilities\n4. **Implementation variations**: Different ways of achieving the same goal that could lead to different performance characteristics\n5. **Hyperparameter changes**: Different hyperparameters that could lead to different performance characteristics\n\nIgnore trivial differences like:\n- Variable name changes\n- Minor formatting or style changes\n- Comments or documentation changes\n- Insignificant refactoring that doesn't change the core logic\n\nRespond with:\n- **NOVEL**: If the codes are meaningfully different\n- **NOT_NOVEL**: If the codes are essentially the same with only trivial differences\n\nAfter your decision, provide a brief explanation of your reasoning.",
+  "msg": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Favor proximity after a damped inertial step, before PSO attraction.\"\"\"\n    import math\n    position = particle_features[\"relative_position_normalized\"]\n    velocity = particle_features[\"velocity_normalized\"]\n    projected_distance = math.hypot(\n        *(offset + 0.73 * motion for offset, motion in zip(position, velocity))\n    )\n    return 1.0 / (1.0 + projected_distance)\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Prefer low integrated distance along a damped inertial trajectory.\"\"\"\n    distance = float(particle_features[\"distance_to_best_normalized\"])\n    travel = 0.73 * float(particle_features[\"speed_normalized\"])\n    alignment = max(\n        -1.0, min(1.0, float(particle_features[\"velocity_alignment\"]))\n    )\n    # Scale before squaring to avoid overflow.\n    scale = max(1.0, distance, travel)\n    d = distance / scale\n    v = travel / scale\n    # Integral over t in [0, 1] of squared distance:\n    # d*d - alignment*d*v + v*v/3.\n    # This equivalent nonnegative form avoids cancellation.\n    radial_midpoint = d - 0.5 * alignment * v\n    path_energy = radial_midpoint * radial_midpoint + (\n        (1.0 - alignment * alignment) / 4.0 + 1.0 / 12.0\n    ) * v * v\n    rms_distance = scale * path_energy ** 0.5\n    return 1.0 / (1.0 + rms_distance)\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+  "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown",
+  "initial_logical_responses": 1,
+  "exposed_native_retry_responses": 0,
+  "native_dispatch_attempts": [
+    {
+      "index": 1,
+      "started_at": "2026-09-16T13:47:45.408589+00:00",
+      "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "finished_at": "2026-09-16T13:48:03.076402+00:00"
+    }
+  ],
+  "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+  "logical_response_limit": 40,
+  "run_reserved_logical_responses_at_reservation": 8,
+  "finished_at": "2026-09-16T13:48:03.085310+00:00",
+  "elapsed_seconds": 15.907420245006506,
+  "valid_responses": 1,
+  "responses": [
+    {
+      "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+      "input_tokens": 4320,
+      "output_tokens": 206,
+      "reported_api_cost": 0.06566,
+      "content": "**NOVEL**: The existing code scores distance at the end of a damped inertial step; the proposed code scores RMS distance over the entire trajectory. This changes how distance, speed, and alignment affect priority and can produce different particle rankings. It also adds alignment clamping and numerical scaling for stability."
+    }
+  ]
+}

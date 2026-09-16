@@ -1,0 +1,101 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Best Personal-Best Rank Retention**
+- **Implementation**: Returns negative personal-best rank, prioritizing the strongest refreshed memory and ignoring swarm features. The retained particle continues ordinary PSO while four others relocate; all personal-best memories survive and are reevaluated.
+- **Performance**: Across eight completed cases, the score was 0.20, with mean offline error 3.90, worst-case error 5.47, and case error standard deviation 1.13.
+- **Feedback**: Passed all validation tests and matched the heuristic in all 1,467 selections, producing identical errors and no improvement over that baseline. Mean error was approximately 0.18 higher than random retention, with better results in only two cases; findings are limited to development evaluation.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: Constant-Priority Random Particle Retention**
+- **Implementation**: Returns `0.0` for every particle, ignoring both feature inputs and letting the existing random tie permutation select the exemption. The exempted particle continues ordinary PSO while four others relocate at radius 1.25, retaining velocities; all personal-best memories survive and are reevaluated.
+- **Performance**: Scored 0.21 across eight completed cases, with mean offline error 3.72, worst-case error 5.28, and case-error standard deviation 1.02; all validation tests passed.
+- **Feedback**: Matched the random reference exactly and outperformed the heuristic in six of eight cases, averaging approximately 0.18 lower error. These development results support random retention as a competitive comparator, but establish neither improvement over random selection nor a causal explanation.
+**Program Identifier:** Generation 1 - Patch Name equal_priority - Correct Program: True
+
+**Program Name: Proximity and Low-Speed Particle Retention**
+- **Implementation**: Assigns priority `1/(1 + normalized_distance + normalized_speed)`, favoring nearby, slower particles while ignoring personal-best rank and swarm features. The retained particle continues ordinary PSO; four others relocate at radius 1.25 with retained velocities, and all personal-best memories survive and are reevaluated.
+- **Performance**: Achieved score 0.21 across eight completed cases, with mean offline error 3.68, worst-case error 5.59, and case-error standard deviation 1.17.
+- **Feedback**: All validation tests passed; the candidate reduced error against the heuristic in six of eight cases and against random retention in four, indicating mixed benefits across cases. These development results reflect complete trajectory changes and establish neither a causal explanation nor generalization without fresh validation.
+**Program Identifier:** Generation 2 - Patch Name nearby_slow_continuity - Correct Program: True
+
+**Program Name: Damped Inertial Projection Retention**
+- **Implementation**: Scores particles as `1 / (1 + ||position + 0.73 × velocity||)` using normalized relative positions and velocities, favoring smaller projected distances before PSO attraction. Swarm features are unused.
+- **Performance**: Combined score was 0.0 because validation failed, leaving optimization performance unassessed.
+- **Feedback**: The function-local `import math` violated the requirement that explicit math imports appear at module scope. Moving the import to module scope addresses the reported validation error.
+**Program Identifier:** Generation 3 - Patch Name inertial_proximity - Correct Program: False
+
+**Program Name: Inertial Trajectory RMS Retention**
+- **Implementation**: Returns inverse predicted RMS distance using normalized distance, 0.73-scaled speed, and clamped velocity alignment, with scaling and a nonnegative formulation for numerical stability. It ignores personal-best rank and swarm features; the retained particle continues ordinary PSO while four others relocate.
+- **Performance**: Achieved score 0.21 across eight cases, with mean offline error 3.72, worst-case error 5.20, and case-error standard deviation 1.15.
+- **Feedback**: Passed all validation with no incomplete responses, outperforming the heuristic in six cases with an average error reduction of approximately 0.177, but averaging approximately 0.010 worse than random. These development results suggest promise against the heuristic without establishing generalization or a causal explanation.
+**Program Identifier:** Generation 4 - Patch Name inertial_path_energy - Correct Program: True
+
+**Program Name: Moment-Based PSO Particle Retention**
+- **Implementation**: Scores particles by inverse predicted RMS distance after ordinary PSO, using distance, speed, velocity alignment, inertia 0.729843788, and attraction coefficient 2.05 while assuming both attractors coincide with the refreshed swarm best. Clamping and scale normalization stabilize the moment calculation; personal-best rank and swarm features are unused.
+- **Performance**: Passed validation and completed all eight cases, achieving score 0.21, mean offline error 3.75, worst-case error 5.26, and case-error standard deviation 0.91.
+- **Feedback**: Mean error was approximately 0.155 lower than the heuristic but 0.024 higher than random, with the strongest average heuristic improvement at severity 3 and period 5000. These development-only results reflect changes to complete trajectories: the retained particle continues ordinary PSO, and all personal-best memories survive and are reevaluated.
+**Program Identifier:** Generation 5 - Patch Name attraction_moment - Correct Program: True
+
+**Program Name: Square Root Proximity and Speed Retention**
+- **Implementation**: Scores particles as `1/(1 + sqrt(distance) + sqrt(speed))`, clamping normalized inputs to nonnegative values and favoring nearby, slower particles without using personal-best rank or swarm features. The selected particle continues ordinary PSO while four others relocate; all personal-best memories survive and are reevaluated.
+- **Performance**: Passed all validation tests across eight cases, achieving score 0.21, mean offline error 3.72, worst-case error 5.85, and case-error standard deviation 1.38.
+- **Feedback**: Beat the heuristic in five of eight cases, reducing mean error by approximately 0.177, while essentially matching random retention overall. Results varied by regime, with worse average performance than both comparators under frequent, severe changes; these development results do not establish a causal mechanism or generalization.
+**Program Identifier:** Generation 6 - Patch Name sqrt_geometry_penalties - Correct Program: True
+
+**Program Name: Distance and Half-Speed Retention**
+- **Implementation**: Scores particles as `1 / (1 + distance_to_best_normalized + 0.5 * speed_normalized)`, favoring nearby, slower particles while ignoring personal-best rank and swarm features. The selected particle continues ordinary PSO while four others relocate; all personal-best memories survive reevaluation.
+- **Performance**: Passed all validation tests across eight cases, achieving score **0.22**, mean offline error **3.57**, worst-case error **5.49**, and case-error standard deviation **1.15**.
+- **Feedback**: Beat the heuristic in six of eight cases and both comparators in every period-5000 case, but underperformed random retention in every period-2500 case. These development results suggest regime-dependent benefits; closed-loop trajectory variation prevents attributing improvements solely to proximity or speed, and no fresh validation is planned.
+**Program Identifier:** Generation 7 - Patch Name half_speed_penalty - Correct Program: True
+
+**Program Name: Binned Motion-Cost Particle Retention**
+- **Implementation**: Clamps inputs nonnegative and scores particles by negating the integer bin of `(distance + 0.5*speed)/(1 + mean_speed)`, using width `0.25`; lower costs receive higher priority, with existing tie handling. The selected particle continues ordinary PSO while four relocate, and all personal-best memories survive reevaluation.
+- **Performance**: Passed all validation tests across 8 cases, achieving score 0.20, mean offline error 3.91, worst-case error 5.72, and case-error standard deviation 1.40.
+- **Feedback**: Mean error nearly matched the heuristic (+0.006) but exceeded random selection (+0.185), with the strongest regime-level improvement at severity 3/period 5000 and deterioration at severity 3/period 2500. These development-only results reflect complete trajectory changes and do not establish a general advantage without fresh validation.
+**Program Identifier:** Generation 8 - Patch Name binned_continuity - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+**Successful Algorithmic Patterns** now favor Distance and Half-Speed Retention.
+- **The current best improves the distance–speed tradeoff.** Changing `1/(1 + distance + speed)` to `1/(1 + distance + 0.5*speed)` raised score from **0.213643 to 0.218938** and reduced mean error from **3.680712 to 3.567500**, a **3.1% reduction**. It supersedes Proximity and Low-Speed Retention as the development winner. [Saved metrics](/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_7/results/metrics.json)
+- **Its advantage extends beyond the rank heuristic.** Mean error is **0.334185 lower than Best Personal-Best Rank Retention (8.6%)** and **0.154688 lower than Constant-Priority Random Retention (4.2%)**. The earlier improvement from rank preference to random remains relevant, but the half-speed rule provides a further observed gain.
+- **Longer change periods contain its consistent wins.** The current best beat both comparators in every period-5000 case. Across all eight cases, it beat the heuristic in **6/8**, random in **4/8**, and the previous equal-speed best in **5/8**.
+**Ineffective Approaches** show that additional modeling or score transformations did not improve the winning rule.
+- **Binned Motion-Cost Retention lost the continuous rule’s advantage.** Binning the normalized `distance + 0.5*speed` cost produced score **0.203774** and mean error **3.907393**: **0.339893 worse than the current best**, **0.185205 worse than random**, and slightly worse than the heuristic.
+- **Detailed motion models did not improve mean performance.** Moment-Based PSO Retention scored **0.210690**, with mean error **3.746311**—**0.178810 above the best** and **0.024122 above random**. Inertial Trajectory RMS Retention likewise remained behind at **3.724536**. The moment model assumes coincident attractors; these results do not establish whether that approximation explains its shortfall.
+- **Square-root penalties weakened the earlier linear rule.** Square Root Proximity and Speed Retention scored **0.211669**, with mean error **3.724363**, versus **3.680712** for equal-weight linear penalties and **3.567500** for half-speed penalties. Its worst-case error also increased to **5.847148**. Saved precision places it **0.002175 worse than random**, despite their rounded tie. [Saved metrics](/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_6/results/metrics.json)
+- **The earlier import failure remains an execution failure.** Damped Inertial Projection received **0.0** because its function-local `import math` violated the module-scope requirement. Its optimization performance remains unassessed.
+**Implementation Insights** distinguish the winning selection rule from explanations its results cannot establish.
+- **The current best minimizes `distance + 0.5*speed`.** The reciprocal preserves that ordering; it supplies no separate selection advantage. One normalized distance unit has the same cost as two normalized speed units. Relative to the previous best, the rule tolerates more speed for a given proximity advantage.
+- **Ignoring rank still produces substantial agreement with the heuristic.** The best agreed on **509/1,509 decisions (33.7%)**, versus **408/1,509 (27.0%)** for the previous best. It selected ranks two through four on **890 decisions (59.0%)**. These are comparisons on each candidate’s own snapshots, not matched choices across diverged trajectories. The inherited module docstring still misdescribes the executed rule as strongest-personal-best retention.
+- **Binning changes ties, whereas common scaling alone preserves ordering.** Within a snapshot, dividing every particle’s cost by `1 + mean_speed` cannot change its ranking. Applying integer bins merges distinct costs, with effective width `0.25*(1 + mean_speed)` in the original cost units, allowing existing tie handling to choose among them. The reported results do not quantify how often this occurred.
+- **Retention selects a continuing trajectory.** Four particles relocate at radius multiplier **1.25**, velocities remain retained, and every personal-best memory survives reevaluation. The exempted particle continues ordinary PSO. Performance differences therefore do not demonstrate selective memory preservation, stationary anchoring, or a uniquely identified continuity mechanism.
+**Performance Analysis** separates mean fitness from variability and regime dependence.
+- **Saved precision establishes the ranking.** Every valid program below completed eight cases; fitness is `1/(1 + mean error)`.
+| Program | Score ↑ | Mean error ↓ | Worst error ↓ | Case SD ↓ |
+|---|---:|---:|---:|---:|
+| **Distance and Half-Speed — current best** | **0.218938** | **3.567500** | 5.491349 | 1.147535 |
+| Proximity and Low-Speed — previous best | 0.213643 | 3.680712 | 5.587274 | 1.167178 |
+| Constant-Priority Random | 0.211766 | 3.722188 | 5.282704 | 1.019600 |
+| Square Root Proximity and Speed | 0.211669 | 3.724363 | 5.847148 | 1.384217 |
+| Inertial Trajectory RMS | 0.211661 | 3.724536 | **5.204623** | 1.153041 |
+| Moment-Based PSO | 0.210690 | 3.746311 | 5.260633 | **0.910410** |
+| Best Personal-Best Rank | 0.204011 | 3.901685 | 5.473700 | 1.127164 |
+| Binned Motion-Cost | 0.203774 | 3.907393 | 5.716376 | 1.402896 |
+- **The best’s advantage reverses with change period.** Against random, its mean differences at severities 1 and 3 were **+0.120104 and +0.148825** for period 2500, versus **−0.548807 and −0.338875** for period 5000. It lost every period-2500 comparison with random. Each regime contains only two development cases.
+- **Mean leadership does not imply uniformly better outcomes.** Half-speed retention improved both worst-case error and SD over the previous best, but random retained lower values for both. Moment-Based PSO had the lowest SD; Inertial Trajectory RMS had the lowest worst-case error. Neither metric affects the selection score.
+- **Large opposing case effects still limit interpretation.** Against the previous best, half-speed retention improved case_003 by **1.396674** but worsened case_004 by **0.779334**. These eight search-used histories compare complete closed-loop trajectories; they establish the development ranking, without establishing a causal mechanism or generalization.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Refine the speed coefficient around 0.5.** With `d = particle_features["distance_to_best_normalized"]` and `v = particle_features["speed_normalized"]`, try `1/(1 + d + w*v)` for `w` in `{0.25, 0.375, 0.625, 0.75}`, plus `w=0` as a distance-only variant. Reducing the coefficient from 1 to 0.5 produced the strongest observed improvement, making nearby weights the highest-priority mutations.
+2. **Reduce the penalty only for unusually high speed.** Set `T = max(1e-12, swarm_features["mean_speed_normalized"])` and return `1/(1 + d + 0.5*min(v,T) + 0.25*max(0,v-T))`, also trying thresholds `0.5*T` and `2*T`. This extends the successful reduction in speed penalty while preserving linear distance and ordinary-speed penalties; the unsuccessful square-root variant changed both features simultaneously.
+3. **Adapt the coefficient modestly to swarm geometry.** Define `D = swarm_features["diameter_normalized"]`, `V = swarm_features["mean_speed_normalized"]`, and `w = max(0.25, min(0.75, 0.5*((1+D)/(1+V))**p))` for `p` in `{-0.5, 0.5}`, then return `1/(1+d+w*v)`. This tests whether the successful tradeoff benefits from observable state dependence while keeping it near the winning coefficient; unlike common score scaling, it changes relative feature weights.
+4. **Add a small directional correction to the winning cost.** Let `a = particle_features["velocity_alignment"]` and return `1/(1 + d + 0.5*v - b*a*min(d,v))` for `b` in `{0.05, 0.1, 0.2}`. This preserves proximity and speed preference while modestly favoring motion toward the refreshed best, testing a limited extension given that fuller trajectory models underperformed.
+5. **Switch selectively between half-speed and random retention.** Return `0.0` for every particle when `swarm_features["relative_fitness_drop"] > t`, otherwise retain `1/(1+d+0.5*v)`, trying `t` in `{0.1, 0.25, 0.5}`. Constant scores invoke the existing random tie breaker, preserving continuous geometric ranking outside the gate. Random retention’s four shorter-period wins motivate this hybrid, but fitness drop remains an unproven switching signal and should not be treated as a proxy for change period.

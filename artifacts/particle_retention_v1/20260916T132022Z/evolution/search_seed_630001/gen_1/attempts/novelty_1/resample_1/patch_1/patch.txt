@@ -1,0 +1,11 @@
+--- a/original.py
++++ b/original.py
+@@ -1,6 +1,7 @@
+ """Retain the strongest refreshed personal-best particle for ordinary PSO."""
+ 
+ # EVOLVE-BLOCK-START
+ def retention_priority(particle_features, swarm_features) -> float:
+-    return -particle_features["personal_best_rank"]
++    """Assign equal priorities; the existing tie permutation selects exemption."""
++    return 0.0
+ # EVOLVE-BLOCK-END

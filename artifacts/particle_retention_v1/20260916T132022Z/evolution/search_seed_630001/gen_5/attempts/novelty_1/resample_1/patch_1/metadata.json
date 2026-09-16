@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "attraction_moment",
+  "patch_description": "Replace constant scoring with normalization, motion estimation, and bounded scoring stages. The rule favors low estimated post-PSO distance, accounting for momentum and attraction variability while approximating both attractors by the refreshed swarm best. Passed 245 synthetic numerical checks; benchmark improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:52:32.953953",
+  "llm_cost": 0.693662,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

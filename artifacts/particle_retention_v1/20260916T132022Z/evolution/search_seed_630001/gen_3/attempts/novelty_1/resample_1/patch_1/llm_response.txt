@@ -1,0 +1,23 @@
+<NAME>
+inertial_proximity
+</NAME>
+<DESCRIPTION>
+Favor the particle whose position plus damped velocity lies closest to the refreshed swarm best. This distinguishes approaching trajectories from outward motion and penalizes overshoot without relying on personal-best rank. The 0.73 factor approximates inertia damping; this is a geometric proxy, not a prediction of the full stochastic PSO update. Syntax and finite deterministic outputs passed focused checks; performance remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def retention_priority(particle_features, swarm_features) -> float:
+    """Assign equal priorities; the existing tie permutation selects exemption."""
+    return 0.0
+=======
+def retention_priority(particle_features, swarm_features) -> float:
+    """Favor proximity after a damped inertial step, before PSO attraction."""
+    import math
+    position = particle_features["relative_position_normalized"]
+    velocity = particle_features["velocity_normalized"]
+    projected_distance = math.hypot(
+        *(offset + 0.73 * motion for offset, motion in zip(position, velocity))
+    )
+    return 1.0 / (1.0 + projected_distance)
+>>>>>>> REPLACE
+</DIFF>

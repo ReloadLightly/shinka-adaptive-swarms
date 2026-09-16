@@ -1,0 +1,1014 @@
+{
+  "recorded_at": "2026-09-16T14:08:19.026931+00:00",
+  "status": "search_complete",
+  "terminal_slots": 9,
+  "valid_descendants": 7,
+  "terminal_failed_slots": [
+    3
+  ],
+  "role_accounting": {
+    "mutation": {
+      "native_wrappers": 8,
+      "requested_logical_responses": 8,
+      "returned_usable_responses": 8,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 8
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "novelty": {
+      "native_wrappers": 8,
+      "requested_logical_responses": 8,
+      "returned_usable_responses": 8,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 8
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "meta": {
+      "native_wrappers": 6,
+      "requested_logical_responses": 13,
+      "returned_usable_responses": 13,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 6
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    }
+  },
+  "totals": {
+    "native_wrappers": 22,
+    "requested_logical_responses": 29,
+    "returned_usable_responses": 29,
+    "allowance": 40,
+    "exposed_native_retry_responses": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_usage": "excluded/unobserved by native receipts",
+    "native_cost_estimates": "not subscription charges or paid API usage"
+  },
+  "model_and_effort": {
+    "requested": "gpt-6-astra / Ultra",
+    "explicit_supported_selected": "gpt-6-astra / xhigh",
+    "CLI_evidence": "operations/native-codex-process-settings-observed.json",
+    "provider_independent_attestation": false,
+    "native_reasoning_efforts_disabled_is_provider_effort": false,
+    "limitation": "Ultra appears in local model metadata but pinned Shinka/Headless parsers reject it; strongest supported xhigh was prospectively documented."
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 8,
+      "full_frozen_task_context_present": 8,
+      "source_context_references": 17,
+      "full_sources_present": 17,
+      "full_feedback_present": 17,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 8,
+      "accepted": 8,
+      "rejected": 0,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T13:41:57+00:00",
+          "elapsed_s": 139.52,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05843,
+          "novelty_explanation": "NOVEL \u2014 The existing code prioritizes particles by personal-best rank. The proposed code assigns every particle equal priority, leaving retention to tie-breaking. This changes the selection strategy and can affect optimizer performance.",
+          "max_similarity": 0.9588190317153931,
+          "similarity_scores": [
+            0.9588190317153931
+          ]
+        },
+        {
+          "time": "2026-09-16T13:44:11+00:00",
+          "elapsed_s": 266.26,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05971,
+          "novelty_explanation": "NOVEL: The existing code prioritizes particles by personal-best rank. The proposed code instead favors particles with smaller normalized distance to the best and lower normalized speed. This changes the retention criterion and can select different particles, affecting search behavior.",
+          "max_similarity": 0.9666087627410889,
+          "similarity_scores": [
+            0.9666087627410889
+          ]
+        },
+        {
+          "time": "2026-09-16T13:45:58+00:00",
+          "elapsed_s": 367.83,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05891,
+          "novelty_explanation": "**NOVEL**: The existing code prioritizes particles by personal-best rank. The proposed code instead favors smaller projected distances, calculated from normalized relative position plus velocity scaled by 0.73. This changes the retention strategy and can select different particles.",
+          "max_similarity": 0.9233625531196594,
+          "similarity_scores": [
+            0.9233625531196594,
+            0.913716733455658
+          ]
+        },
+        {
+          "time": "2026-09-16T13:48:03+00:00",
+          "elapsed_s": 485.42,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06566,
+          "novelty_explanation": "**NOVEL**: The existing code scores distance at the end of a damped inertial step; the proposed code scores RMS distance over the entire trajectory. This changes how distance, speed, and alignment affect priority and can produce different particle rankings. It also adds alignment clamping and numerical scaling for stability.",
+          "max_similarity": 0.9374507069587708,
+          "similarity_scores": [
+            0.8803386092185974,
+            0.8794313073158264,
+            0.9374507069587708
+          ]
+        },
+        {
+          "time": "2026-09-16T13:54:54+00:00",
+          "elapsed_s": 876.09,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06894,
+          "novelty_explanation": "**NOVEL**: The proposed code replaces integrated distance along an inertial trajectory with expected squared distance after a PSO step, including attraction toward the best position and attraction variance. This materially changes how distance, speed, and alignment affect particle rankings. It also changes hyperparameters and improves overflow handling in the final score calculation.",
+          "max_similarity": 0.9582116603851318,
+          "similarity_scores": [
+            0.8829111456871033,
+            0.8799065947532654,
+            0.9445645809173584,
+            0.9582116603851318
+          ]
+        },
+        {
+          "time": "2026-09-16T13:57:50+00:00",
+          "elapsed_s": 1042.7,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05987,
+          "novelty_explanation": "**NOVEL**: The existing code scores projected distance after a damped velocity step, accounting for motion direction. The proposed code separately penalizes current distance and speed using square roots, ignoring direction. This changes particle rankings and can produce different retention behavior.",
+          "max_similarity": 0.9613215327262878,
+          "similarity_scores": [
+            0.9528019428253174,
+            0.939761221408844,
+            0.9613215327262878,
+            0.938650369644165,
+            0.9408204555511475
+          ]
+        },
+        {
+          "time": "2026-09-16T13:59:10+00:00",
+          "elapsed_s": 1117.83,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05803,
+          "novelty_explanation": "NOVEL: The proposed code reduces the speed penalty from 1.0 to 0.5 relative to distance. This hyperparameter change can alter particle rankings and retention decisions, making it behaviorally meaningful.",
+          "max_similarity": 0.9845723509788513,
+          "similarity_scores": [
+            0.9521942734718323,
+            0.9845723509788513
+          ]
+        },
+        {
+          "time": "2026-09-16T14:00:58+00:00",
+          "elapsed_s": 1220.54,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06154,
+          "novelty_explanation": "**NOVEL**: The proposed code replaces continuous square-root penalties with a weighted linear cost, normalizes it by swarm mean speed, and quantizes it into discrete bins. These changes can alter particle rankings and create ties, producing meaningfully different retention behavior.",
+          "max_similarity": 0.9591379761695862,
+          "similarity_scores": [
+            0.9190735220909119,
+            0.9127137660980225,
+            0.918608546257019,
+            0.9129350781440735,
+            0.9237931966781616,
+            0.9591379761695862
+          ]
+        }
+      ]
+    },
+    "embeddings": {
+      "starts": 9,
+      "completions": 9,
+      "dimensions": {
+        "768": 9
+      },
+      "events": [
+        {
+          "time": "2026-09-16T13:40:01+00:00",
+          "elapsed_s": 28.09,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T13:41:41+00:00",
+          "elapsed_s": 123.01,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T13:43:57+00:00",
+          "elapsed_s": 252.21,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-16T13:45:45+00:00",
+          "elapsed_s": 354.5,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-16T13:47:44+00:00",
+          "elapsed_s": 468.7,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-16T13:52:32+00:00",
+          "elapsed_s": 741.25,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_5/main.py"
+        },
+        {
+          "time": "2026-09-16T13:57:36+00:00",
+          "elapsed_s": 1029.35,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_6/main.py"
+        },
+        {
+          "time": "2026-09-16T13:58:56+00:00",
+          "elapsed_s": 1106.01,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_7/main.py"
+        },
+        {
+          "time": "2026-09-16T14:00:41+00:00",
+          "elapsed_s": 1205.7,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_8/main.py"
+        },
+        {
+          "time": "2026-09-16T13:40:10+00:00",
+          "elapsed_s": 36.66,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:41:42+00:00",
+          "elapsed_s": 123.87,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:43:57+00:00",
+          "elapsed_s": 252.48,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_2/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:45:45+00:00",
+          "elapsed_s": 354.93,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:47:45+00:00",
+          "elapsed_s": 469.5,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_4/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:52:33+00:00",
+          "elapsed_s": 742.09,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_5/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:57:36+00:00",
+          "elapsed_s": 1029.49,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_6/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T13:58:56+00:00",
+          "elapsed_s": 1106.1,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_7/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T14:00:42+00:00",
+          "elapsed_s": 1205.89,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_8/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta_updates": 2,
+    "exact_meta_injections": 3,
+    "meta_examples": [
+      {
+        "generation": 8,
+        "receipt": "evolution/search_seed_630001/engine_calls/mutation-0d00fb95809b427586285ee18f6009e2.json",
+        "artifact": "evolution/search_seed_630001/meta/meta_5.txt",
+        "recommendation_index": 4,
+        "actual_injected_text": "**Combine geometric preference with randomized ties.** Compute `q = (d + v)/(1 + swarm_features[\"mean_speed_normalized\"])` and return `-float(int(q/h))`, trying bin widths `h` in `{0.05, 0.1, 0.25}`. Particles in the best occupied bin receive equal priorities and use the existing random tie breaker, combining the current best\u2019s geometric preference with the competitive random strategy; random\u2019s lower observed variability motivates this hypothesis but does not establish its benefit."
+      },
+      {
+        "generation": 7,
+        "receipt": "evolution/search_seed_630001/engine_calls/mutation-5ea0144b195b474284441a6d843a3f54.json",
+        "artifact": "evolution/search_seed_630001/meta/meta_5.txt",
+        "recommendation_index": 1,
+        "actual_injected_text": "**Tune the distance\u2013speed weighting first.** Let `d = particle_features[\"distance_to_best_normalized\"]` and `v = particle_features[\"speed_normalized\"]`; try `1/(1 + d + w*v)` with `w` in `{0.5, 0.75, 1.5, 2.0}`. This directly extends the strongest observed rule while testing whether its equal coefficients are optimal, without reintroducing the unsuccessful personal-best rank preference."
+      }
+    ],
+    "migration_transfers": 0,
+    "migration_interpretation": "Nine generation slots stop before the ten-generation migration interval; zero observed migrations are expected if recorded here.",
+    "degradation_events": [],
+    "patch_types": {
+      "init": 1,
+      "full": 5,
+      "diff": 3
+    }
+  },
+  "selected_native_descendant": {
+    "id": "626b0267-9e2b-44e4-aed7-b470707d0143",
+    "generation": 7,
+    "island_idx": 1,
+    "parent_id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f",
+    "is_island_copy": false,
+    "patch_type": "full",
+    "combined_score": 0.21893813157130526,
+    "mean_offline_error": 3.5675003838895605,
+    "source": "\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Favor proximity with a reduced penalty on retained speed.\"\"\"\n    distance = particle_features[\"distance_to_best_normalized\"]\n    speed = particle_features[\"speed_normalized\"]\n    speed_weight = 0.5\n    return 1.0 / (1.0 + distance + speed_weight * speed)\n# EVOLVE-BLOCK-END\n",
+    "source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+    "parent": {
+      "id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f",
+      "generation": 2,
+      "island_idx": 1,
+      "parent_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+      "is_island_copy": false
+    },
+    "archive_inspirations": [
+      {
+        "id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "generation": 0,
+        "island_idx": 1,
+        "parent_id": null,
+        "is_island_copy": true
+      }
+    ],
+    "top_ranked_inspirations": [],
+    "actual_feedback_examples": [
+      {
+        "prompt": "evolution/search_seed_630001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "native_id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f",
+        "generation": 2,
+        "full_feedback_supplied": true,
+        "excerpt": "Development feedback only. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Random reference is random; heuristic seed is heuristic. All personal-best memories survive and are reevaluated. The exempted particle continues ordinary PSO; it is neither stationary nor a permanent leader. Choices change complete closed-loop trajectories. Agreement is measured against the heuristic on each candidate snapshot, not across reference trajectories.\ncase_000 severity=1.0,period=2500: error=3.963754, delta random=-0.069236, delta heuristic=-0.156349; heuristic agreements=63/245; selected ranks={'4': 44, '1': 63, '3': 61, '5': 17, '2': 60}; selected feature means={'personal_best_rank': 2.559183673469388, 'distance_to_best_normalized': 7.274517157557297, 'speed_normalized': 14.741612700445966, 'velocity_alignment': -0.19133391489872775}; interval-end error=3.1370214841528696; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 8.250916853200081, \"completed_environment\": 7, \"difference\": -1.3600562389006523, \"reference_environment_error\": 9.610973092100734}, \"most_unfavorable\": {\"candidate_environment_error\": 1.4104665432127743, \"completed_environment\": 24, \"difference\": 0.41483994975484684, \"refer"
+      },
+      {
+        "prompt": "evolution/search_seed_630001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "native_id": "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "generation": 0,
+        "full_feedback_supplied": true,
+        "excerpt": "Development feedback only. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Random reference is random; heuristic seed is heuristic. All personal-best memories survive and are reevaluated. The exempted particle continues ordinary PSO; it is neither stationary nor a permanent leader. Choices change complete closed-loop trajectories. Agreement is measured against the heuristic on each candidate snapshot, not across reference trajectories.\ncase_000 severity=1.0,period=2500: error=4.120103, delta random=+0.087113, delta heuristic=+0.000000; heuristic agreements=240/240; selected ranks={'1': 240}; selected feature means={'personal_best_rank': 1, 'distance_to_best_normalized': 9.760753831402312, 'speed_normalized': 17.33525409986445, 'velocity_alignment': -0.4410162116932311}; interval-end error=3.142434508164019; incomplete responses=0.\nObserved environment episodes versus heuristic (descriptive extrema, not selected confirmation): {\"most_favorable\": {\"candidate_environment_error\": 3.977814299497103, \"completed_environment\": 1, \"difference\": 0.0, \"reference_environment_error\": 3.977814299497103}, \"most_unfavorable\": {\"candidate_environment_error\": 3.977814299497103, \"completed_environment\": 1, \"difference\": 0.0, \"reference_environment_error\": 3.977814299497103}}\ncase_001 severity=1.0,period=2500: error=2"
+      }
+    ]
+  },
+  "work": {
+    "by_generation": [
+      {
+        "generation": 0,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 0,
+        "physical_completed_queries": 0,
+        "attempts": [],
+        "case_cache_reuses": 8,
+        "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9"
+      },
+      {
+        "generation": 1,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf"
+      },
+      {
+        "generation": 2,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "c03ab38195105e9d6aa35590c74993644f895ad13fbf7960882b20df9c10a941"
+      },
+      {
+        "generation": 3,
+        "status": "failed",
+        "completed_case_artifacts": 0,
+        "physical_full_cases": 0,
+        "physical_completed_queries": 0,
+        "attempts": [],
+        "case_cache_reuses": 0,
+        "source_sha256": "6432c43d4f7ef882966d9cd8ab33e82a6ac472b324ad7067fe09b84ac7897c86"
+      },
+      {
+        "generation": 4,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "6d4e56fcf64dccdb9b9861affc05e71e2fc34f41c1a51f27b67749314ff14a23"
+      },
+      {
+        "generation": 5,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "de30063e760790eacfcf0c22bb3ab707264e9657bbe2b912350562a7590f1d97"
+      },
+      {
+        "generation": 6,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "a7fbea3dc4fc2eab69d3a6712c9145ef3d4c886740ed123c9798b929aa353db1"
+      },
+      {
+        "generation": 7,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4"
+      },
+      {
+        "generation": 8,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 800000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 100000,
+            "observed_objective_queries_lower_bound": 100000,
+            "exact_objective_queries": 100000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "f7abe84f3001f42057f49466b63834b011d0b58d01cf5eea7ce467ac65eac904"
+      }
+    ],
+    "physical_full_cases": 56,
+    "physical_completed_queries": 5600000,
+    "cached_case_reuses": 8,
+    "random_control_repetition_comparison": [
+      {
+        "generation": 1,
+        "case_index": 0,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 1,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 2,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 3,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 4,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 5,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 6,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      },
+      {
+        "generation": 1,
+        "case_index": 7,
+        "reference": "random",
+        "exact_saved_result_equal": true
+      }
+    ],
+    "repeated_cases_included": 8,
+    "repeated_queries_included": 800000
+  },
+  "runtime": {
+    "started_at": "20260916T133931.882309Z",
+    "finished_at": "2026-09-16T14:07:07.137460+00:00",
+    "UTC_wall_seconds": 1655.255151,
+    "UTC_wall_hours": 0.4597930975,
+    "last_logged_monotonic_elapsed_seconds": 1569.86
+  },
+  "limitations": [
+    "One invalid proposal used a function-local math import; frozen checker requires module-scope import. Prompt omitted that import-placement restriction. It also used nonwhitelisted zip. The terminal failed slot consumed no queries and was preserved, not repaired or rerun.",
+    "CLI wrapper and binary subprocesses can both appear in process observations; these are not separate logical requests. Receipt counts govern request accounting.",
+    "Native proposal RNG state is not restored across restarts; this run was not restarted."
+  ],
+  "audit_model_calls": 0,
+  "audit_objective_queries": 0
+}

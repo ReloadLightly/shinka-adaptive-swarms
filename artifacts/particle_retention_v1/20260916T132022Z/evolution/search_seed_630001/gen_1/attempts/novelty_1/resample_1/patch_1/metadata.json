@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "equal_priority",
+  "patch_description": "The current rule selects solely by refreshed personal-best rank, with weight \u22121. Replacing that preference with constant priority lets the existing tie permutation select the exemption.\nThis implements the measured random reference: development mean error 3.722188 versus 3.901685, improving fitness from approximately 0.2040 to 0.2118. This is adoption of an existing comparator, with no claimed new mechanism or generalization. All fixed optimizer settings remain unchanged.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:41:41.292366",
+  "llm_cost": 0.454198,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

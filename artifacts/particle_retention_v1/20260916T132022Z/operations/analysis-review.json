@@ -1,0 +1,126 @@
+{
+  "reviewed_at": "2026-09-16T14:02:13.546276+00:00",
+  "status": "passed",
+  "checks": [
+    "24 method-case records: exact configurations, 100000 counted queries, landscape hashes, independent environment-weighted error",
+    "Every saved choice: maximum score/shared permutation, same-snapshot heuristic agreement, four-particle complement",
+    "48 prospective examples and all recovery offsets independently identified from complete response/trace records",
+    "All paired values, means, SD, median, range and 2000-resample equal-regime percentile intervals independently recomputed using index draws/manual linear quantiles",
+    "Native selection independently verified across every completed checkpoint using mean/generation/source-hash tie ordering",
+    "Favorable/unfavorable completed-environment extremes and registered chronological tie rules independently verified; every case retained",
+    "Final frozen analysis hash matches source and predates the first native model-role request",
+    "Measured figure hashes match saved provenance"
+  ],
+  "selected_generation": 7,
+  "comparisons": {
+    "selected_minus_random": {
+      "mean": -0.1546881058678951,
+      "sd": 0.4080646734971824,
+      "interval": [
+        -0.3053342690530979,
+        -0.006405424256489489
+      ],
+      "improved_cases": 4,
+      "worsened_cases": 4,
+      "largest_case": 2
+    },
+    "selected_minus_heuristic": {
+      "mean": -0.3341848099499082,
+      "sd": 0.497166592806183,
+      "interval": [
+        -0.5255001702673643,
+        -0.14286944963245202
+      ],
+      "improved_cases": 6,
+      "worsened_cases": 2,
+      "largest_case": 3
+    },
+    "heuristic_minus_random": {
+      "mean": 0.17949670408201307,
+      "sd": 0.5756263260331875,
+      "interval": [
+        -0.1552918721717118,
+        0.514285280335738
+      ],
+      "improved_cases": 2,
+      "worsened_cases": 6,
+      "largest_case": 3
+    }
+  },
+  "largest_absolute_postchange_episode_contribution": {
+    "case_index": 3,
+    "environment": 12,
+    "delta": -13.804109693970414,
+    "contribution_to_case": -0.6902054846985207,
+    "contribution_to_pooled_mean": -0.08627568558731509
+  },
+  "analysis_sha256": "c007f43f17dc92355e98c618c81319fbe6eabe93c454ef475858efbb7341cd99",
+  "frozen_source_sha256": "737eef80dac810b1721da5191ef7b6f25a11b5bae8864a16d238c231ae9f5e3f",
+  "first_native_role_requested_at": "2026-09-16T13:40:10+00:00",
+  "simulator_calls": 0,
+  "candidate_executions": 0,
+  "model_calls": 0,
+  "issues": [],
+  "figure_visual_review": {
+    "reviewed": [
+      "paired_effects_recovery.png",
+      "retention_behavior.png",
+      "recovery_episode_extremes.png",
+      "native/search_progress.png"
+    ],
+    "result": "Readable measured figures, all expected cases/regimes and valid native generations present; generation 3 invalid slot intentionally omitted from numerical progression and must be captioned.",
+    "issues": []
+  },
+  "byte_identical_asset_copies": [
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/retention_behavior.png",
+      "target": "assets/particle_retention_v1/retention_behavior.png",
+      "sha256": "95ed5e8af6d90c1f47564810a95e2496a4f150572366a6f4ddd451c9f5e5a474"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/paired_effects_recovery.png",
+      "target": "assets/particle_retention_v1/paired_effects_recovery.png",
+      "sha256": "0b9af30184e9aad325cc79bdd7d1757d6acaa2c6b5764b6a8459580f0dfe17d3"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/recovery_episode_extremes.png",
+      "target": "assets/particle_retention_v1/recovery_episode_extremes.png",
+      "sha256": "0a9fb62d52a45998939b18756a8a9b9be9b5afa04794eb8f25a37f12ed3dc725"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/paired_effects_recovery.svg",
+      "target": "assets/particle_retention_v1/paired_effects_recovery.svg",
+      "sha256": "f4c8389aa41b1ff278571d81e465437959bfaad74899d47ec6c4dc95821a32a8"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/retention_behavior.svg",
+      "target": "assets/particle_retention_v1/retention_behavior.svg",
+      "sha256": "dfcaa8c8444375073ed51886e7528f4441d73d1662cebe2291ca96db41320752"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/recovery_episode_extremes.svg",
+      "target": "assets/particle_retention_v1/recovery_episode_extremes.svg",
+      "sha256": "3b08806e4ae58f7971e895ee0c3e9cc6b26673138d35d30a92f0028ab122cb40"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/figure_provenance.json",
+      "target": "assets/particle_retention_v1/figure_provenance.json",
+      "sha256": "78e22a3199edddb4587042dfca23dd0880cc19d831c2ab87e22e2debe972e983"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/native/search_progress.png",
+      "target": "assets/particle_retention_v1/native/search_progress.png",
+      "sha256": "7baf60b6aa50d20079964ef1cdc5a809933d418a7e515e78a42b1f7aeba07b7f"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/native/search_progress.svg",
+      "target": "assets/particle_retention_v1/native/search_progress.svg",
+      "sha256": "77e4b012dd408d16480f5cff50de30d3036be9a8dcc5c00ececd89681b2ebb8f"
+    },
+    {
+      "source": "results/particle_retention_v1/20260916T132022Z/analysis/native/figure_provenance.json",
+      "target": "assets/particle_retention_v1/native/figure_provenance.json",
+      "sha256": "3b00f48d18fccc84289449648dc7ff2fdb7bc5a84f1913c98b0818283ae7f755"
+    }
+  ]
+}

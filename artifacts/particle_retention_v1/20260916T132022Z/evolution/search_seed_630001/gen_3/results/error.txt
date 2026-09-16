@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/task_snapshot/evaluate.py", line 233, in _evaluate
+    priority = load_retention_priority(program_path)
+  File "/home/roland/actir/shinka-adaptive-swarms/src/adaptive_swarms/particle_retention.py", line 162, in load_retention_priority
+    inspect_priority_source(path.read_text())
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/roland/actir/shinka-adaptive-swarms/src/adaptive_swarms/particle_retention.py", line 143, in inspect_priority_source
+    raise RetentionPolicyError("Imports must be explicit math imports at module scope")
+adaptive_swarms.particle_retention.RetentionPolicyError: Imports must be explicit math imports at module scope

@@ -1,0 +1,87 @@
+Evolve only retention_priority(particle_features, swarm_features) inside the marked
+block. Return a finite Python int/float, not bool. The same pure deterministic
+function scores each of five particles from one immutable snapshot after all
+existing personal-best reevaluations and before any particle moves. Highest score
+exempts one particle; the other four relocate. A dedicated recorded random
+permutation resolves ties, generated once at EVERY selection regardless of ties.
+A constant score therefore gives the random-reference strategy. Do not use random
+numbers, mutable globals, files, environment variables, clocks or external code.
+
+Fixed: four of five relocate; radius_scale=1.25; velocities retained; personal-best
+memories reevaluated; numerical PSO, landscapes, birth/removal/exclusion and budgets
+unchanged. All memories survive including relocated particles' memories. The
+exempted particle continues ordinary PSO movement; it does not stay stationary and
+is not a permanent leader. No other decision is evolvable.
+
+Particle features, all captured before movement:
+- personal_best_fitness: latest counted reevaluation of this remembered best;
+  higher is better. NOT current-position fitness.
+- personal_best_rank: 1 + number of strictly better refreshed personal bests;
+  1 is best,5 is worst; equal qualities have equal competition rank.
+- personal_best_rank_fraction: (rank-1)/4,0 best to1 worst.
+- distance_to_best: Euclidean current-position distance to refreshed swarm-best
+  position; distance_to_best_normalized divides by max(default_radius,1e-12).
+- speed: Euclidean velocity norm; speed_normalized divides by the same scale.
+- velocity_alignment: cosine between velocity and vector from current position
+  toward refreshed swarm-best position; +1toward,-1away,0if either norm is zero.
+- relative_position_normalized: current position minus refreshed best, component
+  tuple divided by that scale; velocity_normalized: velocity components/scale.
+Swarm features: dimension,swarm_size,default_radius,diameter,diameter_normalized,
+relative_fitness_drop,mean_speed_normalized. Diameter is maximum pairwise current
+particle distance; normalized values divide by max(default_radius,1e-12).
+relative_fitness_drop is the existing public best-point detection statistic.
+The default radius is half the CONFIGURED movement severity supplied by the
+benchmark. This experiment does not infer unknown severity.
+
+No particle identity/index, RNG seed, hidden peak, true optimum, future change or
+objective error is a predictive feature. Do not import simulator/evaluator code.
+Pure math is permitted. Constants and simple rules are legitimate; there is no
+bonus for complexity, branching or agreement with a preferred hypothesis.
+
+Fitness=1/(1+mean offline error) over eight fixed balanced DEVELOPMENT cases,
+100,000 counted queries each. All detection and memory queries count. Feedback
+includes paired differences versus random and strongest-refreshed-personal-best
+references, regimes, chosen characteristics, agreement with that heuristic on the
+same snapshot and favorable/unfavorable measured recovery episodes. Cases remain
+development data; no generalization or search-method-superiority claim follows.
+
+
+# Scientific context supplied to mutation
+
+# Scientific context: allocating trajectory continuity
+
+The preceding radius/velocity sprint selected fixedcount4,radius1.25,retained
+velocity. Its fresh8-case pilot versus corrected count5/radius1baseline had mean
+error difference−0.6303,descriptive95%interval[−1.4721,+0.2241],fourwins/fourlosses,
+with a large individual baseline loss influencing the mean. Conditional recovery
+and velocity-mediated overshoot remain unestablished. V3 likewise did not establish
+fresh-history superiority or useful current-state dependence.
+
+Here the narrow question is which one particle should CONTINUE ordinary PSO when
+the other four relocate after a detected change. All personal-best memories are
+preserved and reevaluated, so this is not a test of saving otherwise-erased memories.
+Strong refreshed personal-best quality might identify a useful trajectory, but
+current position, velocity and refreshed memory can point in different directions.
+Geometry, direction, speed and continuity/diversity tradeoffs are plausible; changed
+asynchronous attractor updates and stochastic complete trajectories are competing
+explanations. A complicated expression alone is not a collective mechanism.
+
+The initial program exempts the particle with the strongest refreshed personal best.
+The external random reference gives equal priorities under the same per-selection
+random tie permutation. Both use the new selection-RNG arrangement; historical
+random-policy outcomes are not substituted. Only retention priorities evolve.
+The benchmark supplies default_radius=0.5*configuredmovementseverity. Unknown-shock
+or unknown-severity adaptation is outside this study. No additional campaign or
+fresh validation automatically follows this bounded search.
+
+A landscape change can occur during sequential memory refresh. Features report
+the latest actual counted reevaluations, not oracle-synchronized current fitnesses.
+
+# Measured reference feedback before native descendants
+
+On these same eight development cases, random mean offline error is 3.722188;
+the strongest-refreshed-personal-best heuristic mean is 3.901685.
+Heuristic minus random is +0.179497, paired SD 0.575626;
+2/8 cases favor the heuristic. Individual paired effects in fixed case order:
+[0.08711296308851235, 0.26234381766249326, -0.8640523282206134, 1.005068018856809, 0.19099570316085135, -0.10475598318152501, 0.8342248521209767, 0.025036589168600187]. These are development observations, not fresh validation.
+Native initial feedback supplies the complete paired outcomes and measured behavior.

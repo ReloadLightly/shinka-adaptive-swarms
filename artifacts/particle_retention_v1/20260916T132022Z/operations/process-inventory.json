@@ -1,0 +1,108 @@
+{
+  "recorded_at": "2026-09-16T13:29:39.936531+00:00",
+  "actual_python_processes": [
+    {
+      "pid": 167677,
+      "name": "python",
+      "cmdline": [
+        "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+        "-u",
+        "-m",
+        "shinka.webui.visualization",
+        "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search",
+        "--port",
+        "8888"
+      ],
+      "started_at": "2026-09-16T01:32:13.190000+00:00"
+    },
+    {
+      "pid": 250034,
+      "name": "python",
+      "cmdline": [
+        "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+        "-u",
+        "-m",
+        "shinka.webui.visualization",
+        "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search",
+        "--port",
+        "8889"
+      ],
+      "started_at": "2026-09-16T02:46:00.210000+00:00"
+    },
+    {
+      "pid": 362080,
+      "name": "python",
+      "cmdline": [
+        "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/embedding/venv/bin/python",
+        "-u",
+        "/home/roland/actir/shinka-adaptive-swarms/scripts/serve_local_embeddings.py",
+        "--port",
+        "8910",
+        "--threads",
+        "2",
+        "--chunk-tokens",
+        "512"
+      ],
+      "started_at": "2026-09-16T04:30:33.530000+00:00"
+    },
+    {
+      "pid": 382942,
+      "name": "python",
+      "cmdline": [
+        "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+        "-u",
+        "-m",
+        "shinka.webui.visualization",
+        "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution",
+        "--port",
+        "8893"
+      ],
+      "started_at": "2026-09-16T04:49:10.890000+00:00"
+    },
+    {
+      "pid": 901924,
+      "name": "python",
+      "cmdline": [
+        "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+        "-u",
+        "-m",
+        "shinka.webui.visualization",
+        "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution",
+        "--port",
+        "8894"
+      ],
+      "started_at": "2026-09-16T11:54:46.180000+00:00"
+    }
+  ],
+  "listeners": [
+    {
+      "port": 8894,
+      "address": "0.0.0.0",
+      "pid": 901924
+    },
+    {
+      "port": 8910,
+      "address": "127.0.0.1",
+      "pid": 362080
+    },
+    {
+      "port": 8893,
+      "address": "0.0.0.0",
+      "pid": 382942
+    },
+    {
+      "port": 8892,
+      "address": "127.0.0.1",
+      "pid": 235050
+    },
+    {
+      "port": 8891,
+      "address": "127.0.0.1",
+      "pid": 146701
+    }
+  ],
+  "port8895_available": true,
+  "services_modified": false,
+  "model_requests": 0,
+  "objective_queries": 0
+}

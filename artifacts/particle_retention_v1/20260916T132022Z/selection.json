@@ -1,0 +1,73 @@
+{
+  "frozen_at": "2026-09-16T14:02:22.868546+00:00",
+  "status": "frozen",
+  "scope": "development_only_no_fresh_validation",
+  "search_seed": 630001,
+  "selection_rule": "Lowest mean offline error among valid native programs including seed; exact tie earlier generation then source SHA256. Random remains an external comparator.",
+  "selected": {
+    "generation": 7,
+    "mean_offline_error": 3.5675003838895605,
+    "source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+    "source": "evolution/search_seed_630001/gen_7/main.py"
+  },
+  "ranking": [
+    {
+      "generation": 7,
+      "mean_offline_error": 3.5675003838895605,
+      "source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+      "source": "evolution/search_seed_630001/gen_7/main.py"
+    },
+    {
+      "generation": 2,
+      "mean_offline_error": 3.680712176667683,
+      "source_sha256": "c03ab38195105e9d6aa35590c74993644f895ad13fbf7960882b20df9c10a941",
+      "source": "evolution/search_seed_630001/gen_2/main.py"
+    },
+    {
+      "generation": 1,
+      "mean_offline_error": 3.7221884897574555,
+      "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+      "source": "evolution/search_seed_630001/gen_1/main.py"
+    },
+    {
+      "generation": 6,
+      "mean_offline_error": 3.7243631603360567,
+      "source_sha256": "a7fbea3dc4fc2eab69d3a6712c9145ef3d4c886740ed123c9798b929aa353db1",
+      "source": "evolution/search_seed_630001/gen_6/main.py"
+    },
+    {
+      "generation": 4,
+      "mean_offline_error": 3.724535554695695,
+      "source_sha256": "6d4e56fcf64dccdb9b9861affc05e71e2fc34f41c1a51f27b67749314ff14a23",
+      "source": "evolution/search_seed_630001/gen_4/main.py"
+    },
+    {
+      "generation": 5,
+      "mean_offline_error": 3.74631067680071,
+      "source_sha256": "de30063e760790eacfcf0c22bb3ab707264e9657bbe2b912350562a7590f1d97",
+      "source": "evolution/search_seed_630001/gen_5/main.py"
+    },
+    {
+      "generation": 0,
+      "mean_offline_error": 3.9016851938394685,
+      "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+      "source": "evolution/search_seed_630001/gen_0/main.py"
+    },
+    {
+      "generation": 8,
+      "mean_offline_error": 3.9073932723597644,
+      "source_sha256": "f7abe84f3001f42057f49466b63834b011d0b58d01cf5eea7ce467ac65eac904",
+      "source": "evolution/search_seed_630001/gen_8/main.py"
+    }
+  ],
+  "selected_executable": "programs/selected.py",
+  "analysis_source_sha256": "737eef80dac810b1721da5191ef7b6f25a11b5bae8864a16d238c231ae9f5e3f",
+  "terminal_generation_slots": 9,
+  "valid_descendants": 7,
+  "terminal_failed_descendants": [
+    3
+  ],
+  "all_numerical_work_finished": true,
+  "native_final_meta_status": "still running at selection freeze; no remaining proposal or numerical slot",
+  "prohibited_followup": "No new validation, replay, search or evaluator changes in this sprint."
+}

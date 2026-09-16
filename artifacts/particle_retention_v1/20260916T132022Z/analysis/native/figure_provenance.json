@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-09-16T14:02:03.669394+00:00",
+  "input_run": "results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001",
+  "database": "results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/programs.sqlite",
+  "task": "particle_retention_v1",
+  "database_record_count": 10,
+  "plotted_evaluations": 8,
+  "database_rows_sha256": "aee03e88b9f89c0a255d2ba44aadfe645253b3c023fb227bf1c75d411ebf0bd6",
+  "suite_sha256": "ff3d7c2f713f3a7320f15a51e73c900df77ff03f03fa50c648253ccedba3aa09",
+  "dimension": 5,
+  "case_budget": 100000,
+  "case_count": 8,
+  "points": [
+    {
+      "generation": 0,
+      "program_ids": [
+        "b1ab0e69-ded7-4dd7-a3c0-6a044097165c",
+        "d2446549-088f-4ced-b329-8eba1e75cb1b"
+      ],
+      "mean_offline_error": 3.9016851938394685,
+      "best_so_far_offline_error": 3.9016851938394685,
+      "combined_score": 0.20401146961800384,
+      "cases_completed": 8
+    },
+    {
+      "generation": 1,
+      "program_ids": [
+        "1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+      ],
+      "mean_offline_error": 3.7221884897574555,
+      "best_so_far_offline_error": 3.7221884897574555,
+      "combined_score": 0.21176621860161343,
+      "cases_completed": 8
+    },
+    {
+      "generation": 2,
+      "program_ids": [
+        "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f"
+      ],
+      "mean_offline_error": 3.680712176667683,
+      "best_so_far_offline_error": 3.680712176667683,
+      "combined_score": 0.2136427027034004,
+      "cases_completed": 8
+    },
+    {
+      "generation": 4,
+      "program_ids": [
+        "ed6fbaed-4ada-4f22-a7b1-16fed30bf055"
+      ],
+      "mean_offline_error": 3.724535554695695,
+      "best_so_far_offline_error": 3.680712176667683,
+      "combined_score": 0.2116610169238973,
+      "cases_completed": 8
+    },
+    {
+      "generation": 5,
+      "program_ids": [
+        "97b10b45-059f-4493-95bb-fe9c8e489dff"
+      ],
+      "mean_offline_error": 3.74631067680071,
+      "best_so_far_offline_error": 3.680712176667683,
+      "combined_score": 0.21068995860044676,
+      "cases_completed": 8
+    },
+    {
+      "generation": 6,
+      "program_ids": [
+        "08e5d2b1-7680-46e4-a0a0-71076a1fa9ad"
+      ],
+      "mean_offline_error": 3.7243631603360567,
+      "best_so_far_offline_error": 3.680712176667683,
+      "combined_score": 0.2116687405395963,
+      "cases_completed": 8
+    },
+    {
+      "generation": 7,
+      "program_ids": [
+        "626b0267-9e2b-44e4-aed7-b470707d0143"
+      ],
+      "mean_offline_error": 3.5675003838895605,
+      "best_so_far_offline_error": 3.5675003838895605,
+      "combined_score": 0.21893813157130526,
+      "cases_completed": 8
+    },
+    {
+      "generation": 8,
+      "program_ids": [
+        "48b5f973-f9af-446a-91a5-b5d7d4873d6f"
+      ],
+      "mean_offline_error": 3.9073932723597644,
+      "best_so_far_offline_error": 3.5675003838895605,
+      "combined_score": 0.20377417184645996,
+      "cases_completed": 8
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "search_progress.png",
+      "sha256": "7baf60b6aa50d20079964ef1cdc5a809933d418a7e515e78a42b1f7aeba07b7f"
+    },
+    {
+      "path": "search_progress.svg",
+      "sha256": "77e4b012dd408d16480f5cff50de30d3036be9a8dcc5c00ececd89681b2ebb8f"
+    }
+  ],
+  "deduplication": "Identical rows in the same generation represent one evaluated program; native seed island copy deduplicated.",
+  "interpretation": "Measured search-suite performance, not held-out generalization. No candidate or objective evaluations were executed to generate this figure."
+}

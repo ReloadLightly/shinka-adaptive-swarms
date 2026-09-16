@@ -1,0 +1,646 @@
+Native ShinkaEvolve WebUI: http://localhost:8895
+[INFO] Searching for databases in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[DEBUG] Server root directory: /home/roland/actir/shinka-adaptive-swarms/.venv/lib/python3.13/site-packages/shinka/webui
+[DEBUG] Search root directory: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+
+[*] Serving http://0.0.0.0:8895  (Ctrl+C to stop)
+→ Visit http://localhost:8895/
+(remember to forward the port if this is a remote host)
+
+[SERVER] Received GET request for: /list_databases
+[SERVER] Received request for database list, searching in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Scanning for .db files in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Found DB: search_seed_630001/programs.sqlite (task: 'search_seed_630001', result: 'search_seed_630001')
+[SERVER] Sending 1 databases:
+  [0] task='search_seed_630001', result='search_seed_630001'
+
+[SERVER] "GET /list_databases HTTP/1.1" 200 -
+[SERVER] Served DB list with 1 entries, sorted by date.
+
+[SERVER] Received GET request for: /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=d2446549-088f-4ced-b329-8eba1e75cb1b&left_tab=tree-view&right_tab=agent-code
+
+[SERVER] "GET /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=d2446549-088f-4ced-b329-8eba1e75cb1b&left_tab=tree-view&right_tab=agent-code HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /list_databases
+[SERVER] Received request for database list, searching in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Scanning for .db files in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Found DB: search_seed_630001/programs.sqlite (task: 'search_seed_630001', result: 'search_seed_630001')
+[SERVER] Sending 1 databases:
+  [0] task='search_seed_630001', result='search_seed_630001'
+
+[SERVER] "GET /list_databases HTTP/1.1" 200 -
+[SERVER] Served DB list with 1 entries, sorted by date.
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 2 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /favicon.png
+
+[SERVER] "GET /favicon.png HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 3 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=d2446549-088f-4ced-b329-8eba1e75cb1b
+[SERVER] Fetching program details for ID: d2446549-088f-4ced-b329-8eba1e75cb1b
+
+[SERVER] "GET /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=d2446549-088f-4ced-b329-8eba1e75cb1b HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=0&program_id=d2446549-088f-4ced-b329-8eba1e75cb1b
+[SERVER] Listing plots for DB: search_seed_630001/programs.sqlite, gen: 0, program: d2446549-088f-4ced-b329-8eba1e75cb1b
+[SERVER] Plots directory not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/results/plots
+
+[SERVER] "GET /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=0&program_id=d2446549-088f-4ced-b329-8eba1e75cb1b HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=0&program_id=d2446549-088f-4ced-b329-8eba1e75cb1b
+[SERVER] Listing plots for DB: search_seed_630001/programs.sqlite, gen: 0, program: d2446549-088f-4ced-b329-8eba1e75cb1b
+[SERVER] Plots directory not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_0/results/plots
+
+[SERVER] "GET /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=0&program_id=d2446549-088f-4ced-b329-8eba1e75cb1b HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+[SERVER] Fetching program details for ID: 1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+
+[SERVER] "GET /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=1&program_id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+[SERVER] Listing plots for DB: search_seed_630001/programs.sqlite, gen: 1, program: 1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+[SERVER] Plots directory not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_1/results/plots
+
+[SERVER] "GET /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=1&program_id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+[SERVER] Fetching program details for ID: 1c25d849-a1f2-4fd7-9359-66520e4b7dfe
+
+[SERVER] "GET /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite
+
+[SERVER] "GET /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /list_databases
+[SERVER] Received request for database list, searching in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Scanning for .db files in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Found DB: search_seed_630001/programs.sqlite (task: 'search_seed_630001', result: 'search_seed_630001')
+[SERVER] Sending 1 databases:
+  [0] task='search_seed_630001', result='search_seed_630001'
+
+[SERVER] "GET /list_databases HTTP/1.1" 200 -
+[SERVER] Served DB list with 1 entries, sorted by date.
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 3 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /favicon.png
+
+[SERVER] "GET /favicon.png HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 4 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 5 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 6 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Meta subdirectory not found, checking DB directory
+[SERVER] Found 0 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /list_databases
+[SERVER] Received request for database list, searching in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Scanning for .db files in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Found DB: search_seed_630001/programs.sqlite (task: 'search_seed_630001', result: 'search_seed_630001')
+[SERVER] Sending 1 databases:
+  [0] task='search_seed_630001', result='search_seed_630001'
+
+[SERVER] "GET /list_databases HTTP/1.1" 200 -
+[SERVER] Served DB list with 1 entries, sorted by date.
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching programs from DB: search_seed_630001/programs.sqlite
+[SERVER] Absolute DB path: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/programs.sqlite (from search_seed_630001/programs.sqlite)
+
+[SERVER] "GET /get_programs?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 10 programs from search_seed_630001/programs.sqlite (attempt 1)
+
+[SERVER] Received GET request for: /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=626b0267-9e2b-44e4-aed7-b470707d0143
+[SERVER] Fetching program details for ID: 626b0267-9e2b-44e4-aed7-b470707d0143
+
+[SERVER] "GET /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=626b0267-9e2b-44e4-aed7-b470707d0143 HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=626b0267-9e2b-44e4-aed7-b470707d0143&left_tab=tree-view&right_tab=agent-code
+
+[SERVER] "GET /viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=626b0267-9e2b-44e4-aed7-b470707d0143&left_tab=tree-view&right_tab=agent-code HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /list_databases
+[SERVER] Received request for database list, searching in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Scanning for .db files in: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution
+[SERVER] Found DB: search_seed_630001/programs.sqlite (task: 'search_seed_630001', result: 'search_seed_630001')
+[SERVER] Sending 1 databases:
+  [0] task='search_seed_630001', result='search_seed_630001'
+
+[SERVER] "GET /list_databases HTTP/1.1" 200 -
+[SERVER] Served DB list with 1 entries, sorted by date.
+
+[SERVER] Received GET request for: /favicon.png
+
+[SERVER] "GET /favicon.png HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program summaries from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_programs_summary?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+[SERVER] Successfully served 10 program summaries from search_seed_630001/programs.sqlite
+
+[SERVER] Received GET request for: /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching system prompts for DB: search_seed_630001/programs.sqlite
+[SERVER] Prompts database not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/prompts.sqlite
+
+[SERVER] "GET /get_system_prompts?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Listing meta files for DB: search_seed_630001/programs.sqlite
+[SERVER] Found 1 meta files
+
+[SERVER] "GET /get_meta_files?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_meta_content?db_path=search_seed_630001%2Fprograms.sqlite&processed_count=5
+[SERVER] Fetching meta content for DB: search_seed_630001/programs.sqlite, processed_count: 5
+[SERVER] Successfully served meta content for processed_count 5
+
+[SERVER] "GET /get_meta_content?db_path=search_seed_630001%2Fprograms.sqlite&processed_count=5 HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=626b0267-9e2b-44e4-aed7-b470707d0143
+[SERVER] Fetching program details for ID: 626b0267-9e2b-44e4-aed7-b470707d0143
+
+[SERVER] "GET /get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=626b0267-9e2b-44e4-aed7-b470707d0143 HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=7&program_id=626b0267-9e2b-44e4-aed7-b470707d0143
+[SERVER] Listing plots for DB: search_seed_630001/programs.sqlite, gen: 7, program: 626b0267-9e2b-44e4-aed7-b470707d0143
+[SERVER] Plots directory not found: /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_7/results/plots
+
+[SERVER] "GET /get_plots?db_path=search_seed_630001%2Fprograms.sqlite&generation=7&program_id=626b0267-9e2b-44e4-aed7-b470707d0143 HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -
+
+[SERVER] Received GET request for: /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite
+[SERVER] Fetching program count from DB: search_seed_630001/programs.sqlite
+
+[SERVER] "GET /get_program_count?db_path=search_seed_630001%2Fprograms.sqlite HTTP/1.1" 200 -

@@ -1,0 +1,321 @@
+{
+  "schema": "particle-retention-reference-scientific-review-v1",
+  "created_at": "2026-09-16T13:37:18.551132+00:00",
+  "run": "results/particle_retention_v1/20260916T132022Z",
+  "status": "passed",
+  "reference_manifest_sha256": "3059dd6b806b8006973d12adb84f44ded777686d2754ab486525647929221bb7",
+  "reviewed_frozen_sources": {
+    "tasks/particle_retention_v1/evaluate.py": "3d7175a4fbf34e205430e40d48a9cf33a6c10febe8c1d55c140216525878da8a",
+    "scripts/run_particle_retention.py": "c666282e5f5e37b0cac202f828db0098b221d86e8b5affcc386c8c6b7ce080f3"
+  },
+  "static_review": "No substantive evaluator or reference-runner correctness blocker found. Frozen configs/sources/hashes and reference pair histories are checked, source-exact heuristic seed reuse is explicit, failed candidates receive no fallback score, and recovery extrema remain development-only. Crash after artifact publication but before ledger completion halts for explicit certification, not blind replay.",
+  "methods": {
+    "random": {
+      "source_sha256": "416034c9d627154cc96e79852db1f849ac26b9b52b4af05a0295f39cdcddbef5",
+      "mean_offline_error": 3.7221884897574555,
+      "cases": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 4.032990068333579,
+          "retention_decisions": 248,
+          "same_snapshot_heuristic_agreements": 47,
+          "example_queries": [
+            2506,
+            50006
+          ],
+          "artifact_sha256": "8d7bca07cc5614df2723e16e2a72e11324eeaf84dca3cf6db65511afa46bfb7b"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.389688676543515,
+          "retention_decisions": 274,
+          "same_snapshot_heuristic_agreements": 61,
+          "example_queries": [
+            2509,
+            50006
+          ],
+          "artifact_sha256": "37ccc352720501a6c6105ed804d38d658e10621789d0cf3645168da75bba9450"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 3.3616320090174168,
+          "retention_decisions": 107,
+          "same_snapshot_heuristic_agreements": 21,
+          "example_queries": [
+            5007,
+            50007
+          ],
+          "artifact_sha256": "676029eea473db226d762b3bb788674c7810ee6d46da2d55fb9b1df242d60d72"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 4.294607769398746,
+          "retention_decisions": 89,
+          "same_snapshot_heuristic_agreements": 22,
+          "example_queries": [
+            5011,
+            50010
+          ],
+          "artifact_sha256": "18ece0cc6f43f943265264b700141403bab8c0ad0a2fb7a2345c8d258b109a9b"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 5.282704337189006,
+          "retention_decisions": 237,
+          "same_snapshot_heuristic_agreements": 41,
+          "example_queries": [
+            2520,
+            50011
+          ],
+          "artifact_sha256": "ad38414902663ec0aa221aa5c39f5bf50857862b5bde82dc2559dac50713d19d"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.824904235249442,
+          "retention_decisions": 349,
+          "same_snapshot_heuristic_agreements": 83,
+          "example_queries": [
+            2506,
+            50009
+          ],
+          "artifact_sha256": "1983c1c3026a18cd61a83b5729fcbc2260fa3842b2370fd70b8f1e56199bfc92"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 2.2617169493894074,
+          "retention_decisions": 115,
+          "same_snapshot_heuristic_agreements": 18,
+          "example_queries": [
+            5011,
+            50010
+          ],
+          "artifact_sha256": "1736fe8fec4cc9bf83a1493304e282bf76b15ab174b7b0a0df100b398f812d40"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.329263872938533,
+          "retention_decisions": 101,
+          "same_snapshot_heuristic_agreements": 22,
+          "example_queries": [
+            5010,
+            50011
+          ],
+          "artifact_sha256": "0392480c8ae89ec20366af35a4bcc94c1a5841f23e764b499d08db04be29d914"
+        }
+      ],
+      "response_count": 1520,
+      "selected_rank_counts": {
+        "4": 300,
+        "5": 311,
+        "1": 315,
+        "2": 311,
+        "3": 283
+      },
+      "same_snapshot_heuristic_agreements": 315,
+      "pooled_agreement_fraction": 0.20723684210526316,
+      "equal_case_agreement_fraction": 0.20509477640088145,
+      "objective_queries": 800000,
+      "query_categories": {
+        "initialization": 40,
+        "detection": 126450,
+        "particle": 636230,
+        "exclusion": 29680,
+        "memory": 7600
+      }
+    },
+    "heuristic": {
+      "source_sha256": "fa990972a0e4e84e00c19a748cdfe638dccd75d425e22bf0682e10443c3b2ae9",
+      "mean_offline_error": 3.9016851938394685,
+      "cases": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 4.120103031422091,
+          "retention_decisions": 240,
+          "same_snapshot_heuristic_agreements": 240,
+          "example_queries": [
+            2506,
+            50006
+          ],
+          "artifact_sha256": "da08624a9da356358ea0a894d76415c04d7f2670d0cc86fc4b5b66896d7ad783"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.6520324942060083,
+          "retention_decisions": 260,
+          "same_snapshot_heuristic_agreements": 260,
+          "example_queries": [
+            2509,
+            50011
+          ],
+          "artifact_sha256": "3d3e649c2447d18636335870e21c7d150de344396f87d78e5555664edcac33ce"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 2.4975796807968034,
+          "retention_decisions": 117,
+          "same_snapshot_heuristic_agreements": 117,
+          "example_queries": [
+            5007,
+            50010
+          ],
+          "artifact_sha256": "333a7f975b890088c6acbc6994286d36f296b0391c1db61fd146bd453dcb876c"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 5.299675788255555,
+          "retention_decisions": 86,
+          "same_snapshot_heuristic_agreements": 86,
+          "example_queries": [
+            5011,
+            50011
+          ],
+          "artifact_sha256": "02dfee3f270e138f91df227c652a24e8abb039edee3d3b570657e53d2ac0d0bf"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 5.473700040349858,
+          "retention_decisions": 206,
+          "same_snapshot_heuristic_agreements": 206,
+          "example_queries": [
+            2520,
+            50007
+          ],
+          "artifact_sha256": "277e52dc77af189b7a65b66e377502827513886670ed6740351694154dbbd028"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.7201482520679168,
+          "retention_decisions": 342,
+          "same_snapshot_heuristic_agreements": 342,
+          "example_queries": [
+            2506,
+            50009
+          ],
+          "artifact_sha256": "7167f5334adf52c574228c008e2337f5bdc5a0c6de853dba6793b71c97e91d0a"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.095941801510384,
+          "retention_decisions": 126,
+          "same_snapshot_heuristic_agreements": 126,
+          "example_queries": [
+            5011,
+            50006
+          ],
+          "artifact_sha256": "1a3f7c0c72bb21403fc623039a4022d0e1fa8de287a47efa71bf73daac9941c5"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.354300462107133,
+          "retention_decisions": 90,
+          "same_snapshot_heuristic_agreements": 90,
+          "example_queries": [
+            5010,
+            50011
+          ],
+          "artifact_sha256": "5e7bc1c40719cca324308cabf4b47e09ad0583f68c60ce7d2d9227c0a2460402"
+        }
+      ],
+      "response_count": 1467,
+      "selected_rank_counts": {
+        "1": 1467
+      },
+      "same_snapshot_heuristic_agreements": 1467,
+      "pooled_agreement_fraction": 1.0,
+      "equal_case_agreement_fraction": 1.0,
+      "objective_queries": 800000,
+      "query_categories": {
+        "initialization": 40,
+        "detection": 126371,
+        "particle": 636109,
+        "exclusion": 30145,
+        "memory": 7335
+      }
+    }
+  },
+  "paired_effect": {
+    "contrast": "heuristic minus random; negative favors heuristic",
+    "case_differences": [
+      0.08711296308851235,
+      0.26234381766249326,
+      -0.8640523282206134,
+      1.005068018856809,
+      0.19099570316085135,
+      -0.10475598318152501,
+      0.8342248521209767,
+      0.025036589168600187
+    ],
+    "mean": 0.17949670408201307,
+    "sd": 0.5756263260331875,
+    "range": [
+      -0.8640523282206134,
+      1.005068018856809
+    ],
+    "median": 0.13905433312468185,
+    "heuristic_better_cases": 2,
+    "heuristic_worse_cases": 6,
+    "regimes": {
+      "severity=1.0,period=2500": {
+        "mean": 0.1747283903755028,
+        "case_differences": [
+          0.08711296308851235,
+          0.26234381766249326
+        ]
+      },
+      "severity=1.0,period=5000": {
+        "mean": 0.07050784531809784,
+        "case_differences": [
+          -0.8640523282206134,
+          1.005068018856809
+        ]
+      },
+      "severity=3.0,period=2500": {
+        "mean": 0.04311985998966317,
+        "case_differences": [
+          0.19099570316085135,
+          -0.10475598318152501
+        ]
+      },
+      "severity=3.0,period=5000": {
+        "mean": 0.42963072064478847,
+        "case_differences": [
+          0.8342248521209767,
+          0.025036589168600187
+        ]
+      }
+    }
+  },
+  "checks": {
+    "completed_full_cases": 16,
+    "objective_queries": 1600000,
+    "independently_replayed_selection_decisions": 2987,
+    "deterministic_prespecified_examples_verified": 32,
+    "fixed_count4_radius1p25_retained_velocity_reevaluated_memory": true,
+    "post_counted_refresh_and_before_movement": true,
+    "finite_identity_free_features": true,
+    "competition_ranks": true,
+    "dedicated_rng_fixed_permutation_every_selection": true,
+    "same_snapshot_heuristic": true,
+    "prescribed_examples_with_relocated_velocity_retention": true,
+    "paired_landscape_histories": true,
+    "all_unfavorable_cases_retained": true
+  },
+  "interpretation": "These are new balanced development cases, not fresh confirmation of an evolved rule. Random selects the first entry of the dedicated permutation; heuristic selects the strongest refreshed personal memory with that same tie order. Agreement compares choices on each method own snapshot, never identities across different trajectories. Ordinary movement of the exempt particle is distinct from preserving a stationary leader; all memories remain available.",
+  "review_objective_queries_or_model_calls": 0
+}

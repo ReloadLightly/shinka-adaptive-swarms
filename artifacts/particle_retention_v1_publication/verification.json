@@ -1,0 +1,136 @@
+{
+  "schema": "particle-retention-publication-verification-v1",
+  "status": "passed",
+  "started_at": "2026-09-16T14:19:15.663879+00:00",
+  "finished_at": "2026-09-16T14:19:27.923656+00:00",
+  "elapsed_seconds": 12.259775835002074,
+  "archive": "artifacts/particle_retention_v1/20260916T132022Z",
+  "manifest_sha256": "4f4ad433f85666b2d6acd3025e9aadd86091e69722af46cd8aecbd17704ee177",
+  "archive_metadata_sha256": "d0f56ee7275b4037780e5bf838567d859c021fcb427e18bac4bb9e219ed6c44a",
+  "payload_files_verified": 400,
+  "payload_bytes_verified": 53997819,
+  "payload_hashes_sizes_paths_passed": true,
+  "archive_unchanged_after_analysis": true,
+  "privacy_filename_filter": {
+    "passed": true,
+    "findings": [],
+    "scope": "Explicit authentication/credential files, private-key formats, PDFs/EPUBs and unsafe or symbolic paths; not a claim of comprehensive secret-content detection.",
+    "all_files_and_directories_have_no_symlinks": true
+  },
+  "sqlite": {
+    "path": "evolution/search_seed_630001/programs.sqlite",
+    "sha256": "3e79d44c7521d705918c74645b4350cacbf7deebc982a653451791f998767622",
+    "integrity_check": "ok",
+    "foreign_key_check": [],
+    "schema_and_all_table_row_multisets_match": true,
+    "tables": {
+      "archive": {
+        "rows": 9,
+        "row_multiset_sha256": "b8e37700dff226644e8e4b0968ca72ecf0aea9bbf5c23539563ddf898ebe62e0"
+      },
+      "attempt_log": {
+        "rows": 0,
+        "row_multiset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "generation_event_log": {
+        "rows": 0,
+        "row_multiset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "metadata_store": {
+        "rows": 5,
+        "row_multiset_sha256": "93a2035c011cd2ced6d5301e96e80dcc27546567b3655e08b9e2814d4fb27369"
+      },
+      "programs": {
+        "rows": 10,
+        "row_multiset_sha256": "7307e0362b09d821910dd76318b19fa5cea53df881391fc5b48697a0101b8b80"
+      },
+      "sqlite_sequence": {
+        "rows": 0,
+        "row_multiset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "open_mode": "mode=ro&immutable=1; no WAL dependency"
+  },
+  "cases": {
+    "completed_saved_case_records": 80,
+    "paired_case_identities": 8,
+    "groups": {
+      "evolution/search_seed_630001/gen_0/results": 8,
+      "evolution/search_seed_630001/gen_1/results": 8,
+      "evolution/search_seed_630001/gen_2/results": 8,
+      "evolution/search_seed_630001/gen_4/results": 8,
+      "evolution/search_seed_630001/gen_5/results": 8,
+      "evolution/search_seed_630001/gen_6/results": 8,
+      "evolution/search_seed_630001/gen_7/results": 8,
+      "evolution/search_seed_630001/gen_8/results": 8,
+      "references/heuristic": 8,
+      "references/random": 8
+    },
+    "all_budgets_query_categories_and_landscapes_verified": true,
+    "saved_record_queries_including_cache": 8000000,
+    "seed_exact_cache_reuses": 8,
+    "physical_full_executions": 72,
+    "physical_research_queries": 7200000,
+    "physically_repeated_random_cases_included": 8,
+    "physical_repeat_queries_included": 800000,
+    "separate_fixture_queries_from_frozen_accounting": 5109
+  },
+  "selected": {
+    "generation": 7,
+    "source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+    "executable": "programs/selected.py",
+    "matches_frozen_generation_and_database": true,
+    "native_program_id": "626b0267-9e2b-44e4-aed7-b470707d0143",
+    "parent_id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f"
+  },
+  "portable_analysis": {
+    "command": [
+      "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+      "/home/roland/actir/shinka-adaptive-swarms/scripts/analyze_particle_retention.py",
+      "--run",
+      "/home/roland/actir/shinka-adaptive-swarms/artifacts/particle_retention_v1/20260916T132022Z",
+      "--output",
+      "/tmp/particle-retention-published-check"
+    ],
+    "analyzer_sha256": "737eef80dac810b1721da5191ef7b6f25a11b5bae8864a16d238c231ae9f5e3f",
+    "frozen_source_verified": true,
+    "exit_code": 0,
+    "scientific_results_exact_equal": true,
+    "excluded_comparison_fields": [
+      "analyzed_at"
+    ],
+    "output_directory": "/tmp/particle-retention-published-check",
+    "analysis_sha256": "afa6f9c69a41225634eb110a173e023645e6c885234598623d42279f04ed8547",
+    "archived_analysis_sha256": "c007f43f17dc92355e98c618c81319fbe6eabe93c454ef475858efbb7341cd99",
+    "figures_rendered": [
+      "paired_effects_recovery.png",
+      "paired_effects_recovery.svg",
+      "recovery_episode_extremes.png",
+      "recovery_episode_extremes.svg",
+      "retention_behavior.png",
+      "retention_behavior.svg"
+    ],
+    "stdout_sha256": "8260eff1ff5640214f1ad935b9233ee0a7a720cfb6a66674d970666a7754b459",
+    "stderr": "/home/roland/.config/matplotlib is not a writable directory\nMatplotlib created a temporary cache directory at /tmp/matplotlib-b7tuwy8n because there was an issue with the default path (/home/roland/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.\n"
+  },
+  "work_accounting": {
+    "objective_queries": 0,
+    "model_requests": 0,
+    "simulator_calls": 0,
+    "scope": "Saved artifacts, hashes, read-only SQLite and deterministic saved-data analysis only."
+  },
+  "informational_notes": [
+    {
+      "kind": "operational_lifecycle_marker",
+      "archive_marker": "operations/manifest.json",
+      "archived_status": "preparing",
+      "archived_stage": null,
+      "authoritative_completion": {
+        "ARCHIVE.json": "closed_complete",
+        "accounting.json": "research_complete",
+        "evolution/search_seed_630001/manifest.json": "search_complete"
+      },
+      "interpretation": "The initial operations marker was not advanced before archive closure. Completed scientific records, final accounting and native completion manifest are authoritative; the closed payload was preserved unchanged."
+    }
+  ]
+}

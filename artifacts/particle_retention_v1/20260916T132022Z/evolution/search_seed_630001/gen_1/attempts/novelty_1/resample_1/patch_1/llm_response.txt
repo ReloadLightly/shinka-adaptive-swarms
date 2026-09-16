@@ -1,0 +1,17 @@
+<NAME>
+equal_priority
+</NAME>
+<DESCRIPTION>
+The current rule selects solely by refreshed personal-best rank, with weight −1. Replacing that preference with constant priority lets the existing tie permutation select the exemption.
+This implements the measured random reference: development mean error 3.722188 versus 3.901685, improving fitness from approximately 0.2040 to 0.2118. This is adoption of an existing comparator, with no claimed new mechanism or generalization. All fixed optimizer settings remain unchanged.
+</DESCRIPTION>
+<CODE>
+```python
+"""Retain the strongest refreshed personal-best particle for ordinary PSO."""
+# EVOLVE-BLOCK-START
+def retention_priority(particle_features, swarm_features) -> float:
+    """Assign equal priorities; the existing tie permutation selects exemption."""
+    return 0.0
+# EVOLVE-BLOCK-END
+```
+</CODE>

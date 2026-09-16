@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "half_speed_penalty",
+  "patch_description": "The current rule weights normalized distance and speed equally. Keep distance weight at 1.0 and reduce speed weight to 0.5, favoring proximity while still penalizing rapid motion. This tests whether the existing speed penalty sacrifices useful nearby trajectories; improvement requires development evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:58:56.781425",
+  "llm_cost": 0.372058,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

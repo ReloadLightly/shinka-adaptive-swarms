@@ -1,0 +1,133 @@
+{
+  "recorded_at": "2026-09-16T13:30:39.255098+00:00",
+  "requested_model": "gpt-6-astra",
+  "requested_inner_effort": "ultra",
+  "selected_inner_effort": "xhigh",
+  "deviation": "The local Codex model metadata lists Ultra, but pinned Shinka and Headless parsers reject it. Use strongest end-to-end supported xhigh without transport changes; do not relabel xhigh as Ultra.",
+  "codex_version": "codex-cli 0.154.0",
+  "codex_model_metadata": {
+    "path": "/home/roland/.codex/models_cache.json",
+    "sha256": "df70cbd74af4206371b2ccbcc675db07fd82f179cc6d1bc309853918474538bf",
+    "model": "gpt-6-astra",
+    "default_reasoning_level": "medium",
+    "supported_reasoning_levels": [
+      {
+        "effort": "low",
+        "description": "Fast responses with lighter reasoning"
+      },
+      {
+        "effort": "medium",
+        "description": "Balances speed and reasoning depth for everyday tasks"
+      },
+      {
+        "effort": "high",
+        "description": "Greater reasoning depth for complex problems"
+      },
+      {
+        "effort": "xhigh",
+        "description": "Extra high reasoning depth for complex problems"
+      },
+      {
+        "effort": "max",
+        "description": "Maximum reasoning depth for the hardest problems"
+      },
+      {
+        "effort": "ultra",
+        "description": "Maximum reasoning with automatic task delegation"
+      }
+    ]
+  },
+  "shinka_revision": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+  "shinka_effort_parser": {
+    "path": "/home/roland/actir/shinka-adaptive-swarms/.venv/lib/python3.13/site-packages/shinka/llm/providers/headless.py",
+    "sha256": "c9a5295c615eb9dd2b6dfc353b1f6ca08dcbfb3536582f39dcad048ee6a8693f",
+    "supported": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  "headless_version": "0.6.1",
+  "headless_sources": [
+    {
+      "path": "/home/roland/.npm/_npx/e33d60c9345e504d/node_modules/@roberttlange/headless/dist/cli.js",
+      "sha256": "12e050c62ad623de02c8af9fdcee4d23eec3c1c69e107355b2e26d3f3bb60123"
+    },
+    {
+      "path": "/home/roland/.npm/_npx/e33d60c9345e504d/node_modules/@roberttlange/headless/dist/config.js",
+      "sha256": "12854be14060479b6f268086dedd8a13b5c3b93428a519bcab3249905998016b"
+    },
+    {
+      "path": "/home/roland/.npm/_npx/e33d60c9345e504d/node_modules/@roberttlange/headless/dist/agents.js",
+      "sha256": "d2263ed457068dd8170c4d193333216e855b22991fed3fba8f6b13150eb9c75f"
+    },
+    {
+      "path": "/home/roland/.npm/_npx/e33d60c9345e504d/node_modules/@roberttlange/headless/dist/types.d.ts",
+      "sha256": "bd683b6483b305a389c7d0b00aecddf88b52e6afac52920a16441e8ea8630313"
+    }
+  ],
+  "pure_route_parser_checks": {
+    "xhigh": {
+      "accepted": true,
+      "constructed_command": [
+        "npx",
+        "-y",
+        "@roberttlange/headless",
+        "codex",
+        "--prompt-file",
+        "/tmp/NO_MODEL_CALL_preflight_prompt",
+        "--work-dir",
+        "/home/roland/actir/shinka-adaptive-swarms",
+        "--allow",
+        "read-only",
+        "--usage",
+        "--model",
+        "gpt-6-astra",
+        "--reasoning-effort",
+        "xhigh"
+      ]
+    },
+    "ultra": {
+      "accepted": false,
+      "error": "Unsupported headless effort 'ultra'. Expected one of ['high', 'low', 'medium', 'xhigh']."
+    }
+  },
+  "resolved_role_settings": {
+    "mutation": [
+      {
+        "route": "headless/codex@gpt-6-astra?effort=xhigh",
+        "model_requested": "gpt-6-astra",
+        "inner_effort_requested": "xhigh",
+        "inner_effort_effective": null,
+        "status": "configured; actual model and effort require invocation evidence"
+      }
+    ],
+    "meta": [
+      {
+        "route": "headless/codex@gpt-6-astra?effort=xhigh",
+        "model_requested": "gpt-6-astra",
+        "inner_effort_requested": "xhigh",
+        "inner_effort_effective": null,
+        "status": "configured; actual model and effort require invocation evidence"
+      }
+    ],
+    "novelty": [
+      {
+        "route": "headless/codex@gpt-6-astra?effort=xhigh",
+        "model_requested": "gpt-6-astra",
+        "inner_effort_requested": "xhigh",
+        "inner_effort_effective": null,
+        "status": "configured; actual model and effort require invocation evidence"
+      }
+    ]
+  },
+  "native_profile_evolution_and_database_identical_to_research_v3": true,
+  "actual_inner_model_and_effort": "Pending real invocation evidence; this is a no-call preflight, not observed inference.",
+  "supervising_settings": "Requested Astra/Ultra; supervising settings are independent of these internal route settings.",
+  "model_requests": 0,
+  "objective_queries": 0,
+  "global_settings_modified": false,
+  "services_modified": false,
+  "new_downloads": false
+}

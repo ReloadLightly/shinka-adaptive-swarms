@@ -1,0 +1,42 @@
+{
+  "frozen_at": "2026-09-16T13:38:30.391046+00:00",
+  "analysis_script": "scripts/analyze_particle_retention.py",
+  "analysis_script_sha256": "737eef80dac810b1721da5191ef7b6f25a11b5bae8864a16d238c231ae9f5e3f",
+  "superseded_freeze_preserved": "operations/analysis-freeze.json",
+  "superseded_freeze_sha256": "409a93a58b96fea73c397a5c311f4cd54e03eda8465b8b5fb5c1dde02855f378",
+  "reason": "Before native search, correct a documentation/code mismatch against the already registered protocol: pooled episode ties use earlier environment then case order. Clarify plot legend as Refreshed-pbest heuristic, without suggesting selective memory preservation. No outcome ranking, score, bootstrap or numerical-task changes.",
+  "changes": [
+    "Episode tie key changed from case/environment to environment/case, matching docs/particle_retention_v1_protocol.md.",
+    "Legend changed from Best-memory heuristic to Refreshed-pbest heuristic.",
+    "Existing saved-data test extended to check tied episode chronology."
+  ],
+  "settings": {
+    "version": "particle_retention_descriptive_v1",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026091607,
+    "interval_level": 0.95,
+    "weighting": "equal regime weights; paired resampling within regime",
+    "interpretation": "Development-only descriptive uncertainty; no significance gate or fresh-validation claim.",
+    "selection": "minimum mean error among valid completed native seed/descendants; earlier generation then source SHA on ties",
+    "decision_examples": [
+      "first completed response in each case",
+      "first completed response decided at or after query50000 in each case"
+    ],
+    "decision_recovery_offsets": [
+      25,
+      100,
+      500
+    ],
+    "decision_recovery_rule": "nearest actual recorded trace at or after requested offset from decision; never cross next environment boundary",
+    "episode_selection": "post hoc lowest and highest selected-minus-heuristic completed-environment mean error, excluding initial environment; ties by earlier environment then case index"
+  },
+  "tests": {
+    "path": "tests/test_particle_retention_analysis.py",
+    "sha256": "3b85401d05882ab5c2f2f2e9a941a52f3d475f90e547610979feae4ef24c4afb",
+    "passed": 5,
+    "numerical_simulator_calls": 0,
+    "model_calls": 0
+  },
+  "native_outcomes_existed_at_amendment": false,
+  "scientific_scope": "Development-only; settings frozen before native evolution."
+}

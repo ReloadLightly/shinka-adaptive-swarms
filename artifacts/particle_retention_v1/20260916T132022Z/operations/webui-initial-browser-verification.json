@@ -1,0 +1,61 @@
+{
+  "at": "2026-09-16T13:41:17.012151+00:00",
+  "url": "http://127.0.0.1:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=d2446549-088f-4ced-b329-8eba1e75cb1b&left_tab=tree-view&right_tab=agent-code",
+  "cached_browser_binary": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64",
+  "commands": [
+    {
+      "args": [
+        "open",
+        "http://127.0.0.1:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=d2446549-088f-4ced-b329-8eba1e75cb1b&left_tab=tree-view&right_tab=agent-code"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 \ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n  http://127.0.0.1:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=d2446549-088f-4ced-b329-8eba1e75cb1b&left_tab=tree-view&right_tab=agent-code\n",
+      "stderr": "[agent-browser] launched browser\n"
+    },
+    {
+      "args": [
+        "wait",
+        "--load",
+        "networkidle"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Done\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "snapshot",
+        "-i"
+      ],
+      "returncode": 0,
+      "stdout": "- link \"\u2190 Dashboard\" [ref=e1]\n- heading \"\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\" [level=2, ref=e2]\n- button \"\ud83d\udcca\" [ref=e3]\n- button \"\u23f1\ufe0f\" [ref=e4]\n- button \"\ud83d\udcbe\" [ref=e5]\n- generic \"Tree\" [ref=e6] clickable [cursor:pointer]\n- generic \"PromptEvo\" [ref=e7] clickable [cursor:pointer]\n- generic \"Programs\" [ref=e8] clickable [cursor:pointer]\n- generic \"Metrics\" [ref=e9] clickable [cursor:pointer]\n- generic \"Embed\" [ref=e10] clickable [cursor:pointer]\n- generic \"Clusters\" [ref=e11] clickable [cursor:pointer]\n- generic \"Islands\" [ref=e12] clickable [cursor:pointer]\n- generic \"Ensembling\" [ref=e13] clickable [cursor:pointer]\n- generic \"Path\" [ref=e14] clickable [cursor:pointer]\n- generic \"MAPs\" [ref=e15] clickable [cursor:pointer]\n- LabelText \"Transpose Tree (Left\u2192Right)\" [ref=e30] clickable [cursor:pointer]\n  - checkbox \"Transpose Tree (Left\u2192Right)\" [checked=false, ref=e33]\n- LabelText \"Animate Tree\" [ref=e31] clickable [cursor:pointer]\n  - checkbox \"Animate Tree\" [checked=false, ref=e34]\n- group \"0\" [ref=e35] clickable [cursor:pointer]\n- group \"0I0\" [ref=e36] clickable [cursor:pointer]\n- group \"0I1\" [ref=e37] clickable [cursor:pointer]\n- heading \"Nodes\" [level=5, ref=e16]\n- heading \"Patches\" [level=5, ref=e28]\n- heading \"Performance\" [level=5, ref=e17]\n- generic \"\u25b6\\n                                2 Islands\" [ref=e29] clickable [cursor:pointer]\n  - heading \"2 Islands\" [level=5, ref=e32]\n- generic \"Meta\" [ref=e18] clickable [cursor:pointer]\n- generic \"Pareto\" [ref=e19] clickable [cursor:pointer]\n- generic \"Scratch\" [ref=e20] clickable [cursor:pointer]\n- generic \"Node\" [ref=e21] clickable [cursor:pointer]\n- generic \"Code\" [ref=e22] clickable [cursor:pointer]\n- generic \"Diff\" [ref=e23] clickable [cursor:pointer]\n- generic \"Eval\" [ref=e24] clickable [cursor:pointer]\n- generic \"LLM\" [ref=e25] clickable [cursor:pointer]\n- generic \"Analysis\" [ref=e26] clickable [cursor:pointer]\n- generic \"Usage\" [ref=e27] clickable [cursor:pointer]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "screenshot",
+        "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-initial.png"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Screenshot saved to /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-initial.png\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "errors"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "eval",
+        "JSON.stringify({content:document.body.innerText.length,sourceVisible:document.body.innerText.includes(\"retention_priority\"),overlay:!!document.querySelector(\"[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay\")})"
+      ],
+      "returncode": 0,
+      "stdout": "\"{\\\"content\\\":385,\\\"sourceVisible\\\":false,\\\"overlay\\\":false}\"\n",
+      "stderr": ""
+    }
+  ]
+}

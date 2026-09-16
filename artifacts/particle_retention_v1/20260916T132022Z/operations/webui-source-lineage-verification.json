@@ -1,0 +1,58 @@
+{
+  "at": "2026-09-16T13:42:53.594042+00:00",
+  "commands": [
+    {
+      "args": [
+        "click",
+        "@e41"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Done\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "get",
+        "text",
+        "body"
+      ],
+      "returncode": 0,
+      "stdout": "\u2190 Dashboard\n\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n\ud83d\udcca\n\u23f1\ufe0f\nLoaded 3 programs [03:42:20 PM]\n\ud83d\udcbe\nTree\nPromptEvo\nPrograms\nMetrics\nEmbed\nClusters\nIslands\nEnsembling\nPath\nMAPs\nTranspose Tree (Left\u2192Right)\nAnimate Tree\n0\n0\nI0\n0\nI1\n1\nI0\nNodes\nBest\nError\nPatches\ninit\nfull\nPerformance\n0.20\n0.21\n\u25b6\n2 Islands\nequal_priority (Gen 1)\n\nID: 1c25d849-a1f2-4fd7-9359-66520e4b7dfe\n\nParent ID: d2446549-088f-4ced-b329-8eba1e75cb1b\n\nScore: 0.211766\n\nMeta\nPareto\nScratch\nNode\nCode\nDiff\nEval\nLLM\nAnalysis\nUsage\n\ud83d\udccb Copy\n\ud83d\udcbe Download\n1\n2\n3\n4\n5\n6\n7\n8\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Assign equal priorities; the existing tie permutation selects exemption.\"\"\"\n    return 0.0\n# EVOLVE-BLOCK-END\n\ninitial_program\nScore: 0.204011\nType: init\nIsland: 0\nModel: N/A\nequal_priority\nScore: 0.211766\nType: full\nIsland: 0\nModel: headless/codex@gpt-6-astra?effort=xhigh\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "screenshot",
+        "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-source-lineage.png"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Screenshot saved to /home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/operations/webui-source-lineage.png\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "errors"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "close"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Browser closed\n",
+      "stderr": ""
+    }
+  ],
+  "http_database_source_verification": {
+    "id": "1c25d849-a1f2-4fd7-9359-66520e4b7dfe",
+    "generation": 1,
+    "parent_id": "d2446549-088f-4ced-b329-8eba1e75cb1b",
+    "source_sha256": "621ed25d77cbba848077797583e317a92321342f3055745f67d4548ee37f4adf",
+    "source_matches": true,
+    "parent_matches": true,
+    "url": "http://127.0.0.1:8895/get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=1c25d849-a1f2-4fd7-9359-66520e4b7dfe"
+  }
+}

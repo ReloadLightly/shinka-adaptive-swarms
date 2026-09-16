@@ -1,0 +1,161 @@
+{
+  "scope": "small implementation fixtures; separate from research",
+  "executions": [
+    {
+      "time": "2026-09-16T13:28:23.560938+00:00",
+      "label": "legacy_baseline",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "completed",
+      "objective_queries": 1000,
+      "offline_error": 18.597198980067084,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 130,
+        "particle": 720,
+        "memory": 110,
+        "exclusion": 35
+      }
+    },
+    {
+      "time": "2026-09-16T13:28:23.585643+00:00",
+      "label": "no_hook_baseline",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "completed",
+      "objective_queries": 1000,
+      "offline_error": 18.597198980067084,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 130,
+        "particle": 720,
+        "memory": 110,
+        "exclusion": 35
+      }
+    },
+    {
+      "time": "2026-09-16T13:28:23.620820+00:00",
+      "label": "legacy_fixed_four",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "completed",
+      "objective_queries": 1000,
+      "offline_error": 18.32278071038572,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 130,
+        "particle": 735,
+        "memory": 110,
+        "exclusion": 20
+      }
+    },
+    {
+      "time": "2026-09-16T13:28:23.645806+00:00",
+      "label": "no_hook_fixed_four",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "completed",
+      "objective_queries": 1000,
+      "offline_error": 18.32278071038572,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 130,
+        "particle": 735,
+        "memory": 110,
+        "exclusion": 20
+      }
+    },
+    {
+      "time": "2026-09-16T13:28:23.676604+00:00",
+      "label": "hook_best_refreshed_memory",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "completed",
+      "objective_queries": 1000,
+      "offline_error": 18.41815415917177,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 130,
+        "particle": 715,
+        "memory": 130,
+        "exclusion": 20
+      }
+    },
+    {
+      "time": "2026-09-16T13:28:23.687921+00:00",
+      "label": "invalid_score_partial_accounting",
+      "config": {
+        "dimension": 5,
+        "npeaks": 10,
+        "budget": 1000,
+        "period": 100,
+        "environment_seed": 817,
+        "optimizer_seed": 819,
+        "move_severity": 1,
+        "trace_interval": 25,
+        "snapshot_interval": 0,
+        "progress_interval": 0
+      },
+      "status": "failed_fixture",
+      "error": "RetentionPolicyError: Invalid retention priority: ValueError: retention_priority must return a finite Python number, not bool",
+      "objective_queries": 109,
+      "evaluation_counts": {
+        "initialization": 5,
+        "detection": 14,
+        "particle": 85,
+        "memory": 5
+      }
+    }
+  ],
+  "total_objective_queries": 5109
+}

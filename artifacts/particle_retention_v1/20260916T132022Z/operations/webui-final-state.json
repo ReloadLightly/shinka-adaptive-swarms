@@ -1,0 +1,66 @@
+{
+  "at": "2026-09-16T14:02:50.198980+00:00",
+  "status": "passed",
+  "scope": "Reused actual native service on8895; no service restart or numerical/model execution. Final meta work may still be active.",
+  "url": "http://127.0.0.1:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite&selected_node=626b0267-9e2b-44e4-aed7-b470707d0143&left_tab=tree-view&right_tab=agent-code",
+  "database_listing": [
+    {
+      "path": "search_seed_630001/programs.sqlite",
+      "name": "search_seed_630001",
+      "task": "search_seed_630001",
+      "actual_path": "search_seed_630001/programs.sqlite"
+    }
+  ],
+  "http_count_response": {
+    "count": 10,
+    "max_timestamp": 1789567272.507655
+  },
+  "http_program_rows": 10,
+  "sqlite_program_rows": 10,
+  "original_evaluation_slots_excluding_island_seed_copy": 9,
+  "valid_descendants": 7,
+  "invalid_descendant_generations": [
+    3
+  ],
+  "native_selected": {
+    "id": "626b0267-9e2b-44e4-aed7-b470707d0143",
+    "generation": 7,
+    "parent_id": "d3c896c4-6e43-4a69-8c8e-7ba17aa9779f",
+    "archive_inspiration_ids": [
+      "b1ab0e69-ded7-4dd7-a3c0-6a044097165c"
+    ],
+    "top_k_inspiration_ids": [],
+    "code": "\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Favor proximity with a reduced penalty on retained speed.\"\"\"\n    distance = particle_features[\"distance_to_best_normalized\"]\n    speed = particle_features[\"speed_normalized\"]\n    speed_weight = 0.5\n    return 1.0 / (1.0 + distance + speed_weight * speed)\n# EVOLVE-BLOCK-END\n",
+    "combined_score": 0.21893813157130526
+  },
+  "http_sqlite_source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+  "executed_source_sha256": "10611ee221370c70172d45b7f4e9508254943f616918cff54e0011333c46f1a4",
+  "database_and_executed_source_exactly_equal": true,
+  "exact_HTTP_source_and_lineage_match_sqlite": true,
+  "http_receipts": [
+    {
+      "url": "http://127.0.0.1:8895/list_databases",
+      "http_status": 200,
+      "bytes": 161,
+      "sha256": "90b56237f435c2b4ed8360368fce1bd6291b05caf87e3d349756c61364ede292"
+    },
+    {
+      "url": "http://127.0.0.1:8895/get_program_count?db_path=search_seed_630001%2Fprograms.sqlite",
+      "http_status": 200,
+      "bytes": 49,
+      "sha256": "2f6f0cd5140759bae31b94c79b09ed41bbd6780261f4c47ccc1c86e27117f305"
+    },
+    {
+      "url": "http://127.0.0.1:8895/get_programs?db_path=search_seed_630001%2Fprograms.sqlite",
+      "http_status": 200,
+      "bytes": 1504783,
+      "sha256": "062d35ad176d7f104d82a62b3a5db439e99758a9d7f825ee6fc7bf1005362251"
+    },
+    {
+      "url": "http://127.0.0.1:8895/get_program_details?db_path=search_seed_630001%2Fprograms.sqlite&id=626b0267-9e2b-44e4-aed7-b470707d0143",
+      "http_status": 200,
+      "bytes": 191782,
+      "sha256": "47d093e486a47926b6971b34fb265c3b7348c083bff772fa993543a6175e849e"
+    }
+  ]
+}

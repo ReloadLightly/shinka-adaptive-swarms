@@ -1,0 +1,207 @@
+{
+  "schema": "particle-retention-accounting-v1",
+  "status": "research_complete",
+  "recorded_at": "2026-09-16T14:10:24.420650+00:00",
+  "session": {
+    "run_id": "20260916T132022Z",
+    "start_utc": "2026-09-16T13:20:22+00:00",
+    "deadline_utc": "2026-09-16T15:20:22+00:00",
+    "initial_revision": "6d5aa0be55715001f7f546e936c524c5998f18a2",
+    "remote": "https://github.com/ReloadLightly/shinka-adaptive-swarms.git",
+    "initial_clean": true,
+    "max_full_executions": 80,
+    "max_full_objective_queries": 8000000,
+    "logical_response_ceiling": 40,
+    "development_only": true,
+    "paid_fallback": false,
+    "supervising_requested": "Astra/Ultra; actual supervising usage/effort unobserved by native counter"
+  },
+  "stages": {
+    "random_reference": {
+      "full_executions": 8,
+      "objective_queries": 800000
+    },
+    "heuristic_reference": {
+      "full_executions": 8,
+      "objective_queries": 800000
+    },
+    "native_seed": {
+      "case_records": 8,
+      "exact_cached_cases": 8,
+      "new_objective_queries": 0
+    },
+    "native_descendants": {
+      "terminal_slots": 8,
+      "valid_programs": 7,
+      "zero_query_static_failures": 1,
+      "physical_full_executions": 56,
+      "objective_queries": 5600000,
+      "partial_or_truncated_executions": 0,
+      "failed_numerical_executions": 0
+    }
+  },
+  "totals": {
+    "terminal_native_slots_including_seed": 9,
+    "valid_native_programs_including_seed": 8,
+    "physical_full_executions": 72,
+    "completed_case_records": 80,
+    "research_objective_queries": 7200000,
+    "exact_seed_cache_reuses": 8,
+    "reference_checkpoint_reuses_after_throughput_pause": 2,
+    "behaviorally_repeated_full_executions_included": 8,
+    "repeated_queries_included": 800000,
+    "failed_numerical_executions": 0,
+    "partial_or_truncated_research_queries": 0,
+    "separate_fixture_queries": 5109
+  },
+  "repeated_execution_evidence": [
+    {
+      "case": 0,
+      "original": "references/random/case_000.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_000.json.gz",
+      "sha256": "8d7bca07cc5614df2723e16e2a72e11324eeaf84dca3cf6db65511afa46bfb7b"
+    },
+    {
+      "case": 1,
+      "original": "references/random/case_001.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_001.json.gz",
+      "sha256": "37ccc352720501a6c6105ed804d38d658e10621789d0cf3645168da75bba9450"
+    },
+    {
+      "case": 2,
+      "original": "references/random/case_002.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_002.json.gz",
+      "sha256": "676029eea473db226d762b3bb788674c7810ee6d46da2d55fb9b1df242d60d72"
+    },
+    {
+      "case": 3,
+      "original": "references/random/case_003.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_003.json.gz",
+      "sha256": "18ece0cc6f43f943265264b700141403bab8c0ad0a2fb7a2345c8d258b109a9b"
+    },
+    {
+      "case": 4,
+      "original": "references/random/case_004.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_004.json.gz",
+      "sha256": "ad38414902663ec0aa221aa5c39f5bf50857862b5bde82dc2559dac50713d19d"
+    },
+    {
+      "case": 5,
+      "original": "references/random/case_005.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_005.json.gz",
+      "sha256": "1983c1c3026a18cd61a83b5729fcbc2260fa3842b2370fd70b8f1e56199bfc92"
+    },
+    {
+      "case": 6,
+      "original": "references/random/case_006.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_006.json.gz",
+      "sha256": "1736fe8fec4cc9bf83a1493304e282bf76b15ab174b7b0a0df100b398f812d40"
+    },
+    {
+      "case": 7,
+      "original": "references/random/case_007.json.gz",
+      "repeated": "evolution/search_seed_630001/gen_1/results/case_007.json.gz",
+      "sha256": "0392480c8ae89ec20366af35a4bcc94c1a5841f23e764b499d08db04be29d914"
+    }
+  ],
+  "model": {
+    "native_wrappers": 22,
+    "requested_logical_responses": 29,
+    "returned_usable_responses": 29,
+    "allowance": 40,
+    "exposed_native_retry_responses": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_usage": "excluded/unobserved by native receipts",
+    "native_cost_estimates": "not subscription charges or paid API usage",
+    "roles": {
+      "mutation": {
+        "native_wrappers": 8,
+        "requested_logical_responses": 8,
+        "returned_usable_responses": 8,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 8
+        },
+        "configured_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        }
+      },
+      "novelty": {
+        "native_wrappers": 8,
+        "requested_logical_responses": 8,
+        "returned_usable_responses": 8,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 8
+        },
+        "configured_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        }
+      },
+      "meta": {
+        "native_wrappers": 6,
+        "requested_logical_responses": 13,
+        "returned_usable_responses": 13,
+        "exposed_native_retry_responses": 0,
+        "status_counts": {
+          "returned": 6
+        },
+        "configured_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        }
+      }
+    },
+    "settings": {
+      "requested": "gpt-6-astra / Ultra",
+      "explicit_supported_selected": "gpt-6-astra / xhigh",
+      "CLI_evidence": "operations/native-codex-process-settings-observed.json",
+      "provider_independent_attestation": false,
+      "native_reasoning_efforts_disabled_is_provider_effort": false,
+      "limitation": "Ultra appears in local model metadata but pinned Shinka/Headless parsers reject it; strongest supported xhigh was prospectively documented."
+    }
+  },
+  "machinery": {
+    "embeddings": 9,
+    "embedding_dimensions": 768,
+    "novelty_accepts": 8,
+    "novelty_rejections": 0,
+    "novelty_fallbacks": 0,
+    "completed_meta_updates": 2,
+    "verified_meta_recommendation_injections": 3,
+    "migrations": 0,
+    "degraded_mechanisms": 0,
+    "prompt_context_references_verified": 17
+  },
+  "runtime": {
+    "started_at": "20260916T133931.882309Z",
+    "finished_at": "2026-09-16T14:07:07.137460+00:00",
+    "UTC_wall_seconds": 1655.255151,
+    "UTC_wall_hours": 0.4597930975,
+    "last_logged_monotonic_elapsed_seconds": 1569.86
+  },
+  "elapsed_session_UTC_seconds_at_accounting": 3002.42065,
+  "limits": {
+    "physical_full_executions": 80,
+    "research_objective_queries": 8000000,
+    "requested_native_logical_responses": 40,
+    "elapsed_session_minutes": 120
+  },
+  "interpretation": "All counted queries include initialization, detection, personal-best memory refresh, particle evaluation and exclusion. Native cost estimates are not charges. Supervisor usage/provider-hidden retries are unobserved. Publication is completed after this research accounting snapshot."
+}

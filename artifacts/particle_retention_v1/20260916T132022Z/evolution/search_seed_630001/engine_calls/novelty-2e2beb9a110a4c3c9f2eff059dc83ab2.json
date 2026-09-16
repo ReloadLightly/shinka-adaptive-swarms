@@ -1,0 +1,47 @@
+{
+  "call_id": "novelty-2e2beb9a110a4c3c9f2eff059dc83ab2",
+  "role": "novelty",
+  "method": "query",
+  "started_at": "2026-09-16T13:52:33.817270+00:00",
+  "requested_logical_responses": 1,
+  "configured_models": [
+    "headless/codex@gpt-6-astra?effort=xhigh"
+  ],
+  "status": "returned",
+  "configured_client_settings": {
+    "temperatures": 0.75,
+    "max_tokens": 4096,
+    "reasoning_efforts": "disabled"
+  },
+  "explicit_request_kwargs": null,
+  "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+  "system_msg": "You are an expert code reviewer tasked with determining if two code snippets are meaningfully different from each other.\n\nYour job is to analyze both programs and determine if the proposed code introduces meaningful changes compared to the existing code. Consider:\n\n1. **Algorithmic differences**: Different approaches, logic, or strategies\n2. **Structural changes**: Different data structures, control flow, or organization\n3. **Functional improvements**: New features, optimizations, or capabilities\n4. **Implementation variations**: Different ways of achieving the same goal that could lead to different performance characteristics\n5. **Hyperparameter changes**: Different hyperparameters that could lead to different performance characteristics\n\nIgnore trivial differences like:\n- Variable name changes\n- Minor formatting or style changes\n- Comments or documentation changes\n- Insignificant refactoring that doesn't change the core logic\n\nRespond with:\n- **NOVEL**: If the codes are meaningfully different\n- **NOT_NOVEL**: If the codes are essentially the same with only trivial differences\n\nAfter your decision, provide a brief explanation of your reasoning.",
+  "msg": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Prefer low integrated distance along a damped inertial trajectory.\"\"\"\n    distance = float(particle_features[\"distance_to_best_normalized\"])\n    travel = 0.73 * float(particle_features[\"speed_normalized\"])\n    alignment = max(\n        -1.0, min(1.0, float(particle_features[\"velocity_alignment\"]))\n    )\n    # Scale before squaring to avoid overflow.\n    scale = max(1.0, distance, travel)\n    d = distance / scale\n    v = travel / scale\n    # Integral over t in [0, 1] of squared distance:\n    # d*d - alignment*d*v + v*v/3.\n    # This equivalent nonnegative form avoids cancellation.\n    radial_midpoint = d - 0.5 * alignment * v\n    path_energy = radial_midpoint * radial_midpoint + (\n        (1.0 - alignment * alignment) / 4.0 + 1.0 / 12.0\n    ) * v * v\n    rms_distance = scale * path_energy ** 0.5\n    return 1.0 / (1.0 + rms_distance)\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Retain the strongest refreshed personal-best particle for ordinary PSO.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef retention_priority(particle_features, swarm_features) -> float:\n    \"\"\"Score a moment approximation of distance after ordinary PSO movement.\"\"\"\n    distance = max(0.0, float(particle_features[\"distance_to_best_normalized\"]))\n    speed = max(0.0, float(particle_features[\"speed_normalized\"]))\n    alignment = max(\n        -1.0, min(1.0, float(particle_features[\"velocity_alignment\"]))\n    )\n    # Normalize before computing squared quantities.\n    scale = max(1.0, distance, speed)\n    d = distance / scale\n    inertia = 0.729843788\n    travel = inertia * (speed / scale)\n    # Proxy: both attraction targets coincide with the refreshed swarm best.\n    # Two independent uniform attraction coefficients give these moments.\n    attraction = inertia * 2.05\n    radial_mean = (1.0 - attraction) * d - alignment * travel\n    transverse_energy = (1.0 - alignment * alignment) * travel * travel\n    attraction_variance = (attraction * attraction / 6.0) * d * d\n    expected_squared_distance = (\n        radial_mean * radial_mean + transverse_energy + attraction_variance\n    )\n    # Equivalent to 1 / (1 + RMS distance), without rescaling overflow.\n    inverse_scale = 1.0 / scale\n    return inverse_scale / (\n        inverse_scale + expected_squared_distance ** 0.5\n    )\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+  "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown",
+  "initial_logical_responses": 1,
+  "exposed_native_retry_responses": 0,
+  "native_dispatch_attempts": [
+    {
+      "index": 1,
+      "started_at": "2026-09-16T13:52:33.831200+00:00",
+      "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "finished_at": "2026-09-16T13:54:54.459473+00:00"
+    }
+  ],
+  "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+  "logical_response_limit": 40,
+  "run_reserved_logical_responses_at_reservation": 16,
+  "finished_at": "2026-09-16T13:54:54.621096+00:00",
+  "elapsed_seconds": 133.84186458199838,
+  "valid_responses": 1,
+  "responses": [
+    {
+      "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+      "input_tokens": 4523,
+      "output_tokens": 231,
+      "reported_api_cost": 0.06894,
+      "content": "**NOVEL**: The proposed code replaces integrated distance along an inertial trajectory with expected squared distance after a PSO step, including attraction toward the best position and attraction variance. This materially changes how distance, speed, and alignment affect particle rankings. It also changes hyperparameters and improves overflow handling in the final score calculation."
+    }
+  ]
+}

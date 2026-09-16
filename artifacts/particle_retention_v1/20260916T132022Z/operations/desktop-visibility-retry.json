@@ -1,0 +1,36 @@
+{
+  "at": "2026-09-16T13:43:15.716877+00:00",
+  "attempts": [
+    {
+      "command": [
+        "/mnt/c/Users/nikol/AppData/Local/Microsoft/WindowsApps/wt.exe",
+        "new-tab",
+        "--title",
+        "Shinka particle retention native progress",
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "/home/roland/actir/shinka-adaptive-swarms",
+        "bash",
+        "scripts/progress.sh",
+        "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "Start-Process 'http://localhost:8895/viz_tree.html?db_path=search_seed_630001%2Fprograms.sqlite'"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "frozen_at": "2026-09-16T13:35:55.548575+00:00",
+  "analysis_script": "scripts/analyze_particle_retention.py",
+  "analysis_script_sha256": "b3abed2477f4b56aca6d97fc9cd7505f72e8989b7f4436358cddd3670597c3d7",
+  "settings": {
+    "version": "particle_retention_descriptive_v1",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026091607,
+    "interval_level": 0.95,
+    "weighting": "equal regime weights; paired resampling within regime",
+    "interpretation": "Development-only descriptive uncertainty; no significance gate or fresh-validation claim.",
+    "selection": "minimum mean error among valid completed native seed/descendants; earlier generation then source SHA on ties",
+    "decision_examples": [
+      "first completed response in each case",
+      "first completed response decided at or after query50000 in each case"
+    ],
+    "decision_recovery_offsets": [
+      25,
+      100,
+      500
+    ],
+    "decision_recovery_rule": "nearest actual recorded trace at or after requested offset from decision; never cross next environment boundary",
+    "episode_selection": "post hoc lowest and highest selected-minus-heuristic completed-environment mean error, excluding initial environment; ties by case index then environment"
+  },
+  "tests": {
+    "path": "tests/test_particle_retention_analysis.py",
+    "sha256": "15710408144c03818f6728b1e52487961fd2da315e115704673e5b0dff79ad19",
+    "passed": 5,
+    "numerical_simulator_calls": 0,
+    "model_calls": 0
+  },
+  "schema_check": {
+    "first_actual_random_case": "passed",
+    "first_actual_heuristic_case": "passed",
+    "scope": "read saved decisions and examples only; no selection or outcome-driven analysis changes"
+  },
+  "synthetic_saved_data_render_smoke": "/tmp/retention-saved-data-fixture-04u40jzt",
+  "scientific_scope": "development only; immutable analysis definitions before native search; future code edits only for documented defects"
+}

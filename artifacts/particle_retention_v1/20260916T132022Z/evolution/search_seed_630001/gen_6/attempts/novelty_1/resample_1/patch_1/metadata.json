@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "sqrt_geometry_penalties",
+  "patch_description": "Replace the inertial-path proxy with separately square-root-compressed distance and speed penalties. This preserves preferences for proximity and low speed while reducing the influence of large magnitudes. Compressing each feature before addition can change particle rankings. The saved uncompressed distance-plus-speed rule motivates this variant through its better development score. Syntax and finite deterministic outputs passed numerical checks; benchmark improvement remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:57:36.781249",
+  "llm_cost": 0.605958,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "binned_continuity",
+  "patch_description": "Replace constant priorities with a proximity penalty weighted 1.0 and speed penalty weighted 0.5, normalized by one plus mean swarm speed. Bin width 0.25 lets similarly scored particles share the existing random tie breaker. This favors nearby, slower trajectories while preserving variation within bins. The speed weighting follows the stronger saved generation 7 result; improvement from binning remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T16:00:41.895368",
+  "llm_cost": 0.552984,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

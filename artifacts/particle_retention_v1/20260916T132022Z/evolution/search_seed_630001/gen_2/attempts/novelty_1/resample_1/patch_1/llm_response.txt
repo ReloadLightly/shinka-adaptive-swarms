@@ -1,0 +1,17 @@
+<NAME>
+nearby_slow_continuity
+</NAME>
+<DESCRIPTION>
+Favor the particle minimizing normalized distance to the refreshed swarm best plus normalized speed. This selects a nearby, slower trajectory whose continuation may limit inertial excursion. Since every personal-best memory survives, memory rank alone need not identify useful motion. The reciprocal returns a finite float for nonnegative finite features. Syntax and basic contract checks passed; performance remains an untested development hypothesis.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def retention_priority(particle_features, swarm_features) -> float:
+    return -particle_features["personal_best_rank"]
+=======
+def retention_priority(particle_features, swarm_features) -> float:
+    distance = particle_features["distance_to_best_normalized"]
+    speed = particle_features["speed_normalized"]
+    return 1.0 / (1.0 + distance + speed)
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "inertial_proximity",
+  "patch_description": "Favor the particle whose position plus damped velocity lies closest to the refreshed swarm best. This distinguishes approaching trajectories from outward motion and penalizes overshoot without relying on personal-best rank. The 0.73 factor approximates inertia damping; this is a geometric proxy, not a prediction of the full stochastic PSO update. Syntax and finite deterministic outputs passed focused checks; performance remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T15:45:45.030301",
+  "llm_cost": 0.499376,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/particle_retention_v1/20260916T132022Z/evolution/search_seed_630001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
