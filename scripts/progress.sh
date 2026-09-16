@@ -9,8 +9,9 @@ run_dir="${1:-}"
 if [[ -z "$run_dir" ]]; then
   run_dir="$("$python_bin" - <<'PY'
 from pathlib import Path
-paths = [p for kind in ("comparison", "evolution")
-         for p in (Path("results") / kind).glob("*/manifest.json")
+roots = [Path("results") / kind for kind in ("comparison", "evolution")]
+roots.append(Path("results/relocation_allocation_v2"))
+paths = [p for root in roots for p in root.rglob("manifest.json")
          if (p.parent / "run.log").exists()]
 if not paths:
     raise SystemExit("No saved experiment log found; pass a run directory.")

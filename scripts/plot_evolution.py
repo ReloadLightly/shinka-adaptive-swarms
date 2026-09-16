@@ -17,6 +17,8 @@ import matplotlib.pyplot as plt
 
 def render(run: Path, output: Path) -> dict:
     database = run / "programs.sqlite"
+    manifest = json.loads((run / "manifest.json").read_text())
+    task = manifest.get("task", "adaptive_swarm")
     with sqlite3.connect(database.resolve().as_uri() + "?mode=ro", uri=True) as connection:
         connection.row_factory = sqlite3.Row
         records = [dict(row) for row in connection.execute(
@@ -65,7 +67,7 @@ def render(run: Path, output: Path) -> dict:
     seed = next((p for p in points if p["generation"] == 0), None)
     if seed:
         ax.axhline(seed["mean_offline_error"], color="#d47b34", linestyle="--",
-                   linewidth=1.2, label="Corrected baseline seed")
+                   linewidth=1.2, label="Fixed radius 2 / count 3 seed" if task == "relocation_allocation_v2" else "Corrected baseline seed")
     best = min(points, key=lambda p: p["mean_offline_error"])
     ax.scatter([best["generation"]], [best["mean_offline_error"]],
                marker="*", color="#187b80", edgecolor="white", s=180, zorder=5)
@@ -92,7 +94,7 @@ def render(run: Path, output: Path) -> dict:
     plt.close(fig)
     provenance = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "input_run": str(run), "database": str(database),
+        "input_run": str(run), "database": str(database), "task": task,
         "database_record_count": len(records),
         "plotted_evaluations": len(points),
         "database_rows_sha256": hashlib.sha256(json.dumps(

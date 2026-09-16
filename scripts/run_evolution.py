@@ -26,6 +26,10 @@ from adaptive_swarms.storage_runner import ResumeRunnerMixin
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
 EVALUATION_VERSION = "search_v1_score_reciprocal"
+TASK_VERSIONS = {
+    "adaptive_swarm": EVALUATION_VERSION,
+    "relocation_allocation_v2": "relocation_allocation_v2_score_reciprocal",
+}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -125,6 +129,8 @@ def file_hash(path: Path) -> str:
 def prepare_snapshot(args, run_dir: Path) -> dict:
     """Freeze the evaluator and literature context; preserve simulator provenance."""
     destination = run_dir / "task_snapshot"
+    task = getattr(args, "task", None) or "adaptive_swarm"
+    task_source = ROOT / "tasks" / task
     source_record = destination / "source_hashes.json"
     if source_record.exists():
         hashes = json.loads(source_record.read_text())
@@ -138,11 +144,20 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
                 raise RuntimeError(f"Saved task snapshot changed: {name}.")
         if "evolution_context.md" in hashes and file_hash(destination / "evolution_context.md") != hashes["evolution_context.md"]:
             raise RuntimeError("Saved scientific context snapshot changed.")
+        if task != "adaptive_swarm":
+            for name in ("relocation_allocation.py",):
+                if file_hash(ROOT / "src/adaptive_swarms" / name) != hashes[name]:
+                    raise RuntimeError(f"Cannot resume with changed task adapter: {name}.")
+                if file_hash(destination / name) != hashes[name]:
+                    raise RuntimeError(f"Saved task adapter snapshot changed: {name}.")
+            for name in ("task_prompt.txt", "task_system_prompt.txt", "protocol.md"):
+                if file_hash(destination / name) != hashes[name]:
+                    raise RuntimeError(f"Saved task context changed: {name}.")
         return hashes
     destination.mkdir(parents=True, exist_ok=True)
     hashes = {}
     for name in ("evaluate.py", "initial.py"):
-        source = ROOT / "tasks/adaptive_swarm" / name
+        source = task_source / name
         # Legacy seed-only runs already contain the exact initial program.
         if args.resume and name == "initial.py" and (run_dir / "gen_0/main.py").exists():
             source = run_dir / "gen_0/main.py"
@@ -151,10 +166,20 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
     for name in ("simulator.py", "policies.py"):
         hashes[name] = file_hash(ROOT / "src/adaptive_swarms" / name)
     hashes["movingpeaks.py"] = file_hash(ROOT / "vendor/deap/movingpeaks.py")
-    context = ROOT / "docs/evolution_context.md"
+    context = ROOT / "docs/evolution_context.md" if task == "adaptive_swarm" else task_source / "context.md"
     if context.exists():
         shutil.copyfile(context, destination / "evolution_context.md")
         hashes["evolution_context.md"] = file_hash(context)
+    if task != "adaptive_swarm":
+        for source, name in ((ROOT / "src/adaptive_swarms/relocation_allocation.py", "relocation_allocation.py"),
+                             (task_source / "task_prompt.txt", "task_prompt.txt"),
+                             (ROOT / "docs/followup_relocation_allocation_v2.md", "protocol.md")):
+            shutil.copyfile(source, destination / name)
+            hashes[name] = file_hash(source)
+        prompt = (destination / "task_prompt.txt").read_text()
+        prompt += "\n\n# Scientific context supplied to mutation\n\n" + (destination / "evolution_context.md").read_text()
+        (destination / "task_system_prompt.txt").write_text(prompt)
+        hashes["task_system_prompt.txt"] = file_hash(destination / "task_system_prompt.txt")
     hashes["snapshot_created_at"] = datetime.now(timezone.utc).isoformat()
     hashes["snapshot_created_on_resume"] = bool(args.resume)
     source_record.write_text(json.dumps(hashes, indent=2))
@@ -169,6 +194,15 @@ def prepare_storage_evaluator(run_dir: Path) -> Path:
     """
     import ast
     original = run_dir / "task_snapshot/evaluate.py"
+    manifest_path = run_dir / "manifest.json"
+    task = json.loads(manifest_path.read_text()).get("task", "adaptive_swarm") if manifest_path.exists() else "adaptive_swarm"
+    if task != "adaptive_swarm":
+        # New task executes its exact frozen evaluator. Legacy compatibility
+        # adaptations below apply only to the historical v1 evaluator.
+        hashes = json.loads((run_dir / "task_snapshot/source_hashes.json").read_text())
+        if file_hash(original) != hashes["evaluate.py"]:
+            raise RuntimeError("Saved v2 evaluator changed.")
+        return original
     current = ROOT / "tasks/adaptive_swarm/evaluate.py"
     def scientific_nodes(path):
         tree = ast.parse(path.read_text())
@@ -253,7 +287,8 @@ def run_native(args, run_dir: Path, log):
     task_snapshot = run_dir / "task_snapshot"
     context_path = task_snapshot / "evolution_context.md"
     context = context_path.read_text() if context_path.exists() else ""
-    task_prompt = TASK_PROMPT + ("\n\n# Scientific context supplied to mutation\n\n" + context if context else "")
+    task_base = (task_snapshot / "task_prompt.txt").read_text() if (task_snapshot / "task_prompt.txt").exists() else TASK_PROMPT
+    task_prompt = task_base + ("\n\n# Scientific context supplied to mutation\n\n" + context if context else "")
     # This file is the actual task system message, before native parent/feedback composition.
     prompt_snapshot = task_snapshot / "task_system_prompt.txt"
     if prompt_snapshot.exists():
@@ -302,12 +337,14 @@ def run_native(args, run_dir: Path, log):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--task", choices=list(TASK_VERSIONS), default=None,
+                        help="Task interface; inferred from saved manifest on resume, otherwise adaptive_swarm")
     parser.add_argument("--generations", type=int, default=20, help="Native target generation count including the initial generation 0")
     parser.add_argument("--seed-only", action="store_true", help="Native generation 0 evaluation/archive only; zero model calls")
     parser.add_argument("--model", default="gpt-6-astra")
     parser.add_argument("--effort", default=None, help="Explicit inner Codex effort; distinct from outer Ultra mode")
     parser.add_argument("--suite", type=Path, default=None, help="Defaults to configs/search.json, or the saved suite when resuming")
-    parser.add_argument("--results-root", type=Path, default=ROOT / "results/evolution")
+    parser.add_argument("--results-root", type=Path, default=None)
     parser.add_argument("--resume", type=Path, help="Resume an existing native run directory, preserving completed records")
     parser.add_argument("--heartbeat-seconds", type=float, default=20)
     parser.add_argument("--evaluation-timeout", default="01:00:00", help="Native per-candidate evaluator timeout HH:MM:SS")
@@ -315,13 +352,22 @@ def main() -> int:
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
-    args.results_root = args.results_root.resolve()
     if args.resume:
         args.resume = args.resume.resolve()
-        args.results_root = args.resume.parent
         if not (args.resume / "manifest.json").is_file() or not (args.resume / "programs.sqlite").is_file():
             parser.error("--resume requires a native run with manifest.json and programs.sqlite.")
-    args.suite = (args.suite or (args.resume / "search-suite.json" if args.resume else ROOT / "configs/search.json")).resolve()
+        saved_task = json.loads((args.resume / "manifest.json").read_text()).get("task", "adaptive_swarm")
+        if args.task is not None and args.task != saved_task:
+            parser.error("--task differs from the saved run; start a separate study.")
+        args.task = saved_task
+    args.task = args.task or "adaptive_swarm"
+    if args.task not in TASK_VERSIONS:
+        parser.error(f"Unknown saved task: {args.task}")
+    evaluation_version = TASK_VERSIONS[args.task]
+    default_results = ROOT / ("results/evolution" if args.task == "adaptive_swarm" else "results/relocation_allocation_v2/evolution")
+    args.results_root = (args.resume.parent if args.resume else args.results_root or default_results).resolve()
+    default_suite = ROOT / ("configs/search.json" if args.task == "adaptive_swarm" else "configs/relocation_allocation_v2/search.json")
+    args.suite = (args.suite or (args.resume / "search-suite.json" if args.resume else default_suite)).resolve()
     if not args.suite.is_file():
         parser.error(f"Evaluation suite does not exist: {args.suite}")
     os.environ["PYTHONUNBUFFERED"] = "1"
@@ -344,14 +390,14 @@ def main() -> int:
             report = inspect_runtime(args.model, args.effort, args.seed_only)
             if args.resume:
                 manifest = json.loads((run_dir / "manifest.json").read_text())
-                if manifest.get("evaluation_version") != EVALUATION_VERSION:
+                if manifest.get("evaluation_version") != evaluation_version:
                     raise RuntimeError("Evaluation version differs from this run. Use a new run for a revised scoring method.")
                 if manifest.get("suite_sha256") != file_hash(args.suite) or manifest.get("suite_sha256") != file_hash(run_dir / "search-suite.json"):
                     raise RuntimeError("Evaluation suite differs from the saved run; pass --suite with the saved search-suite.json or start a new study.")
                 active = {**report, "started_at": stamp, "generation_target": target, "previous_status": manifest.get("status"), "status": "preflight"}
                 manifest.setdefault("resume_attempts", []).append(active)
             else:
-                manifest = {**report, "upstream_commit": PINNED_SHINKA, "evaluation_version": EVALUATION_VERSION, "generation_target": target,
+                manifest = {**report, "upstream_commit": PINNED_SHINKA, "task": args.task, "evaluation_version": evaluation_version, "generation_target": target,
                         "started_at": stamp, "suite_sha256": hashlib.sha256(args.suite.read_bytes()).hexdigest(),
                         "status": "preflight", "run_dir": str(run_dir)}
                 active = manifest
@@ -360,7 +406,7 @@ def main() -> int:
                 manifest["source_hashes"] = hashes
             active["source_hashes"] = hashes
             atomic_json(run_dir / "manifest.json", manifest)
-            log.event("configuration", message="Declared native run configuration", model=args.model, inner_effort=args.effort,
+            log.event("configuration", message="Declared native run configuration", task=args.task, model=args.model, inner_effort=args.effort,
                       effective_effort="unverified until Codex invocation", generation_target=target, seed_only=args.seed_only, resuming=bool(args.resume))
             if not report["ready"]:
                 active["status"] = "blocked_runtime"
