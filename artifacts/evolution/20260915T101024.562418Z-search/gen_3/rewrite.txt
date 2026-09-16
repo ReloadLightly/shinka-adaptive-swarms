@@ -1,0 +1,32 @@
+"""Book/DEAP response policy: relocate every particle after a detected change.
+This file is the evolvable program. The simulator, objective, search cases, and
+evaluation budget remain outside it. The policy receives observations available
+to the optimizer; inspecting hidden landscape state is outside the task contract.
+"""
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Adapt relocation strength while preserving positional anchors.
+    radius_scale multiplies default_radius; fraction controls relocation;
+    memories are reevaluated and velocities are preserved.
+    """
+    drop = max(0.0, float(observation["relative_fitness_drop"]))
+    default_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    if drop <= 0.03:
+        radius_scale, fraction = 0.75, 0.4
+    elif drop < 0.15:
+        radius_scale, fraction = 1.5, 0.6
+    else:
+        # Broaden recovery without relocating nearly the entire swarm.
+        # Fitness loss alone does not establish spatial displacement.
+        radius_scale, fraction = 2.0, 0.6
+    # A dispersed swarm already supplies coverage after smaller changes.
+    if drop < 0.15 and diameter > 4.0 * default_radius:
+        fraction = 0.4
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END

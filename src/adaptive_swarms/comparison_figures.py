@@ -71,7 +71,7 @@ def render_comparison(run_dir: Path, output: Path | None = None):
     for ax in axes:
         ax.grid(alpha=.18, axis="y" if ax is axes[0] else "x")
     fig.suptitle(f"Frozen program comparison · {baseline[0]['config']['dimension']}D · {count} independent paired cases", fontsize=14)
-    fig.text(.52, -.025, "Dots: individual cases. Diamond: paired mean. Line: stratified bootstrap 95% interval.\nOnly two cases per regime; interval coverage is uncertain.", ha="center", fontsize=8)
+    fig.text(.52, -.10, "Dots: individual cases. Diamond: paired mean. Line: stratified bootstrap 95% interval.\nOnly two cases per regime; interval coverage is uncertain.", ha="center", fontsize=8)
     _save(fig, output / "paired_offline_error")
 
     regimes = list(dict.fromkeys(_regime_label(case["config"]) for case in baseline))
@@ -112,7 +112,7 @@ def render_comparison(run_dir: Path, output: Path | None = None):
         axes[1].scatter(np.full(count, j) + np.linspace(-.15, .15, count), per_case,
                         color=COLORS[j % len(COLORS)], s=35)
     axes[1].set_xticks(range(len(methods)), [_label(method) for method in methods], rotation=15, ha="right")
-    axes[1].set(ylim=(-.04, 1.04), ylabel="Mean fraction of particles relocated per response",
+    axes[1].set(ylim=(-.04, 1.04), ylabel="Mean relocated fraction\nper response",
                 title="Response behavior · one dot per case")
     axes[1].grid(alpha=.18, axis="y")
     fig.suptitle("Behavioral diagnostics include detection and memory costs", fontsize=14)

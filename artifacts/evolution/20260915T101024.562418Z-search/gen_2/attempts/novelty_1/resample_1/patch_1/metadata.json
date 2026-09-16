@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "severity_gated_relocation",
+  "patch_description": "The baseline uses radius_scale=1, fraction=1, memory reevaluation, and retained velocities. Its persistent interval-end errors motivate testing broader recovery after substantial deterioration.\nThis policy maps relative fitness drops of 2\u201320% to increasing response strength. It relocates 40\u2013100% of particles, preserves more particles when the swarm already spans the response region, and expands the radius up to twice baseline. Velocity resets require severe deterioration, little recent improvement, and a compact swarm. Memory reevaluation remains enabled because its measured evaluation cost is small.\nHypothesis: partial relocation preserves useful search structure after mild changes, while broader relocation helps compact swarms recover after severe changes. Performance improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T12:21:14.740980",
+  "llm_cost": 0.175322,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

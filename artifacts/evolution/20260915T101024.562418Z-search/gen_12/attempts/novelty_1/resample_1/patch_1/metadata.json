@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_swarm_recovery_floor",
+  "patch_description": "Test whether small fitness drops conceal meaningful displacement when a swarm is tightly concentrated. Relative fitness loss need not measure how far a peak moved, so the current narrow response may leave compact swarms searching around an obsolete location.\nFor compact swarms, smoothly raise the minimum radius multiplier toward 2.0 and relocation fraction toward 0.60, preserving some positional anchors. The extra response vanishes when swarm diameter reaches twice the default radius. Stronger existing responses remain intact; memory reevaluation and velocity preservation continue.\nThe stronger prior program outperformed the conservative policy, while some cases retained substantial interval-end error. This motivates testing additional spatial recovery where existing coverage is weakest, but does not establish that insufficient relocation caused those errors. This proposal is untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:36:25.962527",
+  "llm_cost": 0.129562,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

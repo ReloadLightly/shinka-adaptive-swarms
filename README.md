@@ -4,11 +4,11 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (15 September 2026):** the reconstruction has completed three runs of 500,000 objective evaluations. Native ShinkaEvolve completed the original 20-generation target (seed plus 19 descendants) at 12:41:51 UTC. The canceled storage restrictions have been removed; existing compressed results and resume records remain supported. Independent comparisons and mechanism ablations are pending; search scores alone do not establish generalization.
+**Status (16 September 2026):** crash recovery confirmed the native 20-generation search had already completed; all 80 search cases were preserved without reevaluation. The pending independent comparison and mechanism study are now complete: eight cases × four methods × 100,000 objective evaluations. The selected program improved search error but did **not** outperform the corrected baseline on the independent suite. The native WebUI is restored. See [results and mechanism analysis](docs/comparison.md) and [recovery and live terminal commands](docs/recovery.md).
 
 ## Abstract
 
-Collective search must preserve useful information while responding to environmental change. Multi-swarm particle swarm optimization addresses this problem through local convergence, exclusion between swarms, changes in the number of swarms, and temporary particle diversification after detected changes. We investigate whether LLM-driven program evolution can improve the rules governing this adaptation. The study combines a documented reconstruction of an established algorithm, native ShinkaEvolve search, and comparisons on separate benchmark instances. The intended contribution is an executable adaptation mechanism with an explanation of when it helps, supported by traces and mechanism ablations. No empirical outcome is assumed in advance.
+Collective search must preserve useful information while responding to environmental change. We reconstructed a corrected multi-swarm particle swarm optimizer and used native ShinkaEvolve to generate 19 descendants through subscription-authenticated Codex. The selected program adjusts relocation radius and particle fraction using observed fitness loss and swarm spread. Its mean search offline error fell from 2.7751 to 1.9703, but its independent mean error was 3.7857 versus the baseline's 3.7230. A parent ablation and a fixed-response control provide no clear evidence that the evolved observation dependence is beneficial on this small suite. The contribution is an executable, traceable study of a search improvement that did not establish generalization, with matched objective budgets and preserved lineage.
 
 ## Research question
 
@@ -84,14 +84,18 @@ python -u scripts/run_evolution.py --generations 20
 # Terminal 2: native live archive, open http://localhost:8888
 bash scripts/webui.sh results/evolution
 
-# Inspect the committed seed archive before starting any model calls
+# Inspect the published native search without making model calls
 bash scripts/webui.sh artifacts/evolution
+
+# Reconnect to timestamped progress without launching another controller
+bash scripts/progress.sh
 
 # Regenerate the scientific figures from completed measurements
 python -m adaptive_swarms figures --run artifacts/reconstruction_v1 --output assets/reconstruction
+python scripts/plot_evolution.py --run artifacts/evolution/20260915T101024.562418Z-search
 ```
 
-Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. The native WebUI passed HTTP, database, browser navigation and screenshot verification on this WSL continuation; no browser errors were reported. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
+Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. Recovery verification passed HTTP, database, browser navigation and source/ancestry checks. No browser page errors occurred; the native Plotly dependency emitted a deprecation warning. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
 
 ### Artifacts and resumption
 
@@ -103,9 +107,13 @@ cancellation watcher. Actual I/O failures remain errors and do not become
 scientific fitness judgments.
 
 The run `results/evolution/20260915T101024.562418Z-search` finished before the
-rollback: generations **0–19** are complete, with **21 database rows** including
-the native seed island copy. Its controller had exited, so no interruption or
-restart was needed. The existing native WebUI was left running.
+crash: generations **0–19** are complete, with **21 database rows** including
+the native seed island copy. Recovery verified all **80 saved cases**, database
+integrity, parent links and best-artifact hashes. No search controller restart
+was needed. The native WebUI was restarted on the original database; a consistent
+SQLite backup preserved its WAL state. The comparison continued in a new directory,
+`results/comparison/20260916T001949Z-frozen`, checkpointing all 32 method cases.
+The complete search and comparison are published under [artifacts](artifacts/README.md).
 
 For an unfinished run, retain its original target and saved scientific settings:
 
@@ -115,8 +123,11 @@ For an unfinished run, retain its original target and saved scientific settings:
   --generations 20 --model gpt-6-astra
 ```
 
-The saved inner effort for the completed run remains unspecified. See
-[artifact compatibility and rollback verification](docs/storage.md) for details.
+The saved inner effort for the completed run remains unspecified. Comparison
+execution makes no model calls. For the completed comparison's checkpoint-based
+resume command and terminal/WebUI attachment, see [recovery](docs/recovery.md).
+Historical [artifact compatibility and rollback verification](docs/storage.md)
+remain available.
 
 ## Results
 
@@ -124,13 +135,25 @@ The saved inner effort for the completed run remains unspecified. See
 |---|---|
 | Baseline reconstruction | 3 × 500,000 evaluations; mean offline error **1.7024**, sample SD **0.7896** |
 | Native seed evaluation | 4 × 50,000 evaluations; mean offline error **2.7751**, selection score **0.264895** |
-| Native ShinkaEvolve descendants | Completed at 12:41:51 UTC: **19 evaluated descendants**, with generations 0–19 archived |
-| Frozen-program independent comparison | Not run |
-| Mechanism ablations | Not run |
+| Native ShinkaEvolve descendants | **19 evaluated descendants**; selected generation 12, mean search error **1.9703**, score **0.336661** |
+| Frozen-program independent comparison | **8 × 100,000 evaluations per method**; baseline **3.7230**, selected **3.7857** |
+| Mechanism comparisons | Native parent without compactness rule **3.8037**; fixed response **3.4496** on the same eight cases |
 
 Individual reconstruction errors were 2.4152, 0.8536 and 1.8384. Three cases do not establish numerical equivalence to the book's 50-run result, and implementation differences remain documented in [the reproduction record](docs/reproduction.md). The seed evaluation uses a different, shorter search suite; its error should not be compared directly with the reconstruction mean. Native initialization stores the seed and an island copy: two database rows represent one evaluated program, not two discoveries.
 
-The local WSL archive contains actual subscription-backed model mutations. Before storage continuation, generation 1 had mean search offline error **2.1054** (selection score **0.322018**), compared with the seed's **2.7751**. This is a search-suite result; independent generalization and mechanism tests remain pending. The committed artifact archive still represents the earlier seed integration check.
+The selected [generation-12 program](artifacts/comparison/20260916T001949Z-frozen/programs/selected.py) uses fitness deterioration to adjust relocation, preserves more particles when the swarm already covers a broad region, and adds a recovery floor for compact swarms. Memory reevaluation and retained velocity remain baseline choices. The native parent chain is **0 → 4 → 9 → 10 → 12**. The [published native archive](artifacts/evolution/20260915T101024.562418Z-search) contains the actual subscription-backed mutations, explanations, programs and measured cases.
+
+![Measured native search outcomes across 20 generation slots](assets/evolution/search_progress.png)
+
+*Five-dimensional search: four cases × 50,000 evaluations per program. The seed island copy is counted once. These repeatedly used search cases do not establish generalization.*
+
+On eight fresh cases across four regimes, **selected minus baseline error was +0.0627**, with a stratified bootstrap 95% interval **[−0.1470, +0.2724]**; negative favors the selected program. It improved two cases and worsened six. Removing the compactness addition changed mean error by **+0.0180** relative to selected, with interval **[−0.3253, +0.3612]**. The fixed control (radius scale 2, fraction 0.6) had lower error than selected by **0.3361**, but it is an investigator-defined control, not an evolved discovery. Its interval against the baseline still spans zero.
+
+Each regime has only two independent cases, so bootstrap coverage is uncertain and broad generalization is unsupported. Budgets include detection and memory queries; paired methods encountered identical landscape histories. Programs were frozen before independent execution, with the pre-freeze audit's configuration access disclosed in the selection record. See [the full report](docs/comparison.md) for regime effects, behavior, provenance and limitations.
+
+![Measured paired outcomes and uncertainty for the independent five-dimensional comparison](assets/comparison/paired_offline_error.png)
+
+*Eight independent paired landscapes; four frozen methods, each with 100,000 objective evaluations per case. Dots are cases, not trajectory checkpoints.*
 
 ![Measured cumulative tracking error and swarm count over three 5D reconstruction cases](assets/reconstruction/baseline_tracking.png)
 
@@ -148,7 +171,7 @@ Raw data, logs and archive databases are committed under [artifacts](artifacts/R
 
 ## Discussion
 
-The Moving Peaks case provides a controlled way to study adaptation in collective search. A useful finding may be an improvement, a failure to improve, or a mechanism that helps under one regime and fails under another. The interpretation depends on the program behavior and experimental comparisons.
+The search successfully generated executable, traceable adaptation rules, but its best search score did not establish an independent performance advantage. The compactness mechanism helped some fresh cases and hurt others; its small pooled effect is inconclusive. A fixed response performed better than the selected program in this suite, so the observations do not support attributing value to the added adaptation complexity. Floating-point rounding at the simulator's `ceil(fraction × 5)` boundary also affects how many particles actually move; the study retains that executed behavior and reports actual relocation counts.
 
 This study concerns dynamic optimization in a synthetic environment. Applications to robotics, resource allocation or policy require their own models and evidence. Differences in random number generation, boundary handling, change timing, particle conversion and objective-query accounting may affect numerical comparability with the 2008 results.
 

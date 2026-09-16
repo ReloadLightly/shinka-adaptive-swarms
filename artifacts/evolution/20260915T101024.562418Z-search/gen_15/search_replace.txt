@@ -1,0 +1,33 @@
+<NAME>
+preserve_anchors_during_recovery
+</NAME>
+<DESCRIPTION>
+The prior policy capped at 60% relocation achieved mean offline error 1.98, versus 2.31 for the current policy allowing 80%; case_003 deteriorated substantially while mean relocation radius stayed similar. This supports testing stronger particle preservation, although it does not establish causality.
+Cap relocation at 60% to preserve two spatial anchors. As a new refinement, relocate only one of five particles when deterioration is mild and recent improvement indicates productive search. Moderate changes still receive two exploratory particles during productive search. Preserve memory reevaluation, velocities, and the existing radius adaptation. The hypothesis is that retaining useful search structure improves recovery while a small exploratory contingent supplies diversity. This proposed refinement requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    # With five particles, retain at least one particle even after large drops.
+    if severity < 0.25:
+        fraction = 0.4
+    elif severity < 0.75:
+        fraction = 0.6
+    else:
+        fraction = 0.8
+=======
+    # Preserve at least two spatial anchors even after large fitness drops.
+    if severity < 0.25:
+        fraction = 0.4
+    else:
+        fraction = 0.6
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    # Successful recent search warrants a similarly restrained response.
+    if progress >= 1.0 and severity < 0.75:
+        fraction = 0.4
+=======
+    # During productive search, a mild change needs only one explorer.
+    if progress >= 1.0 and severity < 0.75:
+        fraction = 0.2 if severity < 0.25 else 0.4
+>>>>>>> REPLACE
+</DIFF>

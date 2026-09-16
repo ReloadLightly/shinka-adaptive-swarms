@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "dispersion_gated_relocation",
+  "patch_description": "Capping relocation at three particles previously reduced mean offline error from 2.31 to 1.98, although one case benefited from stronger relocation. This suggests testing whether existing spatial coverage can guide the response.\nPreserve at least two particles in every response. Relocate a third particle only when deterioration is substantial, recent progress is weak, and the swarm diameter is smaller than the relocation region's diameter. Otherwise relocate two particles. The hypothesis is that compact, stalled swarms need additional exploration, while dispersed or improving swarms benefit from retaining more spatial anchors. Keep the radius schedule, memory reevaluation, and velocities unchanged to isolate relocation selection. This new gate remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:41:46.828269",
+  "llm_cost": 0.132872,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

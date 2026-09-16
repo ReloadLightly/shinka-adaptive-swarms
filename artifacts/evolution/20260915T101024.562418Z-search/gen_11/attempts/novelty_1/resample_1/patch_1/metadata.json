@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "preserve_two_particle_anchors",
+  "patch_description": "Cap relocation at 60%, preserving two particles in the five-particle swarm even after severe deterioration. The current policy improves average error but worsens case_003 relative to baseline; the stronger recovery variant also performs slightly worse. This motivates testing whether relocating four particles destroys useful search structure.\nA large fitness drop need not imply a large spatial displacement. Retaining two particles preserves more existing positions and velocities while three relocated particles explore around the remembered best. Keep adaptive radius and memory reevaluation unchanged to isolate this hypothesis. Performance improvement remains to be tested.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:35:39.850316",
+  "llm_cost": 0.121922,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

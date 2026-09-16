@@ -1,0 +1,128 @@
+--- a/original.py
++++ b/original.py
+@@ -1,58 +1,99 @@
+ """Book/DEAP response policy: relocate every particle after a detected change.
+ 
+ This file is the evolvable program. The simulator, objective, search cases, and
+ evaluation budget remain outside it. The policy receives observations available
+ to the optimizer; inspecting hidden landscape state is outside the task contract.
+ """
+ 
+ 
+ # EVOLVE-BLOCK-START
+ def choose_response(observation: dict) -> dict:
+-    """Bound relocation while preserving useful spatial and velocity memory."""
++    """Choose sparse scouting actions by coverage benefit and disruption cost."""
+     def number(key, default=0.0):
+         try:
+             value = float(observation.get(key, default))
+         except (TypeError, ValueError, OverflowError):
+             return default
+         if value != value or value in (float("inf"), -float("inf")):
+             return default
+         return value
+-    def clamp(value, lower, upper):
++    def bounded(value, lower, upper):
+         return max(lower, min(upper, value))
+-    default_radius = max(0.0, number("default_radius"))
+-    diameter = max(0.0, number("swarm_diameter"))
++    baseline_radius = max(0.0, number("default_radius"))
++    if baseline_radius <= 0.0:
++        return {
++            "radius_scale": 0.0,
++            "fraction": 0.0,
++            "memory": "reevaluate",
++            "reset_velocity": False,
++        }
+     fitness_scale = max(1.0, abs(number("previous_best_fitness")))
+-    relative_drop = max(
+-        0.0,
++    drop = bounded(
+         number(
+             "relative_fitness_drop",
+             max(0.0, number("fitness_drop")) / fitness_scale,
+         ),
++        0.0,
++        2.0,
+     )
+-    recent_gain = max(0.0, number("recent_improvement")) / fitness_scale
+-    # Deterioration below 3% is mild; 18% saturates response strength.
+-    severity = clamp((relative_drop - 0.03) / 0.15, 0.0, 1.0)
+-    # Improvement of at least 1% argues for preserving the current search.
+-    progress = clamp(recent_gain / 0.01, 0.0, 1.0)
+-    radius_scale = 0.85 + severity * (0.65 - 0.25 * progress)
+-    # Preserve two spatial anchors even after a large fitness drop:
+-    # deterioration alone does not establish how far the peak moved.
+-    if severity < 0.25:
+-        fraction = 0.4
+-    else:
+-        fraction = 0.6
+-    response_radius = default_radius * radius_scale
+-    # A broad swarm already supplies exploration: move fewer particles.
+-    if response_radius > 0.0 and diameter >= 4.0 * response_radius:
+-        fraction = max(0.4, fraction - 0.2)
+-        radius_scale = min(radius_scale, 1.1)
+-    # Successful recent search warrants a similarly restrained response.
+-    if progress >= 1.0 and severity < 0.75:
+-        fraction = 0.4
++    gain = bounded(
++        number("recent_improvement") / fitness_scale, 0.0, 1.0
++    )
++    shock = drop / (0.05 + drop)
++    progress = gain / (0.005 + gain)
++    diameter_ratio = bounded(
++        max(0.0, number("swarm_diameter")) / baseline_radius,
++        0.0,
++        8.0,
++    )
++    movement_ratio = bounded(
++        max(0.0, number("observed_best_displacement")) / baseline_radius,
++        0.0,
++        2.0,
++    )
++    # Dimensionless coverage proxies, not estimates of hidden peak locations.
++    # Discount diameter because two outlying particles can exaggerate coverage.
++    existing_coverage = min(2.0, diameter_ratio * diameter_ratio / 12.0)
++    # Fitness deterioration indicates uncertainty; observed best movement adds
++    # geometric evidence. Recent progress increases the cost of disturbance.
++    target_coverage = (
++        0.30
++        + 0.70 * shock
++        + 0.20 * shock * movement_ratio * movement_ratio
++    )
++    # Search a small action catalogue. Fraction steps fit the five-particle
++    # baseline; at least two particles remain spatial anchors in every action.
++    best_action = (0.0, 0.0)
++    best_loss = float("inf")
++    for fraction in (0.0, 0.2, 0.4, 0.6):
++        radii = (0.0,) if fraction == 0.0 else (0.75, 1.0, 1.25, 1.5, 2.0)
++        for radius_scale in radii:
++            scouting_coverage = fraction * radius_scale * radius_scale
++            predicted_coverage = (
++                (1.0 - fraction) * existing_coverage
++                + scouting_coverage
++            )
++            deficit = max(0.0, target_coverage - predicted_coverage)
++            excess = max(
++                0.0,
++                predicted_coverage - max(target_coverage, existing_coverage),
++            )
++            # Penalize both disturbing many particles and throwing scouts
++            # unnecessarily far. Productive search deserves greater protection.
++            disruption = (
++                (0.12 + 0.24 * progress) * fraction
++                + (0.025 + 0.055 * progress) * scouting_coverage
++            )
++            loss = deficit * deficit + 0.15 * excess * excess + disruption
++            # Catalogue order resolves ties toward fewer, closer scouts.
++            if loss < best_loss:
++                best_loss = loss
++                best_action = (radius_scale, fraction)
++    radius_scale, fraction = best_action
+     return {
+         "radius_scale": radius_scale,
+         "fraction": fraction,
+         "memory": "reevaluate",
+         "reset_velocity": False,
+     }
+ # EVOLVE-BLOCK-END

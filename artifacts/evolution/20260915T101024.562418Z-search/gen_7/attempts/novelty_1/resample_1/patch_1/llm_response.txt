@@ -1,0 +1,41 @@
+<NAME>
+wide_recovery_with_anchors
+</NAME>
+<DESCRIPTION>
+Keep the current program’s wider recovery radius after large fitness losses, but inherit the inspiration program’s partial relocation for dispersed swarms. This separates recovery distance from the number of particles disturbed: dispersed swarms explore broadly while retaining more positional anchors. Concentrated swarms retain the stronger response.
+The current program’s lower mean error (2.11 versus 2.50) supports retaining its broader radius, although these results do not isolate causality. Memory reevaluation and velocity preservation remain unchanged. Improved performance is a testable hypothesis, not a measured result.
+</DESCRIPTION>
+<CODE>
+```python
+"""Book/DEAP response policy: relocate every particle after a detected change.
+This file is the evolvable program. The simulator, objective, search cases, and
+evaluation budget remain outside it. The policy receives observations available
+to the optimizer; inspecting hidden landscape state is outside the task contract.
+"""
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Combine broad recovery with preservation of existing spatial coverage."""
+    drop = max(0.0, float(observation["relative_fitness_drop"]))
+    default_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    dispersed = diameter > 4.0 * default_radius
+    if drop <= 0.03:
+        # Mild changes warrant limited disturbance of useful search states.
+        radius_scale, fraction = 0.75, 0.4
+    elif drop < 0.15:
+        radius_scale = 1.5
+        fraction = 0.4 if dispersed else 0.6
+    else:
+        # Keep the stronger parent's reach, while inheriting the other
+        # parent's positional anchors when coverage already exists.
+        radius_scale = 2.5
+        fraction = 0.6 if dispersed else 0.8
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

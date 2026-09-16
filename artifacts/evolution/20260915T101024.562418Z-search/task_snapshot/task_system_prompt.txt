@@ -1,0 +1,71 @@
+You are evolving an interpretable response policy for dynamic
+multiswarm particle swarm optimization, based on Blackwell's chapter in Swarm
+Intelligence: Introduction and Applications and the DEAP multiswarm example.
+The fixed simulator performs PSO, exclusion, swarm birth/death, change detection,
+and Moving Peaks objective evaluations. Change only the marked evolve block.
+Evolve choose_response(observation), using optimizer-visible observations to
+select relocation radius_scale, fraction, memory (reevaluate or reset), and
+reset_velocity. Baseline relocates all particles around the previous swarm best
+with radius 0.5 times benchmark movement severity, retaining velocities and
+reevaluating memories. Discover an adaptive, comprehensible rule that tracks
+changing peaks better under the same objective-evaluation budget. Lower mean
+offline error is better; combined_score=1/(1+mean_offline_error). Use feedback across
+cases to reason about when relocation helps and when it destroys useful memory.
+Do not import the simulator, read task/results files or hidden landscape state,
+access the network, invoke other models, change random seeds, or alter evaluator
+behavior. The result must be a reusable policy, not case-specific answers.
+Explain the behavioral hypothesis of the proposed change in the patch description.
+
+
+# Scientific context supplied to mutation
+
+# Scientific context supplied to native program evolution
+
+Source: Blackwell, Branke and Li (2008), [Particle Swarms for Dynamic Optimization
+Problems](https://doi.org/10.1007/978-3-540-74089-6_6), pp.193–217, especially §4.2
+and §5.1–5.3. Implementation anchor: [DEAP multiswarm.py at
+8a96fd3](https://github.com/DEAP/deap/blob/8a96fd3a75026f7b30e835f595a5199c75634ddf/examples/pso/multiswarm.py).
+The following is a mechanism summary and research hypothesis, not a quotation.
+
+Several particle swarms search a landscape whose peaks move between intervals.
+Within each swarm, attraction to personal and swarm memories concentrates search.
+Exclusion avoids redundant swarms occupying the same region; convergence checks
+and swarm creation/deletion maintain exploratory capacity. After a detected change,
+temporary stochastic particle relocation helps recover the displaced peak. These
+mechanisms create a tradeoff between preserving a useful local search and exploring
+far enough to recover from change.
+
+Our selected baseline has five neutral particles per swarm, no permanently quantum
+particles, and one desired free swarm. It relocates all particles in the affected
+swarm with a uniform-volume draw around its remembered best, radius 0.5 times the
+configured movement severity, reevaluates memories, and preserves velocities.
+The DEAP conversion function's distribution-selector bug is corrected in the
+shared simulator. That correction is already part of the baseline, not a discovery.
+
+Evolve only `choose_response(observation)` inside the marked program region. This
+hook runs after an observed change is detected for a swarm; it is not called at
+every particle step. It returns:
+
+- `radius_scale`: finite nonnegative multiplier of the baseline relocation radius;
+- `fraction`: fraction of particles to relocate, between zero and one;
+- `memory`: `reevaluate` or `reset`;
+- `reset_velocity`: Boolean.
+
+Use only the supplied optimizer observations and ordinary deterministic computation.
+Do not inspect files, seeds, evaluator internals, latent peak coordinates, the true
+optimum, or held-out cases. Python execution is not a security sandbox: this is the
+scientific contract and selected programs will be inspected for compliance.
+
+A testable hypothesis is that a response conditioned on observed fitness
+deterioration, swarm dispersion, recent improvement and previous responses can
+preserve good search states after small changes while broadening exploration after
+large changes. Unconditional relocation can waste useful structure; a narrow
+response can fail to recover; memory reset and reevaluation have different costs.
+These are hypotheses to investigate, not instructions to force a particular result.
+
+Every objective query counts, including detection and memory reevaluation. The
+primary measurement is mean offline error over search cases; lower is better.
+Native selection maximizes `1 / (1 + mean_offline_error)`. Use measured per-case
+errors and recovery/evaluation-accounting feedback to explain changes. Do not
+optimize metadata, exploit result writing, or treat a training gain as independent
+evidence. Keep the program interpretable enough for a later mechanism ablation.

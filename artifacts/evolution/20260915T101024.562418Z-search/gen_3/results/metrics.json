@@ -1,0 +1,65 @@
+{
+  "combined_score": 0.24935832016614287,
+  "public": {
+    "mean_offline_error": 3.01029329734704,
+    "worst_case_offline_error": 5.306164997733866,
+    "case_error_std": 1.7133349626657781,
+    "cases_completed": 4
+  },
+  "private": {
+    "cases": [
+      {
+        "case_id": "case_000",
+        "offline_error": 5.306164997733866,
+        "artifact": "case_000.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 4.749894898851857,
+        "detection_evaluation_share": 0.1521,
+        "memory_evaluation_share": 0.0031,
+        "mean_response_radius": 0.7137096774193549,
+        "mean_relocation_fraction": 0.5225806451612903,
+        "response_count": 31
+      },
+      {
+        "case_id": "case_001",
+        "offline_error": 2.845754664132843,
+        "artifact": "case_001.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 1.4939341262971866,
+        "detection_evaluation_share": 0.15942,
+        "memory_evaluation_share": 0.0065,
+        "mean_response_radius": 0.7269230769230769,
+        "mean_relocation_fraction": 0.5353846153846153,
+        "response_count": 65
+      },
+      {
+        "case_id": "case_002",
+        "offline_error": 1.1581282148714107,
+        "artifact": "case_002.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 0.019514620908614687,
+        "detection_evaluation_share": 0.1593,
+        "memory_evaluation_share": 0.0056,
+        "mean_response_radius": 2.5111607142857144,
+        "mean_relocation_fraction": 0.5714285714285714,
+        "response_count": 56
+      },
+      {
+        "case_id": "case_003",
+        "offline_error": 2.7311253126500414,
+        "artifact": "case_003.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 1.5327682903397288,
+        "detection_evaluation_share": 0.1586,
+        "memory_evaluation_share": 0.0041,
+        "mean_response_radius": 2.6341463414634148,
+        "mean_relocation_fraction": 0.5707317073170731,
+        "response_count": 41
+      }
+    ],
+    "suite_sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+    "evaluation_version": "search_v1_score_reciprocal",
+    "feedback_version": "tracking_diagnostics_v1"
+  },
+  "text_feedback": "Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 5.306165; mean error remaining at interval end 4.74989; detection used 15.21% and memory refresh 0.31% of objective evaluations; 31 responses with mean radius 0.71371 and relocated fraction 0.522581. case_001 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 2.845755; mean error remaining at interval end 1.49393; detection used 15.94% and memory refresh 0.65% of objective evaluations; 65 responses with mean radius 0.726923 and relocated fraction 0.535385. case_002 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 1.158128; mean error remaining at interval end 0.0195146; detection used 15.93% and memory refresh 0.56% of objective evaluations; 56 responses with mean radius 2.51116 and relocated fraction 0.571429. case_003 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.731125; mean error remaining at interval end 1.53277; detection used 15.86% and memory refresh 0.41% of objective evaluations; 41 responses with mean radius 2.63415 and relocated fraction 0.570732. Largest tracking error: case_000. Examine relocation radius, fraction, and memory response to observable change severity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases."
+}

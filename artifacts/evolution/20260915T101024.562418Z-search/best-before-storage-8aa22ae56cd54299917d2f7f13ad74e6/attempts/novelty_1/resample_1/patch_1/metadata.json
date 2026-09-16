@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "dispersion_aware_partial_relocation",
+  "patch_description": "Test whether preserving some particles while widening relocation after substantial fitness deterioration improves recovery. Small observed drops relocate 40% of particles locally; moderate drops relocate 60% farther; large drops relocate 80% at 2.5 times the baseline radius. For small or moderate drops, an already dispersed swarm relocates only 40%, preserving existing exploration.\nRetain velocities and reevaluate memories: memory refresh consumed only 0.32\u20130.65% of evaluations, so the supplied feedback gives little reason to sacrifice useful memories for that saving. Persistent interval-end errors motivate testing broader recovery, but do not establish that insufficient relocation caused those errors. These thresholds are reusable hypotheses requiring evaluation, not demonstrated improvements.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T12:19:13.480438",
+  "llm_cost": 0.117452,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

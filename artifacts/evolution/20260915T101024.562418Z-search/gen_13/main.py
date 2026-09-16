@@ -1,0 +1,75 @@
+"""Book/DEAP response policy: relocate every particle after a detected change.
+
+This file is the evolvable program. The simulator, objective, search cases, and
+evaluation budget remain outside it. The policy receives observations available
+to the optimizer; inspecting hidden landscape state is outside the task contract.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Allocate a displacement budget after accounting for existing coverage."""
+    def number(key, default=0.0):
+        try:
+            value = float(observation.get(key, default))
+        except (TypeError, ValueError, OverflowError):
+            return default
+        if value != value or value in (float("inf"), -float("inf")):
+            return default
+        return value
+    def clamp(value, lower, upper):
+        return max(lower, min(upper, value))
+    default_radius = max(0.0, number("default_radius"))
+    diameter = max(0.0, number("swarm_diameter"))
+    fitness_scale = max(1.0, abs(number("previous_best_fitness")))
+    # Bound normalized inputs before subsequent arithmetic.
+    drop = clamp(
+        number(
+            "relative_fitness_drop",
+            max(0.0, number("fitness_drop")) / fitness_scale,
+        ),
+        0.0,
+        10.0,
+    )
+    gain = clamp(
+        max(0.0, number("recent_improvement")) / fitness_scale,
+        0.0,
+        10.0,
+    )
+    # Smooth evidence measures avoid abrupt severity classifications.
+    shock = drop / (0.08 + drop)
+    progress = gain / (0.005 + gain)
+    if default_radius <= 0.0:
+        return {
+            "radius_scale": 0.0,
+            "fraction": 0.0,
+            "memory": "reevaluate",
+            "reset_velocity": False,
+        }
+    # Half the diameter is a spatial-coverage proxy, not an estimate of
+    # peak displacement. Cap its influence because outliers can inflate it.
+    coverage = 0.5 * clamp(diameter / default_radius, 0.0, 4.0)
+    # Budget approximates fraction * radius_scale**2. Larger deterioration
+    # warrants more displacement; successful motion warrants less.
+    requested_budget = (0.45 + 0.75 * shock) / (1.0 + 0.6 * progress)
+    supplied_budget = 0.20 * coverage * coverage
+    budget = clamp(requested_budget - supplied_budget, 0.08, 1.20)
+    # Allocate sparse probes first. Increase their number only when the
+    # missing coverage justifies disturbing more of the existing swarm.
+    # With five particles these fractions select one, two, or three.
+    if budget < 0.30:
+        fraction = 0.2
+    elif budget < 0.85:
+        fraction = 0.4
+    else:
+        fraction = 0.6
+    # Couple distance to the number moved: fewer probes may travel farther
+    # without increasing the aggregate displacement budget.
+    radius_scale = clamp((budget / fraction) ** 0.5, 0.6, 1.8)
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END

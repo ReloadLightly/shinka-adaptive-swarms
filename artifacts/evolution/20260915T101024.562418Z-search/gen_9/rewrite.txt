@@ -1,0 +1,42 @@
+"""Book/DEAP response policy: relocate every particle after a detected change.
+This file is the evolvable program. The simulator, objective, search cases, and
+evaluation budget remain outside it. The policy receives observations available
+to the optimizer; inspecting hidden landscape state is outside the task contract.
+"""
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Map observed loss to recovery demand, then account for spatial coverage."""
+    drop = max(0.0, float(observation["relative_fitness_drop"]))
+    default_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    # Each knot specifies (relative loss, radius multiplier, relocation fraction).
+    # Interpolation makes recovery demand grow gradually with observed damage.
+    schedule = (
+        (0.00, 0.75, 0.40),
+        (0.03, 0.75, 0.40),
+        (0.08, 1.75, 0.60),
+        (0.15, 2.50, 0.80),
+    )
+    radius_scale, fraction = schedule[-1][1:]
+    for left, right in zip(schedule, schedule[1:]):
+        if drop <= right[0]:
+            weight = (drop - left[0]) / (right[0] - left[0])
+            weight = min(1.0, max(0.0, weight))
+            radius_scale = left[1] + weight * (right[1] - left[1])
+            fraction = left[2] + weight * (right[2] - left[2])
+            break
+    # Spatial coverage can substitute for relocation after modest damage.
+    # Fade this allowance as damage grows: dispersion alone does not establish
+    # that particles still cover useful regions after a substantial change.
+    if diameter > 4.0 * default_radius:
+        recovery_priority = min(
+            1.0, max(0.0, (drop - 0.03) / (0.15 - 0.03))
+        )
+        fraction = 0.40 + recovery_priority * (fraction - 0.40)
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END

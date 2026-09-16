@@ -1,0 +1,15 @@
+{
+  "generation": 14,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "single_scout_for_mild_changes",
+  "patch_description": "Reducing relocation improved mean offline error from 2.31 to 1.98, supporting a further test of spatial preservation. For mild observed deterioration, relocate one of five particles instead of two. Keep the three-particle response for stronger deterioration, and allow dispersed swarms to retain more particles because they already provide spatial coverage.\nThe hypothesis is that small changes often leave useful particle positions intact: one relocated scout can initiate recovery while four particles continue local tracking. Preserve memory reevaluation, velocities, and the existing radius rule. Memory refresh costs only about 0.4\u20130.6% of evaluations in the supplied results, providing little budget motivation for discarding memories. This proposal remains untested; its main risk is slower recovery when a small fitness drop masks substantial peak movement.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:37:57.906086",
+  "llm_cost": 0.135022,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_14/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

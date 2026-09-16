@@ -1,0 +1,52 @@
+{
+  "frozen_at": "2026-09-16T00:19:49.067724+00:00",
+  "source_revision": "aacd3a991091889412210573eddcbb05d039cb75",
+  "selection": {
+    "reason": "Highest combined_score among correct native archive entries; no held-out performance used.",
+    "native_program_id": "e671664f-bcd3-4e00-b681-7b532d7daa22",
+    "generation": 12,
+    "parent_id": "200cd6a4-045e-4cb8-984e-e11517952879",
+    "parent_generation": 10,
+    "combined_score": 0.3366612734357083,
+    "mean_search_offline_error": 1.970344613132251,
+    "native_database": "results/evolution/20260915T101024.562418Z-search/programs.sqlite",
+    "source_review": "Selected and parent are pure arithmetic over relative_fitness_drop, default_radius, swarm_diameter; no imports, files, random seeds, latent state, benchmark access, or evaluator calls.",
+    "variants": {
+      "no_compactness": "Exact native parent: deletes only compactness-floor addition; tests that specific mechanism.",
+      "fixed_response": "Investigator control fixes radius_scale=2.0 and fraction=0.60 to the selected compactness floors, with reevaluate and retained velocity; asks if observation dependence adds value over a constant response. No tuning."
+    },
+    "suite_access_disclosure": "A readiness audit agent inspected the existing suite configuration before this freeze. No held-out outcome existed, no mutations were made, and root selected by native search score and defined controls from source without viewing held-out cases. Freeze precedes comparison execution and runner suite load.",
+    "model_route": "No new model mutations or paid API calls needed: original native search target already completed."
+  },
+  "methods": {
+    "baseline": {
+      "role": "fixed corrected book response",
+      "policy": null
+    },
+    "selected": {
+      "role": "selected native descendant",
+      "policy": "programs/selected.py",
+      "source_path": "results/evolution/20260915T101024.562418Z-search/gen_12/main.py",
+      "sha256": "dcd01e2613b8226270383a4bce4ff2839bf44872a40d92cbb7b50ea54033af02"
+    },
+    "no_compactness": {
+      "role": "mechanism comparison",
+      "policy": "programs/no_compactness.py",
+      "source_path": "results/evolution/20260915T101024.562418Z-search/gen_12/original.py",
+      "sha256": "c4e796efe2e343c703c15c308973d30af991eeb14420a7c6517d256f666b729b"
+    },
+    "fixed_response": {
+      "role": "mechanism comparison",
+      "policy": "programs/fixed_response.py",
+      "source_path": "results/operations/recovery_20260916/selection_inputs/fixed_response.py",
+      "sha256": "9a9f5faa4b879162aaaee41d8032946a71bc82e2e6e9968734135287769ca9d5"
+    }
+  },
+  "simulator_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4"
+  },
+  "freeze_stage": "before comparison suite load or execution",
+  "candidate_interface": "choose_response(observation) only; source inspection required because execution is not sandboxed"
+}

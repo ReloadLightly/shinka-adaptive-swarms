@@ -1,0 +1,37 @@
+<NAME>
+dispersion_aware_partial_relocation
+</NAME>
+<DESCRIPTION>
+Test whether preserving some particles while widening relocation after substantial fitness deterioration improves recovery. Small observed drops relocate 40% of particles locally; moderate drops relocate 60% farther; large drops relocate 80% at 2.5 times the baseline radius. For small or moderate drops, an already dispersed swarm relocates only 40%, preserving existing exploration.
+Retain velocities and reevaluate memories: memory refresh consumed only 0.32–0.65% of evaluations, so the supplied feedback gives little reason to sacrifice useful memories for that saving. Persistent interval-end errors motivate testing broader recovery, but do not establish that insufficient relocation caused those errors. These thresholds are reusable hypotheses requiring evaluation, not demonstrated improvements.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {
+        "radius_scale": 1.0,
+        "fraction": 1.0,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+=======
+    drop = max(0.0, float(observation["relative_fitness_drop"]))
+    default_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    # Preserve most particles after mild changes; widen recovery as loss grows.
+    if drop <= 0.03:
+        radius_scale, fraction = 0.75, 0.4
+    elif drop < 0.15:
+        radius_scale, fraction = 1.5, 0.6
+    else:
+        radius_scale, fraction = 2.5, 0.8
+    # Existing spatial coverage reduces the need to relocate more particles.
+    if drop < 0.15 and diameter > 4.0 * default_radius:
+        fraction = 0.4
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-09-16T00:23:55.272857+00:00",
+  "url": "http://127.0.0.1:8888",
+  "dashboard_http_status": 200,
+  "programs_http_status": 200,
+  "program_count": 21,
+  "archive_matches_http": true,
+  "archive_matches_before_backup": true,
+  "best_generation": 12,
+  "best_id": "e671664f-bcd3-4e00-b681-7b532d7daa22",
+  "best_parent_id": "200cd6a4-045e-4cb8-984e-e11517952879",
+  "browser_navigation": [
+    "dashboard",
+    "programs table",
+    "selected best program",
+    "tree with source tab"
+  ],
+  "browser_nonblank": true,
+  "browser_source_visible": true,
+  "browser_parent_visible": true,
+  "browser_error_overlay": false,
+  "browser_page_errors": "",
+  "browser_console_error_lines": [
+    "[error] WARNING: plotly-latest.min.js and plotly-latest.js are NO LONGER the latest releases of plotly.js. They are v1.58.5 (released July 2021), the end of the v1.x line, and will not be updated again. To use more recent versions of plotly.js, please update your links to point to an explicit version on cdn.plot.ly. You can find the latest version information at https://github.com/plotly/plotly.js/releases"
+  ],
+  "screenshot": "/home/roland/actir/shinka-adaptive-swarms/results/operations/recovery_20260916/webui_candidate.png",
+  "notes": [
+    "Native Plotly CDN emits deprecated plotly-latest alias warning at console.error; observed UI functions verified.",
+    "Native cost widget is accounting metadata, not proof of paid API calls."
+  ]
+}

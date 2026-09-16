@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_partial_relocation",
+  "patch_description": "The current policy maps 2\u201320% fitness deterioration to radius scales of 0.75\u20132.0, relocates 40\u2013100% of particles, and sometimes resets velocity. Its lower mean error accompanies regressions on two cases, so stronger relocation is not consistently beneficial.\nThis proposal caps radius scale at 1.5 and relocation fraction at 0.8. Deterioration sets response strength; recent improvement limits expansion, while existing dispersion reduces relocation. Memory reevaluation and velocity retention preserve useful search information. The hypothesis is that retaining some particles and limiting expansion improves recovery without repeatedly disrupting local tracking. Memory refresh costs under 1% of evaluations in the supplied feedback, providing little motivation for wholesale memory reset. Performance improvement remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:31:20.520074",
+  "llm_cost": 0.141422,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

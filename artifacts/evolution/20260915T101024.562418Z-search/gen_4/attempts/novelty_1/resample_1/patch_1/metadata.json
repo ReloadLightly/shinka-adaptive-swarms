@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "coverage_gated_recovery",
+  "patch_description": "The stronger adaptive parent achieved mean offline error 2.11, versus 2.78 for the baseline and 3.01 for the more conservative parent. Preserve its broad response to large fitness drops in compact swarms, but use the conservative parent's radius and fraction when particles already provide wide spatial coverage. The hypothesis is that compact swarms need stronger relocation, while dispersed swarms benefit from retaining more positional anchors. Keep memory reevaluation and existing velocities shared by all parents. This crossover requires evaluation; its improvement is not yet measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:30:18.824470",
+  "llm_cost": 0.120052,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

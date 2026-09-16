@@ -1,0 +1,36 @@
+<NAME>
+selective_memory_release
+</NAME>
+<DESCRIPTION>
+The stronger relocation and velocity reset increased mean error from 2.31 to 2.33 without resolving the worst case. Remove that escalation and test a different recovery mechanism: reset memories only when severe deterioration, compact geometry, and stalled progress coincide. The hypothesis is that concentrated historical attractors can delay recovery after a substantial change; releasing them may help retained particles explore while preserving velocity and the parent's bounded relocation radius. Otherwise, reevaluate memories to preserve useful search history. Memory refresh consumes less than 1% of evaluations, so the intended benefit is improved recovery rather than evaluation savings. This proposal requires measurement; the existing feedback does not establish memory retention as the cause of tracking failure.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    # Apply the inspiration's stronger response only with three agreeing cues:
+    # severe deterioration, compact geometry, and negligible recent progress.
+    reset_velocity = False
+    if severity >= 0.9 and compact and recent_gain <= 0.001:
+        displacement_ratio = clamp(
+            max(0.0, number("observed_best_displacement")) / default_radius,
+            0.0,
+            2.0,
+        )
+        # Observed best movement modestly expands recovery, capped at 1.75.
+        radius_scale = max(radius_scale, 1.5 + 0.125 * displacement_ratio)
+        reset_velocity = True
+=======
+    # Release historical attractors only after a severe, stalled local failure.
+    # Keep bounded relocation and velocity to preserve existing search motion.
+    memory = "reevaluate"
+    reset_velocity = False
+    if severity >= 0.9 and compact and recent_gain <= 0.001:
+        memory = "reset"
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+        "memory": "reevaluate",
+        "reset_velocity": reset_velocity,
+=======
+        "memory": memory,
+        "reset_velocity": reset_velocity,
+>>>>>>> REPLACE
+</DIFF>

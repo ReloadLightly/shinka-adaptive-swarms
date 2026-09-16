@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "anchored_severity_response",
+  "patch_description": "Partial relocation improved mean error, but the current policy regressed on case_003. This motivates testing whether its strongest response disrupts useful search structure. Preserve the mild and moderate responses; reduce severe-change relocation from 80% to 60% and radius scale from 2.5 to 2.0. With five particles, this preserves two positional anchors while three particles explore. Retain memory reevaluation and velocities because the feedback does not establish that either causes the regression. Improved performance remains a hypothesis requiring evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T12:32:46.674254",
+  "llm_cost": 0.160232,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

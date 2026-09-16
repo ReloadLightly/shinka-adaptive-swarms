@@ -1,0 +1,65 @@
+"""Book/DEAP response policy: relocate every particle after a detected change.
+
+This file is the evolvable program. The simulator, objective, search cases, and
+evaluation budget remain outside it. The policy receives observations available
+to the optimizer; inspecting hidden landscape state is outside the task contract.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Adapt relocation to observed deterioration and search geometry."""
+    def number(key, default=0.0):
+        try:
+            value = float(observation.get(key, default))
+        except (TypeError, ValueError, OverflowError):
+            return default
+        if value != value or value in (float("inf"), -float("inf")):
+            return default
+        return value
+    def clamp(value, lower, upper):
+        return max(lower, min(upper, value))
+    default_radius = max(0.0, number("default_radius"))
+    diameter = max(0.0, number("swarm_diameter"))
+    fitness_scale = max(1.0, abs(number("previous_best_fitness")))
+    relative_drop = max(
+        0.0,
+        number(
+            "relative_fitness_drop",
+            max(0.0, number("fitness_drop")) / fitness_scale,
+        ),
+    )
+    recent_gain = max(0.0, number("recent_improvement")) / fitness_scale
+    # Changes below 2% receive a restrained response; 20% saturates it.
+    severity = clamp((relative_drop - 0.02) / 0.18, 0.0, 1.0)
+    radius_scale = 0.75 + 1.25 * severity
+    # Best-position movement is a bounded recovery cue, not a peak location.
+    if default_radius > 0.0:
+        displacement_ratio = (
+            max(0.0, number("observed_best_displacement")) / default_radius
+        )
+        radius_scale = max(
+            radius_scale,
+            severity * clamp(displacement_ratio, 0.0, 2.0),
+        )
+    response_radius = default_radius * radius_scale
+    compact = diameter <= response_radius
+    dispersed = diameter >= 4.0 * max(response_radius, 1e-12)
+    if severity < 0.25:
+        fraction = 0.4
+    elif severity < 0.75:
+        fraction = 0.6
+    else:
+        fraction = 1.0 if compact else 0.8
+    # Existing spatial coverage supplies some of the desired exploration.
+    if dispersed:
+        fraction = max(0.4, fraction - 0.2)
+    stalled = recent_gain <= 0.005
+    reset_velocity = bool(severity >= 0.75 and compact and stalled)
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": reset_velocity,
+    }
+# EVOLVE-BLOCK-END

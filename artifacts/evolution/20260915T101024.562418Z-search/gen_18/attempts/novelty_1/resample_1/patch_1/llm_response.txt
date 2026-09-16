@@ -1,0 +1,50 @@
+<NAME>
+coverage_budget_scouts
+</NAME>
+<DESCRIPTION>
+The compact-swarm variant improved mean error but worsened the hardest case, suggesting that broader relocation needs stronger anchor preservation. This policy allocates a target squared relocation distance across a small scout group, subtracting bounded credit for existing dispersion. Larger observed losses increase the exploration budget and recruit an additional scout; remaining particles preserve local structure. Memories are reevaluated and velocities retained because the feedback does not establish a benefit from discarding them. This is an untested hypothesis, not a measured improvement.
+</DESCRIPTION>
+<CODE>
+```python
+"""Adaptive recovery through coverage-aware allocation of relocation distance.
+Uses only optimizer-visible observations. The simulator, objective, evaluation
+budget, and random-number generation remain unchanged.
+"""
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Allocate recovery spread to scouts while preserving local anchors."""
+    drop = max(0.0, float(observation["relative_fitness_drop"]))
+    default_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    # Smooth, bounded evidence of damage; 8% loss gives half demand.
+    demand = drop / (0.08 + drop)
+    # Desired mean squared relocation distance, in baseline-radius units.
+    # A positive floor allows recovery when fitness loss conceals movement.
+    target_spread = 0.80 + 3.20 * demand
+    # Existing spread can supply some coverage, but diameter alone cannot
+    # establish that particles surround a useful peak. Bound its credit,
+    # especially when observed damage is large.
+    if default_radius > 0.0:
+        relative_extent = min(4.0, diameter / default_radius)
+        existing_spread = 0.0625 * relative_extent * relative_extent
+    else:
+        existing_spread = 0.0
+    credit_limit = target_spread * (0.60 - 0.35 * demand)
+    coverage_credit = min(existing_spread, credit_limit)
+    missing_spread = max(0.0, target_spread - coverage_credit)
+    # With five particles, use two scouts for moderate damage and three
+    # for substantial damage, preserving at least two local anchors.
+    fraction = 0.40 if demand < 0.60 else 0.60
+    # Allocate a squared-distance budget: fewer scouts travel farther.
+    # This is a control proxy, not an estimate of hidden peak displacement.
+    radius_scale = (missing_spread / fraction) ** 0.5
+    radius_scale = min(3.0, max(0.75, radius_scale))
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

@@ -1,0 +1,1009 @@
+{
+  "audited_at": "2026-09-16T00:24:27.766398+00:00",
+  "input_run": "results/evolution/20260915T101024.562418Z-search",
+  "read_only_original_artifacts": true,
+  "candidate_evaluations_executed_by_audit": 0,
+  "integrity_check": "ok",
+  "manifest_status": "search_complete",
+  "generation_target": 20,
+  "finished_at": "2026-09-15T12:41:51.925644+00:00",
+  "native_rows": 21,
+  "evaluated_programs": 20,
+  "descendants": 19,
+  "seed_island_copies": 2,
+  "missing_parent_ids": [],
+  "completed_case_count": 80,
+  "objective_evaluations": 4000000,
+  "modern_completed_checkpoints": 17,
+  "legacy_generations_with_complete_case_artifacts": [
+    0,
+    1,
+    2
+  ],
+  "issues": [],
+  "native_and_saved_program_code_identical": true,
+  "matched_environment_hashes_per_case": {
+    "0": 11,
+    "1": 11,
+    "2": 11,
+    "3": 11
+  },
+  "best_reference_hashes_checked": 16,
+  "best_reference_hash_mismatches": [],
+  "best_program_id": "e671664f-bcd3-4e00-b681-7b532d7daa22",
+  "best_generation": 12,
+  "best_parent_chain": [
+    {
+      "generation": 0,
+      "program_id": "c1fbd9c9-0524-43f4-8b9a-420c5c96146f"
+    },
+    {
+      "generation": 4,
+      "program_id": "d7456331-47b1-4d54-96b1-d5b03a321996"
+    },
+    {
+      "generation": 9,
+      "program_id": "fc4c1909-3224-4776-8944-31dea286499e"
+    },
+    {
+      "generation": 10,
+      "program_id": "200cd6a4-045e-4cb8-984e-e11517952879"
+    },
+    {
+      "generation": 12,
+      "program_id": "e671664f-bcd3-4e00-b681-7b532d7daa22"
+    }
+  ],
+  "generation_summaries": [
+    {
+      "generation": 0,
+      "mean_offline_error": 2.7750772828845554,
+      "combined_score": 0.26489523924021363,
+      "cases_completed": 4,
+      "checkpoint_status": "legacy_complete_artifacts",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 5.694844349124165,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.050178737667933,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0492799783944455,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.3060060663516784,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 1,
+      "mean_offline_error": 2.105411821773892,
+      "combined_score": 0.322018481731925,
+      "cases_completed": 4,
+      "checkpoint_status": "legacy_complete_artifacts",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.6078913579226253,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.0268808251910495,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 0.9590870891846442,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.8277880147972505,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 2,
+      "mean_offline_error": 2.552707577694573,
+      "combined_score": 0.2814754600908981,
+      "cases_completed": 4,
+      "checkpoint_status": "legacy_complete_artifacts",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.5085739208613047,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 3.008797200128051,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 0.9656054166456858,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.727853773143251,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 3,
+      "mean_offline_error": 3.01029329734704,
+      "combined_score": 0.24935832016614287,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 5.306164997733866,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.845754664132843,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.1581282148714107,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.7311253126500414,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 4,
+      "mean_offline_error": 2.50278521316208,
+      "combined_score": 0.28548710216155876,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.3474721608962614,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 3.634125957447886,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 0.959798547956256,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.0697441863479162,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 5,
+      "mean_offline_error": 2.305355790644945,
+      "combined_score": 0.30253929178525096,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.5028554904873275,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.9832916887931848,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 0.9799025212600466,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.755373462039221,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 6,
+      "mean_offline_error": 2.329934059279714,
+      "combined_score": 0.3003062469700395,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.5028571854850683,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.984190219111886,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0081645947345763,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.824524237787327,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 7,
+      "mean_offline_error": 2.5483317458380386,
+      "combined_score": 0.28182257794044613,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.3474696506769717,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 3.651223154193565,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0797153901761607,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.1149187883054577,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 8,
+      "mean_offline_error": 2.350225821976709,
+      "combined_score": 0.29848734179058334,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.46862066842274,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.9069371397316233,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.1801292150792373,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.8452162646732346,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 9,
+      "mean_offline_error": 2.004164927266166,
+      "combined_score": 0.33287120521376123,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.410079794145828,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.020817122903646,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 0.9030610275084787,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.682701764506711,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 10,
+      "mean_offline_error": 2.031037098406361,
+      "combined_score": 0.3299200793437248,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.410079794145828,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.0011685909362678,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0301982440366368,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.682701764506711,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 11,
+      "mean_offline_error": 1.9768042581063545,
+      "combined_score": 0.3359307207643319,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.510841459830107,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.7102740176449829,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0618133401322005,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.624288214818128,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 12,
+      "mean_offline_error": 1.970344613132251,
+      "combined_score": 0.3366612734357083,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.4661502426338746,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.3082474519112985,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.1452150898065414,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.96176566817729,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 13,
+      "mean_offline_error": 2.613730756712814,
+      "combined_score": 0.2767223313863144,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.6664973694129115,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 3.3846535230585957,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0690422161463793,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.3347299182333696,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 14,
+      "mean_offline_error": 2.233050381054843,
+      "combined_score": 0.3093054181462311,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.615408971653066,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.443667348457954,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.2633854343195319,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.6097397697888205,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 15,
+      "mean_offline_error": 2.0224810973288174,
+      "combined_score": 0.3308540129113699,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.510841459830107,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.7461648584053446,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.1985728776422488,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.6343451934375697,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 16,
+      "mean_offline_error": 1.9768042581063545,
+      "combined_score": 0.3359307207643319,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.510841459830107,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.7102740176449829,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0618133401322005,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.624288214818128,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 17,
+      "mean_offline_error": 2.7626363867112036,
+      "combined_score": 0.26577109697120294,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.418351699968013,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 3.4928149437470375,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.2880242369985804,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 3.851354666131184,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 18,
+      "mean_offline_error": 2.6848616390255344,
+      "combined_score": 0.27138061017250326,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 4.573143868155848,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 2.227512820776683,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.102043346816774,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.836746520352834,
+          "move_severity": 3.0
+        }
+      ]
+    },
+    {
+      "generation": 19,
+      "mean_offline_error": 1.9746480216751365,
+      "combined_score": 0.33617422724079543,
+      "cases_completed": 4,
+      "checkpoint_status": "completed",
+      "cases": [
+        {
+          "case_id": "case_000",
+          "evaluations": 50000,
+          "offline_error": 2.510841459830107,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_001",
+          "evaluations": 50000,
+          "offline_error": 1.70164907192011,
+          "move_severity": 1.0
+        },
+        {
+          "case_id": "case_002",
+          "evaluations": 50000,
+          "offline_error": 1.0618133401322005,
+          "move_severity": 3.0
+        },
+        {
+          "case_id": "case_003",
+          "evaluations": 50000,
+          "offline_error": 2.624288214818128,
+          "move_severity": 3.0
+        }
+      ]
+    }
+  ],
+  "best_relative_mean_error_reduction_vs_seed": 0.2899856788549775,
+  "best_policy_interpretation": "Uses only observed relative fitness drop, default radius, and swarm diameter. Grades radius and partial relocation with deterioration; decreases intervention when already dispersed, and adds a compact-swarm recovery floor. Always reevaluates memories and retains velocities.",
+  "regime_direction_vs_seed": "Best improves both severity-1 search cases; worsens both severity-3 search cases. Mean ranking does not establish generalization.",
+  "compact_floor_vs_parent": "Generation 12 improves one of four cases versus generation 10 (severity-1 case_001); worsens the other three.",
+  "rounding_effect": {
+    "expression": "fraction += coverage * (conservative_fraction - fraction)",
+    "returned_fraction": 0.6000000000000001,
+    "five_particles_times_fraction": 3.0000000000000004,
+    "ceil_relocated": 4,
+    "affected_best_responses": 29,
+    "total_best_responses": 204,
+    "actual_relocated_counts": {
+      "3": 50,
+      "4": 145,
+      "2": 9
+    },
+    "interpretation": "Preserve the frozen program exactly; the recorded behavior relocates four particles in these responses. This floating-point boundary is a code interpretation caveat, not an independently established source of optimizer improvement."
+  },
+  "candidate_access_audit": {
+    "all_imports_empty": true,
+    "calls_by_generation": [
+      {
+        "generation": 0,
+        "imports": [],
+        "calls": []
+      },
+      {
+        "generation": 1,
+        "imports": [],
+        "calls": [
+          "float",
+          "max"
+        ]
+      },
+      {
+        "generation": 2,
+        "imports": [],
+        "calls": [
+          "abs",
+          "bool",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 3,
+        "imports": [],
+        "calls": [
+          "float",
+          "max"
+        ]
+      },
+      {
+        "generation": 4,
+        "imports": [],
+        "calls": [
+          "float",
+          "max"
+        ]
+      },
+      {
+        "generation": 5,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 6,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 7,
+        "imports": [],
+        "calls": [
+          "float",
+          "max"
+        ]
+      },
+      {
+        "generation": 8,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 9,
+        "imports": [],
+        "calls": [
+          "float",
+          "max",
+          "min",
+          "zip"
+        ]
+      },
+      {
+        "generation": 10,
+        "imports": [],
+        "calls": [
+          "float",
+          "max",
+          "min"
+        ]
+      },
+      {
+        "generation": 11,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 12,
+        "imports": [],
+        "calls": [
+          "float",
+          "max",
+          "min"
+        ]
+      },
+      {
+        "generation": 13,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 14,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 15,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 16,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 17,
+        "imports": [],
+        "calls": [
+          "abs",
+          "bounded",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      },
+      {
+        "generation": 18,
+        "imports": [],
+        "calls": [
+          "float",
+          "max",
+          "min"
+        ]
+      },
+      {
+        "generation": 19,
+        "imports": [],
+        "calls": [
+          "abs",
+          "clamp",
+          "float",
+          "max",
+          "min",
+          "number",
+          "observation.get"
+        ]
+      }
+    ],
+    "observation_keys": [
+      "bounds_width",
+      "current_best_fitness",
+      "default_radius",
+      "dimension",
+      "evals_remaining",
+      "evaluations_since_response",
+      "fitness_drop",
+      "observed_best_displacement",
+      "previous_best_fitness",
+      "previous_response_radius",
+      "recent_improvement",
+      "relative_fitness_drop",
+      "swarm_count",
+      "swarm_diameter",
+      "swarm_size"
+    ],
+    "conclusion": "Static inspection found no filesystem/network, introspection, evaluator import, benchmark internals, or held-out input access. Candidates calculate responses from ordinary observation fields and local scalar functions; this is inspection, not a Python security sandbox."
+  },
+  "logging": {
+    "worker_stderr_nonempty": [],
+    "events": {
+      "configuration": 2,
+      "runtime_ready": 2,
+      "heartbeat": 29,
+      "seed_evaluation": 1,
+      "evaluation_start": 21,
+      "case_start": 80,
+      "run_started": 80,
+      "environment_change": 800,
+      "run_completed": 80,
+      "case_complete": 80,
+      "evaluation_complete": 20,
+      "seed_evaluated": 1,
+      "proposal_start": 19,
+      "proposal_returned": 19,
+      "storage_status": 35,
+      "accepted_program_resumed": 1,
+      "run_complete": 1
+    },
+    "unfinished_evaluations": 0,
+    "native_generation_event_rows": 0,
+    "native_attempt_log_rows": 0,
+    "interpretation": "The empty native event/attempt tables do not erase completed program rows, 80 case artifacts or the final run_complete record. No worker exceptions or controller failures found in the saved final logs."
+  },
+  "model_route_counts": {
+    "headless/codex@gpt-6-astra": 19
+  },
+  "inner_effort_status": "not sent; Codex profile/default applies",
+  "scientific_limit": "Search-suite results only. Frozen-program comparisons on fresh cases and mechanism tests are separate stages."
+}

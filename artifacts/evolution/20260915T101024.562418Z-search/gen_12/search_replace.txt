@@ -1,0 +1,27 @@
+<NAME>
+compact_swarm_recovery_floor
+</NAME>
+<DESCRIPTION>
+Test whether small fitness drops conceal meaningful displacement when a swarm is tightly concentrated. Relative fitness loss need not measure how far a peak moved, so the current narrow response may leave compact swarms searching around an obsolete location.
+For compact swarms, smoothly raise the minimum radius multiplier toward 2.0 and relocation fraction toward 0.60, preserving some positional anchors. The extra response vanishes when swarm diameter reaches twice the default radius. Stronger existing responses remain intact; memory reevaluation and velocity preservation continue.
+The stronger prior program outperformed the conservative policy, while some cases retained substantial interval-end error. This motivates testing additional spatial recovery where existing coverage is weakest, but does not establish that insufficient relocation caused those errors. This proposal is untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    radius_scale += coverage * (conservative_radius - radius_scale)
+    fraction += coverage * (conservative_fraction - fraction)
+    return {
+=======
+    radius_scale += coverage * (conservative_radius - radius_scale)
+    fraction += coverage * (conservative_fraction - fraction)
+    # Small fitness loss can conceal displacement. A compact swarm has
+    # little spatial coverage, so retain anchors but broaden its recovery.
+    if default_radius > 0.0:
+        compactness = max(
+            0.0, 1.0 - diameter / (2.0 * default_radius)
+        )
+        radius_scale += compactness * max(0.0, 2.0 - radius_scale)
+        fraction += compactness * max(0.0, 0.60 - fraction)
+    return {
+>>>>>>> REPLACE
+</DIFF>

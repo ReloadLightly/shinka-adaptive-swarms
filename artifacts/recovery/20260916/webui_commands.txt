@@ -1,0 +1,20 @@
+Native WebUI is already running as detached PID 167677 on port 8888.
+Open http://localhost:8888
+
+Attach to the live server log:
+  tail -n 40 -F results/operations/recovery_20260916/webui.log
+
+Foreground relaunch only if PID 167677 has exited and port 8888 is free:
+  bash scripts/webui.sh results/evolution/20260915T101024.562418Z-search 8888
+
+Best program/source direct URL:
+  http://localhost:8888/viz_tree.html?db_path=programs.sqlite&left_tab=tree-view&right_tab=agent-code&selected_node=e671664f-bcd3-4e00-b681-7b532d7daa22
+
+Evidence:
+  webui_backup.json: pre-launch SQLite consistent backup including committed WAL.
+  webui_verification.json: HTTP-to-SQLite row equality and browser checks.
+  webui_candidate.png: native tree, source, parent ID, score.
+  webui_browser_errors.log: empty (no browser page errors).
+  webui_browser_console.log: native Plotly deprecated alias warning observed.
+
+Browser verification session was closed; the native server remains running.

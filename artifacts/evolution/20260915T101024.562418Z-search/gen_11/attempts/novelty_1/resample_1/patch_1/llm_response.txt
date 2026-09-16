@@ -1,0 +1,25 @@
+<NAME>
+preserve_two_particle_anchors
+</NAME>
+<DESCRIPTION>
+Cap relocation at 60%, preserving two particles in the five-particle swarm even after severe deterioration. The current policy improves average error but worsens case_003 relative to baseline; the stronger recovery variant also performs slightly worse. This motivates testing whether relocating four particles destroys useful search structure.
+A large fitness drop need not imply a large spatial displacement. Retaining two particles preserves more existing positions and velocities while three relocated particles explore around the remembered best. Keep adaptive radius and memory reevaluation unchanged to isolate this hypothesis. Performance improvement remains to be tested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    # With five particles, retain at least one particle even after large drops.
+    if severity < 0.25:
+        fraction = 0.4
+    elif severity < 0.75:
+        fraction = 0.6
+    else:
+        fraction = 0.8
+=======
+    # Preserve two spatial anchors even after a large fitness drop:
+    # deterioration alone does not establish how far the peak moved.
+    if severity < 0.25:
+        fraction = 0.4
+    else:
+        fraction = 0.6
+>>>>>>> REPLACE
+</DIFF>

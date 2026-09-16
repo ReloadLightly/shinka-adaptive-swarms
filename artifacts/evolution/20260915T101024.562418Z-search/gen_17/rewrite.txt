@@ -1,0 +1,92 @@
+"""Adaptive relocation using a spatial-coverage budget."""
+# EVOLVE-BLOCK-START
+def choose_response(observation: dict) -> dict:
+    """Choose sparse scouting actions by coverage benefit and disruption cost."""
+    def number(key, default=0.0):
+        try:
+            value = float(observation.get(key, default))
+        except (TypeError, ValueError, OverflowError):
+            return default
+        if value != value or value in (float("inf"), -float("inf")):
+            return default
+        return value
+    def bounded(value, lower, upper):
+        return max(lower, min(upper, value))
+    baseline_radius = max(0.0, number("default_radius"))
+    if baseline_radius <= 0.0:
+        return {
+            "radius_scale": 0.0,
+            "fraction": 0.0,
+            "memory": "reevaluate",
+            "reset_velocity": False,
+        }
+    fitness_scale = max(1.0, abs(number("previous_best_fitness")))
+    drop = bounded(
+        number(
+            "relative_fitness_drop",
+            max(0.0, number("fitness_drop")) / fitness_scale,
+        ),
+        0.0,
+        2.0,
+    )
+    gain = bounded(
+        number("recent_improvement") / fitness_scale, 0.0, 1.0
+    )
+    shock = drop / (0.05 + drop)
+    progress = gain / (0.005 + gain)
+    diameter_ratio = bounded(
+        max(0.0, number("swarm_diameter")) / baseline_radius,
+        0.0,
+        8.0,
+    )
+    movement_ratio = bounded(
+        max(0.0, number("observed_best_displacement")) / baseline_radius,
+        0.0,
+        2.0,
+    )
+    # Dimensionless coverage proxies, not estimates of hidden peak locations.
+    # Discount diameter because two outlying particles can exaggerate coverage.
+    existing_coverage = min(2.0, diameter_ratio * diameter_ratio / 12.0)
+    # Fitness deterioration indicates uncertainty; observed best movement adds
+    # geometric evidence. Recent progress increases the cost of disturbance.
+    target_coverage = (
+        0.30
+        + 0.70 * shock
+        + 0.20 * shock * movement_ratio * movement_ratio
+    )
+    # Search a small action catalogue. Fraction steps fit the five-particle
+    # baseline; at least two particles remain spatial anchors in every action.
+    best_action = (0.0, 0.0)
+    best_loss = float("inf")
+    for fraction in (0.0, 0.2, 0.4, 0.6):
+        radii = (0.0,) if fraction == 0.0 else (0.75, 1.0, 1.25, 1.5, 2.0)
+        for radius_scale in radii:
+            scouting_coverage = fraction * radius_scale * radius_scale
+            predicted_coverage = (
+                (1.0 - fraction) * existing_coverage
+                + scouting_coverage
+            )
+            deficit = max(0.0, target_coverage - predicted_coverage)
+            excess = max(
+                0.0,
+                predicted_coverage - max(target_coverage, existing_coverage),
+            )
+            # Penalize both disturbing many particles and throwing scouts
+            # unnecessarily far. Productive search deserves greater protection.
+            disruption = (
+                (0.12 + 0.24 * progress) * fraction
+                + (0.025 + 0.055 * progress) * scouting_coverage
+            )
+            loss = deficit * deficit + 0.15 * excess * excess + disruption
+            # Catalogue order resolves ties toward fewer, closer scouts.
+            if loss < best_loss:
+                best_loss = loss
+                best_action = (radius_scale, fraction)
+    radius_scale, fraction = best_action
+    return {
+        "radius_scale": radius_scale,
+        "fraction": fraction,
+        "memory": "reevaluate",
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END

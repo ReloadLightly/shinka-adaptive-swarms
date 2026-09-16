@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "anchor_preserving_response",
+  "patch_description": "The current policy uses 3\u201318% deterioration thresholds, a 1% recent-improvement scale, radius multipliers of 0.85\u20131.5, and relocation fractions of 0.4\u20130.8. The prior policy capped at 0.6 achieved lower mean error (1.98 versus 2.31), supporting further testing of memory preservation.\nThis proposal caps relocation at 0.6 and reduces it to 0.4 whenever recent improvement reaches 0.5%, including after severe deterioration. Broad swarms also receive fewer relocations. Radius adaptation, memory reevaluation, and velocity retention remain intact. The hypothesis is that preserving more particle positions during productive search prevents disruptive responses while allowing three scouts after substantial deterioration. Performance remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:39:24.906806",
+  "llm_cost": 0.157002,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

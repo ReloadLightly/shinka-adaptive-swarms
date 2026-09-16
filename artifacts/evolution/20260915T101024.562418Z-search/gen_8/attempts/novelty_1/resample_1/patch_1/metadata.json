@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "selective_memory_release",
+  "patch_description": "The stronger relocation and velocity reset increased mean error from 2.31 to 2.33 without resolving the worst case. Remove that escalation and test a different recovery mechanism: reset memories only when severe deterioration, compact geometry, and stalled progress coincide. The hypothesis is that concentrated historical attractors can delay recovery after a substantial change; releasing them may help retained particles explore while preserving velocity and the parent's bounded relocation radius. Otherwise, reevaluate memories to preserve useful search history. Memory refresh consumes less than 1% of evaluations, so the intended benefit is improved recovery rather than evaluation savings. This proposal requires measurement; the existing feedback does not establish memory retention as the cause of tracking failure.",
+  "error_msg": null,
+  "timestamp": "2026-09-15T14:33:26.739984",
+  "llm_cost": 0.131732,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
