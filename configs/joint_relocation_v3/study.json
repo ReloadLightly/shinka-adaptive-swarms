@@ -1,0 +1,48 @@
+{
+  "study": "joint_relocation_v3",
+  "status": "proposed_not_run",
+  "protocol": "docs/followup_joint_relocation_v3.md",
+  "task": "joint_relocation_v3",
+  "engine_profile": "configs/shinka/research_v3.json",
+  "search_replicates": 3,
+  "search_seeds": [
+    610001,
+    610002,
+    610003
+  ],
+  "generation_slots_per_search": 30,
+  "search_cases": 16,
+  "validation_cases": 32,
+  "final_cases": 80,
+  "objective_budget_per_case": 100000,
+  "shortlist_per_search": 3,
+  "fixed_radius_multipliers": [
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "fixed_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "fixed_nominal_methods": 24,
+  "fixed_distinct_execution_classes": 21,
+  "final_method_max": 8,
+  "maximum_planned_executions": 3040,
+  "maximum_planned_objective_queries": 304000000,
+  "primary_comparators": [
+    "corrected_original_baseline",
+    "validation_selected_fixed_pair"
+  ],
+  "primary_two_sided_interval_level": 0.975,
+  "bootstrap_resamples": 20000,
+  "analysis_seed": 2026091603,
+  "final_seed_generation": "after_frozen_selection_excluding_all_previous_rng_seed_values",
+  "comparison_controller_status": "not_implemented",
+  "model_calls_performed": 0
+}

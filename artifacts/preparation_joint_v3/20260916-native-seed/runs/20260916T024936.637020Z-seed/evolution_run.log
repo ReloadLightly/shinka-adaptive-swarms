@@ -1,0 +1,121 @@
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Pricing catalog: source=bundled fetched_at=None stale=False sha256=8957d6ef6ac8347d2e71784eec235144875101e2ce420d7c6728d7f276220726
+  @@@@@@@@@@@@@@@@@@@@@      ░██████╗██╗░░██╗██╗███╗░░██╗██╗░░██╗░█████╗░
+  @                   @      ██╔════╝██║░░██║██║████╗░██║██║░██╔╝██╔══██╗
+  @          @        @      ╚█████╗░███████║██║██╔██╗██║█████═╝░███████║
+  @    @@   @@  @@    @      ░╚═══██╗██╔══██║██║██║╚████║██╔═██╗░██╔══██║
+  @   @     @    @@   @      ██████╔╝██║░░██║██║██║░╚███║██║░╚██╗██║░░██║
+  @    @@  @    @     @      ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═╝░░╚═╝
+  @        @          @      @@@@@@@@@@@@@@@
+  @                   @   @@                 @@@@@
+  @@@@@@@@@@@@@@@@@@@@ @@                       @  @@                 █▀▀
+                      @                          @@  @                ██▄
+                    @      @@                      @  @@
+                   @       @         @              @   @             █░█
+                   @                 @               @  @             ▀▄▀
+                     @@@@@          @     @           @  @
+                      @            @          @       @ @@            █▀█
+                   @@    @@     @@       @@   @        @              █▄█
+                  @@        @@         @     @         @
+                 @@       @@   @@       @@@@@          @        @@    █░░
+              @ @@                @                    @              █▄▄
+             @ @@@@@             @@ @@                 @      @@
+            @                  @       @@              @    @@        █░█
+       @@@@@@@@@@@@@@@@@@@@@@             @@@          @@@@@@@  @@    ▀▄▀
+       @     @         @                      @@         @@@  @@
+        @@               @                      @      @   @  @@      █▀▀
+          @@@@@@@@@@@@@@@@@@                   @    @   @   @@        ██▄
+                                               @  @  @   @
+                                               @  @  @@@@
+                                               @  @@
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - 🖥️  System resources detected:
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • CPU cores: 9
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • Memory: 21.5 GB
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - 🔧 Concurrency settings:
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • Evaluation jobs: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • Proposal jobs: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • DB workers: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO -    • Total threads: 3
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Configured local numeric thread cap per eval process: 9
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - ASYNC EVOLUTION RUN STARTED
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Max evaluation jobs: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Max proposal jobs: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Target generations: 1
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Language: python
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Results directory: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/review_v2/native_seed_check/runs/20260916T024936.637020Z-seed
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - Log file: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/review_v2/native_seed_check/runs/20260916T024936.637020Z-seed/evolution_run.log
+2026-09-16 03:49:39 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 03:49:40 - shinka.database.async_dbase - INFO - 🔧 AsyncDB initialized with 1 workers, 1 concurrent DB ops (WAL mode)
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Copying initial program from /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/review_v2/native_seed_check/runs/20260916T024936.637020Z-seed/task_snapshot/initial.py
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Starting initial program evaluation: /workspace/scratch/3af34c10a1e1/shinka-adaptive-swarms/results/review_v2/native_seed_check/runs/20260916T024936.637020Z-seed/gen_0/main.py
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Initial program evaluation completed in 0.50s
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Initial program evaluated - correct: True, combined_score: 0.03390790050424171
+2026-09-16 03:49:40 - shinka.database.dbase - WARNING - Program e56e2336-6ea8-4ee0-9577-d6b56e4da5cc embedding is not a list, defaulting to empty list.
+2026-09-16 03:49:40 - shinka.database.dbase - INFO - Program e56e2336-6ea8-4ee0-9577-d6b56e4da5cc added to DB - score: 0.03390790050424171.
+2026-09-16 03:49:40 - shinka.database.dbase - INFO - New best program: e56e2336-6ea8-4ee0-9577-d6b56e4da5cc (gen: 0, score: 0.0339, initialized island: 0).
+                                 Program Evaluation Summary - Gen 0 | Total Cost: $0.00                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 0   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.034 │   I-0   │   ✓ Correct   │   0.034 │ initial_program                 │ init   │    0.1 │  $0.000 │ 0.5s │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 03:49:40 - shinka.database.dbase - INFO - Creating copies of initial program e56e2336-6ea8-4ee0-9577-d6b56e4da5cc for all islands
+2026-09-16 03:49:40 - shinka.database.islands - INFO - Created copy 451f0f1b... of program e56e2336... for island 1
+2026-09-16 03:49:40 - shinka.database.islands - INFO - Created 1 copies of program e56e2336... for islands 1-1
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Setup initial program: e56e2336-6ea8-4ee0-9577-d6b56e4da5cc
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Generation 0 completed during setup
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Verifying database is ready for sampling...
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Database ready - 2 program(s) available for sampling
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Database verification completed - ready for proposal generation
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - 🔄 Job monitor task started
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Evolution stopping: completed_generations=1, target=1, running_jobs=0, active_proposals=0
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - 🛑 Job monitor setting should_stop signal
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - 🏁 Job monitor setting finalization_complete signal
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - Job monitor task exited
+2026-09-16 03:49:40 - shinka.core.async_runner - INFO - 🔄 Performing final embedding recomputation and meta summary...
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - 🏁 All final operations completed, proceeding to cleanup...
+2026-09-16 03:49:41 - shinka.database.async_dbase - INFO - 🔧 Closing async database with monitoring...
+2026-09-16 03:49:41 - shinka.database.async_dbase - INFO - Async database closed
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - ASYNC EVOLUTION COMPLETED
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Target generations: 1
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Stored programs: 1
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Generations without program (proposal generation exhausted retries): 0
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Generation IDs without program after proposal retries: []
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Total proposals generated: 0
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Total API cost: $0.0000
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Total runtime: 1.06 seconds
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - ----------------------------------------
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - FINAL OPERATIONS STATUS:
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - PCA/Embedding recomputation: SKIPPED (no embedding client)
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - Meta summary generation: SKIPPED (no meta summarizer)
+2026-09-16 03:49:41 - shinka.core.async_runner - INFO - ----------------------------------------
+        Program Database Summary                       Best Program              
+╭──────────────────────┬───────────────╮ ╭────────────────┬─────────────────────╮
+│ Metric               │ Value         │ │ Attribute      │ Value               │
+├──────────────────────┼───────────────┤ ├────────────────┼─────────────────────┤
+│ Overall Best Score   │ 0.03          │ │ ID             │ e56e2336...         │
+│ Total Programs       │ 2 / 1         │ │ Generation     │ 0                   │
+│ Correct Programs     │ 2 / 2 (100%)  │ │ Complexity     │ 0.11                │
+│ Archived Programs    │ 2 / 40 (5%)   │ │ Embedding[0]   │ N/A                 │
+│ Island Populations   │ I0: 1 | I1: 1 │ │ Metric: Score  │ 0.03                │
+│ Migration Policy     │ 10G, 0%(E)    │ │ Timestamp      │ 2026-09-16 03:49:40 │
+╰──────────────────────┴───────────────╯ ╰────────────────┴─────────────────────╯
+          Cost & Stats Summary                                                   
+╭───────────────────────┬──────────────╮                                         
+│ Metric                │ Value        │                                         
+├───────────────────────┼──────────────┤                                         
+│ Total Compute         │ 0h 0m 1s     │                                         
+╰───────────────────────┴──────────────╯                                         
+                                            Top 10 Best Performing Programs                                             
+╭──────┬──────┬────┬────────┬──────────┬────────────────────────────────┬────────┬────────┬────────┬───────────────────╮
+│ Rank │ Gen  │ ✓… │  Score │ Complex… │ Patch Name                     │ Type   │ Island │ Child… │ Timestamp         │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #1  │  0   │ ✓  │  0.034 │      0.1 │ initial_program                │ init   │   I0   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 03:49:40          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #2  │  0   │ ✓  │  0.034 │      0.1 │ initial_program                │ init   │   I1   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 03:49:40          │
+╰──────┴──────┴────┴────────┴──────────┴────────────────────────────────┴────────┴────────┴────────┴───────────────────╯

@@ -1,0 +1,164 @@
+{
+  "read_only_measurement_audit": true,
+  "new_objective_evaluations": 0,
+  "new_model_calls": 0,
+  "checked_stages": {
+    "validation": {
+      "method_cases": 144,
+      "queries": 14400000,
+      "methods": 9,
+      "paired_histories": 16
+    },
+    "final": {
+      "method_cases": 200,
+      "queries": 20000000,
+      "methods": 5,
+      "paired_histories": 40
+    },
+    "search": {
+      "method_cases": 320,
+      "queries": 32000000,
+      "programs": 20,
+      "database_rows": 21,
+      "paired_histories": 16,
+      "source_distinct_programs": 20
+    }
+  },
+  "checks": {
+    "all_664_exact_budgets": true,
+    "all_72_paired_landscapes": true,
+    "source_hashes_and_top3_ranking": true,
+    "validation_selection_correct": true,
+    "freeze_chronology_and_hashes": true,
+    "all_144_rng_seed_values_distinct_across_v2_stages": true,
+    "control_distribution_recomputed": true,
+    "all_40_control_action_sequences_reproduced": true,
+    "four_final_statistics_recomputed_to_1e-12": true
+  },
+  "comparisons": {
+    "best_constant": {
+      "mean_delta": -0.42652347978170113,
+      "ci95": [
+        -0.6902722214637478,
+        -0.1829269712889028
+      ],
+      "stratified_se": 0.1365766004219522,
+      "wins": 28,
+      "losses": 12,
+      "median_delta": -0.2440443098067222,
+      "regime_means": [
+        -0.27974544932228607,
+        -0.24110727921228783,
+        -0.36572728041388924,
+        -0.8195139101783415
+      ]
+    },
+    "state_free_control": {
+      "mean_delta": 0.08410450037618121,
+      "ci95": [
+        -0.17867906948370227,
+        0.4096022663520271
+      ],
+      "stratified_se": 0.15941092991156489,
+      "wins": 23,
+      "losses": 17,
+      "median_delta": -0.06216132360387561,
+      "regime_means": [
+        -0.1304695039029528,
+        0.008582127332314471,
+        0.6382965791522627,
+        -0.17999120107689953
+      ]
+    },
+    "baseline": {
+      "mean_delta": 0.33946013722638024,
+      "ci95": [
+        0.05305033420715962,
+        0.6596066750268069
+      ],
+      "stratified_se": 0.1624156250310817,
+      "wins": 11,
+      "losses": 29,
+      "median_delta": 0.1937819920717706,
+      "regime_means": [
+        0.007190557495048555,
+        0.5230739188472475,
+        0.49087599877261956,
+        0.33670007379060524
+      ]
+    },
+    "constant_three": {
+      "mean_delta": -0.07261527721553375,
+      "ci95": [
+        -0.31746953085150453,
+        0.16773213790223673
+      ],
+      "stratified_se": 0.12959093318961307,
+      "wins": 22,
+      "losses": 18,
+      "median_delta": -0.09686974501973145,
+      "regime_means": [
+        -0.1411615284296895,
+        -0.10367246632547751,
+        0.456640098510338,
+        -0.502267212617306
+      ]
+    }
+  },
+  "diagnostics": {
+    "largest_loss": {
+      "case": 16,
+      "delta": 5.099402838963992,
+      "share_of_total_signed_delta": 1.515793690039019,
+      "mean_without_largest_loss_POSTHOC": -0.04449289292094213
+    },
+    "duplicate_search_error_vectors": [
+      [
+        7,
+        16
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        12,
+        18
+      ]
+    ],
+    "runtime_seconds_saved": {
+      "validation": 382.1788413980212,
+      "final": 415.12033134901867
+    }
+  },
+  "method_means": {
+    "baseline": 3.2146046187481376,
+    "constant_three": 3.6266800331900515,
+    "best_constant": 3.980588235756219,
+    "evolved": 3.5540647559745175,
+    "state_free_control": 3.4699602555983367
+  },
+  "validation_means": {
+    "constant_0": 5.453081011494199,
+    "constant_1": 4.1444571631694185,
+    "constant_2": 3.3921458877619455,
+    "constant_3": 3.728268453560818,
+    "constant_4": 3.8090757274865488,
+    "constant_5": 3.497585524749038,
+    "shortlist_1": 3.6105503881334484,
+    "shortlist_2": 3.645795966536854,
+    "shortlist_3": 3.6903544663490826
+  },
+  "response_counts": {
+    "evolved": {
+      "3": 2550,
+      "4": 5688
+    },
+    "state_free_control": {
+      "3": 2444,
+      "4": 5699
+    }
+  },
+  "reviewed_commit": "e5737a0",
+  "reproduction_script": "scripts/review_allocation_v2.py"
+}

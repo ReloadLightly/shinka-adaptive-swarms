@@ -14,6 +14,7 @@ import time
 
 from .execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 from .logging import atomic_json
+from .engine_progress import terminal_failure_generations
 
 
 class ResumeRunnerMixin:
@@ -150,10 +151,16 @@ class ResumeRunnerMixin:
         from .native_storage import recover_pending_spec
 
         persisted = set(await self.async_db.get_persisted_generation_ids_async())
+        terminal_failures = terminal_failure_generations(Path(self.results_dir))
+        self._preserved_terminal_failures = terminal_failures
+        if terminal_failures:
+            self.next_generation_to_submit = max(self.next_generation_to_submit, max(terminal_failures) + 1)
+            self.resume_log.event("terminal_proposals_retained", message="Native terminal proposal failures retained without new mutations or evaluations",
+                                  generations=sorted(terminal_failures))
         pending = []
         for folder in sorted(Path(self.results_dir).glob("gen_*"), key=lambda p: int(p.name.split("_")[-1])):
             generation = int(folder.name.split("_")[-1])
-            if generation in persisted or generation >= self.evo_config.num_generations:
+            if generation in persisted or generation in terminal_failures or generation >= self.evo_config.num_generations:
                 continue
             record = recover_pending_spec(folder, self.db)
             if record is None:
@@ -197,6 +204,17 @@ class ResumeRunnerMixin:
             self.next_generation_to_submit = max(self.next_generation_to_submit, generation + 1)
             task = asyncio.create_task(submit_saved(folder, generation, record, task_id), name=task_id)
             self.active_proposal_tasks[task_id] = task
+
+    async def _start_proposals(self, num_proposals):
+        # An earlier interrupted proposal can rewind the assignment cursor.
+        # Skip already terminal slots as the native coordinator reaches them.
+        terminal = getattr(self, "_preserved_terminal_failures", set())
+        if not terminal:
+            return await super()._start_proposals(num_proposals)
+        for _ in range(num_proposals):
+            while self.next_generation_to_submit in terminal:
+                self.next_generation_to_submit += 1
+            await super()._start_proposals(1)
 
     async def _run_async(self):
         # Native background task callbacks can consume exceptions. Surface an

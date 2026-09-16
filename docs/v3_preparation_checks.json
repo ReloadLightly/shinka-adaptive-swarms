@@ -1,0 +1,42 @@
+{
+  "reviewed_results_commit": "e5737a0",
+  "research_campaign_started": false,
+  "new_shinka_llm_calls": 0,
+  "local_embedding_calls": 0,
+  "full_regression": {
+    "passed": 118,
+    "skipped": 1,
+    "seconds": 7.91,
+    "skip_reason": "Legacy local interrupted checkpoint fixture unavailable or already complete; no scientific case omitted"
+  },
+  "post_defensive_patch_engine_tests": "..............                                                           [100%]\n14 passed in 2.93s",
+  "native_seed_integration": {
+    "status": "seed_complete",
+    "task": "joint_relocation_v3",
+    "cases": 1,
+    "objective_queries": 1000,
+    "models_disabled": true,
+    "note": "Small integration diagnostic, not one of the prospective V3 research cases; rich-profile novelty/meta inference not exercised",
+    "program_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+    "case_gzip_sha256": "3e476d694f33f42c5e55aaacb9936e3e88437b29ce71c9ddd39f66619ac92c33",
+    "manifest_sha256": "0571e2b31a5cac87ecc6f6ea6850f21d3d072dad24a30795378aca0a823c36e4",
+    "native_terminal_slots": 1,
+    "published_artifacts": "artifacts/preparation_joint_v3/20260916-native-seed"
+  },
+  "seed_audit": "configs/joint_relocation_v3/seed_audit.json",
+  "source_hashes": {
+    "scripts/run_evolution.py": "ec0b1d840368c46e3bb30f29dab95d73589c68cbbda324e3c6b6c48376c8d25f",
+    "src/adaptive_swarms/storage_runner.py": "3b090cf4512758dde95f347769fd901d9ba6bedc59a07d3769944201debbb6b6",
+    "src/adaptive_swarms/engine_config.py": "2efbddc3dca84820e9a80397e7446b34716b29a69d9ef2d7db568be18495083c",
+    "src/adaptive_swarms/engine_progress.py": "f5f5c4ba7372062ffb6bb5258040d9e8a36b270027252f61f3c305a28c46041b",
+    "src/adaptive_swarms/engine_runtime.py": "91ceb7a9f58bffc1ea910458bfe520dd3f923ab7ffec30e9108a365e545f7889",
+    "src/adaptive_swarms/joint_relocation.py": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449",
+    "tasks/joint_relocation_v3/evaluate.py": "1687938077462c693871eb4a71738f6899d07d8ee05b6cc9dbd715f53726b254",
+    "configs/shinka/research_v3.json": "ceeb8c18d5a825a6d9b6f23d373b94837dcb1759df796a140c3cb37b27cf0efa"
+  },
+  "remaining_before_full_campaign": [
+    "Implement the prospective frozen comparison controller",
+    "Serve and verify a local embedding model; check novelty threshold on development examples",
+    "Run subscription-backed native mutation, meta and novelty on the execution host with actual role receipts"
+  ]
+}

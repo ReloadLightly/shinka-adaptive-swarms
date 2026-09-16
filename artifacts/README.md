@@ -20,6 +20,7 @@ itself and disposable Python bytecode caches.
 | `relocation_allocation_v2/evolution/20260916T013407.256962Z-search` | Separate native integer-allocation search | 20 evaluated slots, 19 subscription mutation attempts, 320 cases × 100,000 queries; 21 database rows including seed island copy |
 | `relocation_allocation_v2/study_20260916` | Frozen validation selection, final comparison and mechanism analysis | 144 validation and 200 final method cases × 100,000 queries; 40 independent final landscapes, no aliases |
 | `relocation_allocation_v2/operations` | V2 execution and independent audits | Seed separation, source reviews, prompt delivery, query/lineage checks, WebUI evidence and publication records |
+| `preparation_joint_v3/20260916-native-seed` | V3 native task integration diagnostic, not the prospective research campaign | One baseline-equivalent seed case × 1,000 queries; zero LLM or embedding calls |
 
 Neither initial native seed check made model calls or generated descendants. The corrected
 selection score is `1 / (1 + mean_offline_error)` and raw error remains the

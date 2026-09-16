@@ -11,6 +11,7 @@ if [[ -z "$run_dir" ]]; then
 from pathlib import Path
 roots = [Path("results") / kind for kind in ("comparison", "evolution")]
 roots.append(Path("results/relocation_allocation_v2"))
+roots.append(Path("results/joint_relocation_v3"))
 paths = [p for root in roots for p in root.rglob("manifest.json")
          if (p.parent / "run.log").exists()]
 if not paths:
@@ -45,4 +46,8 @@ elif "latest_summary" in manifest:
     print(json.dumps(manifest["latest_summary"], sort_keys=True), flush=True)
 print("Following timestamped saved output. A completed run produces no new events. Ctrl-C detaches.", flush=True)
 PY
-exec tail -n 25 -F -- "$run_dir/run.log"
+logs=("$run_dir/run.log")
+if [[ -f "$run_dir/evolution_run.log" ]]; then
+  logs+=("$run_dir/evolution_run.log")
+fi
+exec tail -n 25 -F -- "${logs[@]}"

@@ -23,13 +23,19 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from adaptive_swarms.logging import EventLogger, atomic_json
 from adaptive_swarms.execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 from adaptive_swarms.storage_runner import ResumeRunnerMixin
+from adaptive_swarms.engine_config import resolve_engine, native_settings, feature_state, check_embedding_endpoint
+from adaptive_swarms.engine_runtime import install_engine_observers
+from adaptive_swarms.engine_progress import terminal_failure_generations
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
 EVALUATION_VERSION = "search_v1_score_reciprocal"
 TASK_VERSIONS = {
     "adaptive_swarm": EVALUATION_VERSION,
     "relocation_allocation_v2": "relocation_allocation_v2_score_reciprocal",
+    "joint_relocation_v3": "joint_relocation_v3_score_reciprocal",
 }
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -102,9 +108,11 @@ def relay_evaluator_events(run_dir: Path, log, stop: threading.Event, resuming=F
 def summarize_database(run_dir: Path) -> dict:
     database = run_dir / "programs.sqlite"
     if not database.exists():
-        return {"generation_records": 0, "valid_programs": 0, "valid_descendants": 0}
+        return {"generation_records": 0, "valid_programs": 0, "valid_descendants": 0,
+                "terminal_generation_ids": sorted(terminal_failure_generations(run_dir)), "valid_seed": False}
     with sqlite3.connect(f"file:{database}?mode=ro", uri=True) as connection:
         rows = connection.execute("SELECT generation, correct, combined_score, metadata FROM programs").fetchall()
+        terminal_failures = terminal_failure_generations(run_dir, connection)
     # Native island copies must not count as new proposals or evaluations.
     originals = []
     for row in rows:
@@ -113,8 +121,16 @@ def summarize_database(run_dir: Path) -> dict:
             continue
         originals.append(row)
     valid = [row for row in originals if row[1]]
+    evaluated = {row[0] for row in originals}
+    failed_without_evaluation = terminal_failures - evaluated
     return {
-        "generation_records": len({row[0] for row in originals}),
+        "generation_records": len(evaluated),
+        "evaluated_programs": len(originals),
+        "evaluated_generation_ids": sorted(evaluated),
+        "terminal_failed_generation_ids": sorted(failed_without_evaluation),
+        "terminal_generation_ids": sorted(evaluated | terminal_failures),
+        "terminal_slots": len(evaluated | terminal_failures),
+        "valid_seed": any(row[0] == 0 for row in valid),
         "valid_programs": len(valid),
         "valid_descendants": sum(row[0] > 0 for row in valid),
         "best_combined_score": max((row[2] for row in valid), default=None),
@@ -145,7 +161,7 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
         if "evolution_context.md" in hashes and file_hash(destination / "evolution_context.md") != hashes["evolution_context.md"]:
             raise RuntimeError("Saved scientific context snapshot changed.")
         if task != "adaptive_swarm":
-            for name in ("relocation_allocation.py",):
+            for name in (TASK_ADAPTERS[task],):
                 if file_hash(ROOT / "src/adaptive_swarms" / name) != hashes[name]:
                     raise RuntimeError(f"Cannot resume with changed task adapter: {name}.")
                 if file_hash(destination / name) != hashes[name]:
@@ -171,9 +187,9 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
         shutil.copyfile(context, destination / "evolution_context.md")
         hashes["evolution_context.md"] = file_hash(context)
     if task != "adaptive_swarm":
-        for source, name in ((ROOT / "src/adaptive_swarms/relocation_allocation.py", "relocation_allocation.py"),
+        for source, name in ((ROOT / "src/adaptive_swarms" / TASK_ADAPTERS[task], TASK_ADAPTERS[task]),
                              (task_source / "task_prompt.txt", "task_prompt.txt"),
-                             (ROOT / "docs/followup_relocation_allocation_v2.md", "protocol.md")):
+                             (ROOT / "docs" / TASK_PROTOCOLS[task], "protocol.md")):
             shutil.copyfile(source, destination / name)
             hashes[name] = file_hash(source)
         prompt = (destination / "task_prompt.txt").read_text()
@@ -201,7 +217,7 @@ def prepare_storage_evaluator(run_dir: Path) -> Path:
         # adaptations below apply only to the historical v1 evaluator.
         hashes = json.loads((run_dir / "task_snapshot/source_hashes.json").read_text())
         if file_hash(original) != hashes["evaluate.py"]:
-            raise RuntimeError("Saved v2 evaluator changed.")
+            raise RuntimeError(f"Saved {task} evaluator changed.")
         return original
     current = ROOT / "tasks/adaptive_swarm/evaluate.py"
     def scientific_nodes(path):
@@ -272,15 +288,14 @@ def run_native(args, run_dir: Path, log):
 
         async def _record_attempt_event(self, generation, stage, status, details=None):
             log.set_activity(f"generation {generation}: {stage} {status}")
-            log.event("native_attempt", message=f"Generation {generation}: {stage} {status}", generation=generation, stage=stage, status=status)
+            log.event("native_attempt", message=f"Generation {generation}: {stage} {status}", generation=generation, stage=stage, status=status, details=details)
             await super()._record_attempt_event(generation, stage, status, details)
 
         async def _record_generation_event(self, generation, status, source_job_id=None, details=None):
             log.set_activity(f"generation {generation}: {status}")
-            log.event("native_generation", message=f"Generation {generation}: {status}", generation=generation, status=status)
+            log.event("native_generation", message=f"Generation {generation}: {status}", generation=generation, status=status, details=details)
             await super()._record_generation_event(generation, status, source_job_id, details)
 
-    route = f"headless/codex@{args.model}" + (f"?effort={args.effort}" if args.effort else "")
     suite_snapshot = run_dir / "search-suite.json"
     if not suite_snapshot.exists():
         suite_snapshot.write_bytes(args.suite.read_bytes())
@@ -295,31 +310,25 @@ def run_native(args, run_dir: Path, log):
         task_prompt = prompt_snapshot.read_text()
     else:
         prompt_snapshot.write_text(task_prompt)
-    model_pool = [] if args.seed_only else [route]
+    evolution_settings, database_settings = native_settings(args.engine_config, seed_only=args.seed_only)
     evo = EvolutionConfig(
         task_sys_msg=task_prompt,
         init_program_path=str(task_snapshot / "initial.py"),
         results_dir=str(run_dir),
         num_generations=1 if args.seed_only else args.generations,
-        llm_models=model_pool,
-        llm_dynamic_selection=None if args.seed_only else "fixed",
-        llm_kwargs={"temperatures": [0.0], "max_tokens": 16384},
-        patch_types=["diff", "full", "cross"],
-        patch_type_probs=[0.5, 0.3, 0.2],
-        max_patch_resamples=1,
-        max_patch_attempts=1,
-        max_novelty_attempts=1,
-        embedding_model=None,
-        novelty_llm_models=None,
-        meta_rec_interval=None,
-        meta_llm_models=None,
-        evolve_prompts=False,
-        use_text_feedback=True,
-        enable_wandb_logging=False,
+        **evolution_settings,
     )
+    database = DatabaseConfig(**database_settings)
+    from dataclasses import asdict
+    # Native defaults are recorded too, including any settings not overridden by
+    # this profile. Task prompts already have their own immutable snapshot.
+    resolved_native = {"evolution": asdict(evo), "database": asdict(database)}
+    resolved_native["evolution"].pop("task_sys_msg", None)
+    config_path = run_dir / ("native-config-resume-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ") + ".json" if args.resume else "native-config.json")
+    atomic_json(config_path, resolved_native)
     runner = VisibleRunner(
         evo_config=evo,
-        db_config=DatabaseConfig(num_islands=2, archive_size=40, num_archive_inspirations=1, num_top_k_inspirations=1),
+        db_config=database,
         job_config=LocalJobConfig(eval_program_path=str(prepare_storage_evaluator(run_dir)), extra_cmd_args={"suite": str(suite_snapshot)}, time=args.evaluation_timeout),
         max_evaluation_jobs=1,
         max_proposal_jobs=1,
@@ -327,6 +336,10 @@ def run_native(args, run_dir: Path, log):
         verbose=True,
     )
     runner.configure_resume(log)
+    install_engine_observers(runner, log, run_dir)
+    log.event("engine_initialized", message="Native engine components initialized; subsequent events establish actual use",
+              meta_created=runner.meta_summarizer is not None, novelty_created=runner.novelty_judge is not None,
+              embedding_created=runner.embedding_client is not None, resolved_native_config=str(config_path))
     log.on_io_error = runner._fail_infrastructure
     try:
         with install_native_storage(runner):
@@ -341,8 +354,12 @@ def main() -> int:
                         help="Task interface; inferred from saved manifest on resume, otherwise adaptive_swarm")
     parser.add_argument("--generations", type=int, default=20, help="Native target generation count including the initial generation 0")
     parser.add_argument("--seed-only", action="store_true", help="Native generation 0 evaluation/archive only; zero model calls")
-    parser.add_argument("--model", default="gpt-6-astra")
+    parser.add_argument("--model", default=None, help="Inner Codex model; defaults to gpt-6-astra, or the recorded value on resume")
     parser.add_argument("--effort", default=None, help="Explicit inner Codex effort; distinct from outer Ultra mode")
+    parser.add_argument("--engine-profile", type=Path, help="Explicit native machinery profile; historical settings remain the default")
+    parser.add_argument("--embedding-model", help="Served local embedding route: local/<model>@http://127.0.0.1:<port>/v1")
+    parser.add_argument("--print-engine-config", action="store_true", help="Print resolved task and model roles, then exit without model calls or run creation")
+    parser.add_argument("--search-seed", type=int, default=None, help="Seed Python/NumPy native search sampling on a new run; resume retains provenance without reseeding")
     parser.add_argument("--suite", type=Path, default=None, help="Defaults to configs/search.json, or the saved suite when resuming")
     parser.add_argument("--results-root", type=Path, default=None)
     parser.add_argument("--resume", type=Path, help="Resume an existing native run directory, preserving completed records")
@@ -352,21 +369,41 @@ def main() -> int:
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
+    if args.search_seed is not None and not 0 <= args.search_seed < 2**32:
+        parser.error("--search-seed must be an integer from 0 through 2**32 - 1.")
+    saved_manifest = None
     if args.resume:
         args.resume = args.resume.resolve()
         if not (args.resume / "manifest.json").is_file() or not (args.resume / "programs.sqlite").is_file():
             parser.error("--resume requires a native run with manifest.json and programs.sqlite.")
-        saved_task = json.loads((args.resume / "manifest.json").read_text()).get("task", "adaptive_swarm")
+        saved_manifest = json.loads((args.resume / "manifest.json").read_text())
+        saved_task = saved_manifest.get("task", "adaptive_swarm")
         if args.task is not None and args.task != saved_task:
             parser.error("--task differs from the saved run; start a separate study.")
         args.task = saved_task
+        saved_seed = saved_manifest.get("search_seed")
+        if args.search_seed is not None and args.search_seed != saved_seed:
+            parser.error("--search-seed differs from the saved run; start a separate search replicate.")
+        args.search_seed = saved_seed
     args.task = args.task or "adaptive_swarm"
     if args.task not in TASK_VERSIONS:
         parser.error(f"Unknown saved task: {args.task}")
     evaluation_version = TASK_VERSIONS[args.task]
-    default_results = ROOT / ("results/evolution" if args.task == "adaptive_swarm" else "results/relocation_allocation_v2/evolution")
+    try:
+        args.engine_config = resolve_engine(profile_path=args.engine_profile, model=args.model, effort=args.effort,
+                                            embedding_model=args.embedding_model, saved_manifest=saved_manifest)
+    except (OSError, ValueError, TypeError) as exc:
+        parser.error(str(exc))
+    args.model, args.effort = args.engine_config["default_model"], args.engine_config["default_effort"]
+    engine_features = feature_state(args.engine_config, seed_only=args.seed_only)
+    if args.print_engine_config:
+        print(json.dumps({"task": args.task, "evaluation_version": evaluation_version,
+                          "search_seed": args.search_seed, "engine_config": args.engine_config,
+                          "features": engine_features, "model_calls": 0}, indent=2), flush=True)
+        return 0
+    default_results = ROOT / ("results/evolution" if args.task == "adaptive_swarm" else f"results/{args.task}/evolution")
     args.results_root = (args.resume.parent if args.resume else args.results_root or default_results).resolve()
-    default_suite = ROOT / ("configs/search.json" if args.task == "adaptive_swarm" else "configs/relocation_allocation_v2/search.json")
+    default_suite = ROOT / ("configs/search.json" if args.task == "adaptive_swarm" else f"configs/{args.task}/search.json")
     args.suite = (args.suite or (args.resume / "search-suite.json" if args.resume else default_suite)).resolve()
     if not args.suite.is_file():
         parser.error(f"Evaluation suite does not exist: {args.suite}")
@@ -401,6 +438,13 @@ def main() -> int:
                         "started_at": stamp, "suite_sha256": hashlib.sha256(args.suite.read_bytes()).hexdigest(),
                         "status": "preflight", "run_dir": str(run_dir)}
                 active = manifest
+            manifest.setdefault("engine_config", args.engine_config)
+            manifest.setdefault("search_seed", args.search_seed)
+            active["engine_features"] = engine_features
+            active["search_randomness"] = {"search_seed": args.search_seed,
+                                          "seed_applied": args.search_seed is not None and not bool(args.resume),
+                                          "resume_rng_state_restored": False,
+                                          "note": "Resume preserves completed evidence; native sampling RNG state is not restored, so the uninterrupted proposal sequence is not promised."}
             hashes = prepare_snapshot(args, run_dir)
             if "source_hashes" not in manifest:
                 manifest["source_hashes"] = hashes
@@ -408,12 +452,27 @@ def main() -> int:
             atomic_json(run_dir / "manifest.json", manifest)
             log.event("configuration", message="Declared native run configuration", task=args.task, model=args.model, inner_effort=args.effort,
                       effective_effort="unverified until Codex invocation", generation_target=target, seed_only=args.seed_only, resuming=bool(args.resume))
+            log.event("engine_configuration", message=f"Native engine profile: {args.engine_config['profile_name']}", **engine_features)
+            log.event("search_randomness", message="Native search sampling seed and resume scope", **active["search_randomness"])
             if not report["ready"]:
                 active["status"] = "blocked_runtime"
                 atomic_json(run_dir / "manifest.json", manifest)
                 for error in report["errors"]:
                     log.event("runtime_error", message=error)
                 return 2
+            try:
+                active["embedding_preflight"] = check_embedding_endpoint(args.engine_config, seed_only=args.seed_only)
+            except RuntimeError as exc:
+                active.update(status="blocked_embedding", error=str(exc))
+                atomic_json(run_dir / "manifest.json", manifest)
+                log.event("runtime_error", message=str(exc))
+                return 2
+            atomic_json(run_dir / "manifest.json", manifest)
+            if args.search_seed is not None and not args.resume:
+                import random
+                import numpy as np
+                random.seed(args.search_seed)
+                np.random.seed(args.search_seed)
             log.event("runtime_ready", message="Runtime check passed; starting native ShinkaEvolve", results=str(run_dir))
             stop = threading.Event()
             monitor = threading.Thread(target=relay_evaluator_events, args=(run_dir, log, stop, bool(args.resume)), daemon=True)
@@ -425,8 +484,10 @@ def main() -> int:
                 run_native(args, run_dir, log)
                 summary = summarize_database(run_dir)
                 expected = target
-                if summary["generation_records"] < expected or not summary["valid_programs"]:
-                    raise RuntimeError(f"Native run did not finish the requested valid seed and generation records: {summary}")
+                terminal_ids = set(summary.get("terminal_generation_ids", range(summary["generation_records"])))
+                missing_slots = sorted(set(range(expected)) - terminal_ids)
+                if missing_slots or not summary.get("valid_seed", bool(summary["valid_programs"])):
+                    raise RuntimeError(f"Native run did not finish a valid seed and all requested terminal slots; missing={missing_slots}, summary={summary}")
                 active.update({"status": "seed_complete" if args.seed_only else "search_complete", **summary})
                 if args.resume:
                     manifest.update({"status": active["status"], "latest_summary": summary})

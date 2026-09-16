@@ -4,9 +4,20 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (16 September 2026):** the allocation-v2 protocol is complete: one native 20-slot search, validation selection and 40 fresh final comparisons, totaling **664 method cases / 66.4 million objective evaluations**. The evolved allocation beat the validation-selected constant, but did **not establish useful current-state dependence** and had higher mean error than the original corrected baseline. All v1 results are preserved. See [the v2 report](docs/relocation_allocation_v2.md), [v1 findings](docs/comparison.md) and [recovery record](docs/recovery.md). The native v2 WebUI is live at **http://localhost:8889**; v1 remains on port 8888.
+**Status (16 September 2026):** the allocation-v2 protocol is complete: one native 20-slot search, validation selection and 40 fresh final comparisons, totaling **664 method cases / 66.4 million objective evaluations**. The evolved allocation beat the validation-selected constant, but did **not establish useful current-state dependence** and had higher mean error than the original corrected baseline. All v1 results are preserved. See [the v2 report](docs/relocation_allocation_v2.md), [v1 findings](docs/comparison.md) and [recovery record](docs/recovery.md). The completed run's published WSL check recorded the native v2 WebUI on **http://localhost:8889** and v1 on port 8888; this review does not establish their current process status.
 
 **Prospective protocol:** [When should a swarm relocate more particles?](docs/followup_relocation_allocation_v2.md) was committed before v2 execution. Search, validation and final inputs are separate; source, selection and control distributions were frozen before final seed generation.
+
+**Review and next experiment:** an [independent V2 review](docs/review_v2_and_next.md)
+recomputed all 664 saved executions and the four reported paired intervals.
+The [proposed V3 study](docs/followup_joint_relocation_v3.md) evolves exact count
+and relocation radius jointly, starting from the corrected baseline. A separate
+task and explicit research engine profile add native novelty filtering,
+meta-memory and island migration. Three searches and strong fixed controls are
+planned; **no V3 evolutionary campaign has run, and its comparison controller
+remains to be built**. The task passed a small native seed-only integration
+check with zero model calls; [preparation checks](docs/v3_preparation_checks.json)
+distinguish this from a research run.
 
 ## Abstract
 

@@ -1,0 +1,59 @@
+{
+  "storage_version": "streaming_gzip_case_checkpoint_v1",
+  "identity": {
+    "program_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+    "suite_sha256": "01aa166425419509ec14a02089f1e5b7da90aad1cbf0c4b9293271044b422858",
+    "evaluation_version": "joint_relocation_v3_score_reciprocal",
+    "feedback_version": "joint_relocation_tracking_diagnostics_v3",
+    "evaluator_sha256": "1687938077462c693871eb4a71738f6899d07d8ee05b6cc9dbd715f53726b254",
+    "scientific_sources": {
+      "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+      "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+      "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+      "src/adaptive_swarms/joint_relocation.py": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449"
+    }
+  },
+  "status": "completed",
+  "completed_cases": [
+    {
+      "case_id": "case_000",
+      "offline_error": 28.491651949223606,
+      "artifact": "case_000.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 250 evaluations",
+      "mean_interval_end_error": 17.967341939777477,
+      "detection_evaluation_share": 0.145,
+      "memory_evaluation_share": 0.04,
+      "mean_response_radius": 0.5,
+      "mean_radius_scale": 1.0,
+      "mean_allocated_fraction": 1.0,
+      "mean_adapter_encoding_fraction": 0.9,
+      "response_count": 8,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 8
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 8
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 8
+      }
+    }
+  ],
+  "active_case": null
+}
