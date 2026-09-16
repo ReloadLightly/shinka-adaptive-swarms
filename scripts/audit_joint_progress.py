@@ -187,10 +187,12 @@ def audit_search(identity, registration, cache):
     pending = sum(role["statuses"].get("started", 0) for role in model_receipts["roles"].values())
     if manifest["status"] in {"search_complete", "interrupted", "infrastructure_failed", "failed", "blocked_runtime"}:
         status = manifest["status"]
+    elif pending and any(not item["complete_suite"] for item in generations.values()):
+        status = "pending_model_receipts_and_partial_case_suite"
     elif pending:
-        status = "waiting_for_native_model_response"
+        status = "pending_native_model_receipts"
     elif any(not item["complete_suite"] for item in generations.values()):
-        status = "evaluating_candidate_cases"
+        status = "partial_case_suite"
     else:
         status = "native_proposal_or_postprocessing"
     return {**identity, "status": status, "saved_manifest_status": manifest["status"], "evaluated_slots": len(evaluated),
