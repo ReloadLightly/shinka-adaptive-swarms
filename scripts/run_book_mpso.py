@@ -46,6 +46,51 @@ def verify_registration(folder, manifest):
         raise ValueError("Frozen development cases changed")
 
 
+def verify_fresh_manifest(folder, manifest):
+    """Bind resumed fresh work to the sources and review frozen before seeds."""
+    selection = read_json(folder / "selection.json")
+    if manifest["selection_sha256"] != sha(folder / "selection.json"):
+        raise ValueError("Fresh selection freeze changed")
+    if manifest["source_review_sha256"] != sha(folder / "source_review.json"):
+        raise ValueError("Fresh source review changed")
+    if manifest["methods"] != selection["methods"]:
+        raise ValueError("Fresh methods differ from the frozen selection")
+    if sha(ROOT / selection["analysis_specification"]) != selection["analysis_sha256"]:
+        raise ValueError("Fresh analysis specification changed")
+
+
+def validate_completed_case(saved, config, method):
+    if saved["config"] != config or saved["evaluations"] != config["budget"]:
+        raise ValueError("Saved case configuration or budget differs")
+    if saved.get("permanent_quantum") != method["permanent_quantum"]:
+        raise ValueError("Saved permanent quantum mode differs")
+    validate_pair(saved, saved)
+
+
+def recover_completed_artifact(ledger, name, index, saved, path):
+    """Recover the atomic case-write/ledger-write crash window without a rerun."""
+    attempts = [a for a in ledger["attempts"]
+                if a["method"] == name and a["case_index"] == index]
+    if len(attempts) != 1:
+        raise ValueError("Saved case requires exactly one original execution attempt")
+    attempt = attempts[0]
+    digest = sha(path)
+    if attempt["status"] == "completed":
+        if attempt["artifact_sha256"] != digest:
+            raise ValueError("Completed case artifact changed")
+        return False
+    if attempt["status"] not in {"running", "failed_or_interrupted"}:
+        raise ValueError("Saved case has an unsupported attempt state")
+    if attempt["reserved_queries"] != saved["evaluations"]:
+        raise ValueError("Saved case differs from its reserved objective budget")
+    attempt.update(recovery_previous_status=attempt["status"], status="completed",
+                   completed_at=now(), actual_queries=saved["evaluations"],
+                   last_reported_queries=saved["evaluations"], offline_error=saved["offline_error"],
+                   artifact_sha256=digest, recovered_from_completed_artifact=True,
+                   recovery_note="Validated atomic full-case artifact; no objective queries repeated. Completion wall time was not observed.")
+    return True
+
+
 def register(folder):
     folder.mkdir(parents=True, exist_ok=True)
     with (folder / "registration.lock").open("a") as lock:
@@ -121,6 +166,8 @@ def execute(folder, max_new_cases=None, stage="references"):
     if manifest["scientific_sources"] != schedule_fingerprint():
         raise ValueError("Scientific sources changed after stage registration.")
     verify_registration(folder, read_json(folder / "references/manifest.json"))
+    if stage == "fresh":
+        verify_fresh_manifest(folder, manifest)
     for method in manifest["methods"].values():
         if method["source"] and sha(folder / method["source"]) != method["sha256"]:
             raise ValueError("Frozen method source changed.")
@@ -138,10 +185,11 @@ def execute(folder, max_new_cases=None, stage="references"):
                     path = stage_dir / name / f"case_{i:03d}.json.gz"
                     if path.exists():
                         saved = read_json(path)
-                        assert saved["config"] == config and saved["evaluations"] == config["budget"]
-                        validate_pair(saved, saved)
-                        completed = [a for a in ledger["attempts"] if a["method"] == name and a["case_index"] == i and a["status"] == "completed"]
-                        assert len(completed) == 1 and completed[0]["artifact_sha256"] == sha(path)
+                        validate_completed_case(saved, config, method)
+                        if recover_completed_artifact(ledger, name, i, saved, path):
+                            atomic_json(ledger_path, ledger)
+                            log.event("case_recovered", method=name, case_index=i,
+                                      artifact=str(path), new_objective_queries=0)
                         log.event("case_reused", method=name, case_index=i, artifact=str(path))
                         if reference is None: reference = saved
                         else: validate_pair(reference, saved)
@@ -310,7 +358,10 @@ def register_fresh(folder):
     for method in selection['methods'].values():
         if sha(folder/method['source']) != method['sha256']: raise ValueError('Frozen source changed')
     path = folder/'fresh/manifest.json'
-    if path.exists(): return read_json(path)
+    if path.exists():
+        existing = read_json(path)
+        verify_fresh_manifest(folder, existing)
+        return existing
     with EventLogger(folder/'operations') as log:
         audit = collect_used_seeds([ROOT/'configs',ROOT/'artifacts',ROOT/'results'], progress=lambda files,seeds: log.event('fresh_seed_inventory',files=files,reserved_seeds=seeds))
         forbidden = set(audit['reserved_seed_values']) | {640001,2026091608}

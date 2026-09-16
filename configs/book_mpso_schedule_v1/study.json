@@ -1,0 +1,17 @@
+{
+  "task": "book_mpso_schedule_v1",
+  "run_id": "20260916T154109Z",
+  "search_seed": 640001,
+  "maximum_generation_slots_including_seed": 9,
+  "max_logical_responses": 40,
+  "model": "gpt-6-astra",
+  "inner_effort": "xhigh",
+  "inner_effort_support": "highest supported by pinned Shinka/headless route; not Ultra",
+  "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+  "engine_profile": "configs/shinka/book_mpso_schedule_v1.json",
+  "analysis": "docs/studies/book_mpso_schedule_v1/analysis_specification.json",
+  "first_full_case_throughput_pending": true,
+  "physical_case_ceiling": 104,
+  "query_ceiling": 52000000,
+  "deadline_utc": "2026-09-16T18:41:09Z"
+}
