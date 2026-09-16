@@ -22,7 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from adaptive_swarms.artifacts import case_artifacts, read_json
 from adaptive_swarms.engine_progress import terminal_failure_generations
-from adaptive_swarms.joint_study import verify_registration
+from adaptive_swarms.joint_study import verify_registration, execution_fingerprint
+from adaptive_swarms.joint_alias_amendment import AMENDMENT_FILE, file_sha
 from adaptive_swarms.logging import atomic_json
 
 
@@ -279,9 +280,15 @@ def audit(folder, only_search=None, cache_record=None, archive_root=None):
     searches = [audit_search(identity, registration, cache) for identity in identities if only_search is None or identity["search_index"] == only_search]
     comparisons = {stage: audit_comparison(folder, stage, cache) for stage in ("validation", "final")}
     all_stages = searches + list(comparisons.values())
+    amendment_path = folder / AMENDMENT_FILE
+    amendment = read_json(amendment_path) if amendment_path.exists() else None
     return {"format": "joint-v3-durable-progress-audit-v1", "audited_at": datetime.now(timezone.utc).isoformat(),
             "status": "saved_evidence_checks_passed", "registration_signature": registration["signature"],
-            "frozen_scientific_sources_unchanged": True, "searches": searches, "comparisons": comparisons,
+            "original_registration_and_snapshots_preserved": True,
+            "current_scientific_sources_match_original": registration["execution_sources"] == execution_fingerprint(),
+            "active_controller_amendment": {"path": AMENDMENT_FILE, "sha256": file_sha(amendment_path),
+                "amendment_id": amendment["amendment_id"], "source_revision": amendment["source_revision"]} if amendment else None,
+            "searches": searches, "comparisons": comparisons,
             "path_resolution": {"mode": "archive_only" if archive_root else "registered_live_paths",
                                 "archive_root": str(Path(archive_root).resolve()) if archive_root else None,
                                 "registration_rewritten": False},
@@ -314,7 +321,9 @@ def main():
         if args.output.exists():
             raise FileExistsError(f"Preserving previous audit; choose a new output path: {args.output}")
         atomic_json(args.output, result)
-    print(json.dumps({"status": result["status"], "audited_at": result["audited_at"], "path_resolution": result["path_resolution"], **result["totals"],
+    print(json.dumps({"status": result["status"], "audited_at": result["audited_at"], "path_resolution": result["path_resolution"],
+                      **{key: result[key] for key in ("original_registration_and_snapshots_preserved", "current_scientific_sources_match_original", "active_controller_amendment")},
+                      **result["totals"],
                       "search_progress": [{"index": row["search_index"], "status": row["status"], "terminal_slots": row["terminal_slots"],
                                            "valid_descendants": row["valid_descendants"], "saved_cases": row["saved_cases"],
                                            "objective_queries": row["completed_checkpoint_objective_queries"], "active_generation": row["active_generation"],

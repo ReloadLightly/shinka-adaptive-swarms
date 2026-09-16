@@ -29,6 +29,8 @@ from .comparison import load_suite, regime_key, validate_pair, behavior_summary
 from .engine_progress import terminal_failure_generations
 from .joint_relocation import (joint_fingerprint, load_joint_policy, joint_policy_adapter,
                                annotate_joint_log, constant_joint_policy, validate_decision)
+from .joint_alias_amendment import (component_constant_action, verify_amendment,
+                                    verify_original_registration)
 from .logging import EventLogger, atomic_json
 from .simulator import run_case
 
@@ -54,7 +56,7 @@ def file_sha(path):
 
 def execution_fingerprint():
     values = joint_fingerprint()
-    for name in ("joint_study.py", "comparison.py", "artifacts.py"):
+    for name in ("joint_study.py", "joint_alias_amendment.py", "comparison.py", "artifacts.py"):
         values[f"src/adaptive_swarms/{name}"] = file_sha(Path(__file__).with_name(name))
     return values
 
@@ -160,15 +162,8 @@ def register_study(folder: Path, searches: dict[int, Path], engine_path: Path,
 
 
 def verify_registration(folder):
-    record = read_json(folder / "registration.json")
-    if record["execution_sources"] != execution_fingerprint():
-        raise ValueError("Scientific comparison sources changed after registration.")
-    for name, expected in record["runner_snapshot"].items():
-        if file_sha(folder / "runner_snapshot" / name) != expected:
-            raise ValueError(f"Frozen source snapshot changed: {name}")
-    fields = ("settings", "searches", "engine_config", "search_cases", "validation_cases", "execution_sources", "task_sources", "analysis")
-    if digest({key: record[key] for key in fields}) != record["signature"]:
-        raise ValueError("Registered prospective settings changed.")
+    record = verify_original_registration(folder)
+    verify_amendment(folder, record, execution_fingerprint())
     return record
 
 
@@ -362,6 +357,9 @@ def method_identity(method, config):
         constant = method["program"].get("proven_constant")
         if constant is not None:
             return _constant_identity({**constant, method["component"]: method["replacement"]}, config)
+        constant = component_constant_action(method, config)
+        if constant is not None:
+            return _constant_identity(constant, config)
         return {"kind": "joint_component", "sha256": method["program"]["sha256"],
                 "component": method["component"], "replacement": method["replacement"]}
     if kind == "joint_sampler":
@@ -435,6 +433,8 @@ def nominal_constant_action(method, config):
         action = method.get("proven_constant")
     elif kind == "component" and method["program"].get("proven_constant") is not None:
         action = {**method["program"]["proven_constant"], method["component"]: method["replacement"]}
+    elif kind == "component":
+        action = component_constant_action(method, config)
     elif kind == "joint_sampler":
         pairs = {tuple(pair) for case in method["regime_cases"][regime_key(config)] for pair in case["action_pairs"]}
         if len(pairs) == 1:

@@ -1,5 +1,10 @@
 # V3 constant-alias certification amendment
 
+The later [component-alias amendment](v3_component_alias_amendment.md) adds an
+explicit controller amendment chain and exact-source partial-output facts.
+It preserves this original constant-only rationale and all original records;
+the current execution order installs that amendment before certification.
+
 This is a narrow implementation amendment prepared after development search 0
 completed and before any protected validation, source-review freeze, selection,
 or final evaluation. It is **not** described as implementation committed before

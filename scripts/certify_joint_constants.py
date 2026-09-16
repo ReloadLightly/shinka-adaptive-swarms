@@ -3,7 +3,8 @@
 
 Candidate text is parsed, never imported or executed. Original shortlist bytes
 and registration remain preserved. The source-review freeze must happen after
-this explicit metadata amendment. Registered scientific sources are unchanged.
+this explicit metadata amendment. Original registrations/snapshots are retained;
+an explicitly installed controller amendment can authorize partial-output facts.
 """
 from __future__ import annotations
 
@@ -25,8 +26,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from adaptive_swarms.artifacts import read_json
 from adaptive_swarms.joint_study import assert_cases, verify_registration, verify_shortlists
+from adaptive_swarms.joint_alias_amendment import controller_reference, reviewed_output_proof, require_domain
 
-VERSION = "joint-v3-static-constant-certificate-v1"
+VERSION = "joint-v3-static-constant-certificate-v2"
 CERTIFICATE = "constant_alias_certification.json"
 ORIGINAL = "shortlists.pre-alias-certification.json"
 PROTECTED = ("source_review.json", "validation", "selection.json", "final_cases.json", "final", "analysis.json")
@@ -159,7 +161,7 @@ def require_unprotected(folder):
 
 def amended_shortlist(original, certificate):
     amended = deepcopy(original)
-    provenance = {key: certificate[key] for key in ("version", "certificate_id", "certified_at", "certifier", "original_shortlists_sha256", "domain")}
+    provenance = {key: certificate[key] for key in ("version", "certificate_id", "certified_at", "certifier", "original_shortlists_sha256", "domain", "controller_reference")}
     provenance.update(certificate_file=CERTIFICATE, original_shortlists_file=ORIGINAL)
     amended["constant_alias_certification"] = provenance
     for name, proof in certificate["program_proofs"].items():
@@ -168,6 +170,11 @@ def amended_shortlist(original, certificate):
             amended["programs"][name]["constant_proof"] = {
                 "certificate_id": certificate["certificate_id"], "certificate_file": CERTIFICATE,
                 "source_sha256": proof["source_sha256"], "domain": certificate["domain"]}
+    for name, proof in certificate["partial_output_proofs"].items():
+        amended["programs"][name]["proven_constant_outputs"] = proof
+        amended["programs"][name]["partial_output_proof"] = {
+            "certificate_id": certificate["certificate_id"], "certificate_file": CERTIFICATE,
+            "controller_reference": certificate["controller_reference"]}
     return amended
 
 
@@ -200,6 +207,9 @@ def certify(folder):
         registration = verify_registration(folder)
         assert_cases(registration["search_cases"], 4)
         assert_cases(registration["validation_cases"], 8)
+        for config in registration["search_cases"] + registration["validation_cases"]:
+            require_domain(config)
+        controller = controller_reference(folder)
         identity = certifier_identity()
         path, backup, record_path = folder / "shortlists.json", folder / ORIGINAL, folder / CERTIFICATE
         current = path.read_bytes()
@@ -210,6 +220,8 @@ def certify(folder):
                 raise ValueError("Existing proof certificate content changed.")
             if any(certificate["certifier"][key] != identity[key] for key in ("path", "sha256")) or certificate["registration_sha256"] != checksum((folder / "registration.json").read_bytes()):
                 raise ValueError("Existing certification cannot be changed under another certifier or registration.")
+            if certificate["controller_reference"] != controller:
+                raise ValueError("Existing certification is bound to another controller amendment chain.")
             # Later unrelated commits do not change an already recorded proof.
             # Verify its historical commit, retaining that revision verbatim.
             verify_recorded_certifier(certificate["certifier"])
@@ -229,7 +241,7 @@ def certify(folder):
         original = json.loads(current)
         if "constant_alias_certification" in original:
             raise ValueError("Certified shortlist lacks its immutable proof certificate.")
-        proofs = {}
+        proofs, partial_proofs = {}, {}
         for name, program in original["programs"].items():
             policy = (folder / program["policy"]).resolve()
             if not policy.is_relative_to(folder / "programs"):
@@ -237,6 +249,9 @@ def certify(folder):
             source = policy.read_bytes()
             if checksum(source) != program["sha256"]:
                 raise ValueError("Candidate source differs from its frozen SHA-256.")
+            partial = reviewed_output_proof(program["sha256"])
+            if partial is not None:
+                partial_proofs[name] = partial
             try:
                 action = prove_constant(source.decode())
             except UnsupportedProof as exc:
@@ -250,8 +265,9 @@ def certify(folder):
         certificate = {"version": VERSION, "certified_at": datetime.now(timezone.utc).isoformat(),
             "certifier": identity, "registration_sha256": checksum((folder / "registration.json").read_bytes()),
             "original_shortlists_sha256": checksum(current), "domain": {"particles_per_swarm": 5, "swarm_size_python_type": "int"},
-            "program_proofs": proofs, "protected_stages_existed": False,
-            "amendment": "Exact source proof metadata supersedes the original shortlist hash before source-review/validation freeze. Search ranks, sources, program set, selection rules and registered scientific sources are unchanged. Added after development search outcomes; not represented as pre-search implementation.",
+            "program_proofs": proofs, "partial_output_proofs": partial_proofs,
+            "controller_reference": controller, "protected_stages_existed": False,
+            "amendment": "Exact source proof metadata supersedes the original shortlist hash before source-review/validation freeze. Search ranks, candidate sources, program set and selection rules are unchanged. Original registration/snapshots remain intact; the active controller is bound by the explicit referenced amendment when present. Added after development search outcomes; not represented as pre-search implementation.",
             "telemetry": "Aliases retain the representative execution checkpoint unchanged. Nominal component interventions and proven action pairs come from method metadata; absent component_substitution/original_candidate_action fields are not fabricated.",
             "actions": {"candidate_calls": 0, "objective_queries": 0, "model_calls": 0}}
         certificate["certificate_id"] = checksum(json_bytes(certificate))
@@ -276,6 +292,7 @@ if __name__ == "__main__":
     result = certify(parser.parse_args().run)
     print(json.dumps({"certificate_id": result["certificate_id"],
                       "proved_programs": sum(p["status"] == "proved" for p in result["program_proofs"].values()),
+                      "partial_output_proofs": len(result["partial_output_proofs"]),
                       "original_shortlists_sha256": result["original_shortlists_sha256"],
                       "certified_shortlists_sha256": result["certified_shortlists_sha256"],
                       "actions": result["actions"]}, indent=2), flush=True)
