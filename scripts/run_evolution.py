@@ -26,6 +26,7 @@ from adaptive_swarms.storage_runner import ResumeRunnerMixin
 from adaptive_swarms.engine_config import resolve_engine, native_settings, feature_state, check_embedding_endpoint
 from adaptive_swarms.engine_runtime import install_engine_observers, install_sampling_observer
 from adaptive_swarms.engine_progress import terminal_failure_generations
+from adaptive_swarms.sprint_budget import SprintLimitReached
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
 EVALUATION_VERSION = "search_v1_score_reciprocal"
@@ -33,9 +34,10 @@ TASK_VERSIONS = {
     "adaptive_swarm": EVALUATION_VERSION,
     "relocation_allocation_v2": "relocation_allocation_v2_score_reciprocal",
     "joint_relocation_v3": "joint_relocation_v3_score_reciprocal",
+    "radius_velocity_sprint": "fixed_four_radius_velocity_sprint_score_reciprocal_v1",
 }
-TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py"}
-TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md"}
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -340,7 +342,7 @@ def run_native(args, run_dir: Path, log):
         verbose=True,
     )
     runner.configure_resume(log)
-    remove_observers = install_engine_observers(runner, log, run_dir)
+    remove_observers = install_engine_observers(runner, log, run_dir, logical_response_limit=args.logical_response_limit)
     log.event("engine_initialized", message="Native engine components initialized; subsequent events establish actual use",
               meta_created=runner.meta_summarizer is not None, novelty_created=runner.novelty_judge is not None,
               embedding_created=runner.embedding_client is not None, resolved_native_config=str(config_path))
@@ -373,11 +375,15 @@ def main() -> int:
     parser.add_argument("--heartbeat-seconds", type=float, default=20)
     parser.add_argument("--evaluation-timeout", default="01:00:00", help="Native per-candidate evaluator timeout HH:MM:SS")
     parser.add_argument("--proposal-timeout-seconds", type=float, default=3600)
+    parser.add_argument("--logical-response-limit", type=int, default=None,
+                        help="Optional run-local allowance including exposed native retries and batched meta responses; inherited unchanged on resume")
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
     if args.search_seed is not None and not 0 <= args.search_seed < 2**32:
         parser.error("--search-seed must be an integer from 0 through 2**32 - 1.")
+    if args.logical_response_limit is not None and args.logical_response_limit < 1:
+        parser.error("--logical-response-limit must be positive.")
     saved_manifest = None
     if args.resume:
         args.resume = args.resume.resolve()
@@ -392,6 +398,10 @@ def main() -> int:
         if args.search_seed is not None and args.search_seed != saved_seed:
             parser.error("--search-seed differs from the saved run; start a separate search replicate.")
         args.search_seed = saved_seed
+        saved_limit = saved_manifest.get("logical_response_limit")
+        if args.logical_response_limit is not None and args.logical_response_limit != saved_limit:
+            parser.error("--logical-response-limit differs from the saved run; a run-local allowance cannot silently change on resume.")
+        args.logical_response_limit = saved_limit
     args.task = args.task or "adaptive_swarm"
     if args.task not in TASK_VERSIONS:
         parser.error(f"Unknown saved task: {args.task}")
@@ -406,6 +416,7 @@ def main() -> int:
     if args.print_engine_config:
         print(json.dumps({"task": args.task, "evaluation_version": evaluation_version,
                           "search_seed": args.search_seed, "engine_config": args.engine_config,
+                          "logical_response_limit": args.logical_response_limit,
                           "features": engine_features, "model_calls": 0}, indent=2), flush=True)
         return 0
     default_results = ROOT / ("results/evolution" if args.task == "adaptive_swarm" else f"results/{args.task}/evolution")
@@ -453,12 +464,13 @@ def main() -> int:
                 active = manifest
             manifest.setdefault("engine_config", args.engine_config)
             manifest.setdefault("search_seed", args.search_seed)
+            manifest.setdefault("logical_response_limit", args.logical_response_limit)
             active["engine_features"] = engine_features
             active["execution_support_sha256"] = {
                 str(path.relative_to(ROOT)): file_hash(path)
                 for path in [Path(__file__), ROOT / "scripts/check_runtime.py",
                              *[ROOT / "src/adaptive_swarms" / name for name in
-                               ("engine_config.py", "engine_runtime.py", "engine_progress.py", "storage_runner.py", "native_storage.py")]]
+                               ("engine_config.py", "engine_runtime.py", "engine_progress.py", "storage_runner.py", "native_storage.py", "sprint_budget.py")]]
             }
             active["search_randomness"] = {"search_seed": args.search_seed,
                                           "seed_applied": args.search_seed is not None and not bool(args.resume),
@@ -471,6 +483,9 @@ def main() -> int:
             atomic_json(run_dir / "manifest.json", manifest)
             log.event("configuration", message="Declared native run configuration", task=args.task, model=args.model, inner_effort=args.effort,
                       effective_effort="unverified until Codex invocation", generation_target=target, seed_only=args.seed_only, resuming=bool(args.resume))
+            if args.logical_response_limit is not None:
+                log.event("sprint_model_allowance", message="Run-local receipt-based model allowance; hidden provider retries remain unobserved",
+                          logical_response_limit=args.logical_response_limit)
             log.event("engine_configuration", message=f"Native engine profile: {args.engine_config['profile_name']}", **engine_features)
             log.event("search_randomness", message="Native search sampling seed and resume scope", **active["search_randomness"])
             if not report["ready"]:
@@ -512,6 +527,12 @@ def main() -> int:
                     manifest.update({"status": active["status"], "latest_summary": summary})
                 log.event("run_complete", message="Native seed evaluation complete; no mutation calls" if args.seed_only else "Native search complete; inspect scientific outcomes and descendants", **summary)
                 return 0
+            except SprintLimitReached as exc:
+                summary = summarize_database(run_dir)
+                active.update(status="sprint_limit_reached", error=str(exc), **summary)
+                manifest.update(status="sprint_limit_reached", latest_summary=summary)
+                log.event("sprint_stopped", message=str(exc), scientific_failure=False, **summary)
+                return 77
             except InfrastructureError as exc:
                 active.update(status="infrastructure_failed", error=str(exc))
                 manifest["status"] = "infrastructure_failed"
@@ -534,7 +555,7 @@ def main() -> int:
                 signal.signal(signal.SIGTERM, previous_term)
                 stop.set()
                 monitor.join(timeout=3)
-                if active.get("status") in {"interrupted", "failed", "infrastructure_failed"}:
+                if active.get("status") in {"interrupted", "failed", "infrastructure_failed", "sprint_limit_reached"}:
                     import psutil
                     children = psutil.Process().children(recursive=True)
                     for child in children:

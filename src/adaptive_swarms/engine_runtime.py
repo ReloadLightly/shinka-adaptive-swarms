@@ -37,7 +37,15 @@ def install_sampling_observer(runner, log) -> None:
     database.sample_with_fix_mode_async = sample
 
 
-def install_engine_observers(runner, log, run_dir: Path) -> Callable[[], None]:
+def install_engine_observers(runner, log, run_dir: Path, logical_response_limit=None) -> Callable[[], None]:
+    from .sprint_budget import (LogicalResponseBudget, SprintLimitReached,
+                                install_native_retry_observer, native_request_context)
+    budget = LogicalResponseBudget(run_dir, logical_response_limit) if logical_response_limit is not None else None
+    def stop_for_allowance(error):
+        log.event("sprint_limit_reached", message=str(error), limit=budget.limit,
+                  reserved_logical_responses=budget.used, scientific_failure=False)
+        runner._fail_infrastructure(error)
+    remove_retry_observer = install_native_retry_observer(budget, stop_for_allowance) if budget else lambda: None
     class MigrationLogBridge(logging.Handler):
         def emit(self, record):
             message = record.getMessage()
@@ -77,12 +85,25 @@ def install_engine_observers(runner, log, run_dir: Path) -> Callable[[], None]:
                                "msg": kwargs.get("msg", args[1 if batch else 0] if len(args) > (1 if batch else 0) else None),
                                "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown"}
                     path = run_dir / "engine_calls" / (call_id + ".json")
-                    atomic_json(path, receipt)
+                    if budget:
+                        try:
+                            budget.reserve(path, receipt, requested)
+                        except SprintLimitReached as exc:
+                            stop_for_allowance(exc)
+                            raise
+                    else:
+                        atomic_json(path, receipt)
                     log.set_activity(f"{role}: waiting for {requested} native model response(s)")
                     log.event("engine_role_call_start", message=f"{role}: native {method_name}, {requested} response(s) requested",
                               call_id=call_id, role=role, requested_logical_responses=requested, receipt=str(path))
+                    token = native_request_context.set((receipt, path)) if budget else None
                     try:
                         result = await original(*args, **kwargs)
+                    except SprintLimitReached as exc:
+                        receipt.update(status="stopped_allowance", finished_at=datetime.now(timezone.utc).isoformat(),
+                                       error=str(exc), elapsed_seconds=time.monotonic() - started)
+                        atomic_json(path, receipt)
+                        raise
                     except Exception as exc:
                         receipt.update(status="failed", finished_at=datetime.now(timezone.utc).isoformat(), error=f"{type(exc).__name__}: {exc}", elapsed_seconds=time.monotonic() - started)
                         atomic_json(path, receipt)
@@ -90,6 +111,9 @@ def install_engine_observers(runner, log, run_dir: Path) -> Callable[[], None]:
                         if required:
                             degraded(f"Requested {role} model call failed; native error handling applies", role=role, call_id=call_id)
                         raise
+                    finally:
+                        if token is not None:
+                            native_request_context.reset(token)
                     responses = result if batch else [result]
                     valid = [response for response in responses or [] if response is not None and getattr(response, "content", None)]
                     receipt.update(status="returned", finished_at=datetime.now(timezone.utc).isoformat(), elapsed_seconds=time.monotonic() - started,
@@ -166,4 +190,7 @@ def install_engine_observers(runner, log, run_dir: Path) -> Callable[[], None]:
 
         runner._get_code_embedding_async = code_embedding
 
-    return lambda: migration_logger.removeHandler(migration_bridge)
+    def cleanup():
+        migration_logger.removeHandler(migration_bridge)
+        remove_retry_observer()
+    return cleanup
