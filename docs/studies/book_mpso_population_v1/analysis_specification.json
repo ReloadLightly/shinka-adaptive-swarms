@@ -1,0 +1,56 @@
+{
+  "version": "book_mpso_population_descriptive_v1",
+  "question": "Can native ShinkaEvolve improve chapter-aligned MPSO by adapting neutral population within each subswarm while retaining the published temporary-conversion schedule?",
+  "scenario": "5 dimensions, 10 peaks, severity 1, period 5000, correlation 0, nexcess 1, 500000 counted objective queries",
+  "development_cases": "Reuse the eight book_mpso_schedule_v1 development pairs; these are development data, not fresh evidence.",
+  "selection": "Minimum development mean offline error among complete valid native programs including the target-5 seed; ties by earlier generation, then source SHA256.",
+  "fixed_target_selection": "Minimum development mean among targets 3,5,7; ties by lower numeric target (3,5,7). All start at five and change by at most one on each detected event.",
+  "fresh_comparison_condition": "A distinct selected native descendant strictly improves development mean over target 5 AND the best tested fixed target; it is not established execution-equivalent to either comparator.",
+  "fresh_freeze_order": "Freeze exact selected and reference sources, selected fixed target, and this analysis before generating eight fresh environment/optimizer seed pairs excluding historical identities.",
+  "methods": [
+    "target_3",
+    "target_5",
+    "target_7",
+    "selected"
+  ],
+  "fresh_methods": [
+    "selected",
+    "target_5",
+    "development_selected_fixed_target"
+  ],
+  "execution_aliases": "Use one physical execution for established identical sources/execution rules. Preserve nominal labels and recorded proof; do not infer equivalence merely from similar mean error.",
+  "contrasts": [
+    "selected_minus_target_5",
+    "selected_minus_development_selected_fixed_target",
+    "target_3_minus_target_5",
+    "target_7_minus_target_5"
+  ],
+  "effect_direction": "Negative selected-minus-reference offline error favors the selected population rule.",
+  "case_weighting": "Equal weight for each of eight independent paired cases in the one chapter condition.",
+  "bootstrap": {
+    "resampling_unit": "Independent environment/optimizer case pair, preserving paired outcomes together.",
+    "resamples": 20000,
+    "seed": 2026091609,
+    "interval": "Descriptive 95% percentile interval of paired mean; numpy default_rng; no particle/update/environment-level resampling."
+  },
+  "reported_statistics": [
+    "every paired case",
+    "mean",
+    "median",
+    "sample standard deviation",
+    "minimum",
+    "maximum",
+    "win/loss/tie counts",
+    "descriptive bootstrap interval",
+    "leave-one-case-out means"
+  ],
+  "influence": "Retain every case. Report largest absolute case contribution, fraction of net mean where defined, and every completed-environment contribution; no outlier removal.",
+  "behavior": "Requested-target distributions at detected changes, realized-neutral-count distributions over subswarm updates, additions/removals, measured total particles and swarm counts over counted queries, query-category shares, spread of simultaneous neutral counts and how target requests differ between swarms. Give cases equal weight; pooled totals are labeled.",
+  "legacy_target_5_diagnostics": "Compatible historical target-5 traces may be augmented deterministically: five neutral and six total particles per extant swarm, zero resizing, request five on recorded detections. Do not invent missing observations; record reconstructed diagnostic fields separately from originally measured fields.",
+  "recovery": "Use saved actual query offsets after environmental boundaries. Exclude initialization environment; average environments within case then give cases equal weight. Never interpolate unrecorded immediate error.",
+  "population_trajectories": "Use counted objective evaluations as time axis. Traces share a registered 100-query grid; average cases at actual common recorded queries and show within-case neutral count spread. No simulation replay.",
+  "examples": "Prospectively recorded first update, first detected change and first updates reaching quarter, half and three-quarter budgets in each case. Also choose largest negative and largest positive completed-environment contributions, excluding initialization, with ties by case index then environment. These extreme examples are explicitly post hoc, not representative frequencies.",
+  "development_interpretation": "Repeated development cases informed selection; descriptive intervals do not correct selection bias and are not a continuation or significance gate.",
+  "fresh_interpretation": "Eight fresh independent pairs provide exploratory evidence in one chapter condition. A constant winner is population-size tuning. A conditional winner beating 3/5/7 does not establish superiority to all constants, the causal value of adaptation, historical table replication, or superiority of Shinka or an engine feature.",
+  "no_automatic_extensions": "No new regime, shorter horizon, baseline-validation study, repeated search, parameter sweep or fresh stage when trigger fails."
+}

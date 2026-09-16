@@ -1,0 +1,26 @@
+{
+  "task": "book_mpso_population_v1",
+  "run_id": "20260916T183731Z",
+  "search_seed": 650001,
+  "maximum_generation_slots_including_seed": 7,
+  "descendant_slots": 6,
+  "max_logical_responses": 36,
+  "model": "gpt-6-astra",
+  "inner_effort": "xhigh",
+  "inner_effort_support": "strongest supported by pinned subscription route, not inner Ultra",
+  "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+  "engine_profile": "configs/shinka/book_mpso_population_v1.json",
+  "analysis": "docs/studies/book_mpso_population_v1/analysis_specification.json",
+  "physical_case_ceiling": 96,
+  "query_ceiling": 48000000,
+  "physical_case_ceiling_if_target5_reused": 88,
+  "deadline_utc": "2026-09-16T20:37:31+00:00",
+  "fixed_target_tie_break": "mean error then numeric target ascending",
+  "throughput_basis": {
+    "prior_run": "book_mpso_schedule_v1/20260916T154109Z",
+    "first_full_reference_case_seconds": 14.889536574002705,
+    "previous_eight_descendant_native_utc_seconds": 1992.304719,
+    "projected_96_case_numerical_minutes_at_prior_throughput": 23.823258518404327,
+    "decision": "Retain six descendants; prior full-horizon throughput and model latency allow implementation, conditional fresh comparison and publication within120minutes. Review actual progress and stop launching with insufficient margin; never shorten horizon."
+  }
+}
