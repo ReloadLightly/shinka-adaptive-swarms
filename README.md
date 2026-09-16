@@ -10,14 +10,26 @@ This project studies whether ShinkaEvolve can discover better adaptation rules f
 
 **Review and next experiment:** an [independent V2 review](docs/review_v2_and_next.md)
 recomputed all 664 saved executions and the four reported paired intervals.
-The [proposed V3 study](docs/followup_joint_relocation_v3.md) evolves exact count
+The [V3 study](docs/followup_joint_relocation_v3.md) evolves exact count
 and relocation radius jointly, starting from the corrected baseline. A separate
 task and explicit research engine profile add native novelty filtering,
-meta-memory and island migration. Three searches and strong fixed controls are
-planned; **no V3 evolutionary campaign has run, and its comparison controller
-remains to be built**. The task passed a small native seed-only integration
-check with zero model calls; [preparation checks](docs/v3_preparation_checks.json)
-distinguish this from a research run.
+meta-memory and island migration. **The three-search campaign is running** after
+the prospective controller and resolved settings were committed as `a66e6c3`.
+Validation and final comparisons remain pending; no V3 superiority claim is
+made. See the [study record](docs/joint_relocation_v3.md),
+[frozen execution settings](docs/v3_execution_settings.md) and
+[local embedding calibration](docs/local_embeddings_v3.md). The original
+[preparation checks](docs/v3_preparation_checks.json) remain separate from
+research outcomes. The actual V3 native WebUI is on **http://localhost:8893**;
+existing listeners on ports 8890–8892 were preserved.
+
+```bash
+# Attach to the campaign without launching a duplicate controller
+bash scripts/progress.sh results/joint_relocation_v3/operations
+
+# Detailed first-search progress and native proposal logs
+bash scripts/progress.sh results/joint_relocation_v3/evolution/search_0_seed_610001
+```
 
 ## Abstract
 

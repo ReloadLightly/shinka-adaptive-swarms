@@ -39,6 +39,13 @@ simulation was executed. Distinct state-dependent programs are never aliased on
 observed score equality. This clarifies telemetry interpretation without changing
 the execution-equivalence rule.
 
+The protocol's 3,040-execution ceiling already counts the fixed grid as 21
+execution classes: `3 * 30 * 16 + (9 + 21) * 32 + 8 * 80`.
+Its phrase “before valid aliases” therefore means before **additional** source
+or final-method aliases. Counting every one of the 24 nominal grid labels would
+instead give 3,136 method-case labels. This accounting clarification does not
+authorize extra executions or change the 304-million-query research ceiling.
+
 Ports 8890, 8891 and 8892 were occupied by existing services and are preserved.
 The native V3 WebUI uses **8893** and the local embedding service uses **8910**.
 The WebUI points at `results/joint_relocation_v3/evolution`; its databases are the
