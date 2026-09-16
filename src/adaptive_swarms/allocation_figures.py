@@ -1,7 +1,7 @@
 """Measured v2 allocation figures; rendering never executes a candidate."""
 from __future__ import annotations
 
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 import hashlib
 from pathlib import Path
@@ -219,6 +219,77 @@ def _save_tracking(cases, method_labels, output):
     _save(fig, output / "tracking_diagnostics")
 
 
+def recovery_case_curve(case: dict) -> dict:
+    """Average saved post-change error at each measured offset within one case.
+
+    ``simulator.evaluate`` records ``current_error`` before incrementing its
+    environment counter at a boundary. DEAP's ``changePeaks`` leaves that error
+    intact, and ``__call__`` resets it on the next objective evaluation. Thus a
+    boundary query belongs to the completed environment, at offset ``period``.
+    This is best-discovered error within an environment, not the queried point's
+    fitness gap and not cumulative offline error. The initial environment is
+    excluded. No unrecorded offset, including the first post-change query, is
+    reconstructed from these sampled traces.
+    """
+    period = case["config"]["period"]
+    if period <= 0:
+        raise ValueError("Recovery curves require a positive change period")
+    measured = defaultdict(dict)
+    for point in case["trace"]:
+        evaluation = point["evaluations"]
+        environment = (evaluation - 1) // period
+        offset = (evaluation - 1) % period + 1
+        if point["environment"] != environment:
+            raise ValueError("Saved trace environment disagrees with query-boundary convention")
+        if environment == 0:
+            continue
+        if environment in measured[offset]:
+            raise ValueError("Duplicate measured recovery offset within an environment")
+        measured[offset][environment] = point["current_error"]
+    return {"environment_seed": case["config"]["environment_seed"],
+            "offsets": {offset: {"mean_current_error": float(np.mean(list(values.values()))),
+                                 "contributing_environments": len(values),
+                                 "environment_indices": sorted(values)}
+                        for offset, values in sorted(measured.items())}}
+
+
+def _save_recovery(cases, method_labels, output):
+    regimes = sorted({regime(case) for case in cases["evolved"]})
+    fig, axes = plt.subplots(2, 2, figsize=(12.0, 7.5), constrained_layout=True)
+    records = {}
+    for ax, group in zip(axes.flat, regimes):
+        curves = {method: [recovery_case_curve(case) for case in values if regime(case) == group]
+                  for method, values in cases.items()}
+        shared = set.intersection(*(set(curve["offsets"]) for values in curves.values() for curve in values))
+        if not shared:
+            raise ValueError(f"No shared measured post-change recovery offsets in {regime_label(group)}")
+        offsets = sorted(shared)
+        group_record = {"measured_offsets": offsets, "methods": {}}
+        for index, (method, values) in enumerate(curves.items()):
+            means = np.mean([[curve["offsets"][offset]["mean_current_error"] for offset in offsets]
+                             for curve in values], axis=0)
+            ax.plot(np.asarray(offsets) / 1000, means, marker="o", ms=4,
+                    color=COLORS[index % len(COLORS)], lw=1.6, label=method_labels[method])
+            group_record["methods"][method] = {"mean_current_error": means.tolist(),
+                "independent_cases": len(values), "case_curves": values,
+                "unshared_offsets_omitted": sorted(set.union(*(set(curve["offsets"]) for curve in values)) - shared)}
+        ax.set(title=regime_label(group), xlabel="Objective evaluations after change (thousands)",
+               ylabel="Mean best-discovered tracking error")
+        ax.grid(alpha=.16)
+        records[regime_label(group)] = group_record
+    axes.flat[0].legend(frameon=False, fontsize=8)
+    fig.suptitle("Recovery after environmental change · measured 5D tracking error", fontsize=14)
+    fig.supxlabel("Initial environment excluded. Each case averages its later environments, then independent cases receive equal weight.\n"
+                  "Markers are saved offsets; lines only join measurements. Boundary queries belong to the preceding environment.\n"
+                  "No unmeasured initial recovery is inferred; environments and checkpoints are repeated measurements.", fontsize=9)
+    _save(fig, output / "recovery_after_change")
+    return {"semantics": "trace.current_error: best-discovered error since the current environment began; initial environment excluded",
+            "offset_rule": "environment=(evaluations-1)//period; offset=((evaluations-1)%period)+1; verify saved environment",
+            "weighting": "Mean over environments within each case at each shared measured offset, then equal mean across independent cases",
+            "interpolation": "None in data; straight line segments connect measured means. No offset-zero extrapolation or uncertainty from repeated measurements.",
+            "regimes": records}
+
+
 def render_allocation_data(cases: dict[str, list[dict]], contrasts: dict, targets: dict,
                            method_labels: dict, output: Path, provenance: dict):
     """Render an already loaded, verified, completed final comparison."""
@@ -228,12 +299,14 @@ def render_allocation_data(cases: dict[str, list[dict]], contrasts: dict, target
     distributions = _save_distributions(cases, targets, output)
     state = _save_state(cases, output)
     _save_tracking(cases, method_labels, output)
+    recovery = _save_recovery(cases, method_labels, output)
     provenance.update(generated_at=datetime.now(timezone.utc).isoformat(),
         primary_and_mechanism=paired, distributions=distributions, observed_state=state,
+        recovery_after_change=recovery,
         interpretation="Measured 5D final outcomes. No model calls, candidate executions or objective evaluations. Responses/checkpoints are repeated measurements, not independent cases.",
         outputs_sha256={path.name: hashlib.sha256(path.read_bytes()).hexdigest()
                         for stem in ("primary_mechanism_effects", "allocation_distributions",
-                                     "allocation_by_observed_state", "tracking_diagnostics")
+                                     "allocation_by_observed_state", "tracking_diagnostics", "recovery_after_change")
                         for path in (output / f"{stem}.png", output / f"{stem}.svg")})
     atomic_json(output / "allocation_figure_provenance.json", provenance)
     print(f"[{provenance['generated_at']}] Saved measured v2 allocation figures to {output}; candidate executions: 0", flush=True)
