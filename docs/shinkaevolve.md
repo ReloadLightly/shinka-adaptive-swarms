@@ -32,6 +32,18 @@ security boundary against deliberately inspecting other files or process state.
 
 ## Install and launch
 
+The separate [allocation-v2 study](relocation_allocation_v2.md) evolves
+`choose_relocation_count(observation) -> int` in
+`tasks/relocation_allocation_v2/initial.py`. Its fixed adapter holds radius
+multiplier 2, memory reevaluation and retained velocity constant. A new v2
+reproduction uses `--task relocation_allocation_v2 --generations 20`; its default
+suite and output root are `configs/relocation_allocation_v2/search.json` and
+`results/relocation_allocation_v2/evolution`. V1 remains the default task.
+Resumption infers the saved task, verifies its frozen sources and rejects a
+conflicting explicit task. Validation and final selection use the separate
+staged commands in the v2 report; changing a v1 suite alone does not implement
+that protocol.
+
 From the repository, in an activated Python environment:
 
 ```bash

@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "two_particle_relocation",
+  "patch_description": "Test constant allocation of two particles. The current policy executed exactly three relocations in every response, with mean offline error 3.36 and worst-case error 5.56; substantial interval-end errors remained in several cases. These measurements do not establish whether more relocation would help.\nRelocating two particles preserves ordinary PSO motion for three particles while still sampling around the remembered best. With retained velocities and reevaluated personal memories, this could reduce disruptive repositioning while maintaining local exploration. Detection and memory costs remain unchanged. This tests a simpler competing allocation hypothesis without introducing unsupported state thresholds; improvement requires measurement at the same evaluation budget.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:42:57.635180",
+  "llm_cost": 0.12414,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,22 @@
+<NAME>
+preserve_spread_during_recovery
+</NAME>
+<DESCRIPTION>
+Test relocating two particles when the swarm already spans the relocation radius and fitness loss does not exceed recent improvement. Three particles then continue ordinary PSO motion, potentially preserving useful search directions while two provide relocation exploration.
+The current policy mostly executes four relocations, yet cases 009 and 010 retain interval-end errors of 3.33 and 2.74. These diagnostics do not establish that increasing allocation improves recovery. This proposal instead tests whether the existing three-particle fallback unnecessarily disrupts dispersed, recovering swarms. The four-particle branch remains unchanged. Improvement over the measured mean error of 3.21 requires evaluation; this is a competing allocation hypothesis.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 3
+    if diameter < relocation_radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+=======
+    count = 3
+    if diameter < relocation_radius and loss > improvement:
+        count = 4
+    elif diameter >= relocation_radius and loss <= improvement:
+        count = 2
+    return min(count, swarm_size)
+>>>>>>> REPLACE
+</DIFF>

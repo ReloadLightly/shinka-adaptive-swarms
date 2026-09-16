@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "conservative_coverage_crossover",
+  "patch_description": "Retain count three as the default because it achieved lower measured error (3.36 versus 3.81). Borrow the coverage rule, but reduce allocation to two only for broad swarms without material fitness deterioration. Remove the four-particle branch, which dominated the adaptive parent's executed allocations. Per-case recovery results were mixed and evaluation overhead was similar, so they do not establish which branch caused the difference. This proposal tests a narrower allocation adjustment; improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:44:18.581945",
+  "llm_cost": 0.16405,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

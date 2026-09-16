@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "severity_gated_partial_recovery",
+  "patch_description": "Restrict reduced allocation to the larger-radius regime, but allow two relocations when recent improvement covers at least half the observed loss. This tests whether partial recovery supports preserving more ordinary PSO motion.\nThe previous radius-gated policy achieved mean error 3.26 versus 3.36 currently. In case_006, it reduced error from 5.224 to 3.169 and interval-end error from 4.313 to 2.212. However, larger-radius cases executed count two in only about 7\u201314% of responses, and case_009 retained interval-end error 3.401. Broadening that branch tests a competing recovery hypothesis; these diagnostics do not establish that fewer relocations will improve performance. The proposal requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:54:06.061611",
+  "llm_cost": 0.19748,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

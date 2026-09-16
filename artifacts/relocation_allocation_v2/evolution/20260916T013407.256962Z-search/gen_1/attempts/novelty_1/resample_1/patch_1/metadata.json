@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "coverage_gated_allocation",
+  "patch_description": "Replace constant allocation with a three-stage rule: normalize swarm spread, classify observed deterioration, and select a bounded integer count. Relocate four particles when a compact swarm loses fitness, two when existing spread is broad, and three otherwise. The larger recovery gaps in severity-three cases motivate testing this coverage hypothesis; the supplied feedback establishes only count-three performance, so improvement remains unverified.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:38:05.303483",
+  "llm_cost": 0.12808,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

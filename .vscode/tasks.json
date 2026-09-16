@@ -5,6 +5,7 @@
     {"label":"Research: reconstruct baseline", "type":"shell", "command":".venv/bin/python -u -m adaptive_swarms baseline --config configs/reproduction.json", "problemMatcher":[]},
     {"label":"Research: ShinkaEvolve", "type":"shell", "command":".venv/bin/python -u scripts/run_evolution.py --generations 20", "problemMatcher":[], "presentation":{"reveal":"always","panel":"dedicated"}},
     {"label":"Research: native WebUI", "type":"shell", "command":"bash scripts/webui.sh", "problemMatcher":[], "presentation":{"reveal":"always","panel":"dedicated"}},
-    {"label":"Research: attach live progress", "type":"shell", "command":"bash scripts/progress.sh", "problemMatcher":[], "presentation":{"reveal":"always","panel":"dedicated"}}
+    {"label":"Research: attach live progress", "type":"shell", "command":"bash scripts/progress.sh", "problemMatcher":[], "presentation":{"reveal":"always","panel":"dedicated"}},
+    {"label":"Research: allocation v2 native WebUI", "type":"shell", "command":"bash scripts/webui.sh results/relocation_allocation_v2/evolution 8889", "problemMatcher":[], "presentation":{"reveal":"always","panel":"dedicated"}}
   ]
 }

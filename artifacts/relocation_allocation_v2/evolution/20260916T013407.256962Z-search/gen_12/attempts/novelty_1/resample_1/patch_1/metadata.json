@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "broaden_recovery_credit",
+  "patch_description": "Test reducing relocation to two particles when recent improvement covers at least one quarter of the observed loss in the larger-radius regime. Retained velocities and refreshed memories may let ordinary PSO motion contribute enough recovery to justify relocating fewer particles.\nDoubling recovery credit previously reduced mean offline error from 3.26 to 3.23, although individual cases worsened. Case_013 improved from 3.0421 to 2.2584, with interval-end error falling from 1.0833 to 0.4625. Executed count-two responses remained uncommon, and detection overhead stayed near 16%. This motivates testing a broader threshold, without assuming that more frequent count-two allocation will improve performance. The proposed multiplier is untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:55:18.221344",
+  "llm_cost": 0.19665,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

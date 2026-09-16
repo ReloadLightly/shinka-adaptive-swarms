@@ -1,0 +1,15 @@
+<NAME>
+severity_gated_partial_recovery
+</NAME>
+<DESCRIPTION>
+Restrict reduced allocation to the larger-radius regime, but allow two relocations when recent improvement covers at least half the observed loss. This tests whether partial recovery supports preserving more ordinary PSO motion.
+The previous radius-gated policy achieved mean error 3.26 versus 3.36 currently. In case_006, it reduced error from 5.224 to 3.169 and interval-end error from 4.313 to 2.212. However, larger-radius cases executed count two in only about 7–14% of responses, and case_009 retained interval-end error 3.401. Broadening that branch tests a competing recovery hypothesis; these diagnostics do not establish that fewer relocations will improve performance. The proposal requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 2 if recovery_credit >= loss else 3
+=======
+    larger_radius = float(observation["default_radius"]) > 1.0
+    count = 2 if larger_radius and 2.0 * recovery_credit >= loss else 3
+>>>>>>> REPLACE
+</DIFF>

@@ -67,7 +67,7 @@ def render(run: Path, output: Path) -> dict:
     seed = next((p for p in points if p["generation"] == 0), None)
     if seed:
         ax.axhline(seed["mean_offline_error"], color="#d47b34", linestyle="--",
-                   linewidth=1.2, label="Fixed radius 2 / count 3 seed" if task == "relocation_allocation_v2" else "Corrected baseline seed")
+                   linewidth=1.2, label="Radius multiplier 2 / count 3 seed" if task == "relocation_allocation_v2" else "Corrected baseline seed")
     best = min(points, key=lambda p: p["mean_offline_error"])
     ax.scatter([best["generation"]], [best["mean_offline_error"]],
                marker="*", color="#187b80", edgecolor="white", s=180, zorder=5)

@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-09-16T01:52:50.856121+00:00",
+  "purpose": "Exclude focused code-diagnostic seed values from either final seed role as well as the research manifests. These reservations are not new research cases or measured outcomes.",
+  "sources": [
+    "tests/test_relocation_allocation.py",
+    "tests/test_allocation_study.py",
+    "tests/test_simulator.py and simulator defaults"
+  ],
+  "reserved_values": [
+    {
+      "environment_seed": 0
+    },
+    {
+      "environment_seed": 1
+    },
+    {
+      "environment_seed": 7
+    },
+    {
+      "environment_seed": 11
+    },
+    {
+      "environment_seed": 12
+    },
+    {
+      "environment_seed": 17
+    },
+    {
+      "environment_seed": 100
+    },
+    {
+      "environment_seed": 101
+    },
+    {
+      "environment_seed": 102
+    },
+    {
+      "environment_seed": 103
+    },
+    {
+      "environment_seed": 500
+    },
+    {
+      "environment_seed": 501
+    },
+    {
+      "environment_seed": 502
+    },
+    {
+      "environment_seed": 503
+    },
+    {
+      "environment_seed": 801
+    },
+    {
+      "environment_seed": 802
+    },
+    {
+      "environment_seed": 811
+    },
+    {
+      "environment_seed": 812
+    },
+    {
+      "environment_seed": 900
+    }
+  ],
+  "role_note": "The final generator unions both seed roles; listing values under environment_seed reserves them for both roles."
+}

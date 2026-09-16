@@ -1,0 +1,9 @@
+{
+  "reviewer": "Supervising Codex source inspection before validation",
+  "notes": "Read all three exact frozen sources (generations 13, 9, 7). Each is a pure choose_relocation_count function using only swarm_size, default_radius, swarm_diameter, fitness_drop and recent_improvement plus built-in int/float/min/max. No imports, filesystem/network access, benchmark internals, seed access, external state or held-out inputs. Every branch returns a Python integer within 0..swarm_size for the declared five-particle interface. All use default count3, conditional count4. Generation13 additionally uses known default_radius scale to choose its diameter threshold. Sources approved for the unchanged prescribed validation.",
+  "approved_source_sha256": [
+    "82252a5a115b1007882e633bf08ee35432f1318422b2aded08d7ebc3e097b0c9",
+    "3adc332acb54193be88a6f8b5ff1013bdf2bbd38a314bb98bcd524b44e7ac95e",
+    "a2a16694afc7096a09c1143cb498d9d67e98860b61f247b2dfa267fd05d8bec0"
+  ]
+}

@@ -4,13 +4,13 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (16 September 2026):** crash recovery confirmed the native 20-generation search had already completed; all 80 search cases were preserved without reevaluation. The pending independent comparison and mechanism study are now complete: eight cases × four methods × 100,000 objective evaluations. The selected program improved search error but did **not** outperform the corrected baseline on the independent suite. The native WebUI is restored. See [results and mechanism analysis](docs/comparison.md) and [recovery and live terminal commands](docs/recovery.md).
+**Status (16 September 2026):** the allocation-v2 protocol is complete: one native 20-slot search, validation selection and 40 fresh final comparisons, totaling **664 method cases / 66.4 million objective evaluations**. The evolved allocation beat the validation-selected constant, but did **not establish useful current-state dependence** and had higher mean error than the original corrected baseline. All v1 results are preserved. See [the v2 report](docs/relocation_allocation_v2.md), [v1 findings](docs/comparison.md) and [recovery record](docs/recovery.md). The native v2 WebUI is live at **http://localhost:8889**; v1 remains on port 8888.
 
-**Proposed follow-up:** [When should a swarm relocate more particles?](docs/followup_relocation_allocation_v2.md) isolates particle allocation at a fixed radius rule, compares evolved decisions with all six constant counts, and uses separate search, validation and final cases. The design and prospective manifests are saved; v2 has not run.
+**Prospective protocol:** [When should a swarm relocate more particles?](docs/followup_relocation_allocation_v2.md) was committed before v2 execution. Search, validation and final inputs are separate; source, selection and control distributions were frozen before final seed generation.
 
 ## Abstract
 
-Collective search must preserve useful information while responding to environmental change. We reconstructed a corrected multi-swarm particle swarm optimizer and used native ShinkaEvolve to generate 19 descendants through subscription-authenticated Codex. The selected program adjusts relocation radius and particle fraction using observed fitness loss and swarm spread. Its mean search offline error fell from 2.7751 to 1.9703, but its independent mean error was 3.7857 versus the baseline's 3.7230. A parent ablation and a fixed-response control provide no clear evidence that the evolved observation dependence is beneficial on this small suite. The contribution is an executable, traceable study of a search improvement that did not establish generalization, with matched objective budgets and preserved lineage.
+Collective search must preserve useful information while responding to environmental change. We reconstructed a corrected multi-swarm particle swarm optimizer and conducted two native ShinkaEvolve searches through subscription-authenticated Codex. V1 improved search error without an independent advantage. V2 isolates the number of particles relocated at a fixed radius rule. After separate validation, its selected program had final mean offline error **3.5541**, versus **3.9806** for the validation-selected constant count two. The paired difference was **−0.4265**, with a stratified bootstrap 95% interval **[−0.6903, −0.1829]** across 40 fresh cases. However, its difference from a control sampling the same validation allocation mixture without current-state information was **+0.0841 [−0.1787, +0.4096]**. The original corrected baseline had lower mean error, **3.2146**. This supports an advantage over the selected constant within these regimes, while leaving the value of conditional allocation unestablished. Matched budgets, complete lineage, frozen selection and explicit limitations make the mixed result reproducible.
 
 ## Research question
 
@@ -38,6 +38,16 @@ The benchmark exposes evaluated objective values to the optimizer. Its latent pe
 ShinkaEvolve modifies `choose_response(observation)` in `tasks/adaptive_swarm/initial.py` through its native proposal, evaluation, island archive and parent-selection workflow. The initial configuration enables measured text feedback and disables embedding novelty checks, meta-recommendations and prompt evolution. The program controls relocation radius, the fraction of particles relocated, whether remembered solutions are reevaluated or reset, and whether velocity is reset after detected change. It receives optimizer-visible state such as fitness deterioration, recent improvement, swarm diameter and prior response information. Candidate programs are executed against the benchmark and archived with feedback and ancestry. The measured landscape and result accounting remain outside the candidate interface; Python execution is not a security sandbox, so selected programs must also be inspected for prohibited access.
 
 The primary outcome is **offline error**: the average gap between the current optimum and the best solution found since the latest environmental change. Lower values indicate better tracking. Native selection maximizes `1 / (1 + mean_offline_error)`; the research report retains the underlying error, recovery trajectories, swarm counts and evaluation use. [Scientific context](docs/evolution_context.md) is supplied to the mutation prompt and saved with each new run.
+
+The separate [v2 allocation study](docs/relocation_allocation_v2.md) evolves an
+integer count from zero to five while holding radius multiplier 2, memory
+reevaluation and retained velocity fixed. It uses 16 search cases, 16 validation
+cases and 40 fresh final cases, all at 100,000 evaluations. Validation selects
+one of the three best source-distinct programs and one global constant among
+all six counts. A frozen control samples the selected program's validation
+allocation mixture within each known regime, using an independent RNG and no
+current-state information. That comparison also changes temporal dependence;
+it does not isolate a single causal variable perfectly.
 
 ## Reproduction
 
@@ -89,12 +99,18 @@ bash scripts/webui.sh results/evolution
 # Inspect the published native search without making model calls
 bash scripts/webui.sh artifacts/evolution
 
+# Inspect the separate allocation-v2 native archive on its own port
+bash scripts/webui.sh artifacts/relocation_allocation_v2/evolution 8889
+
 # Reconnect to timestamped progress without launching another controller
 bash scripts/progress.sh
 
 # Regenerate the scientific figures from completed measurements
 python -m adaptive_swarms figures --run artifacts/reconstruction_v1 --output assets/reconstruction
 python scripts/plot_evolution.py --run artifacts/evolution/20260915T101024.562418Z-search
+python scripts/plot_allocation_study.py \
+  --run artifacts/relocation_allocation_v2/study_20260916 \
+  --output assets/relocation_allocation_v2
 ```
 
 Run only one WebUI command on a given port. The native WebUI exposes candidate source, measured fitness, ancestry and the archive as it grows. Terminal output identifies active stages, proposal/case identities, measured outcomes and saved paths. Evaluation progress is relayed live; a 20-second heartbeat identifies waiting during model calls. Each run saves `run.log`, `events.jsonl`, manifests, case data and the native `programs.sqlite`. This is operational logging, not a promise of streamed model reasoning. Recovery verification passed HTTP, database, browser navigation and source/ancestry checks. No browser page errors occurred; the native Plotly dependency emitted a deprecation warning. See [native integration](docs/shinkaevolve.md), [the research plan](docs/research_plan.md) and [the Codex handoff](docs/codex_handoff.md).
@@ -132,6 +148,56 @@ Historical [artifact compatibility and rollback verification](docs/storage.md)
 remain available.
 
 ## Results
+
+### Allocation v2: frozen final comparison
+
+Each method received the same **40 fresh paired landscapes × 100,000 queries**,
+with ten cases in each severity/period regime. Lower offline error is better.
+
+| Frozen method | Mean final offline error |
+|---|---:|
+| Original corrected baseline: radius multiplier 1, all five relocated | **3.2146** |
+| Radius multiplier 2, count three | 3.6267 |
+| Validation-selected constant: radius multiplier 2, count two | 3.9806 |
+| Validation-selected evolved program: generation 13 | **3.5541** |
+| Frozen control without current-state information | 3.4700 |
+
+Generation 13 normally chooses three particles, or four when the swarm is
+compact and observed fitness loss exceeds recent improvement. Its compactness
+threshold also depends on the known severity scale. It improved 28 of 40 cases
+against the selected constant; the primary mean difference was
+**−0.4265 [−0.6903, −0.1829]**, with stratified SE **0.1366**. The mechanism
+contrast was **+0.0841 [−0.1787, +0.4096]**: this does not establish either a
+benefit from current-state dependence or equivalence to the control. The control
+also changes temporal dependence, so it is not a perfect single-variable ablation.
+
+The selected constant was best on validation, not an oracle chosen on final
+outcomes. Its poorer final result illustrates uncertainty in validation selection;
+the experiment does not show that the program beats every constant allocation.
+Contextually, evolved minus the original corrected baseline was
+**+0.3395 [+0.0531, +0.6596]**; secondary intervals are descriptive.
+
+![Measured final allocation effects and uncertainty](assets/relocation_allocation_v2/primary_mechanism_effects.png)
+
+*Five-dimensional experiment. Dots are independent paired cases; intervals use
+20,000 paired bootstrap resamples within four equally weighted regimes.*
+
+![Frozen and observed particle allocation distributions](assets/relocation_allocation_v2/allocation_distributions.png)
+
+*Each case receives equal weight. Control frequencies can differ through sampling
+and changed trajectories. All allocation methods retain radius multiplier 2.*
+
+The study completed **320 search, 144 validation and 200 final method cases**,
+with no identical-method aliases needed. Nineteen native mutation calls used the
+existing subscription route; validation and final stages made no model calls.
+All prior published files passed their hash inventory before v2 publication.
+The [full report](docs/relocation_allocation_v2.md) includes selection chronology,
+regime and case effects, measured recovery, query allocation and limitations.
+One retained search-feedback label described the adapter's encoding fraction
+as a relocated fraction. Exact count distributions, execution and fitness were
+correct, but possible influence on mutation interpretation is explicitly disclosed.
+
+### Preserved v1 study
 
 | Evidence | Current status |
 |---|---|
@@ -173,7 +239,16 @@ Raw data, logs and archive databases are committed under [artifacts](artifacts/R
 
 ## Discussion
 
-The search successfully generated executable, traceable adaptation rules, but its best search score did not establish an independent performance advantage. The compactness mechanism helped some fresh cases and hurt others; its small pooled effect is inconclusive. A fixed response performed better than the selected program in this suite, so the observations do not support attributing value to the added adaptation complexity. Floating-point rounding at the simulator's `ceil(fraction × 5)` boundary also affects how many particles actually move; the study retains that executed behavior and reports actual relocation counts.
+V2 provides evidence of a final advantage over the validation-selected constant
+count two, but does not establish useful state dependence or overall superiority
+to the original corrected optimizer. The frozen action-mixture control had lower
+mean error than the evolved program, with an interval spanning gains and losses.
+The baseline also outperformed the evolved allocation contextually. One native
+search, a fixed radius rule and four known regimes limit the scope; neither
+selection instability nor an inconclusive mechanism contrast justifies extending
+the experiment until a favorable result appears.
+
+In v1, the search successfully generated executable, traceable adaptation rules, but its best search score did not establish an independent performance advantage. The compactness mechanism helped some fresh cases and hurt others; its small pooled effect is inconclusive. A fixed response performed better than the selected program in this suite, so the observations do not support attributing value to the added adaptation complexity. Floating-point rounding at the simulator's `ceil(fraction × 5)` boundary also affects how many particles actually move; the study retains that executed behavior and reports actual relocation counts.
 
 This study concerns dynamic optimization in a synthetic environment. Applications to robotics, resource allocation or policy require their own models and evidence. Differences in random number generation, boundary handling, change timing, particle conversion and objective-query accounting may affect numerical comparability with the 2008 results.
 

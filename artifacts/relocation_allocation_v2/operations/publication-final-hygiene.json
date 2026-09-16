@@ -1,0 +1,78 @@
+{
+  "audited_at": "2026-09-16T02:26:04.744483+00:00",
+  "scope": [
+    "artifacts/relocation_allocation_v2/study_20260916",
+    "results/relocation_allocation_v2/operations"
+  ],
+  "audit_mode": "Read-only bounded hygiene review; no scientific data or archive changes; this report is the only written publication artifact. The separate native-search archive was audited previously.",
+  "passed": true,
+  "checks": {
+    "no_secret_pattern_matches": true,
+    "no_raw_auth_or_credential_files": true,
+    "no_uploaded_document_or_book_formats": true,
+    "no_transient_os_or_temp_files": true,
+    "no_symlinks": true,
+    "new_study_unchanged_during_audit": true,
+    "preexisting_v1_manifest_matches_pinned_commit": true,
+    "all_v1_artifacts_match_preexisting_manifest_except_readme": true
+  },
+  "files_scanned": 409,
+  "bytes_scanned_on_disk": 44687601,
+  "decoded_bytes_scanned": 118216011,
+  "scope_file_counts": {
+    "artifacts/relocation_allocation_v2/study_20260916": 365,
+    "results/relocation_allocation_v2/operations": 44
+  },
+  "file_suffix_counts": {
+    ".json": 34,
+    ".gz": 344,
+    ".jsonl": 2,
+    ".log": 11,
+    ".csv": 1,
+    ".py": 7,
+    ".png": 5,
+    ".pid": 4,
+    ".md": 1
+  },
+  "secret_pattern_categories": [
+    "openai_secret_key",
+    "github_secret_token",
+    "aws_access_key",
+    "private_key_pem",
+    "jwt_token",
+    "authorization_bearer_value",
+    "oauth_token_json_value",
+    "credential_environment_assignment",
+    "shell_environment_dump_marker"
+  ],
+  "possible_secret_findings_paths_and_counts_only": [],
+  "raw_auth_or_credential_paths": [],
+  "book_document_paths": [],
+  "temporary_os_paths": [],
+  "files_changed_by_concurrent_writers_during_audit": [
+    "results/relocation_allocation_v2/operations/webui.log"
+  ],
+  "v1_preservation": {
+    "manifest": "artifacts/MANIFEST.json",
+    "manifest_reference_commit": "28c57e3",
+    "manifest_sha256": "9fc6089203495f210947df00e81d37960e2c0e1d42cb698baccf370ed598c0a8",
+    "verified_files": 548,
+    "intentional_exception_paths": [
+      "artifacts/README.md"
+    ],
+    "missing_paths": [],
+    "mismatched_paths": []
+  },
+  "retained_operational_artifacts": "Timestamped controller/evaluation/WebUI logs, browser screenshots and structured evidence, launch metadata and process IDs are intentional experiment-operation records.",
+  "limitations": "Pattern matching is bounded and cannot prove absence of every possible secret encoding. No potential secret values were printed or included in this report. No external authentication files were accessed.",
+  "concurrent_changes_rescanned": [
+    {
+      "path": "results/relocation_allocation_v2/operations/webui.log",
+      "bytes": 161097,
+      "sha256": "14e9e5eb7d146b7e466bced633b4bd44c8c65a1e1836e32266b37e4c724af451",
+      "possible_secret_match_count": 0,
+      "reason": "Live WebUI server appended normal request evidence during the bounded scan; current bytes rescanned without modifying server or log."
+    }
+  ],
+  "concurrent_rescan_at": "2026-09-16T02:26:28.227228+00:00"
+}

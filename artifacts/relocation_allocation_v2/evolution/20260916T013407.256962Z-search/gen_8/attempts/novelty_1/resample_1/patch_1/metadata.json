@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "constant_four_allocation",
+  "patch_description": "Test whether consistently relocating four particles improves on conditional allocation. The current rule reduced mean offline error from 3.36 to 3.21 and executed four relocations in roughly 58\u201382% of responses per case. However, improvements were uneven: case_003 improved substantially, while case_006 worsened and retained interval-end error 3.73. Detection overhead remained near 16%.\nThese observations support testing a higher constant allocation but do not establish that the state condition helps. Remove the diameter and loss gates, giving every response four relocated particles while the remaining particle continues ordinary PSO. This isolates a competing explanation for the current gain and requires evaluation before claiming improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:50:34.874692",
+  "llm_cost": 0.20231,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

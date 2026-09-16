@@ -1,0 +1,30 @@
+<NAME>
+coverage_deficit
+</NAME>
+<DESCRIPTION>
+Count three achieved lower mean error than count two (3.36 versus 3.70), but individual cases and recovery diagnostics show mixed effects. Executed distributions confirm exact allocations; they do not establish why three performed better.
+This proposal retains three as its default and adds a fourth relocation when swarm diameter is smaller than the fixed relocation radius and fitness loss exceeds recent improvement. The hypothesis is that contracted, struggling swarms benefit from additional spatial exploration. Other particles continue ordinary PSO motion. This deterministic proposal uses only public observations; improvement remains to be measured.
+</DESCRIPTION>
+<CODE>
+```python
+"""V2 allocation seed: relocate three particles after a detected change.
+The fixed adapter controls radius, memory, velocity, integer validation and
+count-to-fraction conversion. The numerical simulator is outside this program.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation_count(observation: dict) -> int:
+    """Allocate an extra relocation for contracted swarms losing progress."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    radius = max(0.0, 2.0 * float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = float(observation["fitness_drop"])
+    improvement = max(0.0, float(observation["recent_improvement"]))
+    count = 3
+    if diameter < radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+# EVOLVE-BLOCK-END
+```
+</CODE>

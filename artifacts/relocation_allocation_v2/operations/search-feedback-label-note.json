@@ -1,0 +1,80 @@
+{
+  "recorded_at": "2026-09-16T01:54:57.614594+00:00",
+  "run": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search",
+  "classification": "retained auxiliary search-feedback label deviation",
+  "discovered_during": "active native search; before validation selection and final comparisons",
+  "mapping": [
+    {
+      "requested_count": 0,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0,
+      "actual_allocated_fraction": 0.0,
+      "actual_minus_encoding": 0
+    },
+    {
+      "requested_count": 1,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0.1,
+      "actual_allocated_fraction": 0.2,
+      "actual_minus_encoding": 0.1
+    },
+    {
+      "requested_count": 2,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0.3,
+      "actual_allocated_fraction": 0.4,
+      "actual_minus_encoding": 0.1
+    },
+    {
+      "requested_count": 3,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0.5,
+      "actual_allocated_fraction": 0.6,
+      "actual_minus_encoding": 0.1
+    },
+    {
+      "requested_count": 4,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0.7,
+      "actual_allocated_fraction": 0.8,
+      "actual_minus_encoding": 0.1
+    },
+    {
+      "requested_count": 5,
+      "swarm_size": 5,
+      "fraction_passed_to_simulator": 0.9,
+      "actual_allocated_fraction": 1.0,
+      "actual_minus_encoding": 0.1
+    }
+  ],
+  "general_formula": "actual allocation fraction = executed_count/swarm_size; encoding = (k-0.5)/swarm_size for k>0, zero for k=0; mean true fraction - mean encoding = (0.5/swarm_size) * proportion of positive-count responses",
+  "seed_evidence": {
+    "case": "gen_0/results/case_000.json.gz",
+    "response_count": 254,
+    "reported_encoding_mean": 0.5,
+    "actual_allocated_fraction_mean": 0.6,
+    "requested_count": 3,
+    "executed_count": 3
+  },
+  "checks": {
+    "frozen_diagnostic_averages_encoding": true,
+    "frozen_text_label_says_relocated_fraction": true,
+    "saved_seed_case_has_requested_and_executed_count_three": true,
+    "saved_seed_encoding_mean_is_point_five": true,
+    "saved_seed_true_fraction_is_point_six": true,
+    "saved_feedback_reports_encoding_value": true,
+    "actual_prompt_contains_auxiliary_label": true,
+    "actual_prompt_contains_exact_counts": true,
+    "actual_prompt_explains_adapter_formula": true,
+    "comparison_behavior_uses_selected_indices": true
+  },
+  "verified": true,
+  "source_evidence": {
+    "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/evaluate.py": "4312fdd9b7881e241a0528330a33be7c33928ea13c0c2a2a40cd2d3707e1c795",
+    "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/relocation_allocation.py": "cefeef47d50f05d99263116ca382370fa9a5f3327a721802c4fee36a504bcdbd",
+    "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/headless_prompts/prompt_94bd0d808e2a44248bded0bb005968bf.md": "930a077ac0ee9bef32e163ff4966477908defc9dec99ecafbee53064f68bf169"
+  },
+  "numerical_consequences": "The simulator executed correct integer allocations; objective-query accounting, saved measured fitness, score calculation and exact count distributions remain correct. Validation/final descriptive relocated fractions use selected particle indices. Finite-horizon partial responses remain separately flagged.",
+  "interpretation_limitation": "The misleading auxiliary label may have influenced proposal interpretation. We cannot establish that it had no effect on evolutionary search behavior, despite exact count distributions and the adapter formula also being delivered.",
+  "action": "Preserve the active run and frozen source unchanged. Do not restart, repeat completed evaluations or retroactively relabel historical feedback. Report correct selected-count fractions and disclose this deviation in final reporting."
+}

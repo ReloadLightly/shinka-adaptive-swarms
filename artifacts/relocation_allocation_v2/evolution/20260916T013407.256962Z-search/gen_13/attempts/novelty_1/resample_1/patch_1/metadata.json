@@ -1,0 +1,15 @@
+{
+  "generation": 13,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "scale_conditioned_crossover",
+  "patch_description": "Combine the tighter contraction threshold at smaller default radii with the broader threshold at larger radii. The tighter parent improved case_001 error from 3.371 to 2.874; the broader parent improved case_010 from 5.769 to 5.193 and interval-end error from 3.442 to 2.741. Executed distributions confirm both parents used three and four relocations, with the broader threshold generally increasing four-count responses. Retain their shared loss-versus-improvement condition. This tests whether the useful contraction threshold depends on the public radius scale; improved aggregate performance remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:56:31.636410",
+  "llm_cost": 0.20657,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_13/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

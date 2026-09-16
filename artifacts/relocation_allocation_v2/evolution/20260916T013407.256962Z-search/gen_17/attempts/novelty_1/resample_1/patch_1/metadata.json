@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "preserve_spread_during_recovery",
+  "patch_description": "Test relocating two particles when the swarm already spans the relocation radius and fitness loss does not exceed recent improvement. Three particles then continue ordinary PSO motion, potentially preserving useful search directions while two provide relocation exploration.\nThe current policy mostly executes four relocations, yet cases 009 and 010 retain interval-end errors of 3.33 and 2.74. These diagnostics do not establish that increasing allocation improves recovery. This proposal instead tests whether the existing three-particle fallback unnecessarily disrupts dispersed, recovering swarms. The four-particle branch remains unchanged. Improvement over the measured mean error of 3.21 requires evaluation; this is a competing allocation hypothesis.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T04:01:30.899858",
+  "llm_cost": 0.21236,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

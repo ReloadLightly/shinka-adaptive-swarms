@@ -1,0 +1,13 @@
+Evolve choose_relocation_count(observation) in the marked evolve block only.
+Return a Python int in [0, observation['swarm_size']] (five in this study).
+The fixed adapter holds radius_scale=2, memory='reevaluate', reset_velocity=False;
+it implements exact relocation counts. Non-relocated particles keep ordinary
+PSO motion. Use only public observations and deterministic computation. Do not
+read files, environment variables, seeds, benchmark internals, global optima or
+held-out inputs. Do not modify the evaluator, objective budgets or result files.
+Optimize measured mean offline error, ranked by 1/(1+mean_offline_error), over
+the equally weighted 16 search cases at 100,000 objective queries each. Count
+detection and memory queries. Use measured text_feedback, per-case error,
+recovery diagnostics and executed count distributions when forming a proposal.
+An adaptive rule is not required to win or vary: no complexity or adaptation
+bonus applies. Treat hypotheses as competing explanations, not target results.

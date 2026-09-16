@@ -1,0 +1,14 @@
+<NAME>
+broaden_recovery_credit
+</NAME>
+<DESCRIPTION>
+Test reducing relocation to two particles when recent improvement covers at least one quarter of the observed loss in the larger-radius regime. Retained velocities and refreshed memories may let ordinary PSO motion contribute enough recovery to justify relocating fewer particles.
+Doubling recovery credit previously reduced mean offline error from 3.26 to 3.23, although individual cases worsened. Case_013 improved from 3.0421 to 2.2584, with interval-end error falling from 1.0833 to 0.4625. Executed count-two responses remained uncommon, and detection overhead stayed near 16%. This motivates testing a broader threshold, without assuming that more frequent count-two allocation will improve performance. The proposed multiplier is untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 2 if larger_radius and recovery_credit >= loss else 3
+=======
+    count = 2 if larger_radius and 4.0 * recovery_credit >= loss else 3
+>>>>>>> REPLACE
+</DIFF>

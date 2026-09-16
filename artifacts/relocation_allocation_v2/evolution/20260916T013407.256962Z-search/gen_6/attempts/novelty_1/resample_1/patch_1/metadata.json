@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "recovery_credit",
+  "patch_description": "Use recent improvement as a recovery credit: relocate two particles when that credit covers the observed fitness loss, otherwise three. This preserves more ordinary PSO motion when recovery appears adequate.\nThe previous rule frequently executed four relocations and worsened mean error from 3.36 to 3.81; case_006 also worsened interval-end error from 2.21 to 4.40. These observations motivate testing conservative allocation, but do not establish its benefit. This proposal is untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:48:18.827001",
+  "llm_cost": 0.23142,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

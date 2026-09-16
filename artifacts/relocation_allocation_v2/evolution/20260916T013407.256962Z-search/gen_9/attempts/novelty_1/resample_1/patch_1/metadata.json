@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "conservative_contraction_crossover",
+  "patch_description": "Combine the constant-three parent's default with a stricter version of the adaptive parent's four-particle response: require swarm diameter below half the relocation radius and fitness loss exceeding recent improvement. The adaptive parent improved mean error from 3.36 to 3.21, but cases 001, 002 and 006 had worse offline and interval-end errors than constant three. Its executed allocations used four particles in roughly 58\u201382% of responses. This proposal tests whether reserving the extra relocation for tighter contraction improves that tradeoff. Improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:51:42.018994",
+  "llm_cost": 0.20015,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

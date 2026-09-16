@@ -1,0 +1,69 @@
+{
+  "format": "allocation-v2-preselection-protocol-audit-v1",
+  "recorded_at": "2026-09-16T02:03:58.631322+00:00",
+  "status": "passed_no_concrete_protocol_blocker",
+  "reviewer": "Codex subagent /root/v2_protocol",
+  "audit_method": "Read-only protocol re-review; cross-check final-runner seed collector against independently implemented scripts/audit_seed_splits.py. Reviewer also authored the study runner.",
+  "source_revision": "34fceda807af9106e64fc04108e761537672abe2",
+  "protocol_sha256": "df72af342e7a0e498efc3fc67a73011ffda5a3f74afb025ea66baef5db5900eb",
+  "source_hashes_audited": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/relocation_allocation.py": "cefeef47d50f05d99263116ca382370fa9a5f3327a721802c4fee36a504bcdbd",
+    "src/adaptive_swarms/allocation_study.py": "b3ca76377680daf60dad99b66c7dd18188f8b45dbcf8ea9adc23dedcb72626c9",
+    "src/adaptive_swarms/comparison.py": "1b8cdbc1a1a45224fcd1b9f4bcdc3e09a7f0247292be24783739e06a648b8ddb",
+    "src/adaptive_swarms/artifacts.py": "1553367476ce223115743908baeef9803bff4685bf2bf265ff3c340540ed2ab1",
+    "scripts/audit_seed_splits.py": "8bb7d0f10fe2232f8519fde8fcd1d5aac509d941d63d4fd410b91eab8bf50374"
+  },
+  "chronology": {
+    "native_search_was_running_during_inventory_scans": true,
+    "selection_present_during_audit": false,
+    "final_cases_present_during_audit": false,
+    "selection_present_at_record_write": false,
+    "final_cases_present_at_record_write": false,
+    "stages_launched_by_this_audit": false,
+    "runner_modified_by_this_audit": false
+  },
+  "independent_seed_inventory_crosscheck": {
+    "roots": [
+      "configs",
+      "artifacts",
+      "results"
+    ],
+    "environment_seed_count": 62,
+    "optimizer_seed_count": 48,
+    "environment_seed_sets_match": true,
+    "optimizer_seed_sets_match": true,
+    "cross_role_intersection": [],
+    "runner_collector_files_inspected": 889,
+    "independent_collector_files_inspected": 891,
+    "file_count_difference": "Two new JSON/GZ search artifacts appeared between sequential scans; both scans returned identical seed sets."
+  },
+  "findings": [
+    "Selection and case-equal regime-specific control distributions freeze before final RNG initialization and seed generation.",
+    "Final generation excludes the union of historical environment and optimizer seed values from either new role, explicitly includes current search and validation, and prevents new cross-role collisions.",
+    "Control probabilities average each validation case equally, including a disclosed count-three fallback for a no-response case; selected/requested counts include flagged horizon-truncated responses.",
+    "Control ignores current observations and samples using a dedicated per-case Python Random stream with recorded master/derived seeds, separate from environment and optimizer RNG state.",
+    "Aliases require exact constant/source execution identity with matching case configuration and frozen signatures; empirical constancy alone does not establish program equivalence.",
+    "Every method case verifies exact objective budget including detection and memory queries; paired methods verify identical environmental histories.",
+    "Primary and mechanism effects use paired case differences, 20000 bootstrap resamples within regimes with equal regime weights, analysis seed 20260916, and SE sqrt(sum(s_r^2/n_r))/4."
+  ],
+  "focused_verification": {
+    "command": ".venv/bin/python -m pytest tests/test_allocation_study.py -q",
+    "previously_completed_result": "10 passed in 3.23s",
+    "rerun_during_this_read_only_audit": false,
+    "coverage": [
+      "source-distinct deterministic selection",
+      "frozen-source checks",
+      "exact constant alias proof",
+      "case-equal control and RNG independence",
+      "checkpoint resume without repeated evaluations",
+      "cross-role seed inventory",
+      "post-freeze fresh final generation",
+      "equal-regime bootstrap SE",
+      "validation selection/control freeze",
+      "rejection of wrong-task or unfinished search"
+    ]
+  }
+}

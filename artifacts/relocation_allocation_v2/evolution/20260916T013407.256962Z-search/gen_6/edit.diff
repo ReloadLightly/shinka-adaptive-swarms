@@ -1,0 +1,25 @@
+--- a/original.py
++++ b/original.py
+@@ -1,13 +1,20 @@
+ """V2 allocation seed: relocate three particles after a detected change.
+ 
+ The fixed adapter controls radius, memory, velocity, integer validation and
+ count-to-fraction conversion. The numerical simulator is outside this program.
+ """
+ 
+ 
+ # EVOLVE-BLOCK-START
+ def choose_relocation_count(observation: dict) -> int:
+-    """Apply the strongest measured fixed allocation within swarm bounds."""
++    """Preserve more ordinary PSO motion when progress covers fitness loss."""
+     swarm_size = int(observation["swarm_size"])
+-    return max(0, min(3, swarm_size))
++    if swarm_size <= 0:
++        return 0
++    loss = max(0.0, float(observation["fitness_drop"]))
++    recovery_credit = max(0.0, float(observation["recent_improvement"]))
++    # Positive historical progress is evidence, not a guaranteed recovery rate.
++    # Avoid interpreting fitness deterioration as a spatial displacement.
++    count = 2 if recovery_credit >= loss else 3
++    return min(swarm_size, count)
+ # EVOLVE-BLOCK-END

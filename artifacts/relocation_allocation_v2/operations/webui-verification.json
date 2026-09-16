@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-09-16T01:45:08.727938+00:00",
+  "url": "http://localhost:8889",
+  "native_tree_url": "http://localhost:8889/viz_tree.html?db_path=programs.sqlite",
+  "database": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/programs.sqlite",
+  "pid": 250034,
+  "checks": {
+    "homepage_http_200": true,
+    "dashboard_rendered": true,
+    "native_program_tree_rendered": true,
+    "seed_visible": true,
+    "actual_active_database": true,
+    "no_page_errors": true,
+    "browser_session_closed": true,
+    "webui_server_retained": true
+  },
+  "passed": true,
+  "database_rows_observed": [
+    {
+      "id": "5cb65dca-a470-4a42-ae7a-24ae7e1fc01c",
+      "generation": 0,
+      "correct": 1,
+      "combined_score": 0.22913766127593896
+    },
+    {
+      "id": "ba9d2ef6-1556-4c1c-8db8-878493dd9294",
+      "generation": 0,
+      "correct": 1,
+      "combined_score": 0.22913766127593896
+    },
+    {
+      "id": "f99dddee-0343-4246-bf0b-610f56363c77",
+      "generation": 1,
+      "correct": 1,
+      "combined_score": 0.20788694846996356
+    },
+    {
+      "id": "564b1bc0-626a-450a-b3a1-440f5c25e5a5",
+      "generation": 2,
+      "correct": 1,
+      "combined_score": 0.21297191956906503
+    },
+    {
+      "id": "913fddf8-4810-4ad1-9c6a-97711bf5439b",
+      "generation": 3,
+      "correct": 1,
+      "combined_score": 0.22352447536162162
+    }
+  ],
+  "screenshots": [
+    "webui-initial.png",
+    "webui-database-detail.png"
+  ],
+  "browser_step_evidence": "webui-browser-steps.json",
+  "console_findings": {
+    "page_errors": "",
+    "native_plotly_deprecation_warning": true
+  },
+  "notes": [
+    "Native pricing cost display is an estimate from Shinka metadata; route remains subscription-backed Headless Codex.",
+    "A dashboard element reference became stale during auto-refresh; the database route was verified directly.",
+    "Initial delayed browser snapshot relaunched an empty browser. Subsequent open/snapshot succeeded. No scientific files or active database snapshots were changed."
+  ]
+}

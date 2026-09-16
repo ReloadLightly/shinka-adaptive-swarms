@@ -1,0 +1,3156 @@
+{
+  "format": "relocation-allocation-v2-prospective-seed-audit-v1",
+  "recorded_at": "2026-09-16T01:31:44.221732+00:00",
+  "status": "passed",
+  "scope": "All saved JSON and compressed JSON under configs, artifacts and results; numeric seeds excluded across both roles.",
+  "suite_hashes": {
+    "search": "529f0ed823d07d2d967eff82c6c0595e36f4174a432a4f38f79c6a6ed7210e11",
+    "validation": "d46ba9d774562c6d5cf3e9cacde477dacf317fb40d746155b64e81bf81e41f45"
+  },
+  "stages": {
+    "search": {
+      "source": "configs/relocation_allocation_v2/search.json",
+      "case_count": 16,
+      "cases": [
+        {
+          "case_index": 0,
+          "case_id": "case_000",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 20001,
+          "optimizer_seed": 1020001
+        },
+        {
+          "case_index": 1,
+          "case_id": "case_001",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 20002,
+          "optimizer_seed": 1020002
+        },
+        {
+          "case_index": 2,
+          "case_id": "case_002",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 20003,
+          "optimizer_seed": 1020003
+        },
+        {
+          "case_index": 3,
+          "case_id": "case_003",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 20004,
+          "optimizer_seed": 1020004
+        },
+        {
+          "case_index": 4,
+          "case_id": "case_004",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 20101,
+          "optimizer_seed": 1020101
+        },
+        {
+          "case_index": 5,
+          "case_id": "case_005",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 20102,
+          "optimizer_seed": 1020102
+        },
+        {
+          "case_index": 6,
+          "case_id": "case_006",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 20103,
+          "optimizer_seed": 1020103
+        },
+        {
+          "case_index": 7,
+          "case_id": "case_007",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 20104,
+          "optimizer_seed": 1020104
+        },
+        {
+          "case_index": 8,
+          "case_id": "case_008",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 20201,
+          "optimizer_seed": 1020201
+        },
+        {
+          "case_index": 9,
+          "case_id": "case_009",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 20202,
+          "optimizer_seed": 1020202
+        },
+        {
+          "case_index": 10,
+          "case_id": "case_010",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 20203,
+          "optimizer_seed": 1020203
+        },
+        {
+          "case_index": 11,
+          "case_id": "case_011",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 20204,
+          "optimizer_seed": 1020204
+        },
+        {
+          "case_index": 12,
+          "case_id": "case_012",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 20301,
+          "optimizer_seed": 1020301
+        },
+        {
+          "case_index": 13,
+          "case_id": "case_013",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 20302,
+          "optimizer_seed": 1020302
+        },
+        {
+          "case_index": 14,
+          "case_id": "case_014",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 20303,
+          "optimizer_seed": 1020303
+        },
+        {
+          "case_index": 15,
+          "case_id": "case_015",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 20304,
+          "optimizer_seed": 1020304
+        }
+      ]
+    },
+    "validation": {
+      "source": "configs/relocation_allocation_v2/validation.json",
+      "case_count": 16,
+      "cases": [
+        {
+          "case_index": 0,
+          "case_id": "case_000",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 30001,
+          "optimizer_seed": 1030001
+        },
+        {
+          "case_index": 1,
+          "case_id": "case_001",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 30002,
+          "optimizer_seed": 1030002
+        },
+        {
+          "case_index": 2,
+          "case_id": "case_002",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 30003,
+          "optimizer_seed": 1030003
+        },
+        {
+          "case_index": 3,
+          "case_id": "case_003",
+          "move_severity": 1.0,
+          "period": 2500,
+          "environment_seed": 30004,
+          "optimizer_seed": 1030004
+        },
+        {
+          "case_index": 4,
+          "case_id": "case_004",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 30101,
+          "optimizer_seed": 1030101
+        },
+        {
+          "case_index": 5,
+          "case_id": "case_005",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 30102,
+          "optimizer_seed": 1030102
+        },
+        {
+          "case_index": 6,
+          "case_id": "case_006",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 30103,
+          "optimizer_seed": 1030103
+        },
+        {
+          "case_index": 7,
+          "case_id": "case_007",
+          "move_severity": 1.0,
+          "period": 5000,
+          "environment_seed": 30104,
+          "optimizer_seed": 1030104
+        },
+        {
+          "case_index": 8,
+          "case_id": "case_008",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 30201,
+          "optimizer_seed": 1030201
+        },
+        {
+          "case_index": 9,
+          "case_id": "case_009",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 30202,
+          "optimizer_seed": 1030202
+        },
+        {
+          "case_index": 10,
+          "case_id": "case_010",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 30203,
+          "optimizer_seed": 1030203
+        },
+        {
+          "case_index": 11,
+          "case_id": "case_011",
+          "move_severity": 3.0,
+          "period": 2500,
+          "environment_seed": 30204,
+          "optimizer_seed": 1030204
+        },
+        {
+          "case_index": 12,
+          "case_id": "case_012",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 30301,
+          "optimizer_seed": 1030301
+        },
+        {
+          "case_index": 13,
+          "case_id": "case_013",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 30302,
+          "optimizer_seed": 1030302
+        },
+        {
+          "case_index": 14,
+          "case_id": "case_014",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 30303,
+          "optimizer_seed": 1030303
+        },
+        {
+          "case_index": 15,
+          "case_id": "case_015",
+          "move_severity": 3.0,
+          "period": 5000,
+          "environment_seed": 30304,
+          "optimizer_seed": 1030304
+        }
+      ]
+    }
+  },
+  "historical_inventory": {
+    "source_files": [
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_000.json.gz",
+        "sha256": "d3bd181fddfbb928ef6cbb8c5fcd17511fa6a182e199ed667f2bd458202fb5da",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_001.json.gz",
+        "sha256": "576bba59164001c596de19bd3cfea0ec08786dcfed1a96493c39ad94549cf6d0",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_002.json.gz",
+        "sha256": "ede8ef070470df10d85014132cb78a5a1ca347e381c8bd0b11719a5320839c0d",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_003.json.gz",
+        "sha256": "b8653f6f693900d83cf0e9a88f6472966bf8055db29b06afe50537d93f290b29",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_004.json.gz",
+        "sha256": "37d112a867db321fab44cca16eaa4e3b6c4f8d352d27a10854430afeb6a399cd",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_005.json.gz",
+        "sha256": "8d18b42934b6d3bf616c3fa46baa76ac781bb74e55be354412870685fdaaf29d",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_006.json.gz",
+        "sha256": "377ab594b4b2a14fd047b6cf1d2db32353bbf895430160198d51038f29390609",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/baseline/case_007.json.gz",
+        "sha256": "34aae7ed272e4acc6be7d61d6815a20b97cb8f4a8c0e298f2ac36b471ce48b9e",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_000.json.gz",
+        "sha256": "cae0282fb720d227c64bff161b5fc0a82235186d6c575491b4b8d2afa842bd40",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_001.json.gz",
+        "sha256": "0a6192fbd62578781a2c540c618bf54025a8861191e9cfee65fd56be22411d0a",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_002.json.gz",
+        "sha256": "61df7b644b587d9f1305ddf4329c8daeb8afe3f5d6c41e5621085a9f102b6715",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_003.json.gz",
+        "sha256": "78dcbc587eb20b97288d18c02c3425ee16458d4b31767fd3c02afff81252d609",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_004.json.gz",
+        "sha256": "e1704d73028a8c823988fc9d9b2e0934ae41d09178237cb80b6c57e618489dec",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_005.json.gz",
+        "sha256": "a4ad60882df9f6b45b1024b3f0ce4f57b50ad11b20c394eef0b025a69013db85",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_006.json.gz",
+        "sha256": "94a504ac4108871c6b4eb448ba38711cc2b904389ad7bbddc8fbe89d27e8ee6c",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/fixed_response/case_007.json.gz",
+        "sha256": "8993aea49e01ef46c96299bff86640abd1e19349d298ef93b09f869e944d5f18",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/manifest.json",
+        "sha256": "5e2d98e47f461c587a9499618b605bd1e9f8154d8ab021030ad74658231c9d98",
+        "environment_seeds": [
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ],
+        "optimizer_seeds": [
+          1501,
+          1502,
+          1503,
+          1504,
+          1505,
+          1506,
+          1507,
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_000.json.gz",
+        "sha256": "c8712de9a8edec5c3c7d6d0a6ae67d5e35a557fe86b971cc9492452ac8734d00",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_001.json.gz",
+        "sha256": "2f5474c231810eee42ca5e089f79a24fa2b19d2e4891a84b668f707bd010ab1d",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_002.json.gz",
+        "sha256": "844a03cace84319434181aa3fcf396601f094af976367918191e5c6a00bc5d85",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_003.json.gz",
+        "sha256": "014621dab3a8b358dee0b16c9791cc0bcf9efd8035a5b62f9761f31449f74092",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_004.json.gz",
+        "sha256": "fa771a5effa13be26dbd3cd3477d2896f956fce0fd40c1165de9de1a3ec3a47a",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_005.json.gz",
+        "sha256": "7b318ab2bc0ebb0e28f9309b8e158584b76b599ebe06febf79da71acb9575cc3",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_006.json.gz",
+        "sha256": "0a3c1595fe310d630269d4c38623998c2cde4a22ead54d97965c501a0c700cc7",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/no_compactness/case_007.json.gz",
+        "sha256": "d171fb54dd14d9afc9a3688b1c752313c8eb3a1a2d80e8b5de65efee934d62d1",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_000.json.gz",
+        "sha256": "9d66fa4cbbbb0f54fccd9f076cf916a3bf2a16ee935e6ee6f34024c161c7761e",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_001.json.gz",
+        "sha256": "7e5979843a998f1e3d16455e9efdc2263f4fee865572fa40c891a8484a895e01",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_002.json.gz",
+        "sha256": "74bf930030c07d1e0c764bf9b3cb3fdce4123437173c48bda9412683833bd0df",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_003.json.gz",
+        "sha256": "835130a1e8f48a08cc6f7cd2d8bf416032c27b17a17a96c715211828476d35ef",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_004.json.gz",
+        "sha256": "ba971aeb83aaa06142b4ed78cc7c65fde7ad907689d162d8da42792c003e0c2a",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_005.json.gz",
+        "sha256": "17c4807577293572e3965bcf223fab2b3529fb4fc60d817fe5a62a08b6b0853c",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_006.json.gz",
+        "sha256": "17db20d297314994fb89b863994e2b097caf0e1c9c6bc5aa85a954c609765d2d",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/selected/case_007.json.gz",
+        "sha256": "680ddb50a086aae7da55f894290ffa9096e2a53997f469c8bb337443b76bff52",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/comparison/20260916T001949Z-frozen/summary.json",
+        "sha256": "1653e36c1fc3ad8ae7343bde63c4cb0c8e4f1fa367108e9a523727dfc75b116b",
+        "environment_seeds": [
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ],
+        "optimizer_seeds": [
+          1501,
+          1502,
+          1503,
+          1504,
+          1505,
+          1506,
+          1507,
+          1508
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/gen_0/results/case_000.json",
+        "sha256": "37a2aa7687b1b60065c263fe2abb225a9b5f0df3f304685a23b6edaa061e1b17",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/gen_0/results/case_001.json",
+        "sha256": "1254b735044772e428ce7eec8f30f7798b805499514ac30968f50857392e826a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/gen_0/results/case_002.json",
+        "sha256": "85877140cae8741e0e176460b8ed6158b66801990c9c110a7cc5c0a27702c908",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/gen_0/results/case_003.json",
+        "sha256": "833d4c351b24c98c1ac93b60fb34b59b62653842021978000e2ff32cac80182a",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/search-suite.json",
+        "sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+        "environment_seeds": [
+          11,
+          22,
+          33,
+          44
+        ],
+        "optimizer_seeds": [
+          1011,
+          1022,
+          1033,
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/gen_0/results/case_000.json",
+        "sha256": "37a2aa7687b1b60065c263fe2abb225a9b5f0df3f304685a23b6edaa061e1b17",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/gen_0/results/case_001.json",
+        "sha256": "1254b735044772e428ce7eec8f30f7798b805499514ac30968f50857392e826a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/gen_0/results/case_002.json",
+        "sha256": "85877140cae8741e0e176460b8ed6158b66801990c9c110a7cc5c0a27702c908",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/gen_0/results/case_003.json",
+        "sha256": "833d4c351b24c98c1ac93b60fb34b59b62653842021978000e2ff32cac80182a",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/search-suite.json",
+        "sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+        "environment_seeds": [
+          11,
+          22,
+          33,
+          44
+        ],
+        "optimizer_seeds": [
+          1011,
+          1022,
+          1033,
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_000.json",
+        "sha256": "9fd02d2fb20a528e45e0ba89014d1d6c2a9d081b60ee2fe2540b903343bd3f92",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_001.json",
+        "sha256": "4492664e8c1f51d2b36ef139c164eda4282cb162942c850a7cef6113651625e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_002.json",
+        "sha256": "5db285eea2db021929c7372544cd7a4a8d684d79cfbe647f064e2f51b9997dcc",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_003.json",
+        "sha256": "f4359e87c0930b936d151bed6e46f85a97c792354330cf742d00626ab0069e33",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_0/results/case_000.json",
+        "sha256": "37a2aa7687b1b60065c263fe2abb225a9b5f0df3f304685a23b6edaa061e1b17",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_0/results/case_001.json",
+        "sha256": "1254b735044772e428ce7eec8f30f7798b805499514ac30968f50857392e826a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_0/results/case_002.json",
+        "sha256": "85877140cae8741e0e176460b8ed6158b66801990c9c110a7cc5c0a27702c908",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_0/results/case_003.json",
+        "sha256": "833d4c351b24c98c1ac93b60fb34b59b62653842021978000e2ff32cac80182a",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_1/results/case_000.json",
+        "sha256": "9fd02d2fb20a528e45e0ba89014d1d6c2a9d081b60ee2fe2540b903343bd3f92",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_1/results/case_001.json",
+        "sha256": "4492664e8c1f51d2b36ef139c164eda4282cb162942c850a7cef6113651625e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_1/results/case_002.json",
+        "sha256": "5db285eea2db021929c7372544cd7a4a8d684d79cfbe647f064e2f51b9997dcc",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_1/results/case_003.json",
+        "sha256": "f4359e87c0930b936d151bed6e46f85a97c792354330cf742d00626ab0069e33",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_10/results/case_000.json.gz",
+        "sha256": "ab0ec0827465961897658d4305ec599eb9cb8cd1398b696804aa4a8bc013ed8b",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_10/results/case_001.json.gz",
+        "sha256": "5565db197c21e78c3eaf3d0cb540c7135e751f096d6c5c71f60ca19fdf00611f",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_10/results/case_002.json.gz",
+        "sha256": "7701a64d560ac7ceb5c12e6e030a08701b6b54d6a275926a2ad128e48443415e",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_10/results/case_003.json.gz",
+        "sha256": "dbf593af0f2e9e7fd925d5763ec1deed4d12ad85fe33a34e743846e5444a1fbd",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_11/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_11/results/case_001.json.gz",
+        "sha256": "0614c164411fc992f5d5f832fbd547bca5d089a0872ed18743ad778201d8c5e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_11/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_11/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_12/results/case_000.json.gz",
+        "sha256": "5724a9ad991499f2fb07cd108da27134636f9b5d2d57c9cc26ac7d072d4c0d0f",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_12/results/case_001.json.gz",
+        "sha256": "ecf968f92e65354721f84d38aca24c545cd3880784bf56fcbc8bb7ce59f4d4fb",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_12/results/case_002.json.gz",
+        "sha256": "69ef6186b2afe8f8ed0ca2f5369bf67755214340ee42c323586a4d032ec80f21",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_12/results/case_003.json.gz",
+        "sha256": "31b523bea1201b537a3506197682b87801e2356b323e053b4a8273b53c7e24d1",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_13/results/case_000.json.gz",
+        "sha256": "360c4e6ff200a2cd2db84fefcb55fe4a9ab9e24918520b32703cfafa6f024bb1",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_13/results/case_001.json.gz",
+        "sha256": "b12e58326110e6d210b0a70baaec660b0529003426dedd34d20e048427c88a8c",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_13/results/case_002.json.gz",
+        "sha256": "b318597ac9b6cfaf0c1b63e9e77213b7f15e8cea8b71a12e98503d4d382ffb7b",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_13/results/case_003.json.gz",
+        "sha256": "41ddc5aaa510afa1d7167410ff5edb4ffcbb24e661f07997d9ce0043af754a0c",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_14/results/case_000.json.gz",
+        "sha256": "67f3e63ab8ac1487e7673c6f6831178dec78dddd4c09bfe821152a3815dec5db",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_14/results/case_001.json.gz",
+        "sha256": "4a7656a97004adc04655aa9d597c3371e67f76298115fed21ced0543729acbbf",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_14/results/case_002.json.gz",
+        "sha256": "8547a77f5652c0e0da452ebe28ad6fdb5cbd75c6886a12c2631ff6dcacbf6c19",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_14/results/case_003.json.gz",
+        "sha256": "dbeb342160a69e231b3cba58d9c2772c067da54624eb51ff14d7883c1709f7cc",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_15/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_15/results/case_001.json.gz",
+        "sha256": "f656b74f1c5368e8ff8b83fab4883aefac3c2d37e39a6ac5f842f0a0a55e23df",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_15/results/case_002.json.gz",
+        "sha256": "34d410d35164d415c6f49c4155689cc8543b9e16d01300d9626d276db6ad757d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_15/results/case_003.json.gz",
+        "sha256": "3c18adaf69b45c0337858d4b30bbb22de8c333e1a7e77717a34d3b98d3137363",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_16/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_16/results/case_001.json.gz",
+        "sha256": "0614c164411fc992f5d5f832fbd547bca5d089a0872ed18743ad778201d8c5e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_16/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_16/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_17/results/case_000.json.gz",
+        "sha256": "ceff8bad84e906e3207af1e861829d40c75215f39a64fbcdf120417afc2690c6",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_17/results/case_001.json.gz",
+        "sha256": "065f0cb8ebd1b762775a2c614d09b2ca136e173061271f7d17447ac14e407558",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_17/results/case_002.json.gz",
+        "sha256": "03d3a7bf2a4ba6d74a33eeb487e8d2bf9a86ffd107e25685041e59a6d25e1421",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_17/results/case_003.json.gz",
+        "sha256": "8483b0422ad7c9635f508ac823f8b6d57a4001a65df128945735996d1c134648",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_18/results/case_000.json.gz",
+        "sha256": "dc47f1d1d033493ddff77eaeef846be1ce002137189114e90aa8b3f4bbf36080",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_18/results/case_001.json.gz",
+        "sha256": "6483fcd234bbae7314f972ebb3ad364cb0e2a8352792556d286971f339667d38",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_18/results/case_002.json.gz",
+        "sha256": "33af5348edc4811fb39435d7c979780d1863aeb9583c6a30a3ac570f1c20866d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_18/results/case_003.json.gz",
+        "sha256": "956358d425a421dd37e2e113e724e548d7a6d0bfc6f528b33d614cba23a15d1e",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_19/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_19/results/case_001.json.gz",
+        "sha256": "a010a481bfc2198c17198b8bcdb111d8974fe805e0447c012efd32e4773e72f2",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_19/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_19/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_2/results/case_000.json",
+        "sha256": "7d29cbf33df7b03ca8527dedf73121adca5ef7e8cb0516cccfac94ec9533aa03",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_2/results/case_001.json",
+        "sha256": "96b4c9ed3f750bfb77bde2e6c7e2e5b610cb784e936285961737f225fb9b33f7",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_2/results/case_002.json",
+        "sha256": "618566fb46d469c98e5749044d791fda15e19ffccb64a1e2558a588bfdca1319",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_2/results/case_003.json",
+        "sha256": "a29c9c11d700a00dfb0033c3db39d1379932b3b0cb1af4c5ca609c0469527428",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_3/results/case_000.json.gz",
+        "sha256": "4981638535b4f450f0f4699a766edeee3ad3550c61c52e2d746df74b805ee937",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_3/results/case_001.json.gz",
+        "sha256": "b8624dad89919f5996e1f07c3c9fe8d58cf501a08a759adbd0931520e88836a2",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_3/results/case_002.json.gz",
+        "sha256": "22dcff621df30a484bd5e08036634b468eff7b2cf4c069f79cdc47a076f0e570",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_3/results/case_003.json.gz",
+        "sha256": "0279b9bd3c4d9b42ab0416946f4c79c24db8e10325ef9c91a4f04094833f62f5",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_4/results/case_000.json.gz",
+        "sha256": "d91136e2f89dfed82b653c4ab8c108f0b0d8f7d7e876d427e7c854107c2e7442",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_4/results/case_001.json.gz",
+        "sha256": "f49acceeff06641480a0fef29470ede9e3a3292d7bc390bc1e7b2a9bce1725fd",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_4/results/case_002.json.gz",
+        "sha256": "f06c8eb4f2c0b5e61b1b55ac2db09764387b49186087c192265997e80a263a9d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_4/results/case_003.json.gz",
+        "sha256": "c3907846adcf5570f2e9f306b19c6c515b8f8734be2d3ba773deadb488012b98",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_5/results/case_000.json.gz",
+        "sha256": "8afaaa269e58d162b1511e78c2edfbb02e14d57e0293b7041b39ed9253da3251",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_5/results/case_001.json.gz",
+        "sha256": "0c1c0f7a15ac3ea4b66f20484767dccf50c8f702c25221acb1d00bf22b8c45b0",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_5/results/case_002.json.gz",
+        "sha256": "b970f917f9c5710420e3360b0addfe32d958109e5599927ab1ce406cb7777f19",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_5/results/case_003.json.gz",
+        "sha256": "fbadde27ec5830fb2d71a0c532278db46edc3768d9c1b736a5f840723bf1dfcf",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_6/results/case_000.json.gz",
+        "sha256": "3dbd0f43636c1e1c446b64f1fbb02bea0d559e12106a5f1dbec8144c58ed0c93",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_6/results/case_001.json.gz",
+        "sha256": "39dd330a894367aee7043e8fd9dacc885fb47b3f4c8bf6d980f560919d001f82",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_6/results/case_002.json.gz",
+        "sha256": "5fded165862a425b6536553b88a4674232def656d0024b8b96ff899dfd9237c6",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_6/results/case_003.json.gz",
+        "sha256": "3aedcc559b8a2c3f4272abd233dfdeabfc8a512a278749958fa88ed4912351e3",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_7/results/case_000.json.gz",
+        "sha256": "b3fc503615c81e544b3754f648262fa879c8d8621d026a761e56dd6ac3be1bca",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_7/results/case_001.json.gz",
+        "sha256": "2d25d7004fb3a9b246fa47e524cd3f6a224497d7a08647c216eb68797a2d706a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_7/results/case_002.json.gz",
+        "sha256": "dfe81d1ad0a6c019471927429f905ba8ebea4c065ea5387c051150da6f75fed2",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_7/results/case_003.json.gz",
+        "sha256": "a1d950630774c4d7052b118cfe2cfc450c64b144a3abff6adcbcc7894745cef6",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_8/results/case_000.json.gz",
+        "sha256": "268fa9ed0f37a42c1f7ccef18fb63b48958ab9675ec61e8c1ace2b1828764c9b",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_8/results/case_001.json.gz",
+        "sha256": "23bf3819c81d30c37f59f1ddc7a27d8b4e37ed27f9b41b96b2a5c37f88bbc321",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_8/results/case_002.json.gz",
+        "sha256": "6bcc44edb877ed76e1c90abc520b598c17286cde9851fda00713c12f43465dc1",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_8/results/case_003.json.gz",
+        "sha256": "27cb10511d096bee051c3f4035d18ba0e73132ad3523af36e82b58bf2a6677ac",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_9/results/case_000.json.gz",
+        "sha256": "21ca86c238400d1beb80a20dbf3b767780f263951cfd96c420578c3e2919fdd5",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_9/results/case_001.json.gz",
+        "sha256": "32c4b607ec966334a6ae91aaa5c074e2a2f325bfadc412e492303b98be246e84",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_9/results/case_002.json.gz",
+        "sha256": "2de23439c4af401916d10dda59478c88536728e7d2657976f961df9b406104bf",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/gen_9/results/case_003.json.gz",
+        "sha256": "3079cb5a5d2f2b4e6dc66a26ce7b64d5e4653034a1774bd343ee837c6c6523bb",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/search-suite.json",
+        "sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+        "environment_seeds": [
+          11,
+          22,
+          33,
+          44
+        ],
+        "optimizer_seeds": [
+          1011,
+          1022,
+          1033,
+          1044
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_initial/case_000.json",
+        "sha256": "a674de03e4009be2a261d37de3374cfa1d1a5a95e878855737dc5780146eb665",
+        "environment_seeds": [
+          101
+        ],
+        "optimizer_seeds": [
+          1101
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_initial/case_001.json",
+        "sha256": "8549c22d1272cc1e5c9f56f35e6a6c8197abe586fb7013413bf2097f3f39ec90",
+        "environment_seeds": [
+          202
+        ],
+        "optimizer_seeds": [
+          1202
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_initial/case_002.json",
+        "sha256": "076b012cbf940a909378809c2bd9014c2fc71bdd40efce23d91e2ec364e9cb43",
+        "environment_seeds": [
+          303
+        ],
+        "optimizer_seeds": [
+          1303
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_initial/manifest.json",
+        "sha256": "3166275cd75a8d4b0d03d77499a96c75d0a7d56d401caca1f75f49a0d2e6853e",
+        "environment_seeds": [
+          101,
+          202,
+          303
+        ],
+        "optimizer_seeds": [
+          1101,
+          1202,
+          1303
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_v1/case_000.json",
+        "sha256": "323ae8a9950e374fb36d60d7e67b8b45e6b7b06755e2306f070a76263b8633d8",
+        "environment_seeds": [
+          101
+        ],
+        "optimizer_seeds": [
+          1101
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_v1/case_001.json",
+        "sha256": "79d316f963710576a3e751115972802fc725a75192986d4abea9a8c6327d1339",
+        "environment_seeds": [
+          202
+        ],
+        "optimizer_seeds": [
+          1202
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_v1/case_002.json",
+        "sha256": "f54d9a380fa87d4658633a974fa01322eb4f554b63098316a260f3b9a5c79f67",
+        "environment_seeds": [
+          303
+        ],
+        "optimizer_seeds": [
+          1303
+        ]
+      },
+      {
+        "path": "artifacts/reconstruction_v1/manifest.json",
+        "sha256": "3b8732307c52c8df52d6d740be622a2eec8e8e600c276e45e5e2263e712c3c55",
+        "environment_seeds": [
+          101,
+          202,
+          303
+        ],
+        "optimizer_seeds": [
+          1101,
+          1202,
+          1303
+        ]
+      },
+      {
+        "path": "artifacts/visualization_v1/case_000.json",
+        "sha256": "25957d380ffbd751ba7ec531b802098de5fbc26e06a9e539e8ecafef2fc65035",
+        "environment_seeds": [
+          71
+        ],
+        "optimizer_seeds": [
+          1071
+        ]
+      },
+      {
+        "path": "artifacts/visualization_v1/manifest.json",
+        "sha256": "5a2e29a0b3bc3f5f7a77fba6d93994ec283c115c12a6d0f181408d23652ccdad",
+        "environment_seeds": [
+          71
+        ],
+        "optimizer_seeds": [
+          1071
+        ]
+      },
+      {
+        "path": "configs/heldout.json",
+        "sha256": "6fcbf6ab8569a27545510d75904fb118ba9ee8289d0c3a52edf1d9dc1494d146",
+        "environment_seeds": [
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ],
+        "optimizer_seeds": [
+          1501,
+          1502,
+          1503,
+          1504,
+          1505,
+          1506,
+          1507,
+          1508
+        ]
+      },
+      {
+        "path": "configs/reproduction.json",
+        "sha256": "be65332e8b6ecf17f468e8742308f92c09b869a0f6a1e841e179507f85159339",
+        "environment_seeds": [
+          101,
+          202,
+          303
+        ],
+        "optimizer_seeds": [
+          1101,
+          1202,
+          1303
+        ]
+      },
+      {
+        "path": "configs/search.json",
+        "sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+        "environment_seeds": [
+          11,
+          22,
+          33,
+          44
+        ],
+        "optimizer_seeds": [
+          1011,
+          1022,
+          1033,
+          1044
+        ]
+      },
+      {
+        "path": "configs/visualization.json",
+        "sha256": "20fa39100c13b585b7e0c5a6412bf676ed39c6fa55ad3d79d8136af15720ca3c",
+        "environment_seeds": [
+          71
+        ],
+        "optimizer_seeds": [
+          1071
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_000.json.gz",
+        "sha256": "d3bd181fddfbb928ef6cbb8c5fcd17511fa6a182e199ed667f2bd458202fb5da",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_001.json.gz",
+        "sha256": "576bba59164001c596de19bd3cfea0ec08786dcfed1a96493c39ad94549cf6d0",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_002.json.gz",
+        "sha256": "ede8ef070470df10d85014132cb78a5a1ca347e381c8bd0b11719a5320839c0d",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_003.json.gz",
+        "sha256": "b8653f6f693900d83cf0e9a88f6472966bf8055db29b06afe50537d93f290b29",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_004.json.gz",
+        "sha256": "37d112a867db321fab44cca16eaa4e3b6c4f8d352d27a10854430afeb6a399cd",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_005.json.gz",
+        "sha256": "8d18b42934b6d3bf616c3fa46baa76ac781bb74e55be354412870685fdaaf29d",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_006.json.gz",
+        "sha256": "377ab594b4b2a14fd047b6cf1d2db32353bbf895430160198d51038f29390609",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/baseline/case_007.json.gz",
+        "sha256": "34aae7ed272e4acc6be7d61d6815a20b97cb8f4a8c0e298f2ac36b471ce48b9e",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_000.json.gz",
+        "sha256": "cae0282fb720d227c64bff161b5fc0a82235186d6c575491b4b8d2afa842bd40",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_001.json.gz",
+        "sha256": "0a6192fbd62578781a2c540c618bf54025a8861191e9cfee65fd56be22411d0a",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_002.json.gz",
+        "sha256": "61df7b644b587d9f1305ddf4329c8daeb8afe3f5d6c41e5621085a9f102b6715",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_003.json.gz",
+        "sha256": "78dcbc587eb20b97288d18c02c3425ee16458d4b31767fd3c02afff81252d609",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_004.json.gz",
+        "sha256": "e1704d73028a8c823988fc9d9b2e0934ae41d09178237cb80b6c57e618489dec",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_005.json.gz",
+        "sha256": "a4ad60882df9f6b45b1024b3f0ce4f57b50ad11b20c394eef0b025a69013db85",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_006.json.gz",
+        "sha256": "94a504ac4108871c6b4eb448ba38711cc2b904389ad7bbddc8fbe89d27e8ee6c",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/fixed_response/case_007.json.gz",
+        "sha256": "8993aea49e01ef46c96299bff86640abd1e19349d298ef93b09f869e944d5f18",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/manifest.json",
+        "sha256": "5e2d98e47f461c587a9499618b605bd1e9f8154d8ab021030ad74658231c9d98",
+        "environment_seeds": [
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ],
+        "optimizer_seeds": [
+          1501,
+          1502,
+          1503,
+          1504,
+          1505,
+          1506,
+          1507,
+          1508
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_000.json.gz",
+        "sha256": "c8712de9a8edec5c3c7d6d0a6ae67d5e35a557fe86b971cc9492452ac8734d00",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_001.json.gz",
+        "sha256": "2f5474c231810eee42ca5e089f79a24fa2b19d2e4891a84b668f707bd010ab1d",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_002.json.gz",
+        "sha256": "844a03cace84319434181aa3fcf396601f094af976367918191e5c6a00bc5d85",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_003.json.gz",
+        "sha256": "014621dab3a8b358dee0b16c9791cc0bcf9efd8035a5b62f9761f31449f74092",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_004.json.gz",
+        "sha256": "fa771a5effa13be26dbd3cd3477d2896f956fce0fd40c1165de9de1a3ec3a47a",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_005.json.gz",
+        "sha256": "7b318ab2bc0ebb0e28f9309b8e158584b76b599ebe06febf79da71acb9575cc3",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_006.json.gz",
+        "sha256": "0a3c1595fe310d630269d4c38623998c2cde4a22ead54d97965c501a0c700cc7",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/no_compactness/case_007.json.gz",
+        "sha256": "d171fb54dd14d9afc9a3688b1c752313c8eb3a1a2d80e8b5de65efee934d62d1",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_000.json.gz",
+        "sha256": "9d66fa4cbbbb0f54fccd9f076cf916a3bf2a16ee935e6ee6f34024c161c7761e",
+        "environment_seeds": [
+          501
+        ],
+        "optimizer_seeds": [
+          1501
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_001.json.gz",
+        "sha256": "7e5979843a998f1e3d16455e9efdc2263f4fee865572fa40c891a8484a895e01",
+        "environment_seeds": [
+          502
+        ],
+        "optimizer_seeds": [
+          1502
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_002.json.gz",
+        "sha256": "74bf930030c07d1e0c764bf9b3cb3fdce4123437173c48bda9412683833bd0df",
+        "environment_seeds": [
+          503
+        ],
+        "optimizer_seeds": [
+          1503
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_003.json.gz",
+        "sha256": "835130a1e8f48a08cc6f7cd2d8bf416032c27b17a17a96c715211828476d35ef",
+        "environment_seeds": [
+          504
+        ],
+        "optimizer_seeds": [
+          1504
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_004.json.gz",
+        "sha256": "ba971aeb83aaa06142b4ed78cc7c65fde7ad907689d162d8da42792c003e0c2a",
+        "environment_seeds": [
+          505
+        ],
+        "optimizer_seeds": [
+          1505
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_005.json.gz",
+        "sha256": "17c4807577293572e3965bcf223fab2b3529fb4fc60d817fe5a62a08b6b0853c",
+        "environment_seeds": [
+          506
+        ],
+        "optimizer_seeds": [
+          1506
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_006.json.gz",
+        "sha256": "17db20d297314994fb89b863994e2b097caf0e1c9c6bc5aa85a954c609765d2d",
+        "environment_seeds": [
+          507
+        ],
+        "optimizer_seeds": [
+          1507
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/selected/case_007.json.gz",
+        "sha256": "680ddb50a086aae7da55f894290ffa9096e2a53997f469c8bb337443b76bff52",
+        "environment_seeds": [
+          508
+        ],
+        "optimizer_seeds": [
+          1508
+        ]
+      },
+      {
+        "path": "results/comparison/20260916T001949Z-frozen/summary.json",
+        "sha256": "1653e36c1fc3ad8ae7343bde63c4cb0c8e4f1fa367108e9a523727dfc75b116b",
+        "environment_seeds": [
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508
+        ],
+        "optimizer_seeds": [
+          1501,
+          1502,
+          1503,
+          1504,
+          1505,
+          1506,
+          1507,
+          1508
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_000.json",
+        "sha256": "9fd02d2fb20a528e45e0ba89014d1d6c2a9d081b60ee2fe2540b903343bd3f92",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_001.json",
+        "sha256": "4492664e8c1f51d2b36ef139c164eda4282cb162942c850a7cef6113651625e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_002.json",
+        "sha256": "5db285eea2db021929c7372544cd7a4a8d684d79cfbe647f064e2f51b9997dcc",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/best-before-storage-8aa22ae56cd54299917d2f7f13ad74e6/results/case_003.json",
+        "sha256": "f4359e87c0930b936d151bed6e46f85a97c792354330cf742d00626ab0069e33",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_0/results/case_000.json",
+        "sha256": "37a2aa7687b1b60065c263fe2abb225a9b5f0df3f304685a23b6edaa061e1b17",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_0/results/case_001.json",
+        "sha256": "1254b735044772e428ce7eec8f30f7798b805499514ac30968f50857392e826a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_0/results/case_002.json",
+        "sha256": "85877140cae8741e0e176460b8ed6158b66801990c9c110a7cc5c0a27702c908",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_0/results/case_003.json",
+        "sha256": "833d4c351b24c98c1ac93b60fb34b59b62653842021978000e2ff32cac80182a",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_1/results/case_000.json",
+        "sha256": "9fd02d2fb20a528e45e0ba89014d1d6c2a9d081b60ee2fe2540b903343bd3f92",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_1/results/case_001.json",
+        "sha256": "4492664e8c1f51d2b36ef139c164eda4282cb162942c850a7cef6113651625e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_1/results/case_002.json",
+        "sha256": "5db285eea2db021929c7372544cd7a4a8d684d79cfbe647f064e2f51b9997dcc",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_1/results/case_003.json",
+        "sha256": "f4359e87c0930b936d151bed6e46f85a97c792354330cf742d00626ab0069e33",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_10/results/case_000.json.gz",
+        "sha256": "ab0ec0827465961897658d4305ec599eb9cb8cd1398b696804aa4a8bc013ed8b",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_10/results/case_001.json.gz",
+        "sha256": "5565db197c21e78c3eaf3d0cb540c7135e751f096d6c5c71f60ca19fdf00611f",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_10/results/case_002.json.gz",
+        "sha256": "7701a64d560ac7ceb5c12e6e030a08701b6b54d6a275926a2ad128e48443415e",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_10/results/case_003.json.gz",
+        "sha256": "dbf593af0f2e9e7fd925d5763ec1deed4d12ad85fe33a34e743846e5444a1fbd",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_11/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_11/results/case_001.json.gz",
+        "sha256": "0614c164411fc992f5d5f832fbd547bca5d089a0872ed18743ad778201d8c5e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_11/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_11/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_12/results/case_000.json.gz",
+        "sha256": "5724a9ad991499f2fb07cd108da27134636f9b5d2d57c9cc26ac7d072d4c0d0f",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_12/results/case_001.json.gz",
+        "sha256": "ecf968f92e65354721f84d38aca24c545cd3880784bf56fcbc8bb7ce59f4d4fb",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_12/results/case_002.json.gz",
+        "sha256": "69ef6186b2afe8f8ed0ca2f5369bf67755214340ee42c323586a4d032ec80f21",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_12/results/case_003.json.gz",
+        "sha256": "31b523bea1201b537a3506197682b87801e2356b323e053b4a8273b53c7e24d1",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_13/results/case_000.json.gz",
+        "sha256": "360c4e6ff200a2cd2db84fefcb55fe4a9ab9e24918520b32703cfafa6f024bb1",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_13/results/case_001.json.gz",
+        "sha256": "b12e58326110e6d210b0a70baaec660b0529003426dedd34d20e048427c88a8c",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_13/results/case_002.json.gz",
+        "sha256": "b318597ac9b6cfaf0c1b63e9e77213b7f15e8cea8b71a12e98503d4d382ffb7b",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_13/results/case_003.json.gz",
+        "sha256": "41ddc5aaa510afa1d7167410ff5edb4ffcbb24e661f07997d9ce0043af754a0c",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_14/results/case_000.json.gz",
+        "sha256": "67f3e63ab8ac1487e7673c6f6831178dec78dddd4c09bfe821152a3815dec5db",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_14/results/case_001.json.gz",
+        "sha256": "4a7656a97004adc04655aa9d597c3371e67f76298115fed21ced0543729acbbf",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_14/results/case_002.json.gz",
+        "sha256": "8547a77f5652c0e0da452ebe28ad6fdb5cbd75c6886a12c2631ff6dcacbf6c19",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_14/results/case_003.json.gz",
+        "sha256": "dbeb342160a69e231b3cba58d9c2772c067da54624eb51ff14d7883c1709f7cc",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_15/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_15/results/case_001.json.gz",
+        "sha256": "f656b74f1c5368e8ff8b83fab4883aefac3c2d37e39a6ac5f842f0a0a55e23df",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_15/results/case_002.json.gz",
+        "sha256": "34d410d35164d415c6f49c4155689cc8543b9e16d01300d9626d276db6ad757d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_15/results/case_003.json.gz",
+        "sha256": "3c18adaf69b45c0337858d4b30bbb22de8c333e1a7e77717a34d3b98d3137363",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_16/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_16/results/case_001.json.gz",
+        "sha256": "0614c164411fc992f5d5f832fbd547bca5d089a0872ed18743ad778201d8c5e4",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_16/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_16/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_17/results/case_000.json.gz",
+        "sha256": "ceff8bad84e906e3207af1e861829d40c75215f39a64fbcdf120417afc2690c6",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_17/results/case_001.json.gz",
+        "sha256": "065f0cb8ebd1b762775a2c614d09b2ca136e173061271f7d17447ac14e407558",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_17/results/case_002.json.gz",
+        "sha256": "03d3a7bf2a4ba6d74a33eeb487e8d2bf9a86ffd107e25685041e59a6d25e1421",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_17/results/case_003.json.gz",
+        "sha256": "8483b0422ad7c9635f508ac823f8b6d57a4001a65df128945735996d1c134648",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_18/results/case_000.json.gz",
+        "sha256": "dc47f1d1d033493ddff77eaeef846be1ce002137189114e90aa8b3f4bbf36080",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_18/results/case_001.json.gz",
+        "sha256": "6483fcd234bbae7314f972ebb3ad364cb0e2a8352792556d286971f339667d38",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_18/results/case_002.json.gz",
+        "sha256": "33af5348edc4811fb39435d7c979780d1863aeb9583c6a30a3ac570f1c20866d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_18/results/case_003.json.gz",
+        "sha256": "956358d425a421dd37e2e113e724e548d7a6d0bfc6f528b33d614cba23a15d1e",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_19/results/case_000.json.gz",
+        "sha256": "3f85e8c3ca9080beeb569c2f912772a33c057daccf7c6ef5880f245e4b652733",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_19/results/case_001.json.gz",
+        "sha256": "a010a481bfc2198c17198b8bcdb111d8974fe805e0447c012efd32e4773e72f2",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_19/results/case_002.json.gz",
+        "sha256": "0ac374955154a5dd23f2cf46164612dd292fcf579aae46f24018e862586131c3",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_19/results/case_003.json.gz",
+        "sha256": "01ad48078b8087a9393a4adec1966419755e774b2802fb556918751e545920a2",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_2/results/case_000.json",
+        "sha256": "7d29cbf33df7b03ca8527dedf73121adca5ef7e8cb0516cccfac94ec9533aa03",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_2/results/case_001.json",
+        "sha256": "96b4c9ed3f750bfb77bde2e6c7e2e5b610cb784e936285961737f225fb9b33f7",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_2/results/case_002.json",
+        "sha256": "618566fb46d469c98e5749044d791fda15e19ffccb64a1e2558a588bfdca1319",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_2/results/case_003.json",
+        "sha256": "a29c9c11d700a00dfb0033c3db39d1379932b3b0cb1af4c5ca609c0469527428",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_3/results/case_000.json.gz",
+        "sha256": "4981638535b4f450f0f4699a766edeee3ad3550c61c52e2d746df74b805ee937",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_3/results/case_001.json.gz",
+        "sha256": "b8624dad89919f5996e1f07c3c9fe8d58cf501a08a759adbd0931520e88836a2",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_3/results/case_002.json.gz",
+        "sha256": "22dcff621df30a484bd5e08036634b468eff7b2cf4c069f79cdc47a076f0e570",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_3/results/case_003.json.gz",
+        "sha256": "0279b9bd3c4d9b42ab0416946f4c79c24db8e10325ef9c91a4f04094833f62f5",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_4/results/case_000.json.gz",
+        "sha256": "d91136e2f89dfed82b653c4ab8c108f0b0d8f7d7e876d427e7c854107c2e7442",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_4/results/case_001.json.gz",
+        "sha256": "f49acceeff06641480a0fef29470ede9e3a3292d7bc390bc1e7b2a9bce1725fd",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_4/results/case_002.json.gz",
+        "sha256": "f06c8eb4f2c0b5e61b1b55ac2db09764387b49186087c192265997e80a263a9d",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_4/results/case_003.json.gz",
+        "sha256": "c3907846adcf5570f2e9f306b19c6c515b8f8734be2d3ba773deadb488012b98",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_5/results/case_000.json.gz",
+        "sha256": "8afaaa269e58d162b1511e78c2edfbb02e14d57e0293b7041b39ed9253da3251",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_5/results/case_001.json.gz",
+        "sha256": "0c1c0f7a15ac3ea4b66f20484767dccf50c8f702c25221acb1d00bf22b8c45b0",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_5/results/case_002.json.gz",
+        "sha256": "b970f917f9c5710420e3360b0addfe32d958109e5599927ab1ce406cb7777f19",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_5/results/case_003.json.gz",
+        "sha256": "fbadde27ec5830fb2d71a0c532278db46edc3768d9c1b736a5f840723bf1dfcf",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_6/results/case_000.json.gz",
+        "sha256": "3dbd0f43636c1e1c446b64f1fbb02bea0d559e12106a5f1dbec8144c58ed0c93",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_6/results/case_001.json.gz",
+        "sha256": "39dd330a894367aee7043e8fd9dacc885fb47b3f4c8bf6d980f560919d001f82",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_6/results/case_002.json.gz",
+        "sha256": "5fded165862a425b6536553b88a4674232def656d0024b8b96ff899dfd9237c6",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_6/results/case_003.json.gz",
+        "sha256": "3aedcc559b8a2c3f4272abd233dfdeabfc8a512a278749958fa88ed4912351e3",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_7/results/case_000.json.gz",
+        "sha256": "b3fc503615c81e544b3754f648262fa879c8d8621d026a761e56dd6ac3be1bca",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_7/results/case_001.json.gz",
+        "sha256": "2d25d7004fb3a9b246fa47e524cd3f6a224497d7a08647c216eb68797a2d706a",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_7/results/case_002.json.gz",
+        "sha256": "dfe81d1ad0a6c019471927429f905ba8ebea4c065ea5387c051150da6f75fed2",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_7/results/case_003.json.gz",
+        "sha256": "a1d950630774c4d7052b118cfe2cfc450c64b144a3abff6adcbcc7894745cef6",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_8/results/case_000.json.gz",
+        "sha256": "268fa9ed0f37a42c1f7ccef18fb63b48958ab9675ec61e8c1ace2b1828764c9b",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_8/results/case_001.json.gz",
+        "sha256": "23bf3819c81d30c37f59f1ddc7a27d8b4e37ed27f9b41b96b2a5c37f88bbc321",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_8/results/case_002.json.gz",
+        "sha256": "6bcc44edb877ed76e1c90abc520b598c17286cde9851fda00713c12f43465dc1",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_8/results/case_003.json.gz",
+        "sha256": "27cb10511d096bee051c3f4035d18ba0e73132ad3523af36e82b58bf2a6677ac",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_9/results/case_000.json.gz",
+        "sha256": "21ca86c238400d1beb80a20dbf3b767780f263951cfd96c420578c3e2919fdd5",
+        "environment_seeds": [
+          11
+        ],
+        "optimizer_seeds": [
+          1011
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_9/results/case_001.json.gz",
+        "sha256": "32c4b607ec966334a6ae91aaa5c074e2a2f325bfadc412e492303b98be246e84",
+        "environment_seeds": [
+          22
+        ],
+        "optimizer_seeds": [
+          1022
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_9/results/case_002.json.gz",
+        "sha256": "2de23439c4af401916d10dda59478c88536728e7d2657976f961df9b406104bf",
+        "environment_seeds": [
+          33
+        ],
+        "optimizer_seeds": [
+          1033
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/gen_9/results/case_003.json.gz",
+        "sha256": "3079cb5a5d2f2b4e6dc66a26ce7b64d5e4653034a1774bd343ee837c6c6523bb",
+        "environment_seeds": [
+          44
+        ],
+        "optimizer_seeds": [
+          1044
+        ]
+      },
+      {
+        "path": "results/evolution/20260915T101024.562418Z-search/search-suite.json",
+        "sha256": "055641b34c87ceaeeb592ed40e765db71898c6f1ec240da82f44a400285b82cc",
+        "environment_seeds": [
+          11,
+          22,
+          33,
+          44
+        ],
+        "optimizer_seeds": [
+          1011,
+          1022,
+          1033,
+          1044
+        ]
+      }
+    ],
+    "json_files_inspected": 502,
+    "environment_seeds": [
+      11,
+      22,
+      33,
+      44,
+      71,
+      101,
+      202,
+      303,
+      501,
+      502,
+      503,
+      504,
+      505,
+      506,
+      507,
+      508
+    ],
+    "optimizer_seeds": [
+      1011,
+      1022,
+      1033,
+      1044,
+      1071,
+      1101,
+      1202,
+      1303,
+      1501,
+      1502,
+      1503,
+      1504,
+      1505,
+      1506,
+      1507,
+      1508
+    ],
+    "reserved_seed_values": [
+      11,
+      22,
+      33,
+      44,
+      71,
+      101,
+      202,
+      303,
+      501,
+      502,
+      503,
+      504,
+      505,
+      506,
+      507,
+      508,
+      1011,
+      1022,
+      1033,
+      1044,
+      1071,
+      1101,
+      1202,
+      1303,
+      1501,
+      1502,
+      1503,
+      1504,
+      1505,
+      1506,
+      1507,
+      1508
+    ]
+  },
+  "collisions": [],
+  "replacements": [],
+  "all_stage_seed_values": [
+    20001,
+    20002,
+    20003,
+    20004,
+    20101,
+    20102,
+    20103,
+    20104,
+    20201,
+    20202,
+    20203,
+    20204,
+    20301,
+    20302,
+    20303,
+    20304,
+    30001,
+    30002,
+    30003,
+    30004,
+    30101,
+    30102,
+    30103,
+    30104,
+    30201,
+    30202,
+    30203,
+    30204,
+    30301,
+    30302,
+    30303,
+    30304,
+    1020001,
+    1020002,
+    1020003,
+    1020004,
+    1020101,
+    1020102,
+    1020103,
+    1020104,
+    1020201,
+    1020202,
+    1020203,
+    1020204,
+    1020301,
+    1020302,
+    1020303,
+    1020304,
+    1030001,
+    1030002,
+    1030003,
+    1030004,
+    1030101,
+    1030102,
+    1030103,
+    1030104,
+    1030201,
+    1030202,
+    1030203,
+    1030204,
+    1030301,
+    1030302,
+    1030303,
+    1030304
+  ],
+  "final_generation_rule": "Generate final pairs only after selection and mechanism control are frozen; exclude historical and all stage numeric seeds in both roles."
+}

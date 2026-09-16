@@ -31,8 +31,16 @@ print(f"[{now}] Attaching to {folder}; saved status={manifest.get('status', 'unk
 summary_path = folder / "summary.json"
 if summary_path.exists():
     summary = json.loads(summary_path.read_text())
-    print(f"Completed method cases: {summary.get('completed_method_cases')}; "
-          f"paired cases: {summary.get('paired_case_count')}/{summary.get('planned_case_count')}", flush=True)
+    if "unique_executed_method_cases" in summary:
+        print(f"Stage: {summary['stage']}; paired cases: {summary['case_count']}; "
+              f"distinct executions: {summary['unique_executed_method_cases']}; "
+              f"identical-method aliases: {len(summary['aliases'])}", flush=True)
+        print(f"Mean offline errors: {json.dumps(summary['method_mean_offline_errors'], sort_keys=True)}", flush=True)
+    else:
+        print(f"Completed method cases: {summary.get('completed_method_cases')}; "
+              f"paired cases: {summary.get('paired_case_count')}/{summary.get('planned_case_count')}", flush=True)
+elif "completed_method_cases" in manifest:
+    print(f"Completed cases per method: {json.dumps(manifest['completed_method_cases'], sort_keys=True)}", flush=True)
 elif "latest_summary" in manifest:
     print(json.dumps(manifest["latest_summary"], sort_keys=True), flush=True)
 print("Following timestamped saved output. A completed run produces no new events. Ctrl-C detaches.", flush=True)

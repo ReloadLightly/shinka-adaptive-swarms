@@ -1,6 +1,9 @@
 # Follow-up design: when should a swarm relocate more particles?
 
-**Status:** proposed experiment; no v2 search or comparison has run.
+**Status:** completed on 16 September 2026; see the [measured v2 report](relocation_allocation_v2.md).
+The design below is retained from the prospective protocol at commit `28c57e3`;
+the native run also contains its unchanged pre-execution snapshot. The report
+records the retained feedback-label deviation and actual execution chronology.
 **Designed:** 2026-09-16, from the completed study at commit `571f439`.
 
 ## Evidence motivating this experiment

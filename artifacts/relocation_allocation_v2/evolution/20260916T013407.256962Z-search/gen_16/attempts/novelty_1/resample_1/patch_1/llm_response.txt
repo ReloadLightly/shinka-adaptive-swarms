@@ -1,0 +1,30 @@
+<NAME>
+scale_normalized_contraction
+</NAME>
+<DESCRIPTION>
+Use three relocations by default and four when the swarm diameter is below the actual relocation radius and fitness loss exceeds recent improvement. The radius is twice default_radius.
+The previous conditional rules achieved mean errors 3.19 and 3.16 versus 3.28 for constant four. Broadening the contraction threshold improved case_010 from 5.768937 to 5.193272, with interval-end error falling from 3.44168 to 2.74066, although case_011 worsened. Executed counts confirm that both conditional rules mixed three and four relocations; detection overhead remained near 16%.
+This proposal tests whether the broader, dimensionless contraction threshold also helps at smaller movement scales. It retains ordinary PSO motion for more particles when the swarm already spans the relocation radius or recent progress offsets the observed loss. Improvement remains an untested hypothesis.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Relocate four particles, capped by the available swarm size."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    return min(4, swarm_size)
+=======
+    """Allocate by contraction relative to the fixed relocation radius."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    relocation_radius = 2.0 * max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = float(observation["fitness_drop"])
+    improvement = max(0.0, float(observation["recent_improvement"]))
+    count = 3
+    if diameter < relocation_radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+>>>>>>> REPLACE
+</DIFF>

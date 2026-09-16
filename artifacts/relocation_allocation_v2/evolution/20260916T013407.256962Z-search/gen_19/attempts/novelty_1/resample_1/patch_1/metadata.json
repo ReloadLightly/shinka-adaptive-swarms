@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "preserve_motion_after_fitness_gain",
+  "patch_description": "Test relocating only one particle when the larger-radius regime produces a strict fitness gain. The current policy executes count two in 214 of 1,639 larger-radius responses, grouping gains with losses covered by historical progress. Separating gains could preserve useful ordinary PSO motion while retaining one relocation for exploration. Keep the existing rule for losses: case_009 still has interval-end error 3.38938, arguing against indiscriminately reducing allocation. Fitness gains are imperfect evidence of spatial stability; this is an untested hypothesis, not an established improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T04:03:59.607310",
+  "llm_cost": 0.20725,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

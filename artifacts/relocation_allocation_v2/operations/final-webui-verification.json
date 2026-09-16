@@ -1,0 +1,56 @@
+{
+  "verified_at": "2026-09-16T02:08:12.535911+00:00",
+  "url": "http://127.0.0.1:8889/viz_tree.html?db_path=programs.sqlite&selected_node=4d733416-9295-42b5-8130-4105e6afdd3a&right_tab=agent-code&left_tab=tree-view",
+  "services": [
+    {
+      "url": "http://localhost:8888",
+      "pid": 167677,
+      "http_status": 200,
+      "process": "167677    01:46:02 /home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search --port 8888"
+    },
+    {
+      "url": "http://localhost:8889",
+      "pid": 250034,
+      "http_status": 200,
+      "process": "250034       32:15 /home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search --port 8889"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "both_webuis_http200": true,
+    "both_original_server_processes_retained": true,
+    "completed_archive_visible": true,
+    "20_generation_slots_database": true,
+    "candidate_source_visible": true,
+    "candidate_source_matches_frozen_shortlist": true,
+    "no_browser_page_errors": true,
+    "automated_browser_closed": true
+  },
+  "database_rows": 21,
+  "generation_slots": 20,
+  "inspected_candidate": {
+    "role": "search leader, frozen shortlist_1; validation selection is still pending",
+    "generation": 13,
+    "native_id": "4d733416-9295-42b5-8130-4105e6afdd3a",
+    "source_sha256": "82252a5a115b1007882e633bf08ee35432f1318422b2aded08d7ebc3e097b0c9",
+    "lineage_to_root": [
+      {
+        "id": "4d733416-9295-42b5-8130-4105e6afdd3a",
+        "generation": 13
+      },
+      {
+        "id": "d70e4ad1-7fdd-4e6d-9e4e-92d1670803d1",
+        "generation": 7
+      },
+      {
+        "id": "5cb65dca-a470-4a42-ae7a-24ae7e1fc01c",
+        "generation": 0
+      }
+    ]
+  },
+  "screenshot": "final-webui-selected-source.png",
+  "browser_evidence": "final-webui-browser-steps.json",
+  "native_plotly_deprecation_warning": true,
+  "initial_verification_preserved": true,
+  "note": "Native pricing labels are archive estimates, not paid API billing. No server was replaced and no scientific execution was performed. Initial attempt verified completed archive but supplied wrong native tab IDs; attempt1 evidence retained and corrected native source tab verified."
+}

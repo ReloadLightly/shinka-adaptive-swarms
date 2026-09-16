@@ -1,0 +1,67 @@
+{
+  "audited_at": "2026-09-16T02:11:47.011979+00:00",
+  "archive": "artifacts/relocation_allocation_v2/evolution/20260916T013407.256962Z-search",
+  "scope": "Only the new native v2 search archive; all regular files scanned, case gzip content decompressed for inspection, SQLite/pickle bytes scanned without executing their contents. No external credential files accessed.",
+  "passed": true,
+  "checks": {
+    "no_secret_pattern_matches": true,
+    "no_raw_auth_or_credential_filenames": true,
+    "no_uploaded_document_or_book_file_formats": true,
+    "no_transient_os_or_temp_files": true,
+    "only_classified_execution_logs": true,
+    "no_symlinks": true,
+    "archive_content_unchanged": true
+  },
+  "files_scanned": 669,
+  "archive_bytes": 53166583,
+  "decoded_bytes_scanned": 119031699,
+  "file_suffix_counts": {
+    ".pkl": 1,
+    ".json": 103,
+    ".py": 43,
+    ".jsonl": 21,
+    ".log": 22,
+    ".gz": 320,
+    ".err": 20,
+    ".out": 20,
+    ".md": 40,
+    ".txt": 59,
+    ".diff": 19,
+    ".sqlite": 1
+  },
+  "pattern_categories": [
+    "openai_secret_key",
+    "github_secret_token",
+    "aws_access_key",
+    "private_key_pem",
+    "jwt_token",
+    "authorization_bearer_value",
+    "oauth_token_json_value",
+    "credential_environment_assignment",
+    "shell_environment_dump_marker"
+  ],
+  "possible_secret_findings_paths_and_counts_only": [],
+  "raw_auth_or_credential_paths": [],
+  "document_book_format_paths": [],
+  "transient_os_or_temp_paths": [],
+  "log_classification": {
+    "native_controller_or_case_execution_evidence": 83
+  },
+  "sqlite_tables": [
+    "archive",
+    "attempt_log",
+    "generation_event_log",
+    "metadata_store",
+    "programs",
+    "sqlite_sequence"
+  ],
+  "native_pickle": {
+    "path": "bandit_state.pkl",
+    "bytes": 376,
+    "parsed_opcodes": 149,
+    "parsed_without_unpickling_or_execution": true,
+    "token_pattern_matches": 0
+  },
+  "archive_manifest_sha256": "3fec186047284218a7f4e383f987d76a8b0e4b595216baad1310c9cb6e3578de",
+  "limitations": "Pattern-based bounded hygiene review cannot prove the absence of every conceivable secret encoding. No possible credential values are included in this report. Pricing snapshot and native logs/prompt histories are retained as run evidence; the copyrighted uploaded book is absent."
+}

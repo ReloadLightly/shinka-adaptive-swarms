@@ -1,0 +1,16 @@
+<NAME>
+gate_recovery_credit_by_radius
+</NAME>
+<DESCRIPTION>
+Restrict the existing recovery-credit rule to larger relocation radii. At severity 1, the adaptive rule increased mean error from 3.1216 to 3.3128; at severity 3, it decreased mean error from 3.6068 to 3.4065. Executed count-two responses were also more frequent at severity 1. Recovery diagnostics show mixed effects: case_006 interval-end error rose from 2.21217 to 4.31346, while case_010 improved from 2.93968 to 2.00686.
+Use the public default_radius to retain constant-three allocation in the smaller-radius regime and preserve the current adaptive rule in the larger-radius regime. The threshold separates the supplied regimes. This tests a search-supported interaction between relocation scale and allocation; improved performance and generalization remain unverified.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 2 if recovery_credit >= loss else 3
+=======
+    # Restrict reduced allocation to the larger-radius regime.
+    larger_radius = float(observation["default_radius"]) > 1.0
+    count = 2 if larger_radius and recovery_credit >= loss else 3
+>>>>>>> REPLACE
+</DIFF>

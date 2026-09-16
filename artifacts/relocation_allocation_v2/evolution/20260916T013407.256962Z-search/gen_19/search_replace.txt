@@ -1,0 +1,16 @@
+<NAME>
+preserve_motion_after_fitness_gain
+</NAME>
+<DESCRIPTION>
+Test relocating only one particle when the larger-radius regime produces a strict fitness gain. The current policy executes count two in 214 of 1,639 larger-radius responses, grouping gains with losses covered by historical progress. Separating gains could preserve useful ordinary PSO motion while retaining one relocation for exploration. Keep the existing rule for losses: case_009 still has interval-end error 3.38938, arguing against indiscriminately reducing allocation. Fitness gains are imperfect evidence of spatial stability; this is an untested hypothesis, not an established improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 2 if larger_radius and 4.0 * recovery_credit >= loss else 3
+=======
+    if larger_radius and float(observation["fitness_drop"]) < 0.0:
+        count = 1
+    else:
+        count = 2 if larger_radius and 4.0 * recovery_credit >= loss else 3
+>>>>>>> REPLACE
+</DIFF>

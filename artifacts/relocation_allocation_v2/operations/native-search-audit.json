@@ -1,0 +1,598 @@
+{
+  "audited_at": "2026-09-16T02:05:00.075299+00:00",
+  "run": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search",
+  "audit_mode": "read-only; no simulations, mutations or selection",
+  "passed": true,
+  "checks": {
+    "manifest_search_complete": true,
+    "database_integrity_ok": true,
+    "20_primary_slots": true,
+    "21_native_rows_with_one_seed_island_copy": true,
+    "all_native_programs_correct": true,
+    "lineage_complete_acyclic": true,
+    "source_matches_db": true,
+    "checkpoint_identities_match": true,
+    "checkpoint_complete": true,
+    "case_inputs_match_saved_suite": true,
+    "exact_100000_query_budgets": true,
+    "score_matches_saved_measurements": true,
+    "requested_counts_match_execution": true,
+    "fixed_controls_preserved": true,
+    "environment_histories_paired": true,
+    "320_case_checkpoints_and_32million_queries": true,
+    "all_frozen_scientific_sources_match": true,
+    "subscription_route_only_in_all_recorded_mutations": true,
+    "no_inner_effort_override": true
+  },
+  "native_rows": 21,
+  "evaluated_slots": 20,
+  "saved_case_checkpoints": 320,
+  "objective_evaluations": 32000000,
+  "query_accounting": {
+    "initialization": 1600,
+    "detection": 5086269,
+    "particle": 25598912,
+    "exclusion": 1006919,
+    "memory": 306300
+  },
+  "incomplete_final_responses": 0,
+  "lineage": [
+    {
+      "generation": 0,
+      "id": "5cb65dca-a470-4a42-ae7a-24ae7e1fc01c",
+      "parent_id": null,
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 0,
+      "id": "ba9d2ef6-1556-4c1c-8db8-878493dd9294",
+      "parent_id": null,
+      "correct": true,
+      "island_copy": true
+    },
+    {
+      "generation": 1,
+      "id": "f99dddee-0343-4246-bf0b-610f56363c77",
+      "parent_id": "ba9d2ef6-1556-4c1c-8db8-878493dd9294",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 2,
+      "id": "564b1bc0-626a-450a-b3a1-440f5c25e5a5",
+      "parent_id": "5cb65dca-a470-4a42-ae7a-24ae7e1fc01c",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 3,
+      "id": "913fddf8-4810-4ad1-9c6a-97711bf5439b",
+      "parent_id": "ba9d2ef6-1556-4c1c-8db8-878493dd9294",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 4,
+      "id": "35366ec1-c936-4ace-a546-47a1b06c1451",
+      "parent_id": "913fddf8-4810-4ad1-9c6a-97711bf5439b",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 5,
+      "id": "33f050f5-04e9-4440-84e5-48cd7e5264df",
+      "parent_id": "ba9d2ef6-1556-4c1c-8db8-878493dd9294",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 6,
+      "id": "b05efb92-7db4-49f2-a309-c42696c130dd",
+      "parent_id": "35366ec1-c936-4ace-a546-47a1b06c1451",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 7,
+      "id": "d70e4ad1-7fdd-4e6d-9e4e-92d1670803d1",
+      "parent_id": "5cb65dca-a470-4a42-ae7a-24ae7e1fc01c",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 8,
+      "id": "9b5c1a9e-6ae5-4b13-a369-219398b432a6",
+      "parent_id": "d70e4ad1-7fdd-4e6d-9e4e-92d1670803d1",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 9,
+      "id": "ed95db9e-db4e-4c50-b0ec-c98c4b3e78b3",
+      "parent_id": "d70e4ad1-7fdd-4e6d-9e4e-92d1670803d1",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 10,
+      "id": "0b7218fe-2b21-4c75-b17c-2bc8cb8189df",
+      "parent_id": "b05efb92-7db4-49f2-a309-c42696c130dd",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 11,
+      "id": "a57a4b24-f184-4174-9b31-8d21d94e591b",
+      "parent_id": "b05efb92-7db4-49f2-a309-c42696c130dd",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 12,
+      "id": "50fbf5b1-da4a-4164-a225-d507f1e81995",
+      "parent_id": "0b7218fe-2b21-4c75-b17c-2bc8cb8189df",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 13,
+      "id": "4d733416-9295-42b5-8130-4105e6afdd3a",
+      "parent_id": "d70e4ad1-7fdd-4e6d-9e4e-92d1670803d1",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 14,
+      "id": "41293330-a3f6-46e2-b1fc-ee23615beab5",
+      "parent_id": "0b7218fe-2b21-4c75-b17c-2bc8cb8189df",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 15,
+      "id": "d6df5c2b-14b3-4bfd-9873-830b5b722fe5",
+      "parent_id": "4d733416-9295-42b5-8130-4105e6afdd3a",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 16,
+      "id": "fa28876b-609f-4f22-92ea-b726b170d3a2",
+      "parent_id": "9b5c1a9e-6ae5-4b13-a369-219398b432a6",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 17,
+      "id": "573cbc78-a8c4-4b2f-93bf-332b0142d696",
+      "parent_id": "fa28876b-609f-4f22-92ea-b726b170d3a2",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 18,
+      "id": "ffe0ec34-1b3d-4127-9812-599ef155d828",
+      "parent_id": "41293330-a3f6-46e2-b1fc-ee23615beab5",
+      "correct": true,
+      "island_copy": false
+    },
+    {
+      "generation": 19,
+      "id": "4fbe7456-b93e-481b-9231-96afd5553080",
+      "parent_id": "50fbf5b1-da4a-4164-a225-d507f1e81995",
+      "correct": true,
+      "island_copy": false
+    }
+  ],
+  "slot_summary": [
+    {
+      "generation": 0,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "e6e239ebc7fcdcc8d6ddea8e15e69ae8eb2f658bd026c593fa01e186573980ba",
+      "offline_error": 3.364188734543076,
+      "combined_score": 0.22913766127593896
+    },
+    {
+      "generation": 1,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "80baf16f7c927af46a56e1d8ba63ce79cb36d42ae58b16d6d9190dad516186bb",
+      "offline_error": 3.8103067910705533,
+      "combined_score": 0.20788694846996356
+    },
+    {
+      "generation": 2,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "b573ab27c1871ca4a202dd8978882ca0fca2b9ad2c5afecbadd05a6435d38f4a",
+      "offline_error": 3.695454696672855,
+      "combined_score": 0.21297191956906503
+    },
+    {
+      "generation": 3,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "5f54ce8bf725f963c0c95ccad0e96ce96111ec84615b1aa8959e43b203da5050",
+      "offline_error": 3.473783009141094,
+      "combined_score": 0.22352447536162162
+    },
+    {
+      "generation": 4,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "b48fd19fe9670d7546779a4f6ae62112dbc94c5d6182097f5ef3759573afea7c",
+      "offline_error": 3.364188734543076,
+      "combined_score": 0.22913766127593896
+    },
+    {
+      "generation": 5,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "e6aadcab5d55b1e2f90b08a1b311d5b34df2d0b95e728da5cadc4fd53d1dd9d2",
+      "offline_error": 3.6235671432180943,
+      "combined_score": 0.21628322224471475
+    },
+    {
+      "generation": 6,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "7a39a7cd4785fbbfbc48b04c2fb2d972f6304ab87cd24c6a134db846136cf205",
+      "offline_error": 3.3596809741858964,
+      "combined_score": 0.22937458174602665
+    },
+    {
+      "generation": 7,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "a2a16694afc7096a09c1143cb498d9d67e98860b61f247b2dfa267fd05d8bec0",
+      "offline_error": 3.207433302878241,
+      "combined_score": 0.23767459351427273
+    },
+    {
+      "generation": 8,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "02265dd05a2170db7f3dca6f940c8e96d7700f1d2d8af43f2957464ea357c494",
+      "offline_error": 3.2802103641792018,
+      "combined_score": 0.23363337661366695
+    },
+    {
+      "generation": 9,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "3adc332acb54193be88a6f8b5ff1013bdf2bbd38a314bb98bcd524b44e7ac95e",
+      "offline_error": 3.194478248610379,
+      "combined_score": 0.2384086746262894
+    },
+    {
+      "generation": 10,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "09cdb7a402b613644afa43af3240d64cd987455f3900c4be61d83a90a8db3c6b",
+      "offline_error": 3.264081274850281,
+      "combined_score": 0.23451710592338829
+    },
+    {
+      "generation": 11,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "8262c99c2e0c93aa10a0abf202974a999d00643c5284d985c09e50d765366489",
+      "offline_error": 3.2295501240091666,
+      "combined_score": 0.23643176476937117
+    },
+    {
+      "generation": 12,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "6978136acd939677beda64fd3e38b00cfec5397a3d368a1bd2c4ebad2f74ee05",
+      "offline_error": 3.232836946214503,
+      "combined_score": 0.23624817414578578
+    },
+    {
+      "generation": 13,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "82252a5a115b1007882e633bf08ee35432f1318422b2aded08d7ebc3e097b0c9",
+      "offline_error": 3.159207331004463,
+      "combined_score": 0.24043042830435107
+    },
+    {
+      "generation": 14,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "5e4d918f4636a424dd88dd10dd5027dac6f2f0ba73d4f94ff91a85d18ed627b0",
+      "offline_error": 3.2238571431092686,
+      "combined_score": 0.23675043120986786
+    },
+    {
+      "generation": 15,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "6d9a322ee0c6ac5a30a70a21e0a35318bdbaf262864b24e54e0c08de1fa443b5",
+      "offline_error": 3.330511901493392,
+      "combined_score": 0.23091958242976926
+    },
+    {
+      "generation": 16,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "fba0985e8cf102cdbc68beb006807dce9995b0914d5a12f56b0f010f76752bdf",
+      "offline_error": 3.207433302878241,
+      "combined_score": 0.23767459351427273
+    },
+    {
+      "generation": 17,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "30b5a74ea35ee61a47917f91b5db6e8fce3a292fc9f614fbb33c80e0863fcf19",
+      "offline_error": 3.212805420401101,
+      "combined_score": 0.23737151380345264
+    },
+    {
+      "generation": 18,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "c81b48460310acfde8b769939503094143dab0fdf2a9a00f57e8a5c3bd6ebf3d",
+      "offline_error": 3.232836946214503,
+      "combined_score": 0.23624817414578578
+    },
+    {
+      "generation": 19,
+      "case_checkpoints": 16,
+      "objective_evaluations": 1600000,
+      "program_sha256": "1fc733be5b513de1f79edc05d80e0f22910ee4796845e61c5d91f713a4db5c57",
+      "offline_error": 3.377001718864003,
+      "combined_score": 0.2284668968006569
+    }
+  ],
+  "source_preservation": {
+    "evaluate.py": {
+      "sha256": "4312fdd9b7881e241a0528330a33be7c33928ea13c0c2a2a40cd2d3707e1c795",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/evaluate.py"
+    },
+    "initial.py": {
+      "sha256": "e6e239ebc7fcdcc8d6ddea8e15e69ae8eb2f658bd026c593fa01e186573980ba",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/initial.py"
+    },
+    "simulator.py": {
+      "sha256": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+      "matches_manifest": true,
+      "evidence": "src/adaptive_swarms/simulator.py"
+    },
+    "policies.py": {
+      "sha256": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+      "matches_manifest": true,
+      "evidence": "src/adaptive_swarms/policies.py"
+    },
+    "movingpeaks.py": {
+      "sha256": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+      "matches_manifest": true,
+      "evidence": "vendor/deap/movingpeaks.py"
+    },
+    "evolution_context.md": {
+      "sha256": "304e5798b97a7e71876e43c195459ac67b9588528497350132fc863e9189d56e",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/evolution_context.md"
+    },
+    "relocation_allocation.py": {
+      "sha256": "cefeef47d50f05d99263116ca382370fa9a5f3327a721802c4fee36a504bcdbd",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/relocation_allocation.py"
+    },
+    "task_prompt.txt": {
+      "sha256": "0bed2799b2b9a5873136f5a67d39543736fc7d62f424668bba25ea87bad0aff9",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/task_prompt.txt"
+    },
+    "protocol.md": {
+      "sha256": "df72af342e7a0e498efc3fc67a73011ffda5a3f74afb025ea66baef5db5900eb",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/protocol.md"
+    },
+    "task_system_prompt.txt": {
+      "sha256": "40ff6394cc5ca7c48b75f4ce4bc8b77b11f6930aecc2af9989815f95ab015c7a",
+      "matches_manifest": true,
+      "evidence": "results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/task_snapshot/task_system_prompt.txt"
+    }
+  },
+  "mutation_calls": {
+    "recorded_native_attempts": 19,
+    "successful_attempts": 19,
+    "failed_attempts": 0,
+    "extra_native_attempts_beyond_19_descendants": 0,
+    "raw_headless_prompt_files": 19,
+    "model_routes": {
+      "headless/codex@gpt-6-astra": 19
+    },
+    "recorded_query_counts": 19,
+    "recorded_tool_calls": 0,
+    "inner_effort_requested": null,
+    "inner_effort_effective": "unverified; no override sent, Codex profile/default applies",
+    "supported_headless_effort_values": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "supervising_effort": "Outer Astra/Ultra is separate; not inferred from mutation settings",
+    "attempts": [
+      {
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 10,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 11,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 12,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 13,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 14,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 15,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 16,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 17,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 18,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 19,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 2,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 3,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 4,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 5,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 6,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 7,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 8,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      },
+      {
+        "generation": 9,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "patch_attempt": 1,
+        "success": true,
+        "error_msg": null,
+        "llm_model": "headless/codex@gpt-6-astra"
+      }
+    ],
+    "limitation": "Counts refer to saved native attempts and Headless prompt files; provider-internal network retries are not separately instrumented."
+  },
+  "retained_reporting_deviation": "See search-feedback-label-note.json; exact counts and fitness verified, but auxiliary fraction encoding was mislabeled in search feedback and may have influenced proposal interpretation."
+}

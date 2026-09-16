@@ -1,0 +1,29 @@
+<NAME>
+conservative_contraction_crossover
+</NAME>
+<DESCRIPTION>
+Combine the constant-three parent's default with a stricter version of the adaptive parent's four-particle response: require swarm diameter below half the relocation radius and fitness loss exceeding recent improvement. The adaptive parent improved mean error from 3.36 to 3.21, but cases 001, 002 and 006 had worse offline and interval-end errors than constant three. Its executed allocations used four particles in roughly 58–82% of responses. This proposal tests whether reserving the extra relocation for tighter contraction improves that tradeoff. Improvement remains unmeasured.
+</DESCRIPTION>
+<CODE>
+```python
+"""V2 allocation seed: relocate three particles after a detected change.
+The fixed adapter controls radius, memory, velocity, integer validation and
+count-to-fraction conversion. The numerical simulator is outside this program.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation_count(observation: dict) -> int:
+    """Use three relocations, or four for tightly contracted, losing swarms."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    half_relocation_radius = max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = float(observation["fitness_drop"])
+    improvement = max(0.0, float(observation["recent_improvement"]))
+    count = 3
+    if diameter < half_relocation_radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+# EVOLVE-BLOCK-END
+```
+</CODE>

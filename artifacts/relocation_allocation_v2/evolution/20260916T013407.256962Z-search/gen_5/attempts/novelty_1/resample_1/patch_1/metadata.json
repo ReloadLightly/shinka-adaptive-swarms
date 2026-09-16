@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_with_improving_coverage",
+  "patch_description": "Retain count three as the default: its measured mean error was 3.36 versus 3.47 for the broader reduction rule. The alternative executed count two only occasionally, yet recovery effects varied by case; case_013 interval-end error increased from 0.977 to 2.490. Narrow its exception to broad swarm coverage accompanied by a strict observed fitness improvement, excluding small deteriorations previously allowed. This tests whether that narrower condition supports two relocations; improved performance remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:46:46.652347",
+  "llm_cost": 0.20058,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

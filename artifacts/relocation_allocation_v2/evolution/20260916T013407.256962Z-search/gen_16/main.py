@@ -1,0 +1,22 @@
+"""V2 allocation seed: relocate three particles after a detected change.
+
+The fixed adapter controls radius, memory, velocity, integer validation and
+count-to-fraction conversion. The numerical simulator is outside this program.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_relocation_count(observation: dict) -> int:
+    """Allocate by contraction relative to the fixed relocation radius."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    relocation_radius = 2.0 * max(0.0, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = float(observation["fitness_drop"])
+    improvement = max(0.0, float(observation["recent_improvement"]))
+    count = 3
+    if diameter < relocation_radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+# EVOLVE-BLOCK-END

@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-09-16T01:44:23.600380+00:00",
+  "checks": [
+    {
+      "suite": "tests/test_task_selection.py tests/test_storage_runner.py",
+      "passed": 12,
+      "log": "launcher-checks.log"
+    },
+    {
+      "suite": "tests/test_relocation_allocation.py tests/test_task_selection.py",
+      "passed": 20,
+      "reported_by": "v2_task"
+    },
+    {
+      "suite": "tests/test_allocation_study.py",
+      "passed": 10,
+      "reported_by": "v2_protocol"
+    }
+  ],
+  "note": "Focused simulator diagnostic cases in tests are not research-suite outcomes. Scientific simulator and all v1 artifacts unchanged. Search executes task commit09cde5b; validation/final tooling was completed while search ran."
+}

@@ -1,0 +1,14 @@
+<NAME>
+broaden_partial_relocation
+</NAME>
+<DESCRIPTION>
+Test an eightfold recovery-credit threshold in the larger-radius regime. The twofold and fourfold variants both reduced mean offline error from approximately 3.26 to 3.23, while still executing count three on most responses. This motivates testing a broader opportunity for count two, preserving ordinary PSO motion in three particles.
+The evidence is mixed: case_013 improved substantially, but case_008 worsened, and case_009 retained substantial interval-end error. This proposal tests whether broader partial relocation helps overall; it does not establish that historical progress predicts recovery. Detection and memory reevaluation costs remain unchanged, and performance requires measurement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 2 if larger_radius and recovery_credit >= loss else 3
+=======
+    count = 2 if larger_radius and 8.0 * recovery_credit >= loss else 3
+>>>>>>> REPLACE
+</DIFF>

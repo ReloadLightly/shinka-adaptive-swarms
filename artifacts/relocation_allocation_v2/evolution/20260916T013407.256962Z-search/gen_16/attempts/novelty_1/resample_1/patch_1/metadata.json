@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "scale_normalized_contraction",
+  "patch_description": "Use three relocations by default and four when the swarm diameter is below the actual relocation radius and fitness loss exceeds recent improvement. The radius is twice default_radius.\nThe previous conditional rules achieved mean errors 3.19 and 3.16 versus 3.28 for constant four. Broadening the contraction threshold improved case_010 from 5.768937 to 5.193272, with interval-end error falling from 3.44168 to 2.74066, although case_011 worsened. Executed counts confirm that both conditional rules mixed three and four relocations; detection overhead remained near 16%.\nThis proposal tests whether the broader, dimensionless contraction threshold also helps at smaller movement scales. It retains ordinary PSO motion for more particles when the swarm already spans the relocation radius or recent progress offsets the observed loss. Improvement remains an untested hypothesis.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T04:00:09.320806",
+  "llm_cost": 0.205,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

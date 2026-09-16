@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "gate_recovery_credit_by_radius",
+  "patch_description": "Restrict the existing recovery-credit rule to larger relocation radii. At severity 1, the adaptive rule increased mean error from 3.1216 to 3.3128; at severity 3, it decreased mean error from 3.6068 to 3.4065. Executed count-two responses were also more frequent at severity 1. Recovery diagnostics show mixed effects: case_006 interval-end error rose from 2.21217 to 4.31346, while case_010 improved from 2.93968 to 2.00686.\nUse the public default_radius to retain constant-three allocation in the smaller-radius regime and preserve the current adaptive rule in the larger-radius regime. The threshold separates the supplied regimes. This tests a search-supported interaction between relocation scale and allocation; improved performance and generalization remain unverified.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:52:55.178819",
+  "llm_cost": 0.20998,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

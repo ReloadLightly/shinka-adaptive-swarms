@@ -1,0 +1,29 @@
+<NAME>
+constant_four_allocation
+</NAME>
+<DESCRIPTION>
+Test whether consistently relocating four particles improves on conditional allocation. The current rule reduced mean offline error from 3.36 to 3.21 and executed four relocations in roughly 58–82% of responses per case. However, improvements were uneven: case_003 improved substantially, while case_006 worsened and retained interval-end error 3.73. Detection overhead remained near 16%.
+These observations support testing a higher constant allocation but do not establish that the state condition helps. Remove the diameter and loss gates, giving every response four relocated particles while the remaining particle continues ordinary PSO. This isolates a competing explanation for the current gain and requires evaluation before claiming improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Allocate an extra relocation for contracted swarms losing progress."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    radius = max(0.0, 2.0 * float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = float(observation["fitness_drop"])
+    improvement = max(0.0, float(observation["recent_improvement"]))
+    count = 3
+    if diameter < radius and loss > improvement:
+        count = 4
+    return min(count, swarm_size)
+=======
+    """Relocate four particles, capped by the available swarm size."""
+    swarm_size = int(observation["swarm_size"])
+    if swarm_size <= 0:
+        return 0
+    return min(4, swarm_size)
+>>>>>>> REPLACE
+</DIFF>

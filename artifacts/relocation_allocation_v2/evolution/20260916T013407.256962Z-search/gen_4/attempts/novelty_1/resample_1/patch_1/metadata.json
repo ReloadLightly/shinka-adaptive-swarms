@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_three",
+  "patch_description": "Replace the conditional decision tree with a fixed allocation and bounds projection. Constant three achieved the best supplied mean offline error: 3.36 versus 3.47 for the current policy and 3.81 for the earlier adaptive policy. Count-two exceptions produced mixed recovery outcomes without improving aggregate error. This simplifies computation and restores the strongest measured behavior; fresh-case performance remains unverified.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T03:45:34.433715",
+  "llm_cost": 0.19243,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

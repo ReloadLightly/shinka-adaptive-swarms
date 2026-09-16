@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "moderate_recovery_credit",
+  "patch_description": "Test a recovery-credit multiplier of four between the measured two and eight. Increasing the multiplier to eight slightly improved overall error, but worsened several cases, including case_009 and all four larger-radius, longer-interval cases. Executed allocations remained predominantly three particles, and substantial interval-end errors persisted. This proposal tests an intermediate threshold while preserving count three in the smaller-radius regime. Improvement remains unverified until evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T04:02:43.640745",
+  "llm_cost": 0.19596,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
