@@ -10,8 +10,15 @@
   "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
   "engine_profile": "configs/shinka/book_mpso_schedule_v1.json",
   "analysis": "docs/studies/book_mpso_schedule_v1/analysis_specification.json",
-  "first_full_case_throughput_pending": true,
   "physical_case_ceiling": 104,
   "query_ceiling": 52000000,
-  "deadline_utc": "2026-09-16T18:41:09Z"
+  "deadline_utc": "2026-09-16T18:41:09Z",
+  "throughput_measurement": {
+    "method": "mpso_5_0",
+    "case_index": 0,
+    "queries": 500000,
+    "elapsed_seconds": 14.889536574002705,
+    "projected_104_case_numerical_seconds": 1548.5118036962813,
+    "decision": "Retain original maximum8descendant slots; measured numerical throughput leaves margin for native model latency, analysis and publication."
+  }
 }
