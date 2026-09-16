@@ -1,0 +1,55 @@
+{
+  "fixture_type": "focused small implementation fixtures; not research case executions",
+  "test_module": "tests.test_book_mpso",
+  "runs": [
+    {
+      "attempt": 1,
+      "tests_run": 9,
+      "successful_tests": 8,
+      "failure": "Native seed equivalence test used nonexistent initial_program.py instead of actual initial.py; failure before that test performed any queries",
+      "objective_queries": 9299
+    },
+    {
+      "attempt": 2,
+      "tests_run": 9,
+      "successful_tests": 9,
+      "objective_queries": 11499
+    },
+    {
+      "attempt": 3,
+      "tests_run": 52,
+      "successful_tests": 51,
+      "objective_queries": 11499,
+      "failure": "One synthetic controller cache fixture discarded permanent_quantum argument and mislabeled 5+0 as 5+1; all nine numerical engine tests passed. Corrected fixture forwards arguments; targeted test passed with zero queries.",
+      "log": "operations/final-regression.log"
+    },
+    {
+      "attempt": 4,
+      "tests_run": 1,
+      "successful_tests": 1,
+      "objective_queries": 0,
+      "test": "tests/test_book_schedule_runner.py::test_seed_identity_checkpoint_reuse_and_freeze",
+      "log": "operations/final-regression-fixture-correction.log"
+    }
+  ],
+  "total_objective_queries": 32297,
+  "historical_simulator_source_modified": false,
+  "tests_cover": [
+    "quantum replaces PSO and retains velocity",
+    "fixed neutral roles alone determine convergence",
+    "exact objective budget at partial initialization/refresh/update",
+    "permanent quantum discoveries and all-particle memory reevaluation",
+    "standalone reference and native seed exact outcomes",
+    "paired environment identity and count-independent subset RNG",
+    "immutable public observations after refresh",
+    "invalid candidate errors with exact consumed queries",
+    "trace resolution observational only and historical execution unchanged"
+  ],
+  "synthetic_controller_checks": {
+    "test_module": "tests.test_book_runner_recovery",
+    "tests_passed": 5,
+    "objective_queries": 0,
+    "model_calls": 0
+  },
+  "final_regression_status": "All 52 relevant checks passed across final regression and zero-query targeted fixture correction"
+}

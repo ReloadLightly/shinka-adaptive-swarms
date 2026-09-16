@@ -45,7 +45,7 @@ def test_seed_identity_checkpoint_reuse_and_freeze(registered, monkeypatch):
     calls = []
     def counted(config, *args, **kwargs):
         calls.append(config)
-        return fake_result(config)
+        return fake_result(config, *args, **kwargs)
     monkeypatch.setattr(runner, "run_case", counted)
     runner.execute(folder, 1)
     assert len(calls) == 1

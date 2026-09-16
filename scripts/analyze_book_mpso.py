@@ -22,6 +22,7 @@ import numpy as np
 from adaptive_swarms.allocation_figures import recovery_case_curve
 from adaptive_swarms.artifacts import read_json, resolve_json
 from adaptive_swarms.comparison import validate_pair
+from adaptive_swarms.engine_progress import terminal_failure_generations
 from adaptive_swarms.figures import _save, _style
 from adaptive_swarms.logging import atomic_json
 from adaptive_swarms.simulator import _validated_config
@@ -204,7 +205,13 @@ def native_programs(run, configs, hashes):
         cases = load_cases(folder / "results", configs, hashes, run)
         programs.append({**slot, "mean_offline_error": statistics.mean(case["offline_error"] for case in cases),
                          "case_errors": [case["offline_error"] for case in cases], "behavior": summarize_behavior(cases)})
-    return search, programs, slots
+    recorded = {row["generation"] for row in slots}
+    for generation in sorted(terminal_failure_generations(search) - recorded):
+        source = search / f"gen_{generation}/main.py"
+        slots.append({"generation": generation, "status": "terminal_failed_proposal", "objective_evaluation_submitted": False,
+                      "source": str(source.relative_to(run)) if source.exists() else None,
+                      "source_sha256": sha(source) if source.exists() else None})
+    return search, programs, sorted(slots, key=lambda row: row["generation"])
 
 
 def analyze(run, phase="development", selected_generation=None, output=None):
@@ -235,6 +242,7 @@ def analyze(run, phase="development", selected_generation=None, output=None):
         "analysis_settings": spec, "analysis_specification_sha256": sha(SPEC_PATH), "analysis_source_sha256": sha(__file__),
         "case_manifest_sha256": sha(manifest), "input_sha256": hashes, "configs": configs,
         "selected": {key: value for key, value in selected.items() if key != "behavior"} if selected else None,
+        "execution_aliases": {"selected": "mpso_5_1"} if selected and selected["generation"] == 0 else {},
         "native_programs": programs, "native_slots": slots, "pair_checks": checks,
         "method_errors": {method: describe(values) for method, values in errors.items()}, "contrasts": contrasts,
         "behavior": {method: summarize_behavior(cases) for method, cases in outcomes.items()},
@@ -253,6 +261,16 @@ def analyze(run, phase="development", selected_generation=None, output=None):
 
 
 def markdown_tables(data):
+    if data.get("execution_aliases"):
+        lines = [f"## {data['phase'].capitalize()} outcomes", "", "Selected native program is the published 5+1 seed; it is not a third distinct method.", "",
+                 "| Case | 5+0 | 5+1 (selected seed) | 5+1 − 5+0 |", "|---|---:|---:|---:|"]
+        for index in range(8):
+            a, b = (data["method_errors"][method]["values"][index] for method in METHODS[:2])
+            lines.append(f"| {index:03d} | {a:.6f} | {b:.6f} | {b-a:+.6f} |")
+        row = data["contrasts"]["mpso_5_1_minus_mpso_5_0"]
+        low, high = row["descriptive_95_percent_interval"]
+        lines += ["", f"5+1 minus 5+0: mean {row['mean']:+.6f}; median {row['median']:+.6f}; SD {row['sd']:.6f}; descriptive 95% interval [{low:+.6f}, {high:+.6f}]; {row['wins']} wins / {row['losses']} losses / {row['ties']} ties."]
+        return "\n".join(lines) + "\n"
     lines = [f"## {data['phase'].capitalize()} outcomes", "", "| Case | 5+0 | 5+1 | Selected | Selected − 5+0 | Selected − 5+1 |", "|---|---:|---:|---:|---:|---:|"]
     errors = data["method_errors"]
     for index in range(8):
@@ -268,31 +286,53 @@ def markdown_tables(data):
 def render(data, output):
     _style()
     phase = data["phase"]
+    seed_retained = bool(data.get("execution_aliases"))
+    methods = METHODS[:2] if seed_retained else METHODS
     fig, axes = plt.subplots(2, 2, figsize=(12.3, 8.3), constrained_layout=True)
-    for column, reference in enumerate(("mpso_5_1", "mpso_5_0")):
+    comparison_keys = (["mpso_5_1_minus_mpso_5_0"] if seed_retained else
+                       ["selected_minus_mpso_5_1", "selected_minus_mpso_5_0"])
+    for column, key in enumerate(comparison_keys):
         ax = axes[0, column]
-        row = data["contrasts"][f"selected_minus_{reference}"]
+        row = data["contrasts"][key]
         ax.scatter(row["values"], np.arange(8), color=COLORS["selected"], s=35, zorder=3)
         ax.plot(row["descriptive_95_percent_interval"], [-1.3, -1.3], color="#243447", lw=2.5)
         ax.scatter(row["mean"], -1.3, marker="D", color="#243447", s=55, zorder=4)
         ax.axvline(0, color="#8796a5", lw=1, ls="--")
         ax.set_yticks([-1.3, *range(8)], ["Mean / 95% interval", *(f"Case {index:03d}" for index in range(8))])
-        ax.set(title=f"Selected − {LABELS[reference]}", xlabel="Paired offline error; negative favors selected")
-    for method in METHODS:
+        ax.set(title=("Reconstructed 5+1 − reconstructed 5+0" if seed_retained else f"Selected − {LABELS[row['reference']]}"),
+               xlabel=("Paired offline error; negative favors 5+1" if seed_retained else "Paired offline error; negative favors selected"))
+    for method in methods:
         rows = data["behavior"][method]["age_bins"]
-        axes[1, 0].plot(range(len(AGE_BINS)), [rows[key]["mean_count"] if rows[key]["mean_count"] is not None else np.nan for key in AGE_BINS],
-                        color=COLORS[method], label=LABELS[method], marker="o", markersize=4, lw=1.7)
+        if not seed_retained:
+            axes[1, 0].plot(range(len(AGE_BINS)), [rows[key]["mean_count"] if rows[key]["mean_count"] is not None else np.nan for key in AGE_BINS],
+                            color=COLORS[method], label=LABELS[method], marker="o", markersize=4, lw=1.7)
         curve = data["recovery"][method]
         axes[1, 1].plot([row["offset"] for row in curve], [row["mean_error"] for row in curve], color=COLORS[method], label=LABELS[method], lw=1.8)
-    axes[1, 0].set(title="Measured temporary-conversion schedule", ylabel="Mean neutral particles converted (of five)", ylim=(-.15, 5.15))
+    if seed_retained:
+        programs = sorted(data["native_programs"], key=lambda row: row["generation"])
+        values = [row["mean_offline_error"] for row in programs]
+        axes[0, 1].scatter([row["generation"] for row in programs], values, color=COLORS["selected"], s=45, zorder=3)
+        for method in methods:
+            axes[0, 1].axhline(data["method_errors"][method]["mean"], color=COLORS[method], ls="--", label=LABELS[method])
+        axes[0, 1].set(title="No distinct descendant beats the seed", xlabel="Native generation slot", ylabel="Mean development offline error",
+                       xticks=range(max(row["generation"] for row in data["native_slots"])+1))
+        axes[0, 1].legend(frameon=False, fontsize=8)
+        matrix = [[row["behavior"]["age_bins"][key]["mean_count"] if row["behavior"]["age_bins"][key]["mean_count"] is not None else np.nan for key in AGE_BINS] for row in programs]
+        heat = axes[1, 0].imshow(matrix, vmin=0, vmax=5, cmap="viridis", aspect="auto")
+        axes[1, 0].set_yticks(range(len(programs)), ["Both published schedules" if row["generation"] == 0 else f"Descendant {row['generation']}" for row in programs], fontsize=8)
+        axes[1, 0].set_title("Actual conversion behavior of tested schedules")
+        fig.colorbar(heat, ax=axes[1, 0], label="Mean count (of five)", shrink=.85)
+    else:
+        axes[1, 0].set(title="Measured temporary-conversion schedule", ylabel="Mean neutral particles converted (of five)", ylim=(-.15, 5.15))
     axes[1, 0].set_xticks(range(len(AGE_BINS)), ["No prior\ndetection", "Detected\nnow", "1", "2–3", "4–7", "8–15", "16–31", "32+"], fontsize=8)
     axes[1, 0].set_xlabel("Subswarm updates since its counted change detection")
-    axes[1, 0].legend(frameon=False, fontsize=8, loc="upper right")
+    if not seed_retained:
+        axes[1, 0].legend(frameon=False, fontsize=8, loc="upper right")
     axes[1, 1].set(title="Measured recovery after environmental change", xlabel="Actual recorded query offset", ylabel="Best-discovered error")
     axes[1, 1].legend(frameon=False, fontsize=8)
     for ax in axes.flat:
         ax.grid(alpha=.15)
-    fig.suptitle(f"Original and evolved MPSO schedules · eight {phase} pairs · 500,000 queries each", fontsize=14)
+    fig.suptitle(f"{'Published schedule retained after native search' if seed_retained else 'Original and evolved MPSO schedules'} · eight {phase} pairs · 500,000 queries each", fontsize=14)
     fig.supxlabel("Five dimensions, ten peaks, severity 1, period 5,000. Curves give each case equal weight.\n" +
                   ("Development data informed search and selection; uncertainty is descriptive and selection-biased." if phase == "development" else
                    "Frozen methods; independent cases. Descriptive uncertainty in one setting, not replication of the historical table."), fontsize=9)
@@ -300,12 +340,13 @@ def render(data, output):
 
     fig, axes = plt.subplots(1, 3, figsize=(13.1, 4.3), constrained_layout=True)
     x = np.arange(6)
-    for index, method in enumerate(METHODS):
+    for index, method in enumerate(methods):
         behavior = data["behavior"][method]
-        axes[0].bar(x + (index-1)*.25, np.asarray(behavior["equal_case_count_probabilities"])*100, width=.25, color=COLORS[method], label=LABELS[method])
+        offset = (index - (len(methods)-1)/2) * .25
+        axes[0].bar(x + offset, np.asarray(behavior["equal_case_count_probabilities"])*100, width=.25, color=COLORS[method], label=LABELS[method])
         gains = behavior["shared_best_improvements"]
         for panel, field in ((1, "mean_case_improvements_per_1000_queries"), (2, "mean_case_gain_per_1000_queries")):
-            axes[panel].bar(np.arange(3)+(index-1)*.25, [gains[role][field] for role in MOVEMENT_TYPES], width=.25, color=COLORS[method])
+            axes[panel].bar(np.arange(3)+offset, [gains[role][field] for role in MOVEMENT_TYPES], width=.25, color=COLORS[method])
     axes[0].set(title="Observed schedule decisions", xlabel="Temporary quantum count", ylabel="Mean within-case updates (%)", xticks=range(6))
     axes[0].legend(frameon=False, fontsize=7)
     for ax in axes[1:]:
@@ -325,7 +366,11 @@ def render(data, output):
         ax.step([row["generation"] for row in rows], np.minimum.accumulate(values), where="post", color=COLORS["selected"], lw=1.6, label="Best native development error")
         for method in METHODS[:2]:
             ax.axhline(data["method_errors"][method]["mean"], color=COLORS[method], ls="--", lw=1.4, label=LABELS[method])
-        ax.set(title="One bounded native ShinkaEvolve search", xlabel="Generation slot (zero is the published 5+1 schedule)", ylabel="Mean development offline error", xticks=range(max(row["generation"] for row in rows)+1))
+        valid_generations = {row["generation"] for row in rows}
+        failed_generations = [row["generation"] for row in data["native_slots"] if row["generation"] not in valid_generations and ("failed" in row["status"] or row["status"] == "failure")]
+        if failed_generations:
+            ax.scatter(failed_generations, [.05]*len(failed_generations), transform=ax.get_xaxis_transform(), marker="x", color="#bb4260", label="Terminal failure (no numerical score)")
+        ax.set(title="One bounded native ShinkaEvolve search", xlabel="Generation slot (zero is the published 5+1 schedule)", ylabel="Mean development offline error", xticks=range(max(row["generation"] for row in data["native_slots"])+1))
         ax.legend(frameon=False, fontsize=8)
         ax.grid(alpha=.15)
         fig.supxlabel("Every numerical point uses the same eight 500,000-query histories. Terminal failed slots are retained without numerical points.", fontsize=9)

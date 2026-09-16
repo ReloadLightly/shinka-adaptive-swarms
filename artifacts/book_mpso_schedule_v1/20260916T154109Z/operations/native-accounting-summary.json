@@ -1,0 +1,1063 @@
+{
+  "recorded_at": "2026-09-16T16:38:25.601056+00:00",
+  "status": "search_complete",
+  "terminal_slots": 9,
+  "valid_descendants": 8,
+  "terminal_failed_slots": [],
+  "role_accounting": {
+    "mutation": {
+      "native_wrappers": 9,
+      "requested_logical_responses": 9,
+      "returned_usable_responses": 9,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 9
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "novelty": {
+      "native_wrappers": 9,
+      "requested_logical_responses": 9,
+      "returned_usable_responses": 9,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 9
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    },
+    "meta": {
+      "native_wrappers": 6,
+      "requested_logical_responses": 13,
+      "returned_usable_responses": 13,
+      "exposed_native_retry_responses": 0,
+      "status_counts": {
+        "returned": 6
+      },
+      "configured_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      }
+    }
+  },
+  "totals": {
+    "native_wrappers": 24,
+    "requested_logical_responses": 31,
+    "returned_usable_responses": 31,
+    "allowance": 40,
+    "exposed_native_retry_responses": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_usage": "excluded/unobserved by native receipts",
+    "native_cost_estimates": "not subscription charges or paid API usage"
+  },
+  "model_and_effort": {
+    "requested_supervising": "gpt-6-astra / Ultra",
+    "supervising_mode_independently_inspected": false,
+    "requested_inner": "gpt-6-astra / xhigh",
+    "explicit_supported_selected": "gpt-6-astra / xhigh",
+    "CLI_evidence": "operations/native-codex-process-settings-observed.json",
+    "provider_independent_attestation": false,
+    "native_reasoning_efforts_disabled_is_provider_effort": false,
+    "limitation": "The installed pinned native provider accepts low,medium,high,xhigh; strongest supported task-local xhigh was prospectively selected. Inner xhigh is not relabeled supervising Ultra.",
+    "observed_roles_from_exact_prompt_receipt_matches": [
+      "meta",
+      "mutation",
+      "novelty"
+    ],
+    "observed_visible_model_settings": [
+      [
+        "--model",
+        "gpt-6-astra"
+      ],
+      [
+        "-c",
+        "model_reasoning_effort=\"xhigh\""
+      ]
+    ],
+    "process_observation_count_not_request_count": 62
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 9,
+      "full_frozen_task_context_present": 9,
+      "source_context_references": 21,
+      "full_sources_present": 21,
+      "full_feedback_present": 21,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 9,
+      "accepted": 8,
+      "rejected": 1,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T16:06:08+00:00",
+          "elapsed_s": 93.51,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06071,
+          "novelty_explanation": "**NOVEL**: Both return 5 when a change is detected, but the proposed code additionally returns 2 during updates 1\u20133 after a previously detected change. The existing code returns 0 in those cases, so the proposal meaningfully changes the temporary quantum-conversion schedule and potentially the search behavior.",
+          "max_similarity": 0.9776143431663513,
+          "similarity_scores": [
+            0.9776143431663513
+          ]
+        },
+        {
+          "time": "2026-09-16T16:09:11+00:00",
+          "elapsed_s": 266.78,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.0602,
+          "novelty_explanation": "NOVEL: The proposed code returns 2 only on the first update after a detected change, and only when `recent_improvement <= 0.0`. The existing code returns 2 on updates 1\u20133 regardless of improvement. This introduces performance-dependent behavior and shortens the temporary-conversion window.",
+          "max_similarity": 0.9871395230293274,
+          "similarity_scores": [
+            0.9747323989868164,
+            0.9871395230293274
+          ]
+        },
+        {
+          "time": "2026-09-16T16:12:18+00:00",
+          "elapsed_s": 441.82,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05788,
+          "novelty_explanation": "NOVEL: The proposed code changes the temporary quantum count from 5 to 3 when a change is detected. This is a meaningful hyperparameter change that alters behavior and could affect performance.",
+          "max_similarity": 0.9893511533737183,
+          "similarity_scores": [
+            0.9893511533737183,
+            0.97502601146698,
+            0.970874547958374
+          ]
+        },
+        {
+          "time": "2026-09-16T16:15:04+00:00",
+          "elapsed_s": 600.14,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05901,
+          "novelty_explanation": "NOVEL \u2014 The proposed code returns 3 instead of 5 when a change is detected, then returns 1 on each of the next two updates after detection. This changes both the immediate count and its timing, introducing a history-dependent schedule that could affect optimizer performance.",
+          "max_similarity": 0.9710820317268372,
+          "similarity_scores": [
+            0.9710820317268372
+          ]
+        },
+        {
+          "time": "2026-09-16T16:21:13+00:00",
+          "elapsed_s": 949.68,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05839,
+          "novelty_explanation": "**NOVEL**: The proposed code increases the temporary quantum count from 3 to 5 when a change is detected. This is a meaningful hyperparameter change that could affect search behavior and performance. All other logic remains unchanged.",
+          "max_similarity": 0.991173267364502,
+          "similarity_scores": [
+            0.9781361222267151,
+            0.991173267364502
+          ]
+        },
+        {
+          "time": "2026-09-16T16:23:53+00:00",
+          "elapsed_s": 1099.67,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06236,
+          "novelty_explanation": "**NOVEL**: The proposed code changes the conversion schedule in two meaningful ways:\n- On change detection, it returns 4 when `abs(relative_fitness_drop) <= 0.01`, otherwise 5; the existing code always returns 5.\n- It removes the one-conversion follow-up during the first two updates after a detected change, returning 0 instead.\nThese changes alter the algorithm\u2019s behavior and could affect performance.",
+          "max_similarity": 0.9594594240188599,
+          "similarity_scores": [
+            0.9480303525924683,
+            0.9561192989349365,
+            0.9594594240188599
+          ]
+        },
+        {
+          "time": "2026-09-16T16:26:41+00:00",
+          "elapsed_s": 1258.06,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05798,
+          "novelty_explanation": "NOVEL: The proposed code changes the temporary quantum count from 5 to 4 when a change is detected. This hyperparameter change alters behavior and could affect optimizer performance.",
+          "max_similarity": 0.9922536015510559,
+          "similarity_scores": [
+            0.9922536015510559,
+            0.9732725620269775,
+            0.9784404039382935,
+            0.9520084857940674
+          ]
+        },
+        {
+          "time": "2026-09-16T16:29:32+00:00",
+          "elapsed_s": 1419.17,
+          "event": "novelty_decision",
+          "message": "Native novelty rejected candidate",
+          "accepted": false,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05668,
+          "novelty_explanation": "NOT_NOVEL: The snippets are identical. Both return `4` when `observation[\"change_detected\"]` is truthy and `0` otherwise.",
+          "max_similarity": 1.0,
+          "similarity_scores": [
+            0.9922536015510559,
+            0.9732725620269775,
+            0.9784404039382935,
+            0.9520084857940674,
+            1.0
+          ]
+        },
+        {
+          "time": "2026-09-16T16:31:21+00:00",
+          "elapsed_s": 1521.71,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06028,
+          "novelty_explanation": "**NOVEL**: The proposed code returns 4 instead of 5 when a change is detected and the absolute relative fitness drop is \u2264 0.01. It also removes the existing follow-up conversion of 2 when improvement stalls one update after a detected change. These changes meaningfully alter the scheduling strategy.",
+          "max_similarity": 0.965458869934082,
+          "similarity_scores": [
+            0.9483518600463867,
+            0.9563006162643433,
+            0.965458869934082,
+            0.9427446722984314
+          ]
+        }
+      ]
+    },
+    "embeddings": {
+      "starts": 10,
+      "completions": 10,
+      "dimensions": {
+        "768": 10
+      },
+      "events": [
+        {
+          "time": "2026-09-16T16:04:42+00:00",
+          "elapsed_s": 13.36,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T16:05:50+00:00",
+          "elapsed_s": 78.15,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T16:08:59+00:00",
+          "elapsed_s": 254.45,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-16T16:12:05+00:00",
+          "elapsed_s": 430.94,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-16T16:14:51+00:00",
+          "elapsed_s": 587.57,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-16T16:19:36+00:00",
+          "elapsed_s": 857.42,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_5/main.py"
+        },
+        {
+          "time": "2026-09-16T16:23:40+00:00",
+          "elapsed_s": 1086.56,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_6/main.py"
+        },
+        {
+          "time": "2026-09-16T16:26:26+00:00",
+          "elapsed_s": 1244.91,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_7/main.py"
+        },
+        {
+          "time": "2026-09-16T16:29:22+00:00",
+          "elapsed_s": 1409.17,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_8/main.py"
+        },
+        {
+          "time": "2026-09-16T16:31:09+00:00",
+          "elapsed_s": 1509.5,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_8/main.py"
+        },
+        {
+          "time": "2026-09-16T16:04:46+00:00",
+          "elapsed_s": 17.76,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:05:51+00:00",
+          "elapsed_s": 78.4,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:08:59+00:00",
+          "elapsed_s": 254.62,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_2/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:12:05+00:00",
+          "elapsed_s": 431.02,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:14:51+00:00",
+          "elapsed_s": 587.66,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_4/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:19:36+00:00",
+          "elapsed_s": 857.5,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_5/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:23:40+00:00",
+          "elapsed_s": 1086.68,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_6/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:26:26+00:00",
+          "elapsed_s": 1244.97,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_7/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:29:22+00:00",
+          "elapsed_s": 1409.24,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_8/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:31:09+00:00",
+          "elapsed_s": 1509.57,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_8/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta_updates": 2,
+    "exact_meta_injections": 3,
+    "meta_examples": [
+      {
+        "generation": 7,
+        "receipt": "evolution/search_seed_640001/engine_calls/mutation-94203f10c6c64db8a9ad176c4dc8c2ff.json",
+        "artifact": "evolution/search_seed_640001/meta/meta_5.txt",
+        "recommendation_index": 4,
+        "actual_injected_text": "**Reduce Conditional Follow-Up from two conversions to one.** Keep five conversions at detection, then return one only when `has_detected_change`, `updates_since_detected_change == 1`, and `recent_improvement <= 0`; return zero otherwise. This changes only follow-up intensity relative to the existing conditional candidate, testing whether a smaller intervention can avoid some convergence disruption; prioritize it below detection-only variants because every tested tail lost to the best."
+      },
+      {
+        "generation": 8,
+        "receipt": "evolution/search_seed_640001/engine_calls/mutation-a2f4e97d24694a458e0182b405b8259b.json",
+        "artifact": "evolution/search_seed_640001/meta/meta_5.txt",
+        "recommendation_index": 2,
+        "actual_injected_text": "**Reduce the burst only for small observed fitness changes.** At detection, return four when `abs(relative_fitness_drop) <= 0.01`, otherwise five; return zero between detections. This preserves the successful full burst for larger changes while testing a limited exception, with `0.01` treated as an exploratory threshold and fitness change treated as a local signal, not actual environmental severity."
+      }
+    ],
+    "migration_transfers": 0,
+    "migration_interpretation": "Nine generation slots stop before the ten-generation migration interval; zero observed migrations are expected if recorded here.",
+    "degradation_events": [],
+    "patch_types": {
+      "init": 1,
+      "diff": 4,
+      "cross": 2,
+      "full": 2
+    },
+    "within_slot_novelty_resamples": 1
+  },
+  "selected_native_program": {
+    "id": "54ff2a7f-b967-4211-982d-ac6df00a415f",
+    "generation": 0,
+    "island_idx": 0,
+    "parent_id": null,
+    "is_island_copy": false,
+    "patch_type": "init",
+    "combined_score": 0.3643559624867648,
+    "mean_offline_error": 1.7445687815149309,
+    "source": "\"\"\"Published MPSO 5+1 temporary-conversion schedule.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_temporary_quantum_count(observation) -> int:\n    return 5 if observation[\"change_detected\"] else 0\n# EVOLVE-BLOCK-END\n",
+    "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+    "parent": null,
+    "archive_inspirations": [],
+    "top_ranked_inspirations": [],
+    "actual_feedback_examples": [
+      {
+        "prompt": "evolution/search_seed_640001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "native_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+        "generation": 0,
+        "full_feedback_supplied": true,
+        "excerpt": "Development feedback only. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Chapter 5+0 reference is mpso_5_0; 5+1 seed is mpso_5_1. These are contemporary matched reconstructions, not the printed Table3 values. Quantum sampling replaces the ordinary PSO update. The permanent quantum particle always samples. Only the number of five neutral particles temporarily converted per subswarm update changes. Complete closed-loop trajectories and later random movements can diverge between methods.\ncase_000 severity=1.0,period=5000: error=2.050730, delta5+0=-0.161720, delta5+1=+0.000000; interval-end error=1.3488386340270624; incomplete responses=0.\nMeasured schedule behavior: {\"age_bins\": {\"0\": {\"count_histogram\": {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 762}, \"neutral_conversions\": 3810, \"updates\": 762}, \"1\": {\"count_histogram\": {\"0\": 757, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0}, \"neutral_conversions\": 0, \"updates\": 757}, \"16-31\": {\"count_histogram\": {\"0\": 10752, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0}, \"neutral_conversions\": 0, \"updates\": 10752}, \"2-3\": {\"count_histogram\": {\"0\": 1428, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0}, \"neutral_conversions\": 0, \"updates\": 1428}, \"32+\": {\"count_histogram\": {\"0\": 36774, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 0, \"5\": 0}, \"neutral_conversions\": 0, \"updates\": 36774}, \"4-7\": {\"c"
+      }
+    ]
+  },
+  "work": {
+    "by_generation": [
+      {
+        "generation": 0,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 0,
+        "physical_completed_queries": 0,
+        "attempts": [],
+        "case_cache_reuses": 8,
+        "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284"
+      },
+      {
+        "generation": 1,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b"
+      },
+      {
+        "generation": 2,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "b4d47ed5f8d082c7863e51e521dec519d527b522f6c9d02ca4ffa30acf70fb5c"
+      },
+      {
+        "generation": 3,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "5bc0a00c24c57c085747b3cf966621c42fdfc12d576901f2dd0a8798855d8aa4"
+      },
+      {
+        "generation": 4,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "285c9d6e5d23d3f74aed4b471f5e69729855b6e8c9915ccb5cbe31e964c4e9b5"
+      },
+      {
+        "generation": 5,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "0e0edbc2a92626748ff87e2e32e483371bf17b7a8c2b7a5906cdb0328dfa527a"
+      },
+      {
+        "generation": 6,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "e984495ba83e1e687c253ff8ad5d03c404e9e85fd1c692f3da38634eae38481c"
+      },
+      {
+        "generation": 7,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "dfdb0e60b59f303d9ad2f84e5b8760b5d50e3767b73b7a2bf97762a51acf74d4"
+      },
+      {
+        "generation": 8,
+        "status": "completed",
+        "completed_case_artifacts": 8,
+        "physical_full_cases": 8,
+        "physical_completed_queries": 4000000,
+        "attempts": [
+          {
+            "case_id": "case_000",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_001",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_002",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_003",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_004",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_005",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_006",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          },
+          {
+            "case_id": "case_007",
+            "status": "completed",
+            "reserved_objective_queries": 500000,
+            "observed_objective_queries_lower_bound": 500000,
+            "exact_objective_queries": 500000
+          }
+        ],
+        "case_cache_reuses": 0,
+        "source_sha256": "7acd9a42dfd7336502de251929cdaa19cb130438812d1dc53682bb24111b1514"
+      }
+    ],
+    "physical_full_cases": 64,
+    "physical_completed_queries": 32000000,
+    "cached_case_reuses": 8,
+    "exact_control_repetition_comparison": [
+      {
+        "generation": 8,
+        "equivalent_to": [
+          "generation_6"
+        ],
+        "identical_complete_numerical_records": 8,
+        "excluded_metadata": [
+          "policy_name",
+          "case_id"
+        ]
+      }
+    ],
+    "repeated_cases_included": 8,
+    "repeated_queries_included": 4000000
+  },
+  "runtime": {
+    "started_at": "20260916T160428.754232Z",
+    "finished_at": "2026-09-16T16:37:41.058951+00:00",
+    "UTC_wall_seconds": 1992.304719,
+    "UTC_wall_hours": 0.5534179775,
+    "last_logged_monotonic_elapsed_seconds": 1879.6,
+    "resume_attempts": 0,
+    "clock_note": "UTC wall interval and logger monotonic elapsed differ; both are retained, with no inferred cause."
+  },
+  "limitations": [
+    "This task permits function-local math imports and documented numerical builtins, including zip; any actual failed slots are counted from saved evidence, not repaired or replaced.",
+    "CLI wrapper and binary subprocesses can both appear in process observations; these are not separate logical requests. Receipt counts govern request accounting.",
+    "Native proposal RNG state is not restored across process restarts; inspect continuation records before claiming an uninterrupted proposal sequence."
+  ],
+  "audit_model_calls": 0,
+  "audit_objective_queries": 0
+}

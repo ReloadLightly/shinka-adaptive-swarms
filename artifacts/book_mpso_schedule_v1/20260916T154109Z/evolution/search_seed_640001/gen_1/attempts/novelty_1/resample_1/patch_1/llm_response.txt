@@ -1,0 +1,20 @@
+<NAME>
+short_recovery_tail
+</NAME>
+<DESCRIPTION>
+Keep five temporary conversions on detection, then convert two neutrals on each of the next three updates. This tests whether repeated sampling around the evolving shared best improves recovery beyond a single burst, while preserving three ordinary PSO moves per subsequent update. Afterward, all neutrals resume PSO. The has_detected_change guard prevents triggering during initial swarm development. Additional sampling could also disrupt convergence; the supplied feedback does not establish that this extension will improve performance.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return 5 if observation["change_detected"] else 0
+=======
+    if observation["change_detected"]:
+        return 5
+    if (
+        observation["has_detected_change"]
+        and 1 <= observation["updates_since_detected_change"] <= 3
+    ):
+        return 2
+    return 0
+>>>>>>> REPLACE
+</DIFF>

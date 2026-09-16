@@ -1,0 +1,118 @@
+{
+  "frozen_at": "2026-09-16T16:39:34.151776+00:00",
+  "selection_basis": "development only; mean error, earlier generation, source SHA256",
+  "ranking": [
+    {
+      "generation": 0,
+      "source": "evolution/search_seed_640001/gen_0/main.py",
+      "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+      "mean_offline_error": 1.7445687815149309,
+      "result_directory": "evolution/search_seed_640001/gen_0/results"
+    },
+    {
+      "generation": 2,
+      "source": "evolution/search_seed_640001/gen_2/main.py",
+      "sha256": "b4d47ed5f8d082c7863e51e521dec519d527b522f6c9d02ca4ffa30acf70fb5c",
+      "mean_offline_error": 1.8137389598480174,
+      "result_directory": "evolution/search_seed_640001/gen_2/results"
+    },
+    {
+      "generation": 1,
+      "source": "evolution/search_seed_640001/gen_1/main.py",
+      "sha256": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b",
+      "mean_offline_error": 1.9025729624298262,
+      "result_directory": "evolution/search_seed_640001/gen_1/results"
+    },
+    {
+      "generation": 3,
+      "source": "evolution/search_seed_640001/gen_3/main.py",
+      "sha256": "5bc0a00c24c57c085747b3cf966621c42fdfc12d576901f2dd0a8798855d8aa4",
+      "mean_offline_error": 1.9191220342156383,
+      "result_directory": "evolution/search_seed_640001/gen_3/results"
+    },
+    {
+      "generation": 4,
+      "source": "evolution/search_seed_640001/gen_4/main.py",
+      "sha256": "285c9d6e5d23d3f74aed4b471f5e69729855b6e8c9915ccb5cbe31e964c4e9b5",
+      "mean_offline_error": 1.9705150784771468,
+      "result_directory": "evolution/search_seed_640001/gen_4/results"
+    },
+    {
+      "generation": 5,
+      "source": "evolution/search_seed_640001/gen_5/main.py",
+      "sha256": "0e0edbc2a92626748ff87e2e32e483371bf17b7a8c2b7a5906cdb0328dfa527a",
+      "mean_offline_error": 2.0406930513173664,
+      "result_directory": "evolution/search_seed_640001/gen_5/results"
+    },
+    {
+      "generation": 6,
+      "source": "evolution/search_seed_640001/gen_6/main.py",
+      "sha256": "e984495ba83e1e687c253ff8ad5d03c404e9e85fd1c692f3da38634eae38481c",
+      "mean_offline_error": 2.092991503052121,
+      "result_directory": "evolution/search_seed_640001/gen_6/results"
+    },
+    {
+      "generation": 8,
+      "source": "evolution/search_seed_640001/gen_8/main.py",
+      "sha256": "7acd9a42dfd7336502de251929cdaa19cb130438812d1dc53682bb24111b1514",
+      "mean_offline_error": 2.092991503052121,
+      "result_directory": "evolution/search_seed_640001/gen_8/results"
+    },
+    {
+      "generation": 7,
+      "source": "evolution/search_seed_640001/gen_7/main.py",
+      "sha256": "dfdb0e60b59f303d9ad2f84e5b8760b5d50e3767b73b7a2bf97762a51acf74d4",
+      "mean_offline_error": 2.1266564822948038,
+      "result_directory": "evolution/search_seed_640001/gen_7/results"
+    }
+  ],
+  "selected": {
+    "generation": 0,
+    "source": "programs/selected.py",
+    "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+    "mean_offline_error": 1.7445687815149309,
+    "result_directory": "evolution/search_seed_640001/gen_0/results",
+    "native_source": "evolution/search_seed_640001/gen_0/main.py"
+  },
+  "native_seed": {
+    "generation": 0,
+    "source": "evolution/search_seed_640001/gen_0/main.py",
+    "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+    "mean_offline_error": 1.7445687815149309,
+    "result_directory": "evolution/search_seed_640001/gen_0/results"
+  },
+  "methods": {
+    "mpso_5_0": {
+      "kind": "temporary_quantum_schedule",
+      "permanent_quantum": 0,
+      "source": "programs/mpso_5_0.py",
+      "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+      "original_source": "tasks/book_mpso_schedule_v1/initial.py"
+    },
+    "mpso_5_1": {
+      "kind": "temporary_quantum_schedule",
+      "permanent_quantum": 1,
+      "source": "programs/mpso_5_1.py",
+      "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+      "original_source": "tasks/book_mpso_schedule_v1/initial.py"
+    },
+    "selected": {
+      "kind": "temporary_quantum_schedule",
+      "permanent_quantum": 1,
+      "source": "programs/selected.py",
+      "sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284"
+    }
+  },
+  "analysis_specification": "docs/studies/book_mpso_schedule_v1/analysis_specification.json",
+  "analysis_sha256": "ed23e2f1a2766ee97d66bc02e38289bbde326ee29087542195088644e2478913",
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/book_schedule.py": "b244148f3c6842f31290e5da0d7ceee04a446304dbfe7b544ff0f725007b0713",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+  },
+  "fresh_comparison_required": false,
+  "fresh_case_identities_generated": false,
+  "equivalent_on_complete_development_outcomes": true
+}

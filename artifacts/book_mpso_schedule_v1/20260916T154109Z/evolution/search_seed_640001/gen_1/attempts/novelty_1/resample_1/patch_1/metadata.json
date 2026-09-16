@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "short_recovery_tail",
+  "patch_description": "Keep five temporary conversions on detection, then convert two neutrals on each of the next three updates. This tests whether repeated sampling around the evolving shared best improves recovery beyond a single burst, while preserving three ordinary PSO moves per subsequent update. Afterward, all neutrals resume PSO. The has_detected_change guard prevents triggering during initial swarm development. Additional sampling could also disrupt convergence; the supplied feedback does not establish that this extension will improve performance.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T18:05:50.897543",
+  "llm_cost": 0.343256,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "small_change_burst",
+  "patch_description": "At detection, convert four neutral particles when the absolute relative fitness change is at most 0.01; otherwise convert five. Return zero between detections, retaining the shorter schedule that outperformed both tested extensions on development cases.\nThe hypothesis is that preserving one ordinary PSO move during small observed changes may support convergence while retaining substantial quantum exploration. Conversely, losing one quantum sample could impair recovery. The threshold is exploratory: local fitness change does not measure environmental severity, and improvement remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T18:23:40.438863",
+  "llm_cost": 0.531412,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

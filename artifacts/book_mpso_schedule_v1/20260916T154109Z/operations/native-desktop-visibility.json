@@ -1,0 +1,36 @@
+{
+  "at": "2026-09-16T16:05:16.739634+00:00",
+  "attempts": [
+    {
+      "command": [
+        "/mnt/c/Users/nikol/AppData/Local/Microsoft/WindowsApps/wt.exe",
+        "new-tab",
+        "--title",
+        "Shinka chapter MPSO native search",
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--cd",
+        "/home/roland/actir/shinka-adaptive-swarms",
+        "bash",
+        "scripts/progress.sh",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+        "-NoProfile",
+        "-NonInteractive",
+        "-Command",
+        "Start-Process 'http://localhost:8896/viz_tree.html?db_path=search_seed_640001%2Fprograms.sqlite'"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

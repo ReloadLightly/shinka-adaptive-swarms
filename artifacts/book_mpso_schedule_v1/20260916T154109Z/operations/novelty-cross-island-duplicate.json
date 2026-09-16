@@ -1,0 +1,136 @@
+{
+  "at": "2026-09-16T16:34:10.387443+00:00",
+  "scope": "Read-only source and numerical-artifact audit; zero objective/model calls",
+  "inference": "Generation8 accepted retry compares only against generation2 in parent island1; generation6 behavior-equivalent source already existed on island0 and was outside this native island-local novelty pool. Native source explicitly passes parent_program.island_idx to similarity and nearest-program retrieval. This is a cross-island deduplication limitation, not a failed judgment on the supplied pair.",
+  "native_source_evidence": {
+    "path": ".venv/lib/python3.13/site-packages/shinka/core/async_novelty_judge.py",
+    "sha256": "c7a7a600810fe2e08013537f79fa0a3f0b592dc898b43a3cdeaac7c7076e1cbe",
+    "relevant_lines": [
+      89,
+      98,
+      136
+    ]
+  },
+  "program_identities": [
+    {
+      "id": "4db962bb-6988-4649-bcb2-d3411f25f8d3",
+      "generation": 2,
+      "island_idx": 1,
+      "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+    },
+    {
+      "id": "0d79bea7-253f-4892-8a09-5b70b51636fe",
+      "generation": 6,
+      "island_idx": 0,
+      "parent_id": "54ff2a7f-b967-4211-982d-ac6df00a415f"
+    },
+    {
+      "id": "50376b8d-89fa-4893-b275-5237f52b77f6",
+      "generation": 7,
+      "island_idx": 0,
+      "parent_id": "7e40065d-f7a4-4c95-9455-6cd890bb067e"
+    },
+    {
+      "id": "7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a",
+      "generation": 8,
+      "island_idx": 1,
+      "parent_id": "4db962bb-6988-4649-bcb2-d3411f25f8d3"
+    }
+  ],
+  "novelty_receipts": [
+    {
+      "path": "evolution/search_seed_640001/engine_calls/novelty-2ade459453714f8999819e005be1a20b.json",
+      "sha256": "0a3d3fccada0cc29a25e67f8d48ad4e27162104886d5f11898d0b3d252237d25",
+      "started_at": "2026-09-16T16:29:22.979459+00:00",
+      "matched_archived_sources_in_two_snippet_prompt": [
+        {
+          "id": "50376b8d-89fa-4893-b275-5237f52b77f6",
+          "generation": 7,
+          "island_idx": 0,
+          "parent_id": "7e40065d-f7a4-4c95-9455-6cd890bb067e"
+        }
+      ],
+      "actual_two_snippet_prompt": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Published MPSO 5+1 temporary-conversion schedule.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_temporary_quantum_count(observation) -> int:\n    return 4 if observation[\"change_detected\"] else 0\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Published MPSO 5+1 temporary-conversion schedule.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_temporary_quantum_count(observation) -> int:\n    return 4 if observation[\"change_detected\"] else 0\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+      "responses": [
+        "NOT_NOVEL: The snippets are identical. Both return `4` when `observation[\"change_detected\"]` is truthy and `0` otherwise."
+      ]
+    },
+    {
+      "path": "evolution/search_seed_640001/engine_calls/novelty-ca14a8b311f847bbaf58089726edc91d.json",
+      "sha256": "3647e32381383b653bf0376933e56b8bf30d52143968c467f0360d6400ee9f3e",
+      "started_at": "2026-09-16T16:31:09.433671+00:00",
+      "matched_archived_sources_in_two_snippet_prompt": [
+        {
+          "id": "4db962bb-6988-4649-bcb2-d3411f25f8d3",
+          "generation": 2,
+          "island_idx": 1,
+          "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+        },
+        {
+          "id": "7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a",
+          "generation": 8,
+          "island_idx": 1,
+          "parent_id": "4db962bb-6988-4649-bcb2-d3411f25f8d3"
+        }
+      ],
+      "actual_two_snippet_prompt": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Published MPSO 5+1 temporary-conversion schedule.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_temporary_quantum_count(observation) -> int:\n    if observation[\"change_detected\"]:\n        return 5\n    if (\n        observation[\"has_detected_change\"]\n        and observation[\"updates_since_detected_change\"] == 1\n        and observation[\"recent_improvement\"] <= 0.0\n    ):\n        return 2\n    return 0\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Published MPSO 5+1 temporary-conversion schedule.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_temporary_quantum_count(observation) -> int:\n    if not observation[\"change_detected\"]:\n        return 0\n    if abs(observation[\"relative_fitness_drop\"]) <= 0.01:\n        return 4\n    return 5\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+      "responses": [
+        "**NOVEL**: The proposed code returns 4 instead of 5 when a change is detected and the absolute relative fitness drop is \u2264 0.01. It also removes the existing follow-up conversion of 2 when improvement stalls one update after a detected change. These changes meaningfully alter the scheduling strategy."
+      ]
+    }
+  ],
+  "gen8_vs_gen6_complete_cases": [
+    {
+      "case_index": 0,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 1,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 2,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 3,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 4,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 5,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 6,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    },
+    {
+      "case_index": 7,
+      "complete_saved_result_equal": true,
+      "gzip_byte_hash_equal": true,
+      "objective_queries": 500000
+    }
+  ],
+  "completed_case_pairs": 8,
+  "all_saved_results_equal": true,
+  "repeated_queries_measured_so_far": 4000000,
+  "completed8_required_before_final_repetition_total": true
+}

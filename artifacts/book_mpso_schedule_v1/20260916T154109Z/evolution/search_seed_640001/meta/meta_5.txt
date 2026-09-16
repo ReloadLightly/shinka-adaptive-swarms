@@ -1,0 +1,64 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Change-Triggered Full Temporary Quantum Conversion**
+- **Implementation**: A deterministic, stateless rule converts all five neutral particles to quantum sampling when `change_detected` is true and converts none otherwise. Quantum sampling replaces their ordinary PSO update; the permanent quantum particle always samples.
+- **Performance**: Passed all validation tests across eight cases, achieving score 0.36, mean offline error 1.7446, worst-case error 2.2709, and case-error standard deviation 0.49.
+- **Feedback**: Temporary conversions occurred only on detected-change updates, approximately 1.10–1.39% of updates per case. Results exactly matched the reconstructed 5+1 reference and showed no consistent advantage over 5+0: four cases improved, four worsened, and mean error increased by 0.001084.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: Change-Triggered Quantum Burst with Three-Update Taper**
+- **Implementation**: Converts all five neutral particles to quantum sampling on detected change, two during the next three subswarm updates, and none otherwise. Quantum sampling replaces ordinary PSO updates for converted particles; the permanent quantum particle always samples.
+- **Performance**: Achieved a combined score of 0.34, mean offline error of 1.90, worst-case error of 3.33, and case-error standard deviation of 0.82 across eight completed cases.
+- **Feedback**: All validation tests passed, but mean error was approximately 0.159 higher than the 5+0 comparator and 0.158 higher than the 5+1 comparator. Results varied substantially, with the largest regression in case_004; these development results do not establish a consistent benefit from the brief exploration taper.
+**Program Identifier:** Generation 1 - Patch Name short_recovery_tail - Correct Program: True
+
+**Program Name: Change-Triggered Quantum Burst with Conditional Follow-Up**
+- **Implementation**: Converts all five neutral particles to quantum sampling when change is detected, then converts two on the immediately following update only if recent improvement is nonpositive. Otherwise, it requests no temporary conversions; quantum sampling replaces ordinary PSO updates, while the permanent quantum particle always samples.
+- **Performance**: Passed all validation tests and completed eight cases, achieving score 0.36, mean offline error 1.81, worst-case error 3.22, and case-error standard deviation 0.71.
+- **Feedback**: Temporary conversions were sparse, covering approximately 1.09–1.43% of neutral-particle update opportunities, with exploration confined to detection and conditional follow-up. Mean error was approximately 0.070 worse than 5+0 and 0.069 worse than 5+1, with mixed case outcomes and a large regression in case_004; these development results do not establish an improvement.
+**Program Identifier:** Generation 2 - Patch Name stalled_single_followup - Correct Program: True
+
+**Program Name: Three Particle Quantum Conversion on Detected Change**
+- **Implementation**: A deterministic, stateless rule returns `3` when `observation["change_detected"]` is true and `0` otherwise. It temporarily replaces ordinary PSO updates for three of five neutral particles with quantum sampling; the permanent quantum particle always samples.
+- **Performance**: Passed all validation tests across eight cases, achieving score **0.34**, mean offline error **1.92**, worst-case error **2.58**, and case error standard deviation **0.52**.
+- **Feedback**: Temporary conversions occurred only at detection, affecting approximately **0.67–0.75%** of neutral particle updates. Mean error exceeded the matched 5+0 and 5+1 reconstructions by **0.176** and **0.175**, respectively, and beat 5+1 in only one case; these development results do not demonstrate an improvement.
+**Program Identifier:** Generation 3 - Patch Name three_on_detection - Correct Program: True
+
+**Program Name: Change-Triggered 3-1-1 Quantum Conversion Schedule**
+- **Implementation**: Converts three of five neutral particles to quantum sampling when change is detected, one during each of the next two updates, and none otherwise. Quantum sampling replaces ordinary PSO updates for converted particles; the permanent quantum particle always samples.
+- **Performance**: Achieved score **0.34**, mean offline error **1.97**, worst-case error **2.93**, and case-error standard deviation **0.66** across eight completed cases, passing all validation tests.
+- **Feedback**: Temporary conversions affected approximately **0.93–1.32%** of neutral-particle updates, concentrating exploration immediately after detection. Despite some case-level improvements, mean error exceeded matched 5+0 and 5+1 baselines by **0.227** and **0.226**, respectively; these development results do not establish a consistent advantage or held-out generalization.
+**Program Identifier:** Generation 4 - Patch Name staggered_recovery_burst - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+**Successful Algorithmic Patterns**
+- **The current best, Change-Triggered Full Temporary Quantum Conversion, concentrates all five conversions at detection and immediately resumes ordinary neutral-particle updates.** It achieved score **0.3644**, mean error **1.7446**, worst-case error **2.2709**, and case-error SD **0.4853**—the strongest results across all four metrics among these five programs.
+- **Full conversion outperformed reduced conversion at detection.** Three Particle Quantum Conversion scored **0.3426**, with mean error **1.9191**, and beat the full-conversion reference in only one of eight cases. The observed comparison favors the five-particle burst within this tested setting.
+- **Restricting follow-up exploration improved on the longer taper.** Conditional Follow-Up achieved **0.3554**, versus **0.3445** for Three-Update Taper, reducing mean error by **0.0888**. This recovered some lost performance but remained worse than the current best; shortening the tail and adding the condition changed together, so their individual contributions are unresolved.
+**Ineffective Approaches**
+- **Extending the five-particle burst worsened aggregate performance.** Three-Update Taper increased mean error by **0.1580** over the best; Conditional Follow-Up increased it by **0.0692**. Both suffered large case_004 regressions: errors **3.3319** and **3.2229**, versus **1.9039** for the best.
+- **Reducing immediate exploration provided no aggregate benefit.** Three Particle Quantum Conversion lowered temporary conversion exposure to approximately **0.67–0.75%** of neutral-particle update opportunities, yet mean error increased by **10.0%** relative to the best. Fewer conversions alone did not improve tracking.
+- **Spreading conversions across updates performed worst on mean error.** The 3-1-1 Schedule produced error **1.9705**, **12.95%** above the best, and score **0.3366**. Although an uninterrupted 3-1-1 sequence requests five conversions in total, it does not reproduce the behavior or performance of converting five particles simultaneously.
+**Implementation Insights**
+- **The best rule has a narrow, explicit trigger:** `return 5 if observation["change_detected"] else 0`. Its measured conversions occurred exclusively at detection, covering approximately **1.10–1.39%** of neutral-particle update opportunities. Thus, nearly all neutral-particle updates retained ordinary PSO motion.
+- **Temporary quantum sampling replaces an ordinary PSO update.** A taper therefore changes particle motion after detection; it does not simply add exploration alongside unchanged PSO trajectories. The permanent quantum particle continues sampling under every candidate, so returning zero still preserves that exploration source. Disruption of convergence is a plausible explanation for taper regressions, but these results do not isolate that mechanism.
+- **The conditional programs use evaluator-maintained history without requiring mutable policy state.** They read `has_detected_change`, `updates_since_detected_change`, and, for Conditional Follow-Up, `recent_improvement <= 0`. All passed validation, but those additional conditions produced no improvement over the single-boolean best rule.
+**Performance Analysis**
+- **Exact scores distinguish results obscured by rounding.** The ranking is Full Conversion **0.3644**, Conditional Follow-Up **0.3554**, Three-Update Taper **0.3445**, Three-Particle Conversion **0.3426**, and 3-1-1 Schedule **0.3366**. The first two both round to **0.36**, despite their **0.0692** mean-error gap.
+- **The best also had the lowest observed worst-case error and dispersion.** Its worst-case error/SD were **2.2709/0.4853**, compared with **3.3319/0.8205** for Three-Update Taper and **3.2229/0.7110** for Conditional Follow-Up. Their added exploration coincided with greater variability across cases.
+- **No evolutionary improvement over the reference was established.** The best exactly matched reconstructed 5+1 and differed from 5+0 by only **+0.001084** mean error, with four wins and four losses and paired-difference SD **0.4535**. These are eight development cases in one regime, each using **500,000 counted queries**; they establish the observed ranking, without demonstrating held-out generalization.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Test four conversions at detection, with no follow-up.** Implement `return 4 if observation["change_detected"] else 0` to explore the nearest untested neighbor of the winning schedule. Five beat three, but four could preserve one ordinary PSO update without sacrificing as much immediate exploration; improvement remains unproven.
+2. **Reduce the burst only for small observed fitness changes.** At detection, return four when `abs(relative_fitness_drop) <= 0.01`, otherwise five; return zero between detections. This preserves the successful full burst for larger changes while testing a limited exception, with `0.01` treated as an exploratory threshold and fitness change treated as a local signal, not actual environmental severity.
+3. **Preserve one ordinary update when motion already looks promising.** At detection, return four only when `mean_neutral_distance_to_best <= r`, `mean_neutral_speed <= r`, and `mean_velocity_alignment_to_best >= 0.5`, where `r = max(default_radius, 1e-12)`; otherwise retain the original schedule. This tests whether nearby particles moving toward the refreshed best benefit from some trajectory continuity, while recognizing that the policy cannot choose which particle remains ordinary.
+4. **Reduce Conditional Follow-Up from two conversions to one.** Keep five conversions at detection, then return one only when `has_detected_change`, `updates_since_detected_change == 1`, and `recent_improvement <= 0`; return zero otherwise. This changes only follow-up intensity relative to the existing conditional candidate, testing whether a smaller intervention can avoid some convergence disruption; prioritize it below detection-only variants because every tested tail lost to the best.
+5. **Try one delayed rescue after ordinary motion has resumed.** Retain five conversions at detection, and permit one additional conversion only at age eight after a detected change when `recent_improvement <= 0`, `neutral_diameter <= r`, and `mean_neutral_speed <= 0.1*r`; return zero on other updates. This exploratory rule gives ordinary PSO seven intervening updates and limits rescue to a compact, slow swarm, avoiding the repeated early conversions associated with taper regressions.

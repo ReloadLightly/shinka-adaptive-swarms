@@ -1,0 +1,23 @@
+<NAME>
+staggered_recovery_burst
+</NAME>
+<DESCRIPTION>
+Redistribute temporary conversions into a 3,1,1 schedule: three on detection, then one on each of the next two updates. This preserves two ordinary neutral PSO moves immediately and four on each follow-up update. Later quantum samples can explore around attractors improved during preceding updates.
+The hypothesis is that mixing exploration with continued PSO movement improves recovery. An uninterrupted three-update response requests five temporary conversions, matching the original burst’s total, although identities may repeat and whole trajectories will differ. The tradeoff is weaker immediate exploration, which could worsen recovery. Performance remains untested; the supplied feedback does not establish which schedule is superior.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_temporary_quantum_count(observation) -> int:
+    return 5 if observation["change_detected"] else 0
+=======
+def choose_temporary_quantum_count(observation) -> int:
+    if observation["change_detected"]:
+        return 3
+    if (
+        observation["has_detected_change"]
+        and 1 <= observation["updates_since_detected_change"] <= 2
+    ):
+        return 1
+    return 0
+>>>>>>> REPLACE
+</DIFF>

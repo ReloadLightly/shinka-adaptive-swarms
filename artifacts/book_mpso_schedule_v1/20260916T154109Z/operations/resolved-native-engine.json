@@ -1,0 +1,180 @@
+{
+  "task": "book_mpso_schedule_v1",
+  "evaluation_version": "book_mpso_schedule_v1_reciprocal_v1",
+  "search_seed": null,
+  "engine_config": {
+    "schema_version": 1,
+    "profile_name": "book_mpso_schedule_v1",
+    "profile_definition": {
+      "schema_version": 1,
+      "name": "book_mpso_schedule_v1",
+      "description": "Chapter-aligned temporary-conversion schedule study. Native evolution/database settings identical to research_v3; existing calibrated embedding route and threshold are reused. Fixed subscription-backed gpt-6-astra with task-local xhigh: the pinned native/headless route does not accept inner Ultra. Slot/response ceilings are launcher arguments.",
+      "evolution": {
+        "llm_models": [
+          "$codex"
+        ],
+        "llm_dynamic_selection": "fixed",
+        "llm_kwargs": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384
+        },
+        "patch_types": [
+          "diff",
+          "full",
+          "cross"
+        ],
+        "patch_type_probs": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "max_patch_resamples": 1,
+        "max_patch_attempts": 1,
+        "max_novelty_attempts": 3,
+        "embedding_model": "$local_embedding",
+        "code_embed_sim_threshold": 0.830958258366903,
+        "novelty_llm_models": [
+          "$codex"
+        ],
+        "meta_rec_interval": 5,
+        "meta_llm_models": [
+          "$codex"
+        ],
+        "meta_max_recommendations": 5,
+        "sample_single_meta_rec": true,
+        "evolve_prompts": false,
+        "use_text_feedback": true,
+        "enable_wandb_logging": false
+      },
+      "database": {
+        "parent_selection_strategy": "weighted",
+        "parent_selection_lambda": 10.0,
+        "num_islands": 2,
+        "archive_size": 40,
+        "num_archive_inspirations": 1,
+        "num_top_k_inspirations": 1,
+        "migration_interval": 10,
+        "migration_rate": 0.1,
+        "island_elitism": true,
+        "enforce_island_separation": true
+      }
+    },
+    "default_model": "gpt-6-astra",
+    "default_effort": "xhigh",
+    "evolution": {
+      "llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "llm_dynamic_selection": "fixed",
+      "llm_kwargs": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384
+      },
+      "patch_types": [
+        "diff",
+        "full",
+        "cross"
+      ],
+      "patch_type_probs": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "max_patch_resamples": 1,
+      "max_patch_attempts": 1,
+      "max_novelty_attempts": 3,
+      "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+      "novelty_llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "meta_rec_interval": 5,
+      "meta_llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "evolve_prompts": false,
+      "use_text_feedback": true,
+      "enable_wandb_logging": false,
+      "code_embed_sim_threshold": 0.830958258366903,
+      "meta_max_recommendations": 5,
+      "sample_single_meta_rec": true
+    },
+    "database": {
+      "num_islands": 2,
+      "archive_size": 40,
+      "num_archive_inspirations": 1,
+      "num_top_k_inspirations": 1,
+      "parent_selection_strategy": "weighted",
+      "parent_selection_lambda": 10.0,
+      "migration_interval": 10,
+      "migration_rate": 0.1,
+      "island_elitism": true,
+      "enforce_island_separation": true
+    },
+    "sha256": "bc9ede12198f98c3587e830efe130e7a6381911d0acb9b25cd1567eb9c109840"
+  },
+  "logical_response_limit": null,
+  "features": {
+    "status": "resolved configuration; runtime mechanisms require event evidence",
+    "profile": "book_mpso_schedule_v1",
+    "sha256": "bc9ede12198f98c3587e830efe130e7a6381911d0acb9b25cd1567eb9c109840",
+    "seed_only": false,
+    "parent_sampling": "weighted",
+    "num_islands": 2,
+    "migration_rate": 0.1,
+    "migration_interval": 10,
+    "archive_inspirations": 1,
+    "top_k_inspirations": 1,
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "novelty_configured": true,
+    "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "novelty_attempts": 3,
+    "meta_configured": true,
+    "meta_interval": 5,
+    "text_feedback": true,
+    "model_selection": "fixed",
+    "model_roles": {
+      "mutation": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "meta": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "novelty": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ]
+    },
+    "prompt_evolution": false
+  },
+  "model_calls": 0
+}

@@ -1,0 +1,167 @@
+{
+  "audit_at": "2026-09-16T16:01:03.323349+00:00",
+  "new_objective_queries": 0,
+  "new_model_calls": 0,
+  "source_record_sha256": "1332f93342d0dbbb6c112b03428392932e641189b5b269555f1239506dd741ec",
+  "engine_sha256": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4",
+  "source_conventions_review": "Actual chapter Algorithm3 and frozen source record agree: asynchronous neutral-first/permanent-last movement; quantum replaces PSO with retained neutral velocities; all-role counted memory refresh; per-subswarm exclusion; immediate counted newborn initialization; designated-neutral pairwise diameter approximation; counted exact horizon. Source-specific conventions are explicitly distinguished from exact historical reproduction.",
+  "interpretive_limit": "Shared-best improvement gains aggregate gains across swarms and do not identify causal contribution to offline error. Requested conversions include any final partial update; executed fraction is separately recorded.",
+  "methods": {
+    "mpso_5_0": {
+      "artifact": "references/mpso_5_0/case_000.json.gz",
+      "artifact_sha256": "8705a8379f2e1bc170ac5bbdeefbbd6bcfd5751057f9f79340bc4b78fac84162",
+      "offline_error": 2.2124504100864697,
+      "objective_queries": 500000,
+      "query_partition": {
+        "initialization": 5,
+        "detection": 79796,
+        "ordinary": 395099,
+        "birth": 1600,
+        "exclusion": 15740,
+        "memory": 3880,
+        "temporary_quantum": 3880
+      },
+      "environment_boundaries": 100,
+      "permanent_quantum": 0,
+      "updates": 79796,
+      "completed_updates": 79795,
+      "detected_change_updates": 776,
+      "count_histogram": {
+        "0": 79020,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 776
+      },
+      "requested_conversion_fraction": 0.009724798235500527,
+      "executed_conversion_fraction": 0.009724822609711288,
+      "permanent_quantum_shared_best_improvements": {
+        "count": 0,
+        "total_gain": 0.0
+      },
+      "observed_quantum_moves_within_radius_and_velocity_retained": 20,
+      "observed_ordinary_moves_equal_previous_position_plus_new_velocity": 5,
+      "decision_examples": [
+        {
+          "criteria": [
+            "first_update"
+          ],
+          "evaluations": 6,
+          "count": 0
+        },
+        {
+          "criteria": [
+            "first_detected_change"
+          ],
+          "evaluations": 5010,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "quarter_budget"
+          ],
+          "evaluations": 125010,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "half_budget"
+          ],
+          "evaluations": 250010,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "three_quarter_budget"
+          ],
+          "evaluations": 375006,
+          "count": 5
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    "mpso_5_1": {
+      "artifact": "references/mpso_5_1/case_000.json.gz",
+      "artifact_sha256": "6381cf74f7a3e096ae0e4464d9bcac25415f46d42dea2e6196ab887e69ecd246",
+      "offline_error": 2.0507302792102933,
+      "objective_queries": 500000,
+      "query_partition": {
+        "initialization": 6,
+        "detection": 68212,
+        "ordinary": 337249,
+        "permanent_quantum": 68211,
+        "birth": 1656,
+        "exclusion": 16284,
+        "memory": 4572,
+        "temporary_quantum": 3810
+      },
+      "environment_boundaries": 100,
+      "permanent_quantum": 1,
+      "updates": 68212,
+      "completed_updates": 68211,
+      "detected_change_updates": 762,
+      "count_histogram": {
+        "0": 67450,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 762
+      },
+      "requested_conversion_fraction": 0.011171054946343751,
+      "executed_conversion_fraction": 0.011171087700368558,
+      "permanent_quantum_shared_best_improvements": {
+        "count": 5680,
+        "total_gain": 1951.765497899745
+      },
+      "observed_quantum_moves_within_radius_and_velocity_retained": 25,
+      "observed_ordinary_moves_equal_previous_position_plus_new_velocity": 5,
+      "decision_examples": [
+        {
+          "criteria": [
+            "first_update"
+          ],
+          "evaluations": 7,
+          "count": 0
+        },
+        {
+          "criteria": [
+            "first_detected_change"
+          ],
+          "evaluations": 5012,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "quarter_budget"
+          ],
+          "evaluations": 125008,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "half_budget"
+          ],
+          "evaluations": 250007,
+          "count": 5
+        },
+        {
+          "criteria": [
+            "three_quarter_budget"
+          ],
+          "evaluations": 375011,
+          "count": 5
+        }
+      ],
+      "all_assertions_passed": true
+    }
+  },
+  "status": "passed",
+  "pairing": {
+    "equal_objective_budgets": true,
+    "matching_environment_hashes": true,
+    "environment_hash_count": 101,
+    "environment_history_sha256": "26be630ecf35e369a966ad5341041e3d5f2906fb205e4ace574c6fbdcc0892dd"
+  }
+}

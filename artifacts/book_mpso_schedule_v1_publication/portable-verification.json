@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-16T16:48:19.310000+00:00",
+  "archive": "artifacts/book_mpso_schedule_v1/20260916T154109Z",
+  "archive_status": "read-only, no changes made",
+  "manifest_payloads_checked": 421,
+  "payload_bytes_checked": 71711395,
+  "manifest_sha256": "18ccf884f30ea7fb9fb48beec7c7384d731c1c38d56c4e6a3e953a8e6b04de0b",
+  "manifest_failures": [],
+  "sqlite_integrity_check": "ok",
+  "sqlite_program_rows": 10,
+  "sqlite_unique_generation_slots": 9,
+  "analysis_command": [
+    ".venv/bin/python",
+    "scripts/analyze_book_mpso.py",
+    "--run",
+    "artifacts/book_mpso_schedule_v1/20260916T154109Z",
+    "--phase",
+    "development",
+    "--output",
+    "/tmp/book-mpso-portable-final"
+  ],
+  "analysis_exit_code": 0,
+  "analysis_output": "/tmp/book-mpso-portable-final",
+  "all_analysis_differences": [
+    {
+      "path": "/analyzed_at",
+      "kind": "value",
+      "a": "2026-09-16T16:33:31.730267+00:00",
+      "b": "2026-09-16T16:47:41.400723+00:00"
+    }
+  ],
+  "objective_queries": 0,
+  "model_requests": 0,
+  "notes": [
+    "Matplotlib could not write default ~/.config/matplotlib under sandbox and used a temporary /tmp cache; saved-only analysis and figures completed successfully."
+  ],
+  "ignored_generated_fields": [
+    "analyzed_at"
+  ],
+  "numerical_and_all_other_analysis_payloads_exactly_equal": true,
+  "status": "passed",
+  "regenerated_figure_files": [
+    "schedule_and_performance.png",
+    "schedule_contributions.svg",
+    "schedule_contributions.png",
+    "native_search.svg",
+    "native_search.png",
+    "schedule_and_performance.svg"
+  ],
+  "PNG_byte_reproducibility": {
+    "schedule_and_performance.png": true,
+    "schedule_contributions.png": true,
+    "native_search.png": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 2,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "small_change_reserve",
+  "patch_description": "Use observed change magnitude to control burst intensity: convert four neutrals when the absolute relative fitness change is at most 1%, otherwise five. Return zero between detections. The hypothesis is that retaining one ordinary PSO move after small changes preserves useful convergence while maintaining substantial exploration. The threshold is exploratory, not an estimate of environmental severity. Interface checks passed; improved optimizer performance remains unverified.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T18:31:09.349294",
+  "llm_cost": 0.680178,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_8/attempts/novelty_2/resample_1/patch_1/headless_prompt.md"
+}

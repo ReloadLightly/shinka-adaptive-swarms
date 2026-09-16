@@ -1,0 +1,20 @@
+<NAME>
+small_change_burst
+</NAME>
+<DESCRIPTION>
+At detection, convert four neutral particles when the absolute relative fitness change is at most 0.01; otherwise convert five. Return zero between detections, retaining the shorter schedule that outperformed both tested extensions on development cases.
+The hypothesis is that preserving one ordinary PSO move during small observed changes may support convergence while retaining substantial quantum exploration. Conversely, losing one quantum sample could impair recovery. The threshold is exploratory: local fitness change does not measure environmental severity, and improvement remains untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_temporary_quantum_count(observation) -> int:
+    return 5 if observation["change_detected"] else 0
+=======
+def choose_temporary_quantum_count(observation) -> int:
+    if observation["change_detected"]:
+        if abs(observation["relative_fitness_drop"]) <= 0.01:
+            return 4
+        return 5
+    return 0
+>>>>>>> REPLACE
+</DIFF>

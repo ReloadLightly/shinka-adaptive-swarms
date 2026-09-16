@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-09-16T15:54:06.332043+00:00",
+  "scope": "Task checker, exact-source evaluator reuse, controller freeze ordering; all synthetic fixtures/no objective calls",
+  "numerical_fixture_queries": 0,
+  "model_calls": 0,
+  "invocations": [
+    {
+      "command": ".venv/bin/python -m pytest -q tests/test_book_schedule.py",
+      "passed": 29,
+      "failed": 0
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q tests/test_book_schedule.py tests/test_book_schedule_evaluator.py",
+      "passed": 34,
+      "failed": 0
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q tests/test_book_schedule.py tests/test_book_schedule_evaluator.py tests/test_book_schedule_runner.py",
+      "passed": 38,
+      "failed": 0
+    }
+  ],
+  "unique_final_checks": 38,
+  "notes": "Synthetic partial-query values in tests are fake ledger fixtures, not actual numerical work."
+}

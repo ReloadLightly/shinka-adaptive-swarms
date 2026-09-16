@@ -1,0 +1,22 @@
+<NAME>
+full_burst_light_tail
+</NAME>
+<DESCRIPTION>
+Combines the better-scoring parent’s five-particle detection response with the other parent’s one-particle tail for two subsequent updates. The hypothesis is that brief continued exploration can aid recovery while four neutral particles resume ordinary PSO. The supplied results do not isolate the tail’s benefit; this crossover’s score remains untested. Syntax, deterministic integer outputs, immutable inputs, and unchanged code outside the markers were checked.
+</DESCRIPTION>
+<CODE>
+```python
+"""Published MPSO 5+1 temporary-conversion schedule."""
+# EVOLVE-BLOCK-START
+def choose_temporary_quantum_count(observation) -> int:
+    if observation["change_detected"]:
+        return 5
+    if (
+        observation["has_detected_change"]
+        and 1 <= observation["updates_since_detected_change"] <= 2
+    ):
+        return 1
+    return 0
+# EVOLVE-BLOCK-END
+```
+</CODE>

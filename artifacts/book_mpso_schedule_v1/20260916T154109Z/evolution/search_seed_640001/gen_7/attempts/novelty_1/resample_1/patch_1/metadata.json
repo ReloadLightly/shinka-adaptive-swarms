@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_on_detection",
+  "patch_description": "Convert four neutrals on detection and zero afterward. Both supplied schedules with two-update follow-ups had higher mean error than the original detection-only schedule. Removing that follow-up lets ordinary PSO resume immediately. Four conversions preserve one neutral\u2019s ordinary PSO move during detection while maintaining substantial quantum exploration. This tests whether directed movement improves recovery; fewer quantum samples could also hurt. Performance remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T18:26:26.453226",
+  "llm_cost": 0.644648,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

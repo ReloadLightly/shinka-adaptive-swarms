@@ -1,0 +1,113 @@
+Evolve only choose_temporary_quantum_count(observation) inside the marked block.
+Return a Python integer 0 through 5 (not bool): how many designated neutral
+particles receive a quantum move at THIS subswarm update. Call occurs every
+update, after the counted best-point change check and any required personal-best
+refresh, before any particle moves. The exact initial published schedule returns
+5 when observation['change_detected'] is true, otherwise 0.
+
+Each subswarm always contains five fixed neutral-role particles and one permanent
+quantum-role particle. The permanent quantum particle always samples. A quantum
+move samples uniformly in volume within the radius ball around the current swarm
+best and REPLACES ordinary PSO movement for that update. Neutral velocities are
+retained for later PSO. All personal-best memories survive, participate in shared
+best updates and are reevaluated after detected change. Radius is fixed at
+0.5*configured movement severity. Do not evolve radius, velocities, memory,
+coefficients, permanent particle count, topology, exclusion, budgets or fitness.
+
+A dedicated task-local RNG draws one permutation of the five neutral identities
+at EVERY subswarm update, independently of the requested count. The first k
+receive temporary quantum moves. No identity or RNG seed is an observation.
+The same selection arrangement is used by both external references and candidates.
+All shared-best updates are asynchronous; methods compare whole closed-loop
+trajectories, not identical perturbations after changing decisions.
+
+Public immutable observation keys:
+- change_detected: bool from THIS counted ordinary best-point reevaluation; not
+  the benchmark's hidden environment-change flag.
+- has_detected_change: whether this subswarm has detected any change.
+- updates_since_detected_change: 0 on the detected update; increases afterward;
+  counts since swarm birth before first detection.
+- evaluations_since_detected_change: objective evaluations since detection,
+  including current memory refresh; counts since birth before first detection.
+- fitness_drop and relative_fitness_drop: previous remembered swarm-best quality
+  minus its current counted check, and that difference divided by
+  max(1.0,abs(previous_best_fitness)). Positive deterioration, negative improvement.
+- recent_improvement: observed shared-best improvement on the preceding update.
+- previous_best_fitness: quality remembered before the check.
+- current_best_fitness: current shared-best quality after required memory refresh.
+- neutral_diameter: maximum pairwise distance among five neutral CURRENT positions;
+  this is not the exact smallest-enclosing-ball diameter.
+- mean_neutral_distance_to_best: mean Euclidean current-position distance to the
+  refreshed shared-best location; mean_neutral_speed: mean Euclidean velocity norm.
+- mean_velocity_alignment_to_best: mean cosine of velocity toward refreshed best,
+  in [-1,1], with zero contribution when either vector has zero length.
+- previous_conversion_count: previous requested temporary quantum count.
+- default_radius, swarm_count, dimension, bounds_width, swarm_size,
+  neutral_count=5, permanent_quantum_count=1.
+Distances/speeds are raw coordinate units: divide by max(default_radius,1e-12)
+when normalized geometry is useful. No extra objective evaluations obtain features.
+Default radius is benchmark-supplied half severity, not an inferred unknown scale.
+No hidden peak coordinates, optimum, evaluation error, future changes, seeds,
+case identity or evaluator state may be accessed. Do not import simulator code.
+
+The function must be deterministic and stateless. Permitted: pure arithmetic,
+comparisons, branches, finite for loops/comprehensions, helper functions,
+immutable literal module constants; import math or explicit math imports at
+MODULE OR FUNCTION scope (aliases supported); public math functions/constants;
+mapping.get; builtins abs,all,any,bool,dict,enumerate,float,int,len,list,max,min,
+pow,range,reversed,round,sorted,sum,tuple,zip. Function defaults may be immutable
+literals. No random numbers, I/O, clocks, environment variables, external imports,
+reflection, global/nonlocal mutations, class definitions, generators or while
+loops. Only local temporary state is allowed; observation mutation fails.
+
+Fitness=1/(1+mean offline error), over the same eight DEVELOPMENT cases, each
+500,000 counted objective queries: five dimensions, ten conical peaks, severity1,
+change period5000, movement correlation0,nexcess1. Initialization, detection,
+memory, movements and exclusion-related evaluations all count. References are
+matched contemporary MPSO5+0 and5+1 reconstructions, not printed historical scores.
+Feedback supplies paired errors, behavior by time since detection, ordinary and
+quantum shared-best improvement contributions, recovery diagnostics and both
+favorable and unfavorable cases. No fresh comparison outcomes are available.
+Simple constants and the original schedule are legitimate; no complexity or
+branching reward exists. Explain each proposed behavioral hypothesis without
+assuming that adaptivity or increased quantum sampling must help.
+
+
+# Scientific context supplied to mutation
+
+# Scientific context: improve an existing cooperative optimizer
+
+Blackwell, Branke and Li's chapter "Particle Swarms for Dynamic Optimization
+Problems" (2008), Sections4.1,4.2,5.1 and5.3, motivates exploratory quantum
+sampling near environmental changes while ordinary PSO supports convergence.
+Their 5+1 setting retains five designated neutral particles and adds one permanent
+quantum particle. The neutral particles temporarily convert for one update after
+a detected change. We ask whether a different duration, intensity or reactivation
+schedule improves that human-designed schedule under matched conditions.
+
+This task restores the chapter comparison as the project purpose. Earlier studies
+changed response radius/count or trajectory continuity in a different historical
+execution path. V3 did not establish fresh-history improvement over both controls;
+a radius/velocity sprint selected a simpler constant with inconclusive fresh
+pilot; retention choices improved on development cases without an independent
+comparison. Those outcomes motivate careful controls, not a predetermined schedule.
+
+Competing mechanisms include broader exploration, disruption of converging neutral
+trajectories, persistent memory/attractor quality, objective-query allocation,
+ordinary versus quantum discoveries, asynchronous shared-best updates, swarm
+birth/removal and stochastic closed-loop differences. A complicated expression
+or improved development fitness alone does not establish any one explanation.
+
+All candidates share one new chapter-aligned execution path: fixed role membership,
+neutral-only convergence assessment, exclusion after each subswarm update, and
+quantum movement replacing PSO. Neutral indices update in fixed order, followed by
+the permanent quantum particle; selected temporary identities come from a separate
+count-independent permutation. The documented pairwise diameter approximation and
+initialization conventions are held constant across both references and candidates.
+
+The eight development cases preserve the chapter's five-dimensional ten-peak,
+severity1,period5000,500000-query setting, but eight repetitions do not reproduce
+its fifty-run Table3. The printed 5+0/5+1 values are not fitness targets. Any later
+fresh comparison is withheld from mutation, novelty and meta-memory. This search
+cannot establish cooperation's causal advantage or superiority of Shinka as a
+search method without the corresponding controlled experiments.

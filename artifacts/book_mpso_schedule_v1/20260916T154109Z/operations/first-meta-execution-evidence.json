@@ -1,0 +1,42 @@
+{
+  "at": "2026-09-16T16:23:25.483966+00:00",
+  "completed_meta_updates": [
+    {
+      "time": "2026-09-16T16:22:29+00:00",
+      "elapsed_s": 1020.99,
+      "event": "meta_update_complete",
+      "message": "Native meta-scratchpad recommendations updated"
+    }
+  ],
+  "exact_recommendation_injections": [
+    {
+      "generation": 6,
+      "receipt": "evolution/search_seed_640001/engine_calls/mutation-ac738e2f6a6145ada1a344483b589124.json",
+      "artifact": "evolution/search_seed_640001/meta/meta_5.txt",
+      "recommendation_index": 2,
+      "exact_injected_text": "**Reduce the burst only for small observed fitness changes.** At detection, return four when `abs(relative_fitness_drop) <= 0.01`, otherwise five; return zero between detections. This preserves the successful full burst for larger changes while testing a limited exception, with `0.01` treated as an exploratory threshold and fitness change treated as a local signal, not actual environmental severity."
+    }
+  ],
+  "meta_role_totals": {
+    "native_wrapper_invocations": 3,
+    "requested_logical_responses": 7,
+    "usable_responses_returned": 7,
+    "status_counts": {
+      "returned": 3
+    },
+    "unclosed_wrapper_invocations": 0,
+    "logical_responses_in_unclosed_wrappers": 0,
+    "closed_response_shortfall": 0,
+    "native_cost_estimate_sum": 1.90606,
+    "native_reported_routes": [
+      "headless/codex@gpt-6-astra?effort=xhigh"
+    ],
+    "initial_logical_responses": 7,
+    "exposed_native_retry_responses": 0,
+    "observed_native_dispatch_attempts": 7,
+    "native_dispatch_status_counts": {
+      "returned": 7
+    }
+  },
+  "scope": "Read-only exact text matching against saved native recommendation artifact and actual mutation system message; zero model or numerical executions."
+}

@@ -1,0 +1,77 @@
+.........CHAPTER_MPSO_SMALL_FIXTURE_OBJECTIVE_QUERIES=11499
+.............................[2026-09-16T16:39:22+00:00] +     0.0s evaluation_start: message=Evaluating chapter MPSO 5+1 temporary-conversion schedule cases=1
+[2026-09-16T16:39:22+00:00] +     0.0s case_reused: case_id=case_000 reason=exact source, config and scientific fingerprint match reference={'path': '/tmp/pytest-of-roland/pytest-33/test_exact_seed_checkpoint_reu0/reference_1.json.gz', 'sha256': '9525df6c8bba44b043f0bf2d87b8ce6440108b8a1d15f3a56293f8def9c85bd5'} checkpoint=/tmp/pytest-of-roland/pytest-33/test_exact_seed_checkpoint_reu0/evaluated/case_000.json.gz new_objective_queries=0
+[2026-09-16T16:39:22+00:00] +     0.0s evaluation_complete: mean_offline_error=2 worst_case_offline_error=2 case_error_std=0 cases_completed=1
+.[2026-09-16T16:39:22+00:00] +     0.0s evaluation_start: message=Evaluating chapter MPSO 5+1 temporary-conversion schedule cases=1
+[2026-09-16T16:39:22+00:00] +     0.0s case_start: case_id=case_000 index=1 total=1 config={'dimension': 5, 'npeaks': 10, 'period': 100, 'move_severity': 1.0, 'correlation': 0.0, 'budget': 1000, 'environment_seed': 813, 'optimizer_seed': 814, 'particles_per_swarm': 5, 'nexcess': 1, 'trace_interval': 100, 'snapshot_interval': 0, 'progress_interval': 5000, 'bounds': [0.0, 100.0], 'height_severity': 7.0, 'width_severity': 1.0, 'chi': 0.729843788, 'c': 2.05}
+[2026-09-16T16:39:22+00:00] +     0.0s evaluation_failed: error=BookScheduleError: synthetic invalid score; no actual objective calls in fixture cases_completed=0
+...[2026-09-16T16:39:22+00:00] +     0.0s evaluation_start: message=Evaluating chapter MPSO 5+1 temporary-conversion schedule cases=1
+[2026-09-16T16:39:22+00:00] +     0.0s case_start: case_id=case_000 index=1 total=1 config={'dimension': 5, 'npeaks': 10, 'period': 100, 'move_severity': 1.0, 'correlation': 0.0, 'budget': 1000, 'environment_seed': 813, 'optimizer_seed': 814, 'particles_per_swarm': 5, 'nexcess': 1, 'trace_interval': 100, 'snapshot_interval': 0, 'progress_interval': 5000, 'bounds': [0.0, 100.0], 'height_severity': 7.0, 'width_severity': 1.0, 'chi': 0.729843788, 'c': 2.05}
+[2026-09-16T16:39:22+00:00] +     0.0s case_complete: case_id=case_000 offline_error=2 new_objective_queries=1000
+[2026-09-16T16:39:22+00:00] +     0.1s evaluation_complete: mean_offline_error=2 worst_case_offline_error=2 case_error_std=0 cases_completed=1
+.[2026-09-16T16:39:22+00:00] +     0.0s references_registered: cases=8 methods=['mpso_5_0', 'mpso_5_1'] maximum_new_executions=16 unique_fresh_seeds=16 manifest=/tmp/pytest-of-roland/pytest-33/test_seed_identity_checkpoint_0/repo/results/study/references/manifest.json
+{"status": "existing_registration_verified", "path": "/tmp/pytest-of-roland/pytest-33/test_seed_identity_checkpoint_0/repo/results/study/references/manifest.json"}
+[2026-09-16T16:39:22+00:00] +     0.0s case_start: method=mpso_5_0 case_index=0 budget=500000
+[2026-09-16T16:39:22+00:00] +     0.0s case_start: stage=references method=mpso_5_0 case_index=0 completed=0
+[2026-09-16T16:39:22+00:00] +     0.0s case_complete: method=mpso_5_0 case_index=0 offline_error=1 elapsed_seconds=0.01621 completed=1
+[2026-09-16T16:39:22+00:00] +     0.0s case_complete: stage=references method=mpso_5_0 case_index=0 offline_error=1 elapsed_seconds=0.01621 completed=1
+[2026-09-16T16:39:22+00:00] +     0.0s paused_after_measurement: new_executions=1
+[2026-09-16T16:39:22+00:00] +     0.0s failed: error=ValueError: Saved permanent quantum mode differs
+[2026-09-16T16:39:22+00:00] +     0.0s failed: error=ValueError: Saved permanent quantum mode differs
+F[2026-09-16T16:39:23+00:00] +     0.0s references_registered: cases=8 methods=['mpso_5_0', 'mpso_5_1'] maximum_new_executions=16 unique_fresh_seeds=16 manifest=/tmp/pytest-of-roland/pytest-33/test_failed_case_is_preserved_0/repo/results/study/references/manifest.json
+[2026-09-16T16:39:23+00:00] +     0.0s case_start: method=mpso_5_0 case_index=0 budget=500000
+[2026-09-16T16:39:23+00:00] +     0.0s case_start: stage=references method=mpso_5_0 case_index=0 completed=0
+[2026-09-16T16:39:23+00:00] +     0.0s failed: error=Failure: fixture interruption
+[2026-09-16T16:39:23+00:00] +     0.0s failed: error=Failure: fixture interruption
+[2026-09-16T16:39:23+00:00] +     0.0s failed: error=RuntimeError: Unfinished/failed attempted case requires explicit recovery review; no automatic repeat.
+[2026-09-16T16:39:23+00:00] +     0.0s failed: error=RuntimeError: Unfinished/failed attempted case requires explicit recovery review; no automatic repeat.
+.[2026-09-16T16:39:23+00:00] +     0.0s references_registered: cases=8 methods=['mpso_5_0', 'mpso_5_1'] maximum_new_executions=16 unique_fresh_seeds=16 manifest=/tmp/pytest-of-roland/pytest-33/test_fresh_seeds_are_blocked_u0/repo/results/study/references/manifest.json
+.[2026-09-16T16:39:23+00:00] +     0.0s references_registered: cases=8 methods=['mpso_5_0', 'mpso_5_1'] maximum_new_executions=16 unique_fresh_seeds=16 manifest=/tmp/pytest-of-roland/pytest-33/test_seed_best_skips_duplicate0/repo/results/study/references/manifest.json
+......
+=================================== FAILURES ===================================
+________________ test_seed_identity_checkpoint_reuse_and_freeze ________________
+
+registered = PosixPath('/tmp/pytest-of-roland/pytest-33/test_seed_identity_checkpoint_0/repo/results/study')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x75a67a3e17b0>
+
+    def test_seed_identity_checkpoint_reuse_and_freeze(registered, monkeypatch):
+        folder = registered
+        identities = runner.read_json(folder / "development_cases.json")
+        cases = identities["cases"]
+        assert len(cases) == 8
+        assert len({(c["move_severity"], c["period"]) for c in cases}) == 1
+        assert len({c[k] for c in cases for k in ["environment_seed", "optimizer_seed"]}) == 16
+        runner.register(folder)
+        assert runner.read_json(folder / "development_cases.json") == identities
+        calls = []
+        def counted(config, *args, **kwargs):
+            calls.append(config)
+            return fake_result(config)
+        monkeypatch.setattr(runner, "run_case", counted)
+        runner.execute(folder, 1)
+        assert len(calls) == 1
+        with pytest.raises(ValueError, match="sixteen"):
+            runner.freeze_suite(folder)
+>       runner.execute(folder)
+
+tests/test_book_schedule_runner.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_book_mpso.py:188: in execute
+    validate_completed_case(saved, config, method)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+saved = {'case_id': 'case_000', 'config': {'dimension': 5, 'npeaks': 10, 'period': 5000, 'move_severity': 1.0, ...}, 'evaluations': 500000, 'evaluation_counts': {'fake_fixture': 500000}, ...}
+config = {'dimension': 5, 'npeaks': 10, 'period': 5000, 'move_severity': 1.0, ...}
+method = {'kind': 'temporary_quantum_schedule', 'permanent_quantum': 0, 'source': 'programs/mpso_5_0.py', 'sha256': '604c4ad2af145c88844af8f7addf0ca89eb37cb27111aa7a82c0dbb4ac6bf8f8', ...}
+
+    def validate_completed_case(saved, config, method):
+        if saved["config"] != config or saved["evaluations"] != config["budget"]:
+            raise ValueError("Saved case configuration or budget differs")
+        if saved.get("permanent_quantum") != method["permanent_quantum"]:
+>           raise ValueError("Saved permanent quantum mode differs")
+E           ValueError: Saved permanent quantum mode differs
+
+scripts/run_book_mpso.py:66: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_book_schedule_runner.py::test_seed_identity_checkpoint_reuse_and_freeze
+1 failed, 51 passed in 1.33s

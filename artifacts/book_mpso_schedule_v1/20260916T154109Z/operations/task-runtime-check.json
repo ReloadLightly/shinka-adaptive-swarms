@@ -1,0 +1,42 @@
+{
+  "model_requested": "gpt-6-astra",
+  "inner_effort_requested": "xhigh",
+  "inner_effort_effective": null,
+  "inner_effort_status": "requested; no model invocation performed",
+  "outer_work_mode": "not inspected; Astra Ultra selection belongs to the outer Codex interface, separately from this launcher",
+  "seed_only": false,
+  "paid_api_calls_authorized": false,
+  "model_calls_performed_by_check": 0,
+  "errors": [],
+  "shinka_version": "0.0.7",
+  "shinka_available": true,
+  "headless_command": "npx -y @roberttlange/headless@0.6.1",
+  "codex_available": true,
+  "npx_available": true,
+  "codex_version": "codex-cli 0.154.0",
+  "subscription_login_confirmed": true,
+  "model_route": "headless/codex@gpt-6-astra?effort=xhigh",
+  "ready": true,
+  "supported_effort_evidence": {
+    "path": "/home/roland/actir/shinka-adaptive-swarms/.venv/lib/python3.13/site-packages/shinka/llm/providers/headless.py",
+    "sha256": "c9a5295c615eb9dd2b6dfc353b1f6ca08dcbfb3536582f39dcad048ee6a8693f",
+    "literal_supported_efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "selected_strongest_supported": "xhigh",
+    "Ultra_not_silently_substituted": true,
+    "CLI_arguments_observed_for_this_new_run": false
+  },
+  "expected_response_accounting_without_retries": {
+    "eight_mutation": 8,
+    "eight_novelty_if_judged": 8,
+    "meta_individual_summaries_and_two_updates": 13,
+    "total": 29,
+    "response_ceiling": 40,
+    "margin": 11,
+    "actual_counts_must_come_from_new_engine_receipts": true
+  }
+}

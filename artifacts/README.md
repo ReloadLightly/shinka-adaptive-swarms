@@ -29,6 +29,33 @@ itself and disposable Python bytecode caches.
 | `radius_velocity_sprint/20260916T113359Z` | Bounded radius/velocity diagnostic, native discovery and frozen transfer probe | 48 diagnostic + 96 new native + 16 pilot executions = 16 million queries; eight cached seed cases; 13 valid native slots including seed; 45 logical model responses |
 | `particle_retention_v1/20260916T132022Z` | Bounded particle-selection discovery; count four/radius 1.25/retained velocity fixed | 16 reference + 56 new native executions = 7.2 million queries; eight cached seed records; seed + seven valid descendants + one zero-query rejection; 29 logical model responses |
 | `particle_retention_v1_publication` | Read-only portable archive verification | Payload hashes, consistent SQLite contents and saved-data analysis; no numerical/model calls |
+| `book_mpso_schedule_v1_publication` | Read-only archive, portable analysis and remote publication verification | No objective or model calls |
+| `book_mpso_schedule_v1/20260916T154109Z` | Chapter-aligned MPSO 5+0/5+1 reconstruction and native temporary-conversion search | 16 reference + 64 descendant executions = 40 million queries; eight cached seed records; seed + eight valid descendants; 31 logical model responses |
+
+The [chapter-aligned report](../docs/studies/book_mpso_schedule_v1/REPORT.md)
+restores the original-versus-evolved MPSO comparison as the project's central
+question. No descendant improved on either reference's mean development error.
+The published 5+1 schedule remained the best native program: **1.744569**, against
+**1.743485** for reconstructed 5+0. Their paired difference is
+**+0.001084 [−0.306345, +0.285559]**, a descriptive 95% interval across eight
+500,000-query histories. This does not establish equivalence, reproduce Table 3,
+or provide fresh-case evidence. The protocol's fresh-comparison trigger was not met.
+
+All 88 case records are retained: 80 physical executions and eight exact seed-cache
+reuses. Generation 8 repeated generation 6 across eight complete outcomes; its
+four million queries are included in the total. Small numerical fixtures add
+32,297 separately recorded queries. The archive retains sources, paired feedback,
+lineage, counted-query traces, source conventions, final audits and every model
+receipt. Subscription Codex visibly used `gpt-6-astra / xhigh` for 9 mutation,
+9 novelty and 13 meta responses. Native execution included ten embeddings, two
+meta updates and three verified recommendation insertions; no migration occurred
+within nine slots. Island-local novelty checking admitted the cross-island
+behavioral duplicate. Historical payloads were verified unchanged. The [publication checks](book_mpso_schedule_v1_publication/README.md) verify the closed archive and reproduce its saved-data analysis.
+
+```bash
+# Inspect the published database without executing candidates or calling a model.
+bash scripts/webui.sh artifacts/book_mpso_schedule_v1/20260916T154109Z/evolution 8896
+```
 
 The [particle-retention report](../docs/sprints/particle_retention_20260916/REPORT.md)
 selects generation 7, which minimizes distance to the refreshed swarm best plus

@@ -1,0 +1,731 @@
+{
+  "created_at": "2026-09-16T16:09:21.890795+00:00",
+  "label": "1",
+  "scope": "Read-only native machinery snapshot; zero model or numerical executions. Live files can advance between reads; hashes describe each captured read.",
+  "status": "snapshot",
+  "run": "evolution/search_seed_640001",
+  "native": {
+    "run": "evolution/search_seed_640001",
+    "status": "preflight",
+    "started_at": "20260916T160428.754232Z",
+    "finished_at": null,
+    "original_evaluated_generation_ids": [
+      0,
+      1
+    ],
+    "database_rows_including_copies": 3,
+    "database_row_identity_digest": "85209461ac565f841a3e0e5dd6839b5abaa2d4d68254b3ec37fbd09e2a326917",
+    "database_rows": [
+      {
+        "native_id": "54ff2a7f-b967-4211-982d-ac6df00a415f",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+        "island_at_snapshot": 0,
+        "patch_type": "init",
+        "correct": true
+      },
+      {
+        "native_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+        "island_at_snapshot": 1,
+        "patch_type": "init",
+        "correct": true
+      },
+      {
+        "native_id": "fefe4a5d-1838-4e21-b765-efe051d5f939",
+        "generation": 1,
+        "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+        "code_sha256": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b",
+        "island_at_snapshot": 1,
+        "patch_type": "diff",
+        "correct": true
+      }
+    ],
+    "model_requested": "gpt-6-astra",
+    "inner_effort_requested": "xhigh",
+    "inner_effort_effective_manifest": null,
+    "inner_effort_status_manifest": "requested; no model invocation performed",
+    "role_totals": {
+      "mutation": {
+        "native_wrapper_invocations": 2,
+        "requested_logical_responses": 2,
+        "usable_responses_returned": 2,
+        "status_counts": {
+          "returned": 2
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.765188,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 2,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 2,
+        "native_dispatch_status_counts": {
+          "returned": 2
+        }
+      },
+      "novelty": {
+        "native_wrapper_invocations": 2,
+        "requested_logical_responses": 2,
+        "usable_responses_returned": 2,
+        "status_counts": {
+          "returned": 2
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.12090999999999999,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "initial_logical_responses": 2,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 2,
+        "native_dispatch_status_counts": {
+          "returned": 2
+        }
+      },
+      "meta": {
+        "native_wrapper_invocations": 0,
+        "requested_logical_responses": 0,
+        "usable_responses_returned": 0,
+        "status_counts": {},
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0,
+        "native_reported_routes": [],
+        "initial_logical_responses": 0,
+        "exposed_native_retry_responses": 0,
+        "observed_native_dispatch_attempts": 0,
+        "native_dispatch_status_counts": {}
+      }
+    },
+    "role_receipts": [
+      {
+        "path": "evolution/search_seed_640001/engine_calls/mutation-626e51a0f8984c32866aeaf436deb92b.json",
+        "call_id": "mutation-626e51a0f8984c32866aeaf436deb92b",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T16:08:00.188607+00:00",
+        "finished_at": "2026-09-16T16:08:59.181497+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "216cac9390883354ac0701c72e0b9c8ad6606648c37586ec3b914d45b096b072",
+        "message_sha256": "8b4ab960218d3cc52a775e9631b7edd123b15dc012eb9c0edb626bb58d5e1bb3",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 26752,
+            "output_tokens": 1414,
+            "reported_api_cost": 0.421932
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T16:08:00.209291+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T16:08:59.173263+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 3
+      },
+      {
+        "path": "evolution/search_seed_640001/engine_calls/mutation-7d0d8b5147024ba7b5ab0e6ad284c723.json",
+        "call_id": "mutation-7d0d8b5147024ba7b5ab0e6ad284c723",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T16:04:46.630759+00:00",
+        "finished_at": "2026-09-16T16:05:50.879558+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "084d54f1118ad5e22f4f68982ddbe49c482e1929261ef8937c0562df97aefb03",
+        "message_sha256": "7108281475578ab1711944cfae96a72073f59dd82b1b150fa7cdb71038b3a2ae",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 20453,
+            "output_tokens": 1387,
+            "reported_api_cost": 0.343256
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T16:04:46.660419+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T16:05:50.860615+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 1
+      },
+      {
+        "path": "evolution/search_seed_640001/engine_calls/novelty-60578579462a4b0fa8bdc4f0ee337564.json",
+        "call_id": "novelty-60578579462a4b0fa8bdc4f0ee337564",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T16:05:51.166886+00:00",
+        "finished_at": "2026-09-16T16:06:08.156371+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "8173fddf546f3b8746d4b70b26359ff7764e627a3c7da32a89c042f7fcff8450",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4060,
+            "output_tokens": 159,
+            "reported_api_cost": 0.06071
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T16:05:51.175851+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T16:06:08.146707+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 2
+      },
+      {
+        "path": "evolution/search_seed_640001/engine_calls/novelty-c7720ad174c544b68f377b51c30a6b1d.json",
+        "call_id": "novelty-c7720ad174c544b68f377b51c30a6b1d",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-16T16:08:59.382680+00:00",
+        "finished_at": "2026-09-16T16:09:11.528413+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "f15f2f16f22a96b1febfe84ade9924be72aefedfe4d6d54a48e5887150d40470",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4109,
+            "output_tokens": 139,
+            "reported_api_cost": 0.0602
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+        },
+        "initial_logical_responses": 1,
+        "exposed_native_retry_responses": 0,
+        "native_dispatch_attempts": [
+          {
+            "index": 1,
+            "started_at": "2026-09-16T16:08:59.394086+00:00",
+            "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+            "status": "returned",
+            "finished_at": "2026-09-16T16:09:11.504991+00:00"
+          }
+        ],
+        "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+        "logical_response_limit": 40,
+        "run_reserved_logical_responses_at_reservation": 4
+      }
+    ],
+    "event_receipt_coverage": {
+      "native_wrapper_starts_without_receipt": [],
+      "receipts_without_observed_start_event": []
+    },
+    "mutation_wrapper_counts_by_generation": {
+      "2": 1,
+      "1": 1
+    },
+    "sampling_attempt_counts_by_generation": {
+      "1": 1,
+      "2": 1
+    },
+    "retry_context_association": "Most recent native_sampling event before wrapper start; this sprint uses one proposal worker. Full saved prompt source/feedback checks verify context separately.",
+    "degradation_events": [],
+    "patch_types_original_evaluated_rows": {
+      "init": 1,
+      "diff": 1
+    },
+    "native_sampling": [
+      {
+        "time": "2026-09-16T16:04:46+00:00",
+        "elapsed_s": 17.86,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_640001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+                "full_source_present": true,
+                "feedback_sha256": "20e5457e1f2cda7460a8facae49a44269d97570884a32eb0694cabfc87c3bd1f",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-16T16:08:00+00:00",
+        "elapsed_s": 199.45,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 2,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [
+          "fefe4a5d-1838-4e21-b765-efe051d5f939"
+        ],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_640001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+                "full_source_present": true,
+                "feedback_sha256": "20e5457e1f2cda7460a8facae49a44269d97570884a32eb0694cabfc87c3bd1f",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "fefe4a5d-1838-4e21-b765-efe051d5f939",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b",
+                "full_source_present": true,
+                "feedback_sha256": "065f9db8eb73c5d69d87b1e16ea491cb00a21fcbeb637d79b19151005f45adc2",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      }
+    ],
+    "novelty": {
+      "decision_count": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-16T16:06:08+00:00",
+          "elapsed_s": 93.51,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06071,
+          "novelty_explanation": "**NOVEL**: Both return 5 when a change is detected, but the proposed code additionally returns 2 during updates 1\u20133 after a previously detected change. The existing code returns 0 in those cases, so the proposal meaningfully changes the temporary quantum-conversion schedule and potentially the search behavior.",
+          "max_similarity": 0.9776143431663513,
+          "similarity_scores": [
+            0.9776143431663513
+          ]
+        },
+        {
+          "time": "2026-09-16T16:09:11+00:00",
+          "elapsed_s": 266.78,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.0602,
+          "novelty_explanation": "NOVEL: The proposed code returns 2 only on the first update after a detected change, and only when `recent_improvement <= 0.0`. The existing code returns 2 on updates 1\u20133 regardless of improvement. This introduces performance-dependent behavior and shortens the temporary-conversion window.",
+          "max_similarity": 0.9871395230293274,
+          "similarity_scores": [
+            0.9747323989868164,
+            0.9871395230293274
+          ]
+        }
+      ]
+    },
+    "native_embeddings": {
+      "starts": 3,
+      "completions": 3,
+      "dimensions": {
+        "768": 3
+      },
+      "events": [
+        {
+          "time": "2026-09-16T16:04:42+00:00",
+          "elapsed_s": 13.36,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-16T16:05:50+00:00",
+          "elapsed_s": 78.15,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-16T16:08:59+00:00",
+          "elapsed_s": 254.45,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-16T16:04:46+00:00",
+          "elapsed_s": 17.76,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:05:51+00:00",
+          "elapsed_s": 78.4,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-16T16:08:59+00:00",
+          "elapsed_s": 254.62,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_2/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta": {
+      "updates_started": [],
+      "updates_completed": [],
+      "updates_noop": [],
+      "saved_artifacts": [],
+      "mutation_prompt_injections": [
+        {
+          "receipt": "evolution/search_seed_640001/engine_calls/mutation-626e51a0f8984c32866aeaf436deb92b.json",
+          "started_at": "2026-09-16T16:08:00.188607+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 2,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": true,
+          "recommendation_section_present": false,
+          "verification": "observed crossover prompt without a recommendation section; native crossover format omits meta injection"
+        },
+        {
+          "receipt": "evolution/search_seed_640001/engine_calls/mutation-7d0d8b5147024ba7b5ab0e6ad284c723.json",
+          "started_at": "2026-09-16T16:04:46.630759+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 1,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        }
+      ]
+    },
+    "migration_history": [],
+    "native_migration_logs": [],
+    "prompt_verification_summary": {
+      "saved_attempt_prompts": 2,
+      "full_frozen_task_context_present": 2,
+      "source_context_references": 3,
+      "full_sources_present": 3,
+      "full_feedback_present": 3,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "terminal_failed_slots": [],
+    "terminal_rejected_without_archive": [],
+    "archived_invalid_generations": [],
+    "terminal_slots": 2,
+    "evaluated_descendants": 1,
+    "valid_descendants": 1,
+    "generation_progress": [
+      {
+        "generation": 0,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 0,
+        "new_completed_objective_queries": 0,
+        "reuse_events": 8,
+        "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+        "mean_offline_error": 1.7445687815149309,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 8,
+            "mean_offline_error": 1.7445687815149309,
+            "mpso_5_0_mean_difference": 0.0010840299555671673,
+            "mpso_5_0_difference_sd": 0.4534958495795035,
+            "mpso_5_1_mean_difference": 0.0,
+            "mpso_5_1_difference_sd": 0.0
+          }
+        ],
+        "schedule_updates": 546693,
+        "requested_neutral_conversions": 33010,
+        "feedback_sha256": "20e5457e1f2cda7460a8facae49a44269d97570884a32eb0694cabfc87c3bd1f"
+      },
+      {
+        "generation": 1,
+        "checkpoint_status": "completed",
+        "completed_cases": 8,
+        "completed_new_cases": 8,
+        "new_completed_objective_queries": 4000000,
+        "reuse_events": 0,
+        "source_sha256": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b",
+        "mean_offline_error": 1.9025729624298262,
+        "regime_summaries": [
+          {
+            "regime": "severity=1.0,period=5000",
+            "cases": 8,
+            "mean_offline_error": 1.9025729624298262,
+            "mpso_5_0_mean_difference": 0.1590882108704626,
+            "mpso_5_0_difference_sd": 0.87664332956581,
+            "mpso_5_1_mean_difference": 0.15800418091489543,
+            "mpso_5_1_difference_sd": 0.7202518200192247
+          }
+        ],
+        "schedule_updates": 546909,
+        "requested_neutral_conversions": 71222,
+        "feedback_sha256": "065f9db8eb73c5d69d87b1e16ea491cb00a21fcbeb637d79b19151005f45adc2"
+      },
+      {
+        "generation": 2,
+        "checkpoint_status": "running",
+        "completed_cases": 0,
+        "completed_new_cases": 0,
+        "new_completed_objective_queries": 0,
+        "reuse_events": 0,
+        "source_sha256": "b4d47ed5f8d082c7863e51e521dec519d527b522f6c9d02ca4ffa30acf70fb5c"
+      }
+    ],
+    "evaluated_descendants_semantics": "All archived descendant outcomes including evaluator-rejected invalid source; valid_descendants counts only correct archived descendants."
+  },
+  "input_evidence": {
+    "evolution/search_seed_640001/manifest.json": {
+      "bytes_read": 9197,
+      "sha256_at_read": "7816300fd4be45d5c7b23a40847f859009dfd93270cf8134f6e58efe59d2f1b4"
+    },
+    "evolution/search_seed_640001/events.jsonl": {
+      "bytes_read": 444603,
+      "sha256_at_read": "7acd35078f31757de1a0887384a426655dc83385c8c10d869188f2014de9f46b"
+    },
+    "evolution/search_seed_640001/engine_calls/mutation-626e51a0f8984c32866aeaf436deb92b.json": {
+      "bytes_read": 58553,
+      "sha256_at_read": "fded829e8adb1335b82dc07efc89ed2bcc6106c538ac7801eb72ecc2f81064a7"
+    },
+    "evolution/search_seed_640001/engine_calls/mutation-7d0d8b5147024ba7b5ab0e6ad284c723.json": {
+      "bytes_read": 35344,
+      "sha256_at_read": "28d4df840f4d595382eb28d09789fa5af56db5a272c7efbab4b17f233da230c3"
+    },
+    "evolution/search_seed_640001/engine_calls/novelty-60578579462a4b0fa8bdc4f0ee337564.json": {
+      "bytes_read": 3950,
+      "sha256_at_read": "eda327ae547fb0d88c4d1d702839e450c23018785fcb7533c3479acbf61b3744"
+    },
+    "evolution/search_seed_640001/engine_calls/novelty-c7720ad174c544b68f377b51c30a6b1d.json": {
+      "bytes_read": 4148,
+      "sha256_at_read": "64d5e460b7966692a0f2f1109b2e24e8a0f9472e2ea6aa2a65f554e85517f359"
+    },
+    "evolution/search_seed_640001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 30632,
+      "sha256_at_read": "9ff218b914eb1544c40b76a247440531d1c6f8cfce9c3c43e1a5127312e46f3c"
+    },
+    "evolution/search_seed_640001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 51829,
+      "sha256_at_read": "a58cf240a4c9b8ec0e4678e45b622def0f72749c19a9c6232d72a34ce6e560d5"
+    },
+    "evolution/search_seed_640001/headless_prompts/prompt_03ecf36670c64072a580a27e33012fc4.md": {
+      "bytes_read": 51829,
+      "sha256_at_read": "a58cf240a4c9b8ec0e4678e45b622def0f72749c19a9c6232d72a34ce6e560d5"
+    },
+    "evolution/search_seed_640001/headless_prompts/prompt_15a117c7ddfa40ec802b060c5da25e8a.md": {
+      "bytes_read": 2220,
+      "sha256_at_read": "5ef22012eaee99dde288e124e072d5f16006cfe14267d1871fea8a0e7061e66d"
+    },
+    "evolution/search_seed_640001/headless_prompts/prompt_a4f754ce2ee845ee833ec9a3f8875128.md": {
+      "bytes_read": 30632,
+      "sha256_at_read": "9ff218b914eb1544c40b76a247440531d1c6f8cfce9c3c43e1a5127312e46f3c"
+    },
+    "evolution/search_seed_640001/headless_prompts/prompt_e93165ec70ac4adab651b3fb989bca82.md": {
+      "bytes_read": 2014,
+      "sha256_at_read": "f44822fc3bbe5c540744425d3014530384794443b09a7b160c1528c22be77443"
+    },
+    "evolution/search_seed_640001/task_snapshot/task_system_prompt.txt": {
+      "bytes_read": 7651,
+      "sha256_at_read": "f02ed86a602498f63411d3790cd0592d7c9a6409a0f2281b56a44567e7d84c95"
+    },
+    "evolution/search_seed_640001/gen_0/main.py": {
+      "bytes_read": 207,
+      "sha256_at_read": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284"
+    },
+    "evolution/search_seed_640001/gen_1/main.py": {
+      "bytes_read": 365,
+      "sha256_at_read": "bfb89edb8477a913c43ea1ac62b78c287c2ca5f5b476256eb45672aa6cc91f8b"
+    },
+    "evolution/search_seed_640001/gen_2/main.py": {
+      "bytes_read": 413,
+      "sha256_at_read": "b4d47ed5f8d082c7863e51e521dec519d527b522f6c9d02ca4ffa30acf70fb5c"
+    },
+    "evolution/search_seed_640001/gen_0/results/evaluation-checkpoint.json": {
+      "bytes_read": 45492,
+      "sha256_at_read": "dec7030d5a3d1e2d340e0f914dbc9818206baedcf641c07b199415750e0603b6"
+    },
+    "evolution/search_seed_640001/gen_0/results/events.jsonl": {
+      "bytes_read": 5164,
+      "sha256_at_read": "294da79d648f44288b47932087c7bfa8fc8c289eb85dd18cf29fe6abd6082acf"
+    },
+    "evolution/search_seed_640001/gen_0/results/metrics.json": {
+      "bytes_read": 66154,
+      "sha256_at_read": "3045a30977c7fe0fffae081782d0d888c6f3e4d010a69f521bd16ebaea12f772"
+    },
+    "evolution/search_seed_640001/gen_1/results/evaluation-checkpoint.json": {
+      "bytes_read": 45951,
+      "sha256_at_read": "67569b6755c6625f5062365172fa89f624283e5e11c2493683611238976819b1"
+    },
+    "evolution/search_seed_640001/gen_1/results/events.jsonl": {
+      "bytes_read": 351855,
+      "sha256_at_read": "521dc378cf97726cf76f45a5e3679c43556949ef8d612821011e6f7fceefd256"
+    },
+    "evolution/search_seed_640001/gen_1/results/metrics.json": {
+      "bytes_read": 67060,
+      "sha256_at_read": "72c1b20dc8e45d139425260c6d831fdd1d46288ac1fca2b34a0d0c53ca91d219"
+    },
+    "evolution/search_seed_640001/gen_2/results/evaluation-checkpoint.json": {
+      "bytes_read": 5318,
+      "sha256_at_read": "8077c88d6d2a0c8156b50141a558ba365916263a286a01a8bc9293608d9d4a28"
+    },
+    "evolution/search_seed_640001/gen_2/results/events.jsonl": {
+      "bytes_read": 40200,
+      "sha256_at_read": "a6beed9e1b3a6c244c02c7970125a0fbf8a132f5ee26884e27f97b3f2cd0f464"
+    }
+  },
+  "limitations": [],
+  "scripts": {
+    "scripts/audit_joint_machinery.py": "f93fe8abcb26b117ddb1251c2a6338e72737f91861e2a8446e2fe7adb5cfe95a",
+    "operations/audit_native_book.py": "efabd97149b381f180932fca79b9a7c07a82ee4b2cab6412c09e749e8c6d8198"
+  }
+}

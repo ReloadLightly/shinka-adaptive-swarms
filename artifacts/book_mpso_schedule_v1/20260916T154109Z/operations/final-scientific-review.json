@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-09-16T16:40:43.816950+00:00",
+  "new_objective_queries": 0,
+  "new_model_calls": 0,
+  "scope": "Independent computations over saved raw cases, frozen sources, native receipts and final analysis; no rerun.",
+  "reference_and_native_cases_verified": 88,
+  "valid_native_programs_including_seed": 9,
+  "selected_generation": 0,
+  "selected_mean_offline_error": 1.7445687815149309,
+  "seed_cache_content_exact": true,
+  "fresh_comparison_performed": false,
+  "freeze_source_identity_and_order_verified": true,
+  "stages": {
+    "references": {
+      "full_executions": 16,
+      "queries": 8000000
+    },
+    "native": {
+      "full_executions": 64,
+      "queries": 32000000,
+      "seed_cache_records": 8
+    }
+  },
+  "physical_full_executions": 80,
+  "research_objective_queries": 40000000,
+  "native_logical_responses_by_role": {
+    "mutation": 9,
+    "novelty": 9,
+    "meta": 13
+  },
+  "analyses": [
+    {
+      "analysis_file": "analysis/development/analysis.json",
+      "sha256": "6bfc5b0fe9c7c0fd1bf40964438deccfe091fbdb20c50e89c9444462fc525200",
+      "all_saved_case_statistics_and_bootstraps_independently_verified": true,
+      "contrasts": {
+        "selected_minus_mpso_5_1": {
+          "mean": 0.0,
+          "median": 0.0,
+          "descriptive_95_percent_interval": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 8
+        },
+        "selected_minus_mpso_5_0": {
+          "mean": 0.0010840299555671673,
+          "median": 0.032692582305464124,
+          "descriptive_95_percent_interval": [
+            -0.3063453015246227,
+            0.28555939873128233
+          ],
+          "wins": 4,
+          "losses": 4,
+          "ties": 0
+        },
+        "mpso_5_1_minus_mpso_5_0": {
+          "mean": 0.0010840299555671673,
+          "median": 0.032692582305464124,
+          "descriptive_95_percent_interval": [
+            -0.3063453015246227,
+            0.28555939873128233
+          ],
+          "wins": 4,
+          "losses": 4,
+          "ties": 0
+        }
+      }
+    }
+  ],
+  "behavioral_repetitions": [
+    {
+      "first_generation": 6,
+      "repeated_generation": 8,
+      "source_sha256_differ": true,
+      "exact_equal_saved_case_dictionaries": 8,
+      "repeated_full_executions": 8,
+      "repeated_objective_queries": 4000000,
+      "included_in_physical_totals": true,
+      "equivalence_proof": "Both return0 when change_detected is false; otherwise return4 if abs(relative_fitness_drop)<=0.01, else5. Gen8 merely uses an early return."
+    }
+  ],
+  "limitations": [
+    "Development outcomes informed search and selection; descriptive intervals do not correct selection bias.",
+    "No conclusion about other chapter scenarios or algorithm families, cooperation causality, or search-method superiority follows.",
+    "Shared-best gains describe reached trajectories, not isolated causal effects of quantum versus ordinary movement."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "verified_at": "2026-09-16T16:37:30.274076+00:00",
+  "url": "http://localhost:8896/viz_tree.html?db_path=search_seed_640001%2Fprograms.sqlite",
+  "database_rows": 10,
+  "unique_generation_slots": 9,
+  "selected_published_seed_source_visible": true,
+  "descendant8_source_and_parent_visible": true,
+  "inspiration_table_verified_in_native_Node_tab": {
+    "parent_generation": 2,
+    "top_generation": 0,
+    "archive_generation": 3,
+    "island": 1
+  },
+  "API_source_lineage_checks": [
+    {
+      "id": "54ff2a7f-b967-4211-982d-ac6df00a415f",
+      "generation": 0,
+      "island_idx": 0,
+      "parent_id": null,
+      "archive_inspiration_ids": [],
+      "top_k_inspiration_ids": [],
+      "HTTP_status": 200,
+      "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+      "source_exactly_matches_actual_SQLite": true
+    },
+    {
+      "id": "7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a",
+      "generation": 8,
+      "island_idx": 1,
+      "parent_id": "4db962bb-6988-4649-bcb2-d3411f25f8d3",
+      "archive_inspiration_ids": [
+        "e9041f37-b744-4937-a514-5059463380e1"
+      ],
+      "top_k_inspiration_ids": [
+        "59433c06-18b3-4d5d-85d6-4c86e6655b66"
+      ],
+      "HTTP_status": 200,
+      "source_sha256": "7acd9a42dfd7336502de251929cdaa19cb130438812d1dc53682bb24111b1514",
+      "source_exactly_matches_actual_SQLite": true
+    },
+    {
+      "id": "4db962bb-6988-4649-bcb2-d3411f25f8d3",
+      "generation": 2,
+      "island_idx": 1,
+      "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+      "archive_inspiration_ids": [
+        "fefe4a5d-1838-4e21-b765-efe051d5f939"
+      ],
+      "top_k_inspiration_ids": [],
+      "HTTP_status": 200,
+      "source_sha256": "b4d47ed5f8d082c7863e51e521dec519d527b522f6c9d02ca4ffa30acf70fb5c",
+      "source_exactly_matches_actual_SQLite": true
+    },
+    {
+      "id": "e9041f37-b744-4937-a514-5059463380e1",
+      "generation": 3,
+      "island_idx": 1,
+      "parent_id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+      "archive_inspiration_ids": [
+        "fefe4a5d-1838-4e21-b765-efe051d5f939"
+      ],
+      "top_k_inspiration_ids": [
+        "4db962bb-6988-4649-bcb2-d3411f25f8d3"
+      ],
+      "HTTP_status": 200,
+      "source_sha256": "5bc0a00c24c57c085747b3cf966621c42fdfc12d576901f2dd0a8798855d8aa4",
+      "source_exactly_matches_actual_SQLite": true
+    },
+    {
+      "id": "59433c06-18b3-4d5d-85d6-4c86e6655b66",
+      "generation": 0,
+      "island_idx": 1,
+      "parent_id": null,
+      "archive_inspiration_ids": [],
+      "top_k_inspiration_ids": [],
+      "HTTP_status": 200,
+      "source_sha256": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+      "source_exactly_matches_actual_SQLite": true
+    }
+  ],
+  "console_errors": [],
+  "screenshots": [
+    "operations/webui-final-selected-seed.png",
+    "operations/webui-final-descendant-code.png",
+    "operations/webui-final-inspiration-table.png"
+  ],
+  "closed_only_verification_browser": true,
+  "native_server_and_user_browser_retained": true,
+  "scope": "No model or objective calls, no native service restart."
+}

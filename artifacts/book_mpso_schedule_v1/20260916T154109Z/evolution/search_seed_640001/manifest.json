@@ -1,0 +1,274 @@
+{
+  "model_requested": "gpt-6-astra",
+  "inner_effort_requested": "xhigh",
+  "inner_effort_effective": null,
+  "inner_effort_status": "requested; no model invocation performed",
+  "outer_work_mode": "not inspected; Astra Ultra selection belongs to the outer Codex interface, separately from this launcher",
+  "seed_only": false,
+  "paid_api_calls_authorized": false,
+  "model_calls_performed_by_check": 0,
+  "errors": [],
+  "shinka_version": "0.0.7",
+  "shinka_available": true,
+  "headless_command": "npx -y @roberttlange/headless@0.6.1",
+  "codex_available": true,
+  "npx_available": true,
+  "codex_version": "codex-cli 0.154.0",
+  "subscription_login_confirmed": true,
+  "model_route": "headless/codex@gpt-6-astra?effort=xhigh",
+  "ready": true,
+  "upstream_commit": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+  "task": "book_mpso_schedule_v1",
+  "evaluation_version": "book_mpso_schedule_v1_reciprocal_v1",
+  "generation_target": 9,
+  "started_at": "20260916T160428.754232Z",
+  "suite_sha256": "e0cb6a77bc35e4c70f2b26aff6cc8f8cd9e98f7df5632e2c11c16fab1861ba32",
+  "status": "search_complete",
+  "run_dir": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001",
+  "engine_config": {
+    "schema_version": 1,
+    "profile_name": "book_mpso_schedule_v1",
+    "profile_definition": {
+      "schema_version": 1,
+      "name": "book_mpso_schedule_v1",
+      "description": "Chapter-aligned temporary-conversion schedule study. Native evolution/database settings identical to research_v3; existing calibrated embedding route and threshold are reused. Fixed subscription-backed gpt-6-astra with task-local xhigh: the pinned native/headless route does not accept inner Ultra. Slot/response ceilings are launcher arguments.",
+      "evolution": {
+        "llm_models": [
+          "$codex"
+        ],
+        "llm_dynamic_selection": "fixed",
+        "llm_kwargs": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384
+        },
+        "patch_types": [
+          "diff",
+          "full",
+          "cross"
+        ],
+        "patch_type_probs": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "max_patch_resamples": 1,
+        "max_patch_attempts": 1,
+        "max_novelty_attempts": 3,
+        "embedding_model": "$local_embedding",
+        "code_embed_sim_threshold": 0.830958258366903,
+        "novelty_llm_models": [
+          "$codex"
+        ],
+        "meta_rec_interval": 5,
+        "meta_llm_models": [
+          "$codex"
+        ],
+        "meta_max_recommendations": 5,
+        "sample_single_meta_rec": true,
+        "evolve_prompts": false,
+        "use_text_feedback": true,
+        "enable_wandb_logging": false
+      },
+      "database": {
+        "parent_selection_strategy": "weighted",
+        "parent_selection_lambda": 10.0,
+        "num_islands": 2,
+        "archive_size": 40,
+        "num_archive_inspirations": 1,
+        "num_top_k_inspirations": 1,
+        "migration_interval": 10,
+        "migration_rate": 0.1,
+        "island_elitism": true,
+        "enforce_island_separation": true
+      }
+    },
+    "default_model": "gpt-6-astra",
+    "default_effort": "xhigh",
+    "evolution": {
+      "llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "llm_dynamic_selection": "fixed",
+      "llm_kwargs": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384
+      },
+      "patch_types": [
+        "diff",
+        "full",
+        "cross"
+      ],
+      "patch_type_probs": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "max_patch_resamples": 1,
+      "max_patch_attempts": 1,
+      "max_novelty_attempts": 3,
+      "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+      "novelty_llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "meta_rec_interval": 5,
+      "meta_llm_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "evolve_prompts": false,
+      "use_text_feedback": true,
+      "enable_wandb_logging": false,
+      "code_embed_sim_threshold": 0.830958258366903,
+      "meta_max_recommendations": 5,
+      "sample_single_meta_rec": true
+    },
+    "database": {
+      "num_islands": 2,
+      "archive_size": 40,
+      "num_archive_inspirations": 1,
+      "num_top_k_inspirations": 1,
+      "parent_selection_strategy": "weighted",
+      "parent_selection_lambda": 10.0,
+      "migration_interval": 10,
+      "migration_rate": 0.1,
+      "island_elitism": true,
+      "enforce_island_separation": true
+    },
+    "sha256": "bc9ede12198f98c3587e830efe130e7a6381911d0acb9b25cd1567eb9c109840"
+  },
+  "search_seed": 640001,
+  "logical_response_limit": 40,
+  "engine_features": {
+    "status": "resolved configuration; runtime mechanisms require event evidence",
+    "profile": "book_mpso_schedule_v1",
+    "sha256": "bc9ede12198f98c3587e830efe130e7a6381911d0acb9b25cd1567eb9c109840",
+    "seed_only": false,
+    "parent_sampling": "weighted",
+    "num_islands": 2,
+    "migration_rate": 0.1,
+    "migration_interval": 10,
+    "archive_inspirations": 1,
+    "top_k_inspirations": 1,
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "novelty_configured": true,
+    "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "novelty_attempts": 3,
+    "meta_configured": true,
+    "meta_interval": 5,
+    "text_feedback": true,
+    "model_selection": "fixed",
+    "model_roles": {
+      "mutation": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "meta": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "novelty": [
+        {
+          "route": "headless/codex@gpt-6-astra?effort=xhigh",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": "xhigh",
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ]
+    },
+    "prompt_evolution": false
+  },
+  "execution_support_sha256": {
+    "scripts/run_evolution.py": "031a55657038c8b3d0e7e6fcf5df312aece4127fceab9d91bee88412ce99e53e",
+    "scripts/check_runtime.py": "1d1c1e62393148f0fae96104126b433c5e0d0a0093b8d0b40671a020d7a971e2",
+    "src/adaptive_swarms/engine_config.py": "2efbddc3dca84820e9a80397e7446b34716b29a69d9ef2d7db568be18495083c",
+    "src/adaptive_swarms/engine_runtime.py": "3236cda4845b1dca2cb30eacd8dd84d7d78ebadfb88423236ab3b24f2620e16e",
+    "src/adaptive_swarms/engine_progress.py": "f5f5c4ba7372062ffb6bb5258040d9e8a36b270027252f61f3c305a28c46041b",
+    "src/adaptive_swarms/storage_runner.py": "3b090cf4512758dde95f347769fd901d9ba6bedc59a07d3769944201debbb6b6",
+    "src/adaptive_swarms/native_storage.py": "6e528ec3a3ae99800dd0de49c66c505127d37ee1490cd28e89fcdff03b902eaa",
+    "src/adaptive_swarms/sprint_budget.py": "76567616d8cc1e3bd3ae7852750a101444d479b0f4645a5b2aab67a9e6c91a3d"
+  },
+  "search_randomness": {
+    "search_seed": 640001,
+    "seed_applied": true,
+    "resume_rng_state_restored": false,
+    "note": "Resume preserves completed evidence; native sampling RNG state is not restored, so the uninterrupted proposal sequence is not promised."
+  },
+  "source_hashes": {
+    "evaluate.py": "96ac5f3dda70a93b9ae9ec8577faad15986d7d5435ed47849bc982d54b8b759e",
+    "initial.py": "c1ec64da1e05a1c1b9181e9a58e30600a97499f4ea28912d703fa251c668a284",
+    "simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "evolution_context.md": "e7dd37cabe3478ceb013581915ad58e2674868b086f54980b68b5419715ff7b7",
+    "book_schedule.py": "b244148f3c6842f31290e5da0d7ceee04a446304dbfe7b544ff0f725007b0713",
+    "task_prompt.txt": "f112b28d8a021b0c9c735b06f261cb10affd71c1e9af82c17fd6f7aaf3776ef5",
+    "protocol.md": "a3e91b4efe7764895e50dca9db1dce3866ff3e3a8295d32a34ea76f73ce97b0b",
+    "book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4",
+    "task_system_prompt.txt": "f02ed86a602498f63411d3790cd0592d7c9a6409a0f2281b56a44567e7d84c95",
+    "snapshot_created_at": "2026-09-16T16:04:29.025179+00:00",
+    "snapshot_created_on_resume": false
+  },
+  "embedding_preflight": {
+    "required": true,
+    "route": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "listener_reachable": true,
+    "embedding_function_verified": false,
+    "model_calls": 0,
+    "note": "TCP listener only; actual embedding and novelty coverage are recorded during execution."
+  },
+  "generation_records": 9,
+  "evaluated_programs": 9,
+  "evaluated_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "terminal_failed_generation_ids": [],
+  "terminal_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "terminal_slots": 9,
+  "valid_seed": true,
+  "valid_programs": 9,
+  "valid_descendants": 8,
+  "best_combined_score": 0.3643559624867648,
+  "database": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/programs.sqlite",
+  "finished_at": "2026-09-16T16:37:41.058951+00:00"
+}

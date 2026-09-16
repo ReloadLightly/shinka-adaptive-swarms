@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "staggered_recovery_burst",
+  "patch_description": "Redistribute temporary conversions into a 3,1,1 schedule: three on detection, then one on each of the next two updates. This preserves two ordinary neutral PSO moves immediately and four on each follow-up update. Later quantum samples can explore around attractors improved during preceding updates.\nThe hypothesis is that mixing exploration with continued PSO movement improves recovery. An uninterrupted three-update response requests five temporary conversions, matching the original burst\u2019s total, although identities may repeat and whole trajectories will differ. The tradeoff is weaker immediate exploration, which could worsen recovery. Performance remains untested; the supplied feedback does not establish which schedule is superior.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T18:14:51.453919",
+  "llm_cost": 0.512176,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

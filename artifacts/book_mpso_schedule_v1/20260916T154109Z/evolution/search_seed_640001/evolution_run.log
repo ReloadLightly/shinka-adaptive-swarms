@@ -1,0 +1,963 @@
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Pricing catalog: source=cache fetched_at=2026-09-15T23:32:03.533433+00:00 stale=False sha256=bf3c19d5cef27b32429b03b83a963be70aa245092505eeada0590a2567925f53
+  @@@@@@@@@@@@@@@@@@@@@      ░██████╗██╗░░██╗██╗███╗░░██╗██╗░░██╗░█████╗░
+  @                   @      ██╔════╝██║░░██║██║████╗░██║██║░██╔╝██╔══██╗
+  @          @        @      ╚█████╗░███████║██║██╔██╗██║█████═╝░███████║
+  @    @@   @@  @@    @      ░╚═══██╗██╔══██║██║██║╚████║██╔═██╗░██╔══██║
+  @   @     @    @@   @      ██████╔╝██║░░██║██║██║░╚███║██║░╚██╗██║░░██║
+  @    @@  @    @     @      ╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═╝░░╚═╝
+  @        @          @      @@@@@@@@@@@@@@@
+  @                   @   @@                 @@@@@
+  @@@@@@@@@@@@@@@@@@@@ @@                       @  @@                 █▀▀
+                      @                          @@  @                ██▄
+                    @      @@                      @  @@
+                   @       @         @              @   @             █░█
+                   @                 @               @  @             ▀▄▀
+                     @@@@@          @     @           @  @
+                      @            @          @       @ @@            █▀█
+                   @@    @@     @@       @@   @        @              █▄█
+                  @@        @@         @     @         @
+                 @@       @@   @@       @@@@@          @        @@    █░░
+              @ @@                @                    @              █▄▄
+             @ @@@@@             @@ @@                 @      @@
+            @                  @       @@              @    @@        █░█
+       @@@@@@@@@@@@@@@@@@@@@@             @@@          @@@@@@@  @@    ▀▄▀
+       @     @         @                      @@         @@@  @@
+        @@               @                      @      @   @  @@      █▀▀
+          @@@@@@@@@@@@@@@@@@                   @    @   @   @@        ██▄
+                                               @  @  @   @
+                                               @  @  @@@@
+                                               @  @@
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - 🖥️  System resources detected:
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • CPU cores: 8
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • Memory: 3.7 GB
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - 🔧 Concurrency settings:
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • Evaluation jobs: 1
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • Proposal jobs: 1
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • DB workers: 1
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO -    • Total threads: 3
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Configured local numeric thread cap per eval process: 8
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - ASYNC EVOLUTION RUN STARTED
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Max evaluation jobs: 1
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Max proposal jobs: 1
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Target generations: 9
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Language: python
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Results directory: /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - Log file: /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/evolution_run.log
+2026-09-16 18:04:38 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 18:04:39 - shinka.database.async_dbase - INFO - 🔧 AsyncDB initialized with 1 workers, 1 concurrent DB ops (WAL mode)
+2026-09-16 18:04:39 - shinka.core.async_runner - INFO - Copying initial program from /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/task_snapshot/initial.py
+2026-09-16 18:04:39 - shinka.core.async_runner - INFO - Starting initial program evaluation: /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/gen_0/main.py
+2026-09-16 18:04:42 - shinka.core.async_runner - INFO - Initial program evaluation completed in 3.01s
+2026-09-16 18:04:46 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:04:46 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Initial program embedding computed (cost: $0.0000)
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Initial program evaluated - correct: True, combined_score: 0.3643559624867648
+2026-09-16 18:04:46 - shinka.database.dbase - INFO - Program 54ff2a7f-b967-4211-982d-ac6df00a415f added to DB - score: 0.3643559624867648.
+2026-09-16 18:04:46 - shinka.database.dbase - INFO - New best program: 54ff2a7f-b967-4211-982d-ac6df00a415f (gen: 0, score: 0.3644, initialized island: 0).
+                                 Program Evaluation Summary - Gen 0 | Total Cost: $0.00                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 0   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-0   │   ✓ Correct   │   0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:04:46 - shinka.database.dbase - INFO - Creating copies of initial program 54ff2a7f-b967-4211-982d-ac6df00a415f for all islands
+2026-09-16 18:04:46 - shinka.database.islands - INFO - Created copy 59433c06... of program 54ff2a7f... for island 1
+2026-09-16 18:04:46 - shinka.database.islands - INFO - Created 1 copies of program 54ff2a7f... for islands 1-1
+2026-09-16 18:04:46 - shinka.core.summarizer - INFO - Added program 54ff2a7f-b967-4211-982d-ac6df00a415f to meta memory tracking (correct=True, total: 1)
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Setup initial program: 54ff2a7f-b967-4211-982d-ac6df00a415f
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Generation 0 completed during setup
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Verifying database is ready for sampling...
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Database ready - 2 program(s) available for sampling
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Database verification completed - ready for proposal generation
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - 🔄 Job monitor task started
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=0.00s, evaluation_ewma=0.00s, timing_samples=0, active_proposals=0, running_jobs=0)
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 8 (completed=1/9, next_generation=1)
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Started proposal task for generation 1 (cost: $0.0000)
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - 🔄 Meta summarizer task started
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=1, target=9, pending_work=8, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$0.0000, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=0.0s
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Generating proposal for generation 1
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Getting meta recs for gen 1, sample_single_meta_rec=True
+2026-09-16 18:04:46 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: False
+2026-09-16 18:04:46 - shinka.core.summarizer - INFO - No meta recommendations available to sample from
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - meta_recs result: False
+2026-09-16 18:04:46 - shinka.database.parents - INFO - Island 1 => Probabilities: [1.0]
+2026-09-16 18:04:46 - shinka.database.parents - INFO - Island 1 => Scores: [0.3643559624867648]
+2026-09-16 18:04:46 - shinka.database.parents - INFO - Sampled parent 59433c06-18b3-4d5d-85d6-4c86e6655b66 (Gen: 0, Score: 0.3644, Children: 0, Island: 1)
+              Parent & Context Sampling Summary - Gen 1 | Total Cost: $0.00 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-1   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:04:46 - shinka.core.async_runner - INFO - Generated patch type: diff
+2026-09-16 18:04:46 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:04:46 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:05:50 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.3433
+2026-09-16 18:05:50 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:05:50 - shinka.core.async_runner - INFO - Patch type for application: diff
+                          Patch Metadata - Gen 1/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ diff                                                                                      │
+│ patch_name               │ short_recovery_tail                                                                       │
+│ patch_description        │ Keep five temporary conversions on detection, then convert two neutrals on each of the    │
+│                          │ next three updates. This tests whether repeated sampling around the evolving shared best  │
+│                          │ improves recovery beyond a single burst, while preserving three ordinary PSO moves per    │
+│                          │ subsequent update. Afterward, all neutrals resume PSO. The has_detected_change guard      │
+│                          │ prevents triggering during initial swarm development. Additional sampling could also      │
+│                          │ disrupt convergence; the supplied feedback does not establish that this extension will    │
+│                          │ improve performance.                                                                      │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.3433                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 7; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:05:50 - shinka.core.async_runner - INFO - Getting code embedding for generation 1...
+2026-09-16 18:05:51 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:05:51 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:05:51 - shinka.core.async_runner - INFO - Code embedding completed for generation 1 (cost: $0.0000)
+2026-09-16 18:05:51 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.98']
+2026-09-16 18:05:51 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:06:08 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0607
+2026-09-16 18:06:08 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.978 > 0.830958258366903) due to LLM novelty check (cost: 0.0607).
+2026-09-16 18:06:08 - shinka.core.async_runner - INFO - Proposal → Eval: gen 1 submitted for eval (cost: $0.4040, total: $0.4040). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:07:59 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 977852) completed (gen 1) after 193.4s
+2026-09-16 18:07:59 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [1] (cost: $0.4040)
+2026-09-16 18:07:59 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 977852) (gen 1)
+2026-09-16 18:07:59 - shinka.launch.local - INFO - Monitoring local process with PID: 977852...
+2026-09-16 18:07:59 - shinka.launch.local - INFO - Process 977852 completed with return code: 0
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 977852): True
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 977852) has valid results - correct=True, score=0.34452191656979797
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 977852) (gen 1)...
+2026-09-16 18:08:00 - shinka.database.dbase - INFO - Program fefe4a5d-1838-4e21-b765-efe051d5f939 added to DB - score: 0.34452191656979797.
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program fefe4a5d-1838-4e21-b765-efe051d5f939 successfully added to database for ProcessWithLogging(PID: 977852) (gen 1)
+                                 Program Evaluation Summary - Gen 1 | Total Cost: $0.40                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 1   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-1   │   ✓ Correct   │   0.345 │ short_recovery_tail             │ diff   │    0.4 │  $0.404 │ 1.9m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:08:00 - shinka.core.summarizer - INFO - Added program fefe4a5d-1838-4e21-b765-efe051d5f939 to meta memory tracking (correct=True, total: 2)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    1 │             0.3433 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:08:00 - adaptive_swarms.native_storage - INFO - Best gen 0 id 54ff2a7f-b967-4211-982d-ac6df00a415f references its original artifacts
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 977852) - program fefe4a5d-1838-4e21-b765-efe051d5f939 added (gen 1)
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 1 -> 2 (cost: $0.4040)
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=81.58s, evaluation_ewma=111.84s, timing_samples=1, active_proposals=0, running_jobs=0)
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 7 (completed=2/9, next_generation=2)
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Started proposal task for generation 2 (cost: $0.4040)
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Generating proposal for generation 2
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Getting meta recs for gen 2, sample_single_meta_rec=True
+2026-09-16 18:08:00 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: False
+2026-09-16 18:08:00 - shinka.core.summarizer - INFO - No meta recommendations available to sample from
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - meta_recs result: False
+2026-09-16 18:08:00 - shinka.database.parents - INFO - Island 1 => Probabilities: [0.9999092083843409, 9.079161565902182e-05]
+2026-09-16 18:08:00 - shinka.database.parents - INFO - Island 1 => Scores: [0.3643559624867648, 0.34452191656979797]
+2026-09-16 18:08:00 - shinka.database.parents - INFO - Sampled parent 59433c06-18b3-4d5d-85d6-4c86e6655b66 (Gen: 0, Score: 0.3644, Children: 1, Island: 1)
+2026-09-16 18:08:00 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['fefe4a5d-1838-4e21-b765-efe051d5f939 (Gen: 1, Score: 0.3445, Island: 1)']
+              Parent & Context Sampling Summary - Gen 2 | Total Cost: $0.40 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-1   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ Archive-1   │  1   │   I-1   │   ✓   │    0.345 │ short_recovery_tail             │ diff   │    0.4 │  $0.404 │ 1.9m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:08:00 - shinka.database.inspirations - INFO - Built context: 1 programs (ascending, scores: ['0.3445'])
+2026-09-16 18:08:00 - shinka.core.async_runner - INFO - Generated patch type: cross
+2026-09-16 18:08:00 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:08:00 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:08:30 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=2, target=9, pending_work=7, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$0.4040, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=30.5s
+2026-09-16 18:08:59 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.4219
+2026-09-16 18:08:59 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:08:59 - shinka.core.async_runner - INFO - Patch type for application: cross
+                          Patch Metadata - Gen 2/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ cross                                                                                     │
+│ patch_name               │ stalled_single_followup                                                                   │
+│ patch_description        │ Preserve full conversion on detected change, but inherit the two-particle follow-up only  │
+│                          │ for the next update and only when the preceding update produced no shared-best            │
+│                          │ improvement. The unconditional three-update extension worsened development error; this    │
+│                          │ crossover tests whether one selective retry supports recovery with less disruption to     │
+│                          │ ordinary PSO. Performance improvement remains untested.                                   │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.4219                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 8; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:08:59 - shinka.core.async_runner - INFO - Getting code embedding for generation 2...
+2026-09-16 18:08:59 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:08:59 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:08:59 - shinka.core.async_runner - INFO - Code embedding completed for generation 2 (cost: $0.0000)
+2026-09-16 18:08:59 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.99', '0.97']
+2026-09-16 18:08:59 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:09:11 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0602
+2026-09-16 18:09:11 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.987 > 0.830958258366903) due to LLM novelty check (cost: 0.0602).
+2026-09-16 18:09:11 - shinka.core.async_runner - INFO - Proposal → Eval: gen 2 submitted for eval (cost: $0.4821, total: $0.8861). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 978942) completed (gen 2) after 173.2s
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [2] (cost: $0.8861)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 978942) (gen 2)
+2026-09-16 18:10:53 - shinka.launch.local - INFO - Monitoring local process with PID: 978942...
+2026-09-16 18:10:53 - shinka.launch.local - INFO - Process 978942 completed with return code: 0
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 978942): True
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 978942) has valid results - correct=True, score=0.3553989955251622
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 978942) (gen 2)...
+2026-09-16 18:10:53 - shinka.database.dbase - INFO - Program 4db962bb-6988-4649-bcb2-d3411f25f8d3 added to DB - score: 0.3553989955251622.
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 4db962bb-6988-4649-bcb2-d3411f25f8d3 successfully added to database for ProcessWithLogging(PID: 978942) (gen 2)
+                                 Program Evaluation Summary - Gen 2 | Total Cost: $0.89                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 2   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-1   │   ✓ Correct   │   0.355 │ stalled_single_followup         │ cross  │    0.5 │  $0.482 │ 1.7m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:10:53 - shinka.core.summarizer - INFO - Added program 4db962bb-6988-4649-bcb2-d3411f25f8d3 to meta memory tracking (correct=True, total: 3)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    2 │             0.7652 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 978942) - program 4db962bb-6988-4649-bcb2-d3411f25f8d3 added (gen 2)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 2 -> 3 (cost: $0.8861)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=78.53s, evaluation_ewma=108.82s, timing_samples=2, active_proposals=0, running_jobs=0)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 6 (completed=3/9, next_generation=3)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Started proposal task for generation 3 (cost: $0.8861)
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Generating proposal for generation 3
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Getting meta recs for gen 3, sample_single_meta_rec=True
+2026-09-16 18:10:53 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: False
+2026-09-16 18:10:53 - shinka.core.summarizer - INFO - No meta recommendations available to sample from
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - meta_recs result: False
+2026-09-16 18:10:53 - shinka.database.parents - INFO - Island 1 => Probabilities: [0.39998654992532207, 6.386144785878032e-06, 0.600007063929892]
+2026-09-16 18:10:53 - shinka.database.parents - INFO - Island 1 => Scores: [0.3643559624867648, 0.34452191656979797, 0.3553989955251622]
+2026-09-16 18:10:53 - shinka.database.parents - INFO - Sampled parent 59433c06-18b3-4d5d-85d6-4c86e6655b66 (Gen: 0, Score: 0.3644, Children: 2, Island: 1)
+2026-09-16 18:10:53 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['fefe4a5d-1838-4e21-b765-efe051d5f939 (Gen: 1, Score: 0.3445, Island: 1)']
+2026-09-16 18:10:53 - shinka.database.inspirations - INFO - Selected 1 top-k inspirations from archive on island 1: ['4db962bb-6988-4649-bcb2-d3411f25f8d3 (Gen: 2, Score: 0.3554, Island: 1)']
+              Parent & Context Sampling Summary - Gen 3 | Total Cost: $0.89 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-1   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ Archive-1   │  1   │   I-1   │   ✓   │    0.345 │ short_recovery_tail             │ diff   │    0.4 │  $0.404 │ 1.9m │
+│ TopK-1      │  2   │   I-1   │   ✓   │    0.355 │ stalled_single_followup         │ cross  │    0.5 │  $0.482 │ 1.7m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:10:53 - shinka.database.inspirations - INFO - Built context: 2 programs (ascending, scores: ['0.3445', '0.3554'])
+2026-09-16 18:10:53 - shinka.core.async_runner - INFO - Generated patch type: full
+2026-09-16 18:10:53 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:10:53 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:11:10 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=3, target=9, pending_work=6, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$0.8861, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=17.0s
+2026-09-16 18:12:05 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.6473
+2026-09-16 18:12:05 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:12:05 - shinka.core.async_runner - INFO - Patch type for application: full
+                          Patch Metadata - Gen 3/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ full                                                                                      │
+│ patch_name               │ three_on_detection                                                                        │
+│ patch_description        │ Convert three neutrals only on detected change, preserving two ordinary PSO updates       │
+│                          │ alongside four quantum samples including the permanent particle. Both tested response     │
+│                          │ extensions worsened mean development error, motivating a test of reduced initial          │
+│                          │ intensity. This may preserve useful convergence, but could weaken recovery exploration.   │
+│                          │ Syntax and output checks passed; performance improvement remains unmeasured.              │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.6473                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 0; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:12:05 - shinka.core.async_runner - INFO - Getting code embedding for generation 3...
+2026-09-16 18:12:05 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:12:05 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:12:05 - shinka.core.async_runner - INFO - Code embedding completed for generation 3 (cost: $0.0000)
+2026-09-16 18:12:05 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.99', '0.98', '0.97']
+2026-09-16 18:12:05 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:12:18 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0579
+2026-09-16 18:12:18 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.989 > 0.830958258366903) due to LLM novelty check (cost: 0.0579).
+2026-09-16 18:12:18 - shinka.core.async_runner - INFO - Proposal → Eval: gen 3 submitted for eval (cost: $0.7052, total: $1.5913). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 979976) completed (gen 3) after 168.1s
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [3] (cost: $1.5913)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 979976) (gen 3)
+2026-09-16 18:13:41 - shinka.launch.local - INFO - Monitoring local process with PID: 979976...
+2026-09-16 18:13:41 - shinka.launch.local - INFO - Process 979976 completed with return code: 0
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 979976): True
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 979976) has valid results - correct=True, score=0.3425687546730803
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 979976) (gen 3)...
+2026-09-16 18:13:41 - shinka.database.dbase - INFO - Program e9041f37-b744-4937-a514-5059463380e1 added to DB - score: 0.3425687546730803.
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program e9041f37-b744-4937-a514-5059463380e1 successfully added to database for ProcessWithLogging(PID: 979976) (gen 3)
+                                 Program Evaluation Summary - Gen 3 | Total Cost: $1.59                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 3   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-1   │   ✓ Correct   │   0.343 │ three_on_detection              │ full   │    0.1 │  $0.705 │ 1.4m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:13:41 - shinka.core.summarizer - INFO - Added program e9041f37-b744-4937-a514-5059463380e1 to meta memory tracking (correct=True, total: 4)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    3 │             1.4125 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 979976) - program e9041f37-b744-4937-a514-5059463380e1 added (gen 3)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 3 -> 4 (cost: $1.5913)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=80.44s, evaluation_ewma=101.13s, timing_samples=3, active_proposals=0, running_jobs=0)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 5 (completed=4/9, next_generation=4)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Started proposal task for generation 4 (cost: $1.5913)
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Generating proposal for generation 4
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Getting meta recs for gen 4, sample_single_meta_rec=True
+2026-09-16 18:13:41 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: False
+2026-09-16 18:13:41 - shinka.core.summarizer - INFO - No meta recommendations available to sample from
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - meta_recs result: False
+2026-09-16 18:13:41 - shinka.database.parents - INFO - Island 0 => Probabilities: [1.0]
+2026-09-16 18:13:41 - shinka.database.parents - INFO - Island 0 => Scores: [0.3643559624867648]
+2026-09-16 18:13:41 - shinka.database.parents - INFO - Sampled parent 54ff2a7f-b967-4211-982d-ac6df00a415f (Gen: 0, Score: 0.3644, Children: 0, Island: 0)
+              Parent & Context Sampling Summary - Gen 4 | Total Cost: $1.59 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-0   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:13:41 - shinka.core.async_runner - INFO - Generated patch type: diff
+2026-09-16 18:13:41 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:13:41 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:13:48 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=4, target=9, pending_work=5, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$1.5913, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=6.6s
+2026-09-16 18:14:51 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5122
+2026-09-16 18:14:51 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:14:51 - shinka.core.async_runner - INFO - Patch type for application: diff
+                          Patch Metadata - Gen 4/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ diff                                                                                      │
+│ patch_name               │ staggered_recovery_burst                                                                  │
+│ patch_description        │ Redistribute temporary conversions into a 3,1,1 schedule: three on detection, then one on │
+│                          │ each of the next two updates. This preserves two ordinary neutral PSO moves immediately   │
+│                          │ and four on each follow-up update. Later quantum samples can explore around attractors    │
+│                          │ improved during preceding updates.                                                        │
+│                          │ The hypothesis is that mixing exploration with continued PSO movement improves recovery.  │
+│                          │ An uninterrupted three-update response requests five temporary conversions, matching the  │
+│                          │ original burst’s total, although identities may repeat and whole trajectories will        │
+│                          │ differ. The tradeoff is weaker immediate exploration, which could worsen recovery.        │
+│                          │ Performance remains untested; the supplied feedback does not establish which schedule is  │
+│                          │ superior.                                                                                 │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.5122                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 7; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:14:51 - shinka.core.async_runner - INFO - Getting code embedding for generation 4...
+2026-09-16 18:14:51 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:14:51 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:14:51 - shinka.core.async_runner - INFO - Code embedding completed for generation 4 (cost: $0.0000)
+2026-09-16 18:14:51 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.97']
+2026-09-16 18:14:51 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:15:04 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0590
+2026-09-16 18:15:04 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.971 > 0.830958258366903) due to LLM novelty check (cost: 0.0590).
+2026-09-16 18:15:04 - shinka.core.async_runner - INFO - Proposal → Eval: gen 4 submitted for eval (cost: $0.5712, total: $2.1625). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 981001) completed (gen 4) after 166.8s
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [4] (cost: $2.1625)
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 981001) (gen 4)
+2026-09-16 18:16:28 - shinka.launch.local - INFO - Monitoring local process with PID: 981001...
+2026-09-16 18:16:28 - shinka.launch.local - INFO - Process 981001 completed with return code: 0
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 981001): True
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 981001) has valid results - correct=True, score=0.33664195386365664
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 981001) (gen 4)...
+2026-09-16 18:16:28 - shinka.database.dbase - INFO - Program 7e40065d-f7a4-4c95-9455-6cd890bb067e added to DB - score: 0.33664195386365664.
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 7e40065d-f7a4-4c95-9455-6cd890bb067e successfully added to database for ProcessWithLogging(PID: 981001) (gen 4)
+                                 Program Evaluation Summary - Gen 4 | Total Cost: $2.16                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 4   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-0   │   ✓ Correct   │   0.337 │ staggered_recovery_burst        │ diff   │    0.4 │  $0.571 │ 1.4m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:16:28 - shinka.core.summarizer - INFO - Added program 7e40065d-f7a4-4c95-9455-6cd890bb067e to meta memory tracking (correct=True, total: 5)
+2026-09-16 18:16:28 - shinka.core.async_runner - INFO - Updating meta memory...
+2026-09-16 18:16:28 - shinka.core.async_summarizer - INFO - ==> Step 1 - Processing 5 programs with async batch query
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING 5 SAMPLES:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING: 1/5 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING: 2/5 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING: 3/5 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING: 4/5 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:16:28 - shinka.llm.llm - INFO - ==> SAMPLING: 5/5 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=81.05s, evaluation_ewma=96.08s, timing_samples=4, active_proposals=0, running_jobs=0)
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 4 (completed=4/9, next_generation=5)
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Started proposal task for generation 5 (cost: $2.1625)
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Generating proposal for generation 5
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Getting meta recs for gen 5, sample_single_meta_rec=True
+2026-09-16 18:16:29 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: False
+2026-09-16 18:16:29 - shinka.core.summarizer - INFO - No meta recommendations available to sample from
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - meta_recs result: False
+2026-09-16 18:16:29 - shinka.database.parents - INFO - Island 0 => Probabilities: [0.9999092083843409, 9.079161565902182e-05]
+2026-09-16 18:16:29 - shinka.database.parents - INFO - Island 0 => Scores: [0.3643559624867648, 0.33664195386365664]
+2026-09-16 18:16:29 - shinka.database.parents - INFO - Sampled parent 54ff2a7f-b967-4211-982d-ac6df00a415f (Gen: 0, Score: 0.3644, Children: 1, Island: 0)
+2026-09-16 18:16:29 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['7e40065d-f7a4-4c95-9455-6cd890bb067e (Gen: 4, Score: 0.3366, Island: 0)']
+              Parent & Context Sampling Summary - Gen 5 | Total Cost: $2.16 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-0   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ Archive-1   │  4   │   I-0   │   ✓   │    0.337 │ staggered_recovery_burst        │ diff   │    0.4 │  $0.571 │ 1.4m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:16:29 - shinka.database.inspirations - INFO - Built context: 1 programs (ascending, scores: ['0.3366'])
+2026-09-16 18:16:29 - shinka.core.async_runner - INFO - Generated patch type: cross
+2026-09-16 18:16:29 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:16:29 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:18:22 - shinka.llm.llm - INFO - ==> SAMPLING: Individual API costs: ['0.1574', '0.1559', '0.1519', '0.1578', '0.1508']
+2026-09-16 18:18:22 - shinka.llm.llm - INFO - ==> SAMPLING: Total API costs: $0.7738
+2026-09-16 18:18:22 - shinka.core.async_summarizer - INFO - ==> Step 1 - 5/5 individual summaries generated (cost: $0.7738)
+2026-09-16 18:18:22 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:19:06 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=4, target=9, pending_work=5, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$2.1625, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=157.3s
+2026-09-16 18:19:36 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5519
+2026-09-16 18:19:36 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:19:36 - shinka.core.async_runner - INFO - Patch type for application: cross
+                          Patch Metadata - Gen 5/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ cross                                                                                     │
+│ patch_name               │ full_burst_light_tail                                                                     │
+│ patch_description        │ Combines the better-scoring parent’s five-particle detection response with the other      │
+│                          │ parent’s one-particle tail for two subsequent updates. The hypothesis is that brief       │
+│                          │ continued exploration can aid recovery while four neutral particles resume ordinary PSO.  │
+│                          │ The supplied results do not isolate the tail’s benefit; this crossover’s score remains    │
+│                          │ untested. Syntax, deterministic integer outputs, immutable inputs, and unchanged code     │
+│                          │ outside the markers were checked.                                                         │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.5519                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 7; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:19:36 - shinka.core.async_runner - INFO - Getting code embedding for generation 5...
+2026-09-16 18:19:36 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:19:36 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:19:36 - shinka.core.async_runner - INFO - Code embedding completed for generation 5 (cost: $0.0000)
+2026-09-16 18:19:36 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.99', '0.98']
+2026-09-16 18:19:36 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:21:02 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.6656
+2026-09-16 18:21:02 - shinka.core.async_summarizer - INFO - ==> Step 2 - Global insights generated (cost: $0.6656)
+2026-09-16 18:21:02 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:21:13 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0584
+2026-09-16 18:21:13 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.991 > 0.830958258366903) due to LLM novelty check (cost: 0.0584).
+2026-09-16 18:21:13 - shinka.core.async_runner - INFO - Proposal → Eval: gen 5 submitted for eval (cost: $0.6103, total: $2.7728). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:22:29 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.4667
+2026-09-16 18:22:29 - shinka.core.async_summarizer - INFO - ==> Step 3 - Recommendations generated (cost: $0.4667)
+2026-09-16 18:22:29 - shinka.core.async_summarizer - INFO - ==> Meta-analysis completed successfully with 3-step process (total cost: $1.9061)
+2026-09-16 18:22:29 - shinka.core.async_summarizer - INFO - Processed and cleared 5 programs from meta memory (total processed: 5)
+2026-09-16 18:22:29 - shinka.core.async_summarizer - INFO - Wrote meta output to /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/meta/meta_5.txt
+2026-09-16 18:22:29 - shinka.core.async_runner - INFO - Meta recommendation cost: $1.9061
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    4 │             2.4766 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:22:29 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 981001) - program 7e40065d-f7a4-4c95-9455-6cd890bb067e added (gen 4)
+2026-09-16 18:22:29 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:22:29 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 4 -> 5 (cost: $4.6789)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 984293) completed (gen 5) after 372.9s
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [5] (cost: $4.6789)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 984293) (gen 5)
+2026-09-16 18:22:42 - shinka.launch.local - INFO - Monitoring local process with PID: 984293...
+2026-09-16 18:22:42 - shinka.launch.local - INFO - Process 984293 completed with return code: 0
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 984293): True
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 984293) has valid results - correct=True, score=0.3288723929456656
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 984293) (gen 5)...
+2026-09-16 18:22:42 - shinka.database.dbase - INFO - Program 21924dd0-082b-477d-abc0-c0b09bb67b57 added to DB - score: 0.3288723929456656.
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 21924dd0-082b-477d-abc0-c0b09bb67b57 successfully added to database for ProcessWithLogging(PID: 984293) (gen 5)
+                                 Program Evaluation Summary - Gen 5 | Total Cost: $4.68                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 5   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-0   │   ✓ Correct   │   0.329 │ full_burst_light_tail           │ cross  │    0.4 │  $0.610 │ 1.5m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:22:42 - shinka.core.summarizer - INFO - Added program 21924dd0-082b-477d-abc0-c0b09bb67b57 to meta memory tracking (correct=True, total: 1)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    5 │             2.4766 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 984293) - program 21924dd0-082b-477d-abc0-c0b09bb67b57 added (gen 5)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 5 -> 6 (cost: $4.6789)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=142.09s, evaluation_ewma=93.78s, timing_samples=5, active_proposals=0, running_jobs=0)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 3 (completed=6/9, next_generation=6)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Started proposal task for generation 6 (cost: $4.6789)
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Generating proposal for generation 6
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Getting meta recs for gen 6, sample_single_meta_rec=True
+2026-09-16 18:22:42 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: True
+2026-09-16 18:22:42 - shinka.core.summarizer - INFO - Sampled 1 recommendation from 5 total: **Reduce the burst only for small observed fitness changes.** At detection, retu...
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - meta_recs result: True
+2026-09-16 18:22:42 - shinka.database.parents - INFO - Island 0 => Probabilities: [0.39997821021007485, 0.5999673153151124, 5.4474474812855057e-05]
+2026-09-16 18:22:42 - shinka.database.parents - INFO - Island 0 => Scores: [0.3643559624867648, 0.33664195386365664, 0.3288723929456656]
+2026-09-16 18:22:42 - shinka.database.parents - INFO - Sampled parent 54ff2a7f-b967-4211-982d-ac6df00a415f (Gen: 0, Score: 0.3644, Children: 2, Island: 0)
+2026-09-16 18:22:42 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['21924dd0-082b-477d-abc0-c0b09bb67b57 (Gen: 5, Score: 0.3289, Island: 0)']
+2026-09-16 18:22:42 - shinka.database.inspirations - INFO - Selected 1 top-k inspirations from archive on island 0: ['7e40065d-f7a4-4c95-9455-6cd890bb067e (Gen: 4, Score: 0.3366, Island: 0)']
+              Parent & Context Sampling Summary - Gen 6 | Total Cost: $4.68 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  0   │   I-0   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ Archive-1   │  5   │   I-0   │   ✓   │    0.329 │ full_burst_light_tail           │ cross  │    0.4 │  $0.610 │ 1.5m │
+│ TopK-1      │  4   │   I-0   │   ✓   │    0.337 │ staggered_recovery_burst        │ diff   │    0.4 │  $2.477 │ 1.4m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:22:42 - shinka.core.sampler - INFO - Added meta recommendation to system prompt: **Reduce the burst only for small observed fitness changes.** At detection, retu...
+2026-09-16 18:22:42 - shinka.database.inspirations - INFO - Built context: 2 programs (ascending, scores: ['0.3289', '0.3366'])
+2026-09-16 18:22:42 - shinka.core.async_runner - INFO - Generated patch type: diff
+2026-09-16 18:22:42 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:22:42 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:22:47 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=6, target=9, pending_work=3, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$4.6789, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=5.5s
+2026-09-16 18:23:40 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5314
+2026-09-16 18:23:40 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:23:40 - shinka.core.async_runner - INFO - Patch type for application: diff
+                          Patch Metadata - Gen 6/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ diff                                                                                      │
+│ patch_name               │ small_change_burst                                                                        │
+│ patch_description        │ At detection, convert four neutral particles when the absolute relative fitness change is │
+│                          │ at most 0.01; otherwise convert five. Return zero between detections, retaining the       │
+│                          │ shorter schedule that outperformed both tested extensions on development cases.           │
+│                          │ The hypothesis is that preserving one ordinary PSO move during small observed changes may │
+│                          │ support convergence while retaining substantial quantum exploration. Conversely, losing   │
+│                          │ one quantum sample could impair recovery. The threshold is exploratory: local fitness     │
+│                          │ change does not measure environmental severity, and improvement remains untested.         │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.5314                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 4; deleted: 0; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:23:40 - shinka.core.async_runner - INFO - Getting code embedding for generation 6...
+2026-09-16 18:23:40 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:23:40 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:23:40 - shinka.core.async_runner - INFO - Code embedding completed for generation 6 (cost: $0.0000)
+2026-09-16 18:23:40 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.96', '0.96', '0.95']
+2026-09-16 18:23:40 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:23:53 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0624
+2026-09-16 18:23:53 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.959 > 0.830958258366903) due to LLM novelty check (cost: 0.0624).
+2026-09-16 18:23:53 - shinka.core.async_runner - INFO - Proposal → Eval: gen 6 submitted for eval (cost: $0.5938, total: $5.2726). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 985743) completed (gen 6) after 155.2s
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [6] (cost: $5.2726)
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 985743) (gen 6)
+2026-09-16 18:25:17 - shinka.launch.local - INFO - Monitoring local process with PID: 985743...
+2026-09-16 18:25:17 - shinka.launch.local - INFO - Process 985743 completed with return code: 0
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 985743): True
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 985743) has valid results - correct=True, score=0.32331158977100777
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 985743) (gen 6)...
+2026-09-16 18:25:17 - shinka.database.dbase - INFO - Program 0d79bea7-253f-4892-8a09-5b70b51636fe added to DB - score: 0.32331158977100777.
+2026-09-16 18:25:17 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 0d79bea7-253f-4892-8a09-5b70b51636fe successfully added to database for ProcessWithLogging(PID: 985743) (gen 6)
+                                 Program Evaluation Summary - Gen 6 | Total Cost: $5.27                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 6   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-0   │   ✓ Correct   │   0.323 │ small_change_burst              │ diff   │    0.3 │  $0.594 │ 1.4m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:25:18 - shinka.core.summarizer - INFO - Added program 0d79bea7-253f-4892-8a09-5b70b51636fe to meta memory tracking (correct=True, total: 2)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    6 │             3.0080 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 985743) - program 0d79bea7-253f-4892-8a09-5b70b51636fe added (gen 6)
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 6 -> 7 (cost: $5.2726)
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=120.80s, evaluation_ewma=90.88s, timing_samples=6, active_proposals=0, running_jobs=0)
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 2 (completed=7/9, next_generation=7)
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Started proposal task for generation 7 (cost: $5.2726)
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Generating proposal for generation 7
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Getting meta recs for gen 7, sample_single_meta_rec=True
+2026-09-16 18:25:18 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: True
+2026-09-16 18:25:18 - shinka.core.summarizer - INFO - Sampled 1 recommendation from 5 total: **Reduce Conditional Follow-Up from two conversions to one.** Keep five conversi...
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - meta_recs result: True
+2026-09-16 18:25:18 - shinka.database.parents - INFO - Island 0 => Probabilities: [0.19999988792685253, 0.7976523959935149, 0.0023471557138951163, 5.603657372425579e-07]
+2026-09-16 18:25:18 - shinka.database.parents - INFO - Island 0 => Scores: [0.3643559624867648, 0.33664195386365664, 0.3288723929456656, 0.32331158977100777]
+2026-09-16 18:25:18 - shinka.database.parents - INFO - Sampled parent 7e40065d-f7a4-4c95-9455-6cd890bb067e (Gen: 4, Score: 0.3366, Children: 0, Island: 0)
+2026-09-16 18:25:18 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['54ff2a7f-b967-4211-982d-ac6df00a415f (Gen: 0, Score: 0.3644, Island: 0)']
+2026-09-16 18:25:18 - shinka.database.inspirations - INFO - Selected 1 top-k inspirations from archive on island 0: ['21924dd0-082b-477d-abc0-c0b09bb67b57 (Gen: 5, Score: 0.3289, Island: 0)']
+              Parent & Context Sampling Summary - Gen 7 | Total Cost: $5.27 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  4   │   I-0   │   ✓   │    0.337 │ staggered_recovery_burst        │ diff   │    0.4 │  $2.477 │ 1.4m │
+│ Archive-1   │  0   │   I-0   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ TopK-1      │  5   │   I-0   │   ✓   │    0.329 │ full_burst_light_tail           │ cross  │    0.4 │  $0.610 │ 1.5m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:25:18 - shinka.core.sampler - INFO - Added meta recommendation to system prompt: **Reduce Conditional Follow-Up from two conversions to one.** Keep five conversi...
+2026-09-16 18:25:18 - shinka.database.inspirations - INFO - Built context: 2 programs (ascending, scores: ['0.3289', '0.3644'])
+2026-09-16 18:25:18 - shinka.core.async_runner - INFO - Generated patch type: diff
+2026-09-16 18:25:18 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:25:18 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:25:27 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=7, target=9, pending_work=2, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$5.2726, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=9.1s
+2026-09-16 18:26:26 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.6446
+2026-09-16 18:26:26 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:26:26 - shinka.core.async_runner - INFO - Patch type for application: diff
+                          Patch Metadata - Gen 7/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ diff                                                                                      │
+│ patch_name               │ four_on_detection                                                                         │
+│ patch_description        │ Convert four neutrals on detection and zero afterward. Both supplied schedules with       │
+│                          │ two-update follow-ups had higher mean error than the original detection-only schedule.    │
+│                          │ Removing that follow-up lets ordinary PSO resume immediately. Four conversions preserve   │
+│                          │ one neutral’s ordinary PSO move during detection while maintaining substantial quantum    │
+│                          │ exploration. This tests whether directed movement improves recovery; fewer quantum        │
+│                          │ samples could also hurt. Performance remains untested.                                    │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.6446                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 0; deleted: 7; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:26:26 - shinka.core.async_runner - INFO - Getting code embedding for generation 7...
+2026-09-16 18:26:26 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:26:26 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:26:26 - shinka.core.async_runner - INFO - Code embedding completed for generation 7 (cost: $0.0000)
+2026-09-16 18:26:26 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.99', '0.98', '0.97', '0.95']
+2026-09-16 18:26:26 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:26:41 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0580
+2026-09-16 18:26:41 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.992 > 0.830958258366903) due to LLM novelty check (cost: 0.0580).
+2026-09-16 18:26:41 - shinka.core.async_runner - INFO - Proposal → Eval: gen 7 submitted for eval (cost: $0.7026, total: $5.9753). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 986837) completed (gen 7) after 176.2s
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [7] (cost: $5.9753)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 986837) (gen 7)
+2026-09-16 18:28:14 - shinka.launch.local - INFO - Monitoring local process with PID: 986837...
+2026-09-16 18:28:14 - shinka.launch.local - INFO - Process 986837 completed with return code: 0
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 986837): True
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 986837) has valid results - correct=True, score=0.3198304660785926
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 986837) (gen 7)...
+2026-09-16 18:28:14 - shinka.database.dbase - INFO - Program 50376b8d-89fa-4893-b275-5237f52b77f6 added to DB - score: 0.3198304660785926.
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 50376b8d-89fa-4893-b275-5237f52b77f6 successfully added to database for ProcessWithLogging(PID: 986837) (gen 7)
+                                 Program Evaluation Summary - Gen 7 | Total Cost: $5.98                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 7   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-0   │   ✓ Correct   │   0.320 │ four_on_detection               │ diff   │    0.1 │  $0.703 │ 1.6m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:28:14 - shinka.core.summarizer - INFO - Added program 50376b8d-89fa-4893-b275-5237f52b77f6 to meta memory tracking (correct=True, total: 3)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    7 │             3.6527 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 986837) - program 50376b8d-89fa-4893-b275-5237f52b77f6 added (gen 7)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 7 -> 8 (cost: $5.9753)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Proposal target=1 (sampling_ewma=109.49s, evaluation_ewma=91.56s, timing_samples=7, active_proposals=0, running_jobs=0)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Starting 1 new proposals. Pipeline: 0/1 (running_jobs=0, active_proposals=0/1), Remaining completed work: 1 (completed=8/9, next_generation=8)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Started proposal task for generation 8 (cost: $5.9753)
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Generating proposal for generation 8
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Getting meta recs for gen 8, sample_single_meta_rec=True
+2026-09-16 18:28:14 - shinka.core.summarizer - INFO - get_sampled_recommendation called, meta_recommendations exists: True
+2026-09-16 18:28:14 - shinka.core.summarizer - INFO - Sampled 1 recommendation from 5 total: **Reduce the burst only for small observed fitness changes.** At detection, retu...
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - meta_recs result: True
+2026-09-16 18:28:14 - shinka.database.parents - INFO - Island 0 => Probabilities: [0.1998777096686862, 0.39973727129333225, 0.3997554193373724, 0.0006225420135617135, 7.057687047448608e-06]
+2026-09-16 18:28:14 - shinka.database.parents - INFO - Island 0 => Scores: [0.3643559624867648, 0.33664195386365664, 0.3288723929456656, 0.32331158977100777, 0.3198304660785926]
+2026-09-16 18:28:14 - shinka.database.parents - INFO - Sampled parent 21924dd0-082b-477d-abc0-c0b09bb67b57 (Gen: 5, Score: 0.3289, Children: 0, Island: 0)
+2026-09-16 18:28:14 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['54ff2a7f-b967-4211-982d-ac6df00a415f (Gen: 0, Score: 0.3644, Island: 0)']
+2026-09-16 18:28:14 - shinka.database.inspirations - INFO - Selected 1 top-k inspirations from archive on island 0: ['7e40065d-f7a4-4c95-9455-6cd890bb067e (Gen: 4, Score: 0.3366, Island: 0)']
+              Parent & Context Sampling Summary - Gen 8 | Total Cost: $5.98 (Novelty: 1/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  5   │   I-0   │   ✓   │    0.329 │ full_burst_light_tail           │ cross  │    0.4 │  $0.610 │ 1.5m │
+│ Archive-1   │  0   │   I-0   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+│ TopK-1      │  4   │   I-0   │   ✓   │    0.337 │ staggered_recovery_burst        │ diff   │    0.4 │  $2.477 │ 1.4m │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:28:14 - shinka.database.inspirations - INFO - Built context: 2 programs (ascending, scores: ['0.3366', '0.3644'])
+2026-09-16 18:28:14 - shinka.core.async_runner - INFO - Generated patch type: cross
+2026-09-16 18:28:14 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:28:14 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:28:37 - shinka.core.async_runner - INFO - 🔍 Meta task check: completed_gens=8, target=9, pending_work=1, running_eval_jobs=0, running_proposal_jobs=1, api_costs=$5.9753, should_stop=False, is_stuck=False, stuck_count=0, time_since_progress=22.9s
+2026-09-16 18:29:22 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5985
+2026-09-16 18:29:22 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:29:22 - shinka.core.async_runner - INFO - Patch type for application: cross
+                          Patch Metadata - Gen 8/9 - Novelty: 1/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ cross                                                                                     │
+│ patch_name               │ four_particle_pulse                                                                       │
+│ patch_description        │ Combine the parents’ three- and five-particle responses into a four-particle pulse on     │
+│                          │ detected change. Remove their two-update tail, since the supplied single-pulse reference  │
+│                          │ achieved lower mean development error than either extended schedule. The hypothesis is    │
+│                          │ that retaining one ordinary neutral update during recovery balances exploration with      │
+│                          │ continued PSO movement. Syntax and integer-output checks passed; performance improvement  │
+│                          │ remains untested.                                                                         │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.5985                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 0; deleted: 7; modified: 1;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:29:22 - shinka.core.async_runner - INFO - Getting code embedding for generation 8...
+2026-09-16 18:29:22 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:29:22 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:29:22 - shinka.core.async_runner - INFO - Code embedding completed for generation 8 (cost: $0.0000)
+2026-09-16 18:29:22 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['1.00', '0.99', '0.98', '0.97', '0.95']
+2026-09-16 18:29:22 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:29:32 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0567
+2026-09-16 18:29:32 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Rejecting program due to high similarity (1.000 > 0.830958258366903) and LLM novelty check (cost: 0.0567)
+2026-09-16 18:29:32 - shinka.database.parents - INFO - Island 1 => Probabilities: [0.19999841494639414, 0.0001664112633497897, 0.7998272486659523, 7.925124303821828e-06]
+2026-09-16 18:29:32 - shinka.database.parents - INFO - Island 1 => Scores: [0.3643559624867648, 0.34452191656979797, 0.3553989955251622, 0.3425687546730803]
+2026-09-16 18:29:32 - shinka.database.parents - INFO - Sampled parent 4db962bb-6988-4649-bcb2-d3411f25f8d3 (Gen: 2, Score: 0.3554, Children: 0, Island: 1)
+2026-09-16 18:29:32 - shinka.database.inspirations - INFO - Sampled 1 archive inspirations: ['e9041f37-b744-4937-a514-5059463380e1 (Gen: 3, Score: 0.3426, Island: 1)']
+2026-09-16 18:29:32 - shinka.database.inspirations - INFO - Selected 1 top-k inspirations from archive on island 1: ['59433c06-18b3-4d5d-85d6-4c86e6655b66 (Gen: 0, Score: 0.3644, Island: 1)']
+              Parent & Context Sampling Summary - Gen 8 | Total Cost: $5.98 (Novelty: 2/3, Resample: 1/1)               
+┏━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━┓
+┃ Role        ┃ Gen  ┃ Island  ┃  ✓/✗  ┃    Score ┃ Patch Name                      ┃ Type   ┃ Compl… ┃    Cost ┃ Time ┃
+┡━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━┩
+│ PARENT      │  2   │   I-1   │   ✓   │    0.355 │ stalled_single_followup         │ cross  │    0.5 │  $0.482 │ 1.7m │
+│ Archive-1   │  3   │   I-1   │   ✓   │    0.343 │ three_on_detection              │ full   │    0.1 │  $0.705 │ 1.4m │
+│ TopK-1      │  0   │   I-1   │   ✓   │    0.364 │ initial_program                 │ init   │    0.1 │  $0.000 │ 3.0s │
+└─────────────┴──────┴─────────┴───────┴──────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────┘
+2026-09-16 18:29:32 - shinka.core.sampler - INFO - Added meta recommendation to system prompt: **Reduce the burst only for small observed fitness changes.** At detection, retu...
+2026-09-16 18:29:32 - shinka.database.inspirations - INFO - Built context: 2 programs (ascending, scores: ['0.3426', '0.3644'])
+2026-09-16 18:29:32 - shinka.core.async_runner - INFO - Generated patch type: full
+2026-09-16 18:29:32 - shinka.llm.llm - INFO - ==> SAMPLING:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:29:32 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:31:09 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.6802
+2026-09-16 18:31:09 - shinka.core.async_runner - INFO - Applying patch with language: python
+2026-09-16 18:31:09 - shinka.core.async_runner - INFO - Patch type for application: full
+                          Patch Metadata - Gen 8/9 - Novelty: 2/3 - Resample: 1/1 - Patch: 1/1                          
+╭──────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────╮
+│ Field                    │ Value                                                                                     │
+├──────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────┤
+│ patch_type               │ full                                                                                      │
+│ patch_name               │ small_change_reserve                                                                      │
+│ patch_description        │ Use observed change magnitude to control burst intensity: convert four neutrals when the  │
+│                          │ absolute relative fitness change is at most 1%, otherwise five. Return zero between       │
+│                          │ detections. The hypothesis is that retaining one ordinary PSO move after small changes    │
+│                          │ preserves useful convergence while maintaining substantial exploration. The threshold is  │
+│                          │ exploratory, not an estimate of environmental severity. Interface checks passed; improved │
+│                          │ optimizer performance remains unverified.                                                 │
+│ num_applied              │ 1                                                                                         │
+│ api_costs                │ $0.6802                                                                                   │
+│ error_attempt            │ None                                                                                      │
+│ system_prompt_id         │ None                                                                                      │
+│ model_name               │ headless/codex@gpt-6-astra?effort=xhigh                                                   │
+│ headless_work_dir        │ /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/ │
+│                          │ evolution/s...                                                                            │
+│ diff_summary             │ added: 0; deleted: 4; modified: 5;                                                        │
+╰──────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────╯
+2026-09-16 18:31:09 - shinka.core.async_runner - INFO - Getting code embedding for generation 8...
+2026-09-16 18:31:09 - httpx2 - INFO - HTTP Request: POST http://127.0.0.1:8910/v1/embeddings "HTTP/1.0 200 OK"
+2026-09-16 18:31:09 - shinka.embed.embedding - WARNING - Embedding model 'local/jina-code-v2-q8@http://127.0.0.1:8910/v1' has no pricing entry. Defaulting embedding cost to 0.
+2026-09-16 18:31:09 - shinka.core.async_runner - INFO - Code embedding completed for generation 8 (cost: $0.0000)
+2026-09-16 18:31:09 - shinka.core.async_novelty_judge - INFO - Top-5 similarity scores: ['0.97', '0.96', '0.95', '0.94']
+2026-09-16 18:31:09 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:31:21 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.0603
+2026-09-16 18:31:21 - shinka.core.async_novelty_judge - INFO - NOVELTY CHECK: Accepting program despite high similarity (0.965 > 0.830958258366903) due to LLM novelty check (cost: 0.0603).
+2026-09-16 18:31:21 - shinka.core.async_runner - INFO - Proposal → Eval: gen 8 submitted for eval (cost: $1.3957, total: $7.3709). Running jobs: 1/1, Proposals: 1/1
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ Job ProcessWithLogging(PID: 988812) completed (gen 8) after 272.7s
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 🔄 Processing 1 completed jobs: gens [8] (cost: $7.3709)
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 🔄 SAFE PROCESSING: Starting job ProcessWithLogging(PID: 988812) (gen 8)
+2026-09-16 18:32:47 - shinka.launch.local - INFO - Monitoring local process with PID: 988812...
+2026-09-16 18:32:47 - shinka.launch.local - INFO - Process 988812 completed with return code: 0
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 📂 RESULTS: Got results for ProcessWithLogging(PID: 988812): True
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ VALID RESULTS: ProcessWithLogging(PID: 988812) has valid results - correct=True, score=0.32331158977100777
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 💾 DB ADD: Adding program to database for ProcessWithLogging(PID: 988812) (gen 8)...
+2026-09-16 18:32:47 - shinka.database.dbase - INFO - Program 7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a added to DB - score: 0.32331158977100777.
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ DB SUCCESS: Program 7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a successfully added to database for ProcessWithLogging(PID: 988812) (gen 8)
+                                 Program Evaluation Summary - Gen 8 | Total Cost: $7.37                                 
+╭─────────────┬─────────┬───────────────┬─────────┬─────────────────────────────────┬────────┬────────┬─────────┬──────╮
+│  GenID: 8   │ Island  │    Status     │   Score │ Patch Name                      │ Type   │ Compl… │    Cost │ Time │
+├─────────────┼─────────┼───────────────┼─────────┼─────────────────────────────────┼────────┼────────┼─────────┼──────┤
+│ Best: 0.364 │   I-1   │   ✓ Correct   │   0.323 │ small_change_reserve            │ full   │    0.3 │  $1.396 │ 1.4m │
+╰─────────────┴─────────┴───────────────┴─────────┴─────────────────────────────────┴────────┴────────┴─────────┴──────╯
+2026-09-16 18:32:47 - shinka.core.summarizer - INFO - Added program 7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a to meta memory tracking (correct=True, total: 4)
+                                            FixedSampler (fixed prior probs)                                            
+╭──────────────────────────────────────────────────────────┬──────┬────────────────────┬───────────────┬───────────────╮
+│ arm                                                      │    n │           tot_cost │          base │          prob │
+├──────────────────────────────────────────────────────────┼──────┼────────────────────┼───────────────┼───────────────┤
+│ codex@gpt-6-...?effort=xhigh                             │    8 │             4.9314 │        0.3644 │        1.0000 │
+╰──────────────────────────────────────────────────────────┴──────┴────────────────────┴───────────────┴───────────────╯
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ JOB COMPLETE: Finished processing ProcessWithLogging(PID: 988812) - program 7fc83e10-4f74-47b9-b2fa-2f14e5fe7d7a added (gen 8)
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ Successfully processed 1/1 jobs
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ✅ Completed generations updated: 8 -> 9 (cost: $7.3709)
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - Evolution stopping: completed_generations=9, target=9, running_jobs=0, active_proposals=0
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 🛑 Job monitor setting should_stop signal
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 🏁 Job monitor setting finalization_complete signal
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - Job monitor task exited
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - 🔄 Performing final embedding recomputation and meta summary...
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - Starting final PCA/embedding recomputation...
+2026-09-16 18:32:47 - shinka.core.async_runner - INFO - ⚠️  This may take a while for large datasets...
+2026-09-16 18:32:47 - shinka.database.async_dbase - INFO - Forcing final embedding and cluster recomputation...
+2026-09-16 18:32:47 - shinka.database.async_dbase - INFO - Scheduled embedding recomputation after 10 program additions
+2026-09-16 18:32:47 - shinka.database.dbase - INFO - Recomputing PCA-reduced embedding features for 10 programs.
+2026-09-16 18:32:47 - shinka.database.dbase - INFO - Computing 2D PCA reduction...
+2026-09-16 18:32:51 - shinka.database.dbase - INFO - 2D PCA reduction completed
+2026-09-16 18:32:51 - shinka.database.dbase - INFO - Computing 3D PCA reduction...
+2026-09-16 18:32:51 - shinka.database.dbase - INFO - 3D PCA reduction completed
+2026-09-16 18:32:51 - shinka.database.dbase - INFO - Computing GMM clustering with 4 clusters...
+2026-09-16 18:32:54 - shinka.core.async_runner - INFO - Meta summarizer task exited
+2026-09-16 18:32:54 - shinka.database.dbase - INFO - GMM clustering completed
+2026-09-16 18:32:54 - shinka.database.dbase - INFO - Successfully updated embedding features for 10 programs.
+2026-09-16 18:32:54 - shinka.database.async_dbase - INFO - Background embedding recomputation completed
+2026-09-16 18:32:54 - shinka.database.async_dbase - INFO - Final embedding and cluster recomputation complete.
+2026-09-16 18:32:54 - shinka.core.async_runner - INFO - Final PCA/embedding recomputation completed successfully
+2026-09-16 18:32:54 - shinka.core.async_runner - INFO - Starting final meta summary generation...
+2026-09-16 18:32:54 - shinka.core.async_summarizer - INFO - Performing final meta summary for 4 remaining programs...
+2026-09-16 18:32:54 - shinka.core.async_summarizer - INFO - ==> Step 1 - Processing 4 programs with async batch query
+2026-09-16 18:32:54 - shinka.llm.llm - INFO - ==> SAMPLING 4 SAMPLES:
+  headless/codex@gpt-6-astra?effort=xhigh   1.0000
+2026-09-16 18:32:54 - shinka.llm.llm - INFO - ==> SAMPLING: 1/4 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:32:54 - shinka.llm.llm - INFO - ==> SAMPLING: 2/4 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:32:54 - shinka.llm.llm - INFO - ==> SAMPLING: 3/4 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:32:54 - shinka.llm.llm - INFO - ==> SAMPLING: 4/4 ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:34:47 - shinka.llm.llm - INFO - ==> SAMPLING: Individual API costs: ['0.1648', '0.1640', '0.1530', '0.1587']
+2026-09-16 18:34:47 - shinka.llm.llm - INFO - ==> SAMPLING: Total API costs: $0.6407
+2026-09-16 18:34:47 - shinka.core.async_summarizer - INFO - ==> Step 1 - 4/4 individual summaries generated (cost: $0.6407)
+2026-09-16 18:34:47 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:36:15 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5949
+2026-09-16 18:36:15 - shinka.core.async_summarizer - INFO - ==> Step 2 - Global insights generated (cost: $0.5949)
+2026-09-16 18:36:15 - shinka.llm.llm - INFO - ==> QUERYING: ['headless/codex@gpt-6-astra?effort=xhigh', '/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001']
+2026-09-16 18:37:39 - shinka.llm.llm - INFO - ==> QUERY: API cost: $0.5601
+2026-09-16 18:37:39 - shinka.core.async_summarizer - INFO - ==> Step 3 - Recommendations generated (cost: $0.5601)
+2026-09-16 18:37:39 - shinka.core.async_summarizer - INFO - ==> Meta-analysis completed successfully with 3-step process (total cost: $1.7957)
+2026-09-16 18:37:39 - shinka.core.async_summarizer - INFO - Processed and cleared 4 programs from meta memory (total processed: 9)
+2026-09-16 18:37:39 - shinka.core.async_summarizer - INFO - Wrote meta output to /home/roland/actir/shinka-adaptive-swarms/results/book_mpso_schedule_v1/20260916T154109Z/evolution/search_seed_640001/meta/meta_9.txt
+2026-09-16 18:37:39 - shinka.core.async_summarizer - INFO - Final meta summary completed (cost: $1.7957)
+2026-09-16 18:37:40 - shinka.core.async_summarizer - INFO - Stored final meta cost $1.7957 in best program metadata
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Final meta summary completed successfully (cost: $1.7957)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - 🏁 All final operations completed, proceeding to cleanup...
+2026-09-16 18:37:40 - shinka.database.async_dbase - INFO - 🔧 Closing async database with monitoring...
+2026-09-16 18:37:40 - shinka.database.async_dbase - INFO - Async database closed
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ASYNC EVOLUTION COMPLETED
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ================================================================================
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Target generations: 9
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Stored programs: 9
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Generations without program (proposal generation exhausted retries): 0
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Generation IDs without program after proposal retries: []
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Total proposals generated: 8
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Total API cost: $9.1667
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Total runtime: 1981.71 seconds
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Average time per proposal: 247.71 seconds
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ----------------------------------------
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - FINAL OPERATIONS STATUS:
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - PCA/Embedding recomputation: COMPLETED
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Meta summary generation: COMPLETED
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ----------------------------------------
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - ----------------------------------------
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - TIMING BOTTLENECK SUMMARY:
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Programs analyzed: 8 (generation > 0 with persisted metadata)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Sampling: mean=118.23s median=82.80s p90=284.50s max=284.50s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Evaluation: mean=91.60s median=87.22s p90=111.84s max=111.84s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Eval->Postprocess Wait: mean=0.00s median=0.00s p90=0.00s max=0.00s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Postprocess Hot Path: mean=0.02s median=0.02s p90=0.03s max=0.03s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Postprocess->Apply Wait: mean=0.00s median=0.00s p90=0.00s max=0.00s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Side-Effect Apply: mean=45.20s median=0.05s p90=360.67s max=360.67s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Pipeline Unaccounted: mean=0.00s median=0.00s p90=0.00s max=0.00s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - End-to-End w/ Side Effects: mean=255.05s median=184.92s p90=527.48s max=527.48s (n=8)
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Top Eval->Postprocess Waits: gen 7=0.0s, gen 1=0.0s, gen 2=0.0s, gen 6=0.0s, gen 8=0.0s
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Top Postprocess->Apply Waits: gen 1=0.0s, gen 7=0.0s, gen 8=0.0s, gen 2=0.0s, gen 4=0.0s
+2026-09-16 18:37:40 - shinka.core.async_runner - INFO - Top Side-Effect Apply Durations: gen 4=360.7s, gen 6=0.7s, gen 1=0.1s, gen 3=0.1s, gen 7=0.0s
+        Program Database Summary                       Best Program              
+╭─────────────────────┬────────────────╮ ╭────────────────┬─────────────────────╮
+│ Metric              │ Value          │ │ Attribute      │ Value               │
+├─────────────────────┼────────────────┤ ├────────────────┼─────────────────────┤
+│ Overall Best Score  │ 0.36           │ │ ID             │ 54ff2a7f...         │
+│ Total Programs      │ 10 / 9         │ │ Generation     │ 0                   │
+│ Correct Programs    │ 10 / 10 (100%) │ │ Complexity     │ 0.13                │
+│ Archived Programs   │ 10 / 40 (25%)  │ │ Embedding[0]   │ 0.07                │
+│ Island Populations  │ I0: 5 | I1: 5  │ │ Metric: Score  │ 0.36                │
+│ Migration Policy    │ 10G, 10%(E)    │ │ Timestamp      │ 2026-09-16 18:04:46 │
+╰─────────────────────┴────────────────╯ ╰────────────────┴─────────────────────╯
+          Cost & Stats Summary                                                   
+╭────────────────────────┬─────────────╮                                         
+│ Metric                 │ Value       │                                         
+├────────────────────────┼─────────────┤                                         
+│ Total API Cost         │ $4.93       │                                         
+│ Total Embedding Cost   │ $0.00       │                                         
+│ Total Novelty Cost     │ $0.53       │                                         
+│ Total Meta Cost        │ $3.70       │                                         
+│ Total Combined Cost    │ $9.17       │                                         
+│ Total Compute          │ 0h 12m 18s  │                                         
+╰────────────────────────┴─────────────╯                                         
+                                            Top 10 Best Performing Programs                                             
+╭──────┬──────┬────┬────────┬──────────┬────────────────────────────────┬────────┬────────┬────────┬───────────────────╮
+│ Rank │ Gen  │ ✓… │  Score │ Complex… │ Patch Name                     │ Type   │ Island │ Child… │ Timestamp         │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #1  │  0   │ ✓  │  0.364 │      0.1 │ initial_program                │ init   │   I0   │      3 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:04:46          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #2  │  0   │ ✓  │  0.364 │      0.1 │ initial_program                │ init   │   I1   │      3 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:04:46          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #3  │  2   │ ✓  │  0.355 │      0.5 │ stalled_single_followup        │ cross  │   I1   │      1 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:10:53          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #4  │  1   │ ✓  │  0.345 │      0.4 │ short_recovery_tail            │ diff   │   I1   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:08:00          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #5  │  3   │ ✓  │  0.343 │      0.1 │ three_on_detection             │ full   │   I1   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:13:41          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #6  │  4   │ ✓  │  0.337 │      0.4 │ staggered_recovery_burst       │ diff   │   I0   │      1 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:16:28          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #7  │  5   │ ✓  │  0.329 │      0.4 │ full_burst_light_tail          │ cross  │   I0   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:22:42          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #8  │  6   │ ✓  │  0.323 │      0.3 │ small_change_burst             │ diff   │   I0   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:25:17          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│  #9  │  8   │ ✓  │  0.323 │      0.3 │ small_change_reserve           │ full   │   I1   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:32:47          │
+├──────┼──────┼────┼────────┼──────────┼────────────────────────────────┼────────┼────────┼────────┼───────────────────┤
+│ #10  │  7   │ ✓  │  0.320 │      0.1 │ four_on_detection              │ diff   │   I0   │      0 │ 2026-09-16        │
+│      │      │    │        │          │                                │        │        │        │ 18:28:14          │
+╰──────┴──────┴────┴────────┴──────────┴────────────────────────────────┴────────┴────────┴────────┴───────────────────╯
