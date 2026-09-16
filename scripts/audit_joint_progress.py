@@ -231,7 +231,43 @@ def audit_comparison(folder, stage, cache):
             "saved_executions_by_representative_method": dict(methods), "aliases_recorded": len(manifest["aliases"]), "query_accounting": dict(queries)}
 
 
-def audit(folder, only_search=None, cache_record=None):
+def resolve_searches(folder, registration, archive_root=None):
+    """Remap provenance paths only in memory, with no fallback to source runs."""
+    if archive_root is None:
+        return registration["searches"]
+    root = Path(archive_root).resolve()
+    if Path(folder).resolve().parent != root:
+        raise ValueError("The archived study must be a direct child of --archive-root.")
+    evolution = (root / "evolution").resolve()
+    if evolution.parent != root or not evolution.is_dir():
+        raise ValueError("Archive evolution directory is missing or escapes the archive root.")
+    names = [Path(identity["run"]).name for identity in registration["searches"]]
+    if len(names) != len(set(names)):
+        raise ValueError("Registered search basenames are ambiguous within the archive.")
+    shortlists = read_json(folder / "shortlists.json") if (folder / "shortlists.json").exists() else None
+    frozen_hashes = {row["search_index"]: row["native_manifest_sha256"] for row in shortlists["searches"]} if shortlists else {}
+    identities = []
+    for identity, name in zip(registration["searches"], names):
+        run = (evolution / name).resolve()
+        if run.parent != evolution or not run.is_dir():
+            raise ValueError(f"Archived registered search is missing or escapes evolution: {name}")
+        manifest_path = run / "manifest.json"
+        if not manifest_path.is_file():
+            raise ValueError(f"Archived registered search lacks its manifest: {name}")
+        manifest = read_json(manifest_path)
+        required = {"run_dir": identity["run"], "search_seed": identity["search_seed"],
+                    "task": "joint_relocation_v3", "generation_target": 30,
+                    "evaluation_version": "joint_relocation_v3_score_reciprocal"}
+        if any(manifest.get(key) != value for key, value in required.items()):
+            raise ValueError(f"Archived search manifest mismatches registered provenance: {name}")
+        expected = frozen_hashes.get(identity["search_index"])
+        if expected and hashlib.sha256(manifest_path.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Archived native manifest differs from frozen shortlist: {name}")
+        identities.append({**identity, "registered_run": identity["run"], "run": str(run)})
+    return identities
+
+
+def audit(folder, only_search=None, cache_record=None, archive_root=None):
     registration = verify_registration(folder)
     cache_record = cache_record if cache_record is not None else {}
     cache_identity = {"registration_signature": registration["signature"], "audit_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
@@ -239,12 +275,16 @@ def audit(folder, only_search=None, cache_record=None):
         cache_record.clear()
         cache_record.update(identity=cache_identity, cases={})
     cache = cache_record["cases"]
-    searches = [audit_search(identity, registration, cache) for identity in registration["searches"] if only_search is None or identity["search_index"] == only_search]
+    identities = resolve_searches(folder, registration, archive_root)
+    searches = [audit_search(identity, registration, cache) for identity in identities if only_search is None or identity["search_index"] == only_search]
     comparisons = {stage: audit_comparison(folder, stage, cache) for stage in ("validation", "final")}
     all_stages = searches + list(comparisons.values())
     return {"format": "joint-v3-durable-progress-audit-v1", "audited_at": datetime.now(timezone.utc).isoformat(),
             "status": "saved_evidence_checks_passed", "registration_signature": registration["signature"],
             "frozen_scientific_sources_unchanged": True, "searches": searches, "comparisons": comparisons,
+            "path_resolution": {"mode": "archive_only" if archive_root else "registered_live_paths",
+                                "archive_root": str(Path(archive_root).resolve()) if archive_root else None,
+                                "registration_rewritten": False},
             "totals": {"saved_case_executions": sum(stage["saved_cases"] for stage in all_stages),
                        "completed_checkpoint_objective_queries": sum(stage["completed_checkpoint_objective_queries"] for stage in all_stages),
                        "terminal_search_slots": sum(stage["terminal_slots"] for stage in searches),
@@ -262,18 +302,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--study", type=Path, default=Path("results/joint_relocation_v3/study_20260916"))
     parser.add_argument("--search-index", type=int, choices=(0, 1, 2))
+    parser.add_argument("--archive-root", type=Path, help="Resolve all registered searches only under this archive's evolution directory; preserve original registration")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--cache", type=Path, help="Optional operational cache of previously verified immutable checkpoints")
     args = parser.parse_args()
     cache = read_json(args.cache) if args.cache and args.cache.exists() else {}
-    result = audit(args.study, args.search_index, cache)
+    result = audit(args.study, args.search_index, cache, args.archive_root)
     if args.cache:
         atomic_json(args.cache, cache)
     if args.output:
         if args.output.exists():
             raise FileExistsError(f"Preserving previous audit; choose a new output path: {args.output}")
         atomic_json(args.output, result)
-    print(json.dumps({"status": result["status"], "audited_at": result["audited_at"], **result["totals"],
+    print(json.dumps({"status": result["status"], "audited_at": result["audited_at"], "path_resolution": result["path_resolution"], **result["totals"],
                       "search_progress": [{"index": row["search_index"], "status": row["status"], "terminal_slots": row["terminal_slots"],
                                            "valid_descendants": row["valid_descendants"], "saved_cases": row["saved_cases"],
                                            "objective_queries": row["completed_checkpoint_objective_queries"], "active_generation": row["active_generation"],
