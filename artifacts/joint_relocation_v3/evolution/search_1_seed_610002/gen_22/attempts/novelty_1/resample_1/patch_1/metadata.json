@@ -1,0 +1,15 @@
+{
+  "generation": 22,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_swarm_radius_step",
+  "patch_description": "The current policy uses count four and radius multiplier 1.25. This proposal selects three particles when normalized swarm diameter exceeds 4.0, between the previously tested thresholds of 3.0 and 5.0. Broader swarms retain radius 1.25; compact swarms relocate four particles at 1.3125, a 5% radius increase. The hypothesis is that modestly wider relocation helps compact swarms recover while preserving more ordinary PSO motion in broader swarms. Improvement requires measurement on the sixteen-case suite.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:27:42.525478",
+  "llm_cost": 0.21631,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_22/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,13 @@
+<NAME>
+three_particle_relocation
+</NAME>
+<DESCRIPTION>
+Keep radius_scale at 1.5 and reduce relocation from four particles to three, preserving two particles for ordinary PSO motion. This tests whether retaining more ongoing search trajectories improves recovery while three relocated particles provide spatial exploration. The current radius achieved lower measured mean error than count four/radius two; holding it fixed isolates the allocation change. Improvement remains a hypothesis requiring evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

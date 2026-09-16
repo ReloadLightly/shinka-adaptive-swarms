@@ -1,0 +1,45 @@
+{
+  "format": "joint-v3-alias-certification-implementation-check-v1",
+  "checked_at": "2026-09-16T05:17:02.849315+00:00",
+  "status": "focused_checks_passed",
+  "registration_signature": "c71b38f1bb5746c49a64b04ae5cbf41415e6bb01933419e1d499fc42bfeec1b3",
+  "frozen_scientific_sources_unchanged": true,
+  "source_hashes": {
+    "scripts/certify_joint_constants.py": "de3ce3cafdfd55749916408bb3682814d13372e19fe2f7f904c9c1119e30a1f6",
+    "tests/test_joint_constant_certification.py": "714fbc7981db1f8f26274e0e2c0541f57e858338070c59f083567da0608259fe",
+    "docs/v3_alias_certification.md": "1104a30aca3547d37d01830fde233e76663cec215a68f049dcae86e071b5489e",
+    "tests/fixtures/joint_alias_certification/gen_17.py": "f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81",
+    "tests/fixtures/joint_alias_certification/gen_22.py": "cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2",
+    "tests/fixtures/joint_alias_certification/gen_8.py": "0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815"
+  },
+  "test": {
+    "command": ".venv/bin/python -m pytest -q tests/test_joint_constant_certification.py",
+    "result": "25 passed in 1.05s",
+    "scope": "Static AST proof of exact three observed sources; unsupported/unsafe code; temporary metadata certification and protected-stage guards; immutable original registration/source/rank records; deterministic interrupted publication including later unrelated commit; existing program/component/joint-sampler aliases and representative telemetry."
+  },
+  "scientific_rng_seeds_exercised": [],
+  "actual_study_artifacts_present_at_check": {
+    "shortlists.json": false,
+    "source_review.json": false,
+    "validation": false,
+    "selection.json": false,
+    "final_cases.json": false,
+    "final": false,
+    "analysis.json": false,
+    "constant_alias_certification.json": false
+  },
+  "actual_study_certification_executed": false,
+  "command_after_root_review_commit_and_native_shortlist_freeze": ".venv/bin/python scripts/certify_joint_constants.py --run results/joint_relocation_v3/study_20260916",
+  "telemetry_review": "Existing figure and audit consumers require no original_candidate_action/component_substitution fields for aliases. Nominal method metadata and explicit alias records represent the intervention; shared checkpoint telemetry remains unchanged. Zero-count nominal-radius projection remains labeled.",
+  "actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "registered_scientific_source_changes": 0
+  },
+  "limitations": [
+    "This is an implementation correction after development outcomes, before protected validation; the new amendment does not claim to have been committed before search.",
+    "Actual certification remains unexecuted pending root review/commit and all-three-search native shortlist freeze.",
+    "No additional numerical equivalence experiments or research cases were run."
+  ]
+}

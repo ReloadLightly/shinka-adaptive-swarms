@@ -1,0 +1,15 @@
+{
+  "generation": 13,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_particle_radius_125",
+  "patch_description": "The current policy relocates three particles with radius multiplier 1.5. This proposal retains count three and reduces the multiplier to 1.25, testing whether tighter relocation improves recovery while two particles continue ordinary PSO motion. The four-particle results motivate testing smaller radii, but do not establish that this preference transfers to count three. Performance improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:05:00.871253",
+  "llm_cost": 0.20882,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_13/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

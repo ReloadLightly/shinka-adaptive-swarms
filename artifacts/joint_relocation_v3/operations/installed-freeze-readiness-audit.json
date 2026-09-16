@@ -1,0 +1,139 @@
+{
+  "format": "joint-v3-installed-freeze-readiness-audit-v1",
+  "audited_at": "2026-09-16T07:54:02.921898+00:00",
+  "status": "passed",
+  "original_registration_sha256": "832b37321744907766263cc72416afa991cd0a82d37690abf22d4fede56b8ce0",
+  "original_snapshot_files_verified": 14,
+  "original_scientific_snapshots_match_prospective_commit": "a66e6c3d7133091a3c9c4cecffccb68d8c641fc4",
+  "active_amendment_revision": "a70a62555a787e1da6438b7fe12d8e413186a004",
+  "active_amendment_id": "f5d0fff077ebde2e10d669e2baf73e84544e09c6ab47734b8787ce0ac2cdda81",
+  "amendment_snapshot_files_verified": 5,
+  "chronology": {
+    "registered_at": "2026-09-16T03:38:26.565365+00:00",
+    "amendment_installed_at": "2026-09-16T07:51:30.280989+00:00",
+    "native_shortlists_frozen_at": "2026-09-16T07:51:40.093151+00:00",
+    "source_certification_at": "2026-09-16T07:51:40.442999+00:00",
+    "source_review_frozen_at": "2026-09-16T07:51:40.754812+00:00"
+  },
+  "searches": [
+    {
+      "search_index": 0,
+      "status": "search_complete",
+      "finished_at": "2026-09-16T04:43:40.202725+00:00",
+      "terminal_slots": 30,
+      "frozen_generations": [
+        22,
+        17,
+        8
+      ]
+    },
+    {
+      "search_index": 1,
+      "status": "search_complete",
+      "finished_at": "2026-09-16T05:44:45.008722+00:00",
+      "terminal_slots": 30,
+      "frozen_generations": [
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "search_index": 2,
+      "status": "search_complete",
+      "finished_at": "2026-09-16T07:38:23.492807+00:00",
+      "terminal_slots": 30,
+      "frozen_generations": [
+        21,
+        14,
+        23
+      ]
+    }
+  ],
+  "nine_frozen_sources_match_native_files_database_and_approval": true,
+  "ranking_sources_set_and_metadata_other_than_certificates_unchanged": true,
+  "full_constant_proofs": [
+    {
+      "source_sha256": "0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815",
+      "action": {
+        "count": 4,
+        "radius_scale": 1.25
+      }
+    },
+    {
+      "source_sha256": "cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2",
+      "action": {
+        "count": 4,
+        "radius_scale": 1.21875
+      }
+    },
+    {
+      "source_sha256": "f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81",
+      "action": {
+        "count": 4,
+        "radius_scale": 1.1875
+      }
+    }
+  ],
+  "partial_output_proofs": [
+    {
+      "source_sha256": "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+      "outputs": {
+        "radius_scale": 1.5
+      }
+    },
+    {
+      "source_sha256": "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+      "outputs": {
+        "radius_scale": 1.25
+      }
+    },
+    {
+      "source_sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "outputs": {
+        "radius_scale": 1.5
+      }
+    },
+    {
+      "source_sha256": "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c",
+      "outputs": {
+        "radius_scale": 1.5
+      }
+    },
+    {
+      "source_sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "outputs": {
+        "radius_scale": 1.25
+      }
+    },
+    {
+      "source_sha256": "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+      "outputs": {
+        "radius_scale": 1.25
+      }
+    }
+  ],
+  "certified_shortlists_sha256": "9aac500e82dda7016d91963119c64f261081c67f4d8f29f47e6633a787e34e78",
+  "validation": {
+    "status": "running",
+    "created_at": "2026-09-16T07:52:10.420028+00:00",
+    "nominal_methods": 33,
+    "planned_cases": 32,
+    "only_manifest_read": true
+  },
+  "selection_or_final_seeds_present": false,
+  "findings": [
+    "Original registration is exactly the previously observed 832b3732 SHA; all original snapshots remain intact and scientific snapshots match prospective commit a66e6c3.",
+    "Committed amendment snapshots and active source hashes match the explicit a70a625 chain. Original controller mismatch is documented, not concealed.",
+    "Three full-constant and six partial-radius certificates bind exact reviewed source hashes; all six original adaptive programs retain full proven_constant=null.",
+    "Native rankings independently reconstructed from read-only SQLite match generations [22,17,8], [26,27,28], [21,14,23]; all 90 original slots completed.",
+    "All source-review and certification hashes/ordering agree. No selection or final suite exists. No blocker to the authorized validation."
+  ],
+  "actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "study_or_frozen_source_writes": 0,
+    "validation_case_outcomes_read": 0
+  }
+}

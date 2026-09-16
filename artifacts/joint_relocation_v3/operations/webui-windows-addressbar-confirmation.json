@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-09-16T09:21:39.257719+00:00",
+  "scope": "Read-only UIAutomation query of existing Edge PID13600 after initial process invocation returned no UI result; no browser launch/navigation/focus/tab changes/CDP. Only matching target URL is emitted.",
+  "timeout_seconds": 10,
+  "prior_attempt_record": "operations/webui-windows-addressbar-final.json",
+  "returncode": 0,
+  "stderr_bytes": 656,
+  "uia_result": {
+    "status": "target_address_bar_not_verified",
+    "reason": "No matching visible address-bar value found; no unrelated values emitted",
+    "visible_address_bar_candidates": 1,
+    "ui_mutations": 0,
+    "process_id": 13600
+  },
+  "elapsed_seconds": 5.324,
+  "limitations": [
+    "A matched visible address bar establishes only the targeted URL, not full page rendering or interaction success.",
+    "No other browser tab titles, addresses or editable values are emitted or saved."
+  ]
+}

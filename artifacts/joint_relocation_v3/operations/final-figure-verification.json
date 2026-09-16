@@ -1,0 +1,61 @@
+{
+  "format": "joint-v3-final-figure-verification-v1",
+  "reviewed_at": "2026-09-16T09:20:09.981728+00:00",
+  "status": "passed",
+  "command": "MPLCONFIGDIR=/tmp/joint-v3-matplotlib .venv/bin/python scripts/plot_joint_study.py --run results/joint_relocation_v3/study_20260916 --output assets/joint_relocation_v3",
+  "rendered_at": "2026-09-16T09:16:14.151731+00:00",
+  "output_directory": "assets/joint_relocation_v3",
+  "figure_pairs": 9,
+  "provenance_path": "assets/joint_relocation_v3/joint_figure_provenance.json",
+  "provenance_sha256": "e863098291f3aff4a111cf0f44aa96465aa5a5a326f19699b8a84c245a0bd003",
+  "outputs_sha256": {
+    "primary_effects.png": "56501b6716f67990ac803fc518e94d18b5f2ee05e8e7ed0c906d0264830462cd",
+    "primary_effects.svg": "6f6f4fc88d6bcea2118bd49541eeea5e2eb0ec0cde1b644cc636bfb55aa4b8b5",
+    "search_winner_effects.png": "3f15d8315238da3609c53028b18e014809c25b4328bd70fe1b5ad702e7cf9cab",
+    "search_winner_effects.svg": "5692f45e4733299b2ccdd8867b97ec26d4a87597f9525c39e43428ea379650ce",
+    "search_winner_outcomes.png": "ad87cb31d75dc6e2c6eafe363e3a1b115fa9471db8f473faac183a6c91a50c6c",
+    "search_winner_outcomes.svg": "acb34220959559d3c403e8ba3e8060df5cd079a6ece94997c904ed68bab5e269",
+    "component_effects.png": "d575d20dfe24fe60a5556ff421b40ff8d0dfe8f3f1736197e08c6b2260c48f72",
+    "component_effects.svg": "b3431822931c4d9b36d9f5e059b644432f858cf2c9f07d8b7e2f57b4f16b0a69",
+    "joint_action_distributions.png": "19f0e1acd700d2194de8ac897720df2a1acc19a9a394eb2764bcc15fc37b31cc",
+    "joint_action_distributions.svg": "ca3cd47930300d8a78b1c9e0575a320e8e8a9da2849243b07ad9c9cb203ece21",
+    "joint_actions_by_fitness_loss.png": "bf6aab95b78395903e0bcc9efa8de0c10492e453a56bc7cf0cf0f850a0171e15",
+    "joint_actions_by_fitness_loss.svg": "6300c2a7a239cf224c8179819c6a6da28851743b8dd902317271cfc5580643c5",
+    "joint_actions_by_diameter.png": "c89d78c61f2d05fa7939f064427789510f42cf3d47022d9b9c556fcd8463e227",
+    "joint_actions_by_diameter.svg": "23c4771461fcaa78fdca314df8d8c0c61656bac13a74bfc2c6d85ee5c40648fa",
+    "tracking_diagnostics.png": "df46d6ef4d51951f08fb64955e98c88397decbbdeeb04cafb871202198ed55f2",
+    "tracking_diagnostics.svg": "78821b3f819a586fd9b2e6bb9dc18d2c5eb1c4be2064beef7e396b15ec2c19ae",
+    "recovery_after_change.png": "611f509663cff13e0bde19bdeea157a2bc5a2422b97f4e4d2ea0eb9041ffedea",
+    "recovery_after_change.svg": "0e8f3520b7bb48cce88a6a3b634ffc52fb8356197c3b73875187b006b74d2ba0"
+  },
+  "visually_inspected_pngs": [
+    "primary_effects.png",
+    "search_winner_effects.png",
+    "search_winner_outcomes.png",
+    "component_effects.png",
+    "joint_action_distributions.png",
+    "joint_actions_by_fitness_loss.png",
+    "joint_actions_by_diameter.png",
+    "tracking_diagnostics.png",
+    "recovery_after_change.png"
+  ],
+  "observed_checks": [
+    "All nine PNGs opened with view_image; titles, legends, labels and complete data ranges were readable; no clipping requiring edits observed.",
+    "Primary comparator panels coincide as expected for baseline/fixed execution alias; both preserve 97.5% intervals.",
+    "All three winners and untrimmed case tails are shown; other winner/component uncertainty is labeled descriptive 95%.",
+    "Joint and conditional plots show fixed radius1.5 with varying count3/4; no adaptive-radius claim.",
+    "Recovery begins at saved500-query offsets, excludes initial environment and labels averaging and boundary conventions; no unsampled immediate recovery claimed.",
+    "Query accounting includes all charged categories and exact100000-query budgets.",
+    "All18 PNG/SVG hashes match the rendering provenance."
+  ],
+  "limitations": [
+    "Figure legend search numbers1/2/3 map to run indices0/1/2; report states this explicitly.",
+    "Coincident baseline/fixed curves overlap by design.",
+    "Descriptive repeated measurements and response bins have no independent-case uncertainty."
+  ],
+  "research_actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0
+  }
+}

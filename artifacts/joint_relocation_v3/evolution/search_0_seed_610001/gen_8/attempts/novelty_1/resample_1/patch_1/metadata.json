@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_radius_policy",
+  "patch_description": "Separate policy selection, capacity handling, and response construction. Keep count four and test radius multiplier 1.25: displacement-based expansion worsened mean error from 3.81 to 3.94, motivating a smaller-radius experiment. Improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:53:54.452272",
+  "llm_cost": 0.22348,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

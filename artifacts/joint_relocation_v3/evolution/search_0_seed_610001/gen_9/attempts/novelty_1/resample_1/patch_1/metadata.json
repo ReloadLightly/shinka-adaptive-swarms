@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_displacement_radius",
+  "patch_description": "Keep four relocated particles and replace the fitness-loss trigger with a bounded displacement response. Constant radius 1.5 achieved lower mean error than the current rule (3.81 versus 3.91), whose mean multipliers approached 1.7. Preserve 1.5 when observed best displacement is at most default_radius, then increase smoothly to 1.75 at twice that displacement. This tests whether observed spatial change helps target radius expansion; displacement is not true peak movement, and improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:55:25.375085",
+  "llm_cost": 0.217,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

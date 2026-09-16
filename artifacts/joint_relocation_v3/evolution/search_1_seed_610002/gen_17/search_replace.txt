@@ -1,0 +1,28 @@
+<NAME>
+bounded_spread_allocation
+</NAME>
+<DESCRIPTION>
+Test three relocations only when normalized swarm diameter lies in (4, 8], restoring four outside that range, with radius multiplier 1.25. The supplied spread-based policy achieved mean offline error 3.67 versus 3.96 for the current policy. This motivates testing whether preserving more ordinary PSO motion helps at moderate dispersion while stronger relocation helps at extreme dispersion. The bounded rule is untested; existing feedback does not establish this mechanism or separate allocation effects from radius effects.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Choose partial relocation using publicly observed fitness deterioration."""
+    swarm_size = int(observation["swarm_size"])
+    relative_drop = float(observation["relative_fitness_drop"])
+    count = 3 if relative_drop <= 0.05 else 4
+    return {
+        "count": max(0, min(swarm_size, count)),
+        "radius_scale": 1.0,
+    }
+=======
+    """Reduce relocation only within a moderate observed spread range."""
+    swarm_size = int(observation["swarm_size"])
+    default_radius = max(float(observation["default_radius"]), 1e-12)
+    relative_spread = float(observation["swarm_diameter"]) / default_radius
+    count = 3 if 4.0 < relative_spread <= 8.0 else 4
+    return {
+        "count": max(0, min(swarm_size, count)),
+        "radius_scale": 1.25,
+    }
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,21 @@
+<NAME>
+four_particle_midpoint
+</NAME>
+<DESCRIPTION>
+Retain both parents’ four-particle allocation and interpolate their radius multipliers to 1.4375. This tests an intermediate relocation distance while preserving one particle’s ordinary PSO motion. The supplied results motivate this candidate but do not establish that it improves performance; evaluation is required.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Relocate up to four particles using the parents' midpoint radius."""
+    count = min(4, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.4375}
+# EVOLVE-BLOCK-END
+```
+</CODE>

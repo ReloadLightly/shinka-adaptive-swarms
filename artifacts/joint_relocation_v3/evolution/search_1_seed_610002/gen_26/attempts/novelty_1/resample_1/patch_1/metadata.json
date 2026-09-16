@@ -1,0 +1,15 @@
+{
+  "generation": 26,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "weak_displacement_threshold",
+  "patch_description": "Test a diameter threshold of 4 + 0.5*d/(1+d), where d is observed best displacement normalized by default radius. Fixed thresholds four and five achieved lower search error than six; this proposal stays near four while modestly favoring four relocated particles when observed displacement is larger. Keep radius_scale at 1.25 to isolate the allocation change. This is an untested hypothesis, not an established improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:35:44.818411",
+  "llm_cost": 0.2122,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_26/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

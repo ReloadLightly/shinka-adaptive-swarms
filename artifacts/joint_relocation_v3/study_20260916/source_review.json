@@ -1,0 +1,34 @@
+{
+  "reviewed_at": "2026-09-16T07:51:40.754812+00:00",
+  "shortlists_sha256": "9aac500e82dda7016d91963119c64f261081c67f4d8f29f47e6633a787e34e78",
+  "review": {
+    "reviewer": "Codex root, with independent exact-source static prereviews",
+    "prepared_at": "2026-09-16T07:41:29.670520+00:00",
+    "approved_source_sha256": [
+      "0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815",
+      "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+      "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+      "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c",
+      "cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2",
+      "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+      "f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81"
+    ],
+    "notes": "Root inspected all nine exact source files. All use only permitted public scalar observations and pure local computation; the third-search leading policy mutates only its fresh local response dict. No imports, file/network access, external RNG, persistent state, benchmark internals or budget manipulation. Count outputs are valid Python integers and radii finite/nonnegative on the declared simulator domain. Three first-search policies are fixed count4/radius pairs; six other policies retain conditional count3/4 with fixed radius1.25 or1.5. Source-bound partial-output facts do not make those original policies constant. Search1 generations27/28 are domain-equivalent but remain source-distinct validation candidates under the declared shortlist rule. No candidates were invoked during this review, and no protected outcomes exist. Actual controller source_review freeze must bind the final certified shortlist hash before evaluation.",
+    "prereview_artifacts": [
+      {
+        "path": "results/joint_relocation_v3/operations/search0-source-prereview.json",
+        "sha256": "92ccc49b4246d68631d078c85a7a15a3d1ea3b3f37357e9a953095f6f68cae15"
+      },
+      {
+        "path": "results/joint_relocation_v3/operations/search1-source-prereview.json",
+        "sha256": "143e72e74436768a0f3c7a08933b9e272b57125ef2bfa2b8fd9a0ed75b0257d8"
+      },
+      {
+        "path": "results/joint_relocation_v3/operations/search2-source-prereview.json",
+        "sha256": "ff57d015ee6c0c7382e0c0354d31f4198b7db1d5a4309df162da76f7f389ca27"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 14,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_particles_fixed_radius",
+  "patch_description": "Test three relocated particles at a constant radius multiplier of 1.25, leaving two particles to continue ordinary PSO motion. The measured four-particle constant policy achieved lower mean error than conditional radius expansion (3.76 versus 3.88). Removing that expansion and reducing allocation tests whether preserving more ongoing motion improves tracking. This pair remains an untested hypothesis.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:10:42.664463",
+  "llm_cost": 0.21231,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_14/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

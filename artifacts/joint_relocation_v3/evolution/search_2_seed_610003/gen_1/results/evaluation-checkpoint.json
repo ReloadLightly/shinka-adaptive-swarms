@@ -1,0 +1,644 @@
+{
+  "storage_version": "streaming_gzip_case_checkpoint_v1",
+  "identity": {
+    "program_sha256": "876d134aa0681b3bcbd94005ec8852ba567a56ff6cbe33dd2eb8864d823c8eec",
+    "suite_sha256": "561edead300b2cf6f6c17cb159080c6256f62df077341bfb95098704ec5d70ba",
+    "evaluation_version": "joint_relocation_v3_score_reciprocal",
+    "feedback_version": "joint_relocation_tracking_diagnostics_v3",
+    "evaluator_sha256": "1687938077462c693871eb4a71738f6899d07d8ee05b6cc9dbd715f53726b254",
+    "scientific_sources": {
+      "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+      "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+      "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+      "src/adaptive_swarms/joint_relocation.py": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449"
+    }
+  },
+  "status": "completed",
+  "completed_cases": [
+    {
+      "case_id": "case_000",
+      "offline_error": 4.566555539384101,
+      "artifact": "case_000.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+      "mean_interval_end_error": 2.840682816291967,
+      "detection_evaluation_share": 0.158,
+      "memory_evaluation_share": 0.0128,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 256,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 256,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 256,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 256,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_001",
+      "offline_error": 2.5282945432761874,
+      "artifact": "case_001.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+      "mean_interval_end_error": 0.43823000859750694,
+      "detection_evaluation_share": 0.15859,
+      "memory_evaluation_share": 0.0191,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 382,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 382,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 382,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 382,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_002",
+      "offline_error": 2.908545051625076,
+      "artifact": "case_002.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+      "mean_interval_end_error": 1.3312974692975112,
+      "detection_evaluation_share": 0.15892,
+      "memory_evaluation_share": 0.01545,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 309,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 309,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 309,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 309,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_003",
+      "offline_error": 3.5499447564261364,
+      "artifact": "case_003.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+      "mean_interval_end_error": 1.8144192459091202,
+      "detection_evaluation_share": 0.15795,
+      "memory_evaluation_share": 0.0137,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 274,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 274,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 274,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 274,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_004",
+      "offline_error": 1.6628376592956289,
+      "artifact": "case_004.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+      "mean_interval_end_error": 1.142023033719989,
+      "detection_evaluation_share": 0.16034,
+      "memory_evaluation_share": 0.0072,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 144,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 144,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 144,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 144,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_005",
+      "offline_error": 1.2196083342066952,
+      "artifact": "case_005.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+      "mean_interval_end_error": 0.4892567778451767,
+      "detection_evaluation_share": 0.15845,
+      "memory_evaluation_share": 0.00515,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 103,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 103,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 103,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 103,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_006",
+      "offline_error": 3.7832376157866894,
+      "artifact": "case_006.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+      "mean_interval_end_error": 3.2851080126655923,
+      "detection_evaluation_share": 0.15993,
+      "memory_evaluation_share": 0.0056,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 112,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 112,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 112,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 112,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_007",
+      "offline_error": 1.3868609429065217,
+      "artifact": "case_007.json.gz",
+      "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+      "mean_interval_end_error": 0.8951966848384771,
+      "detection_evaluation_share": 0.15884,
+      "memory_evaluation_share": 0.00575,
+      "mean_response_radius": 1.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 115,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_008",
+      "offline_error": 5.062676465734534,
+      "artifact": "case_008.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+      "mean_interval_end_error": 1.4594017684081293,
+      "detection_evaluation_share": 0.16015,
+      "memory_evaluation_share": 0.01785,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 357,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 357,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 357,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 357,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_009",
+      "offline_error": 4.263490710164653,
+      "artifact": "case_009.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+      "mean_interval_end_error": 1.0006217349898447,
+      "detection_evaluation_share": 0.15973,
+      "memory_evaluation_share": 0.01575,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 315,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 315,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 315,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 315,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_010",
+      "offline_error": 6.525173987913819,
+      "artifact": "case_010.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+      "mean_interval_end_error": 2.6152342769812913,
+      "detection_evaluation_share": 0.15915,
+      "memory_evaluation_share": 0.01525,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 305,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 305,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 305,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 305,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_011",
+      "offline_error": 6.458588269889809,
+      "artifact": "case_011.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+      "mean_interval_end_error": 3.071741844658767,
+      "detection_evaluation_share": 0.15963,
+      "memory_evaluation_share": 0.0169,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 338,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 338,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 338,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 338,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_012",
+      "offline_error": 3.1052910283589807,
+      "artifact": "case_012.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+      "mean_interval_end_error": 1.1629969407088374,
+      "detection_evaluation_share": 0.16001,
+      "memory_evaluation_share": 0.0057,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 114,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 114,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 114,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 114,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_013",
+      "offline_error": 4.797538226994544,
+      "artifact": "case_013.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+      "mean_interval_end_error": 1.3302164350710382,
+      "detection_evaluation_share": 0.16121,
+      "memory_evaluation_share": 0.00885,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 177,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 177,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 177,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 177,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_014",
+      "offline_error": 2.4280842849790374,
+      "artifact": "case_014.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+      "mean_interval_end_error": 1.8285012805729113,
+      "detection_evaluation_share": 0.15546,
+      "memory_evaluation_share": 0.0038,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 76,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 76,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 76,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 76,
+        "5": 0
+      }
+    },
+    {
+      "case_id": "case_015",
+      "offline_error": 9.025807558193447,
+      "artifact": "case_015.json.gz",
+      "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+      "mean_interval_end_error": 6.01816369708174,
+      "detection_evaluation_share": 0.15854,
+      "memory_evaluation_share": 0.00575,
+      "mean_response_radius": 3.0,
+      "mean_radius_scale": 2.0,
+      "mean_allocated_fraction": 0.8,
+      "mean_adapter_encoding_fraction": 0.7,
+      "response_count": 115,
+      "incomplete_responses": 0,
+      "requested_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      },
+      "allocated_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      },
+      "evaluated_relocation_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 115,
+        "5": 0
+      }
+    }
+  ],
+  "active_case": null
+}

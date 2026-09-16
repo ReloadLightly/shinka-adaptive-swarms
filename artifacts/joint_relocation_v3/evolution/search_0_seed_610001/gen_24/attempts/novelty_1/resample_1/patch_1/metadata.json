@@ -1,0 +1,15 @@
+{
+  "generation": 24,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "displacement_radius_switch",
+  "patch_description": "Replace diameter-based modulation with a narrow displacement threshold while retaining four-particle allocation. The current rule's mean offline error of 3.87 exceeds both supplied constants' errors, motivating a different observable. Use radius multiplier 1.25 when observed best displacement exceeds default_radius, otherwise 1.1875. This tests whether greater observed displacement benefits from modestly broader relocation; its predictive value and performance remain unproven.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:28:17.863203",
+  "llm_cost": 0.2147,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_24/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "geometry_policy_dispatch",
+  "patch_description": "Separate geometric state classification, joint policy selection, and output construction. Compact swarms receive full relocation at twice the default radius; dispersed swarms retain two particles for ordinary PSO motion and use multiplier 1.5. This tests whether existing dispersion can reduce relocation needs. Performance improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:42:00.522890",
+  "llm_cost": 0.18358,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

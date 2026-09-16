@@ -1,0 +1,16 @@
+<NAME>
+retain_one_particle
+</NAME>
+<DESCRIPTION>
+Test relocating four particles at radius multiplier 1.5, leaving one particle to continue ordinary PSO motion. Full relocation at multiplier 1.5 achieved mean error 4.06 versus 4.16 for the baseline, making it a useful starting point for testing reduced allocation. Retaining one particle may preserve useful positional diversity while the others explore around the refreshed best. The broader geometry-dependent policy scored worse and changed both allocation and radius, so it does not isolate the benefit of partial relocation. This constant pair is an untested hypothesis requiring evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {
+        "count": max(0, int(observation["swarm_size"]) - 1),
+        "radius_scale": 1.5,
+    }
+>>>>>>> REPLACE
+</DIFF>

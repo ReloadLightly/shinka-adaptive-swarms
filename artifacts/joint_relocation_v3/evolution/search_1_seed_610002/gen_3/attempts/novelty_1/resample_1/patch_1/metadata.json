@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "full_swarm_wider_relocation",
+  "patch_description": "Double the relocation radius while retaining full-swarm allocation. The absolute radius becomes the configured movement severity, potentially improving coverage after changes. Persistent interval-end errors motivate testing broader relocation, although they do not establish insufficient radius as the cause. Keeping count unchanged isolates the radius effect from allocation changes. This is an untested hypothesis; improvement requires measured search feedback.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:49:25.951233",
+  "llm_cost": 0.17511,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

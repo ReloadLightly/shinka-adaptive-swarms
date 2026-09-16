@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "contract_after_observed_recovery",
+  "patch_description": "Keep allocation at four particles and contract the radius multiplier from 1.25 to 1.1875 when positive fitness loss is matched or exceeded by recent improvement. This tests whether modest contraction preserves useful recovery near the refreshed best. The lower mean error at radius 1.25 motivates the experiment, but mixed per-case outcomes and increased worst-case error leave its benefit uncertain.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:14:07.065885",
+  "llm_cost": 0.21053,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "lower_displacement_radius_band",
+  "patch_description": "Test displacement-based interpolation over 1.25\u20131.5 while retaining four relocated particles. The current 1.5\u20131.75 rule produced mean offline error 3.94 versus 3.81 for constant 1.5, with worse interval-end recovery in cases 000 and 015. Lowering the radius band tests whether more concentrated relocation improves recovery while preserving modest expansion for larger observed displacements. This is an untested hypothesis; existing results do not establish a benefit from displacement conditioning.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:03:16.219636",
+  "llm_cost": 0.20904,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

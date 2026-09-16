@@ -1,0 +1,19 @@
+<NAME>
+four_particle_recovery_contraction
+</NAME>
+<DESCRIPTION>
+Use count four and radius multiplier 1.25 as the reference policy: its measured mean error was 3.76 versus the current program’s 3.95, although its worst case worsened. Test a modest contraction to 1.1875 when positive fitness loss is matched or exceeded by recent improvement. The hypothesis is that a smaller relocation neighborhood preserves useful concentration after recovery. These observations do not establish recovery causally; the conditional change requires evaluation against the constant four-particle policy.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    count = min(4, int(observation["swarm_size"]))
+    fitness_drop = observation["fitness_drop"]
+    recent_improvement = max(0.0, observation["recent_improvement"])
+    radius_scale = 1.25
+    if fitness_drop > 0.0 and recent_improvement >= fitness_drop:
+        radius_scale = 1.1875
+    return {"count": count, "radius_scale": radius_scale}
+>>>>>>> REPLACE
+</DIFF>

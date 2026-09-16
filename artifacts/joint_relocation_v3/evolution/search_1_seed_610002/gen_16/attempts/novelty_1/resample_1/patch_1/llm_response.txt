@@ -1,0 +1,15 @@
+<NAME>
+spread_threshold_three
+</NAME>
+<DESCRIPTION>
+Test allocating three particles when swarm diameter exceeds three default radii, otherwise four, keeping radius_scale at 1.25. This follows the supplied threshold-search recommendation: a broader swarm may benefit from retaining more particles for ordinary PSO motion. The lower threshold extends that behavior to moderately spread swarms. Preserve the swarm-size clamp; improvement remains a hypothesis requiring evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.25}
+=======
+    q = observation["swarm_diameter"] / max(observation["default_radius"], 1e-12)
+    count = 3 if q > 3.0 else 4
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": 1.25}
+>>>>>>> REPLACE
+</DIFF>

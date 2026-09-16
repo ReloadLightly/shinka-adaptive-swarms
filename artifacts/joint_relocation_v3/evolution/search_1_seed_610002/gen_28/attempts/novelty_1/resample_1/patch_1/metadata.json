@@ -1,0 +1,15 @@
+{
+  "generation": 28,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "fixed_spread_threshold_4_5",
+  "patch_description": "Test a fixed relative-spread threshold of 4.5 while retaining radius multiplier 1.25 and the count clamp. The displacement-dependent threshold slightly worsened measured mean error (3.68 versus 3.67), providing no observed advantage. This tests the recommended intermediate threshold: relocate three particles above it and four otherwise. Any improvement remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:37:58.778619",
+  "llm_cost": 0.21079,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_28/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

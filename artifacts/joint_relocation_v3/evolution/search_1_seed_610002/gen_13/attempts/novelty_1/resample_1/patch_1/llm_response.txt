@@ -1,0 +1,31 @@
+<NAME>
+four_selective_widening
+</NAME>
+<DESCRIPTION>
+The current policy relocates four particles at radius multiplier 1.0. Fixed multiplier 1.25 slightly improved measured mean error from 3.79 to 3.76. This proposal retains four particles and uses 1.25 normally, widening to 1.5 only when relative fitness loss exceeds 0.1 and swarm diameter is below twice the default radius. The hypothesis is that compact swarms experiencing substantial deterioration benefit from broader relocation. Improvement remains to be measured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Relocate four particles with selectively expanded radius.
+    Non-relocated particles continue ordinary PSO motion. The fixed adapter
+    reevaluates personal memories and retains velocities.
+    """
+    count = min(4, int(observation["swarm_size"]))
+    radius_scale = 1.25
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["swarm_diameter"]
+        < 2.0 * observation["default_radius"]
+    ):
+        radius_scale = 1.5
+    return {"count": count, "radius_scale": radius_scale}
+# EVOLVE-BLOCK-END
+```
+</CODE>

@@ -1,0 +1,13 @@
+<NAME>
+three_particle_relocation
+</NAME>
+<DESCRIPTION>
+Reduce relocation count from four to three while retaining radius multiplier 1.5. This preserves two particles for ordinary PSO motion while three explore around the refreshed best. The current pair reduced mean error from 4.16 to 3.81, but changed both allocation and radius relative to baseline. Holding radius fixed tests whether preserving more ordinary PSO motion improves recovery. Persistent interval-end errors motivate this experiment but do not establish its mechanism or guarantee improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

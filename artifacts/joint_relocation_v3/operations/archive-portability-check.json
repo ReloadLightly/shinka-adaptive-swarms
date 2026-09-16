@@ -1,0 +1,46 @@
+{
+  "format": "joint-v3-archive-portability-review-v1",
+  "audited_at": "2026-09-16T04:44:30.995692+00:00",
+  "status": "focused_checks_passed",
+  "registration_signature": "c71b38f1bb5746c49a64b04ae5cbf41415e6bb01933419e1d499fc42bfeec1b3",
+  "frozen_scientific_sources_unchanged": true,
+  "source_hashes": {
+    "scripts/audit_joint_progress.py": "867a61dba1a3314aa63ad34fe7caeafb1a838cac806bdf840c91a47b7d1a977f",
+    "scripts/check_joint_analysis.py": "1e75d33519b28b95a9b0b3365eb1b1034673a1341b74a908f85d70697610e61c",
+    "scripts/archive_joint_v3.py": "cd7368b72d04ab6d8fbc376f53e3de056210cd261e516239052ceb446e4428f8",
+    "tests/test_joint_archive_tools.py": "c0fc75295b0006a336b411146af504e4a9261924eb925793b9b2c26f37a6af37",
+    "src/adaptive_swarms/joint_study.py": "1f463b0c56a2694b280e6f309e16ba41d5943d5f54412d594b62f48c71e7c4e9",
+    "src/adaptive_swarms/joint_figures.py": "0afbc39eb7bcae959726fa3c3d2fd8154a920828d2e53120c5f53ec194105ac5",
+    "scripts/plot_joint_study.py": "d0cc01a0d8b2b8e500001d9ca2fc01436a4171134107a1a044147f584e27fb3f"
+  },
+  "findings": {
+    "figures": "Plot renderer resolves saved analysis, selection, manifests, relative caches and shortlisted programs inside the supplied study directory. No original native search directory is required.",
+    "progress_audit": "Explicit --archive-root maps only registered basenames within archive/evolution; verifies original run_dir, seed, task, version and frozen native manifest hash where available; refuses missing/mismatched/escaping paths; no fallback to original paths. Registration remains byte-identical.",
+    "analysis_check": "Standalone command recomputes saved means, paired deltas, per-regime effects, standard errors, bootstrap intervals, interaction and primary claim via registered pure analysis functions. Does not call controller analyze or write artifacts. This is reproducibility verification, not an independent statistical implementation."
+  },
+  "test": {
+    "command": ".venv/bin/python -m pytest -q tests/test_joint_archive_tools.py",
+    "result": "5 passed in 1.61s",
+    "scope": "Temporary fabricated filesystem/checkpoint records and pure statistics only; no research simulations or model calls. Original paths absent, preserved registration, missing-path fallback rejection, manifest mismatch, symlink escape, frozen manifest hashes, interval corruption detection."
+  },
+  "rng_seeds_exercised": [
+    2026091603
+  ],
+  "fixture_environment_optimizer_seeds": "Only metadata, no RNG or objectives invoked for fabricated case inputs.",
+  "prospective_publication_commands": [
+    ".venv/bin/python scripts/plot_joint_study.py --run artifacts/joint_relocation_v3/study_20260916 --output assets/joint_relocation_v3",
+    ".venv/bin/python scripts/audit_joint_progress.py --study artifacts/joint_relocation_v3/study_20260916 --archive-root artifacts/joint_relocation_v3",
+    ".venv/bin/python scripts/check_joint_analysis.py --run artifacts/joint_relocation_v3/study_20260916"
+  ],
+  "limitations": [
+    "Real archive/80-case figure reproduction awaits completion; focused synthetic checks do not claim those outcomes already exist.",
+    "Archive checks require the published checkout science sources to match frozen registration. Original absolute paths are retained solely as provenance.",
+    "run_joint_study.py analyze writes analysis.json and controller lock, so it is not the read-only reproduction command."
+  ],
+  "actions": {
+    "research_simulations_launched": 0,
+    "model_calls_launched": 0,
+    "frozen_scientific_sources_changed": 0,
+    "registration_or_research_checkpoint_writes": 0
+  }
+}

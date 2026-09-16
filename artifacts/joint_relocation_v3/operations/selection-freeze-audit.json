@@ -1,0 +1,508 @@
+{
+  "format": "joint-v3-independent-selection-freeze-audit-v1",
+  "audited_at": "2026-09-16T08:39:58.153728+00:00",
+  "status": "passed",
+  "validation_cache_cases_independently_read": 960,
+  "validation_nominal_method_cases": 1056,
+  "validation_aliases": 96,
+  "validation_objective_queries": 96000000,
+  "validation_budget_and_environment_pairing": "All960 exact100000 counted queries; matching recomputed environment-state hashes for each of32 paired cases.",
+  "selection_sha256": "d7501a0520dbc5734181c201e62cc88f53b4a7fb811bdbecf35f49a3d226f5b4",
+  "shortlists_sha256": "9aac500e82dda7016d91963119c64f261081c67f4d8f29f47e6633a787e34e78",
+  "source_review_sha256": "d76ac6b8eb5ce2770265507979e12371230eb199a7eab91b1dbba1588a0d410b",
+  "controller_amendment_sha256": "353cf865cbdbc6a90ac3cec6bad7b3418f694ae8865edbc62e206c7e9a159983",
+  "chronology": {
+    "validation_completed_at": "2026-09-16T08:34:57.009562+00:00",
+    "selection_frozen_at": "2026-09-16T08:35:46.931008+00:00",
+    "final_cases_present_at_audit": false
+  },
+  "selection_rules_recomputed_from_all_scores": true,
+  "per_search_winners": [
+    {
+      "generation": 17,
+      "name": "program_f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81",
+      "native_id": "4408d439-cd42-4503-ac8b-893abb4dce75",
+      "parent_id": "bae89e27-0130-438f-b1a8-8a3c876ce38f",
+      "search_index": 0,
+      "search_mean_error": 3.7485897374369075,
+      "search_rank": 2,
+      "search_score": 0.21058883906440795,
+      "sha256": "f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81",
+      "text_feedback": "Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.078878; mean error remaining at interval end 1.64133; detection used 15.82% and memory refresh 1.33% of objective evaluations; 267 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}. case_001 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.803540; mean error remaining at interval end 0.943459; detection used 15.86% and memory refresh 1.79% of objective evaluations; 357 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 357, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 357, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 357, \"5\": 0}. case_002 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.910324; mean error remaining at interval end 1.77292; detection used 15.81% and memory refresh 1.26% of objective evaluations; 251 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 251, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 251, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 251, \"5\": 0}. case_003 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.206135; mean error remaining at interval end 0.976837; detection used 15.85% and memory refresh 1.38% of objective evaluations; 275 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 275, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 275, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 275, \"5\": 0}. case_004 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.584963; mean error remaining at interval end 1.08476; detection used 16.03% and memory refresh 0.71% of objective evaluations; 142 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 142, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 142, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 142, \"5\": 0}. case_005 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.212755; mean error remaining at interval end 0.492211; detection used 15.85% and memory refresh 0.52% of objective evaluations; 103 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}. case_006 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 3.815480; mean error remaining at interval end 3.2861; detection used 16.00% and memory refresh 0.55% of objective evaluations; 110 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}. case_007 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.373827; mean error remaining at interval end 0.901382; detection used 15.89% and memory refresh 0.60% of objective evaluations; 121 responses with mean radius 0.59375 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}. case_008 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.425729; mean error remaining at interval end 0.963846; detection used 15.99% and memory refresh 1.82% of objective evaluations; 364 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 364, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 364, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 364, \"5\": 0}. case_009 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.716947; mean error remaining at interval end 1.93016; detection used 15.96% and memory refresh 1.47% of objective evaluations; 295 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 295, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 295, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 295, \"5\": 0}. case_010 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.259703; mean error remaining at interval end 1.90422; detection used 15.86% and memory refresh 1.35% of objective evaluations; 271 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 271, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 271, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 271, \"5\": 0}. case_011 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.501868; mean error remaining at interval end 1.98721; detection used 15.94% and memory refresh 1.71% of objective evaluations; 343 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 343, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 343, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 343, \"5\": 0}. case_012 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.550910; mean error remaining at interval end 1.97919; detection used 15.90% and memory refresh 0.51% of objective evaluations; 101 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 101, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 101, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 101, \"5\": 0}. case_013 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.680356; mean error remaining at interval end 0.421575; detection used 16.09% and memory refresh 0.89% of objective evaluations; 178 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 178, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 178, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 178, \"5\": 0}. case_014 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.106094; mean error remaining at interval end 1.60402; detection used 15.31% and memory refresh 0.32% of objective evaluations; 63 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 63, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 63, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 63, \"5\": 0}. case_015 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 11.749925; mean error remaining at interval end 9.76315; detection used 15.83% and memory refresh 0.55% of objective evaluations; 109 responses with mean radius 1.78125 (mean multiplier 1.1875), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 109, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 109, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 109, \"5\": 0}. Largest tracking error: case_015. Examine joint integer allocation and radius multiplier using public observed state, with all memories reevaluated and retained velocities fixed. Allocated fraction is allocated_count/swarm_size; the adapter encoding fraction only encodes an integer for the ceiling rule. Allocated counts are selected indices, not a claim of completed movement; horizon-truncated responses separately retain counts with objective queries. Constant count/radius pairs are permitted and receive no penalty for simplicity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases.",
+      "validation_mean_error": 3.341949643402311,
+      "method": "winner_search_0"
+    },
+    {
+      "generation": 26,
+      "name": "program_dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "native_id": "42c75a9f-e4b0-41fa-8b29-79aa4aa3d62e",
+      "parent_id": "1a3269ed-696c-4ac2-9dbb-c39be3c379da",
+      "search_index": 1,
+      "search_mean_error": 3.663062450026903,
+      "search_rank": 1,
+      "search_score": 0.21445134194894402,
+      "sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "text_feedback": "Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.568729; mean error remaining at interval end 2.09144; detection used 15.82% and memory refresh 1.31% of objective evaluations; 263 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.769582, and adapter encoding fraction 0.669582 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 223, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 223, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 223, \"5\": 0}. case_001 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.870004; mean error remaining at interval end 1.22195; detection used 15.90% and memory refresh 1.66% of objective evaluations; 332 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.775301, and adapter encoding fraction 0.675301 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 41, \"4\": 291, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 41, \"4\": 291, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 41, \"4\": 291, \"5\": 0}. case_002 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.465982; mean error remaining at interval end 1.23121; detection used 15.91% and memory refresh 1.52% of objective evaluations; 304 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.774342, and adapter encoding fraction 0.674342 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 265, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 265, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 265, \"5\": 0}. case_003 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.488693; mean error remaining at interval end 2.14969; detection used 15.82% and memory refresh 1.60% of objective evaluations; 320 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.7725, and adapter encoding fraction 0.6725 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 276, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 276, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 276, \"5\": 0}. case_004 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.725605; mean error remaining at interval end 1.29137; detection used 16.06% and memory refresh 0.70% of objective evaluations; 141 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.770213, and adapter encoding fraction 0.670213 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 120, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 120, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 120, \"5\": 0}. case_005 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.262604; mean error remaining at interval end 0.496853; detection used 15.96% and memory refresh 0.60% of objective evaluations; 121 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.768595, and adapter encoding fraction 0.668595 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 102, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 102, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 102, \"5\": 0}. case_006 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.295352; mean error remaining at interval end 0.372626; detection used 16.05% and memory refresh 0.58% of objective evaluations; 116 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.768966, and adapter encoding fraction 0.668966 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 18, \"4\": 98, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 18, \"4\": 98, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 18, \"4\": 98, \"5\": 0}. case_007 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 2.078156; mean error remaining at interval end 1.57973; detection used 15.86% and memory refresh 0.56% of objective evaluations; 113 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.761062, and adapter encoding fraction 0.661062 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 91, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 91, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 91, \"5\": 0}. case_008 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.004653; mean error remaining at interval end 1.49974; detection used 16.00% and memory refresh 1.75% of objective evaluations; 350 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.774857, and adapter encoding fraction 0.674857 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 306, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 306, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 44, \"4\": 306, \"5\": 0}. case_009 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.064942; mean error remaining at interval end 1.10549; detection used 15.97% and memory refresh 1.50% of objective evaluations; 301 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.774086, and adapter encoding fraction 0.674086 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 262, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 262, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 39, \"4\": 262, \"5\": 0}. case_010 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.492178; mean error remaining at interval end 2.4227; detection used 15.86% and memory refresh 1.40% of objective evaluations; 280 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.771429, and adapter encoding fraction 0.671429 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 240, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 240, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 40, \"4\": 240, \"5\": 0}. case_011 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.200737; mean error remaining at interval end 2.17183; detection used 15.97% and memory refresh 1.75% of objective evaluations; 349 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.774212, and adapter encoding fraction 0.674212 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 45, \"4\": 304, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 45, \"4\": 304, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 45, \"4\": 304, \"5\": 0}. case_012 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 5.188948; mean error remaining at interval end 3.96992; detection used 15.95% and memory refresh 0.50% of objective evaluations; 100 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.768, and adapter encoding fraction 0.668 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 84, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 84, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 84, \"5\": 0}. case_013 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.216257; mean error remaining at interval end 0.468883; detection used 16.11% and memory refresh 0.83% of objective evaluations; 165 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.774545, and adapter encoding fraction 0.674545 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 144, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 144, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 144, \"5\": 0}. case_014 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.263131; mean error remaining at interval end 1.60416; detection used 15.32% and memory refresh 0.33% of objective evaluations; 65 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.738462, and adapter encoding fraction 0.638462 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 45, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 45, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 45, \"5\": 0}. case_015 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 9.423029; mean error remaining at interval end 7.23657; detection used 15.86% and memory refresh 0.58% of objective evaluations; 117 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.77265, and adapter encoding fraction 0.67265 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 101, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 101, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 16, \"4\": 101, \"5\": 0}. Largest tracking error: case_015. Examine joint integer allocation and radius multiplier using public observed state, with all memories reevaluated and retained velocities fixed. Allocated fraction is allocated_count/swarm_size; the adapter encoding fraction only encodes an integer for the ceiling rule. Allocated counts are selected indices, not a claim of completed movement; horizon-truncated responses separately retain counts with objective queries. Constant count/radius pairs are permitted and receive no penalty for simplicity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases.",
+      "validation_mean_error": 3.393933871213411,
+      "method": "winner_search_1"
+    },
+    {
+      "generation": 14,
+      "name": "program_acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "native_id": "1eceb3f9-3f78-42be-907c-e500c0888f94",
+      "parent_id": "a705076c-9407-4e85-b8e2-889d0a103e31",
+      "search_index": 2,
+      "search_mean_error": 3.528667928281534,
+      "search_rank": 2,
+      "search_score": 0.22081548389869776,
+      "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "text_feedback": "Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.613455; mean error remaining at interval end 1.99023; detection used 15.77% and memory refresh 1.24% of objective evaluations; 249 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.786345, and adapter encoding fraction 0.686345 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 17, \"4\": 232, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 17, \"4\": 232, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 17, \"4\": 232, \"5\": 0}. case_001 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.655439; mean error remaining at interval end 0.622752; detection used 15.88% and memory refresh 1.89% of objective evaluations; 378 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.787302, and adapter encoding fraction 0.687302 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 24, \"4\": 354, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 24, \"4\": 354, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 24, \"4\": 354, \"5\": 0}. case_002 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.782967; mean error remaining at interval end 1.52459; detection used 15.87% and memory refresh 1.35% of objective evaluations; 271 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.783026, and adapter encoding fraction 0.683026 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 23, \"4\": 248, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 23, \"4\": 248, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 23, \"4\": 248, \"5\": 0}. case_003 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.757596; mean error remaining at interval end 2.57369; detection used 15.76% and memory refresh 1.29% of objective evaluations; 258 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.784496, and adapter encoding fraction 0.684496 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 238, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 238, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 20, \"4\": 238, \"5\": 0}. case_004 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.740210; mean error remaining at interval end 1.2893; detection used 16.00% and memory refresh 0.71% of objective evaluations; 143 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.783217, and adapter encoding fraction 0.683217 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 12, \"4\": 131, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 12, \"4\": 131, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 12, \"4\": 131, \"5\": 0}. case_005 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.243583; mean error remaining at interval end 0.509209; detection used 15.92% and memory refresh 0.58% of objective evaluations; 116 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.786207, and adapter encoding fraction 0.686207 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 8, \"4\": 108, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 8, \"4\": 108, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 8, \"4\": 108, \"5\": 0}. case_006 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.859288; mean error remaining at interval end 1.02418; detection used 16.00% and memory refresh 0.56% of objective evaluations; 112 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.7875, and adapter encoding fraction 0.6875 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 7, \"4\": 105, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 7, \"4\": 105, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 7, \"4\": 105, \"5\": 0}. case_007 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.872016; mean error remaining at interval end 1.33821; detection used 15.83% and memory refresh 0.51% of objective evaluations; 102 responses with mean radius 0.75 (mean multiplier 1.5), allocated fraction 0.792157, and adapter encoding fraction 0.692157 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 4, \"4\": 98, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 4, \"4\": 98, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 4, \"4\": 98, \"5\": 0}. case_008 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.108894; mean error remaining at interval end 0.990081; detection used 16.00% and memory refresh 1.65% of objective evaluations; 329 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.787234, and adapter encoding fraction 0.687234 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 308, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 308, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 21, \"4\": 308, \"5\": 0}. case_009 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 3.939512; mean error remaining at interval end 1.10882; detection used 15.92% and memory refresh 1.39% of objective evaluations; 278 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.784173, and adapter encoding fraction 0.684173 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 256, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 256, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 22, \"4\": 256, \"5\": 0}. case_010 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.690976; mean error remaining at interval end 2.27939; detection used 15.82% and memory refresh 1.39% of objective evaluations; 278 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.786331, and adapter encoding fraction 0.686331 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 259, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 259, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 259, \"5\": 0}. case_011 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.298280; mean error remaining at interval end 1.02554; detection used 15.97% and memory refresh 1.85% of objective evaluations; 369 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.789702, and adapter encoding fraction 0.689702 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 350, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 350, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 19, \"4\": 350, \"5\": 0}. case_012 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 4.452210; mean error remaining at interval end 3.31101; detection used 15.90% and memory refresh 0.48% of objective evaluations; 97 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.779381, and adapter encoding fraction 0.679381 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 87, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 87, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 87, \"5\": 0}. case_013 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.463812; mean error remaining at interval end 0.484587; detection used 16.11% and memory refresh 0.90% of objective evaluations; 180 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.79, and adapter encoding fraction 0.69 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 9, \"4\": 171, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 9, \"4\": 171, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 9, \"4\": 171, \"5\": 0}. case_014 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.084981; mean error remaining at interval end 1.60346; detection used 15.33% and memory refresh 0.33% of objective evaluations; 66 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.769697, and adapter encoding fraction 0.669697 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 56, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 56, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 10, \"4\": 56, \"5\": 0}. case_015 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 8.895466; mean error remaining at interval end 6.0203; detection used 15.88% and memory refresh 0.57% of objective evaluations; 115 responses with mean radius 2.25 (mean multiplier 1.5), allocated fraction 0.791304, and adapter encoding fraction 0.691304 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 5, \"4\": 110, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 5, \"4\": 110, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 5, \"4\": 110, \"5\": 0}. Largest tracking error: case_015. Examine joint integer allocation and radius multiplier using public observed state, with all memories reevaluated and retained velocities fixed. Allocated fraction is allocated_count/swarm_size; the adapter encoding fraction only encodes an integer for the ceiling rule. Allocated counts are selected indices, not a claim of completed movement; horizon-truncated responses separately retain counts with objective queries. Constant count/radius pairs are permitted and receive no penalty for simplicity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases.",
+      "validation_mean_error": 3.305093565645893,
+      "method": "winner_search_2"
+    }
+  ],
+  "ties": [
+    {
+      "search_index": 0,
+      "selected_generation": 17,
+      "selected_error": 3.341949643402311,
+      "tied_generations": [
+        17
+      ]
+    },
+    {
+      "search_index": 1,
+      "selected_generation": 26,
+      "selected_error": 3.393933871213411,
+      "tied_generations": [
+        26
+      ]
+    },
+    {
+      "search_index": 2,
+      "selected_generation": 14,
+      "selected_error": 3.305093565645893,
+      "tied_generations": [
+        14
+      ]
+    }
+  ],
+  "overall_winner_method": "winner_search_2",
+  "selected_fixed_label": "fixed_k5_r1",
+  "selected_fixed_pair": {
+    "kind": "fixed",
+    "count": 5,
+    "radius_scale": 1.0
+  },
+  "selected_fixed_validation_error": 3.42170214896698,
+  "frozen_sampler": {
+    "equal_cases_per_regime": 8,
+    "response_count": 6554,
+    "no_response_fallback_cases": 0,
+    "equal_case_joint_pair_probabilities": {
+      "dimension=5; npeaks=10; period=2500; move_severity=1; correlation=0": [
+        {
+          "count": 3,
+          "radius_scale": 1.5,
+          "probability": 0.06602694923925763
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5,
+          "probability": 0.9339730507607424
+        }
+      ],
+      "dimension=5; npeaks=10; period=5000; move_severity=1; correlation=0": [
+        {
+          "count": 3,
+          "radius_scale": 1.5,
+          "probability": 0.06841067492007008
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5,
+          "probability": 0.9315893250799299
+        }
+      ],
+      "dimension=5; npeaks=10; period=2500; move_severity=3; correlation=0": [
+        {
+          "count": 3,
+          "radius_scale": 1.5,
+          "probability": 0.053002726663651835
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5,
+          "probability": 0.9469972733363482
+        }
+      ],
+      "dimension=5; npeaks=10; period=5000; move_severity=3; correlation=0": [
+        {
+          "count": 3,
+          "radius_scale": 1.5,
+          "probability": 0.04793247003515275
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5,
+          "probability": 0.9520675299648473
+        }
+      ]
+    },
+    "whole_pair_order_and_case_lists_match_saved_winner_responses": true,
+    "dedicated_control_master_seed": 2026091604,
+    "rng_preview_note": "Only identities computed from existing validation configurations; no RNG draws or final cases generated."
+  },
+  "component_controls": {
+    "radius_replaced": "Original overall source called on reached observation, validated, then radius overridden to1.0; count remains adaptive.",
+    "count_replaced": "Original overall source called and validated before count5 substitution; exact reviewed retained-radius fact establishes effectiveconstant(5,1.5).",
+    "adaptive_overall_not_marked_full_constant": true
+  },
+  "analysis_settings": {
+    "analysis_seed": 2026091603,
+    "bootstrap_resamples": 20000,
+    "unit": "independent paired case",
+    "strata": "four equally weighted regimes",
+    "primary_contrasts": [
+      "overall winner minus corrected baseline",
+      "overall winner minus validation-selected fixed pair"
+    ],
+    "primary_interval_level": 0.975,
+    "secondary_interval_level": 0.95,
+    "claim_rule": "superiority over both primary controls only if both 97.5% two-sided percentile interval upper bounds are below zero",
+    "family_interpretation": "Bonferroni allocation for an approximate simultaneous 95% family",
+    "interaction": "overall winner - radius_replaced - count_replaced + best_fixed",
+    "interaction_interpretation": "descriptive closed-loop policy interaction; state visitation is not held fixed",
+    "secondary_interpretation": "descriptive 95% intervals; the three winners share the same independent final histories",
+    "standard_error": "sqrt(sum(unbiased within-regime paired variance / regime sample count)) / number of regimes",
+    "recovery_resolution": "saved measurements only; no inferred immediate recovery between 500-query checkpoints",
+    "failures": "retain all measured histories including large sustained tracking failures"
+  },
+  "planned_final_regime_aliases": {
+    "dimension=5; npeaks=10; period=2500; move_severity=1; correlation=0": {
+      "execution_classes": 7,
+      "groups": [
+        [
+          "winner_search_0"
+        ],
+        [
+          "winner_search_1"
+        ],
+        [
+          "winner_search_2"
+        ],
+        [
+          "baseline",
+          "best_fixed"
+        ],
+        [
+          "radius_replaced"
+        ],
+        [
+          "count_replaced"
+        ],
+        [
+          "joint_sampler"
+        ]
+      ],
+      "identities": {
+        "winner_search_0": {
+          "kind": "joint_constant",
+          "count": 4,
+          "radius_scale": 1.1875
+        },
+        "winner_search_1": {
+          "kind": "joint_program",
+          "sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7"
+        },
+        "winner_search_2": {
+          "kind": "joint_program",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec"
+        },
+        "baseline": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "best_fixed": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "radius_replaced": {
+          "kind": "joint_component",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+          "component": "radius_scale",
+          "replacement": 1.0
+        },
+        "count_replaced": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.5
+        },
+        "joint_sampler": {
+          "kind": "joint_sampler",
+          "distribution_sha256": "25f32ec949f7d9c7b3aca0b3444e532469187b253a5fb7d6783d600243550b37",
+          "rng_algorithm": "python.random.Random; uniform case then uniform full action pair"
+        }
+      }
+    },
+    "dimension=5; npeaks=10; period=5000; move_severity=1; correlation=0": {
+      "execution_classes": 7,
+      "groups": [
+        [
+          "winner_search_0"
+        ],
+        [
+          "winner_search_1"
+        ],
+        [
+          "winner_search_2"
+        ],
+        [
+          "baseline",
+          "best_fixed"
+        ],
+        [
+          "radius_replaced"
+        ],
+        [
+          "count_replaced"
+        ],
+        [
+          "joint_sampler"
+        ]
+      ],
+      "identities": {
+        "winner_search_0": {
+          "kind": "joint_constant",
+          "count": 4,
+          "radius_scale": 1.1875
+        },
+        "winner_search_1": {
+          "kind": "joint_program",
+          "sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7"
+        },
+        "winner_search_2": {
+          "kind": "joint_program",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec"
+        },
+        "baseline": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "best_fixed": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "radius_replaced": {
+          "kind": "joint_component",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+          "component": "radius_scale",
+          "replacement": 1.0
+        },
+        "count_replaced": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.5
+        },
+        "joint_sampler": {
+          "kind": "joint_sampler",
+          "distribution_sha256": "b6b364ff523c4ac5eadfc1a29313c8ac41aa06e88cc6fce437d53a8530844868",
+          "rng_algorithm": "python.random.Random; uniform case then uniform full action pair"
+        }
+      }
+    },
+    "dimension=5; npeaks=10; period=2500; move_severity=3; correlation=0": {
+      "execution_classes": 7,
+      "groups": [
+        [
+          "winner_search_0"
+        ],
+        [
+          "winner_search_1"
+        ],
+        [
+          "winner_search_2"
+        ],
+        [
+          "baseline",
+          "best_fixed"
+        ],
+        [
+          "radius_replaced"
+        ],
+        [
+          "count_replaced"
+        ],
+        [
+          "joint_sampler"
+        ]
+      ],
+      "identities": {
+        "winner_search_0": {
+          "kind": "joint_constant",
+          "count": 4,
+          "radius_scale": 1.1875
+        },
+        "winner_search_1": {
+          "kind": "joint_program",
+          "sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7"
+        },
+        "winner_search_2": {
+          "kind": "joint_program",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec"
+        },
+        "baseline": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "best_fixed": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "radius_replaced": {
+          "kind": "joint_component",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+          "component": "radius_scale",
+          "replacement": 1.0
+        },
+        "count_replaced": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.5
+        },
+        "joint_sampler": {
+          "kind": "joint_sampler",
+          "distribution_sha256": "67fdd60b067b57db2a580414c1ed60990ab20df5bc697466d3fdffc0c784ddbd",
+          "rng_algorithm": "python.random.Random; uniform case then uniform full action pair"
+        }
+      }
+    },
+    "dimension=5; npeaks=10; period=5000; move_severity=3; correlation=0": {
+      "execution_classes": 7,
+      "groups": [
+        [
+          "winner_search_0"
+        ],
+        [
+          "winner_search_1"
+        ],
+        [
+          "winner_search_2"
+        ],
+        [
+          "baseline",
+          "best_fixed"
+        ],
+        [
+          "radius_replaced"
+        ],
+        [
+          "count_replaced"
+        ],
+        [
+          "joint_sampler"
+        ]
+      ],
+      "identities": {
+        "winner_search_0": {
+          "kind": "joint_constant",
+          "count": 4,
+          "radius_scale": 1.1875
+        },
+        "winner_search_1": {
+          "kind": "joint_program",
+          "sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7"
+        },
+        "winner_search_2": {
+          "kind": "joint_program",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec"
+        },
+        "baseline": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "best_fixed": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.0
+        },
+        "radius_replaced": {
+          "kind": "joint_component",
+          "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+          "component": "radius_scale",
+          "replacement": 1.0
+        },
+        "count_replaced": {
+          "kind": "joint_constant",
+          "count": 5,
+          "radius_scale": 1.5
+        },
+        "joint_sampler": {
+          "kind": "joint_sampler",
+          "distribution_sha256": "bc37b77de275e8eecef283ba425612360dcb62920a53235ea36b341cd7d2bbf4",
+          "rng_algorithm": "python.random.Random; uniform case then uniform full action pair"
+        }
+      }
+    }
+  },
+  "planned_final_nominal_methods": 8,
+  "planned_unique_final_executions": 560,
+  "planned_final_objective_queries": 56000000,
+  "validation_mean_errors": {
+    "fixed_k0_r0p5": 5.634065818327098,
+    "fixed_k1_r0p5": 4.155150854517629,
+    "fixed_k2_r0p5": 3.9698607333056897,
+    "fixed_k3_r0p5": 3.698999134494187,
+    "fixed_k4_r0p5": 3.557322019537273,
+    "fixed_k5_r0p5": 3.5246927068278993,
+    "fixed_k0_r1": 5.634065818327098,
+    "fixed_k1_r1": 4.109215745560946,
+    "fixed_k2_r1": 3.832889417069667,
+    "fixed_k3_r1": 3.607846708974722,
+    "fixed_k4_r1": 3.474867006774268,
+    "fixed_k5_r1": 3.42170214896698,
+    "fixed_k0_r2": 5.634065818327098,
+    "fixed_k1_r2": 3.9583822653358887,
+    "fixed_k2_r2": 3.7761319304262653,
+    "fixed_k3_r2": 3.6843355679432412,
+    "fixed_k4_r2": 3.5312332839979907,
+    "fixed_k5_r2": 3.562709639406599,
+    "fixed_k0_r4": 5.634065818327098,
+    "fixed_k1_r4": 4.086717664766039,
+    "fixed_k2_r4": 4.210341798292865,
+    "fixed_k3_r4": 3.9197964240223664,
+    "fixed_k4_r4": 4.059328066082647,
+    "fixed_k5_r4": 4.179806421162868,
+    "program_0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815": 3.3530624332940357,
+    "program_75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3": 3.3066686057199193,
+    "program_9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de": 3.401866861295187,
+    "program_acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec": 3.305093565645893,
+    "program_b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c": 3.3066686057199193,
+    "program_cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2": 3.440131976068014,
+    "program_dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7": 3.393933871213411,
+    "program_f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43": 3.401866861295187,
+    "program_f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81": 3.341949643402311
+  },
+  "interpretation_note": "Selected fixed control is exactly the corrected baseline. The two prespecified primary contrasts consequently share one execution control and will be numerically identical, while retaining their declared labels and97.5percent intervals. This is one distinct primary control comparison, not independent corroboration.",
+  "findings": [
+    "All saved validation scores reproduce the frozen per-search/global/fixed selections and tie rules.",
+    "Joint sampler preserves complete(count,radius) pairs with equal validation-case weight; all32 winner cases responded, so no fallback was used.",
+    "Only baseline/best_fixed are execution-identical in each final regime; eight nominal methods resolve to seven executions per80case suite.",
+    "All frozen analysis settings agree with registration; exact component proof does not collapse the original adaptive winner.",
+    "No final cases exist and no blocker remains for authorized fresh final seed generation."
+  ],
+  "actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "study_writes": 0,
+    "rng_draws": 0
+  }
+}

@@ -1,0 +1,19 @@
+<NAME>
+lower_loss_ceiling
+</NAME>
+<DESCRIPTION>
+Lower the loss ceiling from 7.5% to 6.25%, retaining four relocated particles when a broad swarm experiences moderate fitness deterioration. Keep the spread gate and radius multiplier unchanged to isolate this parameter. The current gate's measured improvement is confined to case_004; this mutation tests whether a stricter ceiling improves mean tracking error across the sixteen cases. Its benefit remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    # Require smaller loss near the spread boundary, retaining the original
+    # 7.5% ceiling once diameter reaches six times the default radius.
+    coverage = 1.0 - (reference_diameter / diameter) ** 2
+    loss_threshold = min(0.075, 0.10 * coverage)
+=======
+    # Require smaller loss near the spread boundary, with a stricter
+    # 6.25% ceiling for broad swarms.
+    coverage = 1.0 - (reference_diameter / diameter) ** 2
+    loss_threshold = min(0.0625, 0.10 * coverage)
+>>>>>>> REPLACE
+</DIFF>

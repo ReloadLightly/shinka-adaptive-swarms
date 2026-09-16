@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "loss_gated_allocation",
+  "patch_description": "Separate observation extraction, allocation selection, and response construction. Select three particles when relative fitness loss is at most 0.05, otherwise four, keeping radius multiplier 1.0. This tests whether observed deterioration can usefully combine the two strongest supplied constant policies; improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:58:02.846010",
+  "llm_cost": 0.21039,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

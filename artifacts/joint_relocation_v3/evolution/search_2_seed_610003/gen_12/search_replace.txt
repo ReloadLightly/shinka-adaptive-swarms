@@ -1,0 +1,19 @@
+<NAME>
+expand_radius_for_compact_deteriorating_swarms
+</NAME>
+<DESCRIPTION>
+Preserve the current allocation rule and increase radius_scale from 1.5 to 1.75 only when relative fitness loss exceeds 0.1 and swarm diameter is at most three default radii. The current policy's mean error of 3.75 beats both supplied alternatives, but substantial interval-end errors remain. This tests whether modestly wider relocation helps compact swarms recover after deterioration while retaining the existing count decisions. Fitness loss does not establish spatial displacement; the proposed benefit requires measurement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    radius_scale = 1.5
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["swarm_diameter"] <= 3.0 * observation["default_radius"]
+    ):
+        radius_scale = 1.75
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": radius_scale}
+>>>>>>> REPLACE
+</DIFF>

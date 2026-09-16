@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_swarm_radius_tuning",
+  "patch_description": "Preserve the allocation threshold and three-particle radius of 1.25. Reduce the four-particle radius to 1.125, testing whether tighter relocation improves recovery in the dominant branch. This isolates one parameter change; improvement remains to be measured across the sixteen search cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:20:14.275560",
+  "llm_cost": 0.20789,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

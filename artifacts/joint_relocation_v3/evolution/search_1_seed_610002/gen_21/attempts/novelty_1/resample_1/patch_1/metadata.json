@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "widen_relocation_radius",
+  "patch_description": "Increase radius_scale from 1.0 to 1.25 while preserving the fitness-based allocation rule. A broader relocation neighborhood may improve coverage after environmental changes while retained velocities support subsequent PSO motion. The supplied radius-1.25 policies achieved lower mean error, but their allocation rules also differed; this single-parameter change tests whether increased radius benefits the current policy. Improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:26:32.347681",
+  "llm_cost": 0.21005,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "broaden_three_particle_relocation",
+  "patch_description": "Keep the three-particle allocation and increase its radius multiplier from 1.5 to 1.625. Three-particle relocation had higher mean error than four-particle relocation, but lower errors on cases 006, 010 and 015. This motivates testing whether slightly broader sampling improves coverage while preserving two particles for ordinary PSO motion. Changing only radius isolates that hypothesis; improved performance remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:07:32.321251",
+  "llm_cost": 0.21401,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

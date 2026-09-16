@@ -1,0 +1,23 @@
+<NAME>
+midpoint_allocation
+</NAME>
+<DESCRIPTION>
+Combine the parents with a constant allocation of four particles and their shared radius multiplier of one. This tests an intermediate allocation between count three, which achieved lower measured mean error, and count five, which performed better on some cases. One particle retains ordinary PSO motion in a five-particle swarm. Improvement remains to be measured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Return an intermediate allocation with the parents' shared radius.
+    Non-relocated particles still make ordinary PSO moves. All personal
+    memories are reevaluated. Velocities are retained after relocation.
+    """
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.0}
+# EVOLVE-BLOCK-END
+```
+</CODE>

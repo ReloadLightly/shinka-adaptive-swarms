@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "displacement_conditioned_spread",
+  "patch_description": "The uncapped spread rule achieved lower measured mean error than the current bounded rule (3.67 versus 3.93). This proposal restores reduced allocation for widely dispersed swarms and raises the spread threshold from four toward six as observed attractor displacement increases. It retains radius multiplier 1.25 to isolate the allocation change. The hypothesis is that larger observed displacement favors relocating four particles unless existing dispersion is substantial; improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:19:05.319362",
+  "llm_cost": 0.21304,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

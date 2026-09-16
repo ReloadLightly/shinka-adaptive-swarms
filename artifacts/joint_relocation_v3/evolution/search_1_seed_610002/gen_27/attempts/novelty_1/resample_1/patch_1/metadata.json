@@ -1,0 +1,15 @@
+{
+  "generation": 27,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "diameter_threshold_midpoint",
+  "patch_description": "Lower the normalized diameter threshold from 6.0 to 4.5, keeping radius_scale at 1.25 and preserving the count clamp. Thresholds near four achieved lower measured mean error than six; this tests the intermediate boundary by allocating three particles to moderately broad swarms, leaving two to ordinary PSO motion. Improvement remains a hypothesis requiring evaluation on the same sixteen search cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:36:50.167855",
+  "llm_cost": 0.20647,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_27/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

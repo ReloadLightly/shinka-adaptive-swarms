@@ -1,0 +1,15 @@
+{
+  "generation": 23,
+  "novelty_attempt": 2,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "stricter_spread_fixed_radius",
+  "patch_description": "Restore the fixed radius multiplier 1.5 and loss threshold 0.075 from the stronger prior policy, then increase the spread threshold from 3.0 to 3.5. This tests whether retaining two particles for ordinary PSO motion helps primarily when the swarm already has substantial spatial coverage. Tighter swarms relocate four particles.\nThe current policy's higher mean error motivates returning to the stronger reference, although its simultaneous changes prevent attributing the regression to radius alone. The new spread threshold remains an untested hypothesis.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:23:32.989995",
+  "llm_cost": 0.22081,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_23/attempts/novelty_2/resample_1/patch_1/headless_prompt.md"
+}

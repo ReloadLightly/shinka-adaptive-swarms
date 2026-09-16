@@ -1,0 +1,15 @@
+{
+  "generation": 13,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "tiered_loss_response",
+  "patch_description": "Separate loss assessment, allocation selection, and output construction. Use three particles when recent gains cover the loss, four for uncovered losses, and full relocation when uncovered relative loss exceeds 0.1. Fix radius at 1.5, which outperformed 2.0 in the supplied constant-count results. The allocation changes are hypotheses requiring evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T08:07:14.460928",
+  "llm_cost": 0.21626,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_13/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

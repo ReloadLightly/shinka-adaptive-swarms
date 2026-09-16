@@ -1,0 +1,107 @@
+{
+  "audited_at": "2026-09-16T03:51:56.572810+00:00",
+  "scope": "First completed native meta update and actual generation6 prompt injection, read-only",
+  "run": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001",
+  "meta_artifact": "meta/meta_5.txt",
+  "meta_artifact_sha256": "7875fe4267985f7d9f56fdfeb22af4dbce9aca94c0cd6516b48634ad0776919d",
+  "meta_calls": [
+    {
+      "receipt": "engine_calls/meta-327261cd43174088a3e65e99f5209e3c.json",
+      "sha256": "1cbc54cc8e7d668722f1ca220cf44698fb9930c33d48398d4b57c7332f115a05",
+      "status": "returned",
+      "method": "batch_kwargs_query",
+      "requested_logical_responses": 5,
+      "valid_responses": 5,
+      "started_at": "2026-09-16T03:46:11.914565+00:00",
+      "finished_at": "2026-09-16T03:48:06.569222+00:00",
+      "models": [
+        "headless/codex@gpt-6-astra"
+      ]
+    },
+    {
+      "receipt": "engine_calls/meta-a11e322b5a04432fbee287b41ce3f087.json",
+      "sha256": "9a0d64a5cae4aada565ad2c3f98128ce7ad2a208603b2e1f6290a3a2353b9512",
+      "status": "returned",
+      "method": "query",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "started_at": "2026-09-16T03:48:06.583786+00:00",
+      "finished_at": "2026-09-16T03:49:44.459073+00:00",
+      "models": [
+        "headless/codex@gpt-6-astra"
+      ]
+    },
+    {
+      "receipt": "engine_calls/meta-b08204e505c4494a99428505ecfe6120.json",
+      "sha256": "6603f92a722212569fc9be1e1eef2a032f1d785fc04b7a41ec88ef51658fb19d",
+      "status": "returned",
+      "method": "query",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "started_at": "2026-09-16T03:49:44.468824+00:00",
+      "finished_at": "2026-09-16T03:50:48.388562+00:00",
+      "models": [
+        "headless/codex@gpt-6-astra"
+      ]
+    }
+  ],
+  "logical_responses": 7,
+  "valid_responses_returned": 7,
+  "recommendations_generated": 5,
+  "sampled_recommendations": [
+    {
+      "index": 5,
+      "text": "**Condition modest radius expansion on weak recent recovery.** Keep four particles and use multiplier `1.75` only when `fitness_drop > 0` and `max(0, recent_improvement) < 0.25*fitness_drop`; otherwise return `1.5`, with `0.5` as a separate threshold mutation. This tests whether expansion helps when recent gains are small relative to newly observed deterioration, while preserving the successful constant response elsewhere and treating state dependence as unproven."
+    }
+  ],
+  "generation": 6,
+  "native_sampling": {
+    "time": "2026-09-16T03:50:48+00:00",
+    "elapsed_s": 701.52,
+    "event": "native_sampling",
+    "message": "Native parent and inspiration selection completed",
+    "generation": 6,
+    "novelty_attempt": 1,
+    "resample_attempt": 1,
+    "parent_id": "aef2947d-07f9-4e64-a6b7-d80a5bdc4fed",
+    "parent_generation": 5,
+    "archive_inspiration_ids": [
+      "a5dc7985-1c9f-4392-ba6a-1ffff7115623"
+    ],
+    "top_k_inspiration_ids": [
+      "6864375b-097b-4fbc-a961-400a7aa3a57e"
+    ],
+    "needs_fix": false
+  },
+  "source_feedback_checks": [
+    {
+      "id": "aef2947d-07f9-4e64-a6b7-d80a5bdc4fed",
+      "generation": 5,
+      "source_present": true,
+      "feedback_present": true
+    },
+    {
+      "id": "a5dc7985-1c9f-4392-ba6a-1ffff7115623",
+      "generation": 2,
+      "source_present": true,
+      "feedback_present": true
+    },
+    {
+      "id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+      "generation": 1,
+      "source_present": true,
+      "feedback_present": true
+    }
+  ],
+  "mutation_receipt": "engine_calls/mutation-c0b705c73c444cf69e1060e75a8dad3e.json",
+  "mutation_receipt_sha256_at_audit": "0f383d0e011bebb6d4a441858821d2277b55ea298afabe7dcfc19e50a86a8c67",
+  "checks": {
+    "five_recommendations": true,
+    "exactly_one_injected": true,
+    "native_meta_batch_and_two_single_calls": true,
+    "all_meta_responses_returned": true,
+    "sampled_sources_feedback_present": true
+  },
+  "interpretation": "Observed native production and use of meta recommendations; not evidence that recommendations improve performance. Native selection left unchanged. Final/validation outcomes are not present. Internal provider effort and retry counts remain unverified.",
+  "candidate_or_model_calls_by_auditor": 0
+}

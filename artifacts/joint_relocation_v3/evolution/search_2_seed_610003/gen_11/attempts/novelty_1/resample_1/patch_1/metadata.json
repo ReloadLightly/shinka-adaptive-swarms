@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "selective_full_relocation",
+  "patch_description": "Keep the existing three/four allocation and radius multiplier 1.5. Relocate all five particles when relative fitness loss exceeds 10% and absolute loss exceeds nonnegative recent improvement. This tests whether stronger redistribution after substantial deterioration improves recovery. Current interval-end errors leave room for improvement, but do not establish its cause; this proposal requires evaluation on the same sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T08:04:52.625597",
+  "llm_cost": 0.21182,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "expand_radius_for_compact_deteriorating_swarms",
+  "patch_description": "Preserve the current allocation rule and increase radius_scale from 1.5 to 1.75 only when relative fitness loss exceeds 0.1 and swarm diameter is at most three default radii. The current policy's mean error of 3.75 beats both supplied alternatives, but substantial interval-end errors remain. This tests whether modestly wider relocation helps compact swarms recover after deterioration while retaining the existing count decisions. Fitness loss does not establish spatial displacement; the proposed benefit requires measurement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T08:06:00.816719",
+  "llm_cost": 0.2123,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

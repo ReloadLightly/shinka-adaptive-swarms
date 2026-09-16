@@ -1,0 +1,25 @@
+{
+  "at": "2026-09-16T04:05:00.219675+00:00",
+  "command": [
+    "/mnt/c/Users/nikol/AppData/Local/Microsoft/WindowsApps/wt.exe",
+    "new-tab",
+    "--title",
+    "ShinkaEvolve v3 native detail",
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--cd",
+    "/home/roland/actir/shinka-adaptive-swarms",
+    "tail",
+    "-n",
+    "8",
+    "-F",
+    "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/run.log",
+    "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/run.log",
+    "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/run.log"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "<3>WSL (417650 - ) ERROR: UtilAcceptVsock:273: accept4 failed 110\n",
+  "scope": "Follow actual native timestamped events for all three sequential identities; future files are expected and tail retries them. No new controller."
+}

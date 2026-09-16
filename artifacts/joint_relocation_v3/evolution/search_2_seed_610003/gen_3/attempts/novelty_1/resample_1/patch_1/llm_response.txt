@@ -1,0 +1,13 @@
+<NAME>
+moderate_radius_four_particles
+</NAME>
+<DESCRIPTION>
+Keep four relocated particles and reduce the radius multiplier from 2.0 to 1.5. The current policy improves mean error, but several cases worsen relative to the baseline, so the feedback does not support uniformly broader relocation. An intermediate radius tests whether more concentrated relocation improves recovery while preserving one particle's ordinary PSO motion. Changing only radius isolates its effect at the current allocation. This is an untested hypothesis; the sixteen-case evaluation must determine whether it improves the score.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 2.0}
+=======
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

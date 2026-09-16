@@ -1,0 +1,21 @@
+<NAME>
+three_particle_radius_refinement
+</NAME>
+<DESCRIPTION>
+Test constant count three with radius multiplier 1.4375, retaining two particles for ordinary PSO motion. The current conditional four-particle policy increased measured mean error from approximately 3.76 to 3.96. The reported three-particle result at radius 1.5 motivates testing a slightly smaller radius independently of the four-particle branch. This is an unmeasured hypothesis; improvement requires evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = min(4, int(observation["swarm_size"]))
+    fitness_drop = float(observation["fitness_drop"])
+    recent_improvement = max(0.0, float(observation["recent_improvement"]))
+    expand = (
+        float(observation["relative_fitness_drop"]) > 0.10
+        and recent_improvement < 0.25 * fitness_drop
+    )
+    radius_scale = 1.5 if expand else 1.25
+=======
+    count = min(3, int(observation["swarm_size"]))
+    radius_scale = 1.4375
+>>>>>>> REPLACE
+</DIFF>

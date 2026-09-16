@@ -1,0 +1,18 @@
+<NAME>
+selective_full_relocation
+</NAME>
+<DESCRIPTION>
+Keep the existing three/four allocation and radius multiplier 1.5. Relocate all five particles when relative fitness loss exceeds 10% and absolute loss exceeds nonnegative recent improvement. This tests whether stronger redistribution after substantial deterioration improves recovery. Current interval-end errors leave room for improvement, but do not establish its cause; this proposal requires evaluation on the same sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["fitness_drop"] > max(observation["recent_improvement"], 0.0)
+    ):
+        count = int(observation["swarm_size"])
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

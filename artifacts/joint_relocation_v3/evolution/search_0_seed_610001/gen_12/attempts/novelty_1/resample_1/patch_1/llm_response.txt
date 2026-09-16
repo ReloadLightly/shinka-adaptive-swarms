@@ -1,0 +1,13 @@
+<NAME>
+lower_displacement_radius_band
+</NAME>
+<DESCRIPTION>
+Test displacement-based interpolation over 1.25–1.5 while retaining four relocated particles. The current 1.5–1.75 rule produced mean offline error 3.94 versus 3.81 for constant 1.5, with worse interval-end recovery in cases 000 and 015. Lowering the radius band tests whether more concentrated relocation improves recovery while preserving modest expansion for larger observed displacements. This is an untested hypothesis; existing results do not establish a benefit from displacement conditioning.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+        "radius_scale": 1.5 + 0.25 * expansion,
+=======
+        "radius_scale": 1.25 + 0.25 * expansion,
+>>>>>>> REPLACE
+</DIFF>

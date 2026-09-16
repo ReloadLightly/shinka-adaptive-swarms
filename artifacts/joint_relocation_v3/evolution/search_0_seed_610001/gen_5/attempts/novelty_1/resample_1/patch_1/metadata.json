@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "retain_one_particle",
+  "patch_description": "Test relocating four particles at radius multiplier 1.5, leaving one particle to continue ordinary PSO motion. Full relocation at multiplier 1.5 achieved mean error 4.06 versus 4.16 for the baseline, making it a useful starting point for testing reduced allocation. Retaining one particle may preserve useful positional diversity while the others explore around the refreshed best. The broader geometry-dependent policy scored worse and changed both allocation and radius, so it does not isolate the benefit of partial relocation. This constant pair is an untested hypothesis requiring evaluation across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:48:29.056027",
+  "llm_cost": 0.2099,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

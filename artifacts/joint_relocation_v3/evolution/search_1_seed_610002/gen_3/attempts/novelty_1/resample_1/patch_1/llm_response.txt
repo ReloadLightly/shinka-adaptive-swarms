@@ -1,0 +1,13 @@
+<NAME>
+full_swarm_wider_relocation
+</NAME>
+<DESCRIPTION>
+Double the relocation radius while retaining full-swarm allocation. The absolute radius becomes the configured movement severity, potentially improving coverage after changes. Persistent interval-end errors motivate testing broader relocation, although they do not establish insufficient radius as the cause. Keeping count unchanged isolates the radius effect from allocation changes. This is an untested hypothesis; improvement requires measured search feedback.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {"count": observation["swarm_size"], "radius_scale": 2.0}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_radius_blend",
+  "patch_description": "Retain both parents\u2019 four-particle allocation and blend their radius multipliers to 1.375. The 1.25 parent achieved lower mean error, while 1.5 achieved lower worst-case error; the midpoint tests an intermediate radius without adding unsupported state dependence. Performance improvement remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:56:37.160724",
+  "llm_cost": 0.21219,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

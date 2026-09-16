@@ -1,0 +1,15 @@
+{
+  "generation": 14,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_selective_expansion",
+  "patch_description": "Use four particles at radius multiplier 1.25, which achieved lower measured mean error (3.76) than the current policy (3.95). Expand to 1.5 only when relative fitness loss exceeds 10% and recent improvement is less than one quarter of the fitness drop. This tests whether selective expansion helps recovery while avoiding the consistently larger radii of the displacement-based policy. Its performance remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:07:19.994075",
+  "llm_cost": 0.21154,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_14/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,72 @@
+{
+  "frozen_at": "2026-09-16T03:26:11.513254+00:00",
+  "route": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+  "threshold": 0.830958258366903,
+  "model": {
+    "status": "ready",
+    "model": "jina-code-v2-q8",
+    "repository": "jinaai/jina-embeddings-v2-base-code",
+    "revision": "516f4baf13dec4ddddda8631e019b5737c8bc250",
+    "dimensions": 768,
+    "provider": "CPUExecutionProvider",
+    "quantization": "official ONNX int8 artifact",
+    "chunk_tokens": 512,
+    "chunk_stride": 0,
+    "pooling": "attention-mask token mean across all disjoint windows, then L2 normalize",
+    "overlong_input": "all windows encoded; no source tokens discarded; window special tokens retained",
+    "threads": 2,
+    "inputs": {
+      "input_ids": "tensor(int64)",
+      "attention_mask": "tensor(int64)"
+    },
+    "output": "last_hidden_state",
+    "runtime_versions": {
+      "numpy": "2.2.6",
+      "onnxruntime": "1.23.2",
+      "tokenizers": "0.23.2"
+    },
+    "server_source_sha256": "f154b14398398b518805af9cb3a199141a89ddef5089c3463f4fe53b2710e78e",
+    "model_manifest_sha256": "22e488956c5f7809cb4ec795d2a30cfb3611dbcae55b5a2694c25a2a8a4308d1",
+    "network_model_calls": false
+  },
+  "model_manifest_sha256": "22e488956c5f7809cb4ec795d2a30cfb3611dbcae55b5a2694c25a2a8a4308d1",
+  "calibration": "results/joint_relocation_v3/embedding/calibration_20260916_explicit_chunks",
+  "calibration_sha256": "8e17b4ac14d882aa4302b8231a029a17efbc2e7844c7fec021f844ccccdcd985",
+  "profile_sha256": "8d4a2b622e321098a7c360a86e9ef9b470ea9a2006610c130b812fc6071bc72b",
+  "source_sha256": {
+    "scripts/serve_local_embeddings.py": "f154b14398398b518805af9cb3a199141a89ddef5089c3463f4fe53b2710e78e",
+    "scripts/setup_local_embeddings.py": "f1eaef0e1859a2123aec6c86938f51f26d4ffa008ec507fbbfead121c374ef71",
+    "scripts/calibrate_local_embeddings.py": "2ee0885de38efe494ce197c6eb1fcedc2e5dd4e449ad668e83f4962630fa398a"
+  },
+  "checks": {
+    "actual_768dim_embeddings_from_native_sync_and_async_clients": true,
+    "short_explicit_tokens_equal_pinned_tokenizer_default": true,
+    "all_long_payload_tokens_retained": true,
+    "observed_long_service_token_counts_match_explicit_slices": true,
+    "late_source_change_alters_embedding": true,
+    "configured_threshold_matches_frozen_observed_calibration": true,
+    "served_source_matches_current_source": true
+  },
+  "long_input_evidence": [
+    {
+      "payload_tokens": 1704,
+      "chunks": 4,
+      "tokens_including_special_tokens": 1712
+    },
+    {
+      "payload_tokens": 1704,
+      "chunks": 4,
+      "tokens_including_special_tokens": 1712
+    }
+  ],
+  "limitations": [
+    "Cosine similarity is a heuristic for routing to the native LLM novelty judge, not a behavior-equivalence oracle or originality measure.",
+    "Meaningful numeric changes can have higher similarity than cosmetic rewrites; false positives and unseen cosmetic false negatives remain possible.",
+    "A small authored calibration set does not estimate novelty quality across future evolved programs.",
+    "Official quantized ONNX inference and 512-token disjoint window pooling are the frozen local representation; long-window aggregation differs from one full-context pass.",
+    "Local inference uses no paid model API. This check makes no mutation, novelty-judge or meta-memory Codex calls."
+  ],
+  "no_research_or_codex_inference": true,
+  "initial_development_failure_retained": "Original calibration_20260916 and service logs remain; tokenizer automatic overflow did not retain full long source. Fixed before research.",
+  "passed": true
+}

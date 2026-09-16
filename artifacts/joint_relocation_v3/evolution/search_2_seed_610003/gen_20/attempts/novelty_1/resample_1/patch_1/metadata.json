@@ -1,0 +1,15 @@
+{
+  "generation": 20,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "selective_allocation_for_spread_swarms",
+  "patch_description": "Test relocating three particles instead of four when relative fitness loss is at most 0.075 and swarm diameter exceeds 2.5 default radii. A dispersed swarm with limited observed deterioration may benefit from retaining two ordinary PSO moves. Preserve the existing radius rule to isolate the allocation change. The supplied constant-three policy had worse mean error but lower error on case_015; differing radius policies prevent attributing that tradeoff to count alone. This conditional allocation is an untested hypothesis.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:15:25.909284",
+  "llm_cost": 0.21689,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_20/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

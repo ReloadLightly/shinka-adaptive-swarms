@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "conditional_allocation_crossover",
+  "patch_description": "Retain the current program\u2019s four-particle, 1.5-radius response, but use the other parent\u2019s three-particle, 1.625-radius response when the swarm is compact and fitness has deteriorated. This tests whether preserving two ordinary PSO moves helps recovery under that condition. The three-particle parent had lower worst-case error but higher mean error; improvement from this crossover remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:09:57.283970",
+  "llm_cost": 0.21423,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

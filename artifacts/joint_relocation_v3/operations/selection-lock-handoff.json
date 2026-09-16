@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-09-16T08:35:48.149090+00:00",
+  "first_selection_attempt": "refused by existing exclusive study lock during validation shutdown",
+  "error": "RuntimeError: Another controller owns this comparison study; attach to its progress.",
+  "subsequent_lock_check_utc": "2026-09-16T08:35:27.390622+00:00",
+  "subsequent_lock_free": true,
+  "selection_existed_at_check": false,
+  "recovery": "Rerun selection only after exclusive lock was free. No validation rerun, controller restart, or numerical-setting change."
+}

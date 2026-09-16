@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-09-16T08:20:05.172116+00:00",
+  "checks": [
+    {
+      "args": [
+        "session",
+        "list"
+      ],
+      "returncode": 0,
+      "stdout": "Active sessions:\n  joint-v3-final\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "--session",
+        "joint-v3-final",
+        "get",
+        "url"
+      ],
+      "timeout_seconds": 8
+    }
+  ],
+  "original_terminal_follower_present": true,
+  "terminal_command": "tail -n 25 -F -- results/joint_relocation_v3/operations/run.log "
+}

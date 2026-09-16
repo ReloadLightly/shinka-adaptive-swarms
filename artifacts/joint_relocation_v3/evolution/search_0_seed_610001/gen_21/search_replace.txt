@@ -1,0 +1,23 @@
+<NAME>
+bounded_spread_radius
+</NAME>
+<DESCRIPTION>
+Keep allocation at four particles and vary radius slightly around 1.1875, whose measured mean error was marginally lower than 1.25. Normalize swarm diameter by default_radius, then bound the multiplier to [1.15625, 1.21875]. This tests whether compact swarms benefit from tighter relocation and dispersed swarms from broader relocation. The recovery-based policy showed no clear aggregate improvement; spread provides a different public signal. Performance gains remain untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.25,
+    }
+=======
+    spread_ratio = max(0.0, float(observation["swarm_diameter"])) / max(
+        float(observation["default_radius"]), 1e-12
+    )
+    radius_adjustment = max(-1.0, min(1.0, spread_ratio - 1.0))
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.1875 + 0.03125 * radius_adjustment,
+    }
+>>>>>>> REPLACE
+</DIFF>

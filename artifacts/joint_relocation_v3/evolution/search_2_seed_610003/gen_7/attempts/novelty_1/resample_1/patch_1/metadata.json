@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_displacement_response",
+  "patch_description": "Replace the fixed radius with a bounded geometric controller while retaining the best observed allocation of four particles. Normalized observed best displacement adjusts the radius multiplier between 1.25 and 1.75, potentially balancing local recovery and broader exploration. Displacement describes optimizer behavior, not true peak movement. Improved performance remains a hypothesis requiring evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:56:26.917187",
+  "llm_cost": 0.21315,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_bounded_radius",
+  "patch_description": "Use four particles, which achieved lower measured mean offline error than three at radius multiplier 1.5 (3.81 versus 3.95). Adjust that multiplier between 1.25 and 1.75 using normalized observed best displacement, testing whether modest geometric adaptation improves recovery while preserving one ordinary PSO particle. Observed displacement is an optimizer signal, not measured peak movement. This candidate requires evaluation; improvement is not established.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:58:46.920295",
+  "llm_cost": 0.21386,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

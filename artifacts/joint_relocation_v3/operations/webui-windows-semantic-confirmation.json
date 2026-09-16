@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-09-16T09:23:47.771551+00:00",
+  "scope": "One read-only semantic URL check of existing visible Edge address bar, without launch, navigation, focus/tab changes or CDP. Only a URL matching the authorized target can be emitted.",
+  "timeout_seconds": 10,
+  "matching_rules": {
+    "scheme": "http (prepend only when browser display omits scheme)",
+    "host": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "port": 8893,
+    "path": "/viz_tree.html",
+    "decoded_db_path": "search_2_seed_610003/programs.sqlite",
+    "optional_parameters": {
+      "left_tab": "tree-view",
+      "right_tab": "agent-info"
+    },
+    "other_query_parameters_or_userinfo_or_fragment": "not accepted"
+  },
+  "prior_exact_comparison": "operations/webui-windows-addressbar-confirmation.json",
+  "returncode": 0,
+  "stderr_bytes": 0,
+  "uia_result": {
+    "visible_address_bar_candidates": 1,
+    "readable_address_bar_candidates": 1,
+    "process_id": 13600,
+    "ui_mutations": 0,
+    "reason": "No target match under the documented host/path/database/tab-parameter rules; no unrelated values emitted",
+    "status": "target_semantic_address_not_verified"
+  },
+  "elapsed_seconds": 5.298,
+  "limitations": [
+    "A match verifies the visible address-bar target at this instant, not full page-render completeness or every application interaction.",
+    "No unrelated tab titles, addresses or editable values were emitted or retained."
+  ]
+}

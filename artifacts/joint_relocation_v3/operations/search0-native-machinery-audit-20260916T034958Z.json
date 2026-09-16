@@ -1,0 +1,702 @@
+{
+  "audited_at": "2026-09-16T03:49:58.459707+00:00",
+  "scope": "Bounded read-only snapshot of search0 actual native machinery; live receipts may complete later",
+  "run": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001",
+  "original_evaluated_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "database_rows_including_island_copies": 6,
+  "role_receipt_summary": {
+    "mutation": {
+      "native_requests_observed": 5,
+      "logical_responses_requested": 5,
+      "valid_responses_returned": 5,
+      "status_counts": {
+        "returned": 5
+      }
+    },
+    "novelty": {
+      "native_requests_observed": 5,
+      "logical_responses_requested": 5,
+      "valid_responses_returned": 4,
+      "status_counts": {
+        "returned": 4,
+        "started": 1
+      }
+    },
+    "meta": {
+      "native_requests_observed": 3,
+      "logical_responses_requested": 7,
+      "valid_responses_returned": 6,
+      "status_counts": {
+        "returned": 2,
+        "started": 1
+      }
+    }
+  },
+  "role_receipts": [
+    {
+      "file": "engine_calls/meta-327261cd43174088a3e65e99f5209e3c.json",
+      "sha256_at_audit": "1cbc54cc8e7d668722f1ca220cf44698fb9930c33d48398d4b57c7332f115a05",
+      "call_id": "meta-327261cd43174088a3e65e99f5209e3c",
+      "role": "meta",
+      "status": "returned",
+      "started_at": "2026-09-16T03:46:11.914565+00:00",
+      "finished_at": "2026-09-16T03:48:06.569222+00:00",
+      "requested_logical_responses": 5,
+      "valid_responses": 5,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 7762,
+          "output_tokens": 268
+        },
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 7794,
+          "output_tokens": 263
+        },
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 7870,
+          "output_tokens": 250
+        },
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 7833,
+          "output_tokens": 298
+        },
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 7833,
+          "output_tokens": 238
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/meta-a11e322b5a04432fbee287b41ce3f087.json",
+      "sha256_at_audit": "9a0d64a5cae4aada565ad2c3f98128ce7ad2a208603b2e1f6290a3a2353b9512",
+      "call_id": "meta-a11e322b5a04432fbee287b41ce3f087",
+      "role": "meta",
+      "status": "returned",
+      "started_at": "2026-09-16T03:48:06.583786+00:00",
+      "finished_at": "2026-09-16T03:49:44.459073+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 27225,
+          "output_tokens": 1739
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/meta-b08204e505c4494a99428505ecfe6120.json",
+      "sha256_at_audit": "65d8283ba9575faa2f8527d242526788806a8bc6d59aa1c848e6ada150e2d4f7",
+      "call_id": "meta-b08204e505c4494a99428505ecfe6120",
+      "role": "meta",
+      "status": "started",
+      "started_at": "2026-09-16T03:49:44.468824+00:00",
+      "finished_at": null,
+      "requested_logical_responses": 1,
+      "valid_responses": null,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": []
+    },
+    {
+      "file": "engine_calls/mutation-1d1ad3312abb4f9686196f62e2a20ad6.json",
+      "sha256_at_audit": "a1322bfdfeac060b7c9efdb78f5feb10fbeda4b9e40dcefd4c3249f3491b51db",
+      "call_id": "mutation-1d1ad3312abb4f9686196f62e2a20ad6",
+      "role": "mutation",
+      "status": "returned",
+      "started_at": "2026-09-16T03:46:12.418496+00:00",
+      "finished_at": "2026-09-16T03:48:29.026734+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 18164,
+          "output_tokens": 322
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/mutation-2bccc62918fc46ed8986413afc559710.json",
+      "sha256_at_audit": "d47b95a6bd2ec968a44f61999d1cf6e9513ae2524af9038d47143eb6642f58ca",
+      "call_id": "mutation-2bccc62918fc46ed8986413afc559710",
+      "role": "mutation",
+      "status": "returned",
+      "started_at": "2026-09-16T03:39:52.921330+00:00",
+      "finished_at": "2026-09-16T03:40:34.038897+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 9981,
+          "output_tokens": 474
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/mutation-8257faa3d37c4927b3f9a568d9c49733.json",
+      "sha256_at_audit": "e27188d0303115d5163e9b405d5dcc61610177b65b03f97ac4cd2c1a11a9e14b",
+      "call_id": "mutation-8257faa3d37c4927b3f9a568d9c49733",
+      "role": "mutation",
+      "status": "returned",
+      "started_at": "2026-09-16T03:43:00.925560+00:00",
+      "finished_at": "2026-09-16T03:43:39.903100+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 14415,
+          "output_tokens": 389
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/mutation-cc4ec35b41cb46b8bd94c162d2cd213f.json",
+      "sha256_at_audit": "045fc3c025141d65fec9d53f21ee9e38baf2ac95509739bec58bbc5f62f51d18",
+      "call_id": "mutation-cc4ec35b41cb46b8bd94c162d2cd213f",
+      "role": "mutation",
+      "status": "returned",
+      "started_at": "2026-09-16T03:41:25.602533+00:00",
+      "finished_at": "2026-09-16T03:42:00.409289+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 13837,
+          "output_tokens": 661
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/mutation-e46a857adea24e2ba000d26cbda3ddcf.json",
+      "sha256_at_audit": "a235b33689489051dbd0226f8765ec111e3b7884865e8a1c910890df5f52e17e",
+      "call_id": "mutation-e46a857adea24e2ba000d26cbda3ddcf",
+      "role": "mutation",
+      "status": "returned",
+      "started_at": "2026-09-16T03:44:42.644707+00:00",
+      "finished_at": "2026-09-16T03:45:14.622495+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 14082,
+          "output_tokens": 302
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/novelty-31001de6483c4aca9ee387b95933ea11.json",
+      "sha256_at_audit": "3a61c3f39168cf5767d88e31cf80d92bab2cd77d5d8be5ec0b5423d28f07ba63",
+      "call_id": "novelty-31001de6483c4aca9ee387b95933ea11",
+      "role": "novelty",
+      "status": "returned",
+      "started_at": "2026-09-16T03:45:15.200949+00:00",
+      "finished_at": "2026-09-16T03:45:31.214237+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 4388,
+          "output_tokens": 59
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/novelty-7fcffbb37e6d49f6b64d1a61a707fb3e.json",
+      "sha256_at_audit": "99285bfe7449ad1d86f2e8c311ce8661cc8e1f2f5cbe7833a2d91f42ec169788",
+      "call_id": "novelty-7fcffbb37e6d49f6b64d1a61a707fb3e",
+      "role": "novelty",
+      "status": "returned",
+      "started_at": "2026-09-16T03:43:40.462579+00:00",
+      "finished_at": "2026-09-16T03:44:01.954566+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 4381,
+          "output_tokens": 66
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/novelty-a69dcc1191814366a38704c467e42f49.json",
+      "sha256_at_audit": "207db3d5d4483d2258adc734242620e0d24d5c4e9c1cecff5aa07b19901765c0",
+      "call_id": "novelty-a69dcc1191814366a38704c467e42f49",
+      "role": "novelty",
+      "status": "returned",
+      "started_at": "2026-09-16T03:42:01.842738+00:00",
+      "finished_at": "2026-09-16T03:42:20.628844+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 4360,
+          "output_tokens": 78
+        }
+      ]
+    },
+    {
+      "file": "engine_calls/novelty-cf8f3473765649f5b6721d25f19f6e64.json",
+      "sha256_at_audit": "b2f7f792af166c4edbb9814cd7710275ca4a57f6e1d7523869135bea30364b8e",
+      "call_id": "novelty-cf8f3473765649f5b6721d25f19f6e64",
+      "role": "novelty",
+      "status": "started",
+      "started_at": "2026-09-16T03:48:29.869468+00:00",
+      "finished_at": null,
+      "requested_logical_responses": 1,
+      "valid_responses": null,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": []
+    },
+    {
+      "file": "engine_calls/novelty-f82d96052b2440fe89c90ccf9f1ceb98.json",
+      "sha256_at_audit": "547b989dd1a4d9112d4db9d9e74af11409bf9e60d0adb7541761a2fd102be0a3",
+      "call_id": "novelty-f82d96052b2440fe89c90ccf9f1ceb98",
+      "role": "novelty",
+      "status": "returned",
+      "started_at": "2026-09-16T03:40:34.592867+00:00",
+      "finished_at": "2026-09-16T03:40:48.883695+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+          "input_tokens": 4374,
+          "output_tokens": 54
+        }
+      ]
+    }
+  ],
+  "sampled_prompt_checks": [
+    {
+      "generation": 1,
+      "native_sampling_time": "2026-09-16T03:39:52+00:00",
+      "parent_id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+      "archive_inspiration_ids": [],
+      "top_k_inspiration_ids": [],
+      "prompt": "gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "prompt_sha256": "5f081727b72fb4ecef11418ab44eeb9e27f069c51c7578c41e70763688f53ba2",
+      "full_frozen_task_system_prompt_present": true,
+      "sources": [
+        {
+          "native_id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+          "generation": 0,
+          "source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "99aa44d91da8a08cf44ef2fec91b55b42f9699df22e888c4969ce907b7743ea8"
+        }
+      ]
+    },
+    {
+      "generation": 2,
+      "native_sampling_time": "2026-09-16T03:41:25+00:00",
+      "parent_id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+      "archive_inspiration_ids": [
+        "a154305d-bbcf-4423-8ba6-f6c422db28d0"
+      ],
+      "top_k_inspiration_ids": [],
+      "prompt": "gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "prompt_sha256": "e7c1e2f28cdbc9860fdd64c2e4b35486e888ff80b3ea55984a45cd4695578d2b",
+      "full_frozen_task_system_prompt_present": true,
+      "sources": [
+        {
+          "native_id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+          "generation": 1,
+          "source_sha256": "646cf73eb88dcb2762874be2509cc48766c761a74718d2c96ba8642a46e86be7",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "8765a8328ba702343923e5956391c8a4fa39b3ee5d34545cda91d27b9b8a8c68"
+        },
+        {
+          "native_id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+          "generation": 0,
+          "source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "99aa44d91da8a08cf44ef2fec91b55b42f9699df22e888c4969ce907b7743ea8"
+        }
+      ]
+    },
+    {
+      "generation": 3,
+      "native_sampling_time": "2026-09-16T03:43:00+00:00",
+      "parent_id": "e95fddb3-058b-4217-b3bc-731a461ceb27",
+      "archive_inspiration_ids": [],
+      "top_k_inspiration_ids": [],
+      "prompt": "gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "prompt_sha256": "5f081727b72fb4ecef11418ab44eeb9e27f069c51c7578c41e70763688f53ba2",
+      "full_frozen_task_system_prompt_present": true,
+      "sources": [
+        {
+          "native_id": "e95fddb3-058b-4217-b3bc-731a461ceb27",
+          "generation": 0,
+          "source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "99aa44d91da8a08cf44ef2fec91b55b42f9699df22e888c4969ce907b7743ea8"
+        }
+      ]
+    },
+    {
+      "generation": 4,
+      "native_sampling_time": "2026-09-16T03:44:42+00:00",
+      "parent_id": "8cb76a7e-c3ee-447d-b1e0-791ad344a520",
+      "archive_inspiration_ids": [
+        "e95fddb3-058b-4217-b3bc-731a461ceb27"
+      ],
+      "top_k_inspiration_ids": [],
+      "prompt": "gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "prompt_sha256": "661ebaf3f28700d13e9bfd58fb7de143696824e1f71e213a31548800e2938195",
+      "full_frozen_task_system_prompt_present": true,
+      "sources": [
+        {
+          "native_id": "8cb76a7e-c3ee-447d-b1e0-791ad344a520",
+          "generation": 3,
+          "source_sha256": "9e183cd0e30fd69df66ac7efc206378cd14f786bd9e97fcd05faef3cc34397b4",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "8933ccb9f4a478fda3c9801065403a9ec282e4316f240b1aa8442ce63645f3db"
+        },
+        {
+          "native_id": "e95fddb3-058b-4217-b3bc-731a461ceb27",
+          "generation": 0,
+          "source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "99aa44d91da8a08cf44ef2fec91b55b42f9699df22e888c4969ce907b7743ea8"
+        }
+      ]
+    },
+    {
+      "generation": 5,
+      "native_sampling_time": "2026-09-16T03:46:12+00:00",
+      "parent_id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+      "archive_inspiration_ids": [
+        "6864375b-097b-4fbc-a961-400a7aa3a57e"
+      ],
+      "top_k_inspiration_ids": [
+        "a5dc7985-1c9f-4392-ba6a-1ffff7115623"
+      ],
+      "prompt": "gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+      "prompt_sha256": "2c668174c7239f8c292a446cd3abd56c0916c7534fa7262d703be01786bfb6d4",
+      "full_frozen_task_system_prompt_present": true,
+      "sources": [
+        {
+          "native_id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+          "generation": 0,
+          "source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "99aa44d91da8a08cf44ef2fec91b55b42f9699df22e888c4969ce907b7743ea8"
+        },
+        {
+          "native_id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+          "generation": 1,
+          "source_sha256": "646cf73eb88dcb2762874be2509cc48766c761a74718d2c96ba8642a46e86be7",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "8765a8328ba702343923e5956391c8a4fa39b3ee5d34545cda91d27b9b8a8c68"
+        },
+        {
+          "native_id": "a5dc7985-1c9f-4392-ba6a-1ffff7115623",
+          "generation": 2,
+          "source_sha256": "a568958409ce1bda28c37c9ee73f37d1de1203a30ad6d4430abfbdb1e27db67b",
+          "full_source_present": true,
+          "full_text_feedback_present": true,
+          "feedback_sha256": "eb89f33ea6909b4ac556c098493dead6a61855d6000277498afc0321e3c88f53"
+        }
+      ]
+    }
+  ],
+  "observed_mechanism_events": [
+    {
+      "time": "2026-09-16T03:39:52+00:00",
+      "elapsed_s": 65.26,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_0/main.py",
+      "dimensions": 768
+    },
+    {
+      "time": "2026-09-16T03:40:34+00:00",
+      "elapsed_s": 106.0,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_1/main.py",
+      "dimensions": 768
+    },
+    {
+      "time": "2026-09-16T03:40:48+00:00",
+      "elapsed_s": 120.32,
+      "event": "novelty_decision",
+      "message": "Native novelty accepted candidate",
+      "accepted": true,
+      "fallback": false,
+      "novelty_checks_performed": 1,
+      "novelty_total_cost": 0.0586,
+      "novelty_explanation": "**NOVEL**: The radius multiplier changes from 1.0 to 1.5, increasing the relocation radius by 50%. This hyperparameter change alters search behavior and could affect optimizer performance, while the number of relocated particles remains unchanged.",
+      "max_similarity": 0.9924225807189941,
+      "similarity_scores": [
+        0.9924225807189941
+      ]
+    },
+    {
+      "time": "2026-09-16T03:42:01+00:00",
+      "elapsed_s": 191.14,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_2/main.py",
+      "dimensions": 768
+    },
+    {
+      "time": "2026-09-16T03:42:20+00:00",
+      "elapsed_s": 208.92,
+      "event": "novelty_decision",
+      "message": "Native novelty accepted candidate",
+      "accepted": true,
+      "fallback": false,
+      "novelty_checks_performed": 1,
+      "novelty_total_cost": 0.05966,
+      "novelty_explanation": "NOVEL: The existing code always relocates every particle at radius scale 1.0. The proposed code adapts to swarm diameter: it relocates all particles at scale 2.0 when diameter \u2264 twice the default radius, otherwise retains two particles and relocates the rest at scale 1.5. This meaningfully changes both allocation logic and radius parameters.",
+      "max_similarity": 0.9663808345794678,
+      "similarity_scores": [
+        0.9663808345794678,
+        0.9653255939483643
+      ]
+    },
+    {
+      "time": "2026-09-16T03:43:40+00:00",
+      "elapsed_s": 286.58,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_3/main.py",
+      "dimensions": 768
+    },
+    {
+      "time": "2026-09-16T03:44:01+00:00",
+      "elapsed_s": 307.09,
+      "event": "novelty_decision",
+      "message": "Native novelty accepted candidate",
+      "accepted": true,
+      "fallback": false,
+      "novelty_checks_performed": 1,
+      "novelty_total_cost": 0.05927,
+      "novelty_explanation": "**NOVEL**: The proposal caps relocation at four particles instead of relocating the entire swarm, and increases the radius multiplier from 1.0 to 1.5. For a five-particle swarm, this relocates four particles over a 50% larger radius, meaningfully changing the search behavior.",
+      "max_similarity": 0.9910730123519897,
+      "similarity_scores": [
+        0.9910730123519897
+      ]
+    },
+    {
+      "time": "2026-09-16T03:45:15+00:00",
+      "elapsed_s": 378.21,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_4/main.py",
+      "dimensions": 768
+    },
+    {
+      "time": "2026-09-16T03:45:31+00:00",
+      "elapsed_s": 393.21,
+      "event": "novelty_decision",
+      "message": "Native novelty accepted candidate",
+      "accepted": true,
+      "fallback": false,
+      "novelty_checks_performed": 1,
+      "novelty_total_cost": 0.05899,
+      "novelty_explanation": "NOVEL: The proposed code reduces the relocation count cap from 4 to 3 while keeping the radius scale at 1.5. For the stated five-particle swarm, this relocates three particles instead of four\u2014a meaningful hyperparameter change that can affect search performance.",
+      "max_similarity": 0.9910901188850403,
+      "similarity_scores": [
+        0.9900989532470703,
+        0.9910901188850403
+      ]
+    },
+    {
+      "time": "2026-09-16T03:46:11+00:00",
+      "elapsed_s": 432.83,
+      "event": "meta_update_start",
+      "message": "Native meta-scratchpad update started",
+      "pending_programs": 5
+    },
+    {
+      "time": "2026-09-16T03:48:29+00:00",
+      "elapsed_s": 566.55,
+      "event": "embedding_complete",
+      "message": "Local code embedding returned",
+      "program": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_5/main.py",
+      "dimensions": 768
+    }
+  ],
+  "prompt_seed_scan": {
+    "files_inspected": 22,
+    "numeric_search_and_validation_seed_values_checked": 96,
+    "exact_numeric_token_hits": [],
+    "final_inputs": "Final seed files do not yet exist; no final values supplied",
+    "limitation": "This is a literal token/source-provenance audit, not a universal information-flow proof"
+  },
+  "settings_interpretation": "Native receipts report headless/codex@gpt-6-astra. Configured reasoning_efforts=disabled and explicit kwargs are separate from effective provider effort, which remains unverified. No Ultra claim for internal calls. Native costs are estimates, not paid API invoices. Provider retry coverage is unknown.",
+  "checks": {
+    "sampled_full_sources_present": true,
+    "sampled_full_feedback_present": true,
+    "frozen_task_prompt_present": true,
+    "no_literal_seed_inputs_found": true
+  },
+  "reporting_caveat": "Stock native template says passes all validation tests for the correct flag from search evaluator. Protected v3 validation has not been run; do not interpret this phrase as held-out validation.",
+  "candidate_or_model_calls_by_auditor": 0
+}

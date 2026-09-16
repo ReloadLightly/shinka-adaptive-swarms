@@ -1,0 +1,62 @@
+{
+  "observed_at": "2026-09-16T07:08:20.150393+00:00",
+  "interpretation": "Wall-clock advance not matched by monotonic elapsed time; consistent with host suspension or clock correction, cause not directly observed. Original supervisor and native controller survived and advanced to generation16 without restart or repeated evaluations.",
+  "supervisor_pid": 379029,
+  "native_pid": 583901,
+  "research_settings_changed": false,
+  "recovery_actions": [],
+  "clock_discontinuities": [
+    {
+      "events_file": "operations/events.jsonl",
+      "preceding_event": {
+        "time": "2026-09-16T06:13:42+00:00",
+        "elapsed_s": 8992.59,
+        "event": "search_checkpoint_progress",
+        "search_index": 2,
+        "search_seed": 610003,
+        "terminal_slots": 15,
+        "valid_descendants": 14,
+        "completed_case_checkpoints": 254,
+        "saved_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003"
+      },
+      "following_event": {
+        "time": "2026-09-16T07:01:34+00:00",
+        "elapsed_s": 9013.82,
+        "event": "search_checkpoint_progress",
+        "search_index": 2,
+        "search_seed": 610003,
+        "terminal_slots": 15,
+        "valid_descendants": 14,
+        "completed_case_checkpoints": 256,
+        "saved_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003"
+      },
+      "wall_gap_seconds": 2872.0,
+      "monotonic_gap_seconds": 21.229999999999563,
+      "excess_wall_gap_seconds": 2850.7700000000004
+    },
+    {
+      "events_file": "evolution/search_2_seed_610003/events.jsonl",
+      "preceding_event": {
+        "time": "2026-09-16T06:13:48+00:00",
+        "elapsed_s": 1650.44,
+        "event": "evaluation_complete",
+        "message": "gen_15: Candidate evaluation complete",
+        "mean_offline_error": 3.877378276091081,
+        "worst_case_offline_error": 10.021858670864999,
+        "case_error_std": 2.1569740318916675,
+        "cases_completed": 16
+      },
+      "following_event": {
+        "time": "2026-09-16T07:01:47+00:00",
+        "elapsed_s": 1681.23,
+        "event": "heartbeat",
+        "activity": "gen_15: Candidate evaluation complete",
+        "seconds_since_event": 30.8,
+        "message": "Process is alive; no new result has arrived."
+      },
+      "wall_gap_seconds": 2879.0,
+      "monotonic_gap_seconds": 30.789999999999964,
+      "excess_wall_gap_seconds": 2848.21
+    }
+  ]
+}

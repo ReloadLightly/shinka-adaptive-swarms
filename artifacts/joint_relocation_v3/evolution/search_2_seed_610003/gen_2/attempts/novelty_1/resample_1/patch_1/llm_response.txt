@@ -1,0 +1,24 @@
+<NAME>
+four_particle_moderate_radius
+</NAME>
+<DESCRIPTION>
+The baseline relocates all five particles with radius multiplier 1.0. This proposal relocates four with multiplier 1.5, preserving one ordinary PSO update while widening the relocation neighborhood. It tests an intermediate configuration between the baseline and the previously promising count-three/radius-two response. Persistent interval-end errors motivate testing this exploration–retention balance, but improvement requires measurement. Memory reevaluation, retained velocities, and evaluation accounting remain fixed.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Relocate up to four particles at 1.5 times the default radius.
+    With five particles, four relocate and one continues ordinary PSO motion.
+    The fixed adapter reevaluates memories and retains velocities.
+    """
+    count = min(4, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.5}
+# EVOLVE-BLOCK-END
+```
+</CODE>

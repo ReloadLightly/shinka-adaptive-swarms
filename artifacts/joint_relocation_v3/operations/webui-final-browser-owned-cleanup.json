@@ -1,0 +1,229 @@
+{
+  "observed_at": "2026-09-16T08:32:03.678520+00:00",
+  "reason": "Owned headed browser unresponsive to snapshot/session commands; main process observed in disk sleep; root reported experiment throughput/host latency degradation and prioritized scientific execution. Browser causality not established.",
+  "scope": "Only PID716155 owned joint-v3-final daemon and its verified descendants; PID/start-time checked before every signal.",
+  "processes_before": [
+    {
+      "pid": 716155,
+      "start_ticks": "3934756",
+      "state": "S (sleeping)",
+      "ppid": "580",
+      "rss": "9496 kB",
+      "swap": "0 kB",
+      "cpu_ticks": 1569,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64"
+    },
+    {
+      "pid": 716165,
+      "start_ticks": "3934766",
+      "state": "S (sleeping)",
+      "ppid": "716155",
+      "rss": "113784 kB",
+      "swap": "984 kB",
+      "cpu_ticks": 4504,
+      "wchan": "do_sys_poll",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --remote-debugging-port=0 --no-first-run --no-default-browser-check --disable-background-networking --disable-backgrounding-occluded-windows --disable-component-update --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-features=Translate --enable-features=NetworkService,NetworkServiceInProcess,WebMCPTesting,DevToolsWebMCPSupport --metrics-recording-only --password-store=basic --use-mock-keychain --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --disable-gpu --disable-dev-shm-usage --ozone-platform=x11"
+    },
+    {
+      "pid": 716177,
+      "start_ticks": "3934790",
+      "state": "S (sleeping)",
+      "ppid": "716165",
+      "rss": "15000 kB",
+      "swap": "256 kB",
+      "cpu_ticks": 7,
+      "wchan": "do_wait",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=zygote --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable"
+    },
+    {
+      "pid": 716179,
+      "start_ticks": "3934798",
+      "state": "S (sleeping)",
+      "ppid": "716177",
+      "rss": "16276 kB",
+      "swap": "256 kB",
+      "cpu_ticks": 5,
+      "wchan": "do_sys_poll",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=zygote --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable"
+    },
+    {
+      "pid": 716415,
+      "start_ticks": "3935174",
+      "state": "S (sleeping)",
+      "ppid": "716179",
+      "rss": "26476 kB",
+      "swap": "300 kB",
+      "cpu_ticks": 70,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=renderer --gpu-client-id=11 --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --disable-dev-shm-usage --remote-debugging-port=0 --ozone-platform=x11 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --gpu-channel-request-start-time-ticks=39351722001 --launch-time-ticks=39351725790 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9124400102775378307,11652836399608525230,1572864 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708996619331833"
+    },
+    {
+      "pid": 716314,
+      "start_ticks": "3935003",
+      "state": "S (sleeping)",
+      "ppid": "716179",
+      "rss": "30640 kB",
+      "swap": "264 kB",
+      "cpu_ticks": 288,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=renderer --gpu-client-id=8 --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --disable-dev-shm-usage --remote-debugging-port=0 --ozone-platform=x11 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=8 --gpu-channel-request-start-time-ticks=39350013566 --launch-time-ticks=39350018500 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,10550690089780015054,7303184408625689309,1572864 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708993808206286"
+    },
+    {
+      "pid": 716282,
+      "start_ticks": "3934927",
+      "state": "S (sleeping)",
+      "ppid": "716179",
+      "rss": "42468 kB",
+      "swap": "276 kB",
+      "cpu_ticks": 755,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=renderer --gpu-client-id=6 --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --disable-dev-shm-usage --remote-debugging-port=0 --ozone-platform=x11 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --gpu-channel-request-start-time-ticks=39349269306 --launch-time-ticks=39349275963 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,1384903553502775482,9336247701015213143,1572864 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708991934122588"
+    },
+    {
+      "pid": 716259,
+      "start_ticks": "3934898",
+      "state": "S (sleeping)",
+      "ppid": "716179",
+      "rss": "51216 kB",
+      "swap": "256 kB",
+      "cpu_ticks": 596,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=renderer --top-chrome-webui --gpu-client-id=5 --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --disable-dev-shm-usage --remote-debugging-port=0 --ozone-platform=x11 --disable-gpu-compositing --lang=en-US --disallow-v8-feature-flag-overrides --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --gpu-channel-request-start-time-ticks=39348976089 --launch-time-ticks=39348979879 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,10173428985126308175,3205545545677450051,1572864 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708990997080739"
+    },
+    {
+      "pid": 716225,
+      "start_ticks": "3934846",
+      "state": "S (sleeping)",
+      "ppid": "716179",
+      "rss": "21236 kB",
+      "swap": "256 kB",
+      "cpu_ticks": 54,
+      "wchan": "futex_wait_queue",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=utility --disable-dev-shm-usage --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,7162212887577905543,3395298155803495932,524288 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708990060038890"
+    },
+    {
+      "pid": 716176,
+      "start_ticks": "3934790",
+      "state": "S (sleeping)",
+      "ppid": "716165",
+      "rss": "15012 kB",
+      "swap": "344 kB",
+      "cpu_ticks": 7,
+      "wchan": "do_sys_poll",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable"
+    },
+    {
+      "pid": 716202,
+      "start_ticks": "3934833",
+      "state": "S (sleeping)",
+      "ppid": "716176",
+      "rss": "51652 kB",
+      "swap": "344 kB",
+      "cpu_ticks": 5081,
+      "wchan": "do_sys_poll",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=gpu-process --disable-dev-shm-usage --ozone-platform=x11 --crashpad-handler-pid=716170 --enable-crash-reporter=, --user-data-dir=/tmp/agent-browser-chrome-7c117481-9aa4-4208-9aa2-1bd7a4b90a94 --change-stack-guard-on-fork=enable --gpu-preferences=YAAAAAAAAAAgAQAEAAAAAAAAAAAAAMAASAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=disabled --shared-files --metrics-shmem-handle=4,i,2129672424102266810,873053585647851806,262144 --field-trial-handle=3,i,8471938282179572916,2305372490481629136,262144 --enable-features=DevToolsWebMCPSupport,NetworkService,NetworkServiceInProcess,WebMCPTesting --disable-features=Translate --variations-seed-version --pseudonymization-salt-handle=7,i,18357314268590065262,6813679805046951373,4 --trace-process-track-uuid=3190708988185955192"
+    },
+    {
+      "pid": 716207,
+      "start_ticks": "3934837",
+      "state": "S (sleeping)",
+      "ppid": "716202",
+      "rss": "15956 kB",
+      "swap": "352 kB",
+      "cpu_ticks": 0,
+      "wchan": "__skb_wait_for_more_packets",
+      "command": "/home/roland/.agent-browser/browsers/chrome-153.0.8010.36/chrome --type=broker"
+    }
+  ],
+  "signals": [
+    {
+      "pid": 716207,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716202,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716176,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716225,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716259,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716282,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716314,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716415,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716179,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716177,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716165,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 716155,
+      "signal": "SIGTERM"
+    }
+  ],
+  "owned_processes_remaining_running": [],
+  "preserved_scientific_and_visibility_processes": [
+    {
+      "pid": 382942,
+      "start_ticks": "2564989",
+      "state": "S (sleeping)",
+      "ppid": "580",
+      "rss": "124560 kB",
+      "swap": "68 kB",
+      "cpu_ticks": 4466,
+      "wchan": "hrtimer_nanosleep",
+      "command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution --port 8893"
+    },
+    {
+      "pid": 416558,
+      "start_ticks": "2696070",
+      "state": "S (sleeping)",
+      "ppid": "416557",
+      "rss": "548 kB",
+      "swap": "0 kB",
+      "cpu_ticks": 446,
+      "wchan": "do_select",
+      "command": "tail -n 25 -F -- results/joint_relocation_v3/operations/run.log"
+    },
+    {
+      "pid": 692804,
+      "start_ticks": "3743559",
+      "state": "R (running)",
+      "ppid": "580",
+      "rss": "586864 kB",
+      "swap": "2680 kB",
+      "cpu_ticks": 213453,
+      "wchan": "0",
+      "command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u /home/roland/actir/shinka-adaptive-swarms/scripts/run_joint_study.py validate --run /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/study_20260916"
+    }
+  ],
+  "native_webui_restarted": false,
+  "wsl_restarted": false,
+  "candidate_or_model_calls": 0,
+  "visual_interactivity_verified": false
+}

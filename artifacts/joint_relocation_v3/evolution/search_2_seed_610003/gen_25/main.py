@@ -1,0 +1,34 @@
+"""Joint relocation seed: the original corrected baseline response.
+
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Choose integer allocation from public spread and fitness observations."""
+    swarm_size = int(observation["swarm_size"])
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    reference_diameter = 3.0 * max(
+        0.0, float(observation["default_radius"])
+    )
+    relative_loss = float(observation["relative_fitness_drop"])
+    # Geometry stage: measure coverage beyond the minimum spread boundary.
+    broad_swarm = diameter > reference_diameter
+    coverage = (
+        1.0 - (reference_diameter / diameter) ** 2
+        if broad_swarm
+        else 0.0
+    )
+    # Tolerance stage: isolate the more permissive large-spread hypothesis.
+    loss_threshold = max(0.075, 0.10 * coverage)
+    # Allocation stage: preserve more ordinary PSO motion when qualified.
+    preserve_extra_particle = broad_swarm and relative_loss <= loss_threshold
+    requested_count = 3 if preserve_extra_particle else 4
+    return {
+        "count": min(requested_count, swarm_size),
+        "radius_scale": 1.5,
+    }
+# EVOLVE-BLOCK-END

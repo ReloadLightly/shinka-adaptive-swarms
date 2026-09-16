@@ -1,0 +1,15 @@
+{
+  "generation": 28,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "lower_loss_ceiling",
+  "patch_description": "Lower the loss ceiling from 7.5% to 6.25%, retaining four relocated particles when a broad swarm experiences moderate fitness deterioration. Keep the spread gate and radius multiplier unchanged to isolate this parameter. The current gate's measured improvement is confined to case_004; this mutation tests whether a stricter ceiling improves mean tracking error across the sixteen cases. Its benefit remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:33:03.098764",
+  "llm_cost": 0.21273,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_28/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

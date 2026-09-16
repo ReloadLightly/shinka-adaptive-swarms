@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_recovery_contraction",
+  "patch_description": "Use count four and radius multiplier 1.25 as the reference policy: its measured mean error was 3.76 versus the current program\u2019s 3.95, although its worst case worsened. Test a modest contraction to 1.1875 when positive fitness loss is matched or exceeded by recent improvement. The hypothesis is that a smaller relocation neighborhood preserves useful concentration after recovery. These observations do not establish recovery causally; the conditional change requires evaluation against the constant four-particle policy.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:16:38.178660",
+  "llm_cost": 0.21075,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

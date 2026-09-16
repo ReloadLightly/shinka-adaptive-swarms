@@ -1,0 +1,27 @@
+<NAME>
+small_diameter_radius_adjustment
+</NAME>
+<DESCRIPTION>
+Keep four relocated particles and replace displacement-driven expansion with a small diameter-dependent adjustment around 1.21875. The measured constant radius 1.25 achieved lower mean error than the current expansion rule, motivating a smaller radius range. Test whether modestly increasing radius for broader swarms helps: the multiplier stays within [1.2109375, 1.2265625]. This is an untested hypothesis; improved mean error or useful state dependence requires measured comparison.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    displacement = max(0.0, float(observation["observed_best_displacement"]))
+    default_radius = max(1e-12, float(observation["default_radius"]))
+    relative_displacement = displacement / default_radius
+    expansion = min(1.0, max(0.0, relative_displacement - 1.0))
+    return {
+        "count": max(0, int(observation["swarm_size"]) - 1),
+        "radius_scale": 1.25 + 0.25 * expansion,
+    }
+=======
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    default_radius = max(1e-12, float(observation["default_radius"]))
+    relative_diameter = diameter / default_radius
+    adjustment = max(-1.0, min(1.0, relative_diameter - 1.0))
+    return {
+        "count": min(4, max(0, int(observation["swarm_size"]))),
+        "radius_scale": 1.21875 + 0.0078125 * adjustment,
+    }
+>>>>>>> REPLACE
+</DIFF>

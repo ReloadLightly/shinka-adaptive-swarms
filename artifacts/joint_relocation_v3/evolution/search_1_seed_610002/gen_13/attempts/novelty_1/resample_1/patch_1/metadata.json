@@ -1,0 +1,15 @@
+{
+  "generation": 13,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_selective_widening",
+  "patch_description": "The current policy relocates four particles at radius multiplier 1.0. Fixed multiplier 1.25 slightly improved measured mean error from 3.79 to 3.76. This proposal retains four particles and uses 1.25 normally, widening to 1.5 only when relative fitness loss exceeds 0.1 and swarm diameter is below twice the default radius. The hypothesis is that compact swarms experiencing substantial deterioration benefit from broader relocation. Improvement remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:09:28.466788",
+  "llm_cost": 0.21304,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_13/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

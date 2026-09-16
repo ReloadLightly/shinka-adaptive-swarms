@@ -1,0 +1,34 @@
+<NAME>
+displacement_conditioned_spread
+</NAME>
+<DESCRIPTION>
+The uncapped spread rule achieved lower measured mean error than the current bounded rule (3.67 versus 3.93). This proposal restores reduced allocation for widely dispersed swarms and raises the spread threshold from four toward six as observed attractor displacement increases. It retains radius multiplier 1.25 to isolate the allocation change. The hypothesis is that larger observed displacement favors relocating four particles unless existing dispersion is substantial; improvement remains unmeasured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Condition the allocation threshold on observed best displacement."""
+    swarm_size = int(observation["swarm_size"])
+    default_radius = max(float(observation["default_radius"]), 1e-12)
+    relative_spread = float(observation["swarm_diameter"]) / default_radius
+    relative_displacement = (
+        max(0.0, float(observation["observed_best_displacement"]))
+        / default_radius
+    )
+    spread_threshold = 4.0 + 2.0 * (
+        relative_displacement / (1.0 + relative_displacement)
+    )
+    requested_count = 3 if relative_spread > spread_threshold else 4
+    return {
+        "count": max(0, min(swarm_size, requested_count)),
+        "radius_scale": 1.25,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

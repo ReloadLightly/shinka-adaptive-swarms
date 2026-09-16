@@ -1,0 +1,75 @@
+{
+  "format": "joint-v3-prepublication-preservation-review-v1",
+  "reviewed_at": "2026-09-16T09:20:54.119544+00:00",
+  "status": "passed",
+  "scope": "Bounded read-only review of README V3 scientific claims/numbers against completed selection/analysis and independent audit; byte/size comparison of every durable historical artifact listed before V3. In-progress report documentation excluded from this review.",
+  "historical_artifact_preservation": {
+    "inventory_path": "results/joint_relocation_v3/operations/artifacts-inventory-before-v3.json",
+    "inventory_sha256": "64f26f516d5127c09aa861c2bb382e3d21188c7ffae8979b0a51e005806e55f1",
+    "inventory_entries": 1660,
+    "durable_files_checked_unchanged": 1655,
+    "excluded_intentional_document": [
+      "artifacts/README.md"
+    ],
+    "excluded_ephemeral_sqlite_sidecars": [
+      "artifacts/evolution/20260915T094647.219057Z-seed/programs.sqlite-shm",
+      "artifacts/evolution/20260915T094647.219057Z-seed/programs.sqlite-wal",
+      "artifacts/evolution/20260915T101024.562418Z-search/programs.sqlite-shm",
+      "artifacts/evolution/20260915T101024.562418Z-search/programs.sqlite-wal"
+    ],
+    "exclusion_note": "Four exact named historical -wal/-shm files are ephemeral SQLite connection state. The associated durable programs.sqlite files were included and verified. No other file exclusion was applied.",
+    "changed_durable_files": [],
+    "missing_durable_files": [],
+    "comparison": "Streamed SHA-256 and exact byte size; new V3 artifacts are outside the old inventory and are not mistaken for changes."
+  },
+  "readme_review": {
+    "readme_sha256": "0c58d8b0772dd9a61c4702d941db82ef19aec505a5bc853f4c11677c0f8e5d67",
+    "analysis_sha256": "3ef0633e05810fe51d975d33e7f9dd7785738fc57e1692f3aa6dc5ce38b37050",
+    "selection_sha256": "d7501a0520dbc5734181c201e62cc88f53b4a7fb811bdbecf35f49a3d226f5b4",
+    "independent_analysis_audit_sha256": "88432300f5c918dcf8af9026fa0ef6fd92b8fe28b5ba850d4ebf4db8680e4440",
+    "rounded_method_means": {
+      "winner_search_0": "3.5707",
+      "winner_search_1": "3.5290",
+      "winner_search_2": "3.5006",
+      "baseline": "3.4779",
+      "best_fixed": "3.4779",
+      "radius_replaced": "3.4986",
+      "count_replaced": "3.5490",
+      "joint_sampler": "3.4904"
+    },
+    "primary_delta": 0.02270556990248636,
+    "primary_interval_level": 0.975,
+    "primary_interval": [
+      -0.2043839820475462,
+      0.23683114760583346
+    ],
+    "sampler_delta": 0.010186922678814318,
+    "sampler_interval_level": 0.95,
+    "sampler_interval": [
+      -0.22957721375333304,
+      0.28052563683232173
+    ],
+    "all_three_winners_higher_mean_than_baseline": true,
+    "all_comparison_and_interaction_intervals_span_zero": true,
+    "superiority_claim_correctly_unsupported": true,
+    "equivalence_not_claimed": true,
+    "baseline_and_selected_fixed_pair_execution_alias_disclosed": true,
+    "selected_source_mechanism_description_matches_source": true,
+    "constant_radii_limitation_present": true,
+    "research_case_and_query_totals_match_independent_audit": true,
+    "research_preparation_scopes_distinguished": true,
+    "machinery_counts_match_completed_machinery_evidence": true,
+    "native_http_and_later_browser_timeout_distinguished": true,
+    "old_V1_V2_prose_unchanged_by_readme_diff": true,
+    "archive_link_note": "README targets the planned final artifact archive; archive completeness and remote publication verification are later root-owned steps, not claimed by this review."
+  },
+  "blocking_findings": [],
+  "actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "source_or_artifact_modifications": 0,
+    "inventory_edits": 0,
+    "only_new_operations_evidence_written": true
+  }
+}

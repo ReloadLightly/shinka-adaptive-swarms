@@ -1,0 +1,34 @@
+"""Joint relocation seed: the original corrected baseline response.
+
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.
+
+    Radius multiplier must be finite and nonnegative. The absolute radius is
+    default_radius * radius_scale; default_radius is the known baseline scale,
+    half the configured movement severity. Five particles form a swarm here.
+
+    Public observations: dimension, bounds_width, swarm_size, swarm_count,
+    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,
+    relative_fitness_drop, recent_improvement, evaluations_since_response,
+    previous_response_radius, default_radius, observed_best_displacement,
+    evals_remaining. fitness_drop is previous minus current best fitness.
+
+    Non-relocated particles still make ordinary PSO moves. All personal
+    memories are reevaluated. Velocities are retained after relocation.
+    """
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    default_radius = max(1e-12, float(observation["default_radius"]))
+    relative_diameter = diameter / default_radius
+    adjustment = max(-1.0, min(1.0, relative_diameter - 1.0))
+    return {
+        "count": min(4, max(0, int(observation["swarm_size"]))),
+        "radius_scale": 1.21875 + 0.0078125 * adjustment,
+    }
+# EVOLVE-BLOCK-END

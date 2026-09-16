@@ -1,0 +1,15 @@
+{
+  "generation": 15,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "displacement_radius_four",
+  "patch_description": "The current policy relocates four particles and raises radius from 1.25 to 1.5 when relative fitness loss exceeds 0.1 and diameter is below twice the default radius. Its mean error, 3.88, exceeds the constant-four/radius-1.25 result of 3.76.\nKeep four particles and replace those thresholds with smooth displacement-based adjustment between 1.125 and 1.375. This tests whether modest spatial adaptation improves recovery while limiting radius expansion. Improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:13:36.154395",
+  "llm_cost": 0.2176,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_15/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

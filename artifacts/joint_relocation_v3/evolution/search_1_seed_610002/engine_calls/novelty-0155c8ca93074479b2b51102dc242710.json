@@ -1,0 +1,33 @@
+{
+  "call_id": "novelty-0155c8ca93074479b2b51102dc242710",
+  "role": "novelty",
+  "method": "query",
+  "started_at": "2026-09-16T04:58:03.197037+00:00",
+  "requested_logical_responses": 1,
+  "configured_models": [
+    "headless/codex@gpt-6-astra"
+  ],
+  "status": "returned",
+  "configured_client_settings": {
+    "temperatures": 0.75,
+    "max_tokens": 4096,
+    "reasoning_efforts": "disabled"
+  },
+  "explicit_request_kwargs": null,
+  "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+  "system_msg": "You are an expert code reviewer tasked with determining if two code snippets are meaningfully different from each other.\n\nYour job is to analyze both programs and determine if the proposed code introduces meaningful changes compared to the existing code. Consider:\n\n1. **Algorithmic differences**: Different approaches, logic, or strategies\n2. **Structural changes**: Different data structures, control flow, or organization\n3. **Functional improvements**: New features, optimizations, or capabilities\n4. **Implementation variations**: Different ways of achieving the same goal that could lead to different performance characteristics\n5. **Hyperparameter changes**: Different hyperparameters that could lead to different performance characteristics\n\nIgnore trivial differences like:\n- Variable name changes\n- Minor formatting or style changes\n- Comments or documentation changes\n- Insignificant refactoring that doesn't change the core logic\n\nRespond with:\n- **NOVEL**: If the codes are meaningfully different\n- **NOT_NOVEL**: If the codes are essentially the same with only trivial differences\n\nAfter your decision, provide a brief explanation of your reasoning.",
+  "msg": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    return {\"count\": observation[\"swarm_size\"], \"radius_scale\": 1.0}\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Choose a bounded allocation from public relative fitness deterioration.\"\"\"\n    swarm_size = int(observation[\"swarm_size\"])\n    relative_loss = observation[\"relative_fitness_drop\"]\n    # Preserve more ordinary PSO motion following modest deterioration.\n    if relative_loss <= 0.05:\n        requested_count = 3\n    else:\n        requested_count = 4\n    count = max(0, min(requested_count, swarm_size))\n    return {\"count\": count, \"radius_scale\": 1.0}\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+  "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown",
+  "finished_at": "2026-09-16T04:58:19.224421+00:00",
+  "elapsed_seconds": 15.00889265799924,
+  "valid_responses": 1,
+  "responses": [
+    {
+      "model_reported_by_native_client": "headless/codex@gpt-6-astra",
+      "input_tokens": 4288,
+      "output_tokens": 74,
+      "reported_api_cost": 0.05874,
+      "content": "NOVEL: The existing code relocates every particle. The proposed code adaptively relocates 3 particles when relative fitness deterioration is \u2264 0.05 and 4 otherwise, capped by swarm size. For the stated five-particle swarm, this preserves more ordinary PSO motion and introduces an observation-dependent allocation strategy. The radius scale remains unchanged."
+    }
+  ]
+}

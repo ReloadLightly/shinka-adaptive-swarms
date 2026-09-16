@@ -1,0 +1,13 @@
+<NAME>
+four_particles_radius_125
+</NAME>
+<DESCRIPTION>
+Use constant count four with radius multiplier 1.25. Count four achieved lower measured mean offline error than count three (3.79 versus 3.89) at multiplier 1.0. A modest radius increase tests whether broader relocation improves recovery while preserving one particle's ordinary PSO motion. Persistent interval-end errors motivate this experiment but do not establish its cause or predict improvement. The proposed pair remains untested.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.0}
+=======
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.25}
+>>>>>>> REPLACE
+</DIFF>

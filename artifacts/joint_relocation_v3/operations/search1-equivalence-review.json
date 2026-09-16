@@ -1,0 +1,73 @@
+{
+  "reviewed_at": "2026-09-16T05:50:04.903822+00:00",
+  "reviewer": "Codex source prereview agent; parent independently inspected and agreed with the domain proof",
+  "scope": "Manual, source-only numerical action-equivalence proof for search1 generations27 and28 in the declared V3 domain; not a constant certificate and not an alias implementation/amendment.",
+  "prereview": {
+    "path": "results/joint_relocation_v3/operations/search1-source-prereview.json",
+    "sha256": "143e72e74436768a0f3c7a08933b9e272b57125ef2bfa2b8fd9a0ed75b0257d8",
+    "preserved_unchanged": true
+  },
+  "sources": [
+    {
+      "generation": 27,
+      "source_sha256": "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+      "source_path": "results/joint_relocation_v3/evolution/search_1_seed_610002/gen_27/main.py"
+    },
+    {
+      "generation": 28,
+      "source_sha256": "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+      "source_path": "results/joint_relocation_v3/evolution/search_1_seed_610002/gen_28/main.py"
+    }
+  ],
+  "simulator_source": {
+    "path": "src/adaptive_swarms/simulator.py",
+    "sha256": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "diameter_python_float_line": 88,
+    "default_radius_definition_line": 142,
+    "public_observation_construction_line": 249
+  },
+  "domain": {
+    "swarm_size": 5,
+    "swarm_size_python_type": "int",
+    "move_severity": [
+      1.0,
+      3.0
+    ],
+    "default_radius": [
+      0.5,
+      1.5
+    ],
+    "swarm_diameter": "finite nonnegative Python float supplied by simulator _diameter",
+    "float_arithmetic_assumption": "IEEE754 binary64, correctly rounded operations under round-to-nearest; no altered rounding mode or builtin numeric operations",
+    "observed_python_float_metadata": {
+      "radix": 2,
+      "mant_dig": 53,
+      "rounds": 1
+    }
+  },
+  "proof": [
+    "Both radius guards take max(R,1e-12). Declared R=0.5*severity is exactly 0.5 or1.5 in binary64, so both guards preserve R. The extra float casts in generation28 preserve the already-Python-float inputs.",
+    "Generation27 chooses three iff D > fl(4.5*R). Generation28 chooses three iff fl(D/R) > 4.5. Multiplication products are exactly2.25 for R=0.5 and6.75 for R=1.5.",
+    "For R=0.5, division is power-of-two scaling. At the relevant boundary D=2.25, D/R=4.5 exactly. The next representable D above2.25 is2.25+2^-51, which scales to4.5+2^-50 exactly, already strictly above4.5. Monotonicity preserves the branch for every other finite D; potential far-above-threshold overflow of the quotient would still select three. Thus both comparisons hold exactly iff D>2.25.",
+    "For R=1.5, D0=6.75 and Q0=4.5 lie in the same [4,8) binade, with binary64 spacing u=2^-50. The smallest representable D>D0 isD0+u. Its exact quotient isQ0+(2/3)u, strictly greater than the rounding midpointQ0+u/2, so rounding cannot collapse it back toQ0. Every larger D likewise rounds to a quotient>Q0 by monotonicity. Every D<=D0 has exact quotient<=Q0 and cannot round above the representable Q0. Hence both comparisons hold exactly iff D>6.75.",
+    "Both branches produce Python integer3 or4. With swarm_size=5, gen27 min(count,int(5)) and gen28 max(0,min(int(5),requested_count)) preserve that same count. Both return exactly count and literal float radius_scale1.25.",
+    "Neither source consumes RNG, mutates input, maintains state, nor has external side effects. Equal actions at every declared observation yield equal adapter decisions and therefore equal numerical simulator trajectories/objective evaluations under identical case configuration and RNG seeds by induction. Different instruction sequences, timings, source hashes, lineage and method labels remain distinct."
+  ],
+  "conclusion": "Generations27 and28 are action-equivalent across the stated observation domain under the stated floating-point semantics; they are not constant joint policies.",
+  "proof_limits": [
+    "No equivalence is asserted for arbitrary default_radius values: floating-point multiplication-versus-division comparisons can differ outside the discrete declared radius domain.",
+    "No equivalence is asserted for custom numeric objects, a different swarm size/domain, changed simulator types, altered builtins, nonstandard arithmetic precision, or a changed floating-point rounding mode.",
+    "The committed prove_constant helper rejects both state-dependent sources; this manual equivalence proof is not represented as helper-generated or machine-certified.",
+    "Equal recorded search scores are not used as proof. No candidate invocation, boundary probe, research case, model call, or additional objective query was performed.",
+    "This establishes matching actions/numerical trajectories, not byte-identical logs, CPU time, provenance, source code or instruction execution."
+  ],
+  "prospective_treatment": "Preserve both exact sources in the declared source-distinct validation union. No alias implementation or metadata change is made. At most one can be the final winner of this search. Any cross-method final equivalence decision requires review of all relevant sources before the affected protected stage.",
+  "actions": {
+    "candidate_invocations": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "alias_changes": 0,
+    "completed_prereview_edits": 0
+  },
+  "immutability": "Exclusive write-once companion record; completed prereview stays unchanged."
+}

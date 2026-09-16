@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_particle_relocation",
+  "patch_description": "Reduce relocation count from four to three while retaining radius multiplier 1.5. This preserves two particles for ordinary PSO motion while three explore around the refreshed best. The current pair reduced mean error from 4.16 to 3.81, but changed both allocation and radius relative to baseline. Holding radius fixed tests whether preserving more ordinary PSO motion improves recovery. Persistent interval-end errors motivate this experiment but do not establish its mechanism or guarantee improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:45:14.654257",
+  "llm_cost": 0.16808,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_bounded_radius",
+  "patch_description": "Retain four-particle allocation, which achieved the lowest supplied mean error. Adjust radius from 1.5 to 1.75 as observed displacement increases relative to default_radius. This tests whether modest expansion improves recovery while leaving one particle on ordinary PSO motion. Improvement remains unmeasured; observed displacement is not true peak movement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:52:32.442804",
+  "llm_cost": 0.21277,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

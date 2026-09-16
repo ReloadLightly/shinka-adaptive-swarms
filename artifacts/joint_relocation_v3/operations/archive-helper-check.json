@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-16T03:57:51.528259+00:00",
+  "script": "scripts/archive_joint_v3.py",
+  "source_sha256": "cd7368b72d04ab6d8fbc376f53e3de056210cd261e516239052ceb446e4428f8",
+  "result": {
+    "status": "passed",
+    "scope": "tiny temporary WAL SQLite tables and one JSON file only; no research archival",
+    "checks": [
+      "WAL-visible table backup",
+      "schema/all-row equality",
+      "byte-identical non-DB copy",
+      "sidecar exclusion",
+      "destination overwrite refusal",
+      "scientific case cache retained",
+      "auth/dependency exclusions"
+    ]
+  },
+  "actual_research_archive_executed": false,
+  "source_scientific_files_changed": false,
+  "future_command": ".venv/bin/python scripts/archive_joint_v3.py --study results/joint_relocation_v3/study_20260916 --destination artifacts/joint_relocation_v3",
+  "limitations": [
+    "Requires a new destination and completed source stages; a failed new archive is retained with an incomplete marker and cannot be silently overwritten.",
+    "SQLite archives preserve every schema/table row through a read-only consistent snapshot, not byte identity to the original database file.",
+    "Selected operational logs may continue appending; each copied prefix has timestamps, size and SHA-256. Scientific files require no change during copy.",
+    "Only the new V3 inventory is created. Updating the cumulative global inventory and publishing/remote verification remain the supervising task."
+  ]
+}

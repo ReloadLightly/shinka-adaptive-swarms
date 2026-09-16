@@ -1,0 +1,13 @@
+<NAME>
+spread_threshold_six
+</NAME>
+<DESCRIPTION>
+Raise the normalized spread threshold to 6.0, keeping four relocations for moderately dispersed swarms and three for wider swarms. Threshold five achieved lower measured mean error than threshold three (3.68 versus 3.77), motivating this nearby extension. Keep radius_scale at 1.25 and preserve the count clamp to isolate the threshold change. Improvement remains a hypothesis requiring evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 3 if q > 3.0 else 4
+=======
+    count = 3 if q > 6.0 else 4
+>>>>>>> REPLACE
+</DIFF>

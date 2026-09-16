@@ -1,0 +1,15 @@
+{
+  "generation": 15,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_swarm_radius_expansion",
+  "patch_description": "Keep count four and use radius multiplier 1.5, increasing it to 1.75 only when relative fitness deterioration exceeds 0.1 and swarm diameter is at most three default radii. The constant-1.5 policy matched the current policy\u2019s rounded mean error and had a lower worst-case error. This motivates testing whether modest expansion during deterioration helps compact swarms recover. The trigger is an untested hypothesis; the supplied diagnostics do not establish that insufficient coverage caused the errors.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T08:11:26.413993",
+  "llm_cost": 0.21516,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_15/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,308 @@
+{
+  "actions": {
+    "candidate_calls": 0,
+    "model_calls": 0,
+    "objective_queries": 0
+  },
+  "amendment": "Exact source proof metadata supersedes the original shortlist hash before source-review/validation freeze. Search ranks, candidate sources, program set and selection rules are unchanged. Original registration/snapshots remain intact; the active controller is bound by the explicit referenced amendment when present. Added after development search outcomes; not represented as pre-search implementation.",
+  "certificate_id": "d4beb5fa843763e50729a5c671900e7ced7c3e54eacb2e3ec443d756ce164293",
+  "certified_at": "2026-09-16T07:51:40.442999+00:00",
+  "certified_shortlists_sha256": "9aac500e82dda7016d91963119c64f261081c67f4d8f29f47e6633a787e34e78",
+  "certifier": {
+    "path": "scripts/certify_joint_constants.py",
+    "sha256": "f82501f0723c0534418f5a69e70c68933443cc4d2e1b3a9fda9cc80c46692750",
+    "source_revision": "a70a62555a787e1da6438b7fe12d8e413186a004"
+  },
+  "controller_reference": {
+    "amendment_id": "f5d0fff077ebde2e10d669e2baf73e84544e09c6ab47734b8787ce0ac2cdda81",
+    "kind": "joint-v3-component-alias-amendment-v1",
+    "path": "controller_amendment.json",
+    "sha256": "353cf865cbdbc6a90ac3cec6bad7b3418f694ae8865edbc62e206c7e9a159983"
+  },
+  "domain": {
+    "particles_per_swarm": 5,
+    "swarm_size_python_type": "int"
+  },
+  "original_shortlists_sha256": "c5e8496bbaddba35868083e76f7717a88ad23834668850a26d14b0fb1319a493",
+  "partial_output_proofs": {
+    "program_75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_2 generation 21",
+      "outputs": {
+        "radius_scale": 1.5
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "A fresh local response starts with radius 1.5 and count 4. The early return retains both. Otherwise diameter>3*default_radius>=1.5, so the guarded division has positive denominator and its ratio is in [0,1]. Squaring, coverage and the loss threshold are finite. Only response['count'] can change to 3; every return retains radius 1.5."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search2-source-prereview.json",
+        "sha256": "ff57d015ee6c0c7382e0c0354d31f4198b7db1d5a4309df162da76f7f389ca27"
+      },
+      "source_sha256": "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    },
+    "program_9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_1 generation 28",
+      "outputs": {
+        "radius_scale": 1.25
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "float casts preserve the simulator's scalar values. Diameter/radius_reference is finite and comparing it to 4.5 selects only integer count 3 or 4; clamps preserve that count and radius is always 1.25."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search1-source-prereview.json",
+        "sha256": "143e72e74436768a0f3c7a08933b9e272b57125ef2bfa2b8fd9a0ed75b0257d8"
+      },
+      "source_sha256": "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    },
+    "program_acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_2 generation 14",
+      "outputs": {
+        "radius_scale": 1.5
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "Two finite public-scalar comparisons gate count 3 versus 4. The diameter threshold 3*default_radius is exactly 1.5 or 4.5, and min with swarm_size 5 preserves the valid count. The return always contains literal radius 1.5."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search2-source-prereview.json",
+        "sha256": "ff57d015ee6c0c7382e0c0354d31f4198b7db1d5a4309df162da76f7f389ca27"
+      },
+      "source_sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    },
+    "program_b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_2 generation 23",
+      "outputs": {
+        "radius_scale": 1.5
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "Two finite public-scalar comparisons gate count 3 versus 4. The diameter threshold 3.5*default_radius is exactly 1.75 or 5.25, and min with swarm_size 5 preserves the valid count. The return always contains literal radius 1.5."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search2-source-prereview.json",
+        "sha256": "ff57d015ee6c0c7382e0c0354d31f4198b7db1d5a4309df162da76f7f389ca27"
+      },
+      "source_sha256": "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    },
+    "program_dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_1 generation 26",
+      "outputs": {
+        "radius_scale": 1.25
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "With d=max(0,observed_best_displacement)/scale finite and nonnegative, 1+d remains finite and positive, and d/(1+d) is finite. The finite threshold determines only count 3 versus 4; radius is always 1.25."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search1-source-prereview.json",
+        "sha256": "143e72e74436768a0f3c7a08933b9e272b57125ef2bfa2b8fd9a0ed75b0257d8"
+      },
+      "source_sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    },
+    "program_f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43": {
+      "domain": {
+        "default_radius": [
+          0.5,
+          1.5
+        ],
+        "dimension": 5,
+        "distance_bound": "A finite _distance result is sqrt of a finite nonnegative binary64 sum, hence at most sqrt(sys.float_info.max).",
+        "move_severity": [
+          1.0,
+          3.0
+        ],
+        "observations": "Unmodified simulator public scalar observations; finite Python-float distances produced by _distance, not arbitrary custom numeric objects.",
+        "particles_per_swarm": 5,
+        "swarm_size_python_type": "int"
+      },
+      "label": "search_1 generation 27",
+      "outputs": {
+        "radius_scale": 1.25
+      },
+      "reasoning": [
+        "The exact module contains only a docstring and one ordinary function with safe dict annotations. No imports, decorators, defaults, RNG, persistent state, observation mutation, external access or external side effects occur. Any fresh local response dictionary is not shared state.",
+        "The only calls are unshadowed pure numeric builtins. The declared swarm_size is Python int 5, so min/max clamps preserve the branch's Python integer 3 or 4.",
+        "The guarded default radius is exactly 0.5 or 1.5. Finite simulator distances are at most sqrt(max_binary64), so division by either radius remains finite. Denominators are positive; all count arithmetic is total on this domain.",
+        "All return paths produce exactly count and the source's declared finite constant radius_scale. The whole policy remains state-dependent; only the radius output is constant.",
+        "After count replacement, the original pure, total function still returns a valid action; replacing its count leaves the constant pair (replacement, certified radius). Equal actions imply equal optimizer trajectories and objective queries with the same case RNGs. Instruction paths and telemetry labels need not match.",
+        "The threshold 4.5*radius_reference is exactly 2.25 or 6.75. Comparing the finite diameter selects only integer count 3 or 4; radius is always 1.25."
+      ],
+      "registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+      "source_review": {
+        "path": "operations/search1-source-prereview.json",
+        "sha256": "143e72e74436768a0f3c7a08933b9e272b57125ef2bfa2b8fd9a0ed75b0257d8"
+      },
+      "source_sha256": "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+      "version": "joint-v3-reviewed-partial-output-v1"
+    }
+  },
+  "program_proofs": {
+    "program_0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815": {
+      "action": {
+        "count": 4,
+        "radius_scale": 1.25
+      },
+      "reason": "Whitelist AST proof over fixed swarm_size=5; no candidate import or execution, unknown state, external access, mutation, branches, loops or persistent effects.",
+      "source_sha256": "0c9f13d866080f1dbc9860b40215af46ba7ca3d9e5135af2f75341056fa6f815",
+      "status": "proved"
+    },
+    "program_75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3": {
+      "reason": "Function must end in a direct output dictionary return.",
+      "source_sha256": "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+      "status": "not_proved"
+    },
+    "program_9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de": {
+      "reason": "Unsupported or state-dependent expression: Subscript",
+      "source_sha256": "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+      "status": "not_proved"
+    },
+    "program_acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec": {
+      "reason": "Only simple/tuple local assignments before return are supported.",
+      "source_sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "status": "not_proved"
+    },
+    "program_b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c": {
+      "reason": "Only simple/tuple local assignments before return are supported.",
+      "source_sha256": "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c",
+      "status": "not_proved"
+    },
+    "program_cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2": {
+      "action": {
+        "count": 4,
+        "radius_scale": 1.21875
+      },
+      "reason": "Whitelist AST proof over fixed swarm_size=5; no candidate import or execution, unknown state, external access, mutation, branches, loops or persistent effects.",
+      "source_sha256": "cf8db238a346baecfe592259f8e7fc75843c4df27e0fbe2dee09b8849a60aac2",
+      "status": "proved"
+    },
+    "program_dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7": {
+      "reason": "Unsupported or state-dependent expression: Subscript",
+      "source_sha256": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+      "status": "not_proved"
+    },
+    "program_f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43": {
+      "reason": "Unsupported or state-dependent expression: Subscript",
+      "source_sha256": "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+      "status": "not_proved"
+    },
+    "program_f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81": {
+      "action": {
+        "count": 4,
+        "radius_scale": 1.1875
+      },
+      "reason": "Whitelist AST proof over fixed swarm_size=5; no candidate import or execution, unknown state, external access, mutation, branches, loops or persistent effects.",
+      "source_sha256": "f9935cf05f784c66c30ed8b3880be445a947ab028f758e14f77916b8b3a61a81",
+      "status": "proved"
+    }
+  },
+  "protected_stages_existed": false,
+  "registration_sha256": "832b37321744907766263cc72416afa991cd0a82d37690abf22d4fede56b8ce0",
+  "telemetry": "Aliases retain the representative execution checkpoint unchanged. Nominal component interventions and proven action pairs come from method metadata; absent component_substitution/original_candidate_action fields are not fabricated.",
+  "version": "joint-v3-static-constant-certificate-v2"
+}

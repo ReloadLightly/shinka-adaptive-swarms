@@ -1,0 +1,24 @@
+<NAME>
+three_particle_radius_125
+</NAME>
+<DESCRIPTION>
+The current policy relocates three particles with radius multiplier 1.5. This proposal retains count three and reduces the multiplier to 1.25, testing whether tighter relocation improves recovery while two particles continue ordinary PSO motion. The four-particle results motivate testing smaller radii, but do not establish that this preference transfers to count three. Performance improvement remains unmeasured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Relocate up to three particles at 1.25 times the default radius.
+    The fixed adapter reevaluates personal memories and retains velocities.
+    Non-relocated particles continue ordinary PSO motion.
+    """
+    count = min(3, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.25}
+# EVOLVE-BLOCK-END
+```
+</CODE>

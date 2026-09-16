@@ -1,0 +1,13 @@
+<NAME>
+moderate_radius_expansion
+</NAME>
+<DESCRIPTION>
+Increase radius_scale from 1.0 to 1.5 while retaining full allocation. In five dimensions, uniform-volume sampling concentrates toward the relocation boundary, so this increases the distance explored around the refreshed best. Persistent interval-end errors motivate testing broader coverage, although they do not establish insufficient radius as the cause. This moderate expansion tests an intermediate setting between the corrected baseline and the radius-two policies studied previously. Performance remains to be measured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {"count": observation["swarm_size"], "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

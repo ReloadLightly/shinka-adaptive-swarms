@@ -1,0 +1,64 @@
+# System Instructions
+
+You are an expert programming assistant analyzing an individual program. Create a standalone summary focusing on implementation details and evaluation feedback. Consider how this specific program performs and what implementation choices were made.
+
+# Previous Messages
+
+[]
+
+# User Request
+
+# Program to Analyze
+# Program to Analyze
+
+```python
+"""Joint relocation seed: the original corrected baseline response.
+
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+
+
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Reduce relocation only within a moderate observed spread range."""
+    swarm_size = int(observation["swarm_size"])
+    default_radius = max(float(observation["default_radius"]), 1e-12)
+    relative_spread = float(observation["swarm_diameter"]) / default_radius
+    count = 3 if 4.0 < relative_spread <= 8.0 else 4
+    return {
+        "count": max(0, min(swarm_size, count)),
+        "radius_scale": 1.25,
+    }
+# EVOLVE-BLOCK-END
+
+```
+
+Performance metrics:
+Combined score to maximize: 0.20
+mean_offline_error: 3.93; worst_case_offline_error: 12.13; case_error_std: 2.66; cases_completed: 16
+
+The program is correct and passes all validation tests.
+
+Text feedback:
+Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.838723; mean error remaining at interval end 1.5432; detection used 15.81% and memory refresh 1.31% of objective evaluations; 263 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 263, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 263, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 263, "5": 0}. case_001 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.954664; mean error remaining at interval end 1.06146; detection used 15.85% and memory refresh 1.76% of objective evaluations; 353 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.797734, and adapter encoding fraction 0.697734 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 4, "4": 349, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 4, "4": 349, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 4, "4": 349, "5": 0}. case_002 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.835648; mean error remaining at interval end 1.49112; detection used 15.85% and memory refresh 1.44% of objective evaluations; 288 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.799306, and adapter encoding fraction 0.699306 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 287, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 287, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 1, "4": 287, "5": 0}. case_003 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.757314; mean error remaining at interval end 2.64764; detection used 15.75% and memory refresh 1.28% of objective evaluations; 256 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.799219, and adapter encoding fraction 0.699219 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 255, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 255, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 1, "4": 255, "5": 0}. case_004 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.648575; mean error remaining at interval end 1.21196; detection used 16.04% and memory refresh 0.75% of objective evaluations; 150 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.798667, and adapter encoding fraction 0.698667 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 149, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 149, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 1, "4": 149, "5": 0}. case_005 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.164450; mean error remaining at interval end 0.489492; detection used 15.85% and memory refresh 0.52% of objective evaluations; 103 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 103, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 103, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 103, "5": 0}. case_006 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 3.777384; mean error remaining at interval end 3.28948; detection used 15.99% and memory refresh 0.56% of objective evaluations; 112 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 112, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 112, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 112, "5": 0}. case_007 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.381495; mean error remaining at interval end 0.89649; detection used 15.89% and memory refresh 0.60% of objective evaluations; 121 responses with mean radius 0.625 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 121, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 121, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 121, "5": 0}. case_008 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.172808; mean error remaining at interval end 1.48434; detection used 16.00% and memory refresh 1.82% of objective evaluations; 364 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.797802, and adapter encoding fraction 0.697802 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 4, "4": 360, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 4, "4": 360, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 4, "4": 360, "5": 0}. case_009 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 4.157468; mean error remaining at interval end 0.682199; detection used 15.98% and memory refresh 1.54% of objective evaluations; 309 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.798058, and adapter encoding fraction 0.698058 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 3, "4": 306, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 3, "4": 306, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 3, "4": 306, "5": 0}. case_010 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 6.993322; mean error remaining at interval end 3.72652; detection used 15.84% and memory refresh 1.39% of objective evaluations; 278 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.799281, and adapter encoding fraction 0.699281 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 277, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 277, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 1, "4": 277, "5": 0}. case_011 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.218381; mean error remaining at interval end 1.61417; detection used 15.98% and memory refresh 1.75% of objective evaluations; 351 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.798291, and adapter encoding fraction 0.698291 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 3, "4": 348, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 3, "4": 348, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 3, "4": 348, "5": 0}. case_012 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.507451; mean error remaining at interval end 1.90419; detection used 15.93% and memory refresh 0.52% of objective evaluations; 104 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 104, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 104, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 104, "5": 0}. case_013 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.167489; mean error remaining at interval end 0.40777; detection used 16.06% and memory refresh 0.80% of objective evaluations; 160 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 160, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 160, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 160, "5": 0}. case_014 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.172569; mean error remaining at interval end 1.60614; detection used 15.30% and memory refresh 0.33% of objective evaluations; 66 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 66, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 0, "4": 66, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 0, "4": 66, "5": 0}. case_015 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 12.127803; mean error remaining at interval end 10.8389; detection used 15.73% and memory refresh 0.49% of objective evaluations; 98 responses with mean radius 1.875 (mean multiplier 1.25), allocated fraction 0.797959, and adapter encoding fraction 0.697959 (encoding only); requested counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 97, "5": 0}, allocated counts {"0": 0, "1": 0, "2": 0, "3": 1, "4": 97, "5": 0}; 0 horizon-truncated responses; counts with objective queries {"0": 0, "1": 0, "2": 0, "3": 1, "4": 97, "5": 0}. Largest tracking error: case_015. Examine joint integer allocation and radius multiplier using public observed state, with all memories reevaluated and retained velocities fixed. Allocated fraction is allocated_count/swarm_size; the adapter encoding fraction only encodes an integer for the ceiling rule. Allocated counts are selected indices, not a claim of completed movement; horizon-truncated responses separately retain counts with objective queries. Constant count/radius pairs are permitted and receive no penalty for simplicity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases.
+
+
+
+# Instructions
+
+Create a standalone summary for this program using the following exact format:
+
+**Program Name: [Short summary name of the algorithm (up to 10 words)]**
+- **Implementation**: [Key implementation details (1-2 sentences)]
+- **Performance**: [Score/metrics summary (1 sentence)]
+- **Feedback**: [Key insights from evaluation (1-2 sentences)]
+
+Focus on:
+1. What specific implementation details were done
+2. How these details affected performance
+3. Implementation details that are relevant to the approach
+4. Any evaluation feedback that provides insights
+
+Keep the program summary concise but informative. Follow the format exactly.

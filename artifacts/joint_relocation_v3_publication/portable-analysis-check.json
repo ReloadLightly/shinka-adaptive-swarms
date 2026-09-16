@@ -1,0 +1,25 @@
+{
+  "verified_at_utc": "2026-09-16T09:35:04.700988+00:00",
+  "command": [
+    ".venv/bin/python",
+    "scripts/check_joint_analysis.py",
+    "--run",
+    "artifacts/joint_relocation_v3/study_20260916"
+  ],
+  "result": {
+    "status": "passed",
+    "study": "/home/roland/actir/shinka-adaptive-swarms/artifacts/joint_relocation_v3/study_20260916",
+    "paired_case_count": 80,
+    "comparisons_checked": 9,
+    "interaction_checked": true,
+    "bootstrap_resamples": 20000,
+    "analysis_seed": 2026091603,
+    "analysis_sha256": "3ef0633e05810fe51d975d33e7f9dd7785738fc57e1692f3aa6dc5ce38b37050",
+    "registration_sha256": "832b37321744907766263cc72416afa991cd0a82d37690abf22d4fede56b8ce0",
+    "interpretation": "Recomputed frozen analysis functions on saved paired cases, including means, regime effects, standard errors, intervals and the primary claim; not an independent statistical implementation.",
+    "original_search_directories_required": false,
+    "simulations_launched": 0,
+    "model_calls_launched": 0,
+    "artifact_writes": 0
+  }
+}

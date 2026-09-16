@@ -1,0 +1,24 @@
+<NAME>
+four_particle_radius_blend
+</NAME>
+<DESCRIPTION>
+Retain both parents’ four-particle allocation and blend their radius multipliers to 1.375. The 1.25 parent achieved lower mean error, while 1.5 achieved lower worst-case error; the midpoint tests an intermediate radius without adding unsupported state dependence. Performance improvement remains to be measured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Allocate up to four particles with an intermediate constant radius.
+    The fixed adapter reevaluates memories and retains velocities.
+    Non-relocated particles continue ordinary PSO motion.
+    """
+    count = min(4, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.375}
+# EVOLVE-BLOCK-END
+```
+</CODE>

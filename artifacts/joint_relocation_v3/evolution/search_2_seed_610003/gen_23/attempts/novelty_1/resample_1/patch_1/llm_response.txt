@@ -1,0 +1,37 @@
+<NAME>
+capped_coverage_crossover
+</NAME>
+<DESCRIPTION>
+Combine the current program’s nonnegative loss normalization with the stronger parent’s 7.5% loss ceiling, retaining radius multiplier 1.5. Short-circuit checks avoid computing coverage when reduced allocation is already excluded. This restores the decision rule associated with supplied mean error 3.52 versus 3.57 for the current program; this implementation has not been independently evaluated.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Reduce relocation only when spread supports a capped fitness loss."""
+    swarm_size = int(observation["swarm_size"])
+    fitness_loss = max(
+        0.0, float(observation["relative_fitness_drop"])
+    )
+    count = 4
+    if fitness_loss <= 0.075:
+        diameter = max(0.0, float(observation["swarm_diameter"]))
+        reference_diameter = 3.0 * max(
+            0.0, float(observation["default_radius"])
+        )
+        if diameter > reference_diameter:
+            coverage_reserve = 1.0 - (reference_diameter / diameter) ** 2
+            if fitness_loss <= 0.10 * coverage_reserve:
+                count = 3
+    return {
+        "count": min(count, swarm_size),
+        "radius_scale": 1.5,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

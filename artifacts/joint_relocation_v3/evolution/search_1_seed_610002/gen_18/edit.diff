@@ -1,0 +1,33 @@
+--- a/original.py
++++ b/original.py
+@@ -1,20 +1,27 @@
+ """Joint relocation seed: the original corrected baseline response.
+ 
+ The adapter fixes memory reevaluation and retained velocities. It converts the
+ integer count to the unchanged simulator's fraction interface without rounding
+ ambiguity. The seed allocates every particle at the baseline radius multiplier.
+ """
+ 
+ 
+ # EVOLVE-BLOCK-START
+ def choose_relocation(observation: dict) -> dict:
+-    """Reduce relocation only within a moderate observed spread range."""
++    """Condition the allocation threshold on observed best displacement."""
+     swarm_size = int(observation["swarm_size"])
+     default_radius = max(float(observation["default_radius"]), 1e-12)
+     relative_spread = float(observation["swarm_diameter"]) / default_radius
+-    count = 3 if 4.0 < relative_spread <= 8.0 else 4
++    relative_displacement = (
++        max(0.0, float(observation["observed_best_displacement"]))
++        / default_radius
++    )
++    spread_threshold = 4.0 + 2.0 * (
++        relative_displacement / (1.0 + relative_displacement)
++    )
++    requested_count = 3 if relative_spread > spread_threshold else 4
+     return {
+-        "count": max(0, min(swarm_size, count)),
++        "count": max(0, min(swarm_size, requested_count)),
+         "radius_scale": 1.25,
+     }
+ # EVOLVE-BLOCK-END

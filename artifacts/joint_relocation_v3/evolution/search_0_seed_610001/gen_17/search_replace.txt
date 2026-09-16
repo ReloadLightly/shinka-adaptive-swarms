@@ -1,0 +1,22 @@
+<NAME>
+constant_radius_11875
+</NAME>
+<DESCRIPTION>
+Keep count four and use radius multiplier 1.1875 for every response. The current recovery condition leaves mean multipliers near 1.25 and produces mixed per-case changes without a clear aggregate gain. A constant 1.1875 tests whether modestly tighter relocation improves tracking while preserving one particle's ordinary PSO motion. This is an untested hypothesis; the persistent interval-end errors do not establish that contraction will help.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    fitness_drop = float(observation["fitness_drop"])
+    recent_improvement = max(0.0, float(observation["recent_improvement"]))
+    recovered = fitness_drop > 0.0 and recent_improvement >= fitness_drop
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.1875 if recovered else 1.25,
+    }
+=======
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.1875,
+    }
+>>>>>>> REPLACE
+</DIFF>

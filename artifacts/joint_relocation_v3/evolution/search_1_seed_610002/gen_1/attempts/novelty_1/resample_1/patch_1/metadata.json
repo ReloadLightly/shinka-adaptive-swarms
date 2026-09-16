@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "partial_relocation_baseline_radius",
+  "patch_description": "Relocate three particles at the baseline radius, leaving two to continue ordinary PSO motion. This tests whether preserving some current positions and motion improves recovery while retaining local exploration around the refreshed best. Earlier count-three evidence used twice the baseline radius; this proposal tests reduced allocation without that radius increase. The large residual errors motivate testing alternative recovery behavior but do not establish its cause. Performance improvement remains a hypothesis for the sixteen-case evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:45:08.122961",
+  "llm_cost": 0.13207,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

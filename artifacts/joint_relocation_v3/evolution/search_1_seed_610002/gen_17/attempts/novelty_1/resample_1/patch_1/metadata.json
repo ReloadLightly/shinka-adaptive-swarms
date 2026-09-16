@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_spread_allocation",
+  "patch_description": "Test three relocations only when normalized swarm diameter lies in (4, 8], restoring four outside that range, with radius multiplier 1.25. The supplied spread-based policy achieved mean offline error 3.67 versus 3.96 for the current policy. This motivates testing whether preserving more ordinary PSO motion helps at moderate dispersion while stronger relocation helps at extreme dispersion. The bounded rule is untested; existing feedback does not establish this mechanism or separate allocation effects from radius effects.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:17:53.735084",
+  "llm_cost": 0.2138,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,21 @@
+<NAME>
+preserve_two_movers_after_mild_loss
+</NAME>
+<DESCRIPTION>
+Test count three when relative fitness deterioration is at most 0.025, otherwise count four, with radius_scale fixed at 1.25. This preserves two ordinary PSO movers after mild losses while retaining broader relocation after larger losses. The current radius adjustment produced mixed per-case changes without improving the reported mean; fixing the radius makes comparison against the measured count-four/radius-1.25 policy easier to interpret. The threshold is a hypothesis requiring evaluation, not an established improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = min(4, int(observation["swarm_size"]))
+    fitness_drop = observation["fitness_drop"]
+    recent_improvement = max(0.0, observation["recent_improvement"])
+    radius_scale = 1.25
+    if fitness_drop > 0.0 and recent_improvement >= fitness_drop:
+        radius_scale = 1.1875
+    return {"count": count, "radius_scale": radius_scale}
+=======
+    requested_count = 3 if observation["relative_fitness_drop"] <= 0.025 else 4
+    count = min(requested_count, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.25}
+>>>>>>> REPLACE
+</DIFF>

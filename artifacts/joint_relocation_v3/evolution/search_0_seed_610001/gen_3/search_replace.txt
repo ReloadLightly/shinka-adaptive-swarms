@@ -1,0 +1,14 @@
+<NAME>
+four_particle_moderate_expansion
+</NAME>
+<DESCRIPTION>
+Test count four with radius multiplier 1.5. This preserves one particle's ordinary PSO motion while spreading four relocation samples farther around the refreshed best. In five dimensions, uniform-volume samples concentrate toward the radius boundary, so a moderate expansion meaningfully changes exploration distance.
+The baseline's persistent interval-end errors motivate testing broader exploration, but do not establish its cause. This constant pair tests a compromise between the original five-particle response and the previously studied count-three/radius-two response. Improvement remains a hypothesis for the sixteen-case evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

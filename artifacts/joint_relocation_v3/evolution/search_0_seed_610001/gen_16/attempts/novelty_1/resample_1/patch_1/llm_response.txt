@@ -1,0 +1,22 @@
+<NAME>
+contract_after_observed_recovery
+</NAME>
+<DESCRIPTION>
+Keep allocation at four particles and contract the radius multiplier from 1.25 to 1.1875 when positive fitness loss is matched or exceeded by recent improvement. This tests whether modest contraction preserves useful recovery near the refreshed best. The lower mean error at radius 1.25 motivates the experiment, but mixed per-case outcomes and increased worst-case error leave its benefit uncertain.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.25,
+    }
+=======
+    fitness_drop = float(observation["fitness_drop"])
+    recent_improvement = max(0.0, float(observation["recent_improvement"]))
+    recovered = fitness_drop > 0.0 and recent_improvement >= fitness_drop
+    return {
+        "count": min(4, int(observation["swarm_size"])),
+        "radius_scale": 1.1875 if recovered else 1.25,
+    }
+>>>>>>> REPLACE
+</DIFF>

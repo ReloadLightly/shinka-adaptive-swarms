@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-09-16T08:11:28.776359+00:00",
+  "controller_pid": 692804,
+  "host_process_exists": true,
+  "controller_command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u /home/roland/actir/shinka-adaptive-swarms/scripts/run_joint_study.py validate --run /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/study_20260916 ",
+  "controller_survived": true,
+  "controller_restarted": false,
+  "corrects_record": "supervision-resumed-20260916.json",
+  "corrects_field": "controller_survived",
+  "reason": "The prior process existence read was made in the restricted tool namespace, which cannot see the host PID. Its false value is not evidence of process death. Host process inspection before and after it confirms the same original controller is running."
+}

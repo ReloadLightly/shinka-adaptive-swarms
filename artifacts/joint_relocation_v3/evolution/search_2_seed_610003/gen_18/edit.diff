@@ -1,0 +1,31 @@
+--- a/original.py
++++ b/original.py
+@@ -1,20 +1,24 @@
+ """Joint relocation seed: the original corrected baseline response.
+ 
+ The adapter fixes memory reevaluation and retained velocities. It converts the
+ integer count to the unchanged simulator's fraction interface without rounding
+ ambiguity. The seed allocates every particle at the baseline radius multiplier.
+ """
+ 
+ 
+ # EVOLVE-BLOCK-START
+ def choose_relocation(observation: dict) -> dict:
+-    """Relocate up to four particles, expanding radius for compact, damaged swarms."""
+-    count = min(4, int(observation["swarm_size"]))
++    """Use partial relocation for compact swarms with substantial fitness loss."""
++    count = 4
+     radius_scale = 1.5
+     if (
+         observation["relative_fitness_drop"] > 0.1
+         and observation["swarm_diameter"] <= 3.0 * observation["default_radius"]
+     ):
+-        radius_scale = 1.75
+-    return {"count": count, "radius_scale": float(radius_scale)}
++        count = 3
++        radius_scale = 1.625
++    return {
++        "count": min(count, int(observation["swarm_size"])),
++        "radius_scale": radius_scale,
++    }
+ # EVOLVE-BLOCK-END

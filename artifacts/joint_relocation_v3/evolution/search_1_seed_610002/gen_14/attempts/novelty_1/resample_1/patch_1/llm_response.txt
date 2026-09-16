@@ -1,0 +1,29 @@
+<NAME>
+three_particles_fixed_radius
+</NAME>
+<DESCRIPTION>
+Test three relocated particles at a constant radius multiplier of 1.25, leaving two particles to continue ordinary PSO motion. The measured four-particle constant policy achieved lower mean error than conditional radius expansion (3.76 versus 3.88). Removing that expansion and reducing allocation tests whether preserving more ongoing motion improves tracking. This pair remains an untested hypothesis.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Relocate four particles with selectively expanded radius.
+    Non-relocated particles continue ordinary PSO motion. The fixed adapter
+    reevaluates personal memories and retains velocities.
+    """
+    count = min(4, int(observation["swarm_size"]))
+    radius_scale = 1.25
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["swarm_diameter"]
+        < 2.0 * observation["default_radius"]
+    ):
+        radius_scale = 1.5
+=======
+    """Relocate three particles at a constant radius multiplier of 1.25.
+    Non-relocated particles continue ordinary PSO motion. The fixed adapter
+    reevaluates personal memories and retains velocities.
+    """
+    count = min(3, int(observation["swarm_size"]))
+    radius_scale = 1.25
+>>>>>>> REPLACE
+</DIFF>

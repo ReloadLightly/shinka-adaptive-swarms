@@ -1,0 +1,15 @@
+{
+  "generation": 29,
+  "novelty_attempt": 2,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "continuous_radius_taper",
+  "patch_description": "Changing the spread threshold from four to 4.5 improved only two cases slightly. This proposal instead fixes allocation at four particles and smoothly reduces the radius multiplier from 1.25 toward one as relative spread increases. It tests whether dispersed swarms benefit from tighter relocation while retaining ordinary PSO motion for one particle. Performance remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:40:06.512487",
+  "llm_cost": 0.22727,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_29/attempts/novelty_2/resample_1/patch_1/headless_prompt.md"
+}

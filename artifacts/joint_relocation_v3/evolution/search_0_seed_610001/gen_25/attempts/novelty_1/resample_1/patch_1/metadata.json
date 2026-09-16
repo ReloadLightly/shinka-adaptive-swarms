@@ -1,0 +1,15 @@
+{
+  "generation": 25,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_particle_radius_refinement",
+  "patch_description": "Test constant count three with radius multiplier 1.4375, retaining two particles for ordinary PSO motion. The current conditional four-particle policy increased measured mean error from approximately 3.76 to 3.96. The reported three-particle result at radius 1.5 motivates testing a slightly smaller radius independently of the four-particle branch. This is an unmeasured hypothesis; improvement requires evaluation across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:31:25.979386",
+  "llm_cost": 0.21101,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_25/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

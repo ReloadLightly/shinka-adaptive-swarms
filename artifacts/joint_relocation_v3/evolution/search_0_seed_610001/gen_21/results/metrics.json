@@ -1,0 +1,641 @@
+{
+  "combined_score": 0.20530326456224232,
+  "public": {
+    "mean_offline_error": 3.8708431506544674,
+    "worst_case_offline_error": 11.65539383282637,
+    "case_error_std": 2.537680393356181,
+    "cases_completed": 16
+  },
+  "private": {
+    "cases": [
+      {
+        "case_id": "case_000",
+        "offline_error": 3.2796749962899705,
+        "artifact": "case_000.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+        "mean_interval_end_error": 1.864575157433841,
+        "detection_evaluation_share": 0.15812,
+        "memory_evaluation_share": 0.01275,
+        "mean_response_radius": 0.5864546899694558,
+        "mean_radius_scale": 1.1729093799389116,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 255,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 255,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 255,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 255,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_001",
+        "offline_error": 2.710540464360169,
+        "artifact": "case_001.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+        "mean_interval_end_error": 0.9221180346838105,
+        "detection_evaluation_share": 0.15864,
+        "memory_evaluation_share": 0.0181,
+        "mean_response_radius": 0.5891528910473353,
+        "mean_radius_scale": 1.1783057820946705,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 362,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 362,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 362,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 362,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_002",
+        "offline_error": 2.819980515287926,
+        "artifact": "case_002.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+        "mean_interval_end_error": 1.3800190167195343,
+        "detection_evaluation_share": 0.15893,
+        "memory_evaluation_share": 0.0143,
+        "mean_response_radius": 0.5879130580346075,
+        "mean_radius_scale": 1.175826116069215,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 286,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 286,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 286,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 286,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_003",
+        "offline_error": 2.6593357716071373,
+        "artifact": "case_003.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 2500 evaluations",
+        "mean_interval_end_error": 1.5673885467354256,
+        "detection_evaluation_share": 0.15829,
+        "memory_evaluation_share": 0.014,
+        "mean_response_radius": 0.5880311138043338,
+        "mean_radius_scale": 1.1760622276086676,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 280,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 280,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 280,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 280,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_004",
+        "offline_error": 1.6570073841813184,
+        "artifact": "case_004.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 1.2113935869838097,
+        "detection_evaluation_share": 0.16045,
+        "memory_evaluation_share": 0.00755,
+        "mean_response_radius": 0.583975971103278,
+        "mean_radius_scale": 1.167951942206556,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 151,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 151,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 151,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 151,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_005",
+        "offline_error": 1.1740559741442407,
+        "artifact": "case_005.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 0.4891265443261535,
+        "detection_evaluation_share": 0.15845,
+        "memory_evaluation_share": 0.00515,
+        "mean_response_radius": 0.5836856351219563,
+        "mean_radius_scale": 1.1673712702439125,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 103,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 103,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 103,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 103,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_006",
+        "offline_error": 3.806285888530602,
+        "artifact": "case_006.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 3.28545799885338,
+        "detection_evaluation_share": 0.15983,
+        "memory_evaluation_share": 0.00555,
+        "mean_response_radius": 0.5835832083525232,
+        "mean_radius_scale": 1.1671664167050464,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 111,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_007",
+        "offline_error": 1.430974576992117,
+        "artifact": "case_007.json.gz",
+        "regime": "5D, 10 peaks, move severity 1.0, interval 5000 evaluations",
+        "mean_interval_end_error": 0.9011870538635577,
+        "detection_evaluation_share": 0.15892,
+        "memory_evaluation_share": 0.00605,
+        "mean_response_radius": 0.5835165438057424,
+        "mean_radius_scale": 1.1670330876114847,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 121,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 121,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 121,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 121,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_008",
+        "offline_error": 5.707709437499798,
+        "artifact": "case_008.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+        "mean_interval_end_error": 2.458388755606106,
+        "detection_evaluation_share": 0.16006,
+        "memory_evaluation_share": 0.01775,
+        "mean_response_radius": 1.7660477928832166,
+        "mean_radius_scale": 1.1773651952554778,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 355,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 355,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 355,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 355,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_009",
+        "offline_error": 5.019248775363987,
+        "artifact": "case_009.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+        "mean_interval_end_error": 2.1339007477503604,
+        "detection_evaluation_share": 0.15991,
+        "memory_evaluation_share": 0.0159,
+        "mean_response_radius": 1.7650555225372508,
+        "mean_radius_scale": 1.1767036816915006,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 318,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 318,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 318,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 318,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_010",
+        "offline_error": 5.5573096615567765,
+        "artifact": "case_010.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+        "mean_interval_end_error": 1.891127662195545,
+        "detection_evaluation_share": 0.15852,
+        "memory_evaluation_share": 0.01335,
+        "mean_response_radius": 1.7620166325102167,
+        "mean_radius_scale": 1.174677755006811,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 267,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 267,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 267,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 267,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_011",
+        "offline_error": 5.4819892156859975,
+        "artifact": "case_011.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 2500 evaluations",
+        "mean_interval_end_error": 2.4312140191073572,
+        "detection_evaluation_share": 0.15965,
+        "memory_evaluation_share": 0.01705,
+        "mean_response_radius": 1.7659929934879697,
+        "mean_radius_scale": 1.177328662325313,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 341,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 341,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 341,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 341,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_012",
+        "offline_error": 3.0690725569143757,
+        "artifact": "case_012.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 1.7050791694126222,
+        "detection_evaluation_share": 0.1598,
+        "memory_evaluation_share": 0.00555,
+        "mean_response_radius": 1.751986976659291,
+        "mean_radius_scale": 1.1679913177728607,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 111,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 111,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_013",
+        "offline_error": 3.7063838322539504,
+        "artifact": "case_013.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 0.4158821440204356,
+        "detection_evaluation_share": 0.161,
+        "memory_evaluation_share": 0.00875,
+        "mean_response_radius": 1.7492390721620932,
+        "mean_radius_scale": 1.1661593814413955,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 175,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 175,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 175,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 175,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_014",
+        "offline_error": 2.198527526976746,
+        "artifact": "case_014.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 1.6170178394437642,
+        "detection_evaluation_share": 0.15361,
+        "memory_evaluation_share": 0.0032,
+        "mean_response_radius": 1.7612421501786417,
+        "mean_radius_scale": 1.1741614334524277,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 64,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 64,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 64,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 64,
+          "5": 0
+        }
+      },
+      {
+        "case_id": "case_015",
+        "offline_error": 11.65539383282637,
+        "artifact": "case_015.json.gz",
+        "regime": "5D, 10 peaks, move severity 3.0, interval 5000 evaluations",
+        "mean_interval_end_error": 9.75944058521349,
+        "detection_evaluation_share": 0.15824,
+        "memory_evaluation_share": 0.0055,
+        "mean_response_radius": 1.750428042776334,
+        "mean_radius_scale": 1.166952028517556,
+        "mean_allocated_fraction": 0.8,
+        "mean_adapter_encoding_fraction": 0.7,
+        "response_count": 110,
+        "incomplete_responses": 0,
+        "requested_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 110,
+          "5": 0
+        },
+        "allocated_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 110,
+          "5": 0
+        },
+        "evaluated_relocation_count_distribution": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 110,
+          "5": 0
+        }
+      }
+    ],
+    "suite_sha256": "561edead300b2cf6f6c17cb159080c6256f62df077341bfb95098704ec5d70ba",
+    "evaluation_version": "joint_relocation_v3_score_reciprocal",
+    "feedback_version": "joint_relocation_tracking_diagnostics_v3"
+  },
+  "text_feedback": "Lower offline error is better; combined_score=1/(1+mean_offline_error) is a strictly monotonic ranking transformation. case_000 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 3.279675; mean error remaining at interval end 1.86458; detection used 15.81% and memory refresh 1.27% of objective evaluations; 255 responses with mean radius 0.586455 (mean multiplier 1.17291), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 255, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 255, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 255, \"5\": 0}. case_001 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.710540; mean error remaining at interval end 0.922118; detection used 15.86% and memory refresh 1.81% of objective evaluations; 362 responses with mean radius 0.589153 (mean multiplier 1.17831), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 362, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 362, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 362, \"5\": 0}. case_002 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.819981; mean error remaining at interval end 1.38002; detection used 15.89% and memory refresh 1.43% of objective evaluations; 286 responses with mean radius 0.587913 (mean multiplier 1.17583), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 286, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 286, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 286, \"5\": 0}. case_003 (5D, 10 peaks, move severity 1.0, interval 2500 evaluations): offline error 2.659336; mean error remaining at interval end 1.56739; detection used 15.83% and memory refresh 1.40% of objective evaluations; 280 responses with mean radius 0.588031 (mean multiplier 1.17606), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 280, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 280, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 280, \"5\": 0}. case_004 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.657007; mean error remaining at interval end 1.21139; detection used 16.05% and memory refresh 0.76% of objective evaluations; 151 responses with mean radius 0.583976 (mean multiplier 1.16795), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 151, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 151, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 151, \"5\": 0}. case_005 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.174056; mean error remaining at interval end 0.489127; detection used 15.85% and memory refresh 0.52% of objective evaluations; 103 responses with mean radius 0.583686 (mean multiplier 1.16737), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 103, \"5\": 0}. case_006 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 3.806286; mean error remaining at interval end 3.28546; detection used 15.98% and memory refresh 0.56% of objective evaluations; 111 responses with mean radius 0.583583 (mean multiplier 1.16717), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}. case_007 (5D, 10 peaks, move severity 1.0, interval 5000 evaluations): offline error 1.430975; mean error remaining at interval end 0.901187; detection used 15.89% and memory refresh 0.60% of objective evaluations; 121 responses with mean radius 0.583517 (mean multiplier 1.16703), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 121, \"5\": 0}. case_008 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.707709; mean error remaining at interval end 2.45839; detection used 16.01% and memory refresh 1.77% of objective evaluations; 355 responses with mean radius 1.76605 (mean multiplier 1.17737), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 355, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 355, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 355, \"5\": 0}. case_009 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.019249; mean error remaining at interval end 2.1339; detection used 15.99% and memory refresh 1.59% of objective evaluations; 318 responses with mean radius 1.76506 (mean multiplier 1.1767), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 318, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 318, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 318, \"5\": 0}. case_010 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.557310; mean error remaining at interval end 1.89113; detection used 15.85% and memory refresh 1.33% of objective evaluations; 267 responses with mean radius 1.76202 (mean multiplier 1.17468), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 267, \"5\": 0}. case_011 (5D, 10 peaks, move severity 3.0, interval 2500 evaluations): offline error 5.481989; mean error remaining at interval end 2.43121; detection used 15.96% and memory refresh 1.70% of objective evaluations; 341 responses with mean radius 1.76599 (mean multiplier 1.17733), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 341, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 341, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 341, \"5\": 0}. case_012 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.069073; mean error remaining at interval end 1.70508; detection used 15.98% and memory refresh 0.56% of objective evaluations; 111 responses with mean radius 1.75199 (mean multiplier 1.16799), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 111, \"5\": 0}. case_013 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 3.706384; mean error remaining at interval end 0.415882; detection used 16.10% and memory refresh 0.88% of objective evaluations; 175 responses with mean radius 1.74924 (mean multiplier 1.16616), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 175, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 175, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 175, \"5\": 0}. case_014 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 2.198528; mean error remaining at interval end 1.61702; detection used 15.36% and memory refresh 0.32% of objective evaluations; 64 responses with mean radius 1.76124 (mean multiplier 1.17416), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 64, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 64, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 64, \"5\": 0}. case_015 (5D, 10 peaks, move severity 3.0, interval 5000 evaluations): offline error 11.655394; mean error remaining at interval end 9.75944; detection used 15.82% and memory refresh 0.55% of objective evaluations; 110 responses with mean radius 1.75043 (mean multiplier 1.16695), allocated fraction 0.8, and adapter encoding fraction 0.7 (encoding only); requested counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}, allocated counts {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}; 0 horizon-truncated responses; counts with objective queries {\"0\": 0, \"1\": 0, \"2\": 0, \"3\": 0, \"4\": 110, \"5\": 0}. Largest tracking error: case_015. Examine joint integer allocation and radius multiplier using public observed state, with all memories reevaluated and retained velocities fixed. Allocated fraction is allocated_count/swarm_size; the adapter encoding fraction only encodes an integer for the ceiling rule. Allocated counts are selected indices, not a claim of completed movement; horizon-truncated responses separately retain counts with objective queries. Constant count/radius pairs are permitted and receive no penalty for simplicity. Large interval-end errors indicate tracking still missed by the next change, while detection and memory shares expose objective-evaluation overhead. These diagnostics describe behavior and do not by themselves prove its cause. Improvements must preserve the fixed simulator and objective-evaluation budget. These are search results; generalization requires separate comparison cases."
+}

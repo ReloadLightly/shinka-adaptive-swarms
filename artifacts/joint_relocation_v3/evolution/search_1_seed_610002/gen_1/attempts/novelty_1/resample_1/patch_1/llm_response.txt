@@ -1,0 +1,13 @@
+<NAME>
+partial_relocation_baseline_radius
+</NAME>
+<DESCRIPTION>
+Relocate three particles at the baseline radius, leaving two to continue ordinary PSO motion. This tests whether preserving some current positions and motion improves recovery while retaining local exploration around the refreshed best. Earlier count-three evidence used twice the baseline radius; this proposal tests reduced allocation without that radius increase. The large residual errors motivate testing alternative recovery behavior but do not establish its cause. Performance improvement remains a hypothesis for the sixteen-case evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.0}
+>>>>>>> REPLACE
+</DIFF>

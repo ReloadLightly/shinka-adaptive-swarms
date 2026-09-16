@@ -1,0 +1,15 @@
+{
+  "generation": 24,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "budgeted_relocation",
+  "patch_description": "The supplied results favor four-particle relocation over frequent full-swarm relocation, while radius expansion has mixed effects across cases. This proposal tests a different coupling: add a fifth particle only after substantial loss in a compact swarm, then reduce radius to preserve count \u00d7 radius_scale\u00b2. This increases directional sampling without increasing aggregate expected squared relocation distance. Performance remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:25:23.606482",
+  "llm_cost": 0.2278,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_24/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

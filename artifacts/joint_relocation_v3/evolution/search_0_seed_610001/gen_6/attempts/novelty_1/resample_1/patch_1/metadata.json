@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "expand_radius_on_weak_recovery",
+  "patch_description": "Keep the four-particle allocation that achieved mean offline error 3.81. Test modest radius expansion from 1.5 to 1.75 when positive fitness deterioration exceeds four times recent nonnegative improvement. Persistent interval-end errors motivate testing broader relocation during weak recovery, but the supplied results do not establish that this condition predicts benefit. Elsewhere, preserve the current response.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:51:12.632462",
+  "llm_cost": 0.2098,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

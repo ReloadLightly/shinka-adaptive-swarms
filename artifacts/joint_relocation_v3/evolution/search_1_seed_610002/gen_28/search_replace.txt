@@ -1,0 +1,25 @@
+<NAME>
+fixed_spread_threshold_4_5
+</NAME>
+<DESCRIPTION>
+Test a fixed relative-spread threshold of 4.5 while retaining radius multiplier 1.25 and the count clamp. The displacement-dependent threshold slightly worsened measured mean error (3.68 versus 3.67), providing no observed advantage. This tests the recommended intermediate threshold: relocate three particles above it and four otherwise. Any improvement remains to be measured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Condition the allocation threshold on observed best displacement."""
+=======
+    """Relocate three particles when relative spread exceeds 4.5, otherwise four."""
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    relative_displacement = (
+        max(0.0, float(observation["observed_best_displacement"]))
+        / default_radius
+    )
+    spread_threshold = 4.0 + 2.0 * (
+        relative_displacement / (1.0 + relative_displacement)
+    )
+    requested_count = 3 if relative_spread > spread_threshold else 4
+=======
+    requested_count = 3 if relative_spread > 4.5 else 4
+>>>>>>> REPLACE
+</DIFF>

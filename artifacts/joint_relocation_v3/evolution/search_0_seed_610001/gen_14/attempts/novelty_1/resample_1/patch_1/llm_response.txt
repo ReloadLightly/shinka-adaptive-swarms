@@ -1,0 +1,21 @@
+<NAME>
+four_particle_selective_expansion
+</NAME>
+<DESCRIPTION>
+Use four particles at radius multiplier 1.25, which achieved lower measured mean error (3.76) than the current policy (3.95). Expand to 1.5 only when relative fitness loss exceeds 10% and recent improvement is less than one quarter of the fitness drop. This tests whether selective expansion helps recovery while avoiding the consistently larger radii of the displacement-based policy. Its performance remains to be measured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    count = min(4, int(observation["swarm_size"]))
+    fitness_drop = float(observation["fitness_drop"])
+    recent_improvement = max(0.0, float(observation["recent_improvement"]))
+    expand = (
+        float(observation["relative_fitness_drop"]) > 0.10
+        and recent_improvement < 0.25 * fitness_drop
+    )
+    radius_scale = 1.5 if expand else 1.25
+    return {"count": count, "radius_scale": radius_scale}
+>>>>>>> REPLACE
+</DIFF>

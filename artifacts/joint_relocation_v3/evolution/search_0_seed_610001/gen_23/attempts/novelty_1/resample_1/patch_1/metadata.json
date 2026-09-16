@@ -1,0 +1,15 @@
+{
+  "generation": 23,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "geometry_gated_relocation",
+  "patch_description": "Use count four and radius multiplier 1.21875 as the default, matching the lowest measured mean error among the supplied programs. Switch to count three and multiplier 1.5 when swarm diameter exceeds four default radii and observed best displacement is at most one default radius. This tests whether a dispersed swarm with limited observed displacement benefits from retaining two ordinary PSO movers while relocating three particles more broadly. The threshold and conditional benefit remain untested; the reported recovery errors do not establish their cause.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:27:00.560522",
+  "llm_cost": 0.21573,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_23/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

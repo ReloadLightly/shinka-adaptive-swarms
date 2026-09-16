@@ -1,0 +1,245 @@
+{
+  "observed_at": "2026-09-16T04:03:40.008215+00:00",
+  "run": "results/joint_relocation_v3/evolution/search_0_seed_610001",
+  "scope": "Read-only diagnosis and exact first migration audit; no process signals, restarts, source changes, inference or evaluations.",
+  "diagnosis": "Normal native inline post-persistence meta work delayed the next job collection; no deadlock observed. Generation 9 was already stored and its evaluation slot released, allowing generation 10 evaluation, while the job monitor awaited generation 9 meta side effects.",
+  "native_source_trace": {
+    "path": ".venv/lib/python3.13/site-packages/shinka/core/async_runner.py",
+    "sha256": "153a6e1b9a7bdb673767bd3109de085c2f4e60cae07a0107858c5318f7557fed",
+    "job_monitor_awaits_inline_processing_line": 2156,
+    "single_job_awaits_side_effects_line": 4925,
+    "meta_update_await_line": 4461,
+    "evaluation_slot_released_before_side_effects_line": 4395
+  },
+  "timeline": {
+    "gen10_evaluator_finished": {
+      "time": "2026-09-16T03:59:19+00:00",
+      "elapsed_s": 35.19,
+      "event": "evaluation_complete",
+      "message": "Candidate evaluation complete",
+      "mean_offline_error": 4.103547580652243,
+      "worst_case_offline_error": 12.785218954365048,
+      "case_error_std": 2.9733257854576474,
+      "cases_completed": 16
+    },
+    "second_meta_start": {
+      "time": "2026-09-16T03:56:12+00:00",
+      "elapsed_s": 1014.63,
+      "event": "meta_update_start",
+      "message": "Native meta-scratchpad update started",
+      "pending_programs": 5
+    },
+    "second_meta_complete": {
+      "time": "2026-09-16T04:01:13+00:00",
+      "elapsed_s": 1305.32,
+      "event": "meta_update_complete",
+      "message": "Native meta-scratchpad recommendations updated"
+    },
+    "gen10_native_db_logged_at_utc": "2026-09-16T04:01:14+00:00",
+    "native_log_timezone": "Europe/Berlin, UTC+02:00",
+    "native_log_evidence": [
+      {
+        "line": 945,
+        "text": "2026-09-16 06:01:13 - shinka.core.async_summarizer - INFO - ==> Meta-analysis completed successfully with 3-step process (total cost: $1.6223)"
+      },
+      {
+        "line": 946,
+        "text": "2026-09-16 06:01:13 - shinka.core.async_summarizer - INFO - Processed and cleared 5 programs from meta memory (total processed: 10)"
+      },
+      {
+        "line": 955,
+        "text": "2026-09-16 06:01:13 - shinka.core.async_runner - INFO - \u2705 JOB COMPLETE: Finished processing ProcessWithLogging(PID: 403801) - program 171c14f1-69de-49d7-b2f7-0806dedde88b added (gen 9)"
+      },
+      {
+        "line": 957,
+        "text": "2026-09-16 06:01:13 - shinka.core.async_runner - INFO - \u2705 Completed generations updated: 9 -> 10 (cost: $5.5305)"
+      },
+      {
+        "line": 958,
+        "text": "2026-09-16 06:01:13 - shinka.core.async_runner - INFO - \u2705 Job ProcessWithLogging(PID: 408612) completed (gen 10) after 301.1s"
+      },
+      {
+        "line": 962,
+        "text": "2026-09-16 06:01:13 - shinka.launch.local - INFO - Process 408612 completed with return code: 0"
+      },
+      {
+        "line": 965,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - \ud83d\udcbe DB ADD: Adding program to database for ProcessWithLogging(PID: 408612) (gen 10)..."
+      },
+      {
+        "line": 967,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - \u2705 DB SUCCESS: Program 50a9b808-f27a-4a65-b2a1-dcc7546b11a1 successfully added to database for ProcessWithLogging(PID: 408612) (gen 10)"
+      },
+      {
+        "line": 974,
+        "text": "2026-09-16 06:01:14 - shinka.database.dbase - INFO - Running scheduled migration operation"
+      },
+      {
+        "line": 975,
+        "text": "2026-09-16 06:01:14 - shinka.database.islands - INFO - Performing island migration at generation 10"
+      },
+      {
+        "line": 976,
+        "text": "2026-09-16 06:01:14 - shinka.database.islands - INFO - Migration complete. Migrated 2 programs."
+      },
+      {
+        "line": 984,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - \u2705 JOB COMPLETE: Finished processing ProcessWithLogging(PID: 408612) - program 50a9b808-f27a-4a65-b2a1-dcc7546b11a1 added (gen 10)"
+      },
+      {
+        "line": 986,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - \u2705 Completed generations updated: 10 -> 11 (cost: $5.5305)"
+      },
+      {
+        "line": 989,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - Started proposal task for generation 11 (cost: $5.5305)"
+      },
+      {
+        "line": 990,
+        "text": "2026-09-16 06:01:14 - shinka.core.async_runner - INFO - Generating proposal for generation 11"
+      }
+    ]
+  },
+  "evaluator_evidence": {
+    "completed_case_checkpoints": 16,
+    "correct": {
+      "correct": true,
+      "error": ""
+    },
+    "metrics_sha256": "1d4b5056e7f260debbc269b7153682f16bc258aeb0b4c27fb86ba34df37df11b",
+    "stderr_bytes": 0
+  },
+  "native_timing_metadata": {
+    "9": {
+      "sampling_worker_id": null,
+      "evaluation_worker_id": 1,
+      "postprocess_worker_id": 1,
+      "sampling_worker_capacity": 1,
+      "evaluation_worker_capacity": 1,
+      "postprocess_worker_capacity": 1,
+      "sampling_started_at": 1789530899.9150875,
+      "sampling_finished_at": 1789530941.7415001,
+      "evaluation_started_at": 1789530941.7415001,
+      "evaluation_finished_at": 1789530972.7685359,
+      "postprocess_started_at": 1789530972.7696815,
+      "postprocess_finished_at": 1789530972.8292859,
+      "sampling_seconds": 41.82641267776489,
+      "evaluation_seconds": 31.0270357131958,
+      "postprocess_seconds": 0.05960440635681152,
+      "pipeline_seconds": 72.91419839859009,
+      "compute_time": 31.0270357131958,
+      "postprocess_db_maintenance_applied": true,
+      "postprocess_db_maintenance_started_at": 1789530972.8445373,
+      "postprocess_db_maintenance_finished_at": 1789530972.868765,
+      "postprocess_db_maintenance_seconds": 0.02422785758972168,
+      "postprocess_apply_started_at": 1789530972.829329,
+      "postprocess_apply_finished_at": 1789531273.7321467,
+      "postprocess_apply_wait_seconds": 4.315376281738281e-05,
+      "postprocess_apply_seconds": 300.90281772613525,
+      "end_to_end_with_side_effects_seconds": 373.81705927848816,
+      "end_to_end_accounted_seconds": 373.81705927848816,
+      "end_to_end_unaccounted_seconds": 0.0,
+      "postprocess_side_effects_applied": true
+    },
+    "10": {
+      "sampling_worker_id": null,
+      "evaluation_worker_id": 1,
+      "postprocess_worker_id": 1,
+      "sampling_worker_capacity": 1,
+      "evaluation_worker_capacity": 1,
+      "postprocess_worker_capacity": 1,
+      "sampling_started_at": 1789530972.8373945,
+      "sampling_finished_at": 1789531122.3057656,
+      "evaluation_started_at": 1789531122.3057656,
+      "evaluation_finished_at": 1789531273.999645,
+      "postprocess_started_at": 1789531274.0045063,
+      "postprocess_finished_at": 1789531274.1069548,
+      "sampling_seconds": 149.4683711528778,
+      "evaluation_seconds": 151.69387936592102,
+      "postprocess_seconds": 0.1024484634399414,
+      "pipeline_seconds": 301.26956033706665,
+      "compute_time": 151.69387936592102,
+      "postprocess_db_maintenance_applied": true,
+      "postprocess_db_maintenance_started_at": 1789531274.1198864,
+      "postprocess_db_maintenance_finished_at": 1789531274.1474535,
+      "postprocess_db_maintenance_seconds": 0.027567148208618164,
+      "postprocess_apply_started_at": 1789531274.1074605,
+      "postprocess_apply_finished_at": 1789531274.3042557,
+      "postprocess_apply_wait_seconds": 0.0005056858062744141,
+      "postprocess_apply_seconds": 0.19679522514343262,
+      "end_to_end_with_side_effects_seconds": 301.46686124801636,
+      "end_to_end_accounted_seconds": 301.46686124801636,
+      "end_to_end_unaccounted_seconds": 0.0,
+      "postprocess_side_effects_applied": true
+    }
+  },
+  "timing_limitation": "Native generation 10 evaluation_seconds=151.69 measures through delayed process collection and includes waiting while generation 9 meta completed. The evaluator logged elapsed_s=35.19. Do not interpret native evaluation_seconds or compute_time as pure evaluator compute here.",
+  "native_migration_events": [
+    {
+      "time": "2026-09-16T04:01:14+00:00",
+      "elapsed_s": 1305.82,
+      "event": "native_migration_log",
+      "message": "Performing island migration at generation 10",
+      "native_logger": "shinka.database.islands",
+      "level": "INFO",
+      "evidence_scope": "native message; exact transfers remain in database migration_history"
+    },
+    {
+      "time": "2026-09-16T04:01:14+00:00",
+      "elapsed_s": 1305.91,
+      "event": "native_migration_log",
+      "message": "Migration complete. Migrated 2 programs.",
+      "native_logger": "shinka.database.islands",
+      "level": "INFO",
+      "evidence_scope": "native message; exact transfers remain in database migration_history"
+    }
+  ],
+  "exact_generation10_migrations": [
+    {
+      "program_id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+      "birth_generation": 1,
+      "current_island": 0,
+      "correct": true,
+      "generation": 10,
+      "from": 1,
+      "to": 0,
+      "timestamp": 1789531274.1909945,
+      "timestamp_utc": "2026-09-16T04:01:14.190995+00:00",
+      "destination_matches_current": true
+    },
+    {
+      "program_id": "8cb76a7e-c3ee-447d-b1e0-791ad344a520",
+      "birth_generation": 3,
+      "current_island": 1,
+      "correct": true,
+      "generation": 10,
+      "from": 0,
+      "to": 1,
+      "timestamp": 1789531274.1897445,
+      "timestamp_utc": "2026-09-16T04:01:14.189744+00:00",
+      "destination_matches_current": true
+    }
+  ],
+  "database_generations_observed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "checks": {
+    "sixteen_case_checkpoints": true,
+    "generation10_archived": true,
+    "two_recorded_transfers": true,
+    "both_destinations_match": true,
+    "bidirectional_island_transfer": true,
+    "generation11_proposal_observed": true
+  }
+}

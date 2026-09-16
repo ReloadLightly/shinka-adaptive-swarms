@@ -1,0 +1,37 @@
+--- a/original.py
++++ b/original.py
+@@ -1,31 +1,31 @@
+ """Joint relocation seed: the original corrected baseline response.
+ 
+ The adapter fixes memory reevaluation and retained velocities. It converts the
+ integer count to the unchanged simulator's fraction interface without rounding
+ ambiguity. The seed allocates every particle at the baseline radius multiplier.
+ """
+ 
+ 
+ # EVOLVE-BLOCK-START
+ def choose_relocation(observation: dict) -> dict:
+     """Select relocation through spread and fitness-loss gates."""
+     swarm_size = int(observation["swarm_size"])
+     diameter = max(0.0, float(observation["swarm_diameter"]))
+     reference_diameter = 3.0 * max(
+         0.0, float(observation["default_radius"])
+     )
+     response = {
+         "count": min(4, swarm_size),
+         "radius_scale": 1.5,
+     }
+     # Only sufficiently broad swarms qualify for reduced relocation.
+     if diameter <= reference_diameter:
+         return response
+-    # Require smaller loss near the spread boundary, retaining the original
+-    # 7.5% ceiling once diameter reaches six times the default radius.
++    # Require smaller loss near the spread boundary, with a stricter
++    # 6.25% ceiling for broad swarms.
+     coverage = 1.0 - (reference_diameter / diameter) ** 2
+-    loss_threshold = min(0.075, 0.10 * coverage)
++    loss_threshold = min(0.0625, 0.10 * coverage)
+     if float(observation["relative_fitness_drop"]) <= loss_threshold:
+         response["count"] = min(3, swarm_size)
+     return response
+ # EVOLVE-BLOCK-END

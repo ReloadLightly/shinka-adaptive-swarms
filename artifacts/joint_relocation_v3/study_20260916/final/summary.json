@@ -1,0 +1,1637 @@
+{
+  "status": "completed",
+  "completed_at": "2026-09-16T09:10:05.838120+00:00",
+  "stage": "final",
+  "case_count": 80,
+  "method_mean_offline_errors": {
+    "winner_search_0": 3.5706988618486593,
+    "winner_search_1": 3.5289920820742355,
+    "winner_search_2": 3.5005581636668452,
+    "baseline": 3.477852593764359,
+    "best_fixed": 3.477852593764359,
+    "radius_replaced": 3.4985671993174354,
+    "count_replaced": 3.54898720183864,
+    "joint_sampler": 3.490371240988031
+  },
+  "method_case_errors": {
+    "winner_search_0": [
+      2.8946252407715427,
+      3.6439352972528,
+      4.61986680243129,
+      2.021432210181238,
+      1.930078096022227,
+      2.242048909414404,
+      4.243859444270063,
+      3.3890805808937303,
+      2.712448761402327,
+      1.7572555406078225,
+      10.34906350439801,
+      1.7086782067040787,
+      1.8683623891079344,
+      4.3742241397306785,
+      2.4697866256361776,
+      2.970975269246904,
+      1.5960922125795123,
+      2.5367106020095833,
+      2.3726438531062484,
+      1.9989887860418938,
+      8.438297722760117,
+      2.4728695993319807,
+      1.2240367091208002,
+      1.9823312968394056,
+      1.4303341029338266,
+      1.877075444546437,
+      0.9198486114720874,
+      2.170962363298433,
+      2.177193262454867,
+      1.924517538483092,
+      1.6442258178558902,
+      4.146230580276553,
+      3.049384437057352,
+      1.3172097120331006,
+      1.973096304362512,
+      2.9634976529953634,
+      0.862791665219515,
+      2.434046021193721,
+      2.230144860969755,
+      6.961547541523856,
+      3.2618891080659536,
+      3.450827045668562,
+      6.301538328949309,
+      5.249808969805074,
+      5.122493894596194,
+      4.107805425567796,
+      6.687305839864026,
+      4.250921985722721,
+      6.573888397300492,
+      7.253597839578064,
+      2.540037804281204,
+      5.492675411871344,
+      6.256729735218371,
+      4.675984028524407,
+      7.631981063851271,
+      4.475337582844094,
+      4.567610470247468,
+      4.501318415020994,
+      3.7673480606586107,
+      3.996719337870603,
+      1.5206607248502455,
+      3.587144454830296,
+      1.0787754672914764,
+      6.68587479201051,
+      3.865448559458191,
+      3.486740062444844,
+      1.0060662703337109,
+      9.647470364479595,
+      2.045086914407669,
+      2.1765283092607177,
+      3.922046122477051,
+      1.8173154947503545,
+      3.1667365155892435,
+      3.240161904958789,
+      3.9068067854484085,
+      6.864342183429898,
+      2.0046623251535074,
+      6.762063999729087,
+      1.7873988225645752,
+      3.018962412380873
+    ],
+    "winner_search_1": [
+      2.8042698993835873,
+      3.073070139871715,
+      2.83600986813865,
+      2.033775568128783,
+      1.8549942050038797,
+      2.3386947304320915,
+      4.350975019084601,
+      3.3726504881492834,
+      2.7118981060642917,
+      1.6201691777358207,
+      10.382400386802043,
+      1.714558050208569,
+      2.066549287561407,
+      5.00778904841254,
+      2.959872763580406,
+      3.103401517464217,
+      1.8459430806578094,
+      2.4619348067925824,
+      2.405665206422417,
+      1.8163647051785101,
+      6.698627494383633,
+      2.347244944769628,
+      1.2066497138106775,
+      1.870040305342126,
+      1.350254988932717,
+      1.795714631323111,
+      0.9119497728201272,
+      2.530523404268462,
+      4.833552744982558,
+      1.8310054265493774,
+      1.974521913707722,
+      4.341927230693881,
+      1.6317078101220284,
+      1.213072422770859,
+      1.8843946108342584,
+      2.8285999634002037,
+      0.8995048519921718,
+      2.359430991045658,
+      3.5247818114144045,
+      7.2578585165264,
+      3.909280196377711,
+      3.3528134764473223,
+      5.725232351422059,
+      7.130588554635293,
+      4.866155310734587,
+      5.0785924401428515,
+      3.99735563964588,
+      3.6800207870457684,
+      7.565241951261298,
+      5.810849023825038,
+      2.987951110941667,
+      5.292710655943804,
+      5.756877999493891,
+      5.562497567386613,
+      6.6640661951188545,
+      4.766110126265541,
+      5.830413876189356,
+      3.9681459302553277,
+      3.660076620277738,
+      3.6699283141472283,
+      1.5613003468001827,
+      3.9988716968498443,
+      1.0741344984992693,
+      2.6734982768666478,
+      2.8269798439900944,
+      3.4866972694879594,
+      0.9190304837306583,
+      8.003136188306971,
+      2.0892158956458537,
+      3.7011470055914226,
+      4.072608254727978,
+      2.0396206594895108,
+      3.3698365748517447,
+      3.296230939333082,
+      4.237559110659585,
+      3.3951174475306845,
+      2.2233559208113003,
+      11.804763446065833,
+      1.368061969688728,
+      2.8509430046904485
+    ],
+    "winner_search_2": [
+      2.62744401456216,
+      3.952499940686651,
+      5.3270910957992355,
+      1.874468198678281,
+      1.9481385090567873,
+      2.2981681102420217,
+      4.256055945617022,
+      2.8270868199679993,
+      2.888690645064837,
+      1.6794184882386756,
+      9.948321791349771,
+      1.627559918829097,
+      1.8941667621138434,
+      3.9283857210182287,
+      2.7273907018005215,
+      3.194322503430397,
+      1.6549214783658568,
+      2.296088267552767,
+      2.4852625034023017,
+      1.8106320883360307,
+      3.4618129478974757,
+      2.573026641596309,
+      1.4086230741529098,
+      2.0244872235999325,
+      1.4573364281164907,
+      1.8803381309060467,
+      0.8796339695679914,
+      2.325680824078742,
+      3.214530644260596,
+      1.7975245147693448,
+      1.6710407725365497,
+      4.0110304138347255,
+      1.7426930162716223,
+      1.2340881599742568,
+      1.6449459034868132,
+      3.1272908970552136,
+      0.8635860656108179,
+      3.8351000791191847,
+      3.581407914054117,
+      6.773008564133862,
+      3.3719175423392937,
+      3.2825453659759094,
+      5.892540734005875,
+      6.0833618932369395,
+      4.83553929414792,
+      3.542621369258461,
+      4.741850783257685,
+      4.354634910529562,
+      6.086366701355644,
+      6.567238942033292,
+      2.830847138325346,
+      4.300077855360406,
+      6.068126701730201,
+      5.754180231103307,
+      7.021697098123669,
+      4.947808822352788,
+      5.536628622469226,
+      4.140480844641378,
+      3.388875862955734,
+      3.996940478219864,
+      1.3426301915852021,
+      2.9255777146293362,
+      1.0719006477243282,
+      6.793482976913429,
+      3.1907892226100465,
+      3.5418541322232397,
+      1.18355561034737,
+      8.227586353839069,
+      2.0289026009156026,
+      3.4074536186678235,
+      3.8974611249696895,
+      2.0390340190377456,
+      3.3089781170931203,
+      3.992555618412606,
+      4.180667165691684,
+      3.4714980812379532,
+      2.016472784251934,
+      11.644059240579773,
+      1.7607899993191298,
+      2.5218229927405504
+    ],
+    "baseline": [
+      2.900648959394975,
+      2.9777428526554317,
+      2.811979932961244,
+      1.9619921869816492,
+      1.625000006402693,
+      2.1587660394588917,
+      4.3411155689446606,
+      2.8742258697350667,
+      2.6029086399681285,
+      1.596408521794174,
+      9.896426516158963,
+      1.792721069394471,
+      1.984706574323689,
+      3.0785739049918868,
+      1.9364405674104666,
+      3.6024676855552156,
+      1.3840847806193965,
+      2.427172958581335,
+      2.2921820940885067,
+      1.977428762732657,
+      8.285707518385372,
+      2.479387683382671,
+      2.050560611356934,
+      1.9556780747218954,
+      1.4204098142519401,
+      1.900212919358003,
+      1.554957355505412,
+      2.330528384642297,
+      5.133391144333253,
+      1.371379492168483,
+      1.995510750335513,
+      2.1715675969105868,
+      3.3430303520950093,
+      1.3775271693232964,
+      1.9549602127621937,
+      2.6097169649961236,
+      0.9542353164328078,
+      2.437596366644981,
+      3.608790454407849,
+      7.070323705473557,
+      2.989517657483971,
+      3.001234752131536,
+      6.032312057546983,
+      4.72587926756199,
+      4.794903846491181,
+      4.2467787955862075,
+      4.543411489508973,
+      3.674466680060793,
+      6.189291361673092,
+      4.610430341424037,
+      2.5419522358992235,
+      4.86973497134071,
+      6.615216025056879,
+      5.46966448696762,
+      7.1217041563178585,
+      4.849734010103301,
+      5.26802844446574,
+      3.609630430838798,
+      3.2954000953215483,
+      4.004106363973886,
+      1.7656481877604737,
+      2.947357825930157,
+      0.9952358298111101,
+      4.355746979176912,
+      3.1739458244438614,
+      3.4256545263278246,
+      1.0130634062234052,
+      7.920093905755324,
+      1.9415167734504837,
+      3.5383935567115397,
+      5.5791481483598995,
+      2.4403469873435313,
+      3.637344262326405,
+      3.359388017678515,
+      4.104410515947608,
+      5.114352979874077,
+      2.2475073614440007,
+      11.635125203665849,
+      1.2654791202960127,
+      3.086585239225716
+    ],
+    "best_fixed": [
+      2.900648959394975,
+      2.9777428526554317,
+      2.811979932961244,
+      1.9619921869816492,
+      1.625000006402693,
+      2.1587660394588917,
+      4.3411155689446606,
+      2.8742258697350667,
+      2.6029086399681285,
+      1.596408521794174,
+      9.896426516158963,
+      1.792721069394471,
+      1.984706574323689,
+      3.0785739049918868,
+      1.9364405674104666,
+      3.6024676855552156,
+      1.3840847806193965,
+      2.427172958581335,
+      2.2921820940885067,
+      1.977428762732657,
+      8.285707518385372,
+      2.479387683382671,
+      2.050560611356934,
+      1.9556780747218954,
+      1.4204098142519401,
+      1.900212919358003,
+      1.554957355505412,
+      2.330528384642297,
+      5.133391144333253,
+      1.371379492168483,
+      1.995510750335513,
+      2.1715675969105868,
+      3.3430303520950093,
+      1.3775271693232964,
+      1.9549602127621937,
+      2.6097169649961236,
+      0.9542353164328078,
+      2.437596366644981,
+      3.608790454407849,
+      7.070323705473557,
+      2.989517657483971,
+      3.001234752131536,
+      6.032312057546983,
+      4.72587926756199,
+      4.794903846491181,
+      4.2467787955862075,
+      4.543411489508973,
+      3.674466680060793,
+      6.189291361673092,
+      4.610430341424037,
+      2.5419522358992235,
+      4.86973497134071,
+      6.615216025056879,
+      5.46966448696762,
+      7.1217041563178585,
+      4.849734010103301,
+      5.26802844446574,
+      3.609630430838798,
+      3.2954000953215483,
+      4.004106363973886,
+      1.7656481877604737,
+      2.947357825930157,
+      0.9952358298111101,
+      4.355746979176912,
+      3.1739458244438614,
+      3.4256545263278246,
+      1.0130634062234052,
+      7.920093905755324,
+      1.9415167734504837,
+      3.5383935567115397,
+      5.5791481483598995,
+      2.4403469873435313,
+      3.637344262326405,
+      3.359388017678515,
+      4.104410515947608,
+      5.114352979874077,
+      2.2475073614440007,
+      11.635125203665849,
+      1.2654791202960127,
+      3.086585239225716
+    ],
+    "radius_replaced": [
+      2.8981704043461725,
+      2.8789620253650337,
+      4.163427777982135,
+      1.9647815612464326,
+      1.7704069323358207,
+      2.2199971089150226,
+      4.178517462519518,
+      3.014480151127495,
+      2.5114458379417597,
+      1.7755779066569812,
+      8.147513517947083,
+      1.7430997728218824,
+      1.6308194034602268,
+      2.9649261929898807,
+      2.695350192561504,
+      2.903767599509795,
+      1.8024151383981752,
+      2.443750232386709,
+      2.542601728728751,
+      2.191173908597435,
+      3.4710233117755376,
+      2.4507250325435384,
+      1.354686321711793,
+      2.030020565135147,
+      1.5025152309561756,
+      1.8446237700526762,
+      0.995567171322685,
+      2.260457862488257,
+      5.081168094542521,
+      1.7675418558464677,
+      1.6955496225249906,
+      3.996865897000375,
+      1.7903981435925402,
+      1.1595356955668539,
+      1.9770293287470055,
+      2.663566279578108,
+      0.9919482887878069,
+      3.3507689104651246,
+      3.5487248202855746,
+      4.861222509627191,
+      2.4512668423359756,
+      3.170047060947151,
+      4.846444137183902,
+      6.944555589545755,
+      5.0393824088116315,
+      4.720758007372165,
+      4.751047738506296,
+      3.8853220269196544,
+      6.063999140106832,
+      6.683638334355017,
+      2.6532249596802813,
+      4.513753687929125,
+      6.285991275190016,
+      5.72092886853287,
+      7.368545260356102,
+      5.175557082281638,
+      6.1386411143820245,
+      4.716560627174883,
+      3.3424932345325122,
+      4.008879482851716,
+      1.763747534011805,
+      3.865424203412721,
+      1.0201244989339038,
+      6.861431769156328,
+      3.0839668733573666,
+      3.593394113625231,
+      1.1541617428154458,
+      8.373997016665847,
+      1.8511517453589852,
+      2.5698122843111615,
+      3.929815621932941,
+      3.0232847358992103,
+      3.453223695742192,
+      3.8051706479481258,
+      4.275729446127593,
+      5.440112902476386,
+      1.9663892199257904,
+      11.95777743500203,
+      1.1923451845393367,
+      2.9881548267687124
+    ],
+    "count_replaced": [
+      2.9988636702777685,
+      4.8460923210009295,
+      2.7626356998666135,
+      2.0306023575346206,
+      1.8559155649870078,
+      2.2228551269061714,
+      4.3990959736924875,
+      3.476486159042607,
+      2.7740106292749562,
+      1.80909467361673,
+      6.672831348924603,
+      1.7807994728743155,
+      2.06396350106444,
+      3.0605765167402064,
+      2.5522608404469147,
+      3.2362300306392564,
+      1.6822607253335937,
+      2.335965621152114,
+      2.461333343950448,
+      1.8850903113254218,
+      8.11142334580813,
+      2.5211508867893855,
+      1.2079931794906213,
+      1.985106720473686,
+      1.516525965491805,
+      1.9183043017449455,
+      1.5956481510427023,
+      2.457840833509326,
+      5.035087779582411,
+      1.5050259205636778,
+      2.063471500192354,
+      2.1935313509491094,
+      2.2110044949225314,
+      1.2609654944370114,
+      2.0480612551132045,
+      3.0791628711621613,
+      0.9202274808586263,
+      2.4945752621158843,
+      2.6786742491802316,
+      7.833453706153493,
+      3.352150886669058,
+      3.3241437485765246,
+      7.048152463327681,
+      5.3659740564174605,
+      5.082367430887755,
+      4.771036625078193,
+      4.763346116894062,
+      3.836701810174085,
+      7.60403074096379,
+      6.578786044666465,
+      2.632376393531038,
+      4.8749654264918325,
+      4.922958809832712,
+      5.267151118260441,
+      6.518552593165888,
+      4.6467584695403055,
+      5.083192450642177,
+      4.145068875841545,
+      3.395059446655048,
+      4.023851986282753,
+      1.5394795261010885,
+      3.2389492563676696,
+      0.9786228019161065,
+      7.910414191613409,
+      2.7445871282290364,
+      3.575360060099396,
+      1.0363145144638595,
+      7.832093057146761,
+      1.9763006987957594,
+      3.507989472762109,
+      4.9412226409842965,
+      2.614413670589648,
+      3.9201228808042234,
+      4.426473758845588,
+      3.904057815919089,
+      3.0642776706444086,
+      2.469995322131831,
+      11.644756986506062,
+      1.2434160418826612,
+      2.5693045191568653
+    ],
+    "joint_sampler": [
+      3.239202363567727,
+      4.079716032608293,
+      4.532862310872716,
+      2.1963016567783464,
+      2.0284873456378687,
+      2.395718660014735,
+      3.950522489194539,
+      3.1633639648221057,
+      2.8606815925164764,
+      1.6584605379949418,
+      10.425261070814813,
+      1.7534385684583491,
+      2.1323544732982507,
+      4.225600785170269,
+      2.523587133881238,
+      3.245168382923345,
+      1.726911107653568,
+      2.472939578802055,
+      2.581917632423252,
+      1.744636558011149,
+      9.26781387859376,
+      2.4475748813697744,
+      2.067815088016192,
+      2.039425369205339,
+      1.3999953834774161,
+      1.908338762901359,
+      0.7124493213340592,
+      2.363941637157052,
+      3.902822400921534,
+      1.8571646332230283,
+      1.75626465150897,
+      4.703754802889063,
+      3.065822309473477,
+      1.3983866290666003,
+      1.937138612480476,
+      2.6817066753780483,
+      1.0816577218589571,
+      4.066536335952867,
+      3.680492888704337,
+      7.318443353685956,
+      3.4468113497582467,
+      3.337421661333976,
+      5.031753570252255,
+      7.207424200241852,
+      3.349923621317424,
+      5.0533584360719015,
+      4.106671894545825,
+      3.723491550763287,
+      6.710090128064959,
+      5.761801660934896,
+      3.030346277312975,
+      4.666005029905576,
+      5.000588816756444,
+      5.928284717134225,
+      7.3549040590597405,
+      4.782136223872156,
+      5.911778087338455,
+      4.102863979005503,
+      3.396334374966682,
+      3.9167257191270015,
+      1.5267004088953495,
+      4.062716162806066,
+      1.042099787332283,
+      4.870678247042127,
+      2.425036408480494,
+      3.520098581679801,
+      1.2380827992256227,
+      8.099804958956728,
+      2.2818387044411943,
+      3.0783388405045424,
+      3.9869578499269536,
+      1.9665546720037554,
+      3.22763500446624,
+      3.6734287061904127,
+      3.090897440597246,
+      3.0808859274264493,
+      1.9894989244587156,
+      3.5427865154484106,
+      1.5622671296243773,
+      2.5499992691300246
+    ]
+  },
+  "unique_executed_method_cases": 560,
+  "aliases": [
+    {
+      "case_index": 0,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "dd674b5f57a3f1ebe236c1aa062f672dc55010078dd403684264146280b76d5c",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 1,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "bb4c88a114fc86af31e447e6f25fe1a8ade6bfab06037a03fdef65289d8d8d6c",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 2,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "8d4c7fe7680b85d456150df6b563029b379f004841d835f7f97c00ae2a5e0a07",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 3,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "21b3c8a788d0a92eae52da45b410532958219b05baa9b51b4815ca02415454d6",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 4,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "4358d38991b09b3120e2932b9892978fc06aa0ef874106502d24ce0c849c4a06",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 5,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "8af735c5b4abaede4bf6533ddb7578ef09b1ea22ab696ed67c2814c7d9cf1398",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 6,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "7a6e64bf835e647ee4b63dcfecaf834a2e28462753da85636e6e54a5f83d1f11",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 7,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "c4d2fe1ef5ddd8b603dbae34d981b21759cfabc66cd6fe26b54356a150f6d630",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 8,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "d7ce6dea8e6ffe72a345ad3a7a9940fa49e9ed8d2cb0a673727f0f15d0c177fd",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 9,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "5292d9dad9aff3299a4fd9eba2335f7594a0e7709342ce35552dfee5b9ebfa3b",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 10,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "bb0e61f3d9762da36567485aef59bf9ee670cfe0550904ec5b5d75584b9e84fb",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 11,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "3cf02c45c0967466e93d73eda882a52ff1d656fcfe76dc7d08ac612cf7eb1d5e",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 12,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "74a4e0f0f4ddeea8d1bf1a8a4f0b835736f3937066e5c66964b728a70160388b",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 13,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "58f656c3016f21088ed751697927f90d9bc8c92a84c2f61f9a3ebdff3b8aefb6",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 14,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "fb7f87156e80bce9ba2f09b1ce863b0a11da12eabe95caadf6721474de8567b1",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 15,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "17306e4e424f830f5679cf6023659a029d157d3a04d53f1d022c13056b53c019",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 16,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "4c37ac04be89015789f1b8cf8b67ca993aa2f8b2a8f9bb31f767d78328802efa",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 17,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "0d253b10d4b6c0f479364338ea58571c44d6a68b830e93611850b76b29bce3b1",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 18,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "cac6b04a3b40fce6c2732e72db0b113357901b9999d0d3032d2b792622304bde",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 19,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "185921db8476890c588de443352bc4dfe46822c570c2ee553b3400d647f5b4ab",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 20,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "6dfda8201df72211e7bf2995f1bd0cf10a2cecc19af3d2bdf2346b6442f6dae0",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 21,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "0d039b62dec9f4d3f3cea75da145d104643cd92da6d0933200126c5808a95e9a",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 22,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "0524770e41e5c313498f668754565e2256dba28eed8f0929e98c890de5577d25",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 23,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "89dfd3b15eb87cc4f7adc7c607d1d853b62d2952664057a10f5046e682db5be5",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 24,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "061373ae2aa80696c8fe3db81cb95b9102efc9db44fd898bc236c5645b5719f7",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 25,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "06213a1f4297ef2cbf4993dc040d70faa1db607a0d0c7892b117dd0eb335b0cd",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 26,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "f7fafd34b90a6a3ae9a1d498cc2a7f6fa16b0d488365eb963833adeaa7e6736e",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 27,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "c35250a8e12568ced46c7ddae1f3dd11e0e52f827423b7e108f4d6e8d154a489",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 28,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "0cd2a35d6ed2b9d1c45117a0c547a422792645fd632491e50be14407707a3be3",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 29,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "9720edec3045877e4977f5d9efc1913c545d0db924f4a196d92927bcf40e02c6",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 30,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "aeca146d79e7ad2a714cf7d44214b4895058a197ed1cb6340670703c8aa3c004",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 31,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "eb7fe67d460db0fea73ac6d70954bee60a551edd4bbf0f88a04d4c93504fd3e7",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 32,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "ec36313f0b217675678f985c61b92d6764e2eb467f392ff491976654a1184f67",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 33,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "a177ab7d5951bf0fd360df8aa85cb1a623946375e72436381513485fd0d19dbd",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 34,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "7c5dda2a66f0e24edd30dbd012149e9ef2ca97e6bce11f9c06c162cc47f25972",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 35,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "a407a7ca1309dc50ea67969702d87de26d63aec45c5fadcdd9f1c21d3fb817a1",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 36,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "c8a71c19f59853ae4dc303220f6dcd24e1a0c00a7cdebad81325496c82b93c7f",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 37,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "b86088dd62cf79840aaaaa0269062a5c3d5057ce1aa16dfe452e634899fda635",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 38,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "03784d5d2bd06142590c218064cb6e7a8a0353e171dcac0b66b2aceab52fe410",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 39,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "6045e7948d369423f5bc1889adc7be69b894cd43453da6df1453e890582a9aed",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 40,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "4fac2906f8961fd5af76585b9799145d570339b8812fcca7a821406aa5921a8e",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 41,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "dea44fd7ce6f8ef9393c8ead3f089e1e838896d5a14b1886bcdc6a3b650b1849",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 42,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "83570c4dc0aaf20dbfd37aa916833c037674161e36884b2d775306cb4644225d",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 43,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "2d12421076bec62c17bed6babcb8e5aabd1a147072931b2f83c8404e88ae2c38",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 44,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "39f18d93d5905853980343c0479f346551532998387f4596ad0b5b55284a541a",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 45,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "d1af3f27ce9194e78f53446036e4438b3c1a68413f74427820bf3cf3fec96fa3",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 46,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "1a98cbcb79b0e81f84d4bfe02167b4f8802b679259fbf9c1a8ea809ec44fa769",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 47,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "24b218c5f469c51aa04b1f031205252744b046818249a76f2aeb2eef1e64434d",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 48,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "de4575f6ffaae6b665ec0bb889f02fc33c39abc4bfe0b4fd3cc3535c2218b5b1",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 49,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "64255af231fe1cfd0ff1b24f50cae0df86d461a5b0ffca8e6b46eba008bbe919",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 50,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "80f43642d16e4624e7a5c451aaa0bb3ce94e0de9e4f869600abf0fdf3c78cd90",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 51,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "9b7fe536ed7ba8b638e5f9913526d55b80a41f9298a839239faaa3d6e4b13d09",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 52,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "b465ea3444548814ba7dac924a539d679895feac149836270443870b85a69025",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 53,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "d6e1a0c79bcf3abbc48c18f6aee557cfbd9d38c4e6fdc5535938d7eaeb2f630e",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 54,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "8479c9cba8ce0ec423e16beaec16f3e1442d3daf2cf8a7c1a5542061975ab05a",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 55,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "9db3cf90bb8c5a65b7606d84d4b3d664371dda40fb175950576875712e905d18",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 56,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "e6fe4a97d3b37f8639e921339a96341eb97d9d4a5a63878497ca5c40ab6027a1",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 57,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "83067bf5691d34ac62c143fe6132726b990e3571564a14e192a79f57a05f2514",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 58,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "e529fda267d5bab200e60accd051f43b3bfd046ea6f0d8ea01f63c876af36b71",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 59,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "87db04897c22068c4a48fedcd3d3ec288485678798ce6dce07cce8da964cc146",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 60,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "ef07dcce89f24f57be6b673f11cd3a10f6e0474ba4554b15389c6fa43a9d6bb4",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 61,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "ebb377959237109781b65c5335b258068f52b83f7f2e6b5bccc53051867811f9",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 62,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "6971e15b687d1d2da9cbeaf2913603651c1eddb21717fd807feb2a4e5d632b5b",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 63,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "4126455ea73c5293371edeeb27aa056f530399be5d3565b22460232309353d07",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 64,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "8841f464563e5843d5c30a08b78f33bccfd43e5f9266d66597107f7bb08b7e3d",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 65,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "05cf838c4b88640099c1c242fda379c616b913e211a2cf82e82a3b83c8c7ed33",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 66,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "20aa348091e808cef1f70cbb9b9a44d4e641123f43bd34dc1386f59985c65aab",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 67,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "0259b5569633ab335017ac6ac69cc1b2c4018d1a435e7dd4c65239347b12c883",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 68,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "21c9658b8185a0312a502da1d57fcb75abf5b283d62bdc980bd1e20773861b6a",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 69,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "d5cea95cdbe19bf9354d7aba718bcd8d3539f1b115ed6bf3975604db2708a4a5",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 70,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "1b43c9d8d8aa10fea2f1a21e84081523e4d60d7ee681f7a07d3a1e988e5b77f7",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 71,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "769007a75db20e518465e4bf3c5e6b66c3a320f9db3fb5be7c6052487111f9c3",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 72,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "e265d3859e1dd401a4a4d4cc3f401963ad71c6441fd98767e08417cf6837d519",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 73,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "faeb988785cbcb6699e70ebd2fe7abdf3675c09ec1a13799ebeef58e7df7b73d",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 74,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "286a39ddbb1ecbb52d593360ac388f9f826f82ad7e139c179a1ca10438e2e998",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 75,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "cbb08190d1621bdad57ba86689d4d937ade52e8690f80759d33f54362dfdd733",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 76,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "1660ed75d4ade23afb0312e044fe81afebfee8a36e085baea48fc89fef344b8b",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 77,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "f67c9a42b89fac30e49ced0a77496c1481038469f0395b852ed6d6ea69951fff",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 78,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "dbb6e99d1d8910ba4ac6284e26e5b334dd82190aea15bae64506fd202a41488c",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    },
+    {
+      "case_index": 79,
+      "method": "best_fixed",
+      "alias_of": "baseline",
+      "cache_key": "f0425bd5d640ea1f6af9431077b44b7dd01f1b50a15a3bcc3c71b65dfbbac632",
+      "execution_identity": {
+        "kind": "joint_constant",
+        "count": 5,
+        "radius_scale": 1.0
+      },
+      "note": "Execution-equivalent source/constant; nominal actions and encoding fields remain defined by method metadata. Zero-count constant radius can change logged previous_response_radius without changing optimizer trajectories."
+    }
+  ]
+}

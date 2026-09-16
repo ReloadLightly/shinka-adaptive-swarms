@@ -1,0 +1,22 @@
+<NAME>
+retain_two_pso_particles
+</NAME>
+<DESCRIPTION>
+Reduce relocation count from four to three while retaining radius multiplier 1.5. Two particles then continue ordinary PSO motion, preserving more ongoing search while three explore around the refreshed best. Holding radius fixed isolates the allocation change.
+The current policy improves mean error but worsens several cases, including case_010, whose interval-end error increases from 3.92 to 5.88. This motivates testing whether reduced relocation disruption improves recovery; the diagnostics do not establish that cause. The proposed improvement requires evaluation on the same sixteen search cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Relocate up to four particles at 1.5 times the default radius.
+    With five particles, four relocate and one continues ordinary PSO motion.
+    The fixed adapter reevaluates memories and retains velocities.
+    """
+    count = min(4, int(observation["swarm_size"]))
+=======
+    """Relocate up to three particles at 1.5 times the default radius.
+    With five particles, three relocate and two continue ordinary PSO motion.
+    The fixed adapter reevaluates memories and retains velocities.
+    """
+    count = min(3, int(observation["swarm_size"]))
+>>>>>>> REPLACE
+</DIFF>

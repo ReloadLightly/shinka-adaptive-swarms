@@ -1,0 +1,15 @@
+{
+  "generation": 26,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "small_diameter_radius_adjustment",
+  "patch_description": "Keep four relocated particles and replace displacement-driven expansion with a small diameter-dependent adjustment around 1.21875. The measured constant radius 1.25 achieved lower mean error than the current expansion rule, motivating a smaller radius range. Test whether modestly increasing radius for broader swarms helps: the multiplier stays within [1.2109375, 1.2265625]. This is an untested hypothesis; improved mean error or useful state dependence requires measured comparison.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:34:38.886952",
+  "llm_cost": 0.21694,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_26/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

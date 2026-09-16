@@ -1,0 +1,22 @@
+[
+  {
+    "command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64 --session joint-v3-search1 open http://127.0.0.1:8893",
+    "returncode": 0,
+    "stdout": "[agent-browser] launched browser\n\u2713 \ud83c\udf8f ShinkaEvolve Results Dashboard\n  http://127.0.0.1:8893/"
+  },
+  {
+    "command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64 --session joint-v3-search1 snapshot -i",
+    "returncode": 1,
+    "stdout": "\u2717 CDP command timed out: DOM.enable"
+  },
+  {
+    "command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64 --session joint-v3-search1 get url",
+    "returncode": 1,
+    "stdout": "\u2717 CDP command timed out: Runtime.evaluate"
+  },
+  {
+    "command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64 --session joint-v3-search1 close",
+    "returncode": 0,
+    "stdout": "\u2713 Browser closed"
+  }
+]

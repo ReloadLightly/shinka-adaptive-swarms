@@ -1,0 +1,156 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Full-Swarm Relocation at Baseline Radius**
+- **Implementation**: Always returns the full swarm size (five particles) and radius multiplier `1.0`, ignoring other observations; absolute relocation radius is half the configured movement severity. The surrounding adapter encodes the integer allocation, reevaluates all personal memories, and retains velocities.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.19, mean offline error 4.16, worst-case error 12.92, and case-error standard deviation 2.79.
+- **Feedback**: Every response allocated all five particles without horizon truncation; the adapter’s 0.9 encoding still represents full allocation. Case_015 retained substantial interval-end error (10.46), motivating investigation of state-dependent allocation and radius choices, although these diagnostics establish neither the cause nor generalization.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: Fixed Three-Particle Relocation at Baseline Radius**
+- **Implementation**: Returns `count=min(3, int(swarm_size))` and `radius_scale=1.0`, relocating three of five particles at half the configured movement severity. It ignores other observations; the surrounding adapter reevaluates all personal memories, retains velocities, and encodes the integer allocation without rounding ambiguity.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.89, worst-case error of 9.81, and case-error standard deviation of 2.13.
+- **Feedback**: Every response allocated three particles without horizon truncation; the actual allocation was 60%, while the 0.5 adapter fraction was encoding only. Case_015 retained an interval-end error of 8.03, indicating persistent tracking difficulty; state-dependent allocation and radius remain candidates for investigation, but these results establish neither the failure’s cause nor generalization.
+**Program Identifier:** Generation 1 - Patch Name partial_relocation_baseline_radius - Correct Program: True
+
+**Program Name: Fixed Four-Particle Relocation with Baseline Radius**
+- **Implementation**: Returns `count=min(4, int(swarm_size))` and `radius_scale=1.0`, using only swarm size without adapting to observed search conditions. The surrounding adapter reevaluates all personal memories and retains velocities; non-relocated particles continue ordinary PSO moves.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.21, mean offline error of 3.79, worst-case error of 12.26, and case-error standard deviation of 2.63.
+- **Feedback**: Every evaluated response allocated four of five particles (80%) at the baseline radius, with no horizon truncation; the reported 0.7 adapter fraction only encodes the integer count. Case_015’s interval-end error of 10.52 indicates persistent tracking difficulty, motivating investigation of adaptive allocation and radius choices under equal evaluation budgets, followed by separate generalization tests.
+**Program Identifier:** Generation 2 - Patch Name midpoint_allocation - Correct Program: True
+
+**Program Name: Full-Swarm Relocation with Fixed Double Radius**
+- **Implementation**: Always requests relocation of all five particles with radius multiplier 2.0, giving an absolute radius equal to movement severity, without adapting to observed state. The adapter encodes the integer allocation exactly, reevaluates all personal memories, and retains velocities.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.19, mean offline error 4.22, worst-case error 10.09, and case-error standard deviation 2.27.
+- **Feedback**: Every response allocated all five particles, with no horizon truncation; detection consumed 15.27–16.07% of evaluations and memory refresh 0.32–1.80%. Case_015 retained substantial interval-end error (7.28), motivating investigation of state-dependent allocation and radius choices, although these results establish neither the failure’s cause nor generalization.
+**Program Identifier:** Generation 3 - Patch Name full_swarm_wider_relocation - Correct Program: True
+
+**Program Name: Full-Swarm Relocation with Fixed Radius Multiplier**
+- **Implementation**: Always returns the integer swarm size, selecting all five particles for relocation at 1.5 times the default radius, without adapting to observed state. The surrounding adapter reevaluates all personal memories and retains velocities; its 0.9 encoding fraction represents full allocation.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 4.06, worst-case error of 12.06, and case-error standard deviation of 2.65.
+- **Feedback**: All responses selected five particles with no horizon truncation, but case_015 retained substantial interval-end error (10.76), indicating unresolved tracking difficulty. Detection consumed approximately 15–16% of evaluations; state-dependent allocation and radius warrant investigation, though these results establish neither the cause of poor tracking nor generalization.
+**Program Identifier:** Generation 4 - Patch Name midpoint_radius_crossover - Correct Program: True
+
+**Program Name: Constant Full-Swarm Intermediate-Radius Relocation**
+- **Implementation**: Returns `count=int(observation["swarm_size"])` and a constant `radius_scale=1.25`, allocating every particle without adapting to observed search conditions. Memory reevaluation and retained velocities remain adapter-controlled; the reported encoding fraction of 0.9 represents full allocation under the simulator’s ceiling rule.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 4.02, worst-case error of 10.16, and case-error standard deviation of 2.19.
+- **Feedback**: Every response allocated all five particles with no horizon truncation, but case_015 retained an interval-end error of 8.19, showing substantial unresolved tracking error. Detection consumed approximately 15–16% of evaluations and memory refresh 0.28–1.82%; these diagnostics motivate investigating allocation and radius choices but do not establish causality or generalization.
+**Program Identifier:** Generation 5 - Patch Name conservative_radius_crossover - Correct Program: True
+
+**Program Name: Fitness Drop Threshold Relocation with Fixed Radius**
+- **Implementation**: A deterministic policy requests three particles when relative fitness deterioration is ≤5% and four otherwise, clamping the count to the swarm size and fixing `radius_scale=1.0`. The surrounding corrected adapter handles memory reevaluation, retained velocities, and integer-to-fraction encoding.
+- **Performance**: All validation tests passed across 16 cases, achieving a combined score of 0.20, mean offline error of 3.96, worst-case error of 11.95, and case-error standard deviation of 2.55.
+- **Feedback**: Requested and allocated counts matched without horizon truncation; higher-severity cases predominantly selected four particles, while the radius multiplier remained unchanged. Case_015 retained substantial interval-end error (9.77), indicating incomplete tracking recovery; detection consumed approximately 15–16% of evaluations, and these search results do not establish generalization or the cause of poor tracking.
+**Program Identifier:** Generation 6 - Patch Name loss_gated_partial_relocation - Correct Program: True
+
+**Program Name: Threshold-Based Partial Relocation with Fixed Radius**
+- **Implementation**: Requests three particle relocations when relative fitness deterioration is at most 5%, otherwise four, clamping the count to the swarm size. The deterministic, stateless policy fixes `radius_scale` at 1.0, leaving radius adaptation and memory/velocity corrections to the surrounding simulator and adapter.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.96, worst-case error of 11.95, and case-error standard deviation of 2.55.
+- **Feedback**: Requested and allocated counts matched throughout, with no horizon-truncated responses; higher-severity cases selected four particles more frequently. Case_015 retained substantial interval-end error (9.77), indicating unresolved tracking difficulty, but these results do not establish its cause or demonstrate improvement over a baseline or generalization to fresh cases.
+**Program Identifier:** Generation 7 - Patch Name loss_gated_allocation - Correct Program: True
+
+**Program Name: Loss-Triggered Partial Relocation with Wider Radius**
+- **Implementation**: Relocates four particles at the default radius, switching to three particles at 1.5× radius when relative fitness drop exceeds 0.1 and swarm diameter is below twice the default radius. The deterministic policy clamps the requested count to the swarm size.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.98, worst-case error of 10.13, and case-error standard deviation of 2.30.
+- **Feedback**: Requested and allocated counts matched throughout, with no horizon-truncated responses; the wider, three-particle response activated more frequently under higher movement severity. Case_015 retained substantial interval-end error (7.80), indicating persistent tracking difficulty, but these results alone do not establish whether the allocation/radius choices improve on the corrected baseline or generalize to fresh cases.
+**Program Identifier:** Generation 8 - Patch Name compact_swarm_joint_recovery - Correct Program: True
+
+**Program Name: Fixed Four-Particle Relocation with Expanded Radius**
+- **Implementation**: Returns `count=min(4, int(swarm_size))` and `radius_scale=1.25`, selecting four of five particles at 1.25 times the default radius without adapting to observed state. The surrounding adapter reevaluates all personal memories and retains velocities.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.21, mean offline error of 3.76, worst-case error of 12.15, and case-error standard deviation of 2.60.
+- **Feedback**: Requested and allocated counts matched throughout, with no horizon-truncated responses; the actual allocation was 80%, while 0.7 was only the adapter’s encoding. Case_015 retained an interval-end error of 10.84, indicating persistent tracking difficulty, though these results neither establish its cause nor demonstrate generalization.
+**Program Identifier:** Generation 9 - Patch Name four_particles_radius_125 - Correct Program: True
+
+**Program Name: Fitness Drop Threshold Relocation**
+- **Implementation**: Relocates three particles when relative fitness drop is ≤0.1 and four otherwise, clamping the count to the swarm size. The radius multiplier stays at 1.0, retaining the simulator’s baseline radius.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 4.04, worst-case error of 12.44, and case error standard deviation of 2.77.
+- **Feedback**: Requested and allocated counts matched throughout, with no horizon-truncated responses; larger changes predominantly triggered four-particle allocations. Tracking remained unreliable in case_015, with interval-end error of 10.49, motivating joint count/radius exploration without establishing the fixed radius as the cause.
+**Program Identifier:** Generation 10 - Patch Name moderate_loss_partial_relocation - Correct Program: True
+
+**Program Name: Spread-Adaptive Partial Relocation**
+- **Implementation**: Selects three particles when swarm diameter exceeds four times the default radius, otherwise four, with the count clamped to the swarm size and the radius denominator floored at `1e-12`. Uses a constant relocation radius multiplier of `1.25`, adapting allocation to observed dispersion.
+- **Performance**: Across 16 completed cases, the combined score was 0.21, mean offline error was 3.67, worst-case error was 9.42, and case-error standard deviation was 2.08.
+- **Feedback**: All validation tests passed; requested and allocated counts matched, four-particle allocations predominated, and no responses were horizon-truncated. Case_015 retained substantial interval-end error (7.24), indicating incomplete tracking recovery; these results alone establish neither improvement over the corrected baseline nor generalization.
+**Program Identifier:** Generation 11 - Patch Name spread_adjusted_relocation - Correct Program: True
+
+**Program Name: Spread-Threshold Partial Relocation**
+- **Implementation**: Relocates 3 particles when swarm diameter exceeds 8 times the default radius, otherwise 4, clamping the count to swarm size and flooring the normalization radius at 1e-12. A fixed radius multiplier of 1.25 preserves more ordinary PSO motion in widely dispersed swarms.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.21, mean offline error of 3.72, worst-case error of 9.42, and case-error standard deviation of 2.09.
+- **Feedback**: Requested and allocated counts matched throughout, with no horizon-truncated responses. Case_015 retained substantial interval-end error (7.24), indicating persistent tracking difficulty; these results alone do not establish improvement over a baseline or generalization.
+**Program Identifier:** Generation 12 - Patch Name spread_threshold_eight - Correct Program: True
+
+**Program Name: Four-Particle Relocation with Conditional Radius Expansion**
+- **Implementation**: Selects `min(4, swarm_size)` particles with radius multiplier 1.25, increasing it to 1.5 when relative fitness drop exceeds 0.1 and swarm diameter is below twice the default radius. The fixed adapter reevaluates personal memories and retains velocities; other particles continue ordinary PSO motion.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.21, mean offline error 3.88, worst-case error 12.30, and case-error standard deviation 2.60.
+- **Feedback**: Every response allocated four of five particles, with no horizon truncation; detection consumed approximately 16% of objective evaluations. Case_015 retained interval-end error 10.50, indicating persistent tracking difficulty, but these results establish neither its cause nor improvement over a baseline or generalization to fresh cases.
+**Program Identifier:** Generation 13 - Patch Name four_selective_widening - Correct Program: True
+
+**Program Name: Fixed Three-Particle Relocation with Constant Radius Multiplier**
+- **Implementation**: Returns `count = min(3, int(swarm_size))` and `radius_scale = 1.25`, without adapting to observed search conditions. The fixed adapter reevaluates personal memories, retains velocities, and encodes integer allocation through the simulator’s fraction interface; remaining particles follow ordinary PSO motion.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.20, mean offline error 4.01, worst-case error 9.05, and case-error standard deviation 1.97.
+- **Feedback**: Every evaluated response allocated three of five particles (60%), with no horizon truncation; the adapter’s 0.5 encoding does not represent the allocated fraction. Case_015 retained substantial interval-end error (7.23), indicating incomplete tracking, while detection consumed approximately 16% of evaluations; adaptive allocation and radius merit comparison, but these results establish neither causation nor generalization.
+**Program Identifier:** Generation 14 - Patch Name three_particles_fixed_radius - Correct Program: True
+
+**Program Name: Fixed Four-Particle Relocation with Displacement-Adaptive Radius**
+- **Implementation**: Selects up to four particles and sets the radius multiplier to `1.375 - 0.25/(1 + displacement/default_radius)`, clamping displacement and flooring the denominator for numerical stability. The fixed adapter reevaluates personal memories and retains velocities; remaining particles continue ordinary PSO motion.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.95, worst-case error of 13.08, and case-error standard deviation of 2.88.
+- **Feedback**: Every evaluated response allocated four of five particles, with mean radius multipliers ranging from approximately 1.233 to 1.273. Case_015 retained substantial interval-end error (11.82), indicating persistent tracking difficulty; detection consumed roughly 16% of evaluations, but these diagnostics do not establish the failure’s cause or demonstrate generalization.
+**Program Identifier:** Generation 15 - Patch Name displacement_radius_four - Correct Program: True
+
+**Program Name: Diameter-Gated Partial Swarm Relocation**
+- **Implementation**: Relocates three particles when swarm diameter exceeds three times the default radius, otherwise four, capped by swarm size; the denominator is guarded at 1e-12. Uses a fixed radius multiplier of 1.25, with memory reevaluation and retained velocities handled by the adapter.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.21, mean offline error 3.77, worst-case error 9.42, and case-error standard deviation 2.07.
+- **Feedback**: Four-particle allocation dominated, with requested and allocated counts matching and no horizon-truncated responses. Performance varied substantially, especially under larger movement severity; case_015 retained interval-end error 7.24, indicating persistent tracking failure without establishing its cause or improvement over baseline.
+**Program Identifier:** Generation 16 - Patch Name spread_threshold_three - Correct Program: True
+
+**Program Name: Spread-Gated Relocation with Fixed Radius**
+- **Implementation**: Relocates three particles when swarm diameter divided by default radius lies in `(4, 8]`, otherwise four, clamping the count to swarm size. It floors the normalization radius at `1e-12` and always returns a radius multiplier of `1.25`.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.93, worst-case error of 12.13, and case-error standard deviation of 2.66.
+- **Feedback**: The three-particle branch activated rarely, so observed behavior was predominantly four-particle relocation; requested and allocated counts matched without horizon truncation. Case_015 retained substantial interval-end error (10.84), indicating persistent tracking difficulty, while improvement over a baseline and generalization remain unestablished.
+**Program Identifier:** Generation 17 - Patch Name bounded_spread_allocation - Correct Program: True
+
+**Program Name: Displacement-Conditioned Relocation Allocation**
+- **Implementation**: Normalizes swarm diameter and observed best displacement by a guarded default radius, selecting three particles when normalized diameter exceeds a displacement-dependent threshold rising from 4 toward 6, otherwise four. The count is clamped to swarm size, and the radius multiplier remains fixed at 1.25.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.21, mean offline error of 3.68, worst-case error of 9.42, and case error standard deviation of 2.08.
+- **Feedback**: Four-particle allocation predominated; requested and allocated counts matched throughout, with no horizon-truncated responses. Case_015 retained substantial interval-end error (7.24), indicating incomplete tracking; these search results do not establish improvement over baseline or generalization to fresh cases.
+**Program Identifier:** Generation 18 - Patch Name displacement_conditioned_spread - Correct Program: True
+
+**Program Name: Spread-Adaptive Joint Relocation**
+- **Implementation**: Normalizes swarm diameter by the default radius, floored at 1e-12. When this ratio exceeds 4, it requests 3 particles at a 1.25 radius multiplier; otherwise, 4 at 1.125, with counts clamped to the swarm size.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 4.07, worst-case error of 12.10, and case-error standard deviation of 2.71.
+- **Feedback**: Four-particle relocation dominated; requested and allocated counts matched throughout, with no horizon truncation. Case_015 retained substantial interval-end error (10.216), indicating persistent tracking difficulty; these results do not establish improvement over a baseline or generalization to fresh cases.
+**Program Identifier:** Generation 19 - Patch Name compact_swarm_radius_tuning - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+## Successful Algorithmic Patterns
+- **G11, Spread-Adaptive Partial Relocation, remains best:** score **0.214212**, mean offline error **3.6683**. Its rule—three particles when normalized diameter exceeds four, otherwise four, with radius multiplier **1.25**—reduces mean error **2.40%** versus fixed-four G9 (**0.210153 / 3.7584**) and **11.81%** versus corrected baseline G0 (**0.193814 / 4.1596**).
+- **Allocation conditioning with a constant radius remains the strongest observed family.** G18, Displacement-Conditioned Relocation Allocation, becomes second-best at **0.213608 / 3.6815**, ahead of G12’s threshold-eight rule (**0.212042 / 3.7161**). G18 preserves G11’s three-or-four allocation and radius **1.25**, but its displacement-dependent threshold adds no improvement over G11.
+- **Predominantly four-particle relocation with occasional reductions outperforms the tested constant alternatives.** At radius **1.25**, G11 beats fixed-four G9, fixed-three G14 (**0.199622 / 4.0095**) and full-swarm G5 (**0.199277 / 4.0181**). The evidence supports this particular policy combination on the search suite; it does not isolate a causal benefit from observing current spread.
+## Ineffective Approaches
+- **Displacement-adaptive radius weakens fixed-four relocation.** G15 scores **0.202028**, with error **3.9498**, versus G9’s **0.210153 / 3.7584**: **5.09% higher error**. Its case-average multipliers remain near 1.25 (**1.233–1.273**), yet worst-case error rises **12.1501 → 13.0845**. Similar average radii therefore do not imply equivalent outcomes.
+- **Shrinking the radius for compact swarms substantially worsens G11’s policy.** G19 retains G11’s allocation threshold but uses **1.125** instead of **1.25** in the four-particle branch. Score falls to **0.197054**, mean error rises **11.08%** to **4.0748**, and case_015 interval-end error rises **7.24 → 10.22**. This implementation change performs worse; the diagnostics do not establish the underlying tracking mechanism.
+- **Neither lowering nor bounding the spread threshold improves G11.** G16’s threshold of three produces **0.209816 / 3.7661**, **2.67% higher error**. G17’s restriction to `(4, 8]` produces **0.202851 / 3.9297**, **7.13% higher error**, and also trails fixed-four G9. Its three-particle branch activates only **19 of 3,376 responses (0.56%)**.
+- **Earlier results still contradict a generally beneficial radius or fitness-loss rule.** G13’s conditional radius expansion trails G9; G14’s fixed-three radius **1.25** trails G1’s radius **1.0**; and G10’s fitness-loss switch (**0.198339 / 4.0419**) trails both fixed-three and fixed-four policies at radius **1.0**. All passed validation, so these are performance limitations rather than execution failures.
+## Implementation Insights
+- **G11 changes allocation alone using a simple normalized observation.** It computes `swarm_diameter / max(default_radius, 1e-12)`, applies the strict threshold `> 4`, clamps the integer count to swarm size, and holds radius at **1.25**. Four-particle responses account for **2,951/3,440 (85.78%)**; three-particle responses account for **14.22%**.
+- **Additional displacement dependence offers no measured advantage here.** G18 replaces G11’s threshold with `4 + 2*u/(1+u)`, where `u` is nonnegative normalized observed displacement. It produces identical case errors to G11 in **10 of 16 cases**, improves two and worsens four. G15 instead changes radius through `1.375 - 0.25/(1+u)`; its numerical safeguards support execution but do not translate into better optimization.
+- **Allocation counts and evaluation costs remain distinct.** Three and four particles mean actual fractions **0.6 and 0.8**; adapter fractions **0.5 and 0.7** merely encode those counts. Non-relocated particles still undergo ordinary PSO motion. Memory reevaluation and retained velocities are shared controls, not evolved improvements. Requested, allocated and objectively queried relocation counts match, with no reported horizon truncation.
+## Performance Analysis
+- **The updated leading order is G11 > G18 > G12 > G9 > G16.** G18 misses G11 by only **0.0132 mean error (0.36%)**, whereas G15, G17 and G19 exceed G11’s error by **7.68%, 7.13% and 11.08%**, respectively. Rounded scores of **0.20–0.21** conceal these differences.
+- **G11’s advantage remains uneven across cases.** Against G9, it improves seven cases and worsens nine. The **2.7271** reduction in case_015 exceeds its total paired reduction across all 16 cases (**1.4426**); excluding that case, G11 averages **3.2846**, versus G9’s **3.1990**. G18 leaves case_015 unchanged and adds small aggregate losses elsewhere.
+- **Mean and tail rankings differ.** G16 has slightly lower case-error dispersion than G11 (**2.0671 versus 2.0817**) despite worse mean error; both have worst-case error **9.4230**. G14 retains the lower worst-case error **9.0543** despite substantially worse mean performance. Selection uses `1/(1+mean_error)`, so neither tail error nor dispersion receives independent weight.
+- **Correctness and search performance do not establish generalization.** All five new programs passed all 16 cases. G11, G16 and G18 still leave case_015 interval-end error at **7.2366**. Detection and memory costs are counted, but their shares do not explain the ranking; repeated use of this search suite also limits claims about independent performance or the value of state dependence.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Refine the spread threshold above four.** Keep `q = swarm_diameter / max(default_radius, 1e-12)` and radius `1.25`, but try `count = 3 if q > T else 4` with `T=4.5` and `6.0` as separate mutations, preserving the count clamp. Threshold three underperformed, while threshold eight and G18 remained competitive, making intermediate thresholds a reasonable next step.
+2. **Shrink radius only for three-particle responses.** Preserve G11’s allocation rule and set `radius_scale=1.125` or `1.0` when `q>4`, retaining `1.25` otherwise. Fixed-three relocation performed better at radius `1.0` than `1.25`; this tests whether that interaction transfers to G11’s dispersed branch while preserving its dominant four-particle behavior.
+3. **Try a small radius increase only for four-particle responses.** Keep three-particle responses at `1.25`, and separately test `1.3125` and `1.375` when `q<=4`. This branch accounts for approximately 86% of G11’s responses, and G19 demonstrates sensitivity to its radius, although the failure of shrinking does not establish that expansion will help.
+4. **Fine-tune a single constant radius while preserving adaptive allocation.** Retain G11’s exact threshold and counts, but use `radius_scale=1.1875` or `1.3125` for every response in separate candidates. Constant-radius allocation policies form the strongest observed family, so these small changes test whether `1.25` is locally optimal without adding another state-dependent rule.
+5. **Try an observation-independent three/four allocation mixture.** At constant radius `1.25`, choose three particles with probability `0.1422` and four otherwise, using a candidate-local RNG independent of the environment RNG and preserving the count clamp. This approximates G11’s observed allocation frequency and could retain useful occasional reductions without its spread trigger; G11’s uneven advantage over fixed-four leaves the benefit of that trigger unresolved.

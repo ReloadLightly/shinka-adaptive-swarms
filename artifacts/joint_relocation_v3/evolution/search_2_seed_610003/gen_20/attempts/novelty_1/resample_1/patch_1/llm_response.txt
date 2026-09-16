@@ -1,0 +1,20 @@
+<NAME>
+selective_allocation_for_spread_swarms
+</NAME>
+<DESCRIPTION>
+Test relocating three particles instead of four when relative fitness loss is at most 0.075 and swarm diameter exceeds 2.5 default radii. A dispersed swarm with limited observed deterioration may benefit from retaining two ordinary PSO moves. Preserve the existing radius rule to isolate the allocation change. The supplied constant-three policy had worse mean error but lower error on case_015; differing radius policies prevent attributing that tradeoff to count alone. This conditional allocation is an untested hypothesis.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = min(4, int(observation["swarm_size"]))
+    radius_scale = 1.5
+=======
+    count = min(4, int(observation["swarm_size"]))
+    if (
+        observation["relative_fitness_drop"] <= 0.075
+        and observation["swarm_diameter"] > 2.5 * observation["default_radius"]
+    ):
+        count = min(3, int(observation["swarm_size"]))
+    radius_scale = 1.5
+>>>>>>> REPLACE
+</DIFF>

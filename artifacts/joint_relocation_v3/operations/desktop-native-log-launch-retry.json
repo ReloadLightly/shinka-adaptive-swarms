@@ -1,0 +1,21 @@
+{
+  "at": "2026-09-16T04:05:53.968288+00:00",
+  "command": [
+    "/mnt/c/Users/nikol/AppData/Local/Microsoft/WindowsApps/wt.exe",
+    "new-tab",
+    "--title",
+    "ShinkaEvolve v3 native detail",
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--cd",
+    "/home/roland/actir/shinka-adaptive-swarms",
+    "bash",
+    "scripts/progress.sh",
+    "results/joint_relocation_v3/evolution/search_0_seed_610001"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "<3>WSL (419289 - ) ERROR: UtilAcceptVsock:273: accept4 failed 110\n",
+  "scope": "Retry visible log attachment after WSL interop failure; no research controller or evaluation launched"
+}

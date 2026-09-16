@@ -1,0 +1,79 @@
+{
+  "verified_at": "2026-09-16T03:47:19.725942+00:00",
+  "status": "passed",
+  "url": "http://localhost:8893",
+  "database": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/programs.sqlite",
+  "checks": {
+    "full_database_source_visible_verbatim": true,
+    "generation_one_parent_visible": true,
+    "no_browser_page_errors": true,
+    "dashboard_database_navigation": true,
+    "all_existing_and_new_processes_preserved": true,
+    "http_8888_200": true,
+    "http_8889_200": true,
+    "http_8893_200": true
+  },
+  "services": [
+    {
+      "port": 8888,
+      "pid": 167677,
+      "process_present": true,
+      "command": "167677 /home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/evolution/20260915T101024.562418Z-search --port 8888"
+    },
+    {
+      "port": 8889,
+      "pid": 250034,
+      "process_present": true,
+      "command": "250034 /home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/relocation_allocation_v2/evolution/20260916T013407.256962Z-search --port 8889"
+    },
+    {
+      "port": 8890,
+      "pid": 6511,
+      "process_present": true,
+      "command": "6511 .venv/bin/python -u scripts/s1_viewer.py --port 8890"
+    },
+    {
+      "port": 8891,
+      "pid": 146701,
+      "process_present": true,
+      "command": "146701 /home/roland/actir/shinka-indo-pacific-network/.venv/bin/python -u /home/roland/actir/shinka-indo-pacific-network/scripts/s1a_viewer.py --port 8891"
+    },
+    {
+      "port": 8892,
+      "pid": 235050,
+      "process_present": true,
+      "command": "235050 /home/roland/actir/shinka-indo-pacific-network/.venv/bin/python -m studies.s1b_strategy_search.viewer --port 8892"
+    },
+    {
+      "port": 8893,
+      "pid": 382942,
+      "process_present": true,
+      "command": "382942 /home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution --port 8893"
+    }
+  ],
+  "inspected_candidate": {
+    "native_id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+    "generation": 1,
+    "source_sha256": "646cf73eb88dcb2762874be2509cc48766c761a74718d2c96ba8642a46e86be7",
+    "lineage_to_root": [
+      {
+        "id": "6864375b-097b-4fbc-a961-400a7aa3a57e",
+        "generation": 1,
+        "island_copy": false
+      },
+      {
+        "id": "a154305d-bbcf-4423-8ba6-f6c422db28d0",
+        "generation": 0,
+        "island_copy": true
+      }
+    ]
+  },
+  "screenshot": "webui-selected-source.png",
+  "browser_evidence": "webui-browser-steps.json",
+  "native_plotly_deprecation_warning": true,
+  "followup_dom_query_timeout_seconds": 30,
+  "note": "Live native database, not exported comparison data. Full source verified verbatim inside already captured browser body text. Later redundant DOM-only query timed out; no server or scientific process was changed. No browser page errors in successful navigation; native Plotly emitted existing deprecation warning. Native cost labels are estimates, not paid API billing.",
+  "automated_browser_closed": true,
+  "browser_close_stdout": "\u2713 Browser closed\n",
+  "browser_close_stderr": ""
+}

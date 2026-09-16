@@ -1,0 +1,185 @@
+{
+  "format": "joint-v3-independent-preparation-accounting-scope-v1",
+  "reviewed_at": "2026-09-16T08:15:35.692770+00:00",
+  "scope": "Read-only separation of documented preparation, search research, local embedding, and subscription-model accounting. No simulations, candidates, models, protected outcomes, or frozen sources changed.",
+  "archived_seed_diagnostic": {
+    "run": "artifacts/preparation_joint_v3/20260916-native-seed/runs/20260916T024936.637020Z-seed",
+    "saved_cases": 1,
+    "evaluated_slots": 1,
+    "database_rows": 2,
+    "island_copies": 1,
+    "objective_queries": 1000,
+    "evaluation_categories": {
+      "initialization": 5,
+      "detection": 145,
+      "particle": 785,
+      "memory": 40,
+      "exclusion": 25
+    },
+    "config": {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 250,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 1000,
+      "environment_seed": 7300001,
+      "optimizer_seed": 17300001,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    "model_calls": 0,
+    "embedding_calls": 0,
+    "models_disabled": true,
+    "recorded_program_case_and_manifest_hashes_match": true,
+    "independent_completed_case_and_category_total_verified": true
+  },
+  "implementation_numerical_fixtures": {
+    "documented": true,
+    "base_budgets": [
+      101,
+      800
+    ],
+    "additional_truncated_fixtures": "Budget is first detected_at_evaluation plus 2 or 7, from a separate 800-query reference fixture; not every fixture uses the base budget.",
+    "documented_test_batches": [
+      {
+        "record": "docs/v3_preparation_checks.json",
+        "result": "118 passed, 1 skipped; later 14 engine tests passed",
+        "timing": "Earlier preparation revision; its zero local embedding calls is scoped to that record."
+      },
+      {
+        "record": "operations/joint-study-implementation-seeds.json",
+        "result": "10 passed; 101-query numerical fixtures"
+      },
+      {
+        "record": "operations/joint-combined-implementation-seeds.json",
+        "result": "53 passed; combined controller, joint adapter, figure tests with 101/800-query base fixtures"
+      }
+    ],
+    "cumulative_objective_queries": null,
+    "reason_not_totaled": "No comprehensive per-invocation objective-query ledger or all temporary numerical fixture checkpoints is archived. Test reruns/overlapping batches must not be inferred away or counted from final source alone.",
+    "research_case_executions": 0,
+    "recorded_codex_model_calls": 0,
+    "interpretation": "The 1000-query archived seed diagnostic is an exact separate item, not the total preparation objective budget."
+  },
+  "later_alias_amendment_checks": {
+    "records": [
+      "operations/alias-certification-implementation-check.json",
+      "operations/component-alias-amendment-check.json"
+    ],
+    "scope": "Static AST/source proofs, fabricated metadata, and saved-statistics fixtures; after some development outcomes and before protected execution. Recorded zero candidate invocations, objective queries, and model calls. Not extra research cases."
+  },
+  "local_embedding_accounting": {
+    "service_log": "results/joint_relocation_v3/operations/embedding-service/events.jsonl",
+    "freeze_at": "2026-09-16T03:26:11.513254+00:00",
+    "search_boundary": "2026-09-16T03:38:44+00:00",
+    "periods": {
+      "development_before_freeze": {
+        "events": {
+          "model_loaded": 2,
+          "service_ready": 2,
+          "embedding_started": 6,
+          "embedding_complete": 6
+        },
+        "started_input_texts": 46,
+        "completed_input_texts": 46
+      },
+      "readiness_after_freeze_before_search": {
+        "events": {
+          "request_error": 1
+        },
+        "started_input_texts": 0,
+        "completed_input_texts": 0
+      },
+      "search_period": {
+        "events": {
+          "embedding_started": 94,
+          "embedding_complete": 94
+        },
+        "started_input_texts": 94,
+        "completed_input_texts": 94
+      }
+    },
+    "development_details": "Two calibration passes, each with a 20-text batch, one async duplicate, and two long-source probes: 23 texts per pass. The first long-input pooling implementation failed full-token retention and was corrected before frozen calibration/research; both passes remain counted. The one later request_error was an intentional unknown-model readiness rejection with no inference or paid fallback.",
+    "research_details": "94 local requests/texts = three seed programs plus 91 proposal attempts. These are separate from subscription LLM wrappers/responses.",
+    "requests_are_not_independent_scientific_cases": true
+  },
+  "research_scope": {
+    "completed_search_case_executions": 1440,
+    "completed_search_objective_queries": 144000000,
+    "search_slots": 90,
+    "valid_descendants": 87,
+    "shared_search_case_configurations": 16,
+    "validation_case_executions_planned": 960,
+    "validation_status": "running; not audited for completion or selected outcomes in this review",
+    "final_case_executions_maximum": 640,
+    "registered_campaign_case_execution_ceiling": 3040,
+    "registered_campaign_objective_query_ceiling": 304000000,
+    "ceiling_excludes_preparation": true,
+    "actual_final_total": "pending completed checkpoint accounting; proof-based aliases may lower unique final executions"
+  },
+  "subscription_model_scope": {
+    "search_native_wrappers": 236,
+    "search_logical_responses_requested": 308,
+    "search_usable_responses": 308,
+    "mutation": {
+      "wrappers": 91,
+      "logical_responses": 91
+    },
+    "novelty": {
+      "wrappers": 91,
+      "logical_responses": 91
+    },
+    "meta": {
+      "wrappers": 54,
+      "logical_responses": 126
+    },
+    "observed_route": "headless/codex@gpt-6-astra",
+    "native_client_reasoning_efforts": "disabled",
+    "headless_effort_override": null,
+    "effective_provider_effort": "unverified",
+    "paid_fallback_observed": false,
+    "native_cost_estimate_total": 50.218758,
+    "cost_is_actual_billing": false,
+    "not_included": "Supervising-agent conversations, hidden transport/provider retries, and local CPU embedding inference. These cannot be inferred from native wrapper receipts.",
+    "validation_final": "Controller run_stage executes saved policies and run_case directly; no LLM or embedding route exists in those stage paths. No new model call is required or authorized for validation/final."
+  },
+  "recommended_report_wording": "Research query totals exclude preparation. The archived seed diagnostic used 1000 objective queries; focused implementation tests also ran small numerical fixtures, whose cumulative query total is not instrumented. Development local embeddings used six requests over 46 texts, plus an intentionally rejected unknown-model readiness request. Search used 1440 cases/144 million charged queries, 94 local embeddings, and 236 native model wrappers returning 308 logical responses.",
+  "issues": [
+    "Preparation objective total is not exactly recoverable from the archived test summaries; do not describe 1000 as all preparation queries.",
+    "The early preparation record local_embedding_calls=0 predates embedding setup and must not be read as the cumulative preparation count.",
+    "3040 cases/304M queries is the research ceiling, not observed complete-campaign usage; actual final aliases and completed stages determine the realized total."
+  ],
+  "sources_sha256": {
+    "docs/v3_preparation_checks.json": "274c01cb8388447ffddd09a13999492aecf1e4eea528000ad6d955545232a501",
+    "artifacts/preparation_joint_v3/20260916-execution-readiness/manifest.json": "eeccf59eef5ff4045521973024bf7afe906e863d154a4cf52e7186f80932715a",
+    "results/joint_relocation_v3/operations/joint-study-implementation-seeds.json": "dc3c6f2192f7cc214755087c36639ffe8b5f457543a041753fa9cc6caa6d23c4",
+    "results/joint_relocation_v3/operations/joint-combined-implementation-seeds.json": "b8b858890eff59fb3a139505361631df426c85ce9630620e2d11a60a5b9d3e7b",
+    "results/joint_relocation_v3/operations/subscription-runtime-check.json": "596d0417c81a9972323c8fbd583ea7f80c140e1edc9fd99bc60858ba1e3ed099",
+    "results/joint_relocation_v3/operations/alias-certification-implementation-check.json": "a92efaca674f197bf84f50f36ff23a902cb45f04cfc6c15c300ba5d52615f76a",
+    "results/joint_relocation_v3/operations/component-alias-amendment-check.json": "8db6f438b5a604ba795569a473005178dfe633de41840cae79b38d9a1df4f167",
+    "results/joint_relocation_v3/operations/embedding-freeze.json": "f410175a516645254cab947c37fa202e52532027bf82db20764ced4d835694be",
+    "results/joint_relocation_v3/operations/embedding-service/events.jsonl": "d19f948cca4a012008a660f025e15811cb62dc3e2b622fd903a7c06a703d1df7",
+    "results/joint_relocation_v3/operations/independent-completed-search-accounting.json": "9e4ded1352fd47aaf42b797a18df03384f2314f38312755e8b51210fa0da809b",
+    "results/joint_relocation_v3/operations/work-ceiling-clarification.json": "e91ad95b063d80f072ecd87ddcbf8c5f82fe678776bc6c6c0d2407e736664993",
+    "tests/test_joint_relocation.py": "a54a897ca587c5d8306bd60ef080db343aeb4eb308bbbb9d1f4940f687b9b904",
+    "tests/test_joint_study.py": "331d63aab777ec147af90a3c1067121b78281c54547f80595ab610474047f460"
+  },
+  "actions": {
+    "candidate_invocations": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "frozen_source_or_study_edits": 0
+  }
+}

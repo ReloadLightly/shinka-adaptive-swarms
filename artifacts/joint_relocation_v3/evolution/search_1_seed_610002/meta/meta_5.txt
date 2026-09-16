@@ -1,0 +1,65 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Full-Swarm Relocation at Baseline Radius**
+- **Implementation**: Always returns the full swarm size (five particles) and radius multiplier `1.0`, ignoring other observations; absolute relocation radius is half the configured movement severity. The surrounding adapter encodes the integer allocation, reevaluates all personal memories, and retains velocities.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.19, mean offline error 4.16, worst-case error 12.92, and case-error standard deviation 2.79.
+- **Feedback**: Every response allocated all five particles without horizon truncation; the adapter’s 0.9 encoding still represents full allocation. Case_015 retained substantial interval-end error (10.46), motivating investigation of state-dependent allocation and radius choices, although these diagnostics establish neither the cause nor generalization.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: Fixed Three-Particle Relocation at Baseline Radius**
+- **Implementation**: Returns `count=min(3, int(swarm_size))` and `radius_scale=1.0`, relocating three of five particles at half the configured movement severity. It ignores other observations; the surrounding adapter reevaluates all personal memories, retains velocities, and encodes the integer allocation without rounding ambiguity.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 3.89, worst-case error of 9.81, and case-error standard deviation of 2.13.
+- **Feedback**: Every response allocated three particles without horizon truncation; the actual allocation was 60%, while the 0.5 adapter fraction was encoding only. Case_015 retained an interval-end error of 8.03, indicating persistent tracking difficulty; state-dependent allocation and radius remain candidates for investigation, but these results establish neither the failure’s cause nor generalization.
+**Program Identifier:** Generation 1 - Patch Name partial_relocation_baseline_radius - Correct Program: True
+
+**Program Name: Fixed Four-Particle Relocation with Baseline Radius**
+- **Implementation**: Returns `count=min(4, int(swarm_size))` and `radius_scale=1.0`, using only swarm size without adapting to observed search conditions. The surrounding adapter reevaluates all personal memories and retains velocities; non-relocated particles continue ordinary PSO moves.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.21, mean offline error of 3.79, worst-case error of 12.26, and case-error standard deviation of 2.63.
+- **Feedback**: Every evaluated response allocated four of five particles (80%) at the baseline radius, with no horizon truncation; the reported 0.7 adapter fraction only encodes the integer count. Case_015’s interval-end error of 10.52 indicates persistent tracking difficulty, motivating investigation of adaptive allocation and radius choices under equal evaluation budgets, followed by separate generalization tests.
+**Program Identifier:** Generation 2 - Patch Name midpoint_allocation - Correct Program: True
+
+**Program Name: Full-Swarm Relocation with Fixed Double Radius**
+- **Implementation**: Always requests relocation of all five particles with radius multiplier 2.0, giving an absolute radius equal to movement severity, without adapting to observed state. The adapter encodes the integer allocation exactly, reevaluates all personal memories, and retains velocities.
+- **Performance**: Passed all validation tests across 16 cases, achieving combined score 0.19, mean offline error 4.22, worst-case error 10.09, and case-error standard deviation 2.27.
+- **Feedback**: Every response allocated all five particles, with no horizon truncation; detection consumed 15.27–16.07% of evaluations and memory refresh 0.32–1.80%. Case_015 retained substantial interval-end error (7.28), motivating investigation of state-dependent allocation and radius choices, although these results establish neither the failure’s cause nor generalization.
+**Program Identifier:** Generation 3 - Patch Name full_swarm_wider_relocation - Correct Program: True
+
+**Program Name: Full-Swarm Relocation with Fixed Radius Multiplier**
+- **Implementation**: Always returns the integer swarm size, selecting all five particles for relocation at 1.5 times the default radius, without adapting to observed state. The surrounding adapter reevaluates all personal memories and retains velocities; its 0.9 encoding fraction represents full allocation.
+- **Performance**: Passed all validation tests across 16 cases, achieving a combined score of 0.20, mean offline error of 4.06, worst-case error of 12.06, and case-error standard deviation of 2.65.
+- **Feedback**: All responses selected five particles with no horizon truncation, but case_015 retained substantial interval-end error (10.76), indicating unresolved tracking difficulty. Detection consumed approximately 15–16% of evaluations; state-dependent allocation and radius warrant investigation, though these results establish neither the cause of poor tracking nor generalization.
+**Program Identifier:** Generation 4 - Patch Name midpoint_radius_crossover - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+**Successful Algorithmic Patterns**
+- **Current best: Fixed Four-Particle Relocation with Baseline Radius (Generation 2)** achieves score **0.208903 ≈ 0.21** and mean error **3.7869**. Changing full relocation to `count=min(4, int(swarm_size))`, while retaining radius multiplier `1.0`, reduces mean error **8.96%** against Generation 0’s **4.1596**. Saved case metrics show improvement in **12 of 16 cases**.
+- **Fixed Three-Particle Relocation at Baseline Radius (Generation 1)** also improves on full relocation: score **0.204325**, mean error **3.8942**, worst-case error **9.8143**. Both partial-allocation programs outperform all three full-allocation programs on mean error.
+- Four particles outperform three on the selection objective: **2.75% lower mean error**, with improvements in **10 of 16 cases**. The successful observed pattern is substantial relocation with some particles continuing ordinary PSO motion; these results do not establish the causal contribution of that retained motion.
+**Ineffective Approaches**
+- **Full-Swarm Relocation with Fixed Double Radius (Generation 3)** has the lowest score, **0.191518**, and highest mean error, **4.2214**. Doubling radius worsens mean error relative to full relocation at baseline radius (**4.1596**), despite reducing worst-case error from **12.92 to 10.09**.
+- **Full-Swarm Relocation with Fixed Radius Multiplier (Generation 4)**, using multiplier `1.5`, modestly improves on Generation 0: **4.0635 versus 4.1596**. However, its score **0.197491** remains below both partial-allocation programs. Increasing radius produces no monotonic improvement across the tested full-allocation settings.
+- No evaluated constant pair resolves the difficult **case_015**. Even the current best retains interval-end error **10.52**, compared with **8.03** for three particles and **7.28** for full relocation at double radius. Those alternatives improve this diagnostic without winning the overall objective; the feedback does not identify the underlying failure mechanism.
+**Implementation Insights**
+- The best program implements a **constant four-of-five allocation**, using only `swarm_size`. It does not condition decisions on fitness deterioration, swarm diameter, or recent improvement. Its measured advantage therefore provides evidence for this fixed parameter choice, not adaptive state dependence.
+- Integer allocation and adapter encoding are distinct: four particles mean **80% allocation**, encoded as fraction **0.7**; three mean **60%**, encoded as **0.5**; five mean **100%**, encoded as **0.9**. The best program’s **3,461 responses** consistently allocate four particles, with no horizon truncation.
+- Multiplier `1.0` means absolute radius **0.5** at severity 1 and **1.5** at severity 3. All programs reevaluate personal memories and retain velocities. Non-relocated particles still receive ordinary PSO evaluations, so reducing relocation count does **not** directly eliminate their objective queries. Shared adapter corrections cannot explain differences as evolutionary improvements.
+**Performance Analysis**
+- The precise score ranking is **four particles / radius 1 > three / radius 1 > five / radius 1.5 > five / radius 1 > five / radius 2**. Because score is `1/(1+mean_error)`, this ranking reflects mean error exclusively; worst-case error and dispersion receive no independent weight.
+- The current best trades stronger average performance for poorer extremes than Generation 1: worst-case error **12.26 versus 9.81**, and case-error standard deviation **2.63 versus 2.13**. It is the mean-error winner, but not the most consistent evaluated program.
+- For the best program, regime means are **2.764 and 2.070** at severity 1, versus **4.998 and 5.316** at severity 3, for intervals 2,500 and 5,000 respectively. Longer intervals do not uniformly correspond to lower observed error. Case_015 alone contributes **20.2%** of the sum of its 16 case errors.
+- Detection consumes **15.39–16.11%** and memory refresh **0.33–1.93%** of the best program’s evaluations. These measured costs coexist with its advantage but do not establish its cause. All five programs pass validation; their performance differences remain findings on the reused search cases, with generalization unestablished.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Fine-tune radius while retaining four particles.** Keep `count=min(4, int(observation["swarm_size"]))` and try separate constant multipliers `0.75`, `0.9`, `1.1`, and `1.25`. Four particles currently win at radius `1.0`, but radius changes have only been evaluated with full allocation, leaving this promising neighborhood unexplored.
+2. **Switch conservatively between three and four particles.** Keep radius `1.0` and select three when `relative_fitness_drop <= t`, otherwise four, trying thresholds `t=0.0`, `0.05`, and `0.1` in separate mutations; clamp each count to swarm size. This combines the two strongest constant policies, testing whether smaller observed deterioration identifies situations where three particles’ better extremes can complement four particles’ lower mean error.
+3. **Adapt radius smoothly to observed deterioration.** Retain four particles and try `radius_scale = 1.0 + 0.5*d/(d+0.1)`, where `d=max(0.0, observation["relative_fitness_drop"])`. This preserves the winning baseline radius for negligible deterioration and caps expansion at `1.5`, testing selective widening given the mixed results of unconditional larger radii.
+4. **Condition allocation on existing swarm spread.** Define `q=swarm_diameter/max(default_radius, 1e-12)` and use three particles when `q>T`, otherwise four, with radius fixed at `1.0`; try `T=2`, `4`, and `8` separately. Both partial allocations already outperform full allocation on mean error, making spread a concrete candidate signal for choosing between them, although its predictive value remains unproven.
+5. **Add a narrowly triggered joint recovery response.** Default to `(count=4, radius_scale=1.0)`, but try `(3, 1.5)` when `relative_fitness_drop>0.1` and `swarm_diameter<2*default_radius`, clamping the count to swarm size. Three particles and wider full relocation separately improved the difficult case’s interval-end diagnostic; combining fewer relocations with wider placement tests a new interaction while retaining the best policy elsewhere, without treating that diagnostic as proof of the failure mechanism.

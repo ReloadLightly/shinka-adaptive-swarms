@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compact_swarm_joint_recovery",
+  "patch_description": "Test partial relocation with selective radius expansion. The prior three/four-particle policy achieved lower mean error than the current program, while the current wider radius reduced case_015\u2019s interval-end error. These observations motivate testing their interaction: normally relocate four particles at radius multiplier one; when relative fitness loss exceeds 0.1 and swarm diameter is below twice the default radius, relocate three at multiplier 1.5. This preserves two particles\u2019 ordinary PSO motion during the wider response. Any improvement remains a hypothesis requiring evaluation across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:59:18.274625",
+  "llm_cost": 0.21461,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "moderate_radius_four_particles",
+  "patch_description": "Keep four relocated particles and reduce the radius multiplier from 2.0 to 1.5. The current policy improves mean error, but several cases worsen relative to the baseline, so the feedback does not support uniformly broader relocation. An intermediate radius tests whether more concentrated relocation improves recovery while preserving one particle's ordinary PSO motion. Changing only radius isolates its effect at the current allocation. This is an untested hypothesis; the sixteen-case evaluation must determine whether it improves the score.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:48:46.471872",
+  "llm_cost": 0.16988,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

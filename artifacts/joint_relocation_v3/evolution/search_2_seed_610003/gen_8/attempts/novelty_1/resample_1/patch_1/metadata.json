@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "count_four_radius_1375",
+  "patch_description": "Keep four relocated particles and reduce the constant radius multiplier from 1.5 to 1.375. The fixed 1.5 policy achieved lower measured mean error than the supplied displacement-adaptive policy (3.81 versus 3.90), motivating a nearby constant-radius trial. This tests whether slightly tighter relocation improves recovery while retaining one particle's ordinary PSO motion. Improvement remains to be measured across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:57:36.050617",
+  "llm_cost": 0.20773,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

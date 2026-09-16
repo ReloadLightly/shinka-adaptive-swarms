@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "spread_adjusted_relocation",
+  "patch_description": "Keep radius_scale at 1.25 and allocate four particles for compact swarms, reducing allocation to three when swarm diameter exceeds four default radii. This tests whether preserving more ordinary PSO motion benefits already dispersed swarms. The supplied feedback motivates testing partial relocation but does not establish this rule\u2019s performance; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:06:58.750660",
+  "llm_cost": 0.20765,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

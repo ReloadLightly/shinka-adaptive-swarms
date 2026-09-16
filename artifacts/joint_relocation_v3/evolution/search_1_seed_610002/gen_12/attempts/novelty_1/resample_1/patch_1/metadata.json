@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "spread_threshold_eight",
+  "patch_description": "Test radius multiplier 1.25 with three relocated particles only when swarm diameter exceeds eight default radii; otherwise relocate four. The measured threshold-four variant reduced mean error from 3.96 to 3.67, but changed both allocation and radius. Raising its threshold tests whether retaining four relocations more often improves recovery while preserving additional ordinary PSO motion for widely dispersed swarms. This variant remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:08:14.339482",
+  "llm_cost": 0.21415,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

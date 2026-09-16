@@ -1,0 +1,14 @@
+<NAME>
+four_particle_wider_relocation
+</NAME>
+<DESCRIPTION>
+Test relocating four particles at twice the baseline radius, leaving one particle to continue ordinary PSO motion. In five dimensions, uniform-volume samples concentrate toward the relocation boundary; doubling the radius increases coverage around the refreshed best while retaining one existing search position.
+The baseline’s large interval-end errors motivate testing broader relocation, although they do not establish its cause. This constant pair tests the joint allocation–radius tradeoff without interpreting fitness loss as geometric displacement. Improvement remains a hypothesis for the sixteen-case evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": observation["swarm_size"], "radius_scale": 1.0}
+=======
+    return {"count": min(4, int(observation["swarm_size"])), "radius_scale": 2.0}
+>>>>>>> REPLACE
+</DIFF>

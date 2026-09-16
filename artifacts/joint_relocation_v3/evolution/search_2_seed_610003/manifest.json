@@ -1,0 +1,313 @@
+{
+  "model_requested": "gpt-6-astra",
+  "inner_effort_requested": null,
+  "inner_effort_effective": null,
+  "inner_effort_status": "not sent; Codex profile/default applies",
+  "outer_work_mode": "not inspected; Astra Ultra selection belongs to the outer Codex interface, separately from this launcher",
+  "seed_only": false,
+  "paid_api_calls_authorized": false,
+  "model_calls_performed_by_check": 0,
+  "errors": [],
+  "shinka_version": "0.0.7",
+  "shinka_available": true,
+  "headless_command": "npx -y @roberttlange/headless@0.6.1",
+  "codex_available": true,
+  "npx_available": true,
+  "codex_version": "codex-cli 0.154.0",
+  "subscription_login_confirmed": true,
+  "model_route": "headless/codex@gpt-6-astra",
+  "ready": true,
+  "upstream_commit": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+  "task": "joint_relocation_v3",
+  "evaluation_version": "joint_relocation_v3_score_reciprocal",
+  "generation_target": 30,
+  "started_at": "20260916T054513.857400Z",
+  "suite_sha256": "561edead300b2cf6f6c17cb159080c6256f62df077341bfb95098704ec5d70ba",
+  "status": "search_complete",
+  "run_dir": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003",
+  "engine_config": {
+    "schema_version": 1,
+    "profile_name": "research_v3",
+    "profile_definition": {
+      "schema_version": 1,
+      "name": "research_v3",
+      "description": "Native parent/inspiration sampling, migration, local-embedding novelty and online meta-scratchpad; subscription Codex only. Supply the served local embedding route explicitly. No model downloads or experiment launch are implied by this file.",
+      "evolution": {
+        "llm_models": [
+          "$codex"
+        ],
+        "llm_dynamic_selection": "fixed",
+        "llm_kwargs": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384
+        },
+        "patch_types": [
+          "diff",
+          "full",
+          "cross"
+        ],
+        "patch_type_probs": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "max_patch_resamples": 1,
+        "max_patch_attempts": 1,
+        "max_novelty_attempts": 3,
+        "embedding_model": "$local_embedding",
+        "code_embed_sim_threshold": 0.830958258366903,
+        "novelty_llm_models": [
+          "$codex"
+        ],
+        "meta_rec_interval": 5,
+        "meta_llm_models": [
+          "$codex"
+        ],
+        "meta_max_recommendations": 5,
+        "sample_single_meta_rec": true,
+        "evolve_prompts": false,
+        "use_text_feedback": true,
+        "enable_wandb_logging": false
+      },
+      "database": {
+        "parent_selection_strategy": "weighted",
+        "parent_selection_lambda": 10.0,
+        "num_islands": 2,
+        "archive_size": 40,
+        "num_archive_inspirations": 1,
+        "num_top_k_inspirations": 1,
+        "migration_interval": 10,
+        "migration_rate": 0.1,
+        "island_elitism": true,
+        "enforce_island_separation": true
+      }
+    },
+    "default_model": "gpt-6-astra",
+    "default_effort": null,
+    "evolution": {
+      "llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "llm_dynamic_selection": "fixed",
+      "llm_kwargs": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384
+      },
+      "patch_types": [
+        "diff",
+        "full",
+        "cross"
+      ],
+      "patch_type_probs": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "max_patch_resamples": 1,
+      "max_patch_attempts": 1,
+      "max_novelty_attempts": 3,
+      "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+      "novelty_llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "meta_rec_interval": 5,
+      "meta_llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "evolve_prompts": false,
+      "use_text_feedback": true,
+      "enable_wandb_logging": false,
+      "code_embed_sim_threshold": 0.830958258366903,
+      "meta_max_recommendations": 5,
+      "sample_single_meta_rec": true
+    },
+    "database": {
+      "num_islands": 2,
+      "archive_size": 40,
+      "num_archive_inspirations": 1,
+      "num_top_k_inspirations": 1,
+      "parent_selection_strategy": "weighted",
+      "parent_selection_lambda": 10.0,
+      "migration_interval": 10,
+      "migration_rate": 0.1,
+      "island_elitism": true,
+      "enforce_island_separation": true
+    },
+    "sha256": "1829022bf5512efb2af95f50cab9c2e24850f6c6efc5b34960d04188781b528b"
+  },
+  "search_seed": 610003,
+  "engine_features": {
+    "status": "resolved configuration; runtime mechanisms require event evidence",
+    "profile": "research_v3",
+    "sha256": "1829022bf5512efb2af95f50cab9c2e24850f6c6efc5b34960d04188781b528b",
+    "seed_only": false,
+    "parent_sampling": "weighted",
+    "num_islands": 2,
+    "migration_rate": 0.1,
+    "migration_interval": 10,
+    "archive_inspirations": 1,
+    "top_k_inspirations": 1,
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "novelty_configured": true,
+    "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "novelty_attempts": 3,
+    "meta_configured": true,
+    "meta_interval": 5,
+    "text_feedback": true,
+    "model_selection": "fixed",
+    "model_roles": {
+      "mutation": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "meta": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "novelty": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ]
+    },
+    "prompt_evolution": false
+  },
+  "execution_support_sha256": {
+    "scripts/run_evolution.py": "319383c6f28955f75b1a9026468d80e2e1c435d8fb15cc3fa93f807648fc950f",
+    "scripts/check_runtime.py": "1d1c1e62393148f0fae96104126b433c5e0d0a0093b8d0b40671a020d7a971e2",
+    "src/adaptive_swarms/engine_config.py": "2efbddc3dca84820e9a80397e7446b34716b29a69d9ef2d7db568be18495083c",
+    "src/adaptive_swarms/engine_runtime.py": "7056349a1efe590b1303c4e0f1452818d3c768016cfaeec51d7e60e76b84faa7",
+    "src/adaptive_swarms/engine_progress.py": "f5f5c4ba7372062ffb6bb5258040d9e8a36b270027252f61f3c305a28c46041b",
+    "src/adaptive_swarms/storage_runner.py": "3b090cf4512758dde95f347769fd901d9ba6bedc59a07d3769944201debbb6b6",
+    "src/adaptive_swarms/native_storage.py": "6e528ec3a3ae99800dd0de49c66c505127d37ee1490cd28e89fcdff03b902eaa"
+  },
+  "search_randomness": {
+    "search_seed": 610003,
+    "seed_applied": true,
+    "resume_rng_state_restored": false,
+    "note": "Resume preserves completed evidence; native sampling RNG state is not restored, so the uninterrupted proposal sequence is not promised."
+  },
+  "source_hashes": {
+    "evaluate.py": "1687938077462c693871eb4a71738f6899d07d8ee05b6cc9dbd715f53726b254",
+    "initial.py": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+    "simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "evolution_context.md": "bf9aeec8f2362816f18d26d845a0e92aaea8e6395c3f33a3d59cca9af770a33d",
+    "joint_relocation.py": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449",
+    "task_prompt.txt": "96b9dcc52492c056786e673db8829f9decb9967a4e71978ee5fab16a6261578e",
+    "protocol.md": "1344230e01b5144bcd6aa17dfc6fea884c91a6902499b54a9f7620f506399772",
+    "task_system_prompt.txt": "99eeab0ea432ae5fa9e79ffb6938170b02cb6b48b5b80985695b89a299f33e6d",
+    "snapshot_created_at": "2026-09-16T05:45:14.157775+00:00",
+    "snapshot_created_on_resume": false
+  },
+  "embedding_preflight": {
+    "required": true,
+    "route": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "listener_reachable": true,
+    "embedding_function_verified": false,
+    "model_calls": 0,
+    "note": "TCP listener only; actual embedding and novelty coverage are recorded during execution."
+  },
+  "generation_records": 30,
+  "evaluated_programs": 30,
+  "evaluated_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "terminal_failed_generation_ids": [],
+  "terminal_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "terminal_slots": 30,
+  "valid_seed": true,
+  "valid_programs": 30,
+  "valid_descendants": 29,
+  "best_combined_score": 0.2210407990359973,
+  "database": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/programs.sqlite",
+  "finished_at": "2026-09-16T07:38:23.492807+00:00"
+}

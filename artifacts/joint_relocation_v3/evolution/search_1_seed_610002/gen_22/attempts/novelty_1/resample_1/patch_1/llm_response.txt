@@ -1,0 +1,32 @@
+<NAME>
+compact_swarm_radius_step
+</NAME>
+<DESCRIPTION>
+The current policy uses count four and radius multiplier 1.25. This proposal selects three particles when normalized swarm diameter exceeds 4.0, between the previously tested thresholds of 3.0 and 5.0. Broader swarms retain radius 1.25; compact swarms relocate four particles at 1.3125, a 5% radius increase. The hypothesis is that modestly wider relocation helps compact swarms recover while preserving more ordinary PSO motion in broader swarms. Improvement requires measurement on the sixteen-case suite.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Choose relocation count and radius using normalized swarm diameter."""
+    q = observation["swarm_diameter"] / max(
+        observation["default_radius"], 1e-12
+    )
+    if q > 4.0:
+        count = 3
+        radius_scale = 1.25
+    else:
+        count = 4
+        radius_scale = 1.3125
+    return {
+        "count": min(count, int(observation["swarm_size"])),
+        "radius_scale": radius_scale,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

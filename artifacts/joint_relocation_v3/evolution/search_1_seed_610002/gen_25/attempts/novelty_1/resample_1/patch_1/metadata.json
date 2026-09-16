@@ -1,0 +1,15 @@
+{
+  "generation": 25,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "diameter_crossover",
+  "patch_description": "Combine the current program\u2019s diameter threshold of 4.0 with the better-scoring parent\u2019s constant radius multiplier of 1.25. This preserves three-particle relocation for broader swarms and four for compact swarms while removing the compact-swarm radius increase. The supplied results motivate this crossover; its performance remains to be measured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:32:55.958467",
+  "llm_cost": 0.21474,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_25/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

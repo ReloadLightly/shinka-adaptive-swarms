@@ -1,0 +1,132 @@
+{
+  "format": "joint-v3-component-alias-amendment-check-v1",
+  "checked_at": "2026-09-16T07:46:13.824686+00:00",
+  "status": "focused_checks_passed",
+  "registration_signature": "c71b38f1bb5746c49a64b04ae5cbf41415e6bb01933419e1d499fc42bfeec1b3",
+  "original_registration_sha256": "832b37321744907766263cc72416afa991cd0a82d37690abf22d4fede56b8ce0",
+  "original_registration_and_all_snapshots_preserved": true,
+  "current_scientific_sources_match_original": false,
+  "source_hashes": {
+    "src/adaptive_swarms/joint_study.py": "e55a72924d3f82433c8ac05152510e0e3d3ed6c3fbaa650a98d194dc16fbed31",
+    "src/adaptive_swarms/joint_alias_amendment.py": "7fd8e0a71d9adf55ef1129ec79db643179d9a2cfa7e35a1cf2d141d1c2e88ebe",
+    "scripts/install_joint_alias_amendment.py": "80776490b6ae9f798aeb1988393acf0ebbd9823943e5a77be518f12fcde74d97",
+    "scripts/certify_joint_constants.py": "f82501f0723c0534418f5a69e70c68933443cc4d2e1b3a9fda9cc80c46692750",
+    "scripts/audit_joint_progress.py": "8dc31d154cec5645b16a637ff149a157d4b4c4046f3d701c8ad93929eef871de",
+    "docs/v3_component_alias_amendment.md": "37b89c3f45592baabaf3a0c1166ca828d32ada3e03af92d837d11338c77bbf85",
+    "docs/v3_alias_certification.md": "c1e352317aac00f89f9d76a6b1dbf2c57d77af6ec39e0d62c9abaa71d1c7c194",
+    "tests/test_joint_component_amendment.py": "77cfb2e2f7f33ff229e6e4d03877a4da21d6cf9f9a844b809aad472c8bc00de5",
+    "tests/fixtures/joint_component_aliases/search_1_gen_26.py": "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7",
+    "tests/fixtures/joint_component_aliases/search_1_gen_27.py": "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43",
+    "tests/fixtures/joint_component_aliases/search_1_gen_28.py": "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de",
+    "tests/fixtures/joint_component_aliases/search_2_gen_14.py": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+    "tests/fixtures/joint_component_aliases/search_2_gen_21.py": "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+    "tests/fixtures/joint_component_aliases/search_2_gen_23.py": "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c"
+  },
+  "controller_definitions_changed": [
+    "execution_fingerprint",
+    "method_identity",
+    "nominal_constant_action",
+    "verify_registration"
+  ],
+  "other_registered_scientific_sources_unchanged": true,
+  "unchanged_controller_definitions": [
+    "ComponentPolicy",
+    "_constant_identity",
+    "analysis_specification",
+    "analyze",
+    "assert_cases",
+    "build_policy",
+    "collect_used_seeds",
+    "contrast_record",
+    "digest",
+    "equal_regime_mean",
+    "exclusive_study",
+    "file_sha",
+    "fixed_grid",
+    "fixed_name",
+    "freeze_joint_sampler",
+    "freeze_shortlists",
+    "generate_final_cases",
+    "joint_behavior",
+    "joint_sampler_policy",
+    "load_stage_outcomes",
+    "main",
+    "native_search_record",
+    "nominal_action_pairs",
+    "now",
+    "paired_statistics",
+    "proven_constant",
+    "record_source_review",
+    "register_study",
+    "run_final",
+    "run_stage",
+    "sampler_seed",
+    "select_and_freeze",
+    "validate_shortlists",
+    "verify_review",
+    "verify_shortlists"
+  ],
+  "partial_output_registry_sha256": "454f61ded3661525f13845f1d65af7937e38da50e17ef52b38a322e973539a33",
+  "reviewed_source_facts": {
+    "dc9811577267e4cef6c128d348ad9c2ffd28ffabc34f6f0fdd526cd1fa7632d7": {
+      "radius_scale": 1.25
+    },
+    "f4047cf27d7484f890ab84e4c35d2caa2a2b52d14f351083fa883591b812ff43": {
+      "radius_scale": 1.25
+    },
+    "9406700ee6e2cd7fa88df9ab592813fd5f14e56bdef8b8098d5c053f809a74de": {
+      "radius_scale": 1.25
+    },
+    "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3": {
+      "radius_scale": 1.5
+    },
+    "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec": {
+      "radius_scale": 1.5
+    },
+    "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c": {
+      "radius_scale": 1.5
+    }
+  },
+  "tests": [
+    {
+      "command": ".venv/bin/python -m pytest -q tests/test_joint_component_amendment.py tests/test_joint_constant_certification.py tests/test_joint_archive_tools.py tests/test_joint_figures.py",
+      "result": "51 passed in 3.95s",
+      "scope": "Static six-source facts; pure statistics; fabricated amendment/shortlist/checkpoint metadata; identity/domain/tamper/chronology/recovery checks; portable archive verification with removed original paths and Git invocation disabled; telemetry preservation."
+    },
+    {
+      "command": "pytest registration, terminal-slot guard, source-distinct shortlist and fixed-grid tests from tests/test_joint_study.py",
+      "result": "4 passed",
+      "scope": "Existing pure metadata/identity checks only; no numerical test cases."
+    }
+  ],
+  "rng_seeds_exercised": [
+    2026091603
+  ],
+  "rng_note": "Only the saved-statistics fixture bootstrap seed; no environment/optimizer RNG used.",
+  "actual_amendment_installed": false,
+  "actual_certificate_exists": false,
+  "protected_artifacts_exist": {
+    "source_review.json": false,
+    "validation": false,
+    "selection.json": false,
+    "final_cases.json": false,
+    "final": false,
+    "analysis.json": false
+  },
+  "commands_after_root_review_commit": [
+    ".venv/bin/python scripts/install_joint_alias_amendment.py --run results/joint_relocation_v3/study_20260916",
+    ".venv/bin/python scripts/run_joint_study.py freeze-shortlists --run results/joint_relocation_v3/study_20260916",
+    ".venv/bin/python scripts/certify_joint_constants.py --run results/joint_relocation_v3/study_20260916"
+  ],
+  "actions": {
+    "candidate_calls": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "actual_study_registration_or_snapshot_writes": 0
+  },
+  "limitations": [
+    "Explicit correction after development outcomes, before protected stages; not represented as pre-search implementation.",
+    "Actual installation/certification remain deferred until root review and commit.",
+    "Read-only runtime chain verification uses copied source snapshots and recorded successful Git-byte verification from installation; no original paths or historical Git objects required."
+  ]
+}

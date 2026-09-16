@@ -1,0 +1,15 @@
+{
+  "generation": 28,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_geometry_response",
+  "patch_description": "Replace the fitness threshold branch with a normalization, bounded geometry signal, and radius adjustment pipeline. Retain four-particle allocation and test a small diameter-dependent adjustment around 1.21875, limiting the multiplier to [1.2109375, 1.2265625]. Performance improvement remains a hypothesis for evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:37:14.028871",
+  "llm_cost": 0.2164,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_28/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

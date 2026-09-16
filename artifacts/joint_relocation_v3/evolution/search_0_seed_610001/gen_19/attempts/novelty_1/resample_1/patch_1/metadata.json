@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "preserve_two_movers_after_mild_loss",
+  "patch_description": "Test count three when relative fitness deterioration is at most 0.025, otherwise count four, with radius_scale fixed at 1.25. This preserves two ordinary PSO movers after mild losses while retaining broader relocation after larger losses. The current radius adjustment produced mixed per-case changes without improving the reported mean; fixing the radius makes comparison against the measured count-four/radius-1.25 policy easier to interpret. The threshold is a hypothesis requiring evaluation, not an established improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:18:02.250574",
+  "llm_cost": 0.21276,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

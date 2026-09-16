@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "spread_threshold_three",
+  "patch_description": "Test allocating three particles when swarm diameter exceeds three default radii, otherwise four, keeping radius_scale at 1.25. This follows the supplied threshold-search recommendation: a broader swarm may benefit from retaining more particles for ordinary PSO motion. The lower threshold extends that behavior to moderately spread swarms. Preserve the swarm-size clamp; improvement remains a hypothesis requiring evaluation across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:16:41.259564",
+  "llm_cost": 0.20701,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_1_seed_610002/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

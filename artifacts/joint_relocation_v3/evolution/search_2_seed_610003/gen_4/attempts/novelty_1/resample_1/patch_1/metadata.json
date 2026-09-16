@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "three_particle_relocation",
+  "patch_description": "Keep radius_scale at 1.5 and reduce relocation from four particles to three, preserving two particles for ordinary PSO motion. This tests whether retaining more ongoing search trajectories improves recovery while three relocated particles provide spatial exploration. The current radius achieved lower measured mean error than count four/radius two; holding it fixed isolates the allocation change. Improvement remains a hypothesis requiring evaluation across all sixteen cases.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:49:54.027955",
+  "llm_cost": 0.20667,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

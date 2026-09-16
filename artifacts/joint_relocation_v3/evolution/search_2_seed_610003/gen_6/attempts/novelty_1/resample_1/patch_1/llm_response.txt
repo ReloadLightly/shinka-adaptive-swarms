@@ -1,0 +1,19 @@
+<NAME>
+selective_three_particle_relocation
+</NAME>
+<DESCRIPTION>
+Keep radius_scale at 1.5 and default to four particles, which achieved lower measured mean error than three (3.81 versus 3.95). Relocate only three when relative fitness deterioration is at most 5% and swarm diameter exceeds three default radii. This tests whether preserving two ordinary PSO moves helps a dispersed swarm after limited deterioration. Aggregate feedback does not establish this mechanism; the conditional policy requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"count": min(3, int(observation["swarm_size"])), "radius_scale": 1.5}
+=======
+    count = 4
+    if (
+        observation["relative_fitness_drop"] <= 0.05
+        and observation["swarm_diameter"] > 3.0 * observation["default_radius"]
+    ):
+        count = 3
+    return {"count": min(count, int(observation["swarm_size"])), "radius_scale": 1.5}
+>>>>>>> REPLACE
+</DIFF>

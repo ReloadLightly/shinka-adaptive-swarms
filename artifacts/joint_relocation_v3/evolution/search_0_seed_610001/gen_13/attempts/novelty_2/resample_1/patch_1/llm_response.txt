@@ -1,0 +1,22 @@
+<NAME>
+three_particle_radius_125
+</NAME>
+<DESCRIPTION>
+Test constant relocation of three particles at radius multiplier 1.25, leaving two particles to continue ordinary PSO motion. The current radius expansion worsened mean error from 3.81 to 3.91 compared with constant four-particle relocation at 1.5; case_015 also showed worse interval-end recovery. A smaller relocation radius with more particles preserving their positions could improve local tracking. This tests the recommended three-particle direction; its performance remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    fitness_drop = float(observation["fitness_drop"])
+    recent_gain = max(0.0, float(observation["recent_improvement"]))
+    weak_recovery = fitness_drop > 0.0 and recent_gain < 0.25 * fitness_drop
+    return {
+        "count": max(0, int(observation["swarm_size"]) - 1),
+        "radius_scale": 1.75 if weak_recovery else 1.5,
+    }
+=======
+    return {
+        "count": min(3, int(observation["swarm_size"])),
+        "radius_scale": 1.25,
+    }
+>>>>>>> REPLACE
+</DIFF>

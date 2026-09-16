@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_moderate_radius",
+  "patch_description": "The baseline relocates all five particles with radius multiplier 1.0. This proposal relocates four with multiplier 1.5, preserving one ordinary PSO update while widening the relocation neighborhood. It tests an intermediate configuration between the baseline and the previously promising count-three/radius-two response. Persistent interval-end errors motivate testing this exploration\u2013retention balance, but improvement requires measurement. Memory reevaluation, retained velocities, and evaluation accounting remain fixed.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T07:47:37.325134",
+  "llm_cost": 0.13375,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

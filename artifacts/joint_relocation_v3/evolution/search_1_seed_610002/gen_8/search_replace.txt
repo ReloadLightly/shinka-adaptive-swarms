@@ -1,0 +1,30 @@
+<NAME>
+compact_swarm_joint_recovery
+</NAME>
+<DESCRIPTION>
+Test partial relocation with selective radius expansion. The prior three/four-particle policy achieved lower mean error than the current program, while the current wider radius reduced case_015’s interval-end error. These observations motivate testing their interaction: normally relocate four particles at radius multiplier one; when relative fitness loss exceeds 0.1 and swarm diameter is below twice the default radius, relocate three at multiplier 1.5. This preserves two particles’ ordinary PSO motion during the wider response. Any improvement remains a hypothesis requiring evaluation across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Allocate every particle with a constant intermediate radius.
+    The multiplier blends the parental radii: 0.75 * 1.0 + 0.25 * 2.0.
+    Memory reevaluation and retained velocities remain adapter-controlled.
+    """
+    return {"count": int(observation["swarm_size"]), "radius_scale": 1.25}
+=======
+    """Test wider partial relocation after substantial loss in a compact swarm."""
+    swarm_size = int(observation["swarm_size"])
+    count = 4
+    radius_scale = 1.0
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["swarm_diameter"] < 2.0 * observation["default_radius"]
+    ):
+        count = 3
+        radius_scale = 1.5
+    return {
+        "count": max(0, min(swarm_size, count)),
+        "radius_scale": radius_scale,
+    }
+>>>>>>> REPLACE
+</DIFF>

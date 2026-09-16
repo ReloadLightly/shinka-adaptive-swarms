@@ -1,0 +1,15 @@
+{
+  "generation": 23,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "capped_coverage_crossover",
+  "patch_description": "Combine the current program\u2019s nonnegative loss normalization with the stronger parent\u2019s 7.5% loss ceiling, retaining radius multiplier 1.5. Short-circuit checks avoid computing coverage when reduced allocation is already excluded. This restores the decision rule associated with supplied mean error 3.52 versus 3.57 for the current program; this implementation has not been independently evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:22:53.295211",
+  "llm_cost": 0.22755,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_23/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

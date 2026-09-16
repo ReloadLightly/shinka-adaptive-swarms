@@ -1,0 +1,18 @@
+<NAME>
+count_four_radius_1375
+</NAME>
+<DESCRIPTION>
+Keep four relocated particles and reduce the constant radius multiplier from 1.5 to 1.375. The fixed 1.5 policy achieved lower measured mean error than the supplied displacement-adaptive policy (3.81 versus 3.90), motivating a nearby constant-radius trial. This tests whether slightly tighter relocation improves recovery while retaining one particle's ordinary PSO motion. Improvement remains to be measured across all sixteen cases.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Relocate up to four particles at 1.5 times the default radius.
+=======
+    """Relocate up to four particles at 1.375 times the default radius.
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    return {"count": count, "radius_scale": 1.5}
+=======
+    return {"count": count, "radius_scale": 1.375}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-09-16T08:33:19.512466+00:00",
+  "status": "native_server_and_terminal_preserved_owned_browser_closed_after_hang",
+  "session": "joint-v3-final",
+  "diagnosis": "Owned original daemon709771 had browserLaunched=false/pageCount0 and no children; doctor located installed Chrome153 and completed a transient headless about:blank launch. One fresh owned headed session then returned the native page title/URL but its snapshot and session-info inspection commands timed out. No repeated CDP retry loop followed.",
+  "headed_navigation_returncode": 0,
+  "native_url": "http://localhost:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite",
+  "selected_final_winner": null,
+  "selected_final_winner_note": "Validation selection was not yet complete; the view targeted the actual third-search database, not a claimed final winner.",
+  "visual_rendering_or_interaction_verified": false,
+  "visible_native_viewer_restored": false,
+  "cleanup": "12 owned daemon/Chrome processes were signaled after PID/start-time checks. All exited with SIGTERM; no SIGKILL was required. Native WebUI server, original terminal follower and scientific controller remained present.",
+  "owned_process_count_before_cleanup": 12,
+  "sum_reported_owned_rss_kib_before_cleanup": 409212,
+  "rss_interpretation": "Sum of per-process RSS includes shared pages and is not unique browser memory; browser contribution to host pressure is not causally isolated.",
+  "remaining_owned_processes": [],
+  "preserved_processes": [
+    {
+      "pid": 382942,
+      "state": "S (sleeping)",
+      "command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution --port 8893"
+    },
+    {
+      "pid": 416558,
+      "state": "S (sleeping)",
+      "command": "tail -n 25 -F -- results/joint_relocation_v3/operations/run.log"
+    },
+    {
+      "pid": 692804,
+      "state": "R (running)",
+      "command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u /home/roland/actir/shinka-adaptive-swarms/scripts/run_joint_study.py validate --run /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/study_20260916"
+    }
+  ],
+  "browser_session_left_running": false,
+  "native_webui_service_restarted": false,
+  "wsl_restarted": false,
+  "unrelated_browsers_or_controllers_stopped": false,
+  "research_or_model_calls": 0,
+  "report_file_changed": false,
+  "evidence": {
+    "webui-final-browser-open.json": {
+      "sha256": "d6a1ff290fb5ebfbe75ad825b0ccb1509928d17e3adabccc14a14a7d08b118f7",
+      "bytes": 416
+    },
+    "webui-final-browser-connection.json": {
+      "sha256": "1794b97c0436104b2293d242fbb44df1c90b57d5482bc74e6c6d7627b8268b06",
+      "bytes": 521
+    },
+    "webui-final-browser-recovery-close.json": {
+      "sha256": "b1a98489d1e3ca698ee320b7e6ec2fe649a5bc1c6b641c5e8ccfef51f7712c3f",
+      "bytes": 375
+    },
+    "webui-final-browser-recovery-launch.json": {
+      "sha256": "1e16f14951cd310593759c346061950d7bc47413dfba019595701372284115b3",
+      "bytes": 784
+    },
+    "webui-final-browser-recovery-checks.json": {
+      "sha256": "27970db513bd58379f414673c92d1fb2a126d61a56bd9075f9589be4f094ca63",
+      "bytes": 650
+    },
+    "webui-final-browser-owned-cleanup.json": {
+      "sha256": "562e70ef8ecc65209c8618b94ab893c18068b5e1487b39dc0ae801b038e3ccb3",
+      "bytes": 13078
+    }
+  },
+  "next_action": "No further browser launches during protected computation. Existing native URL/API evidence and persistent timestamped terminal remain available."
+}

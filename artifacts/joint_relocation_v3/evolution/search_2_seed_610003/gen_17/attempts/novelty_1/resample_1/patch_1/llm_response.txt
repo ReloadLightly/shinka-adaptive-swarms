@@ -1,0 +1,24 @@
+<NAME>
+fixed_partial_restart
+</NAME>
+<DESCRIPTION>
+Replace state thresholds with a fixed partial restart: relocate four particles at radius multiplier 1.25, preserving one particle’s ordinary PSO motion. The supplied results motivate testing a smaller radius because radius expansion did not improve aggregate error. This policy may reduce relocation disruption and threshold sensitivity; its performance remains unmeasured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Joint relocation seed: the original corrected baseline response.
+The adapter fixes memory reevaluation and retained velocities. It converts the
+integer count to the unchanged simulator's fraction interface without rounding
+ambiguity. The seed allocates every particle at the baseline radius multiplier.
+"""
+# EVOLVE-BLOCK-START
+def choose_relocation(observation: dict) -> dict:
+    """Apply a fixed partial restart with a conservative relocation radius.
+    Memory reevaluation and retained velocities remain adapter-controlled.
+    Non-relocated particles continue ordinary PSO motion.
+    """
+    count = min(4, int(observation["swarm_size"]))
+    return {"count": count, "radius_scale": 1.25}
+# EVOLVE-BLOCK-END
+```
+</CODE>

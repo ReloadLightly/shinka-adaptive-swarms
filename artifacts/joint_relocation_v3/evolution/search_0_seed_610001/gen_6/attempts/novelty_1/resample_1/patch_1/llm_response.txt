@@ -1,0 +1,22 @@
+<NAME>
+expand_radius_on_weak_recovery
+</NAME>
+<DESCRIPTION>
+Keep the four-particle allocation that achieved mean offline error 3.81. Test modest radius expansion from 1.5 to 1.75 when positive fitness deterioration exceeds four times recent nonnegative improvement. Persistent interval-end errors motivate testing broader relocation during weak recovery, but the supplied results do not establish that this condition predicts benefit. Elsewhere, preserve the current response.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {
+        "count": max(0, int(observation["swarm_size"]) - 1),
+        "radius_scale": 1.5,
+    }
+=======
+    fitness_drop = float(observation["fitness_drop"])
+    recent_gain = max(0.0, float(observation["recent_improvement"]))
+    weak_recovery = fitness_drop > 0.0 and recent_gain < 0.25 * fitness_drop
+    return {
+        "count": max(0, int(observation["swarm_size"]) - 1),
+        "radius_scale": 1.75 if weak_recovery else 1.5,
+    }
+>>>>>>> REPLACE
+</DIFF>

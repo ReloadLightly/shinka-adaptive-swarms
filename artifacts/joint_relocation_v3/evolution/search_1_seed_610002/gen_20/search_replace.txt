@@ -1,0 +1,13 @@
+<NAME>
+spread_threshold_five
+</NAME>
+<DESCRIPTION>
+Raise the normalized spread threshold from three to five while retaining radius multiplier 1.25. Threshold three reduced the worst-case error but did not improve mean error over constant count four. This tests whether retaining four relocations for moderately dispersed swarms improves recovery, while reserving count three for wider swarms where preserving more ordinary PSO motion may help. The count clamp remains unchanged. Performance improvement requires measurement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    count = 3 if q > 3.0 else 4
+=======
+    count = 3 if q > 5.0 else 4
+>>>>>>> REPLACE
+</DIFF>

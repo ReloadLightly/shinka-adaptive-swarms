@@ -1,0 +1,13 @@
+<NAME>
+widen_relocation_radius
+</NAME>
+<DESCRIPTION>
+Increase radius_scale from 1.0 to 1.25 while preserving the fitness-based allocation rule. A broader relocation neighborhood may improve coverage after environmental changes while retained velocities support subsequent PSO motion. The supplied radius-1.25 policies achieved lower mean error, but their allocation rules also differed; this single-parameter change tests whether increased radius benefits the current policy. Improvement remains unmeasured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+        "radius_scale": 1.0,
+=======
+        "radius_scale": 1.25,
+>>>>>>> REPLACE
+</DIFF>

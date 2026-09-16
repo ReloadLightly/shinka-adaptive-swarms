@@ -1,0 +1,25 @@
+<NAME>
+moderate_loss_partial_relocation
+</NAME>
+<DESCRIPTION>
+Keep radius_scale at 1.0 and relocate three particles when relative fitness loss is at most 0.1, otherwise four. This tests a higher threshold than the previous 0.05 policy, which achieved mean error 3.96 versus the current 3.98. Preserving two particles for ordinary PSO motion during moderate deterioration may help retain useful spatial coverage; larger losses trigger four relocations. The current wider-radius branch produced mixed per-case outcomes, so its benefit remains uncertain. This proposal requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Test wider partial relocation after substantial loss in a compact swarm."""
+    swarm_size = int(observation["swarm_size"])
+    count = 4
+    radius_scale = 1.0
+    if (
+        observation["relative_fitness_drop"] > 0.1
+        and observation["swarm_diameter"] < 2.0 * observation["default_radius"]
+    ):
+        count = 3
+        radius_scale = 1.5
+=======
+    """Test three relocations for moderate loss and four for larger loss."""
+    swarm_size = int(observation["swarm_size"])
+    count = 3 if observation["relative_fitness_drop"] <= 0.1 else 4
+    radius_scale = 1.0
+>>>>>>> REPLACE
+</DIFF>

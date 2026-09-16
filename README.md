@@ -4,34 +4,60 @@
 
 This project studies whether ShinkaEvolve can discover better adaptation rules for a population of particle swarms searching a changing landscape. The starting point is the multi-swarm particle swarm optimizer described by Blackwell, Branke and Li in *Swarm Intelligence: Introduction and Applications* (2008), reconstructed from an established DEAP implementation.
 
-**Status (16 September 2026):** the allocation-v2 protocol is complete: one native 20-slot search, validation selection and 40 fresh final comparisons, totaling **664 method cases / 66.4 million objective evaluations**. The evolved allocation beat the validation-selected constant, but did **not establish useful current-state dependence** and had higher mean error than the original corrected baseline. All v1 results are preserved. See [the v2 report](docs/relocation_allocation_v2.md), [v1 findings](docs/comparison.md) and [recovery record](docs/recovery.md). The completed run's published WSL check recorded the native v2 WebUI on **http://localhost:8889** and v1 on port 8888; this review does not establish their current process status.
+**Status (16 September 2026): V3 execution and analysis are complete.** Three
+native 30-slot searches produced 87 valid descendants, followed by validation
+and 80 fresh final histories: **2,960 executions / 296 million counted objective
+queries**. Jointly evolving relocation count and radius **did not establish an
+advantage over the corrected baseline or the validation-selected fixed pair**.
+Those controls coincide. The selected program's paired error difference is
+**+0.0227, 97.5% interval [−0.2044, +0.2368]**. The mechanism comparisons also
+leave a benefit from current-state dependence unestablished.
 
-**Prospective protocol:** [When should a swarm relocate more particles?](docs/followup_relocation_allocation_v2.md) was committed before v2 execution. Search, validation and final inputs are separate; source, selection and control distributions were frozen before final seed generation.
+See the [V3 report](docs/joint_relocation_v3.md),
+[prospective protocol](docs/followup_joint_relocation_v3.md),
+[frozen execution settings](docs/v3_execution_settings.md),
+[embedding calibration](docs/local_embeddings_v3.md) and
+[complete artifact archive](artifacts/joint_relocation_v3).
+The prospective implementation was committed as `a66e6c3`; two documented
+alias amendments preceded protected evaluation. Preparation checks are separate
+from research outcomes.
 
-**Review and next experiment:** an [independent V2 review](docs/review_v2_and_next.md)
-recomputed all 664 saved executions and the four reported paired intervals.
-The [V3 study](docs/followup_joint_relocation_v3.md) evolves exact count
-and relocation radius jointly, starting from the corrected baseline. A separate
-task and explicit research engine profile add native novelty filtering,
-meta-memory and island migration. **The three-search campaign is running** after
-the prospective controller and resolved settings were committed as `a66e6c3`.
-Validation and final comparisons remain pending; no V3 superiority claim is
-made. See the [study record](docs/joint_relocation_v3.md),
-[frozen execution settings](docs/v3_execution_settings.md) and
-[local embedding calibration](docs/local_embeddings_v3.md). The original
-[preparation checks](docs/v3_preparation_checks.json) remain separate from
-research outcomes. The actual V3 native WebUI is on **http://localhost:8893**;
-existing listeners on ports 8890–8892 were preserved.
+**Earlier findings are preserved.** [V2](docs/relocation_allocation_v2.md) used
+664 executions / 66.4 million queries: its evolved allocation beat the selected
+constant, but did not establish useful current-state dependence and had higher
+mean error than the corrected baseline. The [V2 review](docs/review_v2_and_next.md),
+[V1 findings](docs/comparison.md) and [recovery record](docs/recovery.md) retain
+their original evidence.
+
+The native V3 WebUI serves the actual search databases on **http://localhost:8893**;
+existing listeners on ports 8890–8892 were preserved. This
+[selected-source link](http://localhost:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite&selected_node=1eceb3f9-3f78-42be-907c-e500c0888f94&left_tab=tree-view&right_tab=agent-code)
+opens the overall winner. Native HTTP source/parent access was verified; later
+automated browser interaction timed out, as recorded in the report.
 
 ```bash
 # Attach to the campaign without launching a duplicate controller
 bash scripts/progress.sh results/joint_relocation_v3/operations
 
-# Detailed first-search progress and native proposal logs
-bash scripts/progress.sh results/joint_relocation_v3/evolution/search_0_seed_610001
+# Final comparison logs and completed checkpoints
+bash scripts/progress.sh results/joint_relocation_v3/study_20260916/final
 ```
 
 ## Abstract
+
+The cumulative study now includes five native ShinkaEvolve searches. V3 allowed
+exact particle count and relocation radius to evolve jointly from a
+baseline-equivalent seed, using native novelty judging, meta-memory and two
+islands. After frozen validation selection, the overall winner's mean offline
+error on 80 fresh paired histories was **3.5006**, versus **3.4779** for both the
+corrected baseline and selected fixed pair. Its primary interval spans benefit
+and harm. All three search winners had higher mean error than the baseline;
+none established an advantage. Component substitutions and a frozen joint-action
+sampler likewise did not establish a useful conditional mechanism. These are
+bounded negative findings, not proof of equivalence or a causal assessment of
+individual engine features.
+
+The earlier V1/V2 findings follow unchanged:
 
 Collective search must preserve useful information while responding to environmental change. We reconstructed a corrected multi-swarm particle swarm optimizer and conducted two native ShinkaEvolve searches through subscription-authenticated Codex. V1 improved search error without an independent advantage. V2 isolates the number of particles relocated at a fixed radius rule. After separate validation, its selected program had final mean offline error **3.5541**, versus **3.9806** for the validation-selected constant count two. The paired difference was **−0.4265**, with a stratified bootstrap 95% interval **[−0.6903, −0.1829]** across 40 fresh cases. However, its difference from a control sampling the same validation allocation mixture without current-state information was **+0.0841 [−0.1787, +0.4096]**. The original corrected baseline had lower mean error, **3.2146**. This supports an advantage over the selected constant within these regimes, while leaving the value of conditional allocation unestablished. Matched budgets, complete lineage, frozen selection and explicit limitations make the mixed result reproducible.
 
@@ -171,6 +197,53 @@ Historical [artifact compatibility and rollback verification](docs/storage.md)
 remain available.
 
 ## Results
+
+### Joint relocation V3: frozen final comparison
+
+Every method used the same **80 fresh paired histories × 100,000 queries**,
+with 20 histories in each of four 5D severity/period regimes. Lower error is
+better. The fixed pair was selected from all 24 nominal validation settings
+(21 proven execution classes), before any final histories were generated.
+
+| Frozen method | Mean final offline error |
+|---|---:|
+| Corrected baseline and selected fixed pair: count 5, radius 1 | **3.4779** |
+| Search 0 winner, generation 17: count 4, radius 1.1875 | 3.5707 |
+| Search 1 winner, generation 26: conditional count 3/4, radius 1.25 | 3.5290 |
+| Overall winner, search 2 generation 14: conditional count 3/4, radius 1.5 | 3.5006 |
+| Overall winner with radius replaced by 1 | 3.4986 |
+| Overall winner with count replaced by 5 | 3.5490 |
+| Frozen regime-conditioned joint-action sampler | 3.4904 |
+
+The overall winner chooses three particles when relative fitness loss is at
+most 0.075 and swarm diameter exceeds three times the known default radius;
+otherwise it chooses four. Its radius multiplier is always 1.5. All selected
+winners use constant radii, so the study does not demonstrate adaptive radius
+selection or varying count/radius correlation.
+
+Overall winner minus baseline is **+0.0227 [−0.2044, +0.2368]** with the
+predeclared 97.5% stratified paired bootstrap interval. The selected fixed pair
+is identical to the baseline, making the second primary label the same
+numerical contrast. Superiority over both is unsupported. Overall winner minus
+joint sampler is **+0.0102 [−0.2296, +0.2805]** (descriptive 95% interval);
+component and interaction intervals also include zero. These intervals do not
+establish equivalence. Substitutions alter closed-loop trajectories, while the
+sampler changes both state association and temporal dependence.
+
+![Measured V3 primary contrasts on 80 fresh histories](assets/joint_relocation_v3/primary_effects.png)
+
+*Measured 5D results. The two primary control labels share the same execution;
+intervals use 20,000 within-regime bootstrap resamples with equal regime weights.
+All histories, including large losses, remain in the analysis.*
+
+Search used 1,440 executions / 144 million queries; validation used 960 / 96
+million; final comparison used 560 / 56 million. Actual native machinery
+included 91 mutation responses, 91 novelty decisions (four rejected), 126
+meta responses, 63 prompts containing prior recommendations, 12 island
+transfers and 94 local embeddings. No model calls were made in validation or
+final comparison. Full uncertainty, regimes, recovery curves, action
+distributions, query categories and limitations are in the
+[V3 report](docs/joint_relocation_v3.md).
 
 ### Allocation v2: frozen final comparison
 

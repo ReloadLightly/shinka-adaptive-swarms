@@ -1,0 +1,188 @@
+{
+  "completed_at": "2026-09-16T03:20:10.400703+00:00",
+  "route": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+  "service": {
+    "status": "ready",
+    "model": "jina-code-v2-q8",
+    "repository": "jinaai/jina-embeddings-v2-base-code",
+    "revision": "516f4baf13dec4ddddda8631e019b5737c8bc250",
+    "dimensions": 768,
+    "provider": "CPUExecutionProvider",
+    "quantization": "official ONNX int8 artifact",
+    "chunk_tokens": 512,
+    "chunk_stride": 0,
+    "pooling": "attention-mask token mean across all disjoint windows, then L2 normalize",
+    "overlong_input": "all windows encoded; no source tokens discarded; window special tokens retained",
+    "threads": 2,
+    "inputs": {
+      "input_ids": "tensor(int64)",
+      "attention_mask": "tensor(int64)"
+    },
+    "output": "last_hidden_state",
+    "runtime_versions": {
+      "numpy": "2.2.6",
+      "onnxruntime": "1.23.2",
+      "tokenizers": "0.23.2"
+    },
+    "server_source_sha256": "26808f0aae1fdd88836dd3a8f3a1e626cdae610b46fd003d475eca9508018bce",
+    "model_manifest_sha256": "22e488956c5f7809cb4ec795d2a30cfb3611dbcae55b5a2694c25a2a8a4308d1",
+    "network_model_calls": false
+  },
+  "threshold": 0.830958258366903,
+  "threshold_rule": "If max meaningful similarity < min cosmetic similarity, use their midpoint. Otherwise use min cosmetic similarity minus 0.000001, clipped to [0,1], forwarding every listed cosmetic duplicate to the native LLM judge; report overlapping meaningful changes.",
+  "cosmetic_min_similarity": 0.830959258366903,
+  "meaningful_max_similarity": 0.9937252841917575,
+  "groups_separated": false,
+  "pairs": [
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "identical",
+      "cosine_similarity": 1.0,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "whitespace",
+      "cosine_similarity": 0.9611185870006426,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "comment",
+      "cosine_similarity": 0.830959258366903,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "docstring",
+      "cosine_similarity": 0.8963942595676274,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "argument_rename",
+      "cosine_similarity": 0.8691900322431514,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "dictionary_order",
+      "cosine_similarity": 0.9840348915144154,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "baseline",
+      "right": "local_assignment",
+      "cosine_similarity": 0.9640045139224838,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "conditional",
+      "right": "conditional_comment",
+      "cosine_similarity": 0.9403452073598677,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "cosmetic",
+      "left": "conditional",
+      "right": "conditional_rename",
+      "cosine_similarity": 0.954460406941299,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "count_four",
+      "cosine_similarity": 0.9833259333772316,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "count_three",
+      "cosine_similarity": 0.9844545198214242,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "count_zero",
+      "cosine_similarity": 0.9746992087155116,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "radius_half",
+      "cosine_similarity": 0.9897486626193366,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "radius_two",
+      "cosine_similarity": 0.9917580227166595,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "radius_four",
+      "cosine_similarity": 0.9876489606376847,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "baseline",
+      "right": "conditional",
+      "cosine_similarity": 0.9033858942347046,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "conditional",
+      "right": "conditional_count_four",
+      "cosine_similarity": 0.991434061664451,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "conditional",
+      "right": "conditional_radius_four",
+      "cosine_similarity": 0.9937252841917575,
+      "native_judge_triggered": true
+    },
+    {
+      "kind": "meaningful",
+      "left": "conditional",
+      "right": "conditional_reversed_sign",
+      "cosine_similarity": 0.9929831760982035,
+      "native_judge_triggered": true
+    }
+  ],
+  "cosmetic_pairs_forwarded_to_judge": 9,
+  "meaningful_pairs_forwarded_to_judge": 10,
+  "cosmetic_pair_count": 9,
+  "meaningful_pair_count": 10,
+  "native_sync_async_cosine": 1.0,
+  "long_source_tail_change_cosine": 1.0,
+  "local_cost_reported_by_native_client": 0.0,
+  "dimensions": 768,
+  "duration_seconds": 7.274412446000497,
+  "script_sha256": "2ee0885de38efe494ce197c6eb1fcedc2e5dd4e449ad668e83f4962630fa398a",
+  "limitations": [
+    "Cosine similarity is a heuristic for routing to the native LLM novelty judge, not a behavior-equivalence oracle or originality measure.",
+    "Meaningful numeric changes can have higher similarity than cosmetic rewrites; false positives and unseen cosmetic false negatives remain possible.",
+    "A small authored calibration set does not estimate novelty quality across future evolved programs.",
+    "Official quantized ONNX inference and 512-token disjoint window pooling are the frozen local representation; long-window aggregation differs from one full-context pass.",
+    "Local inference uses no paid model API. This check makes no mutation, novelty-judge or meta-memory Codex calls."
+  ]
+}

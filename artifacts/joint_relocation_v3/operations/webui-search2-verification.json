@@ -1,0 +1,141 @@
+{
+  "observed_at_utc": "2026-09-16T05:48:47.613454+00:00",
+  "status": "native_api_source_lineage_and_url_support_verified",
+  "checks": {
+    "database_discovered": true,
+    "seed_and_generation_one_available": true,
+    "all_sources_match_actual_database": true,
+    "all_parent_ids_and_lineage_match": true,
+    "native_database_url_handler_present": true,
+    "native_selected_node_url_handler_present": true,
+    "native_source_tab_url_handler_present": true,
+    "native_selected_view_http_200": true
+  },
+  "database": "results/joint_relocation_v3/evolution/search_2_seed_610003/programs.sqlite",
+  "database_open_mode": "SQLite URI mode=ro; no candidate execution",
+  "native_database_listing": [
+    {
+      "path": "search_1_seed_610002/programs.sqlite",
+      "name": "search_1_seed_610002",
+      "task": "search_1_seed_610002",
+      "actual_path": "search_1_seed_610002/programs.sqlite"
+    },
+    {
+      "path": "search_0_seed_610001/programs.sqlite",
+      "name": "search_0_seed_610001",
+      "task": "search_0_seed_610001",
+      "actual_path": "search_0_seed_610001/programs.sqlite"
+    },
+    {
+      "path": "search_2_seed_610003/programs.sqlite",
+      "name": "search_2_seed_610003",
+      "task": "search_2_seed_610003",
+      "actual_path": "search_2_seed_610003/programs.sqlite"
+    }
+  ],
+  "programs_checked": [
+    {
+      "id": "7ec146e9-ffb3-4ae4-8fc9-9d2f99885b97",
+      "generation": 0,
+      "parent_id": null,
+      "correct": true,
+      "combined_score": 0.19381427608021895,
+      "database_source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+      "native_api_source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+      "exact_source_match": true,
+      "parent_matches_database": true,
+      "lineage_summary_matches": true,
+      "parent_present_in_lineage": true,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    return {\"count\": observation[\"swarm_size\"], \"radius_scale\": 1.0}\n# EVOLVE-BLOCK-END\n"
+    },
+    {
+      "id": "a453a496-1f45-40d2-9ed4-3ac2da9fbb42",
+      "generation": 0,
+      "parent_id": null,
+      "correct": true,
+      "combined_score": 0.19381427608021895,
+      "database_source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+      "native_api_source_sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+      "exact_source_match": true,
+      "parent_matches_database": true,
+      "lineage_summary_matches": true,
+      "parent_present_in_lineage": true,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    return {\"count\": observation[\"swarm_size\"], \"radius_scale\": 1.0}\n# EVOLVE-BLOCK-END\n"
+    },
+    {
+      "id": "62702cca-bb38-4351-9c61-c4937478f0ab",
+      "generation": 1,
+      "parent_id": "7ec146e9-ffb3-4ae4-8fc9-9d2f99885b97",
+      "correct": true,
+      "combined_score": 0.20183535199194097,
+      "database_source_sha256": "876d134aa0681b3bcbd94005ec8852ba567a56ff6cbe33dd2eb8864d823c8eec",
+      "native_api_source_sha256": "876d134aa0681b3bcbd94005ec8852ba567a56ff6cbe33dd2eb8864d823c8eec",
+      "exact_source_match": true,
+      "parent_matches_database": true,
+      "lineage_summary_matches": true,
+      "parent_present_in_lineage": true,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    return {\"count\": min(4, int(observation[\"swarm_size\"])), \"radius_scale\": 2.0}\n# EVOLVE-BLOCK-END\n"
+    }
+  ],
+  "selected_generation": 1,
+  "selected_candidate_id": "62702cca-bb38-4351-9c61-c4937478f0ab",
+  "native_current_search_url": "http://localhost:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite",
+  "native_selected_source_url": "http://localhost:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite&selected_node=62702cca-bb38-4351-9c61-c4937478f0ab&left_tab=tree-view&right_tab=agent-code",
+  "exact_browser_selection_command": "/home/roland/.npm/_npx/6de2aa2fded2970c/node_modules/agent-browser/bin/agent-browser-linux-x64 --session joint-v3-current open 'http://localhost:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite&selected_node=62702cca-bb38-4351-9c61-c4937478f0ab&left_tab=tree-view&right_tab=agent-code'",
+  "browser_selection_command_executed": false,
+  "selection_verification": "Native API explicitly selected this database and retrieved seed/generation-1 details and parent lineage; native served page recognizes db_path/selected_node/right_tab and returned HTTP 200. Browser DOM selection not claimed.",
+  "request_evidence": [
+    {
+      "url": "http://127.0.0.1:8893/list_databases",
+      "http_status": 200,
+      "response_bytes": 507,
+      "response_sha256": "27b74cb6da24a7c11a679ce9a1bee5be945d0c2e20f0d402364535fdbf772dc0",
+      "observed_at_utc": "2026-09-16T05:48:47.456839+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:8893/get_programs_summary?db_path=search_2_seed_610003%2Fprograms.sqlite",
+      "http_status": 200,
+      "response_bytes": 919974,
+      "response_sha256": "a2d9bf1d8ae9eff1b234d747f57dcd6d82087acac72e1a4e9313726e428471d5",
+      "observed_at_utc": "2026-09-16T05:48:47.575282+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:8893/get_program_details?db_path=search_2_seed_610003%2Fprograms.sqlite&id=7ec146e9-ffb3-4ae4-8fc9-9d2f99885b97",
+      "http_status": 200,
+      "response_bytes": 226885,
+      "response_sha256": "52c24ac1e6c98424b349be75e936fec896c2c36eba8970da4005db8aae235997",
+      "observed_at_utc": "2026-09-16T05:48:47.584876+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:8893/get_program_details?db_path=search_2_seed_610003%2Fprograms.sqlite&id=a453a496-1f45-40d2-9ed4-3ac2da9fbb42",
+      "http_status": 200,
+      "response_bytes": 226732,
+      "response_sha256": "ec29ed322fa56775082ada9f1edf1693d72be1203d7c64e279453a5329190e3a",
+      "observed_at_utc": "2026-09-16T05:48:47.591059+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:8893/get_program_details?db_path=search_2_seed_610003%2Fprograms.sqlite&id=62702cca-bb38-4351-9c61-c4937478f0ab",
+      "http_status": 200,
+      "response_bytes": 271606,
+      "response_sha256": "d565caef9a27ef3a9039a8f6bd0a95579a15cb71e85fdc459d2e2855461996f8",
+      "observed_at_utc": "2026-09-16T05:48:47.597778+00:00"
+    },
+    {
+      "url": "http://127.0.0.1:8893/viz_tree.html?db_path=search_2_seed_610003%2Fprograms.sqlite&selected_node=62702cca-bb38-4351-9c61-c4937478f0ab&left_tab=tree-view&right_tab=agent-code",
+      "http_status": 200,
+      "response_bytes": 868677,
+      "response_sha256": "8774e11e355a855ce80cd508abe86b1819eedd20a74dd79a841781d2b590df7d",
+      "observed_at_utc": "2026-09-16T05:48:47.611269+00:00"
+    }
+  ],
+  "webui_server_pid": 382942,
+  "webui_server_process_present": true,
+  "webui_server_command": "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python -u -m shinka.webui.visualization /home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution --port 8893",
+  "visual_verification": "Not attempted for this followup; prior search-1 DOM.enable and Runtime.evaluate timeouts are recorded in webui-search1-verification.json. This bounded followup verifies native API and URL support, not rendered visual state.",
+  "previous_visual_evidence": "webui-verification.json",
+  "previous_timeout_evidence": "webui-search1-verification.json",
+  "service_restart": false,
+  "gui_interop_attempted": false,
+  "research_model_or_candidate_execution": false,
+  "evidence_scope": "Read-only native service and saved database checks; one 45-second wait for the first descendant; no scientific changes."
+}

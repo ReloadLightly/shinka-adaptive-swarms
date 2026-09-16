@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "constant_radius_11875",
+  "patch_description": "Keep count four and use radius multiplier 1.1875 for every response. The current recovery condition leaves mean multipliers near 1.25 and produces mixed per-case changes without a clear aggregate gain. A constant 1.1875 tests whether modestly tighter relocation improves tracking while preserving one particle's ordinary PSO motion. This is an untested hypothesis; the persistent interval-end errors do not establish that contraction will help.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:15:21.470696",
+  "llm_cost": 0.21153,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

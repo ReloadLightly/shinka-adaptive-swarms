@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "four_particle_moderate_expansion",
+  "patch_description": "Test count four with radius multiplier 1.5. This preserves one particle's ordinary PSO motion while spreading four relocation samples farther around the refreshed best. In five dimensions, uniform-volume samples concentrate toward the radius boundary, so a moderate expansion meaningfully changes exploration distance.\nThe baseline's persistent interval-end errors motivate testing broader exploration, but do not establish its cause. This constant pair tests a compromise between the original five-particle response and the previously studied count-three/radius-two response. Improvement remains a hypothesis for the sixteen-case evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T05:43:39.937072",
+  "llm_cost": 0.17576,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

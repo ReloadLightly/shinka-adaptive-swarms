@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "capped_coverage_gate",
+  "patch_description": "Separate spread eligibility, loss tolerance, and allocation into sequential gates. Keep radius multiplier 1.5 and cap the coverage-dependent loss threshold at 0.075, isolating the stricter boundary change. This tests whether retaining four relocated particles in marginally broad swarms improves recovery; performance remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T09:18:57.444478",
+  "llm_cost": 0.22197,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_2_seed_610003/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

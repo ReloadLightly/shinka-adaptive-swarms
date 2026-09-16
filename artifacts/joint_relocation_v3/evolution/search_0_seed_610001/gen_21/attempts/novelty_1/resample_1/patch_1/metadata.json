@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_spread_radius",
+  "patch_description": "Keep allocation at four particles and vary radius slightly around 1.1875, whose measured mean error was marginally lower than 1.25. Normalize swarm diameter by default_radius, then bound the multiplier to [1.15625, 1.21875]. This tests whether compact swarms benefit from tighter relocation and dispersed swarms from broader relocation. The recovery-based policy showed no clear aggregate improvement; spread provides a different public signal. Performance gains remain untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:24:32.565832",
+  "llm_cost": 0.21299,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

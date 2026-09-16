@@ -1,0 +1,18 @@
+<NAME>
+broaden_three_particle_relocation
+</NAME>
+<DESCRIPTION>
+Keep the three-particle allocation and increase its radius multiplier from 1.5 to 1.625. Three-particle relocation had higher mean error than four-particle relocation, but lower errors on cases 006, 010 and 015. This motivates testing whether slightly broader sampling improves coverage while preserving two particles for ordinary PSO motion. Changing only radius isolates that hypothesis; improved performance remains to be measured.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Relocate up to three particles at 1.5 times the default radius.
+=======
+    """Relocate up to three particles at 1.625 times the default radius.
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    return {"count": count, "radius_scale": 1.5}
+=======
+    return {"count": count, "radius_scale": 1.625}
+>>>>>>> REPLACE
+</DIFF>

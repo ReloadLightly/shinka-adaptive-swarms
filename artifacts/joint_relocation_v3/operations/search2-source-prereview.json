@@ -1,0 +1,341 @@
+{
+  "reviewed_at": "2026-09-16T07:39:12.448553+00:00",
+  "reviewer": "Codex source prereview agent",
+  "scope": "Completed search2 exact-source prereview, with provisional ranking rechecked after native completion. Original frozen native_search_record loaded under the adaptive_swarms package. No candidate execution, objective query, model request, protected outcome inspection or overall shortlist freeze.",
+  "search_index": 2,
+  "search_seed": 610003,
+  "run": "results/joint_relocation_v3/evolution/search_2_seed_610003",
+  "native_manifest_status": "search_complete",
+  "native_finished_at": "2026-09-16T07:38:23.492807+00:00",
+  "native_manifest_sha256": "bd2c55bfbfba07ee0e2b64b2fe056d9a5bea705ea0dd1d9b342437ade3cafb6f",
+  "registration_sha256": "832b37321744907766263cc72416afa991cd0a82d37690abf22d4fede56b8ce0",
+  "original_registration_signature_verified": true,
+  "runner_snapshot_checks": [
+    {
+      "path": "src__adaptive_swarms__simulator.py",
+      "sha256": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+      "matches": true
+    },
+    {
+      "path": "src__adaptive_swarms__policies.py",
+      "sha256": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+      "matches": true
+    },
+    {
+      "path": "vendor__deap__movingpeaks.py",
+      "sha256": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+      "matches": true
+    },
+    {
+      "path": "src__adaptive_swarms__joint_relocation.py",
+      "sha256": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449",
+      "matches": true
+    },
+    {
+      "path": "src__adaptive_swarms__joint_study.py",
+      "sha256": "1f463b0c56a2694b280e6f309e16ba41d5943d5f54412d594b62f48c71e7c4e9",
+      "matches": true
+    },
+    {
+      "path": "src__adaptive_swarms__comparison.py",
+      "sha256": "1b8cdbc1a1a45224fcd1b9f4bcdc3e09a7f0247292be24783739e06a648b8ddb",
+      "matches": true
+    },
+    {
+      "path": "src__adaptive_swarms__artifacts.py",
+      "sha256": "1553367476ce223115743908baeef9803bff4685bf2bf265ff3c340540ed2ab1",
+      "matches": true
+    },
+    {
+      "path": "task__evaluate.py",
+      "sha256": "1687938077462c693871eb4a71738f6899d07d8ee05b6cc9dbd715f53726b254",
+      "matches": true
+    },
+    {
+      "path": "task__initial.py",
+      "sha256": "3108072bed50419a94159b011c2d432039f07a2bf3823290c0224253943b9440",
+      "matches": true
+    },
+    {
+      "path": "task__joint_relocation.py",
+      "sha256": "5b1c1c5121dc27b96c1e47861267f79eb1dc1cc76d5a8d2dc06d99f87c209449",
+      "matches": true
+    },
+    {
+      "path": "task__evolution_context.md",
+      "sha256": "bf9aeec8f2362816f18d26d845a0e92aaea8e6395c3f33a3d59cca9af770a33d",
+      "matches": true
+    },
+    {
+      "path": "task__task_prompt.txt",
+      "sha256": "96b9dcc52492c056786e673db8829f9decb9967a4e71978ee5fab16a6261578e",
+      "matches": true
+    },
+    {
+      "path": "task__protocol.md",
+      "sha256": "1344230e01b5144bcd6aa17dfc6fea884c91a6902499b54a9f7620f506399772",
+      "matches": true
+    },
+    {
+      "path": "task__task_system_prompt.txt",
+      "sha256": "99eeab0ea432ae5fa9e79ffb6938170b02cb6b48b5b80985695b89a299f33e6d",
+      "matches": true
+    }
+  ],
+  "frozen_controller_sha256": "1f463b0c56a2694b280e6f309e16ba41d5943d5f54412d594b62f48c71e7c4e9",
+  "ranking_function": "original frozen adaptive_swarms.joint_study.native_search_record",
+  "ranking_rule": "Valid original rows sorted by mean search offline error, generation, source SHA-256, native ID; exact source SHA deduplicated; first three retained.",
+  "provisional_ranking_matches_completed_native_record": true,
+  "terminal_generation_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "terminal_failed_generation_ids": [],
+  "valid_source_distinct_programs": 30,
+  "constant_certifier": {
+    "path": "scripts/certify_joint_constants.py",
+    "sha256": "de3ce3cafdfd55749916408bb3682814d13372e19fe2f7f904c9c1119e30a1f6",
+    "source_revision": "7d698c7963ff4e291523761fa1e881f8dc17ef13",
+    "loaded_from_committed_bytes": true,
+    "note": "Current working file may contain a separately reviewed amendment; only these committed bytes supply prove_constant here. No certification/install function is invoked."
+  },
+  "constant_certifier_version": "joint-v3-static-constant-certificate-v1",
+  "programs": [
+    {
+      "search_rank": 1,
+      "generation": 21,
+      "native_id": "bf080e0a-c585-4d13-8019-b830b6e511d9",
+      "parent_id": "1eceb3f9-3f78-42be-907c-e500c0888f94",
+      "source_sha256": "75dbb71c2cd09d9eb960007c9207ad5a35172e235f1435dd79903117d9da95e3",
+      "source_path": "results/joint_relocation_v3/evolution/search_2_seed_610003/gen_21/main.py",
+      "source_matches_database_exactly": true,
+      "search_mean_error": 3.5240516880195782,
+      "combined_score": 0.2210407990359973,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Select relocation through spread and fitness-loss gates.\"\"\"\n    swarm_size = int(observation[\"swarm_size\"])\n    diameter = max(0.0, float(observation[\"swarm_diameter\"]))\n    reference_diameter = 3.0 * max(\n        0.0, float(observation[\"default_radius\"])\n    )\n    response = {\n        \"count\": min(4, swarm_size),\n        \"radius_scale\": 1.5,\n    }\n    # Only sufficiently broad swarms qualify for reduced relocation.\n    if diameter <= reference_diameter:\n        return response\n    # Require smaller loss near the spread boundary, retaining the original\n    # 7.5% ceiling once diameter reaches six times the default radius.\n    coverage = 1.0 - (reference_diameter / diameter) ** 2\n    loss_threshold = min(0.075, 0.10 * coverage)\n    if float(observation[\"relative_fitness_drop\"]) <= loss_threshold:\n        response[\"count\"] = min(3, swarm_size)\n    return response\n# EVOLVE-BLOCK-END\n",
+      "review_result": "passes source-only prereview for the declared public finite observation domain and five-particle swarm",
+      "observation_keys_read": [
+        "default_radius",
+        "relative_fitness_drop",
+        "swarm_diameter",
+        "swarm_size"
+      ],
+      "call_targets": [
+        "float",
+        "int",
+        "max",
+        "min"
+      ],
+      "mechanism_source_reading": "Starts with count4. For diameter <= 3*default_radius, returns immediately. Otherwise computes coverage=1-(3*default_radius/diameter)^2 and loss_threshold=min(0.075,0.10*coverage), then changes count to3 iff relative_fitness_drop<=loss_threshold. Radius remains1.5.",
+      "totality_reasoning": "Declared default_radius is finite positive0.5 or1.5. The early-return guard ensures division is reached only with diameter>3*default_radius>0; hence the denominator is nonzero and the ratio lies in(0,1). Squaring and remaining arithmetic are bounded. Every branch returns a freshly created dict. The only subscript assignment writes response[count], never the input or external state.",
+      "output_contract_reasoning": "For declared Python integer swarm_size5, min(3,5) or min(4,5) returns a Python integer in[0,5]. Every reachable output is a dict with exactly count and radius_scale, with finite positive float radius_scale1.5. No candidate was called.",
+      "possible_actions_by_static_branch": [
+        {
+          "count": 3,
+          "radius_scale": 1.5
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5
+        }
+      ],
+      "constant_component_facts": {
+        "radius_scale": {
+          "status": "manually_proved_constant",
+          "value": 1.5,
+          "reason": "A fresh local response dict is initialized with radius_scale literal1.5. Both returns return this same local dict. Its only subsequent mutation can replace count; radius_scale is never reassigned or aliased externally. Thus every successful return has radius1.5, for all declared observations."
+        },
+        "count": {
+          "status": "state_dependent",
+          "possible_values": [
+            3,
+            4
+          ],
+          "reason": "Broad enough low-loss observations select3; compact or sufficiently high-loss observations select4."
+        }
+      },
+      "constant_certifier_result": {
+        "status": "not_proved",
+        "reason": "Function must end in a direct output dictionary return.",
+        "candidate_invocations": 0
+      },
+      "purity_and_access_notes": [
+        "Only module/function docstrings and one choose_relocation function with safe dict annotations; no imports, decorators, defaults, external initialization or persistent state.",
+        "Reads only listed allowed scalar observations; no benchmark internals, case/seed inputs, files, network, clocks, RNG or reflection.",
+        "Pure numeric builtins, finite local arithmetic and branching. Fresh local dict mutation in generation21 does not mutate the observation or external state.",
+        "No objective calls, budget changes, case selection, memory-mode changes, velocity changes or evaluator manipulation.",
+        "Inherited module seed/baseline description is stale commentary; the reviewed function body is authoritative."
+      ]
+    },
+    {
+      "search_rank": 2,
+      "generation": 14,
+      "native_id": "1eceb3f9-3f78-42be-907c-e500c0888f94",
+      "parent_id": "a705076c-9407-4e85-b8e2-889d0a103e31",
+      "source_sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "source_path": "results/joint_relocation_v3/evolution/search_2_seed_610003/gen_14/main.py",
+      "source_matches_database_exactly": true,
+      "search_mean_error": 3.528667928281534,
+      "combined_score": 0.22081548389869776,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    count = 4\n    if (\n        observation[\"relative_fitness_drop\"] <= 0.075\n        and observation[\"swarm_diameter\"] > 3.0 * observation[\"default_radius\"]\n    ):\n        count = 3\n    return {\"count\": min(count, int(observation[\"swarm_size\"])), \"radius_scale\": 1.5}\n# EVOLVE-BLOCK-END\n",
+      "review_result": "passes source-only prereview for the declared public finite observation domain and five-particle swarm",
+      "observation_keys_read": [
+        "default_radius",
+        "relative_fitness_drop",
+        "swarm_diameter",
+        "swarm_size"
+      ],
+      "call_targets": [
+        "int",
+        "min"
+      ],
+      "mechanism_source_reading": "Requests count3 iff relative_fitness_drop<=0.075 AND swarm_diameter>3*default_radius; otherwise count4. Radius remains1.5.",
+      "totality_reasoning": "Finite public scalar comparisons and multiplication by3 are defined for declared default_radius0.5/1.5. No division, loop, recursion or external call exists. Both branch outcomes reach a direct fresh dict return.",
+      "output_contract_reasoning": "For declared Python integer swarm_size5, min(3,5) or min(4,5) returns a Python integer in[0,5]. Every reachable output is a dict with exactly count and radius_scale, with finite positive float radius_scale1.5. No candidate was called.",
+      "possible_actions_by_static_branch": [
+        {
+          "count": 3,
+          "radius_scale": 1.5
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5
+        }
+      ],
+      "constant_component_facts": {
+        "radius_scale": {
+          "status": "manually_proved_constant",
+          "value": 1.5,
+          "reason": "The sole return dict contains literal radius_scale1.5 regardless of the count branch."
+        },
+        "count": {
+          "status": "state_dependent",
+          "possible_values": [
+            3,
+            4
+          ],
+          "reason": "Broad enough low-loss observations select3; compact or sufficiently high-loss observations select4."
+        }
+      },
+      "constant_certifier_result": {
+        "status": "not_proved",
+        "reason": "Only simple/tuple local assignments before return are supported.",
+        "candidate_invocations": 0
+      },
+      "purity_and_access_notes": [
+        "Only module/function docstrings and one choose_relocation function with safe dict annotations; no imports, decorators, defaults, external initialization or persistent state.",
+        "Reads only listed allowed scalar observations; no benchmark internals, case/seed inputs, files, network, clocks, RNG or reflection.",
+        "Pure numeric builtins, finite local arithmetic and branching. Fresh local dict mutation in generation21 does not mutate the observation or external state.",
+        "No objective calls, budget changes, case selection, memory-mode changes, velocity changes or evaluator manipulation.",
+        "Inherited module seed/baseline description is stale commentary; the reviewed function body is authoritative."
+      ]
+    },
+    {
+      "search_rank": 3,
+      "generation": 23,
+      "native_id": "86c2b5e7-822a-4b2b-9b54-b15e977a5c05",
+      "parent_id": "04e52eb3-6332-4b33-bb58-a30c4cc1e321",
+      "source_sha256": "b68862e0f7464e0e8d68b16dd7ee5c2c4a231da5cf28da3b1a486a9ffadd386c",
+      "source_path": "results/joint_relocation_v3/evolution/search_2_seed_610003/gen_23/main.py",
+      "source_matches_database_exactly": true,
+      "search_mean_error": 3.5477930539191513,
+      "combined_score": 0.21988687439025617,
+      "source": "\"\"\"Joint relocation seed: the original corrected baseline response.\n\nThe adapter fixes memory reevaluation and retained velocities. It converts the\ninteger count to the unchanged simulator's fraction interface without rounding\nambiguity. The seed allocates every particle at the baseline radius multiplier.\n\"\"\"\n\n\n# EVOLVE-BLOCK-START\ndef choose_relocation(observation: dict) -> dict:\n    \"\"\"Return {'count': Python int in [0, swarm_size], 'radius_scale': number}.\n\n    Radius multiplier must be finite and nonnegative. The absolute radius is\n    default_radius * radius_scale; default_radius is the known baseline scale,\n    half the configured movement severity. Five particles form a swarm here.\n\n    Public observations: dimension, bounds_width, swarm_size, swarm_count,\n    swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,\n    relative_fitness_drop, recent_improvement, evaluations_since_response,\n    previous_response_radius, default_radius, observed_best_displacement,\n    evals_remaining. fitness_drop is previous minus current best fitness.\n\n    Non-relocated particles still make ordinary PSO moves. All personal\n    memories are reevaluated. Velocities are retained after relocation.\n    \"\"\"\n    count = 4\n    if (\n        observation[\"relative_fitness_drop\"] <= 0.075\n        and observation[\"swarm_diameter\"] > 3.5 * observation[\"default_radius\"]\n    ):\n        count = 3\n    return {\"count\": min(count, int(observation[\"swarm_size\"])), \"radius_scale\": 1.5}\n# EVOLVE-BLOCK-END\n",
+      "review_result": "passes source-only prereview for the declared public finite observation domain and five-particle swarm",
+      "observation_keys_read": [
+        "default_radius",
+        "relative_fitness_drop",
+        "swarm_diameter",
+        "swarm_size"
+      ],
+      "call_targets": [
+        "int",
+        "min"
+      ],
+      "mechanism_source_reading": "Requests count3 iff relative_fitness_drop<=0.075 AND swarm_diameter>3.5*default_radius; otherwise count4. Radius remains1.5.",
+      "totality_reasoning": "Finite public scalar comparisons and multiplication by3.5 are defined for declared default_radius0.5/1.5. No division, loop, recursion or external call exists. Both branch outcomes reach a direct fresh dict return.",
+      "output_contract_reasoning": "For declared Python integer swarm_size5, min(3,5) or min(4,5) returns a Python integer in[0,5]. Every reachable output is a dict with exactly count and radius_scale, with finite positive float radius_scale1.5. No candidate was called.",
+      "possible_actions_by_static_branch": [
+        {
+          "count": 3,
+          "radius_scale": 1.5
+        },
+        {
+          "count": 4,
+          "radius_scale": 1.5
+        }
+      ],
+      "constant_component_facts": {
+        "radius_scale": {
+          "status": "manually_proved_constant",
+          "value": 1.5,
+          "reason": "The sole return dict contains literal radius_scale1.5 regardless of the count branch."
+        },
+        "count": {
+          "status": "state_dependent",
+          "possible_values": [
+            3,
+            4
+          ],
+          "reason": "Broad enough low-loss observations select3; compact or sufficiently high-loss observations select4."
+        }
+      },
+      "constant_certifier_result": {
+        "status": "not_proved",
+        "reason": "Only simple/tuple local assignments before return are supported.",
+        "candidate_invocations": 0
+      },
+      "purity_and_access_notes": [
+        "Only module/function docstrings and one choose_relocation function with safe dict annotations; no imports, decorators, defaults, external initialization or persistent state.",
+        "Reads only listed allowed scalar observations; no benchmark internals, case/seed inputs, files, network, clocks, RNG or reflection.",
+        "Pure numeric builtins, finite local arithmetic and branching. Fresh local dict mutation in generation21 does not mutate the observation or external state.",
+        "No objective calls, budget changes, case selection, memory-mode changes, velocity changes or evaluator manipulation.",
+        "Inherited module seed/baseline description is stale commentary; the reviewed function body is authoritative."
+      ]
+    }
+  ],
+  "all_three_pass_source_prereview": true,
+  "all_three_have_constant_radius_scale_1_5": true,
+  "all_three_have_state_dependent_count": true,
+  "not_an_overall_shortlist_freeze": true,
+  "component_proof_treatment": "Exact source-bound radius facts supplied for prospective registry review. This prereview itself performs no certificate install, alias amendment, method selection or protected-stage work. The constants-only prove_constant helper does not certify these state-dependent joint policies.",
+  "actions": {
+    "candidate_invocations": 0,
+    "objective_queries": 0,
+    "model_calls": 0,
+    "alias_changes": 0
+  },
+  "notes": [
+    "Source validity and constant-component facts do not establish scientific originality, held-out performance or improvement.",
+    "Observed branch frequency is not inferred from code; both actions are possible in the allowed observation domain.",
+    "Current controller may be undergoing a separately reviewed amendment; this record uses and verifies the original immutable controller snapshot and raw original registration."
+  ],
+  "immutability": "Exclusive write-once final record with read-only permissions; no completed evidence overwritten."
+}

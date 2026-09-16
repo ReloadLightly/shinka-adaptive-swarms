@@ -1,0 +1,15 @@
+{
+  "generation": 27,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "smooth_displacement_radius",
+  "patch_description": "Keep four-particle allocation and center the radius multiplier on 1.21875, whose measured mean error was 3.64 versus the current 3.76. Add a small, smooth displacement adjustment: larger observed displacement increases radius, bounded between 1.203125 and 1.234375. This tests whether modest displacement dependence improves tracking; the supplied results do not establish that relationship or this candidate\u2019s performance.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T06:35:55.507135",
+  "llm_cost": 0.21343,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/joint_relocation_v3/evolution/search_0_seed_610001/gen_27/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
