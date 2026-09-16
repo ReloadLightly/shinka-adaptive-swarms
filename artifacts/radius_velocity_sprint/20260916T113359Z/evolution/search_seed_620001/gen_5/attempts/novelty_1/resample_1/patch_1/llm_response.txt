@@ -1,0 +1,13 @@
+<NAME>
+probe_radius_1_3_retain
+</NAME>
+<DESCRIPTION>
+Test radius_scale=1.3 while retaining velocities. The 1.25 candidate outperformed 1.2 and 1.0 on development mean error, while Phase A's 1.5 performed worse. This nearby constant probes an intermediate radius without introducing unsupported response thresholds. Improvement remains untested; any transfer claim requires the separate probe, and this change cannot establish overshoot as a mediator.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"radius_scale": 1.2, "reset_velocity": False}
+=======
+    return {"radius_scale": 1.3, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

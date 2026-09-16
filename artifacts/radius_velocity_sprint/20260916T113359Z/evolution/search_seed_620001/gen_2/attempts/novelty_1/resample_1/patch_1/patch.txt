@@ -1,0 +1,10 @@
+--- a/original.py
++++ b/original.py
+@@ -1,6 +1,6 @@
+ """Count-four recovery policy; memory reevaluation is fixed by the adapter."""
+ 
+ # EVOLVE-BLOCK-START
+ def choose_recovery(observation: dict) -> dict:
+-    return {"radius_scale": 1.0, "reset_velocity": False}
++    return {"radius_scale": 0.5, "reset_velocity": False}
+ # EVOLVE-BLOCK-END

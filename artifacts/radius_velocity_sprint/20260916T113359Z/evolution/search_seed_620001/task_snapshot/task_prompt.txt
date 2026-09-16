@@ -1,0 +1,25 @@
+Evolve choose_recovery(observation) inside the marked block only. Return exactly
+radius_scale (finite nonnegative Python int/float, not bool) and reset_velocity
+(Python bool). Four of five particles are selected uniformly for relocation.
+The adapter fixes count four and reevaluates all personal-best memories.
+Radius is default_radius * radius_scale. Resetting velocity zeros only the
+selected particles' velocities when their relocation update occurs.
+
+Public scalar observations: dimension, bounds_width, swarm_size, swarm_count,
+swarm_diameter, previous_best_fitness, current_best_fitness, fitness_drop,
+relative_fitness_drop, recent_improvement, evaluations_since_response,
+previous_response_radius, default_radius, observed_best_displacement,
+evals_remaining. The baseline's default_radius is half the configured movement
+severity. No true optimum, peak positions, seeds or future histories are inputs.
+Use deterministic computation and public observations only. Do not read files,
+environment variables or evaluator internals; do not modify budgets or results.
+
+Fitness is 1/(1+mean_offline_error) over eight equally weighted development cases
+at 100,000 counted objective queries each. Detection and memory queries count.
+The evaluator supplies paired differences from the original corrected baseline
+and the Phase A selected fixed-four seed, regime summaries and observed action
+occupancy. Occupancy is output behavior, not syntactic branch coverage.
+Constants and conditions are both legitimate; complexity and apparent adaptation
+receive no bonus. Short search improvements require a separate transfer probe.
+The scientific hypothesis is radius/retained-velocity interaction, not a required
+positive finding; outcome interaction alone cannot establish overshoot as mediator.

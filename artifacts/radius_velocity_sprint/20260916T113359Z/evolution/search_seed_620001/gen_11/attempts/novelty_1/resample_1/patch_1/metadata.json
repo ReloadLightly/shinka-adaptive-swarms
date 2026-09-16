@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "midpoint_radius_retain",
+  "patch_description": "Combine the parents\u2019 radius scales using their midpoint, 1.225, while preserving retained velocities and constant-time computation. This probes the interval between two promising settings without adding unsupported conditions. Any performance improvement requires evaluation; transfer remains untested.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T14:03:47.740820",
+  "llm_cost": 0.12682,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

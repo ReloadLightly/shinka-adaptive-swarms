@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-16T12:16:41.855205+00:00",
+  "checks": [
+    "git diff --check",
+    "python -m py_compile scripts/plot_evolution.py tests/test_recovery_response.py"
+  ],
+  "result": "passed",
+  "new_objective_queries": 0,
+  "model_calls": 0,
+  "native_figure_saved_data_render": "passed; 13program outcomes, source DB14rows; manually inspected"
+}

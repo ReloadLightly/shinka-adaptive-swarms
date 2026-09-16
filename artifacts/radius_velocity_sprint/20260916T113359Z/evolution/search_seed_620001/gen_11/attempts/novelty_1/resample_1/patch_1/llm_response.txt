@@ -1,0 +1,15 @@
+<NAME>
+midpoint_radius_retain
+</NAME>
+<DESCRIPTION>
+Combine the parents’ radius scales using their midpoint, 1.225, while preserving retained velocities and constant-time computation. This probes the interval between two promising settings without adding unsupported conditions. Any performance improvement requires evaluation; transfer remains untested.
+</DESCRIPTION>
+<CODE>
+```python
+"""Count-four recovery policy; memory reevaluation is fixed by the adapter."""
+# EVOLVE-BLOCK-START
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 1.225, "reset_velocity": False}
+# EVOLVE-BLOCK-END
+```
+</CODE>

@@ -1,0 +1,95 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Constant Unit-Radius Recovery with Velocity Retention**
+- **Implementation**: `choose_recovery` ignores observations and always returns `radius_scale=1.0` and `reset_velocity=False`, preserving velocity without adapting the radius multiplier. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a combined score of 0.25, mean offline error of 3.04, worst-case error of 5.28, and case-error standard deviation of 1.27.
+- **Feedback**: The policy matched the fixed seed exactly and beat the baseline in 6 of 8 cases, demonstrating no improvement over the seed policy. Its strongest average baseline gain occurred at severity 1.0 with period 2500, while severity 3.0 with period 2500 showed an average regression; these results do not establish an ideal radius or velocity-induced overshoot.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: True
+
+**Program Name: Fixed Reduced-Radius Recovery with Velocity Retention**
+- **Implementation**: Always returns `radius_scale=0.75` and `reset_velocity=False`, ignoring observations and retaining existing velocities. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a score of 0.23, mean offline error of 3.34, worst-case error of 6.88, and case-error standard deviation of 1.77.
+- **Feedback**: Improved over baseline in 5/8 cases but beat the fixed-seed comparator in only 3/8, with the largest regression under severe, frequent changes. Results support regime-dependent constant tuning, but do not establish velocity overshoot or an optimal radius; swarm spread, query allocation, and stochastic closed-loop effects remain competing explanations.
+**Program Identifier:** Generation 1 - Patch Name smaller_radius_retained_velocity - Correct Program: True
+
+**Program Name: Constant Half-Radius Recovery with Retained Velocity**
+- **Implementation**: Always returns `radius_scale=0.5` and `reset_velocity=False`, ignoring observations and retaining particle velocities. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a score of 0.23, mean offline error of 3.31, worst-case error of 6.29, and case error standard deviation of 1.57.
+- **Feedback**: Improved on baseline in 5 of 8 cases but outperformed the fixed-seed comparator in only 3; both severe, frequent-change cases worsened against both comparators. The constant action was confirmed throughout evaluation, but these results do not establish overshoot or an optimal radius.
+**Program Identifier:** Generation 2 - Patch Name smaller_radius_retained_velocity - Correct Program: True
+
+**Program Name: Constant Expanded-Radius Recovery with Velocity Retention**
+- **Implementation**: Always returns `radius_scale=1.25` and `reset_velocity=False`, ignoring observations. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a combined score of 0.26, mean offline error of 2.89, worst-case error of 4.27, and case-error standard deviation of 1.15.
+- **Feedback**: Outperformed baseline in 5/8 cases and the fixed-seed comparator in 7/8, but underperformed baseline in both high-severity, short-period cases. Every observed response used the same action; these development results support constant tuning but do not establish an ideal radius or a velocity-overshoot mechanism.
+**Program Identifier:** Generation 3 - Patch Name intermediate_radius_retain_velocity - Correct Program: True
+
+**Program Name: Constant Radius Expansion with Velocity Retention**
+- **Implementation**: Ignores observations and always returns `radius_scale=1.2` and `reset_velocity=False`. Four selected particles and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a combined score of 0.25, mean offline error of 2.94, worst-case error of 4.41, and case-error standard deviation of 1.17.
+- **Feedback**: The policy improved offline error against baseline in 5/8 cases and against the fixed seed in 6/8, but underperformed baseline in both high-severity, short-period cases. Observed behavior was entirely constant; results support regime-dependent tuning effects without establishing velocity overshoot or an optimal radius.
+**Program Identifier:** Generation 4 - Patch Name refine_retained_velocity_radius - Correct Program: True
+
+**Program Name: Constant Radius Recovery with Velocity Retention**
+- **Implementation**: Ignores observations and always returns `radius_scale=1.3` with `reset_velocity=False`. Four selected particles and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving score 0.25, mean offline error 3.04, worst-case error 4.71, and case error standard deviation 1.13.
+- **Feedback**: Improved over baseline in 6/8 cases, reducing mean error by approximately 0.38, but essentially tied the fixed-seed comparator overall. Regime-dependent gains and losses support a constant-tuning tradeoff; they do not establish velocity overshoot or an optimal radius.
+**Program Identifier:** Generation 5 - Patch Name probe_radius_1_3_retain - Correct Program: True
+
+**Program Name: Constant Radius Expansion with Velocity Reset**
+- **Implementation**: Ignores observations and always returns `radius_scale=1.25` and `reset_velocity=True`. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, scoring 0.23 with mean offline error 3.28, worst-case error 5.05, and case error standard deviation 1.43.
+- **Feedback**: Improved on both comparators for severity 1.0 at period 2500, but underperformed the baseline in every severity 3.0 case, with particularly large regressions against the fixed seed at period 5000. Every observed response used the same action; these results indicate regime-dependent performance without establishing overshoot or an optimal radius.
+**Program Identifier:** Generation 6 - Patch Name radius_125_reset_velocity - Correct Program: True
+
+**Program Name: Constant Radius Expansion with Velocity Reset**
+- **Implementation**: Always returns `radius_scale=1.25` and `reset_velocity=True`, ignoring the observation. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Achieved a score of 0.23 across 8 cases, with mean offline error 3.28, worst-case error 5.05, and case error standard deviation 1.43.
+- **Feedback**: Passed all validation tests and consistently produced the same action. Performance improved against both comparators for severity 1.0 with period 2500, but worsened against baseline in every severity 3.0 case; these results do not establish a causal mechanism such as overshoot.
+**Program Identifier:** Generation 7 - Patch Name radius_125_reset - Correct Program: True
+
+**Program Name: Constant Radius Recovery with Retained Velocity**
+- **Implementation**: Always returns `radius_scale=1.275` and `reset_velocity=False`, ignoring the observation and preserving velocity. Four selected particles and memory reevaluation remain fixed by the adapter.
+- **Performance**: Completed all 8 cases and passed validation, achieving a score of 0.24, mean offline error of 3.09, worst-case error of 5.20, and case-error standard deviation of 1.31.
+- **Feedback**: Mean error was approximately 0.338 lower than baseline but 0.043 higher than the fixed-seed comparator, with the weakest performance under severe, frequent changes. Every observed response used the same action; results support constant-tuning comparisons but do not establish an ideal radius or velocity-mediated overshoot.
+**Program Identifier:** Generation 8 - Patch Name refine_radius_1275_retain - Correct Program: True
+
+**Program Name: Fixed Radius Recovery with Conditional Velocity Reset**
+- **Implementation**: Always returns `radius_scale=1.25` and resets velocity only when `relative_fitness_drop > 0.15`. Four-particle selection and memory reevaluation remain fixed by the adapter.
+- **Performance**: Passed all validation tests across 8 cases, achieving a score of 0.22, mean offline error of 3.51, worst-case error of 5.23, and case error standard deviation of 1.43.
+- **Feedback**: Improved over baseline in all four low-severity cases but worsened in three of four high-severity cases; it outperformed the fixed-seed comparator in only two cases. Both reset outcomes occurred in every case, but these results do not establish overshoot or an optimal radius; swarm spread, query allocation, constant tuning, and stochastic effects remain competing explanations.
+**Program Identifier:** Generation 9 - Patch Name loss_gated_velocity_reset - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+**Successful Algorithmic Patterns**
+- **Generation 3, Constant Expanded-Radius Recovery with Velocity Retention, remains the best evaluated program.** Returning `{"radius_scale": 1.25, "reset_velocity": False}` achieved score **0.2573 ≈ 0.26**, versus Generation 0’s **0.2474**. Mean offline error decreased from **3.0418 to 2.8868**, a **5.1% reduction**, with improvements in **7/8 cases** against the fixed seed.
+- Its improvement also extended to worst-case error: **5.28 → 4.27**, with case-error standard deviation **1.27 → 1.15**. Generation 4’s radius **1.2**, retaining velocity, achieved score **0.2541** and mean error **2.9362**, supporting modest expansion within this development suite.
+- The new same-radius comparison supports retaining velocity at **1.25**: Generation 3’s mean error was **0.3889 lower** than Generations 6–7’s unconditional-reset policy. This establishes an observed advantage for the complete retention policy on these cases, without identifying the mechanism responsible.
+**Ineffective Approaches**
+- **Reduced radii remained inferior.** Generation 1’s radius **0.75** produced score **0.2307**, mean error **3.3351**, and worst-case error **6.88**; Generation 2’s radius **0.5** produced **0.2318**, **3.3136**, and **6.29**. Both worsened both severe, frequent-change cases against both comparators.
+- **Expansion beyond 1.25 did not improve the winner.** Generation 5’s radius **1.3** achieved score **0.2473** and mean error **3.0432**, essentially matching the fixed seed. Generation 8’s radius **1.275** achieved **0.2448** and **3.0853**, with worst-case error **5.20**. Their mean errors exceeded Generation 3’s by **0.1565** and **0.1985**, respectively.
+- **Unconditional velocity reset weakened radius 1.25.** Generations 6–7 achieved score **0.2339**, mean error **3.2756**, and worst-case error **5.05**. They improved over both comparators for severity **1.0**, period **2500**, but underperformed baseline in every severity **3.0** case.
+- **Fitness-drop gating performed worse than either constant velocity choice at radius 1.25.** Generation 9 reset when `relative_fitness_drop > 0.15`, yielding score **0.2220** and mean error **3.5053**—approximately **21.4% higher error** than Generation 3. Both actions occurred in every case, so the weak result cannot be attributed to an inactive condition. It beat the fixed seed in only **2/8 cases**.
+**Implementation Insights**
+- **The best program demonstrates effective constant tuning.** Generation 3 ignores observations and emitted `(1.25, False)` for all **1,835 recorded responses**. Its success provides no evidence of adaptive decision-making; Generation 9’s actual conditional behavior did not improve performance.
+- Four selected particles and memory reevaluation are fixed across candidates. Retained-velocity comparisons therefore change only the radius multiplier, while Generation 3 versus Generations 6–7 changes only the velocity-reset decision. Generations 6 and 7 have identical executable policies and reported outcomes; they add no distinct strategy or independent generalization evidence.
+- A constant `radius_scale` multiplies the simulator’s default radius, so it does not imply the same absolute relocation radius across regimes. Generation 3 spent approximately **79.6–80.9%** of queries on particles, **15.8–16.1%** on detection, and **0.5–1.9%** on memory. Fixed adapter settings do not fix realized query allocation or subsequent trajectories; these remain possible contributors alongside swarm spread and stochastic effects.
+**Performance Analysis**
+- The retained-velocity mean-error ranking is **1.25: 2.8868**, **1.2: 2.9362**, **1.0: 3.0418**, **1.3: 3.0432**, **1.275: 3.0853**, **0.5: 3.3136**, **0.75: 3.3351**. The response is nonmonotonic. Radius **1.25** is the best tested setting here; these measurements do not establish an optimal radius.
+- Generation 3 improved regime-average error against the fixed seed in all four regimes, but severe, frequent changes remained heterogeneous: individual differences were **−1.0123** and **+0.5037**. Both cases were worse than baseline, averaging **+0.2880**. Its **5/8 baseline wins**, versus Generation 5’s **6/8**, also show why win count alone misses improvement magnitude.
+- Generation 5’s slightly lower case-error standard deviation (**1.1306**, versus Generation 3’s **1.1453**) accompanied worse mean and worst-case errors. Fitness rewards mean error through `1/(1+mean error)`, not dispersion. All programs passed validation, but eight development cases with two per regime establish neither generalization nor velocity-mediated overshoot.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Refine the strongest constant policy.** Create separate mutations returning `radius_scale=1.225`, `1.2375`, and `1.2625`, each with `reset_velocity=False`. The successful 1.2–1.25 settings and deterioration at 1.275–1.3 make small local changes the strongest supported direction.
+2. **Adapt radius smoothly within the successful range.** Set `d = max(0.0, observation["relative_fitness_drop"])` and return `radius_scale = 1.2 + 0.05*d/(0.1+d)`, always retaining velocity. This tests whether larger observed losses favor 1.25 while avoiding both aggressive expansion and the unsuccessful fitness-drop-triggered reset.
+3. **Use swarm compactness to select between successful constants.** Compute `q = observation["swarm_diameter"] / max(observation["default_radius"], 1e-12)` and choose radius 1.25 when `q < 2.0`, otherwise 1.2, with velocity retained. This tests the unproven hypothesis that compact swarms benefit more from expansion while limiting both actions to settings that already improved mean error.
+4. **Scale modest expansion with observed attractor movement.** Compute `m = max(0.0, observation["observed_best_displacement"]) / max(observation["default_radius"], 1e-12)` and return `radius_scale = 1.2 + 0.05*m/(1.0+m)`, with `reset_velocity=False`. Observed displacement supplies a geometric signal distinct from fitness loss; the bounded formula preserves the successful expansion range without treating that displacement as true peak motion.
+5. **Introduce bounded persistence in radius adjustments.** Set `p = min(1.25, max(1.2, observation["previous_response_radius"] / max(observation["default_radius"], 1e-12)))`; return `min(1.25, p+0.0125)` when `fitness_drop > max(0.0, recent_improvement)`, otherwise `max(1.2, p-0.0125)`, retaining velocity throughout. This tests gradual adjustment across responses using the supplied previous radius, while preventing the escalation beyond 1.25 that weakened earlier candidates.

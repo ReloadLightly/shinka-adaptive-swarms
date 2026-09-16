@@ -1,0 +1,13 @@
+<NAME>
+radius_125_reset
+</NAME>
+<DESCRIPTION>
+Test radius_scale=1.25 with velocity resetting for relocated particles. This intermediate radius explores the proposed radius/velocity interaction while removing retained momentum from relocation updates. Compared with the current parent, both settings change; comparison against radius1.25/retain would isolate the reset effect. Improvement remains an empirical question, and any gain would not by itself establish overshoot as the mechanism.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"radius_scale": 1.0, "reset_velocity": False}
+=======
+    return {"radius_scale": 1.25, "reset_velocity": True}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,459 @@
+{
+  "schema": "sprint-science-inspection-v1",
+  "created_at": "2026-09-16T12:00:11.213852+00:00",
+  "checkpoint": "eight completed native descendants",
+  "run": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001",
+  "completed_descendants_reviewed": 8,
+  "previous_review": "science-inspection-4.json",
+  "new_sources": [
+    {
+      "generation": 5,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_5/main.py",
+      "source_sha256": "824925832f7db7c433c68d63281907ae18c9cc1fd86ac9870affb9d2715c75bd",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.3, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.3,
+        "reset_velocity": false
+      },
+      "allowed_interface_review": "pass; no imports, function calls, attributes, hidden access or mutable state",
+      "native_lineage": {
+        "id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+        "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+        "archive_inspiration_ids": [
+          "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+        ],
+        "top_k_inspiration_ids": [
+          "5e5834c9-be1b-4c76-825f-553b7284e930"
+        ],
+        "generation": 5,
+        "correct": 1
+      },
+      "mean_offline_error": 3.043215116048751,
+      "mean_difference_from_seed": 0.0013757961370615135,
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 3.1883030789675475,
+          "baseline_mean_difference": -0.8360484887670097,
+          "baseline_difference_sd": 0.20303921945538042,
+          "seed_mean_difference": 0.4528543451128153,
+          "seed_difference_sd": 0.12161137965009339
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4376743507356067,
+          "baseline_mean_difference": -0.1984717110323303,
+          "baseline_difference_sd": 0.19838209120033767,
+          "seed_mean_difference": -0.03456137885256361,
+          "seed_difference_sd": 0.011239252876810497
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.172694791106359,
+          "baseline_mean_difference": 0.19775662627741708,
+          "baseline_difference_sd": 0.7000011119148782,
+          "seed_mean_difference": -0.344564810893887,
+          "seed_difference_sd": 0.3233380289070074
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.3741882433854897,
+          "baseline_mean_difference": -0.6847727437916347,
+          "baseline_difference_sd": 1.1599943451620567,
+          "seed_mean_difference": -0.06822497081811862,
+          "seed_difference_sd": 0.04309746516171404
+        }
+      ],
+      "observed_action_occupancy": {
+        "action": {
+          "radius_scale": 1.3,
+          "reset_velocity": false
+        },
+        "response_count": 1814,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "9d5adf42cace366211736963adb9f1eadc0751c57dc8c77a7bf11b9d6f113e11"
+    },
+    {
+      "generation": 6,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/main.py",
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": True}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.25,
+        "reset_velocity": true
+      },
+      "allowed_interface_review": "pass; no imports, function calls, attributes, hidden access or mutable state",
+      "native_lineage": {
+        "id": "a7a973e9-07f0-40b1-a9a5-03f8d86bef32",
+        "parent_id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+        "archive_inspiration_ids": [
+          "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+        ],
+        "top_k_inspiration_ids": [
+          "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96"
+        ],
+        "generation": 6,
+        "correct": 1
+      },
+      "mean_offline_error": 3.2756435694835693,
+      "mean_difference_from_seed": 0.23380424957187998,
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.617031364924167,
+          "baseline_mean_difference": -1.4073202028103902,
+          "baseline_difference_sd": 0.33241099945473696,
+          "seed_mean_difference": -0.1184173689305652,
+          "seed_difference_sd": 0.007760400349263142
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.5201241945349406,
+          "baseline_mean_difference": -0.11602186723299646,
+          "baseline_difference_sd": 0.17308689939331107,
+          "seed_mean_difference": 0.04788846494677024,
+          "seed_difference_sd": 0.0365344446838371
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.523506242210063,
+          "baseline_mean_difference": 0.5485680773811208,
+          "baseline_difference_sd": 0.5491096529081354,
+          "seed_mean_difference": 0.0062466402098166895,
+          "seed_difference_sd": 0.4742294879137503
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.441912476265107,
+          "baseline_mean_difference": 0.38295148908798216,
+          "baseline_difference_sd": 0.4714941007150616,
+          "seed_mean_difference": 0.9994992620614982,
+          "seed_difference_sd": 0.6454027792852811
+        }
+      ],
+      "observed_action_occupancy": {
+        "action": {
+          "radius_scale": 1.25,
+          "reset_velocity": true
+        },
+        "response_count": 1836,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "f929a9d02a30557093d3cfcf9d178fe37c0bb22faa4001eb327719695a2a80ce"
+    },
+    {
+      "generation": 7,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/main.py",
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": True}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.25,
+        "reset_velocity": true
+      },
+      "allowed_interface_review": "pass; no imports, function calls, attributes, hidden access or mutable state",
+      "native_lineage": {
+        "id": "0ae9da7a-7fb3-4c52-a737-d59c6e19e8a7",
+        "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+        "archive_inspiration_ids": [
+          "dd3af87f-fc07-4e51-9e9d-0258b55b3127"
+        ],
+        "top_k_inspiration_ids": [],
+        "generation": 7,
+        "correct": 1
+      },
+      "mean_offline_error": 3.2756435694835693,
+      "mean_difference_from_seed": 0.23380424957187998,
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.617031364924167,
+          "baseline_mean_difference": -1.4073202028103902,
+          "baseline_difference_sd": 0.33241099945473696,
+          "seed_mean_difference": -0.1184173689305652,
+          "seed_difference_sd": 0.007760400349263142
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.5201241945349406,
+          "baseline_mean_difference": -0.11602186723299646,
+          "baseline_difference_sd": 0.17308689939331107,
+          "seed_mean_difference": 0.04788846494677024,
+          "seed_difference_sd": 0.0365344446838371
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.523506242210063,
+          "baseline_mean_difference": 0.5485680773811208,
+          "baseline_difference_sd": 0.5491096529081354,
+          "seed_mean_difference": 0.0062466402098166895,
+          "seed_difference_sd": 0.4742294879137503
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.441912476265107,
+          "baseline_mean_difference": 0.38295148908798216,
+          "baseline_difference_sd": 0.4714941007150616,
+          "seed_mean_difference": 0.9994992620614982,
+          "seed_difference_sd": 0.6454027792852811
+        }
+      ],
+      "observed_action_occupancy": {
+        "action": {
+          "radius_scale": 1.25,
+          "reset_velocity": true
+        },
+        "response_count": 1836,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "f929a9d02a30557093d3cfcf9d178fe37c0bb22faa4001eb327719695a2a80ce"
+    },
+    {
+      "generation": 8,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_8/main.py",
+      "source_sha256": "14121b4fccdad53385742ad175366f29a58e52569fd7568cdcdacf0e6d02f6e9",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.275, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.275,
+        "reset_velocity": false
+      },
+      "allowed_interface_review": "pass; no imports, function calls, attributes, hidden access or mutable state",
+      "native_lineage": {
+        "id": "151c2361-879a-4492-8cff-b75e2f619a68",
+        "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+        "archive_inspiration_ids": [
+          "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+        ],
+        "top_k_inspiration_ids": [
+          "5e5834c9-be1b-4c76-825f-553b7284e930"
+        ],
+        "generation": 8,
+        "correct": 1
+      },
+      "mean_offline_error": 3.0852607779226826,
+      "mean_difference_from_seed": 0.04342145801099334,
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.7900488478889436,
+          "baseline_mean_difference": -1.2343027198456136,
+          "baseline_difference_sd": 0.2669363579954285,
+          "seed_mean_difference": 0.05460011403421139,
+          "seed_difference_sd": 0.05771424111004535
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.424271542381097,
+          "baseline_mean_difference": -0.21187451938684,
+          "baseline_difference_sd": 0.1417500516645629,
+          "seed_mean_difference": -0.047964187207073294,
+          "seed_difference_sd": 0.06787129241258527
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.7371508474477855,
+          "baseline_mean_difference": 0.7622126826188433,
+          "baseline_difference_sd": 0.7108510181913801,
+          "seed_mean_difference": 0.21989124544753924,
+          "seed_difference_sd": 1.7341901590132658
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.389571873972905,
+          "baseline_mean_difference": -0.66938911320422,
+          "baseline_difference_sd": 1.2077877751887396,
+          "seed_mean_difference": -0.05284134023070397,
+          "seed_difference_sd": 0.09089089518839691
+        }
+      ],
+      "observed_action_occupancy": {
+        "action": {
+          "radius_scale": 1.275,
+          "reset_velocity": false
+        },
+        "response_count": 1833,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "886528867f1570b27c237c8d1c88dfc7fed8435e738c3ef8c862d9ee5c4fcc6f"
+    }
+  ],
+  "paired_velocity_intervention": {
+    "label": "constant radius1.25 reset minus retain (gen6 minus gen3)",
+    "sign": "positive means resetting worsens offline error",
+    "case_differences": [
+      0.027702082909732084,
+      0.11600918037443098,
+      0.13480488747572483,
+      0.10252822904297831,
+      0.6832533530309943,
+      -0.16212426416939696,
+      1.5474583810401508,
+      0.661426309193633
+    ],
+    "mean": 0.3888822698622809,
+    "sd": 0.5552742176189397,
+    "min": -0.16212426416939696,
+    "max": 1.5474583810401508,
+    "reset_better_cases": 1,
+    "reset_worse_cases": 7,
+    "regimes": [
+      {
+        "regime": "severity=1.0,period=2500",
+        "case_differences": [
+          0.027702082909732084,
+          0.11600918037443098
+        ],
+        "mean": 0.07185563164208153,
+        "sd": 0.062442547444189964
+      },
+      {
+        "regime": "severity=1.0,period=5000",
+        "case_differences": [
+          0.13480488747572483,
+          0.10252822904297831
+        ],
+        "mean": 0.11866655825935157,
+        "sd": 0.02282304405183703
+      },
+      {
+        "regime": "severity=3.0,period=2500",
+        "case_differences": [
+          0.6832533530309943,
+          -0.16212426416939696
+        ],
+        "mean": 0.2605645444307987,
+        "sd": 0.597772245785722
+      },
+      {
+        "regime": "severity=3.0,period=5000",
+        "case_differences": [
+          1.5474583810401508,
+          0.661426309193633
+        ],
+        "mean": 1.1044423451168919,
+        "sd": 0.626519286351439
+      }
+    ],
+    "interpretation": "Complete closed-loop method intervention; outcome changes do not establish overshoot as a mediator."
+  },
+  "exact_duplicate": {
+    "original_generation": 6,
+    "repeated_generation": 7,
+    "identical_source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+    "new_independent_evidence": false,
+    "repeated_full_executions": 8,
+    "repeated_objective_queries": 800000,
+    "already_in_search_budget": true,
+    "not_additional_executions_beyond_slot_count": true,
+    "case_records": [
+      {
+        "case_id": "case_000",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_000.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_000.json.gz",
+        "identical_compressed_artifact_sha256": "f6cdb524093db0197fa8f4ea6916c72ee1be08373be716498284acf4d01f6ea9",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_001",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_001.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_001.json.gz",
+        "identical_compressed_artifact_sha256": "f3ee764ddad336ceadac7e8c2428ee1846a06d083c70fa42e66e2c7eb126c075",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_002",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_002.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_002.json.gz",
+        "identical_compressed_artifact_sha256": "0a738bd2baa94f4d14ac88caa5995ef9142be8a352a9ac0c1af7df1836d93cd3",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_003",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_003.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_003.json.gz",
+        "identical_compressed_artifact_sha256": "93caa9d4d853a332d3e6b4d76954f68929605ef5c60b2976de508909d171e8e3",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_004",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_004.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_004.json.gz",
+        "identical_compressed_artifact_sha256": "72d802b7208a07f195cf703d28f55172d89233bd8512473e04d6cbcbf4d361fb",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_005",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_005.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_005.json.gz",
+        "identical_compressed_artifact_sha256": "754a2e8471ac443c4676fefebc3b9c6d43d3dac57e25572d9679244bc7ea15f4",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_006",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_006.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_006.json.gz",
+        "identical_compressed_artifact_sha256": "d824801371e980cae21cb1f590f9e23c75e922a542e8fa6d90bc72515994879d",
+        "actual_repeated_queries": 100000
+      },
+      {
+        "case_id": "case_007",
+        "source_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/results/case_007.json.gz",
+        "repeated_case": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/results/case_007.json.gz",
+        "identical_compressed_artifact_sha256": "78a0085b0bc6fb861a3961f6b2d165450f736404fe70cb2581a5ba367af011c1",
+        "actual_repeated_queries": 100000
+      }
+    ],
+    "note": "Do not conceal this repetition as new scientific evidence or add eight extra cases on top of the already counted native stage. Native novelty timeline is audited separately."
+  },
+  "native_meta_observed": {
+    "path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/meta/meta_5.txt",
+    "sha256": "8443799d8d996d76fa896e08299dab610ad8b37c49fba92034ef2c417e9e3fa5",
+    "recommendation": "Explore velocity resetting while preserving the winning radius.",
+    "actual_mutation_prompt_injections": [
+      {
+        "generation": 6,
+        "prompt_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "prompt_sha256": "74c6dfad9b60003d24f56a7de8b55bfee668b902e4503e19c0ba2cc0d1b1e0d1"
+      },
+      {
+        "generation": 7,
+        "prompt_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+        "prompt_sha256": "be9720176678aca9eb6051576c2fd2539e2deef655b0685d3feb901ed1d64508"
+      },
+      {
+        "generation": 7,
+        "prompt_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/attempts/novelty_2/resample_1/patch_1/headless_prompt.md",
+        "prompt_sha256": "6e8c15d736d64c5fc548ca6c96a7aeb17d172da67cdc473e99b0c6ce6b6eaa51"
+      }
+    ],
+    "interpretation": "Native recommendations proposed constant refinement and conditional/reset probes; supplied recommendation text is verified. It does not imply recommendations are independent evidence or establish feature causality. Native phrase passes all validation tests refers to development evaluator correctness, not held-out validation."
+  },
+  "recommendation": "continue unchanged to the declared bounded slot limit, subject to existing response and elapsed ceilings",
+  "reason": "All policies remain valid simple constants; gen6 usefully tests reset at the best radius and is worse overall. Gen7 repeated gen6 exactly and spent800000queries without new evidence; record this mechanism limitation, but one duplicate functional slot is not repeated nonfunctional output or a numerical fault. Gen8 radius1.275 is worse than bestgen3. No new task/evaluator changes or conditional complexity bonus warranted.",
+  "limits": [
+    "Eight shared development cases; two cases per regime.",
+    "All first eight descendants are constants; conditional rules remain untested.",
+    "Overshoot itself is unmeasured.",
+    "No objective executions or model requests performed by this review."
+  ]
+}

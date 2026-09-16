@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-09-16T12:02:51.054706+00:00",
+  "corrects": "operations/gen7-duplicate-audit.json interpretation paragraph and supervisory prose",
+  "prior_record_preserved": true,
+  "prior_sha256": "dd646710ae58054b465f1c3c31240e66aab5766a9c0849e791d60c63584fb6a4",
+  "correction": "Generation 6 and generation 7 executed source files and database code are exactly byte-identical. The prior machine fields already recorded identical source hashes and source_bytes_equal=true. The prior prose statement about a trailing-whitespace difference was an audit interpretation error, not an observed source mutation. Cache reuse was missed because the frozen evaluator reuses only completed checkpoints in that generation or the exact frozen Phase A seed; it has no cross-generation evaluation-cache lookup. No source, evaluator, controller, historical record or budget was changed to address this.",
+  "source_comparison": [
+    {
+      "generation": 6,
+      "executed_file_bytes": 226,
+      "executed_file_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "database_code_bytes": 226,
+      "database_code_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "file_matches_database": true
+    },
+    {
+      "generation": 7,
+      "executed_file_bytes": 226,
+      "executed_file_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "database_code_bytes": 226,
+      "database_code_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "file_matches_database": true
+    }
+  ],
+  "evaluator_cache_evidence": {
+    "path": "tasks/radius_velocity_sprint/evaluate.py",
+    "sha256": "05bc9f896f898180b77cb6c90d463fd61ca773e639fa4774ac5747c50ba8db6a",
+    "lines": [
+      190,
+      214,
+      215,
+      218
+    ]
+  },
+  "unchanged_findings": [
+    "All eight decoded case artifacts, including traces and response logs, match exactly",
+    "Generation 7 consumed eight repeated full executions / 800000 queries within the allocated native slots",
+    "Generation 7 attempt 1 correctly rejected the identical island-0 program; attempt 2 resampled island 1 and accepted differences from its island-local seed comparator"
+  ],
+  "new_model_calls": 0,
+  "new_objective_queries": 0
+}

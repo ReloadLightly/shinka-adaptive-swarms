@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "intermediate_radius_retain_velocity",
+  "patch_description": "Test radius_scale=1.25 while retaining velocity. Radius 0.5 performed worse than 1.0, while 1.5 was only slightly worse in the supplied development results. An intermediate radius probes whether modestly broader relocation improves recovery without the larger perturbation of 1.5. Retaining velocity follows the stronger aggregate development evidence and isolates radius tuning. Improvement remains untested; any transfer claim requires the separate probe.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T13:50:53.529420",
+  "llm_cost": 0.1132,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

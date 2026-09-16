@@ -1,0 +1,15 @@
+<NAME>
+smaller_radius_retained_velocity
+</NAME>
+<DESCRIPTION>
+Test radius_scale=0.5 while retaining velocity. The development results favor radius 1 over 1.5 on average with retained velocity, motivating a probe below the tested range. A smaller relocation radius may preserve useful local structure while retained momentum supplies additional movement. This constant policy isolates radius tuning; improvement remains untested and would not establish overshoot as the mechanism. Transfer requires the separate probe.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 1.0, "reset_velocity": False}
+=======
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 0.5, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,131 @@
+{
+  "schema": "radius-velocity-sprint-accounting-v1",
+  "created_at": "2026-09-16T12:14:45.829736+00:00",
+  "status": "research_complete",
+  "session_start_utc": "2026-09-16T11:33:59+00:00",
+  "session_deadline_utc": "2026-09-16T14:33:59+00:00",
+  "stages": {
+    "phase_a": {
+      "completed_case_records": 48,
+      "physical_full_case_executions": 48,
+      "objective_queries": 4800000,
+      "exact_cache_reuses": 0,
+      "repeated_full_case_executions": 0,
+      "failed_attempts": 0,
+      "truncated_full_cases": 0,
+      "started_at": "2026-09-16T11:42:05.573455+00:00",
+      "completed_at": "2026-09-16T11:44:34.088183+00:00",
+      "sum_case_elapsed_seconds": 83.82731318601145
+    },
+    "pilot": {
+      "completed_case_records": 16,
+      "physical_full_case_executions": 16,
+      "objective_queries": 1600000,
+      "exact_cache_reuses": 0,
+      "repeated_full_case_executions": 0,
+      "failed_attempts": 0,
+      "truncated_full_cases": 0,
+      "started_at": "2026-09-16T12:09:30.239623+00:00",
+      "completed_at": "2026-09-16T12:09:55.971609+00:00",
+      "sum_case_elapsed_seconds": 24.142188082994835
+    },
+    "native": {
+      "completed_case_records": 104,
+      "physical_full_case_executions": 96,
+      "objective_queries": 9600000,
+      "exact_cache_reuses": 8,
+      "repeated_full_case_executions": 8,
+      "repeated_objective_queries": 800000,
+      "failed_attempts": 0,
+      "truncated_full_cases": 0,
+      "terminal_slots": 13,
+      "valid_descendants": 12,
+      "started_at": "2026-09-16T11:48:57.981907+00:00",
+      "finished_at": "2026-09-16T12:07:45.770202+00:00",
+      "wall_seconds": 1127.788295,
+      "logged_monotonic_elapsed_seconds": 1090.02,
+      "clock_scope": "Both recorded UTC duration and EventLogger monotonic duration retained; their discrepancy is observed, cause unmeasured."
+    }
+  },
+  "totals": {
+    "completed_case_records": 168,
+    "physical_full_case_executions": 160,
+    "objective_queries": 16000000,
+    "exact_seed_cache_reuses": 8,
+    "repeated_physical_cases_included": 8,
+    "repeated_objective_queries_included": 800000,
+    "distinct_physical_method_case_executions": 152,
+    "failed_full_case_attempts": 0,
+    "truncated_full_cases": 0,
+    "numerical_fixture_queries_separate": 14000,
+    "repeated_fixture_queries_included": 6000,
+    "pre_case_failed_launches": 1,
+    "pre_case_failed_launch_queries": 0
+  },
+  "native_model_requests": {
+    "native_wrappers": 35,
+    "requested_logical_responses": 45,
+    "usable_logical_responses": 45,
+    "allowance": 60,
+    "exposed_native_transport_retries": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_Codex_usage": "excluded/unobserved by native receipts"
+  },
+  "limits": {
+    "elapsed_minutes": 180,
+    "full_executions_before_exact_reuse": 168,
+    "full_queries": 16800000,
+    "logical_responses": 60,
+    "exhausted": false
+  },
+  "model_settings": {
+    "all_role_model_routes": "headless/codex@gpt-6-astra",
+    "verified_active_Codex_CLI_model_flag": "gpt-6-astra",
+    "explicit_inner_effort_override": null,
+    "native_reasoning_efforts_sentinel": "disabled",
+    "sentinel_is_effective_provider_reasoning_effort": false,
+    "headless_effort_forwarding": "Pinned Headless command builder forwards effort only from model-route ?effort=; no route in this run supplied it. Native client reasoning_efforts=disabled is not forwarded as a Codex effort.",
+    "other_native_settings_scope": "Client temperatures/max_tokens above are configured native values; the pinned Headless command builder does not forward them as CLI parameters, so they are not independently verified provider settings.",
+    "effective_inner_effort": "unverified Codex profile/provider default, distinct from supervising Astra/Ultra",
+    "provider_model_identity_independently_attested": false,
+    "paid_fallback": false
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 13,
+      "full_frozen_task_context_present": 13,
+      "source_context_references": 33,
+      "full_sources_present": 33,
+      "full_feedback_present": 33,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 13,
+      "accepted": 12,
+      "rejected": 1,
+      "fallback": 0
+    },
+    "embedding_completions": 14,
+    "embedding_dimensions": {
+      "768": 14
+    },
+    "meta_updates": 3,
+    "saved_meta_recommendations": 15,
+    "exact_recommendation_injections": 7,
+    "migration_transfers": 2,
+    "degradation_events": 0,
+    "patch_types": {
+      "init": 1,
+      "diff": 9,
+      "full": 2,
+      "cross": 1
+    }
+  },
+  "input_sha256": {
+    "phase_a/execution_ledger.json": "49bfb2008320bf015977981320a3692c88080cb6ee01d87485b339bedb202467",
+    "pilot/execution_ledger.json": "465e0a0837d0ce7e46650153efe9d1b3499d451dc44d80302d17855c8e8008cb",
+    "operations/native-accounting-summary.json": "b9e9449eaafb9debea460f73ad3a1529407cec8834c9fc7a50291efbe5aca99d",
+    "operations/fixtures_recovery_task.json": "eccb861c058a08ccd0c68158541e7d5623bd91e7e07123dbf923639c28180703",
+    "operations/fixtures_trace_invariance.json": "e07c588fc8fd04eeeae4c19be211089cb359ffb9780dd0574691ab98dcc50ae4"
+  }
+}

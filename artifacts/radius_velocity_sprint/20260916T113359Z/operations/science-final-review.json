@@ -1,0 +1,2334 @@
+{
+  "schema": "sprint-science-final-review-v1",
+  "created_at": "2026-09-16T12:08:27.053603+00:00",
+  "run": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001",
+  "status": "all13evaluatedslots complete; independent selection source and saved-case audit passed",
+  "selection_rule": "lowest mean development error among valid descendants; ties earlier generation then source SHA256",
+  "selected_generation": 3,
+  "selected_source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+  "selected_exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+  "selected_mean_development_error": 2.8867612996212886,
+  "selection_ranking": [
+    {
+      "generation": 3,
+      "mean_offline_error": 2.8867612996212886,
+      "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0"
+    },
+    {
+      "generation": 12,
+      "mean_offline_error": 2.9112146577463633,
+      "source_sha256": "1c2f6664f98ff8f12afa7475cc19aa07a95555e0e35f0dbc8cbdd690613655bb"
+    },
+    {
+      "generation": 4,
+      "mean_offline_error": 2.9362188116425973,
+      "source_sha256": "381a00f364555bf218ad272d78cee7e7835960874085dd665ca75cc87df66845"
+    },
+    {
+      "generation": 5,
+      "mean_offline_error": 3.043215116048751,
+      "source_sha256": "824925832f7db7c433c68d63281907ae18c9cc1fd86ac9870affb9d2715c75bd"
+    },
+    {
+      "generation": 8,
+      "mean_offline_error": 3.0852607779226826,
+      "source_sha256": "14121b4fccdad53385742ad175366f29a58e52569fd7568cdcdacf0e6d02f6e9"
+    },
+    {
+      "generation": 11,
+      "mean_offline_error": 3.139013057655509,
+      "source_sha256": "41ba7b5dd54afeeb5aafa8929495165bf2c7ed028bf54fafae83abbb6b3997aa"
+    },
+    {
+      "generation": 10,
+      "mean_offline_error": 3.1770637650852698,
+      "source_sha256": "4d06f38e6c133b788c5a2ad186cfab9b70d4833bbbe369cbaefe545496e83a28"
+    },
+    {
+      "generation": 6,
+      "mean_offline_error": 3.2756435694835693,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa"
+    },
+    {
+      "generation": 7,
+      "mean_offline_error": 3.2756435694835693,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa"
+    },
+    {
+      "generation": 2,
+      "mean_offline_error": 3.313554163044707,
+      "source_sha256": "2c61e3a7a8d6c634181cb8763449008462834654ea3820f69eea11a5c492dc21"
+    },
+    {
+      "generation": 1,
+      "mean_offline_error": 3.335067065379198,
+      "source_sha256": "25925b58dfdb029e5c234eeeb3fb3553c20e1eedde643ff9745846aa6bc87d39"
+    },
+    {
+      "generation": 9,
+      "mean_offline_error": 3.5052938337431674,
+      "source_sha256": "c152d10b6c27220e3f95bb635caedda406ba5e46d1a87ca2b0ffb671ef531b6a"
+    }
+  ],
+  "selected_negative_cases_retained": {
+    "baseline": [
+      {
+        "case_id": "case_004",
+        "difference": 0.2535938835364604
+      },
+      {
+        "case_id": "case_005",
+        "difference": 0.3224131823641838
+      },
+      {
+        "case_id": "case_007",
+        "difference": 0.054921855799422215
+      }
+    ],
+    "seed": [
+      {
+        "case_id": "case_005",
+        "difference": 0.5037017911216504
+      }
+    ]
+  },
+  "programs": [
+    {
+      "generation": 0,
+      "source_sha256": "bbe1c2ffaf67f27dbfe4bbfac35723da4015c87543c3fc18bdcd53a13adff34d",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_0/main.py",
+      "mean_offline_error": 3.0418393199116895,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+          "parent_id": null,
+          "archive_inspiration_ids": [],
+          "top_k_inspiration_ids": [],
+          "generation": 0,
+          "correct": 1
+        },
+        {
+          "id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+          "parent_id": null,
+          "archive_inspiration_ids": [],
+          "top_k_inspiration_ids": [],
+          "generation": 0,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1885,
+        "radius_min": 1.0,
+        "radius_max": 1.0,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.0,
+            "reset_velocity": false,
+            "responses": 1885
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.9903294740360162,
+          "paired_differences": {
+            "baseline": -1.5184654740235808,
+            "seed": 0.0
+          },
+          "response_count": 275,
+          "artifact_sha256": "bbfc4c98412f39f96b5d278fb7a0a1dcff26b111141e268485e04f9076931294"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.4805679936734486,
+          "paired_differences": {
+            "baseline": -1.0593401937360691,
+            "seed": 0.0
+          },
+          "response_count": 385,
+          "artifact_sha256": "9e33e4f5d6aba67ab0576f36ffe8f02adb9208713364371f4e498956d0f174d4"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7512154001466103,
+          "paired_differences": {
+            "baseline": -0.015685658301376693,
+            "seed": 0.0
+          },
+          "response_count": 150,
+          "artifact_sha256": "7b70925d784f817797a6351b70330154f6a3a627bd8ff6282864ae2bd0f482b5"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1932560590297303,
+          "paired_differences": {
+            "baseline": -0.3121350060581567,
+            "seed": 0.0
+          },
+          "response_count": 103,
+          "artifact_sha256": "137aa2c09188916050b8e3228d25c43671e9f898443a08aebbe8a91e82b73adb"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 5.279007889391412,
+          "paired_differences": {
+            "baseline": 1.2659314831000748,
+            "seed": 0.0
+          },
+          "response_count": 353,
+          "artifact_sha256": "5a1ada8a9388e928acb9e20aafbce726f950bd217d6911e52e5b4248c819b195"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.7555113146090804,
+          "paired_differences": {
+            "baseline": -0.18128860875746655,
+            "seed": 0.0
+          },
+          "response_count": 332,
+          "artifact_sha256": "119655a4365ff8e77eb5cb94595c67455218a44883b056eaf0c78bc76463664c"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.5990416551657267,
+          "paired_differences": {
+            "baseline": -1.406313130707856,
+            "seed": 0.0
+          },
+          "response_count": 104,
+          "artifact_sha256": "a0db81d06d16d1d8ff517a2d56cf9c93950509ff3dade8332d2b18d459fdb279"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.2857847732414904,
+          "paired_differences": {
+            "baseline": 0.17321758476082394,
+            "seed": 0.0
+          },
+          "response_count": 183,
+          "artifact_sha256": "ceb4ff1bca7d6080b6d27607a08bfb32e2e3e3fac5762bb109b06a2752740ace"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.7354487338547324,
+          "baseline_mean_difference": -1.288902833879825,
+          "baseline_difference_sd": 0.3246505991054738,
+          "seed_mean_difference": 0.0,
+          "seed_difference_sd": 0.0
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4722357295881703,
+          "baseline_mean_difference": -0.1639103321797667,
+          "baseline_difference_sd": 0.20962134407714816,
+          "seed_mean_difference": 0.0,
+          "seed_difference_sd": 0.0
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.517259602000246,
+          "baseline_mean_difference": 0.5423214371713041,
+          "baseline_difference_sd": 1.0233391408218857,
+          "seed_mean_difference": 0.0,
+          "seed_difference_sd": 0.0
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.442413214203609,
+          "baseline_mean_difference": -0.616547772973516,
+          "baseline_difference_sd": 1.1168968800003427,
+          "seed_mean_difference": 0.0,
+          "seed_difference_sd": 0.0
+        }
+      ]
+    },
+    {
+      "generation": 1,
+      "source_sha256": "25925b58dfdb029e5c234eeeb3fb3553c20e1eedde643ff9745846aa6bc87d39",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_1/main.py",
+      "mean_offline_error": 3.335067065379198,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "dd3af87f-fc07-4e51-9e9d-0258b55b3127",
+          "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+          "archive_inspiration_ids": [],
+          "top_k_inspiration_ids": [],
+          "generation": 1,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1792,
+        "radius_min": 0.75,
+        "radius_max": 0.75,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "responses": 1792
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.210865286342763,
+          "paired_differences": {
+            "baseline": -1.297929661716834,
+            "seed": 0.22053581230674668
+          },
+          "response_count": 276,
+          "artifact_sha256": "de9d73f034580a5ac58ebfd4290fd395d5acd0e0dbb47f92d5b3482053d006c4"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.451425897689433,
+          "paired_differences": {
+            "baseline": -1.0884822897200848,
+            "seed": -0.029142095984015626
+          },
+          "response_count": 383,
+          "artifact_sha256": "b830442459bc7d2a755812e896689f65c54fcb1a5735d79f458ad21acf13094a"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.618310119105896,
+          "paired_differences": {
+            "baseline": -0.148590939342091,
+            "seed": -0.1329052810407143
+          },
+          "response_count": 142,
+          "artifact_sha256": "0661ea17906cea2d7d3be8e4e11217365bbb997cd27188d50f0a2325cc0e5aa9"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1660353354837756,
+          "paired_differences": {
+            "baseline": -0.3393557296041114,
+            "seed": -0.027220723545954728
+          },
+          "response_count": 100,
+          "artifact_sha256": "36906a7f13e9bc665bbf96b0f4f98445e7fccc4ba408280062ee2d46de189612"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 6.882900877287211,
+          "paired_differences": {
+            "baseline": 2.869824470995874,
+            "seed": 1.603892987895799
+          },
+          "response_count": 300,
+          "artifact_sha256": "a84cfe6222ae86b739d1f9e06d202b5a864d9819046f903c9080e7ddac14217b"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.0025159555308845,
+          "paired_differences": {
+            "baseline": 0.06571603216433752,
+            "seed": 0.24700464092180408
+          },
+          "response_count": 329,
+          "artifact_sha256": "36d86e4cf885ed5c137ddf9f290ef82220261bb09aacab7a5f81078d31a16b37"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.032356524737888,
+          "paired_differences": {
+            "baseline": -0.9729982611356949,
+            "seed": 0.43331486957216114
+          },
+          "response_count": 102,
+          "artifact_sha256": "c3d8f106a74329beac8b2d02b15925e324f83d6d9e4e02fabfffb23d57d4b7f9"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.316126526855734,
+          "paired_differences": {
+            "baseline": 0.20355933837506734,
+            "seed": 0.030341753614243405
+          },
+          "response_count": 160,
+          "artifact_sha256": "3582f32e0fb7de93a8fa17635607b81646e0bb554f9d2c2b7e2da12d0225e272"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.8311455920160977,
+          "baseline_mean_difference": -1.1932059757184594,
+          "baseline_difference_sd": 0.14810165704060285,
+          "seed_mean_difference": 0.09569685816136553,
+          "seed_difference_sd": 0.17654894206487096
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.3921727272948359,
+          "baseline_mean_difference": -0.2439733344731012,
+          "baseline_difference_sd": 0.13489107680590412,
+          "seed_mean_difference": -0.08006300229333452,
+          "seed_difference_sd": 0.07473026727124406
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 5.442708416409047,
+          "baseline_mean_difference": 1.4677702515801057,
+          "baseline_difference_sd": 1.9828040922802026,
+          "seed_mean_difference": 0.9254488144088016,
+          "seed_difference_sd": 0.9594649514583168
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.674241525796811,
+          "baseline_mean_difference": -0.38471946138031377,
+          "baseline_difference_sd": 0.8319518570706261,
+          "seed_mean_difference": 0.23182831159320227,
+          "seed_difference_sd": 0.2849450229297166
+        }
+      ]
+    },
+    {
+      "generation": 2,
+      "source_sha256": "2c61e3a7a8d6c634181cb8763449008462834654ea3820f69eea11a5c492dc21",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_2/main.py",
+      "mean_offline_error": 3.313554163044707,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6",
+          "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+          "archive_inspiration_ids": [],
+          "top_k_inspiration_ids": [],
+          "generation": 2,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1849,
+        "radius_min": 0.5,
+        "radius_max": 0.5,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 0.5,
+            "reset_velocity": false,
+            "responses": 1849
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.769600301064002,
+          "paired_differences": {
+            "baseline": -1.7391946469955952,
+            "seed": -0.22072917297201444
+          },
+          "response_count": 308,
+          "artifact_sha256": "506b1e8438105edd36b64aae503576764c86bd559cb02d88e1d693fd194f05b5"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.162658572029926,
+          "paired_differences": {
+            "baseline": -0.3772496153795917,
+            "seed": 0.6820905783564775
+          },
+          "response_count": 368,
+          "artifact_sha256": "9781ee9bef3532578ee7dc4289a50dded7762f4a1d1141beb714903f4e1be83f"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.6526218470383425,
+          "paired_differences": {
+            "baseline": -0.11427921140964448,
+            "seed": -0.09859355310826778
+          },
+          "response_count": 144,
+          "artifact_sha256": "1b69b7c356cf819a3153091c8f8eb4509138c67d46ddc71956e9338aa201b184"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.2530347201265557,
+          "paired_differences": {
+            "baseline": -0.2523563449613313,
+            "seed": 0.05977866109682539
+          },
+          "response_count": 99,
+          "artifact_sha256": "da07bd734800a544effb8262245f879752c7366c4364913a6ee5c606846550a8"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 6.289236949934174,
+          "paired_differences": {
+            "baseline": 2.2761605436428365,
+            "seed": 1.0102290605427617
+          },
+          "response_count": 324,
+          "artifact_sha256": "68347f255028af224543193140f6ab09938549a3fa395ec2c5fba81d8403abca"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.251800904015188,
+          "paired_differences": {
+            "baseline": 0.31500098064864135,
+            "seed": 0.4962895894061079
+          },
+          "response_count": 324,
+          "artifact_sha256": "836143ffdaa0f11a76d2c860e6a0ec948bc273f643740b83c518afcf952658e8"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.558979150179206,
+          "paired_differences": {
+            "baseline": -1.4463756356943769,
+            "seed": -0.040062504986520864
+          },
+          "response_count": 104,
+          "artifact_sha256": "ed87517431d8d2eb6dc32c7e062f078385103953cc7f9b3fb38ced95fa0acec7"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.570500859970261,
+          "paired_differences": {
+            "baseline": 0.4579336714895943,
+            "seed": 0.28471608672877036
+          },
+          "response_count": 178,
+          "artifact_sha256": "2597e6ac1a26ab89f533cb683e061cb032e3ffd5bb874a4b9baee99e4c69a95a"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.966129436546964,
+          "baseline_mean_difference": -1.0582221311875935,
+          "baseline_difference_sd": 0.963040567459003,
+          "seed_mean_difference": 0.2306807026922315,
+          "seed_difference_sd": 0.6383899683535291
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.452828283582449,
+          "baseline_mean_difference": -0.1833177781854879,
+          "baseline_difference_sd": 0.09763527746119832,
+          "seed_mean_difference": -0.019407446005721196,
+          "seed_difference_sd": 0.11198606661594986
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 5.270518926974681,
+          "baseline_mean_difference": 1.295580762145739,
+          "baseline_difference_sd": 1.3867492259820415,
+          "seed_mean_difference": 0.7532593249744348,
+          "seed_difference_sd": 0.3634100851601558
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.564740005074733,
+          "baseline_mean_difference": -0.4942209821023913,
+          "baseline_difference_sd": 1.3465500245864421,
+          "seed_mean_difference": 0.12232679087112475,
+          "seed_difference_sd": 0.22965314458609948
+        }
+      ]
+    },
+    {
+      "generation": 3,
+      "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_3/main.py",
+      "mean_offline_error": 2.8867612996212886,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+          "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+          "archive_inspiration_ids": [
+            "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+          ],
+          "top_k_inspiration_ids": [],
+          "generation": 3,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1835,
+        "radius_min": 1.25,
+        "radius_max": 1.25,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": false,
+            "responses": 1835
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.8387225904840325,
+          "paired_differences": {
+            "baseline": -1.6700723575755645,
+            "seed": -0.1516068835519837
+          },
+          "response_count": 263,
+          "artifact_sha256": "44b7548df6b53916ea5dde23ad47bbd123ffc38ee5469d2a432d6ce1110672ea"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.251628876080139,
+          "paired_differences": {
+            "baseline": -1.288279311329379,
+            "seed": -0.22893911759330976
+          },
+          "response_count": 383,
+          "artifact_sha256": "9a421e2bbdd532d0eda6cbc9bd9bfc78d66f496cc9dcf321f973b03298469815"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.6384652240348296,
+          "paired_differences": {
+            "baseline": -0.1284358344131573,
+            "seed": -0.11275017611178062
+          },
+          "response_count": 149,
+          "artifact_sha256": "a16824acde422d73a2b7c724d31f7dd6396b53350edae4203d4798117b4f8d08"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1644500485163483,
+          "paired_differences": {
+            "baseline": -0.34094101657153875,
+            "seed": -0.028806010513382052
+          },
+          "response_count": 103,
+          "artifact_sha256": "6ed60ae1fc211b2efbe520604fa13672538819edc4c87e451cfbc7c27f7be5b0"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.266670289827798,
+          "paired_differences": {
+            "baseline": 0.2535938835364604,
+            "seed": -1.0123375995636144
+          },
+          "response_count": 336,
+          "artifact_sha256": "78e147e3d030434beebabb6d4c7c41e5f339a485061d8e268db7da457b91668a"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.259213105730731,
+          "paired_differences": {
+            "baseline": 0.3224131823641838,
+            "seed": 0.5037017911216504
+          },
+          "response_count": 337,
+          "artifact_sha256": "75155f055ca07bc5aae76d284b2e4395719e5479a7b674b006b752d347344213"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.507451218016341,
+          "paired_differences": {
+            "baseline": -1.4979035678572417,
+            "seed": -0.09159043714938564
+          },
+          "response_count": 104,
+          "artifact_sha256": "61a1435a2efefa23d800f00c65df20be2bb9981e82048a42301b31474263139d"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.1674890442800887,
+          "paired_differences": {
+            "baseline": 0.054921855799422215,
+            "seed": -0.11829572896140172
+          },
+          "response_count": 160,
+          "artifact_sha256": "13aff3aae716323a98be83229eb47afe481c596b720a96d0c417bce5ec980e32"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.5451757332820857,
+          "baseline_mean_difference": -1.4791758344524717,
+          "baseline_difference_sd": 0.269968452010547,
+          "seed_mean_difference": -0.19027300057264673,
+          "seed_difference_sd": 0.054682147094926824
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4014576362755888,
+          "baseline_mean_difference": -0.23468842549234803,
+          "baseline_difference_sd": 0.15026385534147405,
+          "seed_mean_difference": -0.07077809331258134,
+          "seed_difference_sd": 0.059357488735674126
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.262941697779264,
+          "baseline_mean_difference": 0.2880035329503221,
+          "baseline_difference_sd": 0.04866259287758665,
+          "seed_mean_difference": -0.254317904220982,
+          "seed_difference_sd": 1.0720017336994723
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.3374701311482147,
+          "baseline_mean_difference": -0.7214908560289097,
+          "baseline_difference_sd": 1.0980133870665005,
+          "seed_mean_difference": -0.10494308305539368,
+          "seed_difference_sd": 0.018883492933842158
+        }
+      ]
+    },
+    {
+      "generation": 4,
+      "source_sha256": "381a00f364555bf218ad272d78cee7e7835960874085dd665ca75cc87df66845",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_4/main.py",
+      "mean_offline_error": 2.9362188116425973,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+          "parent_id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+          "archive_inspiration_ids": [
+            "5e5834c9-be1b-4c76-825f-553b7284e930"
+          ],
+          "top_k_inspiration_ids": [
+            "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+          ],
+          "generation": 4,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1790,
+        "radius_min": 1.2,
+        "radius_max": 1.2,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.2,
+            "reset_velocity": false,
+            "responses": 1790
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.1925563207131904,
+          "paired_differences": {
+            "baseline": -1.3162386273464066,
+            "seed": 0.20222684667717417
+          },
+          "response_count": 256,
+          "artifact_sha256": "54986b8e282fb57b62f7dea12133c2a04f5ffc06126d0caed35dc1c5347f5c85"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.3655288197869693,
+          "paired_differences": {
+            "baseline": -1.1743793676225485,
+            "seed": -0.11503917388647933
+          },
+          "response_count": 386,
+          "artifact_sha256": "b1e232d80caa2969fe573bae70344b6618290d7623b8a5580ca82d2ce3d978af"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.6353500560873613,
+          "paired_differences": {
+            "baseline": -0.13155100236062567,
+            "seed": -0.11586534405924898
+          },
+          "response_count": 142,
+          "artifact_sha256": "9b28aa69e4088661fac6cfe831ef62869a739964d8ead2dee73cb1894fd6c825"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1813172866602277,
+          "paired_differences": {
+            "baseline": -0.3240737784276593,
+            "seed": -0.011938772369502582
+          },
+          "response_count": 103,
+          "artifact_sha256": "a5603178bea670081029654c12a77d49a905d4e0aefb399d2aec166fe676a6b3"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.40109186203863,
+          "paired_differences": {
+            "baseline": 0.38801545574729257,
+            "seed": -0.8779160273527822
+          },
+          "response_count": 332,
+          "artifact_sha256": "de8c50ab361b4e7f1ccf42bedc20abba128976a3e01f40c0aadf10bda25a248c"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.4093250170361875,
+          "paired_differences": {
+            "baseline": 0.4725250936696406,
+            "seed": 0.6538137024271071
+          },
+          "response_count": 294,
+          "artifact_sha256": "5d155b83d50688e2e050102740590a4f55d7f51a3c14bea82f181d98e24f371a"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.109041574437791,
+          "paired_differences": {
+            "baseline": -1.8963132114357917,
+            "seed": -0.49000008072793566
+          },
+          "response_count": 111,
+          "artifact_sha256": "c16ded41b14c6d76a7655538b38f4bbad7478dc190741cfee1359bae9f9717ef"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.195539556380423,
+          "paired_differences": {
+            "baseline": 0.0829723678997567,
+            "seed": -0.09024521686106723
+          },
+          "response_count": 166,
+          "artifact_sha256": "397f83379506ce1051d7368893dbeeab4182b61177fdd26aa2ac09e544a434bd"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.7790425702500796,
+          "baseline_mean_difference": -1.2453089974844775,
+          "baseline_difference_sd": 0.10030964452484378,
+          "seed_mean_difference": 0.04359383639534742,
+          "seed_difference_sd": 0.22434095458063003
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4083336713737946,
+          "baseline_mean_difference": -0.22781239039414247,
+          "baseline_difference_sd": 0.13613416048985863,
+          "seed_mean_difference": -0.06390205821437578,
+          "seed_difference_sd": 0.07348718358728955
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.405208439537409,
+          "baseline_mean_difference": 0.43027027470846657,
+          "baseline_difference_sd": 0.05975733805051209,
+          "seed_mean_difference": -0.11205116246283753,
+          "seed_difference_sd": 1.0830964788723978
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.152290565409107,
+          "baseline_mean_difference": -0.9066704217680175,
+          "baseline_difference_sd": 1.3995662550529107,
+          "seed_mean_difference": -0.29012264879450145,
+          "seed_difference_sd": 0.28266937505256784
+        }
+      ]
+    },
+    {
+      "generation": 5,
+      "source_sha256": "824925832f7db7c433c68d63281907ae18c9cc1fd86ac9870affb9d2715c75bd",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_5/main.py",
+      "mean_offline_error": 3.043215116048751,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+          "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+          "archive_inspiration_ids": [
+            "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+          ],
+          "top_k_inspiration_ids": [
+            "5e5834c9-be1b-4c76-825f-553b7284e930"
+          ],
+          "generation": 5,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1814,
+        "radius_min": 1.3,
+        "radius_max": 1.3,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.3,
+            "reset_velocity": false,
+            "responses": 1814
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.5291760503688643,
+          "paired_differences": {
+            "baseline": -0.9796188976907327,
+            "seed": 0.538846576332848
+          },
+          "response_count": 279,
+          "artifact_sha256": "d0ecc210edef6d0cbc958627d5adc1f51d63e7eeb9ddda8403f13e726b5a4a2e"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.847430107566231,
+          "paired_differences": {
+            "baseline": -0.6924780798432866,
+            "seed": 0.36686211389278256
+          },
+          "response_count": 357,
+          "artifact_sha256": "52bb898de5ffb4d37942b372712e74f1d8b1a0fd756a29f0ab69e44fd72399eb"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7087066693693835,
+          "paired_differences": {
+            "baseline": -0.058194389078603415,
+            "seed": -0.04250873077722672
+          },
+          "response_count": 150,
+          "artifact_sha256": "08827514c496a9c4d7c2d2ffe543469c8a8b4852c78d3378bec1f9b6898b416d"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1666420321018298,
+          "paired_differences": {
+            "baseline": -0.3387490329860572,
+            "seed": -0.02661402692790049
+          },
+          "response_count": 103,
+          "artifact_sha256": "2fad19922da2fcf7235e8fd91264120095f9a615670827139080bbbac54e04de"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.705808565641888,
+          "paired_differences": {
+            "baseline": 0.6927321593505509,
+            "seed": -0.5731993237495239
+          },
+          "response_count": 336,
+          "artifact_sha256": "410ae6e129ebe45196f5cc6503f772ddaef2e27d5342f1732421bd07d228dc5c"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.63958101657083,
+          "paired_differences": {
+            "baseline": -0.2972189067957167,
+            "seed": -0.11593029803825017
+          },
+          "response_count": 307,
+          "artifact_sha256": "ea1619a6cd489891ed64a41cc483f6e9f94fad88b1a173af803de392b6b32ffc"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.500342174479809,
+          "paired_differences": {
+            "baseline": -1.5050126113937736,
+            "seed": -0.0986994806859176
+          },
+          "response_count": 105,
+          "artifact_sha256": "c86acddc35529fda43ba6c00a5dab774bae23dbf383bcc5c4d258b229b22489a"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.248034312291171,
+          "paired_differences": {
+            "baseline": 0.1354671238105043,
+            "seed": -0.03775046095031964
+          },
+          "response_count": 177,
+          "artifact_sha256": "f205f5ad14fd6150abe3bfbf330badcf64765fb9cf9a13b25888b65eae6504a8"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 3.1883030789675475,
+          "baseline_mean_difference": -0.8360484887670097,
+          "baseline_difference_sd": 0.20303921945538042,
+          "seed_mean_difference": 0.4528543451128153,
+          "seed_difference_sd": 0.12161137965009339
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4376743507356067,
+          "baseline_mean_difference": -0.1984717110323303,
+          "baseline_difference_sd": 0.19838209120033767,
+          "seed_mean_difference": -0.03456137885256361,
+          "seed_difference_sd": 0.011239252876810497
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.172694791106359,
+          "baseline_mean_difference": 0.19775662627741708,
+          "baseline_difference_sd": 0.7000011119148782,
+          "seed_mean_difference": -0.344564810893887,
+          "seed_difference_sd": 0.3233380289070074
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.3741882433854897,
+          "baseline_mean_difference": -0.6847727437916347,
+          "baseline_difference_sd": 1.1599943451620567,
+          "seed_mean_difference": -0.06822497081811862,
+          "seed_difference_sd": 0.04309746516171404
+        }
+      ]
+    },
+    {
+      "generation": 6,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_6/main.py",
+      "mean_offline_error": 3.2756435694835693,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "a7a973e9-07f0-40b1-a9a5-03f8d86bef32",
+          "parent_id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+          "archive_inspiration_ids": [
+            "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+          ],
+          "top_k_inspiration_ids": [
+            "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96"
+          ],
+          "generation": 6,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1836,
+        "radius_min": 1.25,
+        "radius_max": 1.25,
+        "reset_count": 1836,
+        "mean_case_reset_fraction": 1.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": true,
+            "responses": 1836
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.8664246733937646,
+          "paired_differences": {
+            "baseline": -1.6423702746658324,
+            "seed": -0.12390480064225162
+          },
+          "response_count": 264,
+          "artifact_sha256": "f6cdb524093db0197fa8f4ea6916c72ee1be08373be716498284acf4d01f6ea9"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.36763805645457,
+          "paired_differences": {
+            "baseline": -1.172270130954948,
+            "seed": -0.11292993721887878
+          },
+          "response_count": 387,
+          "artifact_sha256": "f3ee764ddad336ceadac7e8c2428ee1846a06d083c70fa42e66e2c7eb126c075"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7732701115105545,
+          "paired_differences": {
+            "baseline": 0.00636905306256752,
+            "seed": 0.022054711363944213
+          },
+          "response_count": 156,
+          "artifact_sha256": "0a738bd2baa94f4d14ac88caa5995ef9142be8a352a9ac0c1af7df1836d93cd3"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.2669782775593266,
+          "paired_differences": {
+            "baseline": -0.23841278752856043,
+            "seed": 0.07372221852959626
+          },
+          "response_count": 102,
+          "artifact_sha256": "93caa9d4d853a332d3e6b4d76954f68929605ef5c60b2976de508909d171e8e3"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.949923642858792,
+          "paired_differences": {
+            "baseline": 0.9368472365674547,
+            "seed": -0.32908424653262003
+          },
+          "response_count": 314,
+          "artifact_sha256": "72d802b7208a07f195cf703d28f55172d89233bd8512473e04d6cbcbf4d361fb"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.097088841561334,
+          "paired_differences": {
+            "baseline": 0.16028891819478686,
+            "seed": 0.3415775269522534
+          },
+          "response_count": 337,
+          "artifact_sha256": "754a2e8471ac443c4676fefebc3b9c6d43d3dac57e25572d9679244bc7ea15f4"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 5.054909599056492,
+          "paired_differences": {
+            "baseline": 0.04955481318290911,
+            "seed": 1.4558679438907651
+          },
+          "response_count": 93,
+          "artifact_sha256": "d824801371e980cae21cb1f590f9e23c75e922a542e8fa6d90bc72515994879d"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.8289153534737217,
+          "paired_differences": {
+            "baseline": 0.7163481649930552,
+            "seed": 0.5431305802322313
+          },
+          "response_count": 183,
+          "artifact_sha256": "78a0085b0bc6fb861a3961f6b2d165450f736404fe70cb2581a5ba367af011c1"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.617031364924167,
+          "baseline_mean_difference": -1.4073202028103902,
+          "baseline_difference_sd": 0.33241099945473696,
+          "seed_mean_difference": -0.1184173689305652,
+          "seed_difference_sd": 0.007760400349263142
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.5201241945349406,
+          "baseline_mean_difference": -0.11602186723299646,
+          "baseline_difference_sd": 0.17308689939331107,
+          "seed_mean_difference": 0.04788846494677024,
+          "seed_difference_sd": 0.0365344446838371
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.523506242210063,
+          "baseline_mean_difference": 0.5485680773811208,
+          "baseline_difference_sd": 0.5491096529081354,
+          "seed_mean_difference": 0.0062466402098166895,
+          "seed_difference_sd": 0.4742294879137503
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.441912476265107,
+          "baseline_mean_difference": 0.38295148908798216,
+          "baseline_difference_sd": 0.4714941007150616,
+          "seed_mean_difference": 0.9994992620614982,
+          "seed_difference_sd": 0.6454027792852811
+        }
+      ]
+    },
+    {
+      "generation": 7,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/main.py",
+      "mean_offline_error": 3.2756435694835693,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "0ae9da7a-7fb3-4c52-a737-d59c6e19e8a7",
+          "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+          "archive_inspiration_ids": [
+            "dd3af87f-fc07-4e51-9e9d-0258b55b3127"
+          ],
+          "top_k_inspiration_ids": [],
+          "generation": 7,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1836,
+        "radius_min": 1.25,
+        "radius_max": 1.25,
+        "reset_count": 1836,
+        "mean_case_reset_fraction": 1.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": true,
+            "responses": 1836
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.8664246733937646,
+          "paired_differences": {
+            "baseline": -1.6423702746658324,
+            "seed": -0.12390480064225162
+          },
+          "response_count": 264,
+          "artifact_sha256": "f6cdb524093db0197fa8f4ea6916c72ee1be08373be716498284acf4d01f6ea9"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.36763805645457,
+          "paired_differences": {
+            "baseline": -1.172270130954948,
+            "seed": -0.11292993721887878
+          },
+          "response_count": 387,
+          "artifact_sha256": "f3ee764ddad336ceadac7e8c2428ee1846a06d083c70fa42e66e2c7eb126c075"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7732701115105545,
+          "paired_differences": {
+            "baseline": 0.00636905306256752,
+            "seed": 0.022054711363944213
+          },
+          "response_count": 156,
+          "artifact_sha256": "0a738bd2baa94f4d14ac88caa5995ef9142be8a352a9ac0c1af7df1836d93cd3"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.2669782775593266,
+          "paired_differences": {
+            "baseline": -0.23841278752856043,
+            "seed": 0.07372221852959626
+          },
+          "response_count": 102,
+          "artifact_sha256": "93caa9d4d853a332d3e6b4d76954f68929605ef5c60b2976de508909d171e8e3"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.949923642858792,
+          "paired_differences": {
+            "baseline": 0.9368472365674547,
+            "seed": -0.32908424653262003
+          },
+          "response_count": 314,
+          "artifact_sha256": "72d802b7208a07f195cf703d28f55172d89233bd8512473e04d6cbcbf4d361fb"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.097088841561334,
+          "paired_differences": {
+            "baseline": 0.16028891819478686,
+            "seed": 0.3415775269522534
+          },
+          "response_count": 337,
+          "artifact_sha256": "754a2e8471ac443c4676fefebc3b9c6d43d3dac57e25572d9679244bc7ea15f4"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 5.054909599056492,
+          "paired_differences": {
+            "baseline": 0.04955481318290911,
+            "seed": 1.4558679438907651
+          },
+          "response_count": 93,
+          "artifact_sha256": "d824801371e980cae21cb1f590f9e23c75e922a542e8fa6d90bc72515994879d"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.8289153534737217,
+          "paired_differences": {
+            "baseline": 0.7163481649930552,
+            "seed": 0.5431305802322313
+          },
+          "response_count": 183,
+          "artifact_sha256": "78a0085b0bc6fb861a3961f6b2d165450f736404fe70cb2581a5ba367af011c1"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.617031364924167,
+          "baseline_mean_difference": -1.4073202028103902,
+          "baseline_difference_sd": 0.33241099945473696,
+          "seed_mean_difference": -0.1184173689305652,
+          "seed_difference_sd": 0.007760400349263142
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.5201241945349406,
+          "baseline_mean_difference": -0.11602186723299646,
+          "baseline_difference_sd": 0.17308689939331107,
+          "seed_mean_difference": 0.04788846494677024,
+          "seed_difference_sd": 0.0365344446838371
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.523506242210063,
+          "baseline_mean_difference": 0.5485680773811208,
+          "baseline_difference_sd": 0.5491096529081354,
+          "seed_mean_difference": 0.0062466402098166895,
+          "seed_difference_sd": 0.4742294879137503
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.441912476265107,
+          "baseline_mean_difference": 0.38295148908798216,
+          "baseline_difference_sd": 0.4714941007150616,
+          "seed_mean_difference": 0.9994992620614982,
+          "seed_difference_sd": 0.6454027792852811
+        }
+      ]
+    },
+    {
+      "generation": 8,
+      "source_sha256": "14121b4fccdad53385742ad175366f29a58e52569fd7568cdcdacf0e6d02f6e9",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_8/main.py",
+      "mean_offline_error": 3.0852607779226826,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "151c2361-879a-4492-8cff-b75e2f619a68",
+          "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+          "archive_inspiration_ids": [
+            "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+          ],
+          "top_k_inspiration_ids": [
+            "5e5834c9-be1b-4c76-825f-553b7284e930"
+          ],
+          "generation": 8,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1833,
+        "radius_min": 1.275,
+        "radius_max": 1.275,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.275,
+            "reset_velocity": false,
+            "responses": 1833
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.085739719330176,
+          "paired_differences": {
+            "baseline": -1.423055228729421,
+            "seed": 0.09541024529415987
+          },
+          "response_count": 268,
+          "artifact_sha256": "626b9e0e27ebdfb7ad2684ffe23cce549c19d3ccec7f94679c8350ae4cc51900"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.4943579764477115,
+          "paired_differences": {
+            "baseline": -1.0455502109618062,
+            "seed": 0.01378998277426291
+          },
+          "response_count": 384,
+          "artifact_sha256": "562856507010e29f49817bc7a4be530b10b42b64aa0a8f98979c51fe8eabacdb"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.6552589618267028,
+          "paired_differences": {
+            "baseline": -0.1116420966212841,
+            "seed": -0.09595643831990741
+          },
+          "response_count": 149,
+          "artifact_sha256": "20e746e03534d7482d31bdb0bed54eae227154795ab74c1d73d88551eb88c069"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1932841229354911,
+          "paired_differences": {
+            "baseline": -0.31210694215239587,
+            "seed": 2.8063905760822294e-05
+          },
+          "response_count": 103,
+          "artifact_sha256": "7abced28fd2485298edee3cf995f12cdd520c0fe5de2c10ed3b872a562572294"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.272641513533694,
+          "paired_differences": {
+            "baseline": 0.2595651072423566,
+            "seed": -1.0063663758577182
+          },
+          "response_count": 332,
+          "artifact_sha256": "fd9d66012fdf042813ce3dfabaaa30ff5094e34cfbc041418757d38f06ab4b9d"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 5.201660181361877,
+          "paired_differences": {
+            "baseline": 1.26486025799533,
+            "seed": 1.4461488667527966
+          },
+          "response_count": 314,
+          "artifact_sha256": "64a386ebc4ea9de28bb39b825c49f76b29e1af30e0e7a1a2aee76a357945912f"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.4819307465991916,
+          "paired_differences": {
+            "baseline": -1.5234240392743912,
+            "seed": -0.11711090856653517
+          },
+          "response_count": 107,
+          "artifact_sha256": "a43367ce5f44a30c312206a587a626c8d403861776f3fe0e885a507ec672d1a8"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.2972130013466177,
+          "paired_differences": {
+            "baseline": 0.18464581286595116,
+            "seed": 0.011428228105127225
+          },
+          "response_count": 176,
+          "artifact_sha256": "dd7df2c4f4718203a9c36321a450c367d787dc987c318197fe67602ca621fdc7"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.7900488478889436,
+          "baseline_mean_difference": -1.2343027198456136,
+          "baseline_difference_sd": 0.2669363579954285,
+          "seed_mean_difference": 0.05460011403421139,
+          "seed_difference_sd": 0.05771424111004535
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.424271542381097,
+          "baseline_mean_difference": -0.21187451938684,
+          "baseline_difference_sd": 0.1417500516645629,
+          "seed_mean_difference": -0.047964187207073294,
+          "seed_difference_sd": 0.06787129241258527
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.7371508474477855,
+          "baseline_mean_difference": 0.7622126826188433,
+          "baseline_difference_sd": 0.7108510181913801,
+          "seed_mean_difference": 0.21989124544753924,
+          "seed_difference_sd": 1.7341901590132658
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.389571873972905,
+          "baseline_mean_difference": -0.66938911320422,
+          "baseline_difference_sd": 1.2077877751887396,
+          "seed_mean_difference": -0.05284134023070397,
+          "seed_difference_sd": 0.09089089518839691
+        }
+      ]
+    },
+    {
+      "generation": 9,
+      "source_sha256": "c152d10b6c27220e3f95bb635caedda406ba5e46d1a87ca2b0ffb671ef531b6a",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_9/main.py",
+      "mean_offline_error": 3.5052938337431674,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [
+        "relative_fitness_drop"
+      ],
+      "kind": "state-dependent",
+      "native_lineage": [
+        {
+          "id": "bd1a707a-44a4-4c79-a93c-4d7d23bf6849",
+          "parent_id": "0ae9da7a-7fb3-4c52-a737-d59c6e19e8a7",
+          "archive_inspiration_ids": [
+            "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc"
+          ],
+          "top_k_inspiration_ids": [
+            "dd3af87f-fc07-4e51-9e9d-0258b55b3127"
+          ],
+          "generation": 9,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 2,
+        "response_count": 1754,
+        "radius_min": 1.25,
+        "radius_max": 1.25,
+        "reset_count": 1090,
+        "mean_case_reset_fraction": 0.583110255721268,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": true,
+            "responses": 1090
+          },
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": false,
+            "responses": 664
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.015430155421138,
+          "paired_differences": {
+            "baseline": -1.493364792638459,
+            "seed": 0.02510068138512178
+          },
+          "response_count": 266,
+          "artifact_sha256": "de2f6612004938b43807fdff4e131729234dd0df3b046607854da4903f07f7fb"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.398817401169041,
+          "paired_differences": {
+            "baseline": -0.14109078624047688,
+            "seed": 0.9182494074955923
+          },
+          "response_count": 345,
+          "artifact_sha256": "3e77568069b56dda7c1c256477c00b2e0365fc8afe0a6653640337e95ca55727"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7508120967340781,
+          "paired_differences": {
+            "baseline": -0.016088961713908834,
+            "seed": -0.0004033034125321411
+          },
+          "response_count": 149,
+          "artifact_sha256": "c601b0560d32a96ed10435508e1a643818862083bfabe9b434a460f601564a2f"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.3234192091758399,
+          "paired_differences": {
+            "baseline": -0.18197185591204712,
+            "seed": 0.13016315014610957
+          },
+          "response_count": 103,
+          "artifact_sha256": "eac4fe78351d69419564252a32f40076b3297658fa9444b52c0b22c0dd01c3de"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 5.234229457140948,
+          "paired_differences": {
+            "baseline": 1.221153050849611,
+            "seed": -0.04477843225046385
+          },
+          "response_count": 336,
+          "artifact_sha256": "b7c310db84715a890aab12118baf1dd7abf15c00a6dd9a8ec1c2945896ba012c"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.6520901552248,
+          "paired_differences": {
+            "baseline": 0.7152902318582535,
+            "seed": 0.89657884061572
+          },
+          "response_count": 294,
+          "artifact_sha256": "b2ba6c793571a5506362475ee41f53e721fe9679901f5a57c7e00de30820fcb6"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.823650674742771,
+          "paired_differences": {
+            "baseline": -0.18170411113081197,
+            "seed": 1.224609019577044
+          },
+          "response_count": 98,
+          "artifact_sha256": "b4110fa458d07422e865d81f96521e88db3cf5ded3b012c4c0c85003bfe37e14"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.8439015203367233,
+          "paired_differences": {
+            "baseline": 0.7313343318560568,
+            "seed": 0.5581167470952328
+          },
+          "response_count": 163,
+          "artifact_sha256": "6ed0a16c725f481eccbd3a25b7853f8258d620813f3c69761761a5fdb1179e99"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 3.2071237782950894,
+          "baseline_mean_difference": -0.8172277894394679,
+          "baseline_difference_sd": 0.9562021199463139,
+          "seed_mean_difference": 0.471675044440357,
+          "seed_difference_sd": 0.6315515208408401
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.537115652954959,
+          "baseline_mean_difference": -0.09903040881297798,
+          "baseline_difference_sd": 0.11729691937035418,
+          "seed_mean_difference": 0.06487992336678872,
+          "seed_difference_sd": 0.09232442470679399
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.943159806182875,
+          "baseline_mean_difference": 0.9682216413539322,
+          "baseline_difference_sd": 0.35769902965893186,
+          "seed_mean_difference": 0.4259002041826281,
+          "seed_difference_sd": 0.6656401111629537
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.333776097539747,
+          "baseline_mean_difference": 0.2748151103626224,
+          "baseline_difference_sd": 0.6456156745200219,
+          "seed_mean_difference": 0.8913628833361384,
+          "seed_difference_sd": 0.4712812054803209
+        }
+      ]
+    },
+    {
+      "generation": 10,
+      "source_sha256": "4d06f38e6c133b788c5a2ad186cfab9b70d4833bbbe369cbaefe545496e83a28",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_10/main.py",
+      "mean_offline_error": 3.1770637650852698,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [
+        "default_radius",
+        "fitness_drop",
+        "recent_improvement",
+        "swarm_diameter"
+      ],
+      "kind": "state-dependent",
+      "native_lineage": [
+        {
+          "id": "eea83ccd-33cf-441f-88ab-fa40f68d2e76",
+          "parent_id": "0ae9da7a-7fb3-4c52-a737-d59c6e19e8a7",
+          "archive_inspiration_ids": [
+            "bd1a707a-44a4-4c79-a93c-4d7d23bf6849"
+          ],
+          "top_k_inspiration_ids": [
+            "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc"
+          ],
+          "generation": 10,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1808,
+        "response_count": 1808,
+        "radius_min": 0.8508547047978259,
+        "radius_max": 1.349991860536867,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.3037080835275745,
+            "reset_velocity": false,
+            "responses": 1
+          },
+          {
+            "radius_scale": 0.9733033737358292,
+            "reset_velocity": false,
+            "responses": 1
+          },
+          {
+            "radius_scale": 1.341470588250812,
+            "reset_velocity": false,
+            "responses": 1
+          },
+          {
+            "radius_scale": 0.8524144976899428,
+            "reset_velocity": false,
+            "responses": 1
+          },
+          {
+            "radius_scale": 1.348749967612302,
+            "reset_velocity": false,
+            "responses": 1
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.888832133895831,
+          "paired_differences": {
+            "baseline": -1.6199628141637659,
+            "seed": -0.10149734014018508
+          },
+          "response_count": 266,
+          "artifact_sha256": "f57f6a64c4962c449602b6c9d179230af96f47968999e926049253d111ac7bb2"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.351956613912276,
+          "paired_differences": {
+            "baseline": -0.18795157349724168,
+            "seed": 0.8713886202388275
+          },
+          "response_count": 333,
+          "artifact_sha256": "e5b9f0fe66a8915c598c11c746eaa375bc2984e764d00218d81b8ef128da7fda"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.778134605532833,
+          "paired_differences": {
+            "baseline": 0.01123354708484614,
+            "seed": 0.026919205386222833
+          },
+          "response_count": 149,
+          "artifact_sha256": "e767d3e6779905eb72b6a7c2f7d5e864e7403af6113c124e754131428d3cc0ab"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1629881519161354,
+          "paired_differences": {
+            "baseline": -0.34240291317175164,
+            "seed": -0.03026790711359495
+          },
+          "response_count": 103,
+          "artifact_sha256": "87f7c8fad7453d3d72e713d1bb0f9f66c03e0f9d73891eb7bd0a67db88b5b317"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.465608715835247,
+          "paired_differences": {
+            "baseline": 0.45253230954390933,
+            "seed": -0.8133991735561654
+          },
+          "response_count": 348,
+          "artifact_sha256": "821c60224df3147db1ad9783cacd788aded7ce9412829d11aaa1a3d21f47b130"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.6452160021402764,
+          "paired_differences": {
+            "baseline": -0.2915839212262705,
+            "seed": -0.11029531246880397
+          },
+          "response_count": 327,
+          "artifact_sha256": "8423f05c82f8be56412319be6c32626b5ce4d2b9bd5ca4d722fd15c204f26d0b"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.6680630282155184,
+          "paired_differences": {
+            "baseline": -1.3372917576580643,
+            "seed": 0.06902137304979172
+          },
+          "response_count": 104,
+          "artifact_sha256": "611a1eed400c8a74bd056927364952a770e8bd1cb16cd43348c567745ec5abab"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.45571086923404,
+          "paired_differences": {
+            "baseline": 1.3431436807533736,
+            "seed": 1.1699260959925497
+          },
+          "response_count": 178,
+          "artifact_sha256": "fd16d8586bc42217c6380edac0eea9b5a8eb864376fd9b55ca6b232857ba3f19"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 3.1203943739040536,
+          "baseline_mean_difference": -0.9039571938305038,
+          "baseline_difference_sd": 1.0125848590106603,
+          "seed_mean_difference": 0.3849456400493212,
+          "seed_difference_sd": 0.6879342599051865
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4705613787244842,
+          "baseline_mean_difference": -0.16558468304345275,
+          "baseline_difference_sd": 0.2500587391222473,
+          "seed_mean_difference": -0.0016743508636860582,
+          "seed_difference_sd": 0.04043739504509913
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.055412358987762,
+          "baseline_mean_difference": 0.0804741941588194,
+          "baseline_difference_sd": 0.5261696327685681,
+          "seed_mean_difference": -0.4618472430124847,
+          "seed_difference_sd": 0.4971695080533176
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 4.061886948724779,
+          "baseline_mean_difference": 0.0029259615476546763,
+          "baseline_difference_sd": 1.8953540750334643,
+          "seed_mean_difference": 0.6194737345211707,
+          "seed_difference_sd": 0.7784571950331215
+        }
+      ]
+    },
+    {
+      "generation": 11,
+      "source_sha256": "41ba7b5dd54afeeb5aafa8929495165bf2c7ed028bf54fafae83abbb6b3997aa",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_11/main.py",
+      "mean_offline_error": 3.139013057655509,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [],
+      "kind": "constant",
+      "native_lineage": [
+        {
+          "id": "36723cd7-075a-4653-b01d-5dcbb1212d20",
+          "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+          "archive_inspiration_ids": [
+            "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+          ],
+          "top_k_inspiration_ids": [
+            "5e5834c9-be1b-4c76-825f-553b7284e930"
+          ],
+          "generation": 11,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 1,
+        "response_count": 1777,
+        "radius_min": 1.225,
+        "radius_max": 1.225,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.225,
+            "reset_velocity": false,
+            "responses": 1777
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.199300258132343,
+          "paired_differences": {
+            "baseline": -1.309494689927254,
+            "seed": 0.20897078409632686
+          },
+          "response_count": 255,
+          "artifact_sha256": "6e265fed5b2371d0fbbefd1e527b7b88bcfd614074b74ebd1ca942d0e1fbe9c0"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 3.3279598346459713,
+          "paired_differences": {
+            "baseline": -0.2119483527635464,
+            "seed": 0.8473918409725227
+          },
+          "response_count": 340,
+          "artifact_sha256": "5e9c8c50ed87c9f83b6313628fd7b5cd8f8fb3bf8b7a5cddb92e6e84bf0a9a5e"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.6595172938932508,
+          "paired_differences": {
+            "baseline": -0.1073837645547362,
+            "seed": -0.0916981062533595
+          },
+          "response_count": 151,
+          "artifact_sha256": "b2fe469188a3b63c09934f82414b483c778011408e16e38fb4bed0842df6fa3e"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.1780056195606794,
+          "paired_differences": {
+            "baseline": -0.3273854455272076,
+            "seed": -0.015250439469050914
+          },
+          "response_count": 103,
+          "artifact_sha256": "bdb914a269e79f46ca5b213fb004bb3d8ffe805ce93bf4c8f94293ddc9256b15"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.533584442923409,
+          "paired_differences": {
+            "baseline": 0.520508036632072,
+            "seed": -0.7454234464680027
+          },
+          "response_count": 357,
+          "artifact_sha256": "176bc6e2cb7619bbf704247f051df0e77895742bcb5c2376c0fb3305a73716a9"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.820864981221913,
+          "paired_differences": {
+            "baseline": -0.11593494214463407,
+            "seed": 0.06535366661283248
+          },
+          "response_count": 314,
+          "artifact_sha256": "c894f974a0545c048656ef4606afc8f810f2181d5de7a86e9710567022e39d12"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.2812041377395387,
+          "paired_differences": {
+            "baseline": -1.724150648134044,
+            "seed": -0.31783751742618804
+          },
+          "response_count": 105,
+          "artifact_sha256": "16bd088ec6bfb5f22433126d06e11c2d8e291e3315e32f866efacaa087b41008"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 4.111667893126969,
+          "paired_differences": {
+            "baseline": 0.9991007046463021,
+            "seed": 0.8258831198854781
+          },
+          "response_count": 152,
+          "artifact_sha256": "c065e94e31c39fc8ad638ca73e11ceb43357be33dbed80076df8c807eb515fd2"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 3.2636300463891574,
+          "baseline_mean_difference": -0.7607215213454002,
+          "baseline_difference_sd": 0.7760824576749145,
+          "seed_mean_difference": 0.5281813125344248,
+          "seed_difference_sd": 0.4514318585694406
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.418761456726965,
+          "baseline_mean_difference": -0.2173846050409719,
+          "baseline_difference_sd": 0.15556468048807398,
+          "seed_mean_difference": -0.05347427286120521,
+          "seed_difference_sd": 0.05405666358907419
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.177224712072661,
+          "baseline_mean_difference": 0.20228654724371897,
+          "baseline_difference_sd": 0.4500331461315748,
+          "seed_mean_difference": -0.3400348899275851,
+          "seed_difference_sd": 0.5733059946903108
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.6964360154332536,
+          "baseline_mean_difference": -0.362524971743871,
+          "baseline_difference_sd": 1.9256294984264217,
+          "seed_mean_difference": 0.25402280122964505,
+          "seed_difference_sd": 0.808732618426079
+        }
+      ]
+    },
+    {
+      "generation": 12,
+      "source_sha256": "1c2f6664f98ff8f12afa7475cc19aa07a95555e0e35f0dbc8cbdd690613655bb",
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_12/main.py",
+      "mean_offline_error": 2.9112146577463633,
+      "source_safety_review": "pass: only local deterministic computation and allowed public scalar observations",
+      "observations_read": [
+        "default_radius",
+        "swarm_diameter"
+      ],
+      "kind": "state-dependent",
+      "native_lineage": [
+        {
+          "id": "eaaf2a11-3507-4e20-976c-61674f82058a",
+          "parent_id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+          "archive_inspiration_ids": [
+            "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+          ],
+          "top_k_inspiration_ids": [
+            "5e5834c9-be1b-4c76-825f-553b7284e930"
+          ],
+          "generation": 12,
+          "correct": 1
+        }
+      ],
+      "action_occupancy": {
+        "unique_pairs": 2,
+        "response_count": 1842,
+        "radius_min": 1.2,
+        "radius_max": 1.25,
+        "reset_count": 0,
+        "mean_case_reset_fraction": 0.0,
+        "most_frequent_pairs": [
+          {
+            "radius_scale": 1.25,
+            "reset_velocity": false,
+            "responses": 1556
+          },
+          {
+            "radius_scale": 1.2,
+            "reset_velocity": false,
+            "responses": 286
+          }
+        ]
+      },
+      "all_cases_including_losses": [
+        {
+          "case_id": "case_000",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.6823792843499077,
+          "paired_differences": {
+            "baseline": -1.8264156637096893,
+            "seed": -0.30795018968610854
+          },
+          "response_count": 306,
+          "artifact_sha256": "7d96dcd91515f7264ab43a48a4d7a12fee8c8d5625258647e5c4cd6ccc132f51"
+        },
+        {
+          "case_id": "case_001",
+          "regime": "severity=1.0,period=2500",
+          "offline_error": 2.6991251956908684,
+          "paired_differences": {
+            "baseline": -0.8407829917186493,
+            "seed": 0.2185572020174198
+          },
+          "response_count": 355,
+          "artifact_sha256": "e9ff3c44b051a52563080fb005e0f9debccc008efe3dbb57c317d3bee2b66082"
+        },
+        {
+          "case_id": "case_002",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.7225923969729846,
+          "paired_differences": {
+            "baseline": -0.04430866147500234,
+            "seed": -0.02862300317362565
+          },
+          "response_count": 149,
+          "artifact_sha256": "c7d0b961d401ad0baac45f948ea65ef988cbb1a8c8e3b31de17f2608c42e6ec4"
+        },
+        {
+          "case_id": "case_003",
+          "regime": "severity=1.0,period=5000",
+          "offline_error": 1.164450666155193,
+          "paired_differences": {
+            "baseline": -0.340940398932694,
+            "seed": -0.028805392874537317
+          },
+          "response_count": 103,
+          "artifact_sha256": "a60d2c8571adbcb67b9b67db0bfd8f97532104752e34107cba0ae68ff5baad3b"
+        },
+        {
+          "case_id": "case_004",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 4.079831715090102,
+          "paired_differences": {
+            "baseline": 0.0667553087987649,
+            "seed": -1.1991761743013098
+          },
+          "response_count": 334,
+          "artifact_sha256": "ad15966f1b420fab2094fc1e655a1f23872e00eb40ac5b7a1f0d472b4148988f"
+        },
+        {
+          "case_id": "case_005",
+          "regime": "severity=3.0,period=2500",
+          "offline_error": 3.955441437380566,
+          "paired_differences": {
+            "baseline": 0.018641514014019034,
+            "seed": 0.19993012277148559
+          },
+          "response_count": 334,
+          "artifact_sha256": "c986c143b8de77dad62d6e2aebfdd158f20ecce91d325371e48ba8ed303fb1b7"
+        },
+        {
+          "case_id": "case_006",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.6092286514188348,
+          "paired_differences": {
+            "baseline": -1.396126134454748,
+            "seed": 0.010186996253108038
+          },
+          "response_count": 104,
+          "artifact_sha256": "08d163fb2c58bc45bdbfd6345f65e8a2dbc75a38ef6386dfcf2d1b16afb8d3ad"
+        },
+        {
+          "case_id": "case_007",
+          "regime": "severity=3.0,period=5000",
+          "offline_error": 3.3766679149124488,
+          "paired_differences": {
+            "baseline": 0.2641007264317823,
+            "seed": 0.09088314167095835
+          },
+          "response_count": 157,
+          "artifact_sha256": "190bde479384af241b2c092dc3e1cc8eab829aacf1315ff28035fd7f8dab0280"
+        }
+      ],
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.6907522400203883,
+          "baseline_mean_difference": -1.3335993277141693,
+          "baseline_difference_sd": 0.6969475461238804,
+          "seed_mean_difference": -0.044696493834344375,
+          "seed_difference_sd": 0.37229694701840665
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4435215315640888,
+          "baseline_mean_difference": -0.19262453020384818,
+          "baseline_difference_sd": 0.2097503130714814,
+          "seed_mean_difference": -0.028714198024081483,
+          "seed_difference_sd": 0.000128968994333226
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.0176365762353345,
+          "baseline_mean_difference": 0.04269841140639197,
+          "baseline_difference_sd": 0.034021590560911745,
+          "seed_mean_difference": -0.49962302576491213,
+          "seed_difference_sd": 0.9893175502609739
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.4929482831656418,
+          "baseline_mean_difference": -0.5660127040114828,
+          "baseline_difference_sd": 1.1739576716409204,
+          "seed_mean_difference": 0.05053506896203319,
+          "seed_difference_sd": 0.057060791640577695
+        }
+      ]
+    }
+  ],
+  "new_sources_reviewed": [
+    {
+      "generation": 9,
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\n        \"radius_scale\": 1.25,\n        \"reset_velocity\": bool(observation[\"relative_fitness_drop\"] > 0.15),\n    }\n# EVOLVE-BLOCK-END\n",
+      "source_sha256": "c152d10b6c27220e3f95bb635caedda406ba5e46d1a87ca2b0ffb671ef531b6a"
+    },
+    {
+      "generation": 10,
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    default_radius = max(1e-12, float(observation[\"default_radius\"]))\n    diameter = max(0.0, float(observation[\"swarm_diameter\"]))\n    loss = max(0.0, float(observation[\"fitness_drop\"]))\n    progress = max(0.0, float(observation[\"recent_improvement\"]))\n    # Saturating measures of existing spatial coverage and recovery pressure.\n    spread = diameter / (diameter + 2.0 * default_radius)\n    pressure = loss / (loss + progress + 1e-12)\n    radius_scale = 1.0 + 0.35 * pressure * (1.0 - spread) - 0.15 * spread\n    return {\n        \"radius_scale\": float(min(1.35, max(0.85, radius_scale))),\n        \"reset_velocity\": False,\n    }\n# EVOLVE-BLOCK-END\n",
+      "source_sha256": "4d06f38e6c133b788c5a2ad186cfab9b70d4833bbbe369cbaefe545496e83a28"
+    },
+    {
+      "generation": 11,
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.225, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "source_sha256": "41ba7b5dd54afeeb5aafa8929495165bf2c7ed028bf54fafae83abbb6b3997aa"
+    },
+    {
+      "generation": 12,
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    compactness = observation[\"swarm_diameter\"] / max(\n        observation[\"default_radius\"], 1e-12\n    )\n    radius_scale = 1.25 if compactness < 2.0 else 1.2\n    return {\"radius_scale\": radius_scale, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "source_sha256": "1c2f6664f98ff8f12afa7475cc19aa07a95555e0e35f0dbc8cbdd690613655bb"
+    }
+  ],
+  "independent_saved_evidence_checks": {
+    "saved_cases": 104,
+    "response_decisions_recomputed_without_objective_calls": 23651,
+    "paired_landscapes": true,
+    "full_100000query_budgets": true,
+    "source_output_matches_saved_actions": true,
+    "no_program_or_case_excluded_for_large_loss": true
+  },
+  "accounting": {
+    "terminal_evaluated_slots": 13,
+    "valid_descendants": 12,
+    "terminal_failures": 0,
+    "nominal_case_evaluations": 104,
+    "exact_phaseA_seed_reuse_cases": 8,
+    "new_native_case_executions": 96,
+    "new_native_objective_queries": 9600000,
+    "within_new_native_work_exact_duplicate_generation7_cases": 8,
+    "within_new_native_work_exact_duplicate_queries": 800000,
+    "unique_descendant_sources": 11
+  },
+  "interpretation": "Native search found useful constant tuning on shared development cases. Three later programs use public state (gens9,10,12), but none outperforms the simplest selected constant. Conditional compactness gen12 is close and should not be dismissed as impossible; this small search does not establish adaptive recovery value. The radius1.25 reset intervention is worse than retain on7/8development cases. These are development comparisons, not overshoot mediator evidence or fresh confirmation.",
+  "recommended_pilot_comparator": "corrected original baseline count5 radius1 retained velocity",
+  "pilot_claim_scope": "Freeze gen3 and baseline before fresh cases to probe overall performance of the complete selected method. That pilot cannot separately identify the effect of count4, tuned radius, native search, or any engine feature; it does not test conditional value because the selected policy is constant.",
+  "mutations": "none",
+  "objective_queries_or_model_requests_for_review": 0
+}

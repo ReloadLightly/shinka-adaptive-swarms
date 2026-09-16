@@ -1,0 +1,26 @@
+<NAME>
+spread_compensated_recovery
+</NAME>
+<DESCRIPTION>
+Retain velocity, motivated by the fixed seed’s stronger aggregate results. Replace threshold resetting with a bounded radius controller: expand when deterioration exceeds recent progress and the swarm is compact; contract modestly when existing spread already supplies exploration. Radius stays between 0.85 and 1.35. This is an untested candidate, not evidence of improvement or overshoot.
+</DESCRIPTION>
+<CODE>
+```python
+"""Count-four recovery policy; memory reevaluation is fixed by the adapter."""
+# EVOLVE-BLOCK-START
+def choose_recovery(observation: dict) -> dict:
+    default_radius = max(1e-12, float(observation["default_radius"]))
+    diameter = max(0.0, float(observation["swarm_diameter"]))
+    loss = max(0.0, float(observation["fitness_drop"]))
+    progress = max(0.0, float(observation["recent_improvement"]))
+    # Saturating measures of existing spatial coverage and recovery pressure.
+    spread = diameter / (diameter + 2.0 * default_radius)
+    pressure = loss / (loss + progress + 1e-12)
+    radius_scale = 1.0 + 0.35 * pressure * (1.0 - spread) - 0.15 * spread
+    return {
+        "radius_scale": float(min(1.35, max(0.85, radius_scale))),
+        "reset_velocity": False,
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

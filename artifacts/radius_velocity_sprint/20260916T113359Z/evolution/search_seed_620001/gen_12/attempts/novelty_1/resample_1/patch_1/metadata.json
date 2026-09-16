@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "compactness_conditioned_radius",
+  "patch_description": "Use swarm diameter relative to default radius to choose between two promising constants: 1.25 for compact swarms and 1.2 otherwise. Retain velocity in both cases. This tests whether slightly wider relocation benefits compact swarms; the supplied results do not establish that relationship. Improvement requires evaluation, and any transfer claim requires a separate probe.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T14:04:30.757988",
+  "llm_cost": 0.13001,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

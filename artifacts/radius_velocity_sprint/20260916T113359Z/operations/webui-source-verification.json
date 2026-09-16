@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-16T11:53:25.560369+00:00",
+  "scope": "Interactive generation3 node/source verification after initial tree-only screenshot",
+  "steps": [
+    {
+      "args": [
+        "open",
+        "http://127.0.0.1:8894/viz_tree.html?db_path=search_seed_620001%2Fprograms.sqlite"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 \ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n  http://127.0.0.1:8894/viz_tree.html?db_path=search_seed_620001%2Fprograms.sqlite\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "find",
+        "role",
+        "group",
+        "click",
+        "--name",
+        "3I0"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "\u2717 7 elements have role \"group\", but none match name \"3I0\". Names seen: \"\"\n"
+    }
+  ],
+  "close_returncode": 0
+}

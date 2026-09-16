@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "spread_compensated_recovery",
+  "patch_description": "Retain velocity, motivated by the fixed seed\u2019s stronger aggregate results. Replace threshold resetting with a bounded radius controller: expand when deterioration exceeds recent progress and the swarm is compact; contract modestly when existing spread already supplies exploration. Radius stays between 0.85 and 1.35. This is an untested candidate, not evidence of improvement or overshoot.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T14:01:19.463362",
+  "llm_cost": 0.14998,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

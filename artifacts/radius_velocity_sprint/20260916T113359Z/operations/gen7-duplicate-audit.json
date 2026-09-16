@@ -1,0 +1,368 @@
+{
+  "created_at": "2026-09-16T12:00:40.176753+00:00",
+  "new_objective_queries_for_this_audit": 0,
+  "new_model_calls_for_this_audit": 0,
+  "source_sha256": [
+    "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa",
+    "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa"
+  ],
+  "source_bytes_equal": true,
+  "source_equal_after_trailing_whitespace_strip": true,
+  "python_ast_equal": true,
+  "behavior": "Both are observation-independent radius_scale=1.25/reset_velocity=True; count four and memory reevaluation are fixed by the adapter.",
+  "cases": [
+    {
+      "case_id": "case_000",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_000.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_000.json.gz"
+      ],
+      "file_sha256": [
+        "f6cdb524093db0197fa8f4ea6916c72ee1be08373be716498284acf4d01f6ea9",
+        "f6cdb524093db0197fa8f4ea6916c72ee1be08373be716498284acf4d01f6ea9"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        2.8664246733937646,
+        2.8664246733937646
+      ]
+    },
+    {
+      "case_id": "case_001",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_001.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_001.json.gz"
+      ],
+      "file_sha256": [
+        "f3ee764ddad336ceadac7e8c2428ee1846a06d083c70fa42e66e2c7eb126c075",
+        "f3ee764ddad336ceadac7e8c2428ee1846a06d083c70fa42e66e2c7eb126c075"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        2.36763805645457,
+        2.36763805645457
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_002.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_002.json.gz"
+      ],
+      "file_sha256": [
+        "0a738bd2baa94f4d14ac88caa5995ef9142be8a352a9ac0c1af7df1836d93cd3",
+        "0a738bd2baa94f4d14ac88caa5995ef9142be8a352a9ac0c1af7df1836d93cd3"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        1.7732701115105545,
+        1.7732701115105545
+      ]
+    },
+    {
+      "case_id": "case_003",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_003.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_003.json.gz"
+      ],
+      "file_sha256": [
+        "93caa9d4d853a332d3e6b4d76954f68929605ef5c60b2976de508909d171e8e3",
+        "93caa9d4d853a332d3e6b4d76954f68929605ef5c60b2976de508909d171e8e3"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        1.2669782775593266,
+        1.2669782775593266
+      ]
+    },
+    {
+      "case_id": "case_004",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_004.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_004.json.gz"
+      ],
+      "file_sha256": [
+        "72d802b7208a07f195cf703d28f55172d89233bd8512473e04d6cbcbf4d361fb",
+        "72d802b7208a07f195cf703d28f55172d89233bd8512473e04d6cbcbf4d361fb"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        4.949923642858792,
+        4.949923642858792
+      ]
+    },
+    {
+      "case_id": "case_005",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_005.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_005.json.gz"
+      ],
+      "file_sha256": [
+        "754a2e8471ac443c4676fefebc3b9c6d43d3dac57e25572d9679244bc7ea15f4",
+        "754a2e8471ac443c4676fefebc3b9c6d43d3dac57e25572d9679244bc7ea15f4"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        4.097088841561334,
+        4.097088841561334
+      ]
+    },
+    {
+      "case_id": "case_006",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_006.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_006.json.gz"
+      ],
+      "file_sha256": [
+        "d824801371e980cae21cb1f590f9e23c75e922a542e8fa6d90bc72515994879d",
+        "d824801371e980cae21cb1f590f9e23c75e922a542e8fa6d90bc72515994879d"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        5.054909599056492,
+        5.054909599056492
+      ]
+    },
+    {
+      "case_id": "case_007",
+      "artifacts": [
+        "evolution/search_seed_620001/gen_6/results/case_007.json.gz",
+        "evolution/search_seed_620001/gen_7/results/case_007.json.gz"
+      ],
+      "file_sha256": [
+        "78a0085b0bc6fb861a3961f6b2d165450f736404fe70cb2581a5ba367af011c1",
+        "78a0085b0bc6fb861a3961f6b2d165450f736404fe70cb2581a5ba367af011c1"
+      ],
+      "unequal_top_level_keys": [],
+      "whole_decoded_case_equal": true,
+      "evaluations": [
+        100000,
+        100000
+      ],
+      "offline_error": [
+        3.8289153534737217,
+        3.8289153534737217
+      ]
+    }
+  ],
+  "duplicate_new_full_executions": 8,
+  "duplicate_new_objective_queries": 800000,
+  "counting_scope": "Generation 7 repeated generation 6 numerically within the originally allocated native slots; retained and counted, with no replacement generation or budget expansion.",
+  "database_records": [
+    {
+      "id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+      "generation": 0,
+      "island_idx": 0,
+      "timestamp": 1789559349.981306,
+      "timing": {
+        "sampling_started_at": 1789559344.2436512,
+        "sampling_finished_at": 1789559344.2436512,
+        "evaluation_started_at": 1789559344.2476044,
+        "evaluation_finished_at": 1789559346.2541246,
+        "postprocess_finished_at": 1789559349.9995441,
+        "postprocess_db_maintenance_finished_at": 1789559349.9982238
+      },
+      "timestamp_utc": "2026-09-16T11:49:09.981306+00:00"
+    },
+    {
+      "id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+      "generation": 0,
+      "island_idx": 1,
+      "timestamp": 1789559349.981306,
+      "timing": {
+        "sampling_started_at": 1789559344.2436512,
+        "sampling_finished_at": 1789559344.2436512,
+        "evaluation_started_at": 1789559344.2476044,
+        "evaluation_finished_at": 1789559346.2541246,
+        "postprocess_finished_at": 1789559346.2541246
+      },
+      "timestamp_utc": "2026-09-16T11:49:09.981306+00:00"
+    },
+    {
+      "id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+      "generation": 5,
+      "island_idx": 0,
+      "timestamp": 1789559746.563145,
+      "timing": {
+        "sampling_started_at": 1789559531.8994033,
+        "sampling_finished_at": 1789559699.1846526,
+        "evaluation_started_at": 1789559699.1846526,
+        "evaluation_finished_at": 1789559746.5596275,
+        "postprocess_finished_at": 1789559746.5765288,
+        "postprocess_db_maintenance_finished_at": 1789559746.586318
+      },
+      "timestamp_utc": "2026-09-16T11:55:46.563145+00:00"
+    },
+    {
+      "id": "a7a973e9-07f0-40b1-a9a5-03f8d86bef32",
+      "generation": 6,
+      "island_idx": 0,
+      "timestamp": 1789559791.195943,
+      "timing": {
+        "sampling_started_at": 1789559746.607077,
+        "sampling_finished_at": 1789559773.734181,
+        "evaluation_started_at": 1789559773.734181,
+        "evaluation_finished_at": 1789559791.1934247,
+        "postprocess_finished_at": 1789559791.2056026,
+        "postprocess_db_maintenance_finished_at": 1789559791.214099
+      },
+      "timestamp_utc": "2026-09-16T11:56:31.195943+00:00"
+    },
+    {
+      "id": "0ae9da7a-7fb3-4c52-a737-d59c6e19e8a7",
+      "generation": 7,
+      "island_idx": 1,
+      "timestamp": 1789559860.629099,
+      "timing": {
+        "sampling_started_at": 1789559791.2765894,
+        "sampling_finished_at": 1789559845.7153084,
+        "evaluation_started_at": 1789559845.7153084,
+        "evaluation_finished_at": 1789559860.6260798,
+        "postprocess_finished_at": 1789559860.6629753,
+        "postprocess_db_maintenance_finished_at": 1789559860.6733968
+      },
+      "timestamp_utc": "2026-09-16T11:57:40.629099+00:00"
+    }
+  ],
+  "generation_7_sampling": [
+    {
+      "time": "2026-09-16T11:56:31+00:00",
+      "elapsed_s": 438.14,
+      "event": "native_sampling",
+      "message": "Native parent and inspiration selection completed",
+      "generation": 7,
+      "novelty_attempt": 1,
+      "resample_attempt": 1,
+      "parent_id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+      "parent_generation": 5,
+      "archive_inspiration_ids": [
+        "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+      ],
+      "top_k_inspiration_ids": [
+        "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96"
+      ],
+      "needs_fix": false
+    },
+    {
+      "time": "2026-09-16T11:56:56+00:00",
+      "elapsed_s": 462.97,
+      "event": "native_sampling",
+      "message": "Native parent and inspiration selection completed",
+      "generation": 7,
+      "novelty_attempt": 2,
+      "resample_attempt": 1,
+      "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+      "parent_generation": 0,
+      "archive_inspiration_ids": [
+        "dd3af87f-fc07-4e51-9e9d-0258b55b3127"
+      ],
+      "top_k_inspiration_ids": [],
+      "needs_fix": false
+    }
+  ],
+  "generation_7_novelty": [
+    {
+      "receipt": "evolution/search_seed_620001/engine_calls/novelty-8fe89d3ee4114f478eb61b260defef94.json",
+      "sha256": "0c3bea42516fcbc5cbf9bf9ab61cb3f42d8222e7039536c56df0d4dafd0154f3",
+      "started_at": "2026-09-16T11:56:46.396753+00:00",
+      "finished_at": "2026-09-16T11:56:56.110304+00:00",
+      "parent_context": {
+        "time": "2026-09-16T11:56:31+00:00",
+        "elapsed_s": 438.14,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 7,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "006db9d1-fc86-4db6-a06a-0652ed69a208",
+        "parent_generation": 5,
+        "archive_inspiration_ids": [
+          "995b37f2-f893-4b64-b8a8-71a8d825bdea"
+        ],
+        "top_k_inspiration_ids": [
+          "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96"
+        ],
+        "needs_fix": false
+      },
+      "compared_code_message": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": True}\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": True}\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+      "responses": [
+        "NOT_NOVEL: The snippets are identical. Both return `{\"radius_scale\": 1.25, \"reset_velocity\": True}` regardless of the observation, with no algorithmic, structural, functional, or hyperparameter differences."
+      ]
+    },
+    {
+      "receipt": "evolution/search_seed_620001/engine_calls/novelty-cfa8f726fd27406eb8c77d1de2de6200.json",
+      "sha256": "6a01524322df23d752f4a57b24a869d25e8c66b52c1cc376d7f32cfa264003b4",
+      "started_at": "2026-09-16T11:57:15.100597+00:00",
+      "finished_at": "2026-09-16T11:57:25.704906+00:00",
+      "parent_context": {
+        "time": "2026-09-16T11:56:56+00:00",
+        "elapsed_s": 462.97,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 7,
+        "novelty_attempt": 2,
+        "resample_attempt": 1,
+        "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [
+          "dd3af87f-fc07-4e51-9e9d-0258b55b3127"
+        ],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false
+      },
+      "compared_code_message": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.0, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": True}\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+      "responses": [
+        "NOVEL: The proposed code increases `radius_scale` from 1.0 to 1.25 and enables `reset_velocity`. Both are meaningful recovery-policy changes that can alter search behavior and performance."
+      ]
+    }
+  ],
+  "native_source": {
+    "path": ".venv/lib/python3.13/site-packages/shinka/core/async_novelty_judge.py",
+    "sha256": "c7a7a600810fe2e08013537f79fa0a3f0b592dc898b43a3cdeaac7c7076e1cbe",
+    "upstream_commit": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+    "relevant_lines": [
+      94,
+      98,
+      132,
+      136
+    ],
+    "behavior": "compute_similarity_thread_safe and get_most_similar_program_thread_safe both receive parent_program.island_idx."
+  },
+  "interpretation": "Generation 6 was already persisted before generation 7 novelty assessment. Attempt 1 sampled island 0, supplied the identical generation-6 code to the novelty judge, and was rejected correctly. Native resampling chose an island-1 seed parent for attempt 2; the island-scoped comparator was the unit-radius retained-velocity seed, and the judge correctly identified differences relative to that limited comparator. The global behavioral duplicate therefore passed through island-local archive visibility, not evaluation overlap or a judge misreading identical code. Source-byte cache reuse did not apply because of trailing newline differences; the frozen controller/cache was left unchanged.",
+  "limitations": "Island identity is read from the database and native sampling context; exact compared code is independently saved in both novelty receipts. This observation identifies this duplicate path, not the general causal performance effect of novelty filtering."
+}

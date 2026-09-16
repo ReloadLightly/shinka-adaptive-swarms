@@ -1,0 +1,76 @@
+{
+  "at": "2026-09-16T12:17:14.763450+00:00",
+  "status": "passed",
+  "scope": "Reused existing native service on8894; HTTP GET plus read-only database comparison; no service restart, no model or numerical executions.",
+  "url": "http://127.0.0.1:8894/viz_tree.html?db_path=search_seed_620001%2Fprograms.sqlite&selected_node=995b37f2-f893-4b64-b8a8-71a8d825bdea&left_tab=tree-view&right_tab=agent-code",
+  "database_listing": [
+    {
+      "path": "search_seed_620001/programs.sqlite",
+      "name": "search_seed_620001",
+      "task": "search_seed_620001",
+      "actual_path": "search_seed_620001/programs.sqlite"
+    }
+  ],
+  "http_count_response": {
+    "count": 14,
+    "max_timestamp": 1789560295.717448
+  },
+  "http_program_rows": 14,
+  "sqlite_program_rows": 14,
+  "original_evaluations_excluding_island_seed_copy": 13,
+  "evaluated_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "native_selected": {
+    "id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+    "generation": 3,
+    "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+    "archive_inspiration_ids": [
+      "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+    ],
+    "top_k_inspiration_ids": [],
+    "code": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+    "combined_score": 0.25728361556379503
+  },
+  "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+  "exact_source_and_lineage_match_sqlite": true,
+  "http_receipts": [
+    {
+      "url": "http://127.0.0.1:8894/list_databases",
+      "http_status": 200,
+      "bytes": 161,
+      "sha256": "0514aa8053d6abb2ad78daf3e2d3a4ed84872c0598e3585d6ee853e4ed0cf965"
+    },
+    {
+      "url": "http://127.0.0.1:8894/get_program_count?db_path=search_seed_620001%2Fprograms.sqlite",
+      "http_status": 200,
+      "bytes": 49,
+      "sha256": "7fdc23ef10f1f80aa14521fd81da3f10741ee991e3ebd98eb434e35400284688"
+    },
+    {
+      "url": "http://127.0.0.1:8894/get_programs?db_path=search_seed_620001%2Fprograms.sqlite",
+      "http_status": 200,
+      "bytes": 2225640,
+      "sha256": "96261d2830fbf8cebffa44bd2a3ee10d9c294035b098ef67d988a5bd7ac5bdb6"
+    },
+    {
+      "url": "http://127.0.0.1:8894/get_program_details?db_path=search_seed_620001%2Fprograms.sqlite&id=995b37f2-f893-4b64-b8a8-71a8d825bdea",
+      "http_status": 200,
+      "bytes": 150577,
+      "sha256": "55efa090e013b593175ed2f3467078c77b2682611dd88671e70557219c27e29c"
+    }
+  ],
+  "visual_verification": "Optional final refresh follows separately; prior source and tree screenshot already verified."
+}

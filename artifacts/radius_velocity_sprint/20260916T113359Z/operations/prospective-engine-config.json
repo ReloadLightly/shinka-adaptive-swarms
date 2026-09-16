@@ -1,0 +1,180 @@
+{
+  "task": "radius_velocity_sprint",
+  "evaluation_version": "fixed_four_radius_velocity_sprint_score_reciprocal_v1",
+  "search_seed": 620001,
+  "engine_config": {
+    "schema_version": 1,
+    "profile_name": "radius_velocity_sprint",
+    "profile_definition": {
+      "schema_version": 1,
+      "name": "radius_velocity_sprint",
+      "description": "Sprint baseline copied from research_v3 without changes to evolution or database settings. Recovery response space and paired feedback are the scientific changes. Reuse the already served local embedding route and frozen threshold; pass the separate run-local --logical-response-limit explicitly.",
+      "evolution": {
+        "llm_models": [
+          "$codex"
+        ],
+        "llm_dynamic_selection": "fixed",
+        "llm_kwargs": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384
+        },
+        "patch_types": [
+          "diff",
+          "full",
+          "cross"
+        ],
+        "patch_type_probs": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "max_patch_resamples": 1,
+        "max_patch_attempts": 1,
+        "max_novelty_attempts": 3,
+        "embedding_model": "$local_embedding",
+        "code_embed_sim_threshold": 0.830958258366903,
+        "novelty_llm_models": [
+          "$codex"
+        ],
+        "meta_rec_interval": 5,
+        "meta_llm_models": [
+          "$codex"
+        ],
+        "meta_max_recommendations": 5,
+        "sample_single_meta_rec": true,
+        "evolve_prompts": false,
+        "use_text_feedback": true,
+        "enable_wandb_logging": false
+      },
+      "database": {
+        "parent_selection_strategy": "weighted",
+        "parent_selection_lambda": 10.0,
+        "num_islands": 2,
+        "archive_size": 40,
+        "num_archive_inspirations": 1,
+        "num_top_k_inspirations": 1,
+        "migration_interval": 10,
+        "migration_rate": 0.1,
+        "island_elitism": true,
+        "enforce_island_separation": true
+      }
+    },
+    "default_model": "gpt-6-astra",
+    "default_effort": null,
+    "evolution": {
+      "llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "llm_dynamic_selection": "fixed",
+      "llm_kwargs": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384
+      },
+      "patch_types": [
+        "diff",
+        "full",
+        "cross"
+      ],
+      "patch_type_probs": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "max_patch_resamples": 1,
+      "max_patch_attempts": 1,
+      "max_novelty_attempts": 3,
+      "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+      "novelty_llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "meta_rec_interval": 5,
+      "meta_llm_models": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "evolve_prompts": false,
+      "use_text_feedback": true,
+      "enable_wandb_logging": false,
+      "code_embed_sim_threshold": 0.830958258366903,
+      "meta_max_recommendations": 5,
+      "sample_single_meta_rec": true
+    },
+    "database": {
+      "num_islands": 2,
+      "archive_size": 40,
+      "num_archive_inspirations": 1,
+      "num_top_k_inspirations": 1,
+      "parent_selection_strategy": "weighted",
+      "parent_selection_lambda": 10.0,
+      "migration_interval": 10,
+      "migration_rate": 0.1,
+      "island_elitism": true,
+      "enforce_island_separation": true
+    },
+    "sha256": "54d13e53c0ed3119bbb6e89ad37c8ae0f94da243b2fdc71a82e1a1f2a04b169b"
+  },
+  "logical_response_limit": 60,
+  "features": {
+    "status": "resolved configuration; runtime mechanisms require event evidence",
+    "profile": "radius_velocity_sprint",
+    "sha256": "54d13e53c0ed3119bbb6e89ad37c8ae0f94da243b2fdc71a82e1a1f2a04b169b",
+    "seed_only": false,
+    "parent_sampling": "weighted",
+    "num_islands": 2,
+    "migration_rate": 0.1,
+    "migration_interval": 10,
+    "archive_inspirations": 1,
+    "top_k_inspirations": 1,
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "novelty_configured": true,
+    "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "novelty_attempts": 3,
+    "meta_configured": true,
+    "meta_interval": 5,
+    "text_feedback": true,
+    "model_selection": "fixed",
+    "model_roles": {
+      "mutation": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "meta": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ],
+      "novelty": [
+        {
+          "route": "headless/codex@gpt-6-astra",
+          "model_requested": "gpt-6-astra",
+          "inner_effort_requested": null,
+          "inner_effort_effective": null,
+          "status": "configured; actual model and effort require invocation evidence"
+        }
+      ]
+    },
+    "prompt_evolution": false
+  },
+  "model_calls": 0
+}

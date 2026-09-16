@@ -1,0 +1,103 @@
+{
+  "schema": "radius-velocity-sprint-pilot-freeze-v1",
+  "frozen_at": "2026-09-16T12:07:37.685711+00:00",
+  "native_search_seed": 620001,
+  "native_slots_with_completed_evaluation": 13,
+  "selection_rule": "lowest mean development error among valid descendants, then earlier generation, then source SHA256",
+  "ranking": [
+    {
+      "generation": 3,
+      "mean_offline_error": 2.8867612996212886,
+      "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0"
+    },
+    {
+      "generation": 12,
+      "mean_offline_error": 2.9112146577463633,
+      "source_sha256": "1c2f6664f98ff8f12afa7475cc19aa07a95555e0e35f0dbc8cbdd690613655bb"
+    },
+    {
+      "generation": 4,
+      "mean_offline_error": 2.9362188116425973,
+      "source_sha256": "381a00f364555bf218ad272d78cee7e7835960874085dd665ca75cc87df66845"
+    },
+    {
+      "generation": 5,
+      "mean_offline_error": 3.043215116048751,
+      "source_sha256": "824925832f7db7c433c68d63281907ae18c9cc1fd86ac9870affb9d2715c75bd"
+    },
+    {
+      "generation": 8,
+      "mean_offline_error": 3.0852607779226826,
+      "source_sha256": "14121b4fccdad53385742ad175366f29a58e52569fd7568cdcdacf0e6d02f6e9"
+    },
+    {
+      "generation": 11,
+      "mean_offline_error": 3.139013057655509,
+      "source_sha256": "41ba7b5dd54afeeb5aafa8929495165bf2c7ed028bf54fafae83abbb6b3997aa"
+    },
+    {
+      "generation": 10,
+      "mean_offline_error": 3.1770637650852698,
+      "source_sha256": "4d06f38e6c133b788c5a2ad186cfab9b70d4833bbbe369cbaefe545496e83a28"
+    },
+    {
+      "generation": 6,
+      "mean_offline_error": 3.2756435694835693,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa"
+    },
+    {
+      "generation": 7,
+      "mean_offline_error": 3.2756435694835693,
+      "source_sha256": "23abbdfd18169962131010a77e83e72d81f65a9271c1e340750d60316e685dfa"
+    },
+    {
+      "generation": 2,
+      "mean_offline_error": 3.313554163044707,
+      "source_sha256": "2c61e3a7a8d6c634181cb8763449008462834654ea3820f69eea11a5c492dc21"
+    },
+    {
+      "generation": 1,
+      "mean_offline_error": 3.335067065379198,
+      "source_sha256": "25925b58dfdb029e5c234eeeb3fb3553c20e1eedde643ff9745846aa6bc87d39"
+    },
+    {
+      "generation": 9,
+      "mean_offline_error": 3.5052938337431674,
+      "source_sha256": "c152d10b6c27220e3f95bb635caedda406ba5e46d1a87ca2b0ffb671ef531b6a"
+    }
+  ],
+  "selected": {
+    "generation": 3,
+    "mean_offline_error": 2.8867612996212886,
+    "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+    "source": "programs/pilot_selected.py",
+    "native_program_id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+    "behavior": "fixed count4, radius_scale1.25, retain relocated-particle velocity, reevaluate memory"
+  },
+  "comparator": {
+    "kind": "baseline",
+    "count": 5,
+    "radius_scale": 1.0,
+    "reset_velocity": false,
+    "memory": "reevaluate"
+  },
+  "claim": "Exploratory overall-performance transfer against corrected original baseline; cannot isolate value of conditional behavior or prove search-method reliability. Winner is constant.",
+  "analysis": {
+    "paired_cases": 8,
+    "cases_per_regime": 2,
+    "equal_regime_weights": true,
+    "bootstrap_resamples": 2000,
+    "analysis_seed": 2026091605,
+    "interval": "descriptive two-sided95% percentile stratified paired bootstrap",
+    "selection_independent_of_pilot": true
+  },
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/recovery_response.py": "6e352806653d81d795df06a603d158a0eed2983009ff5a43182c973f78bc9ff1"
+  },
+  "analysis_script_sha256": "b08fefcc5477c4e25e733cd1c6905cbc5233ff66f651283602905f778b26d292",
+  "pilot_cases_existed_at_freeze": false,
+  "native_final_meta_may_still_be_finishing": "No further mutation slots remain; final meta cannot revise frozen selection."
+}

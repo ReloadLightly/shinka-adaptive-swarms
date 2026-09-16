@@ -7,6 +7,7 @@ import json
 import math
 import os
 from pathlib import Path
+import tempfile
 from datetime import datetime, timezone
 
 import pytest
@@ -18,7 +19,8 @@ from adaptive_swarms.recovery_response import (annotate_recovery_log, constant_r
 from adaptive_swarms import simulator
 
 ROOT = Path(__file__).resolve().parents[1]
-LEDGER = Path(os.environ.get("SPRINT_FIXTURE_LEDGER", ROOT / "results/radius_velocity_sprint/20260916T113359Z/operations/fixtures_recovery_task.json"))
+LEDGER = Path(os.environ.get("SPRINT_FIXTURE_LEDGER", Path(tempfile.gettempdir()) /
+                             f"recovery-response-fixtures-{os.getpid()}.json"))
 SMALL = {"dimension": 5, "npeaks": 10, "budget": 1000, "period": 100,
          "environment_seed": 811, "optimizer_seed": 812, "move_severity": 1,
          "trace_interval": 25, "snapshot_interval": 0, "progress_interval": 0}

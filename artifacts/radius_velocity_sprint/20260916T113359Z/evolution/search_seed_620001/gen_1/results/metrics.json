@@ -1,0 +1,295 @@
+{
+  "combined_score": 0.2306769387690033,
+  "public": {
+    "mean_offline_error": 3.335067065379198,
+    "worst_case_offline_error": 6.882900877287211,
+    "case_error_std": 1.77149593624942,
+    "cases_completed": 8
+  },
+  "private": {
+    "cases": [
+      {
+        "case_id": "case_000",
+        "offline_error": 3.210865286342763,
+        "artifact": "case_000.json.gz",
+        "regime": "severity=1.0,period=2500",
+        "paired_differences": {
+          "baseline": -1.297929661716834,
+          "seed": 0.22053581230674668
+        },
+        "mean_interval_end_error": 1.7079196984705434,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15838,
+          "particle": 0.79767,
+          "exclusion": 0.0301,
+          "memory": 0.0138
+        },
+        "response_count": 276,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 276,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_001",
+        "offline_error": 2.451425897689433,
+        "artifact": "case_001.json.gz",
+        "regime": "severity=1.0,period=2500",
+        "paired_differences": {
+          "baseline": -1.0884822897200848,
+          "seed": -0.029142095984015626
+        },
+        "mean_interval_end_error": 0.37932926882579354,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15874,
+          "particle": 0.79991,
+          "exclusion": 0.02215,
+          "memory": 0.01915
+        },
+        "response_count": 383,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 383,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_002",
+        "offline_error": 1.618310119105896,
+        "artifact": "case_002.json.gz",
+        "regime": "severity=1.0,period=5000",
+        "paired_differences": {
+          "baseline": -0.148590939342091,
+          "seed": -0.1329052810407143
+        },
+        "mean_interval_end_error": 1.0940500176928918,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.1602,
+          "particle": 0.8058,
+          "exclusion": 0.02685,
+          "memory": 0.0071
+        },
+        "response_count": 142,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 142,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_003",
+        "offline_error": 1.1660353354837756,
+        "artifact": "case_003.json.gz",
+        "regime": "severity=1.0,period=5000",
+        "paired_differences": {
+          "baseline": -0.3393557296041114,
+          "seed": -0.027220723545954728
+        },
+        "mean_interval_end_error": 0.48914084010214226,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15825,
+          "particle": 0.79585,
+          "exclusion": 0.04085,
+          "memory": 0.005
+        },
+        "response_count": 100,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 100,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_004",
+        "offline_error": 6.882900877287211,
+        "artifact": "case_004.json.gz",
+        "regime": "severity=3.0,period=2500",
+        "paired_differences": {
+          "baseline": 2.869824470995874,
+          "seed": 1.603892987895799
+        },
+        "mean_interval_end_error": 3.5770479738704988,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15992,
+          "particle": 0.80513,
+          "exclusion": 0.0199,
+          "memory": 0.015
+        },
+        "response_count": 300,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 300,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_005",
+        "offline_error": 4.0025159555308845,
+        "artifact": "case_005.json.gz",
+        "regime": "severity=3.0,period=2500",
+        "paired_differences": {
+          "baseline": 0.06571603216433752,
+          "seed": 0.24700464092180408
+        },
+        "mean_interval_end_error": 0.6079657869632342,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15969,
+          "particle": 0.80291,
+          "exclusion": 0.0209,
+          "memory": 0.01645
+        },
+        "response_count": 329,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 329,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_006",
+        "offline_error": 4.032356524737888,
+        "artifact": "case_006.json.gz",
+        "regime": "severity=3.0,period=5000",
+        "paired_differences": {
+          "baseline": -0.9729982611356949,
+          "seed": 0.43331486957216114
+        },
+        "mean_interval_end_error": 2.157948239088733,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.15945,
+          "particle": 0.80495,
+          "exclusion": 0.03045,
+          "memory": 0.0051
+        },
+        "response_count": 102,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 102,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      },
+      {
+        "case_id": "case_007",
+        "offline_error": 3.316126526855734,
+        "artifact": "case_007.json.gz",
+        "regime": "severity=3.0,period=5000",
+        "paired_differences": {
+          "baseline": 0.20355933837506734,
+          "seed": 0.030341753614243405
+        },
+        "mean_interval_end_error": 0.4157925030699083,
+        "query_category_shares": {
+          "initialization": 5e-05,
+          "detection": 0.16094,
+          "particle": 0.80946,
+          "exclusion": 0.02155,
+          "memory": 0.008
+        },
+        "response_count": 160,
+        "incomplete_responses": 0,
+        "reset_velocity_count": 0,
+        "observed_action_distribution": [
+          {
+            "radius_scale": 0.75,
+            "reset_velocity": false,
+            "count": 160,
+            "fraction": 1.0
+          }
+        ],
+        "occupancy_semantics": "observed action pairs, not syntactic branch coverage"
+      }
+    ],
+    "regime_paired_summaries": [
+      {
+        "regime": "severity=1.0,period=2500",
+        "cases": 2,
+        "mean_offline_error": 2.8311455920160977,
+        "baseline_mean_difference": -1.1932059757184594,
+        "baseline_difference_sd": 0.14810165704060285,
+        "seed_mean_difference": 0.09569685816136553,
+        "seed_difference_sd": 0.17654894206487096
+      },
+      {
+        "regime": "severity=1.0,period=5000",
+        "cases": 2,
+        "mean_offline_error": 1.3921727272948359,
+        "baseline_mean_difference": -0.2439733344731012,
+        "baseline_difference_sd": 0.13489107680590412,
+        "seed_mean_difference": -0.08006300229333452,
+        "seed_difference_sd": 0.07473026727124406
+      },
+      {
+        "regime": "severity=3.0,period=2500",
+        "cases": 2,
+        "mean_offline_error": 5.442708416409047,
+        "baseline_mean_difference": 1.4677702515801057,
+        "baseline_difference_sd": 1.9828040922802026,
+        "seed_mean_difference": 0.9254488144088016,
+        "seed_difference_sd": 0.9594649514583168
+      },
+      {
+        "regime": "severity=3.0,period=5000",
+        "cases": 2,
+        "mean_offline_error": 3.674241525796811,
+        "baseline_mean_difference": -0.38471946138031377,
+        "baseline_difference_sd": 0.8319518570706261,
+        "seed_mean_difference": 0.23182831159320227,
+        "seed_difference_sd": 0.2849450229297166
+      }
+    ],
+    "suite_sha256": "d00a4c5ef5a1567694327569ddb1c864d324421d2b0a5d2a7b76c61991974c4d",
+    "evaluation_version": "fixed_four_radius_velocity_sprint_score_reciprocal_v1",
+    "feedback_version": "paired_development_feedback_action_occupancy_v1"
+  },
+  "text_feedback": "Development feedback only. Lower offline error is better; fitness=1/(1+mean error). Paired differences below are candidate minus comparator (negative is better). Baseline is baseline; fixed seed is c4_r1_retain. Same environment and optimizer seeds pair complete closed-loop methods; optimizer draws may diverge. Action occupancy is measured output behavior, not syntactic branch coverage.\ncase_000 severity=1.0,period=2500: error=3.210865, delta baseline=-1.297930, delta fixed seed=+0.220536; reset on 0/276 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 276 (100.0%)]; interval-end error=1.7079196984705434; query shares={\"detection\": 0.15838, \"exclusion\": 0.0301, \"initialization\": 5e-05, \"memory\": 0.0138, \"particle\": 0.79767}; horizon-truncated responses=0.\ncase_001 severity=1.0,period=2500: error=2.451426, delta baseline=-1.088482, delta fixed seed=-0.029142; reset on 0/383 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 383 (100.0%)]; interval-end error=0.37932926882579354; query shares={\"detection\": 0.15874, \"exclusion\": 0.02215, \"initialization\": 5e-05, \"memory\": 0.01915, \"particle\": 0.79991}; horizon-truncated responses=0.\ncase_002 severity=1.0,period=5000: error=1.618310, delta baseline=-0.148591, delta fixed seed=-0.132905; reset on 0/142 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 142 (100.0%)]; interval-end error=1.0940500176928918; query shares={\"detection\": 0.1602, \"exclusion\": 0.02685, \"initialization\": 5e-05, \"memory\": 0.0071, \"particle\": 0.8058}; horizon-truncated responses=0.\ncase_003 severity=1.0,period=5000: error=1.166035, delta baseline=-0.339356, delta fixed seed=-0.027221; reset on 0/100 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 100 (100.0%)]; interval-end error=0.48914084010214226; query shares={\"detection\": 0.15825, \"exclusion\": 0.04085, \"initialization\": 5e-05, \"memory\": 0.005, \"particle\": 0.79585}; horizon-truncated responses=0.\ncase_004 severity=3.0,period=2500: error=6.882901, delta baseline=+2.869824, delta fixed seed=+1.603893; reset on 0/300 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 300 (100.0%)]; interval-end error=3.5770479738704988; query shares={\"detection\": 0.15992, \"exclusion\": 0.0199, \"initialization\": 5e-05, \"memory\": 0.015, \"particle\": 0.80513}; horizon-truncated responses=0.\ncase_005 severity=3.0,period=2500: error=4.002516, delta baseline=+0.065716, delta fixed seed=+0.247005; reset on 0/329 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 329 (100.0%)]; interval-end error=0.6079657869632342; query shares={\"detection\": 0.15969, \"exclusion\": 0.0209, \"initialization\": 5e-05, \"memory\": 0.01645, \"particle\": 0.80291}; horizon-truncated responses=0.\ncase_006 severity=3.0,period=5000: error=4.032357, delta baseline=-0.972998, delta fixed seed=+0.433315; reset on 0/102 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 102 (100.0%)]; interval-end error=2.157948239088733; query shares={\"detection\": 0.15945, \"exclusion\": 0.03045, \"initialization\": 5e-05, \"memory\": 0.0051, \"particle\": 0.80495}; horizon-truncated responses=0.\ncase_007 severity=3.0,period=5000: error=3.316127, delta baseline=+0.203559, delta fixed seed=+0.030342; reset on 0/160 responses; 1 observed action pairs; most frequent [radius=0.75,reset=False: 160 (100.0%)]; interval-end error=0.4157925030699083; query shares={\"detection\": 0.16094, \"exclusion\": 0.02155, \"initialization\": 5e-05, \"memory\": 0.008, \"particle\": 0.80946}; horizon-truncated responses=0.\nPaired regime summary: {\"baseline_difference_sd\": 0.14810165704060285, \"baseline_mean_difference\": -1.1932059757184594, \"cases\": 2, \"mean_offline_error\": 2.8311455920160977, \"regime\": \"severity=1.0,period=2500\", \"seed_difference_sd\": 0.17654894206487096, \"seed_mean_difference\": 0.09569685816136553}\nPaired regime summary: {\"baseline_difference_sd\": 0.13489107680590412, \"baseline_mean_difference\": -0.2439733344731012, \"cases\": 2, \"mean_offline_error\": 1.3921727272948359, \"regime\": \"severity=1.0,period=5000\", \"seed_difference_sd\": 0.07473026727124406, \"seed_mean_difference\": -0.08006300229333452}\nPaired regime summary: {\"baseline_difference_sd\": 1.9828040922802026, \"baseline_mean_difference\": 1.4677702515801057, \"cases\": 2, \"mean_offline_error\": 5.442708416409047, \"regime\": \"severity=3.0,period=2500\", \"seed_difference_sd\": 0.9594649514583168, \"seed_mean_difference\": 0.9254488144088016}\nPaired regime summary: {\"baseline_difference_sd\": 0.8319518570706261, \"baseline_mean_difference\": -0.38471946138031377, \"cases\": 2, \"mean_offline_error\": 3.674241525796811, \"regime\": \"severity=3.0,period=5000\", \"seed_difference_sd\": 0.2849450229297166, \"seed_mean_difference\": 0.23182831159320227}\nFour selected particles and memory reevaluation are fixed. Constants and conditions are equally legitimate. Radius/velocity outcome interactions do not prove overshoot; neither velocity-mediated overshoot nor an ideal radius is directly measured. Evaluate competing explanations, including constant tuning, swarm spread, query allocation and stochastic closed-loop effects. No protected pilot outcomes enter this feedback."
+}

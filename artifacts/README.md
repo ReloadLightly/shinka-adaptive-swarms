@@ -26,6 +26,26 @@ itself and disposable Python bytecode caches.
 | `joint_relocation_v3/study_20260916` | Frozen source review, validation, selection, fresh final comparison and analysis | 960 validation + 560 final executions × 100,000 queries; 80 independent final histories; 24 nominal fixed settings/21 execution classes |
 | `joint_relocation_v3/operations` | V3 calibration, model receipts audit, freeze/seed checks, independent statistical verification and operational evidence | 236 native wrappers/308 usable logical responses; 94 research embeddings; preserved clock, browser and supervision limitations |
 | `joint_relocation_v3_publication` | Read-only checks after closing the immutable research archive | Portable archive/accounting/statistical verification and final browser-address evidence; no new research executions |
+| `radius_velocity_sprint/20260916T113359Z` | Bounded radius/velocity diagnostic, native discovery and frozen transfer probe | 48 diagnostic + 96 new native + 16 pilot executions = 16 million queries; eight cached seed cases; 13 valid native slots including seed; 45 logical model responses |
+
+The [radius/velocity sprint report](../docs/sprints/radius_velocity_20260916/REPORT.md)
+records a heterogeneous exploratory interaction and a native-selected constant
+count-four/radius-1.25/retained-velocity rule. Its fresh eight-history pilot has
+selected-minus-baseline error **−0.6303 [−1.4721, +0.2241]**, a descriptive 95%
+interval; four wins and four losses include one large baseline loss. This does
+not establish reliable superiority or a useful conditional mechanism.
+All 168 case records are preserved. They represent 160 physical full executions,
+including eight repeated descendant cases, plus eight exact seed-cache reuses.
+Small implementation fixtures add 14,000 separately recorded queries.
+The sprint archive includes exact sources, freeze/seed records, native lineage,
+every model-role receipt, dense measured traces and immutable case checkpoints.
+Its `ARCHIVE.json` describes exclusions and the consistent SQLite backup;
+`MANIFEST.json` hashes its payloads. Historical V1–V3 payloads were verified
+unchanged. Operational browser screenshots are kept outside the scientific
+figure narrative.
+The separate [publication verification](radius_velocity_sprint_publication/verification.json)
+checks every archived payload and SQLite integrity, and reproduces both analyses
+from portable saved paths without new objective or model calls.
 
 Neither initial native seed check made model calls or generated descendants. The corrected
 selection score is `1 / (1 + mean_offline_error)` and raw error remains the

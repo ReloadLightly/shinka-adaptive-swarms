@@ -1,0 +1,13 @@
+<NAME>
+refine_radius_1275_retain
+</NAME>
+<DESCRIPTION>
+Test radius_scale=1.275, a small expansion beyond 1.25, which achieved the lowest reported development mean error. Retaining velocity isolates radius tuning and follows the stronger aggregate evidence for retention. This tests whether nearby expansion improves performance; improvement and transfer remain unverified.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"radius_scale": 1.2, "reset_velocity": False}
+=======
+    return {"radius_scale": 1.275, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

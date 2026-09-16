@@ -1,0 +1,446 @@
+{
+  "schema": "sprint-science-inspection-v1",
+  "created_at": "2026-09-16T11:53:16.154848+00:00",
+  "checkpoint": "four completed native descendants",
+  "run": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001",
+  "completed_descendants_reviewed": 4,
+  "seed_mean_offline_error": 3.0418393199116895,
+  "sources": [
+    {
+      "generation": 1,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_1/main.py",
+      "source_sha256": "25925b58dfdb029e5c234eeeb3fb3553c20e1eedde643ff9745846aa6bc87d39",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 0.75, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 0.75,
+        "reset_velocity": false
+      },
+      "imports_or_hidden_access_found": false,
+      "native_lineage": {
+        "id": "dd3af87f-fc07-4e51-9e9d-0258b55b3127",
+        "parent_id": "e4b596fe-8fa2-4b0f-bff9-efe0c2a515cc",
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "generation": 1,
+        "correct": 1
+      },
+      "mean_offline_error": 3.335067065379198,
+      "paired_effects": {
+        "baseline": {
+          "mean": -0.08853212999794219,
+          "sd": 1.3186749999014449,
+          "min": -1.297929661716834,
+          "max": 2.869824470995874,
+          "improved": 5,
+          "worsened": 3,
+          "case_differences": [
+            -1.297929661716834,
+            -1.0884822897200848,
+            -0.148590939342091,
+            -0.3393557296041114,
+            2.869824470995874,
+            0.06571603216433752,
+            -0.9729982611356949,
+            0.20355933837506734
+          ]
+        },
+        "seed": {
+          "mean": 0.29322774546750874,
+          "sd": 0.5608916892584394,
+          "min": -0.1329052810407143,
+          "max": 1.603892987895799,
+          "improved": 3,
+          "worsened": 5,
+          "case_differences": [
+            0.22053581230674668,
+            -0.029142095984015626,
+            -0.1329052810407143,
+            -0.027220723545954728,
+            1.603892987895799,
+            0.24700464092180408,
+            0.43331486957216114,
+            0.030341753614243405
+          ]
+        }
+      },
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.8311455920160977,
+          "baseline_mean_difference": -1.1932059757184594,
+          "baseline_difference_sd": 0.14810165704060285,
+          "seed_mean_difference": 0.09569685816136553,
+          "seed_difference_sd": 0.17654894206487096
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.3921727272948359,
+          "baseline_mean_difference": -0.2439733344731012,
+          "baseline_difference_sd": 0.13489107680590412,
+          "seed_mean_difference": -0.08006300229333452,
+          "seed_difference_sd": 0.07473026727124406
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 5.442708416409047,
+          "baseline_mean_difference": 1.4677702515801057,
+          "baseline_difference_sd": 1.9828040922802026,
+          "seed_mean_difference": 0.9254488144088016,
+          "seed_difference_sd": 0.9594649514583168
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.674241525796811,
+          "baseline_mean_difference": -0.38471946138031377,
+          "baseline_difference_sd": 0.8319518570706261,
+          "seed_mean_difference": 0.23182831159320227,
+          "seed_difference_sd": 0.2849450229297166
+        }
+      ],
+      "observed_action_occupancy": {
+        "radius_scale": 0.75,
+        "reset_velocity": false,
+        "response_count": 1792,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "9664f275fc56bb42afe16525094f18db83a854f7a4ce080c0212ee778cc75ec8"
+    },
+    {
+      "generation": 2,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_2/main.py",
+      "source_sha256": "2c61e3a7a8d6c634181cb8763449008462834654ea3820f69eea11a5c492dc21",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 0.5, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 0.5,
+        "reset_velocity": false
+      },
+      "imports_or_hidden_access_found": false,
+      "native_lineage": {
+        "id": "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6",
+        "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "generation": 2,
+        "correct": 1
+      },
+      "mean_offline_error": 3.313554163044707,
+      "paired_effects": {
+        "baseline": {
+          "mean": -0.11004503233243343,
+          "sd": 1.2380178655286485,
+          "min": -1.7391946469955952,
+          "max": 2.2761605436428365,
+          "improved": 5,
+          "worsened": 3,
+          "case_differences": [
+            -1.7391946469955952,
+            -0.3772496153795917,
+            -0.11427921140964448,
+            -0.2523563449613313,
+            2.2761605436428365,
+            0.31500098064864135,
+            -1.4463756356943769,
+            0.4579336714895943
+          ]
+        },
+        "seed": {
+          "mean": 0.27171484313301747,
+          "sd": 0.42864667763891456,
+          "min": -0.22072917297201444,
+          "max": 1.0102290605427617,
+          "improved": 3,
+          "worsened": 5,
+          "case_differences": [
+            -0.22072917297201444,
+            0.6820905783564775,
+            -0.09859355310826778,
+            0.05977866109682539,
+            1.0102290605427617,
+            0.4962895894061079,
+            -0.040062504986520864,
+            0.28471608672877036
+          ]
+        }
+      },
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.966129436546964,
+          "baseline_mean_difference": -1.0582221311875935,
+          "baseline_difference_sd": 0.963040567459003,
+          "seed_mean_difference": 0.2306807026922315,
+          "seed_difference_sd": 0.6383899683535291
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.452828283582449,
+          "baseline_mean_difference": -0.1833177781854879,
+          "baseline_difference_sd": 0.09763527746119832,
+          "seed_mean_difference": -0.019407446005721196,
+          "seed_difference_sd": 0.11198606661594986
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 5.270518926974681,
+          "baseline_mean_difference": 1.295580762145739,
+          "baseline_difference_sd": 1.3867492259820415,
+          "seed_mean_difference": 0.7532593249744348,
+          "seed_difference_sd": 0.3634100851601558
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.564740005074733,
+          "baseline_mean_difference": -0.4942209821023913,
+          "baseline_difference_sd": 1.3465500245864421,
+          "seed_mean_difference": 0.12232679087112475,
+          "seed_difference_sd": 0.22965314458609948
+        }
+      ],
+      "observed_action_occupancy": {
+        "radius_scale": 0.5,
+        "reset_velocity": false,
+        "response_count": 1849,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "f37c0d5cfa2b5cb5fa8095c342f97cef414e21d522380099bbc0916bf4999e39"
+    },
+    {
+      "generation": 3,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_3/main.py",
+      "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.25,
+        "reset_velocity": false
+      },
+      "imports_or_hidden_access_found": false,
+      "native_lineage": {
+        "id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+        "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+        "archive_inspiration_ids": [
+          "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+        ],
+        "top_k_inspiration_ids": [],
+        "generation": 3,
+        "correct": 1
+      },
+      "mean_offline_error": 2.8867612996212886,
+      "paired_effects": {
+        "baseline": {
+          "mean": -0.5368378957558518,
+          "sd": 0.8186202695560539,
+          "min": -1.6700723575755645,
+          "max": 0.3224131823641838,
+          "improved": 5,
+          "worsened": 3,
+          "case_differences": [
+            -1.6700723575755645,
+            -1.288279311329379,
+            -0.1284358344131573,
+            -0.34094101657153875,
+            0.2535938835364604,
+            0.3224131823641838,
+            -1.4979035678572417,
+            0.054921855799422215
+          ]
+        },
+        "seed": {
+          "mean": -0.15507802029040094,
+          "sd": 0.4136030211410915,
+          "min": -1.0123375995636144,
+          "max": 0.5037017911216504,
+          "improved": 7,
+          "worsened": 1,
+          "case_differences": [
+            -0.1516068835519837,
+            -0.22893911759330976,
+            -0.11275017611178062,
+            -0.028806010513382052,
+            -1.0123375995636144,
+            0.5037017911216504,
+            -0.09159043714938564,
+            -0.11829572896140172
+          ]
+        }
+      },
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.5451757332820857,
+          "baseline_mean_difference": -1.4791758344524717,
+          "baseline_difference_sd": 0.269968452010547,
+          "seed_mean_difference": -0.19027300057264673,
+          "seed_difference_sd": 0.054682147094926824
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4014576362755888,
+          "baseline_mean_difference": -0.23468842549234803,
+          "baseline_difference_sd": 0.15026385534147405,
+          "seed_mean_difference": -0.07077809331258134,
+          "seed_difference_sd": 0.059357488735674126
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.262941697779264,
+          "baseline_mean_difference": 0.2880035329503221,
+          "baseline_difference_sd": 0.04866259287758665,
+          "seed_mean_difference": -0.254317904220982,
+          "seed_difference_sd": 1.0720017336994723
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.3374701311482147,
+          "baseline_mean_difference": -0.7214908560289097,
+          "baseline_difference_sd": 1.0980133870665005,
+          "seed_mean_difference": -0.10494308305539368,
+          "seed_difference_sd": 0.018883492933842158
+        }
+      ],
+      "observed_action_occupancy": {
+        "radius_scale": 1.25,
+        "reset_velocity": false,
+        "response_count": 1835,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "c1a2e85683b584a7caf66dad58de09b26b8a4985c5487b09da5d9d66bd83d493"
+    },
+    {
+      "generation": 4,
+      "source_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_4/main.py",
+      "source_sha256": "381a00f364555bf218ad272d78cee7e7835960874085dd665ca75cc87df66845",
+      "exact_source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.2, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "classification": "constant literal action; no observation dependence",
+      "action": {
+        "radius_scale": 1.2,
+        "reset_velocity": false
+      },
+      "imports_or_hidden_access_found": false,
+      "native_lineage": {
+        "id": "d9a6f2c6-ea50-48a0-b887-f47d81c9eb96",
+        "parent_id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+        "archive_inspiration_ids": [
+          "5e5834c9-be1b-4c76-825f-553b7284e930"
+        ],
+        "top_k_inspiration_ids": [
+          "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+        ],
+        "generation": 4,
+        "correct": 1
+      },
+      "mean_offline_error": 2.9362188116425973,
+      "paired_effects": {
+        "baseline": {
+          "mean": -0.48738038373454273,
+          "sd": 0.8709918454150019,
+          "min": -1.8963132114357917,
+          "max": 0.4725250936696406,
+          "improved": 5,
+          "worsened": 3,
+          "case_differences": [
+            -1.3162386273464066,
+            -1.1743793676225485,
+            -0.13155100236062567,
+            -0.3240737784276593,
+            0.38801545574729257,
+            0.4725250936696406,
+            -1.8963132114357917,
+            0.0829723678997567
+          ]
+        },
+        "seed": {
+          "mean": -0.10562050826909183,
+          "sd": 0.4511738141453093,
+          "min": -0.8779160273527822,
+          "max": 0.6538137024271071,
+          "improved": 6,
+          "worsened": 2,
+          "case_differences": [
+            0.20222684667717417,
+            -0.11503917388647933,
+            -0.11586534405924898,
+            -0.011938772369502582,
+            -0.8779160273527822,
+            0.6538137024271071,
+            -0.49000008072793566,
+            -0.09024521686106723
+          ]
+        }
+      },
+      "regimes": [
+        {
+          "regime": "severity=1.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 2.7790425702500796,
+          "baseline_mean_difference": -1.2453089974844775,
+          "baseline_difference_sd": 0.10030964452484378,
+          "seed_mean_difference": 0.04359383639534742,
+          "seed_difference_sd": 0.22434095458063003
+        },
+        {
+          "regime": "severity=1.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 1.4083336713737946,
+          "baseline_mean_difference": -0.22781239039414247,
+          "baseline_difference_sd": 0.13613416048985863,
+          "seed_mean_difference": -0.06390205821437578,
+          "seed_difference_sd": 0.07348718358728955
+        },
+        {
+          "regime": "severity=3.0,period=2500",
+          "cases": 2,
+          "mean_offline_error": 4.405208439537409,
+          "baseline_mean_difference": 0.43027027470846657,
+          "baseline_difference_sd": 0.05975733805051209,
+          "seed_mean_difference": -0.11205116246283753,
+          "seed_difference_sd": 1.0830964788723978
+        },
+        {
+          "regime": "severity=3.0,period=5000",
+          "cases": 2,
+          "mean_offline_error": 3.152290565409107,
+          "baseline_mean_difference": -0.9066704217680175,
+          "baseline_difference_sd": 1.3995662550529107,
+          "seed_mean_difference": -0.29012264879450145,
+          "seed_difference_sd": 0.28266937505256784
+        }
+      ],
+      "observed_action_occupancy": {
+        "radius_scale": 1.2,
+        "reset_velocity": false,
+        "response_count": 1790,
+        "fraction": 1.0
+      },
+      "metrics_sha256": "b399f6bc08277574dea5399499499da1fda0d990d41476c4a9cfa2b16920179a"
+    }
+  ],
+  "feedback_actually_supplied": {
+    "prompt_path": "results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "prompt_sha256": "8a74fb35c5d7e433a8737f4db0ba1c83b463624b327f8a8fb11d14677fd5c2a3",
+    "source_metrics_generation": 3,
+    "matched_excerpt": "case_000 severity=1.0,period=2500: error=2.838723, delta baseline=-1.670072, delta fixed seed=-0.151607"
+  },
+  "recommendation": "continue within existing frozen task and resource ceilings",
+  "reason": "Four valid interpretable constants supply useful radius tuning evidence. Gen3 radius1.25 retains velocity and improves all four regime means versus fixed seed, but worsens case005 by0.5037 and remains worse than baseline in severity3/period2500. No malformed policy, hidden access or repeated nonfunctional output found. No conditional rule or velocity reset has yet been proposed; search is currently a constant-radius probe. Do not require branching or interpret this development improvement as overshoot evidence or fresh transfer. Gen4 radius1.2 is worse overall than gen3, discouraging an assumption of smooth monotonic tuning.",
+  "limits": [
+    "Eight development cases; regime means based on two cases each.",
+    "Measured action occupancy is not syntactic branch coverage, although these exact sources have no conditionals.",
+    "Native database contains two gen0 seed copies for islands; these are not two independent numerical seed evaluations.",
+    "No numerical executions or model calls were made for this review."
+  ]
+}

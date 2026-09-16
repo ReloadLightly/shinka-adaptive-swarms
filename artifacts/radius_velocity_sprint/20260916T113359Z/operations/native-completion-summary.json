@@ -1,0 +1,200 @@
+{
+  "created_at": "2026-09-16T12:09:26.473293+00:00",
+  "status": "search_complete",
+  "run": "evolution/search_seed_620001",
+  "terminal_slots": 13,
+  "valid_descendants": 12,
+  "terminal_failed_slots": [],
+  "role_accounting": {
+    "mutation": {
+      "native_wrapper_invocations": 13,
+      "requested_logical_responses": 13,
+      "usable_responses_returned": 13,
+      "status_counts": {
+        "returned": 13
+      },
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 1.58722,
+      "native_reported_routes": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "initial_logical_responses": 13,
+      "exposed_native_retry_responses": 0,
+      "observed_native_dispatch_attempts": 13,
+      "native_dispatch_status_counts": {
+        "returned": 13
+      }
+    },
+    "novelty": {
+      "native_wrapper_invocations": 13,
+      "requested_logical_responses": 13,
+      "usable_responses_returned": 13,
+      "status_counts": {
+        "returned": 13
+      },
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 0.71838,
+      "native_reported_routes": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "initial_logical_responses": 13,
+      "exposed_native_retry_responses": 0,
+      "observed_native_dispatch_attempts": 13,
+      "native_dispatch_status_counts": {
+        "returned": 13
+      }
+    },
+    "meta": {
+      "native_wrapper_invocations": 9,
+      "requested_logical_responses": 19,
+      "usable_responses_returned": 19,
+      "status_counts": {
+        "returned": 9
+      },
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 3.305116,
+      "native_reported_routes": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "initial_logical_responses": 19,
+      "exposed_native_retry_responses": 0,
+      "observed_native_dispatch_attempts": 19,
+      "native_dispatch_status_counts": {
+        "returned": 19
+      }
+    }
+  },
+  "total_native_wrappers": 35,
+  "total_requested_logical_responses": 45,
+  "total_usable_responses": 45,
+  "logical_response_limit": 60,
+  "exposed_native_transport_retry_responses": 0,
+  "model_settings": {
+    "requested_model": "gpt-6-astra",
+    "observed_native_reported_route": "headless/codex@gpt-6-astra",
+    "verified_cli_model_flag": "gpt-6-astra",
+    "requested_inner_effort_override": null,
+    "observed_cli_effort_override": false,
+    "effective_provider_effort": "unverified profile/default; not relabeled as supervising Ultra",
+    "provider_model_identity_independently_attested": false,
+    "paid_model_fallback": false
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 13,
+      "full_frozen_task_context_present": 13,
+      "source_context_references": 33,
+      "full_sources_present": 33,
+      "full_feedback_present": 33,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 13,
+      "accepted": 12,
+      "rejected": 1,
+      "fallback": 0
+    },
+    "embedding_completions": 14,
+    "embedding_dimensions": {
+      "768": 14
+    },
+    "meta_updates": 3,
+    "saved_meta_recommendations": 15,
+    "exact_recommendation_injections": 7,
+    "migration_transfers": 2,
+    "degradation_events": 0,
+    "patch_types": {
+      "init": 1,
+      "diff": 9,
+      "full": 2,
+      "cross": 1
+    }
+  },
+  "work": {
+    "archived_case_references": 104,
+    "new_completed_full_case_executions": 96,
+    "new_completed_objective_queries": 9600000,
+    "exact_seed_cache_reuses": 8,
+    "repeated_full_executions_included_in_new_work": 8,
+    "repeated_queries_included_in_new_work": 800000,
+    "failed_case_attempts": 0,
+    "truncated_full_case_executions": 0,
+    "execution_attempt_status_counts": {
+      "completed": 96
+    },
+    "response_actions_incomplete_at_the_full_budget_boundary": 0,
+    "source_exact_duplicate_groups": [
+      [
+        6,
+        7
+      ]
+    ],
+    "ast_exact_duplicate_groups": [
+      [
+        6,
+        7
+      ]
+    ],
+    "duplicate_explanation": "Generation 7 exactly repeats generation 6. Native novelty first rejected identical code in island 0, then resampled island 1 and accepted differences from that island-local seed comparator. The unchanged evaluator cached only own completed cases and the exact Phase A seed, not arbitrary archived descendants. These eight repeated executions consumed the existing slot allocation and were not replaced."
+  },
+  "native_best_lineage": {
+    "best": {
+      "id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+      "generation": 3,
+      "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+      "source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n"
+    },
+    "parent": {
+      "id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+      "generation": 0,
+      "source_sha256": "bbe1c2ffaf67f27dbfe4bbfac35723da4015c87543c3fc18bdcd53a13adff34d",
+      "source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.0, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n"
+    },
+    "archive_inspirations": [
+      {
+        "id": "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6",
+        "generation": 2,
+        "source_sha256": "2c61e3a7a8d6c634181cb8763449008462834654ea3820f69eea11a5c492dc21",
+        "source": "\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 0.5, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n"
+      }
+    ],
+    "top_ranked_inspirations": [],
+    "mutation": {
+      "patch_type": "diff",
+      "patch_name": "intermediate_radius_retain_velocity",
+      "patch_description": "Test radius_scale=1.25 while retaining velocity. Radius 0.5 performed worse than 1.0, while 1.5 was only slightly worse in the supplied development results. An intermediate radius probes whether modestly broader relocation improves recovery without the larger perturbation of 1.5. Retaining velocity follows the stronger aggregate development evidence and isolates radius tuning. Improvement remains untested; any transfer claim requires the separate probe.",
+      "model_name": "headless/codex@gpt-6-astra",
+      "novelty_attempt": 1,
+      "novelty_explanation": "NOVEL: `radius_scale` changes from `0.5` to `1.25`, a 2.5\u00d7 increase. This is a meaningful hyperparameter change that can alter recovery behavior and search performance; `reset_velocity` remains unchanged."
+    },
+    "development_mean_offline_error": 2.8867612996212886,
+    "combined_score": 0.25728361556379503,
+    "response_count": 1835,
+    "reset_response_count": 0,
+    "actual_supplied_prompt": "evolution/search_seed_620001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "actual_supplied_prompt_sha256": "659985a8cc739655374fd24ac31e850066587916cbac769e7078896232f40829",
+    "parent_feedback_example_actually_supplied": "case_000 severity=1.0,period=2500: error=2.990329, delta baseline=-1.518465, delta fixed seed=+0.000000; reset on 0/275 responses; 1 observed action pairs; most frequent [radius=1,reset=False: 275 (100.0%)]; interval-end error=1.6222516047964048; query shares={\"detection\": 0.15819, \"exclusion\": 0.0324, \"initialization\": 5e-05, \"memory\": 0.01375, \"particle\": 0.79561}; horizon-truncated responses=0.",
+    "example_verified_in_actual_prompt": true
+  },
+  "runtime": {
+    "started_at": "2026-09-16T11:48:57.981907+00:00",
+    "finished_at": "2026-09-16T12:07:45.770202+00:00",
+    "wall_seconds": 1127.788295,
+    "logged_monotonic_elapsed_seconds": 1090.02,
+    "clock_scope": "Both recorded UTC duration and EventLogger monotonic duration retained; their discrepancy is observed, cause unmeasured."
+  },
+  "input_receipts": {
+    "operations/native-inspection-final.json": "185f76ab88086fca89b82518add23318bd305dd87e742b3a1ae822d5354c0db7",
+    "operations/gen7-duplicate-audit.json": "dd646710ae58054b465f1c3c31240e66aab5766a9c0849e791d60c63584fb6a4",
+    "operations/gen7-duplicate-audit-correction.json": "7ba39f1be7065c46670f4deba66d43ebb346fa665a7a9002202053e04243ea90",
+    "operations/native-codex-process-settings-observed.json": "57a0574cbefa4ae4cc20d65f2ded5ea337ef77260c12a7879d81578fa28d8d85"
+  },
+  "audit_added_model_calls": 0,
+  "audit_added_objective_queries": 0
+}

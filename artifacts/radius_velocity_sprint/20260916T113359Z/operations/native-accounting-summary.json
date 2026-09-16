@@ -1,0 +1,164 @@
+{
+  "status": "search_complete",
+  "run": "evolution/search_seed_620001",
+  "terminal_slots": 13,
+  "valid_seed": true,
+  "valid_descendants": 12,
+  "terminal_failed_slots": 0,
+  "archived_programs": 13,
+  "source_distinct_programs_including_seed": 12,
+  "role_accounting": {
+    "mutation": {
+      "wrappers": 13,
+      "requested_logical_responses": 13,
+      "usable_responses": 13,
+      "exposed_native_transport_retries": 0,
+      "configured_route": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "native_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null
+    },
+    "novelty": {
+      "wrappers": 13,
+      "requested_logical_responses": 13,
+      "usable_responses": 13,
+      "exposed_native_transport_retries": 0,
+      "configured_route": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "native_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null
+    },
+    "meta": {
+      "wrappers": 9,
+      "requested_logical_responses": 19,
+      "usable_responses": 19,
+      "exposed_native_transport_retries": 0,
+      "configured_route": [
+        "headless/codex@gpt-6-astra"
+      ],
+      "native_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null
+    }
+  },
+  "totals": {
+    "native_wrappers": 35,
+    "requested_logical_responses": 45,
+    "usable_logical_responses": 45,
+    "allowance": 60,
+    "exposed_native_transport_retries": 0,
+    "provider_internal_retries": "unobserved",
+    "supervising_Codex_usage": "excluded/unobserved by native receipts"
+  },
+  "effort_and_model_interpretation": {
+    "all_role_model_routes": "headless/codex@gpt-6-astra",
+    "verified_active_Codex_CLI_model_flag": "gpt-6-astra",
+    "explicit_inner_effort_override": null,
+    "native_reasoning_efforts_sentinel": "disabled",
+    "sentinel_is_effective_provider_reasoning_effort": false,
+    "headless_effort_forwarding": "Pinned Headless command builder forwards effort only from model-route ?effort=; no route in this run supplied it. Native client reasoning_efforts=disabled is not forwarded as a Codex effort.",
+    "other_native_settings_scope": "Client temperatures/max_tokens above are configured native values; the pinned Headless command builder does not forward them as CLI parameters, so they are not independently verified provider settings.",
+    "effective_inner_effort": "unverified Codex profile/provider default, distinct from supervising Astra/Ultra",
+    "provider_model_identity_independently_attested": false,
+    "paid_fallback": false
+  },
+  "machinery": {
+    "prompt_verification": {
+      "saved_attempt_prompts": 13,
+      "full_frozen_task_context_present": 13,
+      "source_context_references": 33,
+      "full_sources_present": 33,
+      "full_feedback_present": 33,
+      "sampling_events_without_saved_prompt_yet": 0
+    },
+    "novelty": {
+      "decision_count": 13,
+      "accepted": 12,
+      "rejected": 1,
+      "fallback": 0
+    },
+    "embedding_completions": 14,
+    "embedding_dimensions": {
+      "768": 14
+    },
+    "meta_updates": 3,
+    "saved_meta_recommendations": 15,
+    "exact_recommendation_injections": 7,
+    "migration_transfers": 2,
+    "degradation_events": 0,
+    "patch_types": {
+      "init": 1,
+      "diff": 9,
+      "full": 2,
+      "cross": 1
+    }
+  },
+  "work": {
+    "archived_case_references": 104,
+    "physical_new_full_case_executions": 96,
+    "physical_new_objective_queries": 9600000,
+    "exact_seed_case_cache_reuses": 8,
+    "repeated_full_executions_included": 8,
+    "repeated_objective_queries_included": 800000,
+    "failed_full_case_attempts": 0,
+    "truncated_full_cases": 0,
+    "duplicate_explanation": "Generation 7 exactly repeats generation 6. Native novelty first rejected identical code in island 0, then resampled island 1 and accepted differences from that island-local seed comparator. The unchanged evaluator cached only own completed cases and the exact Phase A seed, not arbitrary archived descendants. These eight repeated executions consumed the existing slot allocation and were not replaced."
+  },
+  "runtime": {
+    "started_at": "2026-09-16T11:48:57.981907+00:00",
+    "finished_at": "2026-09-16T12:07:45.770202+00:00",
+    "wall_seconds": 1127.788295,
+    "logged_monotonic_elapsed_seconds": 1090.02,
+    "clock_scope": "Both recorded UTC duration and EventLogger monotonic duration retained; their discrepancy is observed, cause unmeasured."
+  },
+  "native_best": {
+    "generation": 3,
+    "id": "995b37f2-f893-4b64-b8a8-71a8d825bdea",
+    "source_sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0",
+    "development_mean_offline_error": 2.8867612996212886,
+    "rule": {
+      "count": 4,
+      "radius_scale": 1.25,
+      "reset_velocity": false,
+      "memory": "reevaluate"
+    },
+    "patch_type": "diff",
+    "parent": {
+      "id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+      "generation": 0
+    },
+    "archive_inspirations": [
+      {
+        "id": "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6",
+        "generation": 2
+      }
+    ],
+    "top_ranked_inspirations": [],
+    "actual_supplied_prompt": "evolution/search_seed_620001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "feedback_example_verified": true
+  },
+  "supporting_receipts": {
+    "operations/native-inspection-final.json": "185f76ab88086fca89b82518add23318bd305dd87e742b3a1ae822d5354c0db7",
+    "operations/gen7-duplicate-audit.json": "dd646710ae58054b465f1c3c31240e66aab5766a9c0849e791d60c63584fb6a4",
+    "operations/gen7-duplicate-audit-correction.json": "7ba39f1be7065c46670f4deba66d43ebb346fa665a7a9002202053e04243ea90",
+    "operations/native-codex-process-settings-observed.json": "57a0574cbefa4ae4cc20d65f2ded5ea337ef77260c12a7879d81578fa28d8d85"
+  },
+  "full_completion_summary_sha256": "1f77471e5461d0ef71ab9527e1ceec1041e166b5d11e3cd501d922280bce712f",
+  "audit_new_queries": 0,
+  "audit_model_calls": 0
+}

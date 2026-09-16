@@ -1,0 +1,15 @@
+<NAME>
+intermediate_radius_retain_velocity
+</NAME>
+<DESCRIPTION>
+Test radius_scale=1.25 while retaining velocity. Radius 0.5 performed worse than 1.0, while 1.5 was only slightly worse in the supplied development results. An intermediate radius probes whether modestly broader relocation improves recovery without the larger perturbation of 1.5. Retaining velocity follows the stronger aggregate development evidence and isolates radius tuning. Improvement remains untested; any transfer claim requires the separate probe.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 1.0, "reset_velocity": False}
+=======
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 1.25, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

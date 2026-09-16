@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "radius125_reset",
+  "patch_description": "Keep radius_scale at 1.25, the best observed retained-velocity radius, and test resetting selected particles\u2019 velocities. This isolates the velocity choice against the 1.25/retain candidate without adding conditional complexity. Performance improvement remains to be evaluated; any improvement alone would not establish overshoot as the mechanism.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T13:56:46.315819",
+  "llm_cost": 0.1259,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

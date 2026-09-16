@@ -1,0 +1,88 @@
+{
+  "schema": "sprint-historical-preservation-check-v1",
+  "checked_at": "2026-09-16T12:10:16.608650+00:00",
+  "inventory_snapshot": "results/radius_velocity_sprint/20260916T113359Z/operations/artifacts-inventory-before-sprint.json",
+  "inventory_snapshot_sha256": "0ab4aa91d5fcbc1d0a9a72d0af3094b80d3db62256d8dff0b1c2db5a43907269",
+  "inventory_entry_count": 6861,
+  "durable_historical_payloads_unchanged": 6860,
+  "unchanged_payload_bytes": 588003398,
+  "intentional_exclusions": [
+    {
+      "path": "artifacts/README.md",
+      "reason": "presentation inventory README may be intentionally updated for sprint publication",
+      "unchanged_at_check": true,
+      "before": {
+        "path": "artifacts/README.md",
+        "bytes": 9832,
+        "sha256": "70063bf202b0f4192b46f0ca18031e59750f713393a0202de3b1f3a2823bf6ca"
+      },
+      "current": {
+        "exists": true,
+        "bytes": 9832,
+        "sha256": "70063bf202b0f4192b46f0ca18031e59750f713393a0202de3b1f3a2823bf6ca"
+      }
+    }
+  ],
+  "issues": [],
+  "passed": true,
+  "scope": "Read-only comparison of all pre-sprint inventoried artifact payloads; excludes intentionally editable artifact README and any self-referential global inventory entry. No historical payload was edited or rerun.",
+  "plot_backward_compatibility_review": {
+    "file": "scripts/plot_evolution.py",
+    "reviewed_revision": "9562e754e4f32c144e31bae04ad316b60031b79c",
+    "previous_sha256": "292abc34add95ebc4ae2f34ecf90edade258edfedadeeca057fc825306f28bdd",
+    "current_sha256": "75356962fac42044998168c84a4142a42fafb83600a5f338df63874d5e4cffbc",
+    "assessment": "No backward compatibility defect found for saved historical suites. V2 seed label is unchanged and V1/V3 fallback remains corrected baseline seed. New fallback reads per-case budget/dimension when no shared top-level defaults exist; consistency rejection is appropriate for mixed suites. Native DB selection, same-slot seed deduplication, score points and lineage reading are unchanged.",
+    "historical_suite_shapes_checked_without_rendering": [
+      {
+        "path": "artifacts/evolution/20260915T094509.711861Z-seed/search-suite.json",
+        "cases": 4,
+        "budget": 50000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/evolution/20260915T101024.562418Z-search/search-suite.json",
+        "cases": 4,
+        "budget": 50000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/evolution/20260915T094647.219057Z-seed/search-suite.json",
+        "cases": 4,
+        "budget": 50000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/preparation_joint_v3/20260916-native-seed/runs/20260916T024936.637020Z-seed/search-suite.json",
+        "cases": 1,
+        "budget": 1000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/relocation_allocation_v2/evolution/20260916T013407.256962Z-search/search-suite.json",
+        "cases": 16,
+        "budget": 100000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/joint_relocation_v3/evolution/search_1_seed_610002/search-suite.json",
+        "cases": 16,
+        "budget": 100000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/joint_relocation_v3/evolution/search_0_seed_610001/search-suite.json",
+        "cases": 16,
+        "budget": 100000,
+        "dimension": 5
+      },
+      {
+        "path": "artifacts/joint_relocation_v3/evolution/search_2_seed_610003/search-suite.json",
+        "cases": 16,
+        "budget": 100000,
+        "dimension": 5
+      }
+    ],
+    "limitation": "Sprint-specific seed legend names radius1/retain as measured for this frozen sprint; reusing this task identity with a different Phase A selected seed would require a truthful legend update. This is not a defect in the current rendered sprint figure.",
+    "numerical_or_model_calls": 0
+  }
+}

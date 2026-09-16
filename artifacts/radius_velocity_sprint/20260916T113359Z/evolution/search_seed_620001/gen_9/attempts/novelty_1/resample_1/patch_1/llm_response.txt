@@ -1,0 +1,18 @@
+<NAME>
+loss_gated_velocity_reset
+</NAME>
+<DESCRIPTION>
+Keep radius_scale at 1.25, but reset selected velocities only when relative_fitness_drop exceeds 0.15. This replaces unconditional resetting with a response to observed fitness loss, preserving momentum after smaller changes. The mixed development results motivate testing selective resetting; improved performance and an overshoot mechanism remain unestablished.
+</DESCRIPTION>
+<CODE>
+```python
+"""Count-four recovery policy; memory reevaluation is fixed by the adapter."""
+# EVOLVE-BLOCK-START
+def choose_recovery(observation: dict) -> dict:
+    return {
+        "radius_scale": 1.25,
+        "reset_velocity": bool(observation["relative_fitness_drop"] > 0.15),
+    }
+# EVOLVE-BLOCK-END
+```
+</CODE>

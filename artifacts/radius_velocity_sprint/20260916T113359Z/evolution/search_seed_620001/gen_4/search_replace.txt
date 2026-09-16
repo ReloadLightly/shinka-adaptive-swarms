@@ -1,0 +1,13 @@
+<NAME>
+refine_retained_velocity_radius
+</NAME>
+<DESCRIPTION>
+Probe radius_scale=1.2 while retaining velocity. Development mean errors at scales 1.0, 1.25 and 1.5 suggest testing near 1.25; a slightly smaller radius may preserve its gains while reducing relocation disruption. This single-variable refinement avoids unsupported reset conditions. Closed-loop outcomes need not vary smoothly, so improvement remains untested and any transfer claim requires the separate probe.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"radius_scale": 1.25, "reset_velocity": False}
+=======
+    return {"radius_scale": 1.2, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

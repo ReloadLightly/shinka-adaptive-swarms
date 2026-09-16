@@ -1,0 +1,15 @@
+<NAME>
+smaller_radius_retained_velocity
+</NAME>
+<DESCRIPTION>
+Test radius_scale=0.75 while retaining velocities. Increasing the radius from 1.0 to 1.5 slightly worsened mean development error with retained velocities, motivating a probe below 1.0. A smaller relocation radius may preserve useful local search structure while retained momentum supplies additional movement. This constant policy isolates radius tuning; improved performance would neither establish overshoot as the mechanism nor demonstrate transfer without fresh-case evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 1.0, "reset_velocity": False}
+=======
+def choose_recovery(observation: dict) -> dict:
+    return {"radius_scale": 0.75, "reset_velocity": False}
+>>>>>>> REPLACE
+</DIFF>

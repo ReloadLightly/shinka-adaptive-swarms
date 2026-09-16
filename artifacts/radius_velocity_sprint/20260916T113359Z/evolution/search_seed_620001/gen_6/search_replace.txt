@@ -1,0 +1,13 @@
+<NAME>
+radius_125_reset_velocity
+</NAME>
+<DESCRIPTION>
+Use radius_scale=1.25, the best retained-velocity radius reported here, and reset relocated particles’ velocities. Comparison with the existing 1.25/retain candidate isolates the effect of resetting at that radius. This tests an unmeasured combination; earlier resetting results were unfavorable on average, so improvement remains uncertain. Any gain would require transfer testing and would not establish overshoot as its cause.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"radius_scale": 1.3, "reset_velocity": False}
+=======
+    return {"radius_scale": 1.25, "reset_velocity": True}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,263 @@
+{
+  "schema": "radius-velocity-sprint-stage-v1",
+  "stage": "phase_a",
+  "created_at": "2026-09-16T11:39:12.866009+00:00",
+  "cases": [
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410001,
+      "optimizer_seed": 1410001,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410002,
+      "optimizer_seed": 1410002,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410101,
+      "optimizer_seed": 1410101,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410102,
+      "optimizer_seed": 1410102,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410201,
+      "optimizer_seed": 1410201,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410202,
+      "optimizer_seed": 1410202,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410301,
+      "optimizer_seed": 1410301,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 410302,
+      "optimizer_seed": 1410302,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    }
+  ],
+  "methods": {
+    "c4_r1_retain": {
+      "kind": "recovery",
+      "source": "programs/c4_r1_retain.py",
+      "sha256": "bbe1c2ffaf67f27dbfe4bbfac35723da4015c87543c3fc18bdcd53a13adff34d",
+      "radius_scale": 1.0,
+      "reset_velocity": false,
+      "count": 4
+    },
+    "c4_r1p5_retain": {
+      "kind": "recovery",
+      "source": "programs/c4_r1p5_retain.py",
+      "sha256": "179a81fdfd21e5e7488e8e21164681da3637908b859cf88bd8e95e92f13131e3",
+      "radius_scale": 1.5,
+      "reset_velocity": false,
+      "count": 4
+    },
+    "c4_r1_reset": {
+      "kind": "recovery",
+      "source": "programs/c4_r1_reset.py",
+      "sha256": "ebe5db5fa370b3b8ec90ee39a7f72a7bb561dbf3ca40413309ee874d54240fde",
+      "radius_scale": 1.0,
+      "reset_velocity": true,
+      "count": 4
+    },
+    "c4_r1p5_reset": {
+      "kind": "recovery",
+      "source": "programs/c4_r1p5_reset.py",
+      "sha256": "34404817b315e0b4d4b9148f533637b4f80a45c6a2365f8a718c67eee3422a92",
+      "radius_scale": 1.5,
+      "reset_velocity": true,
+      "count": 4
+    },
+    "baseline": {
+      "kind": "baseline",
+      "source": null,
+      "count": 5,
+      "radius_scale": 1.0,
+      "reset_velocity": false
+    },
+    "v3_selected": {
+      "kind": "joint",
+      "source": "programs/v3_selected.py",
+      "sha256": "acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec",
+      "historical_source": "artifacts/joint_relocation_v3/study_20260916/programs/acefdf34161e9e666deb778e914d0e3287e74a42642946513cc93ceb73a467ec.py"
+    }
+  },
+  "source_case_indices": [
+    0,
+    1,
+    4,
+    5,
+    8,
+    9,
+    12,
+    13
+  ],
+  "source_case_manifest": "/home/roland/actir/shinka-adaptive-swarms/artifacts/joint_relocation_v3/study_20260916/search_cases.json",
+  "source_case_manifest_sha256": "053e60b3db10630918294fcdee587dd26b2198f273a8a7f9fa94ebb8764e3d32",
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/recovery_response.py": "6e352806653d81d795df06a603d158a0eed2983009ff5a43182c973f78bc9ff1"
+  },
+  "simulator_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4"
+  },
+  "maximum_new_executions": 48,
+  "trace_note": "Dense interval25; historical interval500 is not an exact observational-cache match."
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "smaller_radius_retained_velocity",
+  "patch_description": "Test radius_scale=0.5 while retaining velocity. The development results favor radius 1 over 1.5 on average with retained velocity, motivating a probe below the tested range. A smaller relocation radius may preserve useful local structure while retained momentum supplies additional movement. This constant policy isolates radius tuning; improvement remains untested and would not establish overshoot as the mechanism. Transfer requires the separate probe.",
+  "error_msg": null,
+  "timestamp": "2026-09-16T13:50:11.443354",
+  "llm_cost": 0.0944,
+  "llm_model": "headless/codex@gpt-6-astra",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/evolution/search_seed_620001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

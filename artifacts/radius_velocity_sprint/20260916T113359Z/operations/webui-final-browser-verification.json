@@ -1,0 +1,99 @@
+{
+  "at": "2026-09-16T12:18:08.162746+00:00",
+  "status": "passed",
+  "error": null,
+  "scope": "Existing cached agent-browser binary; temporary named browser session closed. Native WebUIservice8894 reused unchanged. No downloads or installs.",
+  "steps": [
+    {
+      "args": [
+        "open",
+        "http://127.0.0.1:8894/viz_tree.html?db_path=search_seed_620001%2Fprograms.sqlite&selected_node=995b37f2-f893-4b64-b8a8-71a8d825bdea&left_tab=tree-view&right_tab=agent-code"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 \ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n  http://127.0.0.1:8894/viz_tree.html?db_path=search_seed_620001%2Fprograms.sqlite&selected_node=995b37f2-f893-4b64-b8a8-71a8d825bdea&left_tab=tree-view&right_tab=agent-code\n",
+      "stderr": "[agent-browser] launched browser\n"
+    },
+    {
+      "args": [
+        "snapshot",
+        "-i"
+      ],
+      "returncode": 0,
+      "stdout": "- link \"\u2190 Dashboard\" [ref=e1]\n- heading \"\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\" [level=2, ref=e2]\n- button \"\ud83d\udcca\" [ref=e3]\n- button \"\u23f1\ufe0f\" [ref=e4]\n- button \"\ud83d\udcbe\" [ref=e5]\n- generic \"Tree\" [ref=e6] clickable [cursor:pointer]\n- generic \"PromptEvo\" [ref=e7] clickable [cursor:pointer]\n- generic \"Programs\" [ref=e8] clickable [cursor:pointer]\n- generic \"Metrics\" [ref=e9] clickable [cursor:pointer]\n- generic \"Embed\" [ref=e10] clickable [cursor:pointer]\n- generic \"Clusters\" [ref=e11] clickable [cursor:pointer]\n- generic \"Islands\" [ref=e12] clickable [cursor:pointer]\n- generic \"Ensembling\" [ref=e13] clickable [cursor:pointer]\n- generic \"Path\" [ref=e14] clickable [cursor:pointer]\n- generic \"MAPs\" [ref=e15] clickable [cursor:pointer]\n- LabelText \"Transpose Tree (Left\u2192Right)\" [ref=e45] clickable [cursor:pointer]\n  - checkbox \"Transpose Tree (Left\u2192Right)\" [checked=false, ref=e48]\n- LabelText \"Animate Tree\" [ref=e46] clickable [cursor:pointer]\n  - checkbox \"Animate Tree\" [checked=false, ref=e49]\n- group \"0\" [ref=e50] clickable [cursor:pointer]\n- group \"0I0\" [ref=e51] clickable [cursor:pointer]\n- group \"0I1\" [ref=e52] clickable [cursor:pointer]\n- group \"2I1\" [ref=e53] clickable [cursor:pointer]\n- group \"3I0\" [ref=e54] clickable [cursor:pointer]\n- group \"1I0\" [ref=e55] clickable [cursor:pointer]\n- group \"7I1\" [ref=e56] clickable [cursor:pointer]\n- group \"4I0\" [ref=e57] clickable [cursor:pointer]\n- group \"9I1\" [ref=e58] clickable [cursor:pointer]\n- group \"10I1\" [ref=e59] clickable [cursor:pointer]\n- group \"5I0\" [ref=e60] clickable [cursor:pointer]\n- group \"8I0\" [ref=e61] clickable [cursor:pointer]\n- group \"11I0\" [ref=e62] clickable [cursor:pointer]\n- group \"12I0\" [ref=e63] clickable [cursor:pointer]\n- group \"6I0\" [ref=e64] clickable [cursor:pointer]\n- heading \"Nodes\" [level=5, ref=e16]\n- heading \"Patches\" [level=5, ref=e28]\n- heading \"Performance\" [level=5, ref=e17]\n- generic \"\u25b6\\n                                2 Islands\" [ref=e29] clickable [cursor:pointer]\n  - heading \"2 Islands\" [level=5, ref=e47]\n- generic \"Meta\" [ref=e18] clickable [cursor:pointer]\n- generic \"Pareto\" [ref=e19] clickable [cursor:pointer]\n- generic \"Scratch\" [ref=e20] clickable [cursor:pointer]\n- generic \"Node\" [ref=e21] clickable [cursor:pointer]\n- generic \"Code\" [ref=e22] clickable [cursor:pointer]\n- generic \"Diff\" [ref=e23] clickable [cursor:pointer]\n- generic \"Eval\" [ref=e24] clickable [cursor:pointer]\n- generic \"LLM\" [ref=e25] clickable [cursor:pointer]\n- generic \"Analysis\" [ref=e26] clickable [cursor:pointer]\n- generic \"Usage\" [ref=e27] clickable [cursor:pointer]\n- heading \"Info: search_seed_620001\" [level=3, ref=e30]\n- heading \"Overview\" [level=4, ref=e31]\n- heading \"Best Solution\" [level=4, ref=e32]\n- heading \"Cost Breakdown\" [level=4, ref=e33]\n- heading \"Performance Score Across Program Evaluations\" [level=4, ref=e34]\n- spinbutton \"Min:\" [ref=e35]\n- spinbutton \"Max:\" [ref=e36]\n- heading \"Performance Score Across API Budget\" [level=4, ref=e37]\n- spinbutton \"Min:\" [ref=e38]\n- spinbutton \"Max:\" [ref=e39]\n- heading \"Performance Score Across ShinkaEvolve Runtime\" [level=4, ref=e40]\n- spinbutton \"Min:\" [ref=e41]\n- spinbutton \"Max:\" [ref=e42]\n- heading \"Cumulative API Cost Breakdown\" [level=4, ref=e43]\n- heading \"Cumulative Runtime Across Program Evaluations\" [level=4, ref=e44]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "get",
+        "text",
+        "body"
+      ],
+      "returncode": 0,
+      "stdout": "\u2190 Dashboard\n\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n\ud83d\udcca\n\u23f1\ufe0f\nLoaded 14 programs [02:18:02 PM]\n\ud83d\udcbe\nTree\nPromptEvo\nPrograms\nMetrics\nEmbed\nClusters\nIslands\nEnsembling\nPath\nMAPs\nTranspose Tree (Left\u2192Right)\nAnimate Tree\n0\n0\nI0\n0\nI1\n2\nI1\n3\nI0\n1\nI0\n7\nI1\n4\nI0\n9\nI1\n10\nI1\n5\nI0\n8\nI0\n11\nI0\n12\nI0\n6\nI0\nNodes\nBest\nError\nPatches\ninit\nfull\ndiff\ncross\nPerformance\n0.22\n0.26\n\u25b6\n2 Islands\nMeta\nPareto\nScratch\nNode\nCode\nDiff\nEval\nLLM\nAnalysis\nUsage\n\nSelect a node from the tree to view code.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "click",
+        "@e54"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Done\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "snapshot",
+        "-i"
+      ],
+      "returncode": 0,
+      "stdout": "- link \"\u2190 Dashboard\" [ref=e1]\n- heading \"\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\" [level=2, ref=e2]\n- button \"\ud83d\udcca\" [ref=e3]\n- button \"\u23f1\ufe0f\" [ref=e4]\n- button \"\ud83d\udcbe\" [ref=e5]\n- generic \"Tree\" [ref=e6] clickable [cursor:pointer]\n- generic \"PromptEvo\" [ref=e7] clickable [cursor:pointer]\n- generic \"Programs\" [ref=e8] clickable [cursor:pointer]\n- generic \"Metrics\" [ref=e9] clickable [cursor:pointer]\n- generic \"Embed\" [ref=e10] clickable [cursor:pointer]\n- generic \"Clusters\" [ref=e11] clickable [cursor:pointer]\n- generic \"Islands\" [ref=e12] clickable [cursor:pointer]\n- generic \"Ensembling\" [ref=e13] clickable [cursor:pointer]\n- generic \"Path\" [ref=e14] clickable [cursor:pointer]\n- generic \"MAPs\" [ref=e15] clickable [cursor:pointer]\n- LabelText \"Transpose Tree (Left\u2192Right)\" [ref=e33] clickable [cursor:pointer]\n  - checkbox \"Transpose Tree (Left\u2192Right)\" [checked=false, ref=e36]\n- LabelText \"Animate Tree\" [ref=e34] clickable [cursor:pointer]\n  - checkbox \"Animate Tree\" [checked=false, ref=e37]\n- group \"0\" [ref=e38] clickable [cursor:pointer]\n- group \"0I0\" [ref=e39] clickable [cursor:pointer]\n- group \"0I1\" [ref=e40] clickable [cursor:pointer]\n- group \"2I1\" [ref=e41] clickable [cursor:pointer]\n- group \"3I0\" [ref=e42] clickable [cursor:pointer]\n- group \"1I0\" [ref=e43] clickable [cursor:pointer]\n- group \"7I1\" [ref=e44] clickable [cursor:pointer]\n- group \"4I0\" [ref=e45] clickable [cursor:pointer]\n- group \"9I1\" [ref=e46] clickable [cursor:pointer]\n- group \"10I1\" [ref=e47] clickable [cursor:pointer]\n- group \"5I0\" [ref=e48] clickable [cursor:pointer]\n- group \"8I0\" [ref=e49] clickable [cursor:pointer]\n- group \"11I0\" [ref=e50] clickable [cursor:pointer]\n- group \"12I0\" [ref=e51] clickable [cursor:pointer]\n- group \"6I0\" [ref=e52] clickable [cursor:pointer]\n- heading \"Nodes\" [level=5, ref=e16]\n- heading \"Patches\" [level=5, ref=e29]\n- heading \"Performance\" [level=5, ref=e17]\n- generic \"\u25b6\\n                                2 Islands\" [ref=e30] clickable [cursor:pointer]\n  - heading \"2 Islands\" [level=5, ref=e35]\n- heading \"intermediate_radius_retain_velocity (Gen 3)\" [level=3, ref=e18]\n- generic \"Meta\" [ref=e19] clickable [cursor:pointer]\n- generic \"Pareto\" [ref=e20] clickable [cursor:pointer]\n- generic \"Scratch\" [ref=e21] clickable [cursor:pointer]\n- generic \"Node\" [ref=e22] clickable [cursor:pointer]\n- generic \"Code\" [ref=e23] clickable [cursor:pointer]\n- generic \"Diff\" [ref=e24] clickable [cursor:pointer]\n- generic \"Eval\" [ref=e25] clickable [cursor:pointer]\n- generic \"LLM\" [ref=e26] clickable [cursor:pointer]\n- generic \"Analysis\" [ref=e27] clickable [cursor:pointer]\n- generic \"Usage\" [ref=e28] clickable [cursor:pointer]\n- button \"\ud83d\udccb Copy\" [ref=e31]\n- button \"\ud83d\udcbe Download\" [ref=e32]\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "click",
+        "@e23"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Done\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "get",
+        "text",
+        "body"
+      ],
+      "returncode": 0,
+      "stdout": "\u2190 Dashboard\n\ud83c\udf8f ShinkaEvolve: Program Evolution \ud83c\udf8f\n\ud83d\udcca\n\u23f1\ufe0f\nLoaded 14 programs [02:18:02 PM]\n\ud83d\udcbe\nTree\nPromptEvo\nPrograms\nMetrics\nEmbed\nClusters\nIslands\nEnsembling\nPath\nMAPs\nTranspose Tree (Left\u2192Right)\nAnimate Tree\n0\n0\nI0\n0\nI1\n2\nI1\n3\nI0\n1\nI0\n7\nI1\n4\nI0\n9\nI1\n10\nI1\n5\nI0\n8\nI0\n11\nI0\n12\nI0\n6\nI0\nNodes\nBest\nError\nPatches\ninit\nfull\ndiff\ncross\nPerformance\n0.22\n0.26\n\u25b6\n2 Islands\nintermediate_radius_retain_velocity (Gen 3)\n\nID: 995b37f2-f893-4b64-b8a8-71a8d825bdea\n\nParent ID: 5e5834c9-be1b-4c76-825f-553b7284e930\n\nScore: 0.257284\n\nMeta\nPareto\nScratch\nNode\nCode\nDiff\nEval\nLLM\nAnalysis\nUsage\n\ud83d\udccb Copy\n\ud83d\udcbe Download\n1\n2\n3\n4\n5\n6\n7\n\"\"\"Count-four recovery policy; memory reevaluation is fixed by the adapter.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_recovery(observation: dict) -> dict:\n    return {\"radius_scale\": 1.25, \"reset_velocity\": False}\n# EVOLVE-BLOCK-END\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "screenshot",
+        "/home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/operations/webui-final-source.png"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Screenshot saved to /home/roland/actir/shinka-adaptive-swarms/results/radius_velocity_sprint/20260916T113359Z/operations/webui-final-source.png\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "errors"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "close"
+      ],
+      "returncode": 0,
+      "stdout": "\u2713 Browser closed\n",
+      "stderr": ""
+    }
+  ],
+  "elapsed_seconds": 16.120961298998736
+}

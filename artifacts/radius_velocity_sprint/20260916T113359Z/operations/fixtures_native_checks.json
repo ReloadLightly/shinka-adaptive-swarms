@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-09-16T11:45:32.205617+00:00",
+  "status": "passed",
+  "command": ".venv/bin/python -m pytest -q -o faulthandler_timeout=20 tests/test_sprint_native.py tests/test_engine_config.py tests/test_storage_runner.py tests/test_task_selection.py",
+  "execution_context": "Host context with user-authorized escalation; no provider/model or simulator execution",
+  "passed_tests": 35,
+  "failed_tests": 0,
+  "reported_elapsed_seconds": 5.84,
+  "new_full_cases": 0,
+  "objective_queries": 0,
+  "actual_model_calls": 0,
+  "mocked_native_transport": true,
+  "scope": [
+    "Full native batches are reserved before dispatch",
+    "Exposed native-client retry requests consume the same allowance",
+    "Completed receipts count on resume; ceiling cannot change silently",
+    "Allowance stop uses operational channel, never candidate fitness or terminal proposal failure",
+    "Accepted checkpoint bytes survive stop",
+    "Native research_v3 evolution/database settings unchanged in named sprint profile",
+    "Existing task separation, terminal-failure preservation and resume checks"
+  ],
+  "earlier_checks": [
+    {
+      "context": "sandbox",
+      "passed_before_interruption": 30,
+      "status": "interrupted",
+      "reported_elapsed_seconds": 149.25,
+      "reason": "Unchanged test_background_io_failure_wakes_controller_without_scientific_result stalled in asyncio.run default-executor shutdown; interrupted only pytest"
+    },
+    {
+      "context": "sandbox isolated unchanged test",
+      "status": "interrupted",
+      "reported_elapsed_seconds": 57.2,
+      "reason": "15-second faulthandler showed asyncio runners.py line 72 shutdown_default_executor; only pytest interrupted"
+    },
+    {
+      "context": "host isolated unchanged test",
+      "status": "passed",
+      "passed_tests": 1,
+      "reported_elapsed_seconds": 0.06
+    }
+  ],
+  "source_sha256": {
+    "scripts/run_evolution.py": "5e505e91d3b68b62d8393ec6d66f165bc9aca6f31163afe512b7aec60ef14e76",
+    "src/adaptive_swarms/engine_runtime.py": "3236cda4845b1dca2cb30eacd8dd84d7d78ebadfb88423236ab3b24f2620e16e",
+    "src/adaptive_swarms/sprint_budget.py": "76567616d8cc1e3bd3ae7852750a101444d479b0f4645a5b2aab67a9e6c91a3d",
+    "configs/shinka/radius_velocity_sprint.json": "9794418450b20b2969bdf1210c6de54bdf6a250f3980ac03a4d1e80f15760b7c",
+    "tests/test_sprint_native.py": "3f5648b2df8444783d46af074241e5ab1cfe6e1c1d0c60addba1b5c21c3c2d8d"
+  },
+  "logical_response_accounting": "Initial batches reserved at engine_calls receipt creation; exposed query_async retries reserve one before dispatch in the same receipt. Provider-internal retries and supervising Codex usage are not observed. No limit active unless supplied to launcher.",
+  "expected_no_retry_13_program_count": {
+    "mutation": 12,
+    "novelty": 12,
+    "meta": 19,
+    "total": 43,
+    "caveat": "Novelty regeneration or native transport retries can increase counts; actual receipts are authoritative."
+  },
+  "native_proposal_rng_state_restored_on_resume": false
+}

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-09-16T12:11:36.560288+00:00",
+  "completed_case_files": 16,
+  "objective_queries": 1600000,
+  "new_objective_calls_by_review": 0,
+  "new_model_calls_by_review": 0,
+  "analysis_sha256": "549b134dfff67227de212d2268a78c9634a9ef3a5a1cdc21a19b902d763991f4",
+  "selection_sha256": "7bc8cf612669e5c8a1ad72f14a2a10a78488ddc58c7c3799d6ebf8f090251652",
+  "pilot_manifest_sha256": "f86bd82632a1c044368439b475417b8ef6f5da4d00631747f7d23ce0bae42122",
+  "checks": [
+    "Frozen selected source matches native generation3 exactly.",
+    "Selection precedes fresh pilot case generation and every pilot execution.",
+    "Replayed recorded seed generator and excluded all591 saved reserved values across RNG roles.",
+    "All16 case config/input hashes, counted budgets, memory/action identities and matched landscape histories pass.",
+    "Independent integer-index resampling plus explicit sorted linear quantile interpolation reproduces declared2000-resample interval.",
+    "PNG visually inspected: all eight points, including case7 large benefit, remain visible; no clipped labels.",
+    "PNG/SVG and source analysis hashes match figure provenance."
+  ],
+  "paired_deltas": [
+    -0.1966334265709584,
+    -0.05025561214677765,
+    -0.22309925556912247,
+    0.2779673383432162,
+    0.5326521362045891,
+    0.7798958862311656,
+    0.03526253708250948,
+    -6.197992570570151
+  ],
+  "mean_delta": -0.6302753708744412,
+  "sd_delta": 2.277171313835873,
+  "independently_computed_95_percent_interval": [
+    -1.4720655835700662,
+    0.2241230837714832
+  ],
+  "wins": 4,
+  "losses": 4,
+  "selected_mean": 3.5625804618107892,
+  "baseline_mean": 4.19285583268523,
+  "most_influential_case": {
+    "case_index": 7,
+    "selected_error": 5.515637248557366,
+    "baseline_error": 11.713629819127517,
+    "delta": -6.197992570570151,
+    "retained": true
+  },
+  "native_selected_lineage": {
+    "parent_id": "5e5834c9-be1b-4c76-825f-553b7284e930",
+    "archive_insp_ids": [
+      "5a64af5a-337d-4dea-bf1b-ab7ef8aed5c6"
+    ],
+    "top_k_insp_ids": []
+  },
+  "limitations": [
+    "Two histories per regime yield unstable bootstrap uncertainty.",
+    "Probe compares complete count4/radius1.25 method against count5/radius1 baseline, not isolated radius tuning.",
+    "A constant winner provides no evidence for useful conditional recovery."
+  ]
+}

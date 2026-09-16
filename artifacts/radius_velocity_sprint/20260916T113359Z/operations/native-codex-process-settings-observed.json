@@ -1,0 +1,41 @@
+{
+  "at": "2026-09-16T12:03:38.451310+00:00",
+  "scoped_parent_pid": 900048,
+  "observed_codex_processes": [
+    {
+      "pid": 914042,
+      "executable_basename": "node",
+      "model_flag_values": [
+        "gpt-6-astra"
+      ],
+      "effort_related_arguments": [],
+      "subcommand_exec_present": false
+    },
+    {
+      "pid": 914049,
+      "executable_basename": "node",
+      "model_flag_values": [
+        "gpt-6-astra"
+      ],
+      "effort_related_arguments": [],
+      "subcommand_exec_present": true
+    },
+    {
+      "pid": 914056,
+      "executable_basename": "codex",
+      "model_flag_values": [
+        "gpt-6-astra"
+      ],
+      "effort_related_arguments": [],
+      "subcommand_exec_present": true
+    }
+  ],
+  "provenance": "Exact fields from the immediately preceding read-only host exec observation stdout (tool chunk eeb506), persisted after that model child exited. A follow-up live probe saved separately as native-codex-process-settings.json observed no active model process.",
+  "verified_cli_model_flag": "gpt-6-astra",
+  "observed_effort_override": false,
+  "effective_provider_reasoning_effort": "unverified profile/default; absence of a CLI override does not establish the provider default",
+  "provider_model_identity_independently_attested": false,
+  "new_model_calls": 0,
+  "new_objective_queries": 0,
+  "scope": "Only model/effort flags from descendants of this sprint wrapper; no environment, authentication or prompt content inspected."
+}

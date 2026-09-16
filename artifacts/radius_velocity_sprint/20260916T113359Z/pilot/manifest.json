@@ -1,0 +1,226 @@
+{
+  "schema": "radius-velocity-sprint-stage-v1",
+  "stage": "pilot",
+  "created_at": "2026-09-16T12:09:15.997778+00:00",
+  "cases": [
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 1308101991,
+      "optimizer_seed": 2098022737,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 1684256785,
+      "optimizer_seed": 263815896,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 1618180936,
+      "optimizer_seed": 1105269032,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 1505366921,
+      "optimizer_seed": 462599044,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 98251851,
+      "optimizer_seed": 407101707,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 2500,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 501297350,
+      "optimizer_seed": 588778744,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 778713580,
+      "optimizer_seed": 593853902,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 10,
+      "period": 5000,
+      "move_severity": 3.0,
+      "correlation": 0.0,
+      "budget": 100000,
+      "environment_seed": 233685175,
+      "optimizer_seed": 388563697,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 25,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    }
+  ],
+  "methods": {
+    "selected": {
+      "kind": "recovery",
+      "source": "programs/pilot_selected.py",
+      "sha256": "726852b55db9a8ee90301b138f1252ee689ecbc5c5f5431417db4f2f113833e0"
+    },
+    "comparator": {
+      "kind": "baseline",
+      "source": null,
+      "count": 5,
+      "radius_scale": 1.0,
+      "reset_velocity": false,
+      "memory": "reevaluate"
+    }
+  },
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/recovery_response.py": "6e352806653d81d795df06a603d158a0eed2983009ff5a43182c973f78bc9ff1"
+  },
+  "maximum_new_executions": 16,
+  "freeze_sha256": "7bc8cf612669e5c8a1ad72f14a2a10a78488ddc58c7c3799d6ebf8f090251652",
+  "pilot_generator_seed": 99266199449664215124118274283093614848,
+  "generator": "Python random.Random with post-freeze secrets.randbits(128) master; range1..2**31-1; reject every historically recorded seed across roles and previous fresh draws",
+  "seed_inventory_sha256": "fd5a64f2e1fca4d97d96ef2585b33e248f23ff0ef84c3d397605ecb45be496f8",
+  "analysis": {
+    "paired_cases": 8,
+    "cases_per_regime": 2,
+    "equal_regime_weights": true,
+    "bootstrap_resamples": 2000,
+    "analysis_seed": 2026091605,
+    "interval": "descriptive two-sided95% percentile stratified paired bootstrap",
+    "selection_independent_of_pilot": true
+  }
+}

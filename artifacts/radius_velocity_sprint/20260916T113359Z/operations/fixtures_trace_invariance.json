@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "time": "2026-09-16T11:41:09.988408+00:00",
+  "config": {
+    "budget": 2000,
+    "period": 250,
+    "environment_seed": 720001,
+    "optimizer_seed": 1720001,
+    "trace_interval": 25,
+    "progress_interval": 0
+  },
+  "intervals": [
+    25,
+    500
+  ],
+  "executions": 2,
+  "objective_queries": 4000,
+  "elapsed_seconds": 0.062421037000603974,
+  "equal_outcome_fields": [
+    "offline_error",
+    "evaluation_counts",
+    "evaluations",
+    "environment_changes",
+    "response_log",
+    "initial_environment"
+  ],
+  "trace_points": [
+    81,
+    9
+  ],
+  "responses": [
+    25,
+    25
+  ],
+  "offline_error": 20.632767899036057,
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4a410050a46b564128429d04d00686922e60bc2e09f89299dbaa4c8c3dd352c6",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/recovery_response.py": "6e352806653d81d795df06a603d158a0eed2983009ff5a43182c973f78bc9ff1"
+  }
+}
