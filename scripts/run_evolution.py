@@ -36,9 +36,10 @@ TASK_VERSIONS = {
     "joint_relocation_v3": "joint_relocation_v3_score_reciprocal",
     "radius_velocity_sprint": "fixed_four_radius_velocity_sprint_score_reciprocal_v1",
     "particle_retention_v1": "particle_retention_v1_reciprocal_v1",
+    "book_mpso_schedule_v1": "book_mpso_schedule_v1_reciprocal_v1",
 }
-TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py"}
-TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md"}
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py", "book_mpso_schedule_v1": "book_schedule.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md", "book_mpso_schedule_v1": "book_mpso_schedule_v1_protocol.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -164,7 +165,7 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
         if "evolution_context.md" in hashes and file_hash(destination / "evolution_context.md") != hashes["evolution_context.md"]:
             raise RuntimeError("Saved scientific context snapshot changed.")
         if task != "adaptive_swarm":
-            for name in (TASK_ADAPTERS[task],):
+            for name in (TASK_ADAPTERS[task], *(("book_mpso.py",) if task == "book_mpso_schedule_v1" else ())):
                 if file_hash(ROOT / "src/adaptive_swarms" / name) != hashes[name]:
                     raise RuntimeError(f"Cannot resume with changed task adapter: {name}.")
                 if file_hash(destination / name) != hashes[name]:
@@ -195,6 +196,10 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
                              (ROOT / "docs" / TASK_PROTOCOLS[task], "protocol.md")):
             shutil.copyfile(source, destination / name)
             hashes[name] = file_hash(source)
+        if task == "book_mpso_schedule_v1":
+            source = ROOT / "src/adaptive_swarms/book_mpso.py"
+            shutil.copyfile(source, destination / source.name)
+            hashes[source.name] = file_hash(source)
         prompt = (destination / "task_prompt.txt").read_text()
         prompt += "\n\n# Scientific context supplied to mutation\n\n" + (destination / "evolution_context.md").read_text()
         (destination / "task_system_prompt.txt").write_text(prompt)

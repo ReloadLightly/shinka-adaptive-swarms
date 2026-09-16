@@ -1,0 +1,25 @@
+{
+  "version": "book_mpso_schedule_descriptive_v1",
+  "question": "Can native evolution improve the temporary neutral-to-quantum conversion schedule against matched reconstructed MPSO 5+0 and 5+1?",
+  "scenario": "5 dimensions, 10 peaks, severity 1, period 5000, correlation 0, nexcess 1, 500000 counted objective queries",
+  "selection": "Minimum development mean offline error among complete valid native programs, including the seed; ties by earlier generation, then source SHA256.",
+  "fresh_comparison_condition": "A source-distinct selected descendant has a strictly lower development mean error than the seed and is not established execution-equivalent to it.",
+  "fresh_freeze_order": "Freeze exact selected and reference sources and this analysis before generating eight fresh environment/optimizer seed pairs.",
+  "methods": ["mpso_5_0", "mpso_5_1", "selected"],
+  "contrasts": ["selected_minus_mpso_5_1", "selected_minus_mpso_5_0", "mpso_5_1_minus_mpso_5_0"],
+  "effect_direction": "Negative selected-minus-reference offline error favors the selected schedule.",
+  "case_weighting": "Equal weight for each of the eight independent paired cases in this single scenario.",
+  "bootstrap": {
+    "resampling_unit": "Independent environment/optimizer case pair, preserving all paired method outcomes together.",
+    "resamples": 20000,
+    "seed": 2026091608,
+    "interval": "Descriptive 95% percentile bootstrap interval of the paired mean; numpy default_rng; no particle/update-level resampling."
+  },
+  "reported_statistics": ["every paired case", "mean", "median", "sample standard deviation", "minimum", "maximum", "win/loss/tie counts", "descriptive bootstrap interval", "leave-one-case-out means"],
+  "influence": "Retain every case. Report largest absolute case contribution, fraction of net mean where defined, and largest absolute completed-environment contribution; no outlier removal.",
+  "behavior": "Equal-case summaries of temporary neutral count distributions, fraction of neutral updates converted, conversion by observed time since detected change, and measured ordinary/temporary/permanent quantum contributions to shared-best improvement.",
+  "recovery": "Use saved actual query offsets after environmental boundaries. Exclude initial environment; average environments within a case, then give cases equal weight. Never interpolate unrecorded immediate error.",
+  "examples": "Use prospectively recorded first update, first detected-change update, and first updates reaching one-quarter, one-half and three-quarters of the query budget in each case; additionally show the most favorable and unfavorable completed-environment contrasts as explicitly post hoc examples.",
+  "development_interpretation": "All development comparisons are selected-data descriptions; intervals do not correct selection bias and are not a gate for continuing native search.",
+  "fresh_interpretation": "Eight fresh pairs provide exploratory evidence in one chapter-aligned setting. They do not replicate Table 3's 50-run experiment, establish superiority over all chapter algorithm families, or identify a benefit of Shinka as a search method or of any engine feature."
+}

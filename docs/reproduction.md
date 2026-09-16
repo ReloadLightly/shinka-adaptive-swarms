@@ -9,7 +9,7 @@ peaks as measured geopolitical entities.
 
 Tim Blackwell, Jürgen Branke and Xiaodong Li, **Particle Swarms for Dynamic
 Optimization Problems**, in *Swarm Intelligence: Introduction and Applications*
-(2008), printed pages 193–218. Page numbers below refer to the uploaded book.
+(2008), printed pages 193–217. Page numbers below refer to the uploaded book.
 
 The exact chapter is named in the docstring of DEAP's
 [`examples/pso/multiswarm.py`](https://github.com/DEAP/deap/blob/8a96fd3a75026f7b30e835f595a5199c75634ddf/examples/pso/multiswarm.py).
@@ -31,8 +31,9 @@ Blackwell–Branke 2004 paper. Source provenance is recorded in
 The v1 baseline is the book-tested **5 + 0** configuration: five neutral
 particles per swarm, temporarily converted to quantum particles for one
 iteration after change. `nexcess=1`; initial swarm count is one. The book
-also tested permanent quantum particles; its stronger **5 + 1** comparison
-is not implemented or claimed here. A score better than 5 + 0 alone would
+also tested permanent quantum particles; the **5 + 1** comparison was not implemented in those historical studies.
+The new [chapter-aligned schedule study](book_mpso_source_record.md) implements
+both reference paths separately, preserving historical execution. A score better than 5 + 0 alone would
 not establish superiority over all algorithms or settings in the chapter.
 
 ## Landscape configuration

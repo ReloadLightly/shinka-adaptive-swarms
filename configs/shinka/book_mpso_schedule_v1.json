@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "name": "book_mpso_schedule_v1",
+  "description": "Chapter-aligned temporary-conversion schedule study. Native evolution/database settings identical to research_v3; existing calibrated embedding route and threshold are reused. Fixed subscription-backed gpt-6-astra with task-local xhigh: the pinned native/headless route does not accept inner Ultra. Slot/response ceilings are launcher arguments.",
+  "evolution": {
+    "llm_models": [
+      "$codex"
+    ],
+    "llm_dynamic_selection": "fixed",
+    "llm_kwargs": {
+      "temperatures": [
+        0.0
+      ],
+      "max_tokens": 16384
+    },
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "max_patch_resamples": 1,
+    "max_patch_attempts": 1,
+    "max_novelty_attempts": 3,
+    "embedding_model": "$local_embedding",
+    "code_embed_sim_threshold": 0.830958258366903,
+    "novelty_llm_models": [
+      "$codex"
+    ],
+    "meta_rec_interval": 5,
+    "meta_llm_models": [
+      "$codex"
+    ],
+    "meta_max_recommendations": 5,
+    "sample_single_meta_rec": true,
+    "evolve_prompts": false,
+    "use_text_feedback": true,
+    "enable_wandb_logging": false
+  },
+  "database": {
+    "parent_selection_strategy": "weighted",
+    "parent_selection_lambda": 10.0,
+    "num_islands": 2,
+    "archive_size": 40,
+    "num_archive_inspirations": 1,
+    "num_top_k_inspirations": 1,
+    "migration_interval": 10,
+    "migration_rate": 0.1,
+    "island_elitism": true,
+    "enforce_island_separation": true
+  }
+}
