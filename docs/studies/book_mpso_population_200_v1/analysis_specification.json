@@ -1,0 +1,56 @@
+{
+  "version": "book_mpso_population_200_descriptive_v1",
+  "question": "Can an evolved population rule improve the chapter reconstructed 5+1 MPSO when 200 peaks compete for a fixed objective-evaluation budget?",
+  "scenario": "5 dimensions, 200 conical peaks, severity 1, period 5000, correlation 0, nexcess 1, 500000 counted objective queries",
+  "development_cases": "Four new development environment/optimizer seed pairs frozen before observing outcomes, excluding recorded historical identities; all four cases remain throughout selection.",
+  "selection": "Minimum development mean offline error among complete valid native programs including the target-5 seed; ties by earlier generation, then source SHA256.",
+  "fixed_target_selection": "Minimum development mean among targets 3 and 5; ties by lower numeric target. Both start at five and change by at most one at each detected event.",
+  "fresh_comparison_condition": "A distinct selected native descendant strictly improves development mean over both target 5 and target 3; it is not established execution-equivalent to a comparator.",
+  "fresh_freeze_order": "Freeze exact selected and both reference sources, selection and this analysis before generating four fresh environment/optimizer seed pairs excluding recorded historical identities.",
+  "methods": [
+    "target_3",
+    "target_5",
+    "selected"
+  ],
+  "fresh_methods": [
+    "selected",
+    "target_5",
+    "target_3"
+  ],
+  "execution_aliases": "Use one physical execution for established identical sources/execution rules. Preserve nominal labels and recorded proof; do not infer equivalence merely from similar mean error.",
+  "contrasts": [
+    "selected_minus_target_5",
+    "selected_minus_target_3",
+    "target_3_minus_target_5"
+  ],
+  "effect_direction": "Negative selected-minus-reference offline error favors the selected population rule.",
+  "case_weighting": "Equal weight for each of four independent paired cases in this one chapter condition.",
+  "bootstrap": {
+    "resampling_unit": "Independent environment/optimizer case pair, preserving paired outcomes together.",
+    "resamples": 20000,
+    "seed": 2026091701,
+    "interval": "Descriptive 95% percentile interval of paired mean; numpy default_rng; no particle/update/environment-level resampling."
+  },
+  "reported_statistics": [
+    "every paired case",
+    "mean",
+    "median",
+    "sample standard deviation",
+    "minimum",
+    "maximum",
+    "win/loss/tie counts",
+    "descriptive bootstrap interval",
+    "leave-one-case-out means"
+  ],
+  "influence": "Retain every case. Report largest absolute case contribution, fraction of net mean where defined, and every completed-environment contribution; no outlier removal.",
+  "behavior": "Requested-target distributions at detected changes, realized-neutral-count distributions over subswarm updates, additions/removals, measured total particles and swarm counts over counted queries, query-category shares, spread of simultaneous neutral counts and how target requests differ between swarms. Give cases equal weight; pooled totals are labeled. Summarize target switches and reversals of nonzero resizing direction per persistent swarm identifier; replacement identities begin new lifetimes. Inspect selected source for global workload and history field use. Do not treat distinct swarm count as measured peak coverage.",
+  "recovery": "Use saved actual query offsets after environmental boundaries. Exclude initialization environment; average environments within case then give cases equal weight. Never interpolate unrecorded immediate error.",
+  "population_trajectories": "Use counted objective evaluations as time axis. Traces share a registered 100-query grid; average cases at actual common recorded queries and show within-case neutral count spread. No simulation replay.",
+  "examples": "Prospectively recorded first update, first detected change and first updates reaching quarter, half and three-quarter budgets in each case. Also choose largest negative and largest positive completed-environment contributions, excluding initialization, with ties by case index then environment. These extreme examples are explicitly post hoc, not representative frequencies. Use saved counted-query traces only; retain the unfavorable example and make no replay calls.",
+  "development_interpretation": "Four development cases informed native selection; descriptive intervals do not correct selection bias and are not a continuation or significance gate. If target 3 beats 5 and no descendant beats 3: A promising fixed-target setting on development data; no additional evolutionary gain demonstrated.",
+  "fresh_interpretation": "Four fresh independent case pairs provide a small exploratory signal, not confirmation comparable to the chapter fifty-run experiment. A constant winner is population-size tuning. A conditional winner beating targets 3 and 5 does not establish superiority to all constants or isolate adaptation causally. Neither phase reproduces the historical tables or compares SPSO.",
+  "no_automatic_extensions": "No new regime, shorter horizon, baseline-validation study, repeated search, parameter sweep or fresh stage when trigger fails.",
+  "reference_reuse": "Ten-peak numerical results cannot be reused. The four new target-5 records are reused for the exact native seed. Execution equivalence requires a recorded source/adapter proof, identical configurations and environment histories, exact budgets, update order and RNG consumption; matching mean errors alone are insufficient.",
+  "partial_results": "Only complete valid four-case native programs enter selection. --allow-partial emits an explicitly incomplete checkpoint inventory and per-case results without ranking partial means, selecting a winner or setting a fresh trigger. Complete reference-stage analysis remains available before search.",
+  "scope": "One bounded native batch, at most six descendant slots selected as six/four/two from first full planned reference runtime plus model latency and reserves before mutation. No seed shortening, control sweeps, automatic second campaign, peak-coverage claims or feature-level causal attribution."
+}

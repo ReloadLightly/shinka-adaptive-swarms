@@ -1,0 +1,26 @@
+{
+  "task": "book_mpso_population_200_v1",
+  "run_id": "20260917T025219Z",
+  "search_seed": 660001,
+  "maximum_descendant_slots": 6,
+  "resolved_descendant_slots": null,
+  "runtime_resolution": "Before mutation, measured first target5 case; choose 6,4,2 from wall time, no reference-score criterion",
+  "max_logical_responses": 36,
+  "model": "gpt-6-astra",
+  "inner_effort": "xhigh",
+  "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+  "engine_profile": "configs/shinka/book_mpso_population_200_v1.json",
+  "analysis": "docs/studies/book_mpso_population_200_v1/analysis_specification.json",
+  "physical_case_ceiling": 44,
+  "query_ceiling": 22000000,
+  "development_cases": 4,
+  "fresh_cases_conditional": 4,
+  "fixed_targets": [
+    5,
+    3
+  ],
+  "deadline_utc": "2026-09-17T04:52:19+00:00",
+  "research_deadline_utc": "2026-09-17T04:37:19+00:00",
+  "delivery_reserve_seconds": 900,
+  "fixture_objective_queries": 0
+}

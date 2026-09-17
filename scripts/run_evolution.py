@@ -38,9 +38,10 @@ TASK_VERSIONS = {
     "particle_retention_v1": "particle_retention_v1_reciprocal_v1",
     "book_mpso_schedule_v1": "book_mpso_schedule_v1_reciprocal_v1",
     "book_mpso_population_v1": "book_mpso_population_v1_reciprocal_v1",
+    "book_mpso_population_200_v1": "book_mpso_population_200_v1_reciprocal_v1",
 }
-TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py", "book_mpso_schedule_v1": "book_schedule.py", "book_mpso_population_v1": "population_policy.py"}
-TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md", "book_mpso_schedule_v1": "book_mpso_schedule_v1_protocol.md", "book_mpso_population_v1": "book_mpso_population_v1_protocol.md"}
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py", "book_mpso_schedule_v1": "book_schedule.py", "book_mpso_population_v1": "population_policy.py", "book_mpso_population_200_v1": "population_policy.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md", "book_mpso_schedule_v1": "book_mpso_schedule_v1_protocol.md", "book_mpso_population_v1": "book_mpso_population_v1_protocol.md", "book_mpso_population_200_v1": "book_mpso_population_200_v1_protocol.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -166,7 +167,7 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
         if "evolution_context.md" in hashes and file_hash(destination / "evolution_context.md") != hashes["evolution_context.md"]:
             raise RuntimeError("Saved scientific context snapshot changed.")
         if task != "adaptive_swarm":
-            for name in (TASK_ADAPTERS[task], *(("book_mpso.py",) if task == "book_mpso_schedule_v1" else ("book_population.py", "book_mpso.py") if task == "book_mpso_population_v1" else ())):
+            for name in (TASK_ADAPTERS[task], *(("book_mpso.py",) if task == "book_mpso_schedule_v1" else ("book_population.py", "book_mpso.py") if task in {"book_mpso_population_v1", "book_mpso_population_200_v1"} else ())):
                 if file_hash(ROOT / "src/adaptive_swarms" / name) != hashes[name]:
                     raise RuntimeError(f"Cannot resume with changed task adapter: {name}.")
                 if file_hash(destination / name) != hashes[name]:
@@ -197,11 +198,11 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
                              (ROOT / "docs" / TASK_PROTOCOLS[task], "protocol.md")):
             shutil.copyfile(source, destination / name)
             hashes[name] = file_hash(source)
-        if task in {"book_mpso_schedule_v1", "book_mpso_population_v1"}:
+        if task in {"book_mpso_schedule_v1", "book_mpso_population_v1", "book_mpso_population_200_v1"}:
             source = ROOT / "src/adaptive_swarms" / ("book_mpso.py" if task == "book_mpso_schedule_v1" else "book_population.py")
             shutil.copyfile(source, destination / source.name)
             hashes[source.name] = file_hash(source)
-            if task == "book_mpso_population_v1":
+            if task in {"book_mpso_population_v1", "book_mpso_population_200_v1"}:
                 source = ROOT / "src/adaptive_swarms/book_mpso.py"
                 shutil.copyfile(source, destination / source.name)
                 hashes[source.name] = file_hash(source)
