@@ -1,0 +1,58 @@
+{
+  "version": "book_mpso_population_200_campaign_analysis_v2",
+  "question": "Can an evolved population rule improve the chapter reconstructed 5+1 MPSO when 200 peaks compete for a fixed objective-evaluation budget?",
+  "scenario": "5 dimensions, 200 conical peaks, severity 1, period 5000, correlation 0, nexcess 1, 500000 counted objective queries",
+  "development_cases": "Four existing 200-peak development seed pairs, reused with the corrected engine; no historical numerical result reuse.",
+  "selection": "After 50 terminal descendant slots, minimum complete valid native development mean including seed; ties by earlier generation then source SHA256. Failed terminal slots consume allocation. Session pauses never finalize selection.",
+  "fixed_target_selection": "After all seven constant targets 2..8 complete four cases, minimum development mean; ties by lower numeric target. Every new/replacement subswarm starts at five; one-step resizing on detection.",
+  "fresh_comparison_condition": "After campaign completion only: distinct selected native program strictly improves development mean over corrected target five. Seed best means no discovered improvement and no self comparison.",
+  "fresh_freeze_order": "Freeze selected native source, baseline and independently development-selected constant source and analysis before generating 50 NEW seed pairs excluding all historical pairs. Future user-launched sessions only.",
+  "methods": [
+    "target_3",
+    "target_5",
+    "selected"
+  ],
+  "fresh_methods": [
+    "selected",
+    "target_5",
+    "development_selected_constant"
+  ],
+  "execution_aliases": "Use one physical execution for established identical sources/execution rules. Preserve nominal labels and recorded proof; do not infer equivalence merely from similar mean error.",
+  "contrasts": [
+    "selected_minus_target_5",
+    "selected_minus_development_selected_constant"
+  ],
+  "effect_direction": "Negative selected-minus-reference offline error favors the selected population rule.",
+  "case_weighting": "Equal weight for independent whole histories: four development histories, 50 new paired full histories for prospective fresh comparison.",
+  "bootstrap": {
+    "resampling_unit": "Independent environment/optimizer case pair, preserving paired outcomes together.",
+    "resamples": 20000,
+    "seed": 2026091702,
+    "interval": "95% percentile interval of paired whole-history mean differences using numpy default_rng. Development intervals descriptive and selection-biased; 50 fresh pairs support the prespecified primary then secondary analysis."
+  },
+  "reported_statistics": [
+    "every paired case",
+    "mean",
+    "median",
+    "sample standard deviation",
+    "minimum",
+    "maximum",
+    "win/loss/tie counts",
+    "descriptive bootstrap interval",
+    "leave-one-case-out means",
+    "absolute mean effect",
+    "relative mean effect against reference mean",
+    "all 50 fresh pairs when available"
+  ],
+  "influence": "Retain every case. Report largest absolute case contribution, fraction of net mean where defined, and every completed-environment contribution; no outlier removal.",
+  "behavior": "Requested-target distributions at detected changes, realized-neutral-count distributions over subswarm updates, additions/removals, measured total particles and swarm counts over counted queries, query-category shares, spread of simultaneous neutral counts and how target requests differ between swarms. Give cases equal weight; pooled totals are labeled. Summarize target switches and reversals of nonzero resizing direction per persistent swarm identifier; replacement identities begin new lifetimes. Inspect selected source for global workload and history field use. Do not treat distinct swarm count as measured peak coverage.",
+  "recovery": "Use saved actual query offsets after environmental boundaries. Exclude initialization environment; average environments within case then give cases equal weight. Never interpolate unrecorded immediate error.",
+  "population_trajectories": "Use counted objective evaluations as time axis. Traces share a registered 100-query grid; average cases at actual common recorded queries and show within-case neutral count spread. No simulation replay.",
+  "examples": "Prospectively recorded first update, first detected change and first updates reaching quarter, half and three-quarter budgets in each case. Also choose largest negative and largest positive completed-environment contributions, excluding initialization, with ties by case index then environment. These extreme examples are explicitly post hoc, not representative frequencies. Use saved counted-query traces only; retain the unfavorable example and make no replay calls.",
+  "development_interpretation": "Interim, selection-biased four-history diagnostics; no final winner or fresh-test decision before 50 descendant slots and all constant controls.",
+  "fresh_interpretation": "Primary comparison: evolved-minus-5+1 mean interval entirely below zero supports improvement in this condition. Only if primary supported interpret prespecified secondary evolved-minus-selected-constant. No significance stopping or retuning from partial fresh outcomes. Constant winner means population-target tuning; conditional winner does not isolate causality of adaptation.",
+  "no_automatic_extensions": "Later sessions and fresh confirmation require a new user launch. No changed horizons, histories or benchmark conditions.",
+  "reference_reuse": "Only corrected source-identical target-five records reused for native seed; old diameter-engine trajectory remains historical and cannot provide a corrected control score.",
+  "partial_results": "Only complete valid four-case programs have interim ranks. Incomplete work remains unranked and conservatively accounted; interim best is not a frozen final selection.",
+  "scope": "Prospective 50-slot resumable campaign. Session 1 at most six slots, 80 logical responses and 180 wall minutes, final 20 minutes for drain/publication. Campaign ceilings 400 responses, 400 full attempts and 200 million conservatively counted queries. No later session or fresh testing is launched automatically."
+}
