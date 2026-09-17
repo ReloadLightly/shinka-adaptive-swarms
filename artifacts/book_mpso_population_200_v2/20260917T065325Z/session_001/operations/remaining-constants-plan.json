@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-09-17T08:12:53.954039+00:00",
+  "source_commit": "dcd8386bbf0cee272185bd7699451dbe76677a9e",
+  "after_native_batch_drains": true,
+  "native_slots_remain_capped_at": 6,
+  "targets": [
+    2,
+    4,
+    6,
+    7,
+    8
+  ],
+  "expected_proven_native_reuse": {
+    "target_2": "gen_2",
+    "target_4": "gen_3"
+  },
+  "maximum_new_full_cases_after_reuse": 12,
+  "admission_rule": "Proceed only if twelve full cases at current conservative case rate plus120seconds fit before the existing research cutoff; case admission also remains active. No new session, additional native slots or fresh histories.",
+  "conservative_case_seconds": 190.30342365,
+  "estimated_reserved_seconds": 2403.6410838,
+  "selection_basis": "Already registered constant list and measured runtime; independent of scores. Source-level execution equivalence determines reuse.",
+  "checks": "10 controller/reuse checks passed; new copy-gap fixture is synthetic and consumes0objective/modelcalls."
+}

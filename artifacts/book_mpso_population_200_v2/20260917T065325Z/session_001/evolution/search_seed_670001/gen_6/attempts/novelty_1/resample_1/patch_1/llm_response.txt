@@ -1,0 +1,15 @@
+<NAME>
+bounded_workload_penalty
+</NAME>
+<DESCRIPTION>
+Cap the workload penalty at 120 estimated queries while retaining the existing hysteresis thresholds. This preserves decisions at lower workloads and prevents the loss required to request three neutrals from growing indefinitely: entry requires loss above 0.14, and retention requires loss above 0.07. The hypothesis is that limiting workload suppression improves recovery during larger observed losses; the episode regressions motivate this test but do not establish its cause or guarantee improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    # Greater existing workload raises the evidence required for growth.
+    recovery_pressure = loss / (1.0 + sweep_queries / 160.0)
+=======
+    # Raise the evidence required for growth, with a bounded workload penalty.
+    recovery_pressure = loss / (1.0 + min(sweep_queries, 120.0) / 160.0)
+>>>>>>> REPLACE
+</DIFF>

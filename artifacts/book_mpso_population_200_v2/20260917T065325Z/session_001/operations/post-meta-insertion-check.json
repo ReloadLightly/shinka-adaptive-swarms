@@ -1,0 +1,278 @@
+{
+  "audit": {
+    "updates_started": [
+      {
+        "time": "2026-09-17T07:58:01+00:00",
+        "elapsed_s": 2157.81,
+        "event": "meta_update_start",
+        "message": "Native meta-scratchpad update started",
+        "pending_programs": 5
+      }
+    ],
+    "updates_completed": [
+      {
+        "time": "2026-09-17T08:03:36+00:00",
+        "elapsed_s": 2493.45,
+        "event": "meta_update_complete",
+        "message": "Native meta-scratchpad recommendations updated"
+      }
+    ],
+    "updates_noop": [],
+    "saved_artifacts": [
+      {
+        "artifact": "evolution/search_seed_670001/meta/meta_5.txt",
+        "recommendations": [
+          "**Tune entry and retention thresholds separately.** Preserve workload normalization and targets two/three; try entry thresholds `0.06` and `0.10` with retention fixed at `0.04`, then retention thresholds `0.02` and `0.06` with entry fixed at `0.08`. The winning policy uses both targets substantially, making their transition boundaries promising mutation points, although hysteresis\u2019s individual contribution remains unresolved.",
+          "**Try a bounded workload penalty.** Replace the pressure denominator with `1 + min(sweep_queries, 120.0) / 160.0`, keeping the existing thresholds. This preserves the successful workload adjustment while allowing sufficiently large losses to trigger growth even at high workload; the episode regressions motivate this hypothesis without establishing excessive workload suppression as their cause.",
+          "**Include deterioration remaining after memory refresh.** Compute `residual_loss = max(0.0, (previous_best_fitness - current_best_fitness) / max(1.0, abs(previous_best_fitness)))`, then substitute `0.5 * loss + 0.5 * residual_loss` into the existing pressure calculation. This distinguishes deterioration at the checked attractor from deterioration that surviving memories cannot compensate for, potentially retaining the economical target two when refresh already supplies a better attractor.",
+          "**Make recent progress modestly discourage expansion.** Define `progress = max(0.0, recent_improvement) / max(1.0, abs(previous_best_fitness))` and multiply the selected hysteresis threshold by `1 + 0.5 * min(1.0, progress / 0.02)`. This extends the successful small-population policy by requiring stronger loss evidence before allocating another particle to a recently productive swarm. Keep the adjustment bounded because this progress occurred during the preceding update and does not establish recovery after the current change.",
+          "**Add an exceptional target-four recovery branch.** Using the original adjusted pressure, request four above `0.20`, retain four above `0.12` when the previous request was four, and otherwise apply the two/three rule with its retention threshold for previous targets three or four. Fixed Four\u2019s weak results argue for restricting this extension to exceptional deterioration; the large episode regressions make it a plausible, unproven recovery variation. The existing one-particle resize limit means a swarm at two must sustain the condition across detections to reach four."
+        ],
+        "observed_completion_time_by_update_order": "2026-09-17T08:03:36+00:00"
+      }
+    ],
+    "mutation_prompt_injections": [
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json",
+        "started_at": "2026-09-17T07:22:21.226765+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": false,
+        "recommendation_section_present": false,
+        "verification": "before first observed completed meta update"
+      },
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-4b3e5b03225948999884e17a7f9978ce.json",
+        "started_at": "2026-09-17T07:31:10.585829+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": false,
+        "recommendation_section_present": false,
+        "verification": "before first observed completed meta update"
+      },
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-642fc5e9723f47b8931f8aa76115ff8b.json",
+        "started_at": "2026-09-17T08:03:37.333937+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 5,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": true,
+        "recommendation_section_present": false,
+        "verification": "observed crossover prompt without a recommendation section; native crossover format omits meta injection"
+      },
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-64d52e4177ca4e66864265c9568ed96c.json",
+        "started_at": "2026-09-17T07:39:15.708581+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": false,
+        "recommendation_section_present": false,
+        "verification": "before first observed completed meta update"
+      },
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-6916ddfd3aff4544a665935d065d3a70.json",
+        "started_at": "2026-09-17T07:49:06.885493+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": false,
+        "recommendation_section_present": false,
+        "verification": "before first observed completed meta update"
+      }
+    ]
+  },
+  "files": {
+    "evolution/search_seed_670001/manifest.json": {
+      "bytes_read": 10175,
+      "sha256_at_read": "17f166a17ee47eabd60d6653df025d30039eee74026015a33e698cd546749456"
+    },
+    "evolution/search_seed_670001/events.jsonl": {
+      "bytes_read": 1043039,
+      "sha256_at_read": "bb0b6d08d84a6a1efe2f5c95f2aaf2a23b526e9d266c347a5e1693dad093a3f0"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-60685e47bbd6498da106ff04e7765257.json": {
+      "bytes_read": 26692,
+      "sha256_at_read": "b029eb247fba82f81b6d63aa0b8d0e1f5689d61091e8dc8d4560fe2706c10817"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-6367975c348a4db5a79094e701e3b577.json": {
+      "bytes_read": 71035,
+      "sha256_at_read": "a3478e153e753d934bdb8c2cd8d44055a045505da8614621bc625155440a5307"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-aa36ccab8bfb41088085765ba6e482f9.json": {
+      "bytes_read": 23069,
+      "sha256_at_read": "dc9550c4a50887d30579240450a676779dbacf26df1fdd09770809813f6d34da"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json": {
+      "bytes_read": 28631,
+      "sha256_at_read": "5d29863d63d9d45318e90cd1987ff4404c78f99f8786d6a16d9ee7948853806a"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-4b3e5b03225948999884e17a7f9978ce.json": {
+      "bytes_read": 40232,
+      "sha256_at_read": "bcb1aeaac2245e37e27372d92db7b5c7d93328debc6a2b09dbfa83f51db77b5d"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-642fc5e9723f47b8931f8aa76115ff8b.json": {
+      "bytes_read": 51605,
+      "sha256_at_read": "128e1177e6fdc5733a42b0107b95c9acb1c5af5be651ea78305dec7bbdf17899"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-64d52e4177ca4e66864265c9568ed96c.json": {
+      "bytes_read": 50876,
+      "sha256_at_read": "b846afa64b9bfe202eed7c99d8f93db66bdd758c65a970a0549ba96cc32a91a4"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-6916ddfd3aff4544a665935d065d3a70.json": {
+      "bytes_read": 52109,
+      "sha256_at_read": "19342f9cc940d457ecbf543fe53465b73cc909d89f30fcfad76d532a960331df"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-0a5cea442d2047dd98b6b4170c10c93a.json": {
+      "bytes_read": 3613,
+      "sha256_at_read": "4216937512a331125fffc1cadc3dd9173f6a9bdfecb6f3250078f45719a5375a"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-5ab3c77505d84b35ade0afb4c62b8629.json": {
+      "bytes_read": 3618,
+      "sha256_at_read": "435c36a9ec5fdd3aad55e39e71cf5f417d618a9ed99a031883b0014274517f54"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-a1da6b7d4b594dcd8e9a638621fd7e88.json": {
+      "bytes_read": 4436,
+      "sha256_at_read": "a6fb6b2c8f5da5f79f2955b3b41074ecf0039fc3a5fb958bb0ddda7802a3ec7b"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-bce9a2c088b34843a9d4a8e291e54173.json": {
+      "bytes_read": 3606,
+      "sha256_at_read": "13f1a3a49a35f78e7a0be33449f29df249110e3c99bef7eea05f4ad99574970f"
+    },
+    "evolution/search_seed_670001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 25365,
+      "sha256_at_read": "bd8b1650ad2a0a657c3e470ab889f56a1285a9bc842af138d744b63a0d5e801e"
+    },
+    "evolution/search_seed_670001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 36412,
+      "sha256_at_read": "93703584acd9b7ba673a8506a694f9d2e7fd000f116e78e08011b23774dc7605"
+    },
+    "evolution/search_seed_670001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 46750,
+      "sha256_at_read": "d63fd0f8a5738c41f7c60777e8b0bbd51aaa415d993da7bbd5488b569325d623"
+    },
+    "evolution/search_seed_670001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 47204,
+      "sha256_at_read": "229f1a803b133e6340d2b39dcf4ee155f53170aa207e00f286bc314cb8fc40e0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_034391693d08404ab5f27c3075f18596.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "6566d98456c841ee72a9ff0276642d561a777afce0065e6ffeed9d19dc901fe0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_1e9c74ca288049f28c48e2723362d885.md": {
+      "bytes_read": 12011,
+      "sha256_at_read": "abdf34e3e0799be0ac5065563ce8d6e2de73620b705d2fb5ca81ab20d71406fa"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_25b3f885e4894b108d53a07652ee5dbd.md": {
+      "bytes_read": 12228,
+      "sha256_at_read": "9d9fe9c1e950adfff9817f66d6e2c3e55cdd82c125a09549d0b9b7e0c12a3ec0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_2e8851447c934f0caccad37d36b30ca8.md": {
+      "bytes_read": 36412,
+      "sha256_at_read": "93703584acd9b7ba673a8506a694f9d2e7fd000f116e78e08011b23774dc7605"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_34fa5a48d7204e2a8f436a21cae26c3d.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "3616336b3290475a397f7dee9d8fdc8acd4b38df79ff963152d0ae7a154d29a0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_505fd046df0a4324b1a504c92f513595.md": {
+      "bytes_read": 11915,
+      "sha256_at_read": "d537529153d96f0c4ce9d4e8bef034cb8afcb6b04c07a6686ff9dc6bda8299dd"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_7ffe3b8abf5d4f5f95ed2ff3f7dd7075.md": {
+      "bytes_read": 46750,
+      "sha256_at_read": "d63fd0f8a5738c41f7c60777e8b0bbd51aaa415d993da7bbd5488b569325d623"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_99dffd0b557b49008d4759cf78741461.md": {
+      "bytes_read": 19517,
+      "sha256_at_read": "e21e60d162956f2e48a72b2cbacd5242c52ea1308c2d88bafbc7ee8e3845ad5d"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_a3960df498e24ccfb51da208f424bc8e.md": {
+      "bytes_read": 12268,
+      "sha256_at_read": "8c3de40b95ff61c3057c2cf56a1785d156ebc30747db28ec4d67a794cb491f96"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_b64590a32e6d4805a92ae72b790e445f.md": {
+      "bytes_read": 12950,
+      "sha256_at_read": "165e26252a04648db095a87aed629a149c8442780b1e252334caa418fc738af6"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_d943ab2128e641ea8c03162f4a490d1a.md": {
+      "bytes_read": 47204,
+      "sha256_at_read": "229f1a803b133e6340d2b39dcf4ee155f53170aa207e00f286bc314cb8fc40e0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_daf030800a6a4091b1cce81c3fa241ae.md": {
+      "bytes_read": 18314,
+      "sha256_at_read": "0a9c1dfcc8bfd833387aaae05283a91d4d9fd6552575301bfa19fbce68df72d6"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_e9200c53e94f46f89bcd550cca218dbf.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "52aca0c1de081a962dfe49d8cac421519c42b6c4e04401c2da3308949fc82346"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_eae8025c9c474726a4e43286cd93013f.md": {
+      "bytes_read": 48397,
+      "sha256_at_read": "ee0a09934e17ba515ad0f2c27b772f0ddceb260cc8c0abfff6a38fff3716442d"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_ee873f51e74e49d98252da3db4eb630b.md": {
+      "bytes_read": 25365,
+      "sha256_at_read": "bd8b1650ad2a0a657c3e470ab889f56a1285a9bc842af138d744b63a0d5e801e"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_ef61183b20f34d8f9a286ea37b7ee344.md": {
+      "bytes_read": 2448,
+      "sha256_at_read": "f521c9d0b7d2d0d7144a9d5274ca8eb6820a4efc692c9ec437e150d1b394a08d"
+    },
+    "evolution/search_seed_670001/task_snapshot/task_system_prompt.txt": {
+      "bytes_read": 12108,
+      "sha256_at_read": "83127b50ad9d73bd7c058acf4b4eabe36b1eba34744041a2ce5f9023f7e1ba12"
+    },
+    "evolution/search_seed_670001/meta/meta_5.txt": {
+      "bytes_read": 12536,
+      "sha256_at_read": "ec9d68b5f863b66670df25250f11d7f305f27b21089dfcde0fda5b11f1cee3d6"
+    },
+    "evolution/search_seed_670001/gen_0/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    "evolution/search_seed_670001/gen_1/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38"
+    },
+    "evolution/search_seed_670001/gen_2/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8"
+    },
+    "evolution/search_seed_670001/gen_3/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+    },
+    "evolution/search_seed_670001/gen_4/main.py": {
+      "bytes_read": 843,
+      "sha256_at_read": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c"
+    }
+  }
+}

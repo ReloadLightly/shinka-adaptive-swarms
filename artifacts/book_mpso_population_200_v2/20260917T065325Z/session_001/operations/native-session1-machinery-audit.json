@@ -1,0 +1,1615 @@
+{
+  "audit": {
+    "run": "evolution/search_seed_670001",
+    "status": "campaign_paused",
+    "started_at": "20260917T072203.508799Z",
+    "finished_at": "2026-09-17T08:24:36.173116+00:00",
+    "original_evaluated_generation_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "database_rows_including_copies": 7,
+    "database_row_identity_digest": "7fb7271b0382f3486bd5c1da4a7e464472d513697cc03efa9092f27e9343a477",
+    "database_rows": [
+      {
+        "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+        "generation": 0,
+        "parent_id": null,
+        "code_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+        "island_at_snapshot": 0,
+        "patch_type": "init",
+        "correct": true
+      },
+      {
+        "native_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+        "generation": 1,
+        "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+        "code_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+        "island_at_snapshot": 0,
+        "patch_type": "diff",
+        "correct": true
+      },
+      {
+        "native_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+        "generation": 2,
+        "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+        "code_sha256": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8",
+        "island_at_snapshot": 0,
+        "patch_type": "diff",
+        "correct": true
+      },
+      {
+        "native_id": "1bb72fee-01b5-413b-8060-a8b2b43b77fb",
+        "generation": 3,
+        "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+        "code_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+        "island_at_snapshot": 0,
+        "patch_type": "full",
+        "correct": true
+      },
+      {
+        "native_id": "68536249-e308-4a48-b6af-3004df891bf6",
+        "generation": 4,
+        "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+        "code_sha256": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c",
+        "island_at_snapshot": 0,
+        "patch_type": "full",
+        "correct": true
+      },
+      {
+        "native_id": "7b88bffd-053e-4072-8378-07b063a17364",
+        "generation": 5,
+        "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+        "code_sha256": "799aa94d76f1b0963bc9f740d7ae726d3f3bb91d4e3b79d84bc97071cfe9713a",
+        "island_at_snapshot": 0,
+        "patch_type": "cross",
+        "correct": true
+      },
+      {
+        "native_id": "d225c0cd-aa19-441e-b866-c3aa228909b8",
+        "generation": 6,
+        "parent_id": "68536249-e308-4a48-b6af-3004df891bf6",
+        "code_sha256": "c34be04310fb23b1e3916f0f7c3e91a6922162c4f1de5b1b96d87ad05cf2b31f",
+        "island_at_snapshot": 0,
+        "patch_type": "diff",
+        "correct": true
+      }
+    ],
+    "model_requested": "gpt-6-astra",
+    "inner_effort_requested": "xhigh",
+    "inner_effort_effective_manifest": null,
+    "inner_effort_status_manifest": "requested; no model invocation performed",
+    "role_totals": {
+      "mutation": {
+        "native_wrapper_invocations": 6,
+        "requested_logical_responses": 6,
+        "usable_responses_returned": 6,
+        "status_counts": {
+          "returned": 6
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 3.782182,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ]
+      },
+      "novelty": {
+        "native_wrapper_invocations": 6,
+        "requested_logical_responses": 6,
+        "usable_responses_returned": 6,
+        "status_counts": {
+          "returned": 6
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 0.395966,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ]
+      },
+      "meta": {
+        "native_wrapper_invocations": 3,
+        "requested_logical_responses": 7,
+        "usable_responses_returned": 7,
+        "status_counts": {
+          "returned": 3
+        },
+        "unclosed_wrapper_invocations": 0,
+        "logical_responses_in_unclosed_wrappers": 0,
+        "closed_response_shortfall": 0,
+        "native_cost_estimate_sum": 1.709176,
+        "native_reported_routes": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ]
+      }
+    },
+    "role_receipts": [
+      {
+        "path": "evolution/search_seed_670001/engine_calls/meta-60685e47bbd6498da106ff04e7765257.json",
+        "call_id": "meta-60685e47bbd6498da106ff04e7765257",
+        "role": "meta",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:00:26.383420+00:00",
+        "finished_at": "2026-09-17T08:02:14.408286+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "ec03b7e4936fe28ecf47f5b75ab3e48d53c128c3cd0b99cd4da8c8f20b99e20d",
+        "message_sha256": "2cfb3a6474df9e6d4e8a4972b02cd49df27855e3697d680b6cca405fcd2daaf1",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 32300,
+            "output_tokens": 2738,
+            "reported_api_cost": 0.582268
+          }
+        ]
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/meta-6367975c348a4db5a79094e701e3b577.json",
+        "call_id": "meta-6367975c348a4db5a79094e701e3b577",
+        "role": "meta",
+        "method": "batch_kwargs_query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:58:01.332836+00:00",
+        "finished_at": "2026-09-17T08:00:26.372585+00:00",
+        "requested_logical_responses": 5,
+        "valid_responses": 5,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "4b3a928dfb8d5ffbf8cd5cb234b30a7894888df99d0c9bf7b556765b26533d64",
+        "message_sha256": "c8ca6d61e8228f875dbdae66336cc9206b4b2fc0bdbf82f09b27bb111d19b346",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 7157,
+            "output_tokens": 449,
+            "reported_api_cost": 0.10618
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 7180,
+            "output_tokens": 583,
+            "reported_api_cost": 0.11311
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 11693,
+            "output_tokens": 612,
+            "reported_api_cost": 0.15969
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 7251,
+            "output_tokens": 700,
+            "reported_api_cost": 0.11967
+          },
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 7409,
+            "output_tokens": 653,
+            "reported_api_cost": 0.1189
+          }
+        ]
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/meta-aa36ccab8bfb41088085765ba6e482f9.json",
+        "call_id": "meta-aa36ccab8bfb41088085765ba6e482f9",
+        "role": "meta",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:02:14.430122+00:00",
+        "finished_at": "2026-09-17T08:03:36.874020+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "e01ebae13dd64296062d7d30089d088deae20e824fe3d41877ec8a91e8e8213a",
+        "message_sha256": "5bfec2caf270bfbcff3030c39c4cfe86cd0564c44a034cac21ad456cab6ad13a",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 30078,
+            "output_tokens": 2121,
+            "reported_api_cost": 0.509358
+          }
+        ]
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-09c46fd7059445d6ac0e23b8b7361f3e.json",
+        "call_id": "mutation-09c46fd7059445d6ac0e23b8b7361f3e",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:13:14.267322+00:00",
+        "finished_at": "2026-09-17T08:13:59.397969+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "499098e655917a539fb20d1325414f2c7a33537279cc9567968ba03e667f1d1c",
+        "message_sha256": "40206c54839f188d613da4ff505c84cc61bc51d346711f44b4c8355b518c082e",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 27635,
+            "output_tokens": 782,
+            "reported_api_cost": 0.424634
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 6,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "68536249-e308-4a48-b6af-3004df891bf6"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json",
+        "call_id": "mutation-1d8a81aa5f454531a5138a029827672c",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:22:21.226765+00:00",
+        "finished_at": "2026-09-17T07:23:25.377963+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "7322d67e7dea281d6e4ef8da25d41636d90ee722d8fa23325b778133354ef516",
+        "message_sha256": "0b819825a6f2bdfdda9ddcbfbf60e04de2e1bca5c6d3071d9572365763a979ca",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 32287,
+            "output_tokens": 1442,
+            "reported_api_cost": 0.499546
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-4b3e5b03225948999884e17a7f9978ce.json",
+        "call_id": "mutation-4b3e5b03225948999884e17a7f9978ce",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:31:10.585829+00:00",
+        "finished_at": "2026-09-17T07:32:05.722933+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "7322d67e7dea281d6e4ef8da25d41636d90ee722d8fa23325b778133354ef516",
+        "message_sha256": "d64f27f979acf4cd1e90d54988f45a84050b95ffce791b394d22e3d581ca3224",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 32432,
+            "output_tokens": 1003,
+            "reported_api_cost": 0.485318
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-642fc5e9723f47b8931f8aa76115ff8b.json",
+        "call_id": "mutation-642fc5e9723f47b8931f8aa76115ff8b",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:03:37.333937+00:00",
+        "finished_at": "2026-09-17T08:05:39.478125+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "09856bae1df594196a1bfb0e8d3c48b871b41752640b6096be5e05f9e6308998",
+        "message_sha256": "c1b840458a19e87cd3eedafc7acd6697771e0cdf9540a8646f1cc418d6768a6e",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 40694,
+            "output_tokens": 2783,
+            "reported_api_cost": 0.803498
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 5,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-64d52e4177ca4e66864265c9568ed96c.json",
+        "call_id": "mutation-64d52e4177ca4e66864265c9568ed96c",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:39:15.708581+00:00",
+        "finished_at": "2026-09-17T07:41:10.920012+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "e6c3db93bf75b14151862c6cd7b65e6bbd0d4bb97bb284eea45454f9a03c84a3",
+        "message_sha256": "7ab3df83b6ea8c1524da912b3375155eed683d0cd1cda5d6e6e7a3262151329f",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 40026,
+            "output_tokens": 2854,
+            "reported_api_cost": 0.75608
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/mutation-6916ddfd3aff4544a665935d065d3a70.json",
+        "call_id": "mutation-6916ddfd3aff4544a665935d065d3a70",
+        "role": "mutation",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:49:06.885493+00:00",
+        "finished_at": "2026-09-17T07:50:49.841905+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": [
+            0.0
+          ],
+          "max_tokens": 16384,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "cc70b5109420da10a646a462dd41e67d7630aa3c7e216fab20f4ecccf688c072",
+        "message_sha256": "3bc2f557fdf356e77b806a46d6e9ea5ba1b7bfb43e6cc722fa9885b26cf96f49",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 45845,
+            "output_tokens": 2800,
+            "reported_api_cost": 0.813106
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-0a5cea442d2047dd98b6b4170c10c93a.json",
+        "call_id": "novelty-0a5cea442d2047dd98b6b4170c10c93a",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:23:25.484747+00:00",
+        "finished_at": "2026-09-17T07:23:40.800471+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "8db2e62f9f46dbf103bbab43665d427eb94057480dc25284cbced1bc10e76a23",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4008,
+            "output_tokens": 95,
+            "reported_api_cost": 0.05699
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-5ab3c77505d84b35ade0afb4c62b8629.json",
+        "call_id": "novelty-5ab3c77505d84b35ade0afb4c62b8629",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:32:07.769428+00:00",
+        "finished_at": "2026-09-17T07:32:26.039138+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "85da80b46b94695feb6a4f5ac3932a2516f79984d9493d0c79ff15fbecbbc23b",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 8232,
+            "output_tokens": 91,
+            "reported_api_cost": 0.094806
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 2,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-88e802b2c5a04748a8df10903f11e044.json",
+        "call_id": "novelty-88e802b2c5a04748a8df10903f11e044",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:14:01.681325+00:00",
+        "finished_at": "2026-09-17T08:14:16.898886+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "540e98865f667c29f200f84b417425c6d474dd3869869854bf2a4fec1450260c",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4343,
+            "output_tokens": 150,
+            "reported_api_cost": 0.06309
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 6,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "68536249-e308-4a48-b6af-3004df891bf6"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-a1da6b7d4b594dcd8e9a638621fd7e88.json",
+        "call_id": "novelty-a1da6b7d4b594dcd8e9a638621fd7e88",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:50:52.277769+00:00",
+        "finished_at": "2026-09-17T07:51:05.046993+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "cf0fc228fab717faf3561193935013a58adf6950907505a4eca0b704374f928a",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4170,
+            "output_tokens": 136,
+            "reported_api_cost": 0.06066
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 4,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-b92f999c242a4594899385fc7264aa84.json",
+        "call_id": "novelty-b92f999c242a4594899385fc7264aa84",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T08:05:42.709733+00:00",
+        "finished_at": "2026-09-17T08:05:56.369203+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "94700ec5e8c2ad71a73083ed36de772be7ef68eb51460bc446b8cdc462b81af6",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4342,
+            "output_tokens": 162,
+            "reported_api_cost": 0.06368
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 5,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+        }
+      },
+      {
+        "path": "evolution/search_seed_670001/engine_calls/novelty-bce9a2c088b34843a9d4a8e291e54173.json",
+        "call_id": "novelty-bce9a2c088b34843a9d4a8e291e54173",
+        "role": "novelty",
+        "method": "query",
+        "status": "returned",
+        "started_at": "2026-09-17T07:41:11.666581+00:00",
+        "finished_at": "2026-09-17T07:41:23.826932+00:00",
+        "requested_logical_responses": 1,
+        "valid_responses": 1,
+        "configured_models": [
+          "headless/codex@gpt-6-astra?effort=xhigh"
+        ],
+        "configured_client_settings": {
+          "temperatures": 0.75,
+          "max_tokens": 4096,
+          "reasoning_efforts": "disabled"
+        },
+        "explicit_request_kwargs": null,
+        "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+        "error": null,
+        "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+        "message_sha256": "0d2e5bf34e4899b51b5086a73926b46c7eb757b85a00b95afe8e3eeb288469ed",
+        "responses": [
+          {
+            "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+            "input_tokens": 4008,
+            "output_tokens": 90,
+            "reported_api_cost": 0.05674
+          }
+        ],
+        "preceding_native_sampling_context": {
+          "generation": 3,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        }
+      }
+    ],
+    "event_receipt_coverage": {
+      "native_wrapper_starts_without_receipt": [],
+      "receipts_without_observed_start_event": []
+    },
+    "mutation_wrapper_counts_by_generation": {
+      "6": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "3": 1,
+      "4": 1
+    },
+    "sampling_attempt_counts_by_generation": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1
+    },
+    "retry_context_association": "Most recent native_sampling event before the wrapper-start event in saved event order; the frozen V3 launcher has one proposal worker. Saved prompt source/feedback checks separately verify this context.",
+    "degradation_events": [],
+    "patch_types_original_evaluated_rows": {
+      "init": 1,
+      "diff": 3,
+      "full": 2,
+      "cross": 1
+    },
+    "native_sampling": [
+      {
+        "time": "2026-09-17T07:22:21+00:00",
+        "elapsed_s": 17.71,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+        "parent_generation": 0,
+        "archive_inspiration_ids": [],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+                "full_source_present": true,
+                "feedback_sha256": "019f5feaa5999ea41c4fbdb20bdfe0a30622ddb93e12b3ac91f0d70fdbdb45eb",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-17T07:31:10+00:00",
+        "elapsed_s": 547.07,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 2,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+        "parent_generation": 1,
+        "archive_inspiration_ids": [
+          "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        ],
+        "top_k_inspiration_ids": [],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+                "full_source_present": true,
+                "feedback_sha256": "778e4f7e933621d2979b2d1b2cea6bd52f6a6ab998b1c5370c338425ae29c33d",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+                "full_source_present": true,
+                "feedback_sha256": "019f5feaa5999ea41c4fbdb20bdfe0a30622ddb93e12b3ac91f0d70fdbdb45eb",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-17T07:39:15+00:00",
+        "elapsed_s": 1032.19,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 3,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+        "parent_generation": 2,
+        "archive_inspiration_ids": [
+          "2c74c093-2a63-435e-8faa-0641cfde431c"
+        ],
+        "top_k_inspiration_ids": [
+          "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        ],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+                "row_present": true,
+                "generation": 2,
+                "source_sha256": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8",
+                "full_source_present": true,
+                "feedback_sha256": "d15a5e247a03b2e27ad0c1ae9d1196a088c8048aafa0f53d50cd7c222a7f7b56",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+                "full_source_present": true,
+                "feedback_sha256": "778e4f7e933621d2979b2d1b2cea6bd52f6a6ab998b1c5370c338425ae29c33d",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+                "row_present": true,
+                "generation": 0,
+                "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+                "full_source_present": true,
+                "feedback_sha256": "019f5feaa5999ea41c4fbdb20bdfe0a30622ddb93e12b3ac91f0d70fdbdb45eb",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-17T07:49:06+00:00",
+        "elapsed_s": 1623.37,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 4,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+        "parent_generation": 2,
+        "archive_inspiration_ids": [
+          "2c74c093-2a63-435e-8faa-0641cfde431c"
+        ],
+        "top_k_inspiration_ids": [
+          "1bb72fee-01b5-413b-8060-a8b2b43b77fb"
+        ],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+                "row_present": true,
+                "generation": 2,
+                "source_sha256": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8",
+                "full_source_present": true,
+                "feedback_sha256": "d15a5e247a03b2e27ad0c1ae9d1196a088c8048aafa0f53d50cd7c222a7f7b56",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+                "full_source_present": true,
+                "feedback_sha256": "778e4f7e933621d2979b2d1b2cea6bd52f6a6ab998b1c5370c338425ae29c33d",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "1bb72fee-01b5-413b-8060-a8b2b43b77fb",
+                "row_present": true,
+                "generation": 3,
+                "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+                "full_source_present": true,
+                "feedback_sha256": "93e361d97371d6e5cc700fd38f2beaf2e752e9ef7644a8495ee0d761fb8728fa",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-17T08:03:37+00:00",
+        "elapsed_s": 2493.82,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 5,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+        "parent_generation": 1,
+        "archive_inspiration_ids": [
+          "68536249-e308-4a48-b6af-3004df891bf6"
+        ],
+        "top_k_inspiration_ids": [
+          "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+        ],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+                "row_present": true,
+                "generation": 1,
+                "source_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+                "full_source_present": true,
+                "feedback_sha256": "778e4f7e933621d2979b2d1b2cea6bd52f6a6ab998b1c5370c338425ae29c33d",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "68536249-e308-4a48-b6af-3004df891bf6",
+                "row_present": true,
+                "generation": 4,
+                "source_sha256": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c",
+                "full_source_present": true,
+                "feedback_sha256": "7d5918589acc0ec8570d4c02c016ba8e1b12c62e37181999642e39835ac5d100",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+                "row_present": true,
+                "generation": 2,
+                "source_sha256": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8",
+                "full_source_present": true,
+                "feedback_sha256": "d15a5e247a03b2e27ad0c1ae9d1196a088c8048aafa0f53d50cd7c222a7f7b56",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      },
+      {
+        "time": "2026-09-17T08:13:14+00:00",
+        "elapsed_s": 3070.74,
+        "event": "native_sampling",
+        "message": "Native parent and inspiration selection completed",
+        "generation": 6,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "68536249-e308-4a48-b6af-3004df891bf6",
+        "parent_generation": 4,
+        "archive_inspiration_ids": [
+          "1bb72fee-01b5-413b-8060-a8b2b43b77fb"
+        ],
+        "top_k_inspiration_ids": [
+          "7b88bffd-053e-4072-8378-07b063a17364"
+        ],
+        "needs_fix": false,
+        "saved_attempt_prompt_checks": [
+          {
+            "prompt": "evolution/search_seed_670001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+            "frozen_task_context_present": true,
+            "sources": [
+              {
+                "native_id": "68536249-e308-4a48-b6af-3004df891bf6",
+                "row_present": true,
+                "generation": 4,
+                "source_sha256": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c",
+                "full_source_present": true,
+                "feedback_sha256": "7d5918589acc0ec8570d4c02c016ba8e1b12c62e37181999642e39835ac5d100",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "1bb72fee-01b5-413b-8060-a8b2b43b77fb",
+                "row_present": true,
+                "generation": 3,
+                "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+                "full_source_present": true,
+                "feedback_sha256": "93e361d97371d6e5cc700fd38f2beaf2e752e9ef7644a8495ee0d761fb8728fa",
+                "full_feedback_present": true
+              },
+              {
+                "native_id": "7b88bffd-053e-4072-8378-07b063a17364",
+                "row_present": true,
+                "generation": 5,
+                "source_sha256": "799aa94d76f1b0963bc9f740d7ae726d3f3bb91d4e3b79d84bc97071cfe9713a",
+                "full_source_present": true,
+                "feedback_sha256": "be9042e1f58e4d70c626f8f5646c276bff5dbe30d6df6665b7ce704e45a53b42",
+                "full_feedback_present": true
+              }
+            ]
+          }
+        ],
+        "coverage": "saved attempt prompt inspected"
+      }
+    ],
+    "novelty": {
+      "decision_count": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "fallback": 0,
+      "decisions": [
+        {
+          "time": "2026-09-17T07:23:40+00:00",
+          "elapsed_s": 97.31,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05699,
+          "novelty_explanation": "NOVEL: The proposed code changes the neutral particle count from 5 to 3. This is a meaningful hyperparameter change that can affect swarm behavior and optimization performance.",
+          "max_similarity": 0.9897165298461914,
+          "similarity_scores": [
+            0.9897165298461914
+          ]
+        },
+        {
+          "time": "2026-09-17T07:32:26+00:00",
+          "elapsed_s": 622.55,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.094806,
+          "novelty_explanation": "**NOVEL**: The neutral-particle count changes from 5 to 2. This is a meaningful hyperparameter change that alters swarm composition and could affect search behavior and performance.",
+          "max_similarity": 0.9924068450927734,
+          "similarity_scores": [
+            0.9924068450927734,
+            0.9912876486778259
+          ]
+        },
+        {
+          "time": "2026-09-17T07:41:23+00:00",
+          "elapsed_s": 1160.33,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.05674,
+          "novelty_explanation": "**NOVEL**: The neutral particle count changes from 2 to 4. This is a meaningful hyperparameter change that can alter swarm composition, search behavior, and performance.",
+          "max_similarity": 0.9924098253250122,
+          "similarity_scores": [
+            0.9905349612236023,
+            0.9919446110725403,
+            0.9924098253250122
+          ]
+        },
+        {
+          "time": "2026-09-17T07:51:05+00:00",
+          "elapsed_s": 1741.55,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06066,
+          "novelty_explanation": "NOVEL: The existing code always returns 4. The proposed code adaptively returns 2 or 3 based on fitness loss, particle and swarm workload, and the previous target. It introduces workload normalization and hysteresis thresholds, meaningfully changing the selection algorithm and its behavior.",
+          "max_similarity": 0.8973209261894226,
+          "similarity_scores": [
+            0.8904439806938171,
+            0.8955268263816833,
+            0.8827952146530151,
+            0.8973209261894226
+          ]
+        },
+        {
+          "time": "2026-09-17T08:05:56+00:00",
+          "elapsed_s": 2632.87,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06368,
+          "novelty_explanation": "**NOVEL**: The proposed code caps `relative_fitness_drop` by a newly computed normalized loss between previous and current best fitness. This can return 2 where the existing code returns 3, changing the growth decision. The workload adjustment and hysteresis thresholds remain equivalent.",
+          "max_similarity": 0.9534925818443298,
+          "similarity_scores": [
+            0.8674367666244507,
+            0.8696630597114563,
+            0.8576221466064453,
+            0.8684021234512329,
+            0.9534925818443298
+          ]
+        },
+        {
+          "time": "2026-09-17T08:14:16+00:00",
+          "elapsed_s": 3133.4,
+          "event": "novelty_decision",
+          "message": "Native novelty accepted candidate",
+          "accepted": true,
+          "fallback": false,
+          "novelty_checks_performed": 1,
+          "novelty_total_cost": 0.06309,
+          "novelty_explanation": "**NOVEL**: The proposed code caps the workload penalty at `120.0`. Above that workload, recovery pressure is higher than in the existing code, potentially selecting 3 neutral particles instead of 2. This meaningfully changes the adaptation strategy; behavior is unchanged at workloads \u2264120.",
+          "max_similarity": 0.9931172132492065,
+          "similarity_scores": [
+            0.8861303329467773,
+            0.8909004926681519,
+            0.8786658048629761,
+            0.8930426836013794,
+            0.9931172132492065,
+            0.9607555270195007
+          ]
+        }
+      ]
+    },
+    "native_embeddings": {
+      "starts": 7,
+      "completions": 7,
+      "dimensions": {
+        "768": 7
+      },
+      "events": [
+        {
+          "time": "2026-09-17T07:22:17+00:00",
+          "elapsed_s": 13.85,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_0/main.py"
+        },
+        {
+          "time": "2026-09-17T07:23:25+00:00",
+          "elapsed_s": 81.9,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_1/main.py"
+        },
+        {
+          "time": "2026-09-17T07:32:05+00:00",
+          "elapsed_s": 602.26,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_2/main.py"
+        },
+        {
+          "time": "2026-09-17T07:41:10+00:00",
+          "elapsed_s": 1147.45,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_3/main.py"
+        },
+        {
+          "time": "2026-09-17T07:50:49+00:00",
+          "elapsed_s": 1726.36,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_4/main.py"
+        },
+        {
+          "time": "2026-09-17T08:05:39+00:00",
+          "elapsed_s": 2616.01,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_5/main.py"
+        },
+        {
+          "time": "2026-09-17T08:13:59+00:00",
+          "elapsed_s": 3115.98,
+          "event": "embedding_start",
+          "message": "Waiting for local code embedding",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_6/main.py"
+        },
+        {
+          "time": "2026-09-17T07:22:21+00:00",
+          "elapsed_s": 17.61,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_0/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T07:23:25+00:00",
+          "elapsed_s": 81.97,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_1/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T07:32:07+00:00",
+          "elapsed_s": 604.24,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_2/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T07:41:11+00:00",
+          "elapsed_s": 1148.14,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_3/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T07:50:52+00:00",
+          "elapsed_s": 1728.75,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_4/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T08:05:42+00:00",
+          "elapsed_s": 2619.13,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_5/main.py",
+          "dimensions": 768
+        },
+        {
+          "time": "2026-09-17T08:14:01+00:00",
+          "elapsed_s": 3118.13,
+          "event": "embedding_complete",
+          "message": "Local code embedding returned",
+          "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_6/main.py",
+          "dimensions": 768
+        }
+      ],
+      "degraded": []
+    },
+    "meta": {
+      "updates_started": [
+        {
+          "time": "2026-09-17T07:58:01+00:00",
+          "elapsed_s": 2157.81,
+          "event": "meta_update_start",
+          "message": "Native meta-scratchpad update started",
+          "pending_programs": 5
+        }
+      ],
+      "updates_completed": [
+        {
+          "time": "2026-09-17T08:03:36+00:00",
+          "elapsed_s": 2493.45,
+          "event": "meta_update_complete",
+          "message": "Native meta-scratchpad recommendations updated"
+        }
+      ],
+      "updates_noop": [],
+      "saved_artifacts": [
+        {
+          "artifact": "evolution/search_seed_670001/meta/meta_5.txt",
+          "recommendations": [
+            "**Tune entry and retention thresholds separately.** Preserve workload normalization and targets two/three; try entry thresholds `0.06` and `0.10` with retention fixed at `0.04`, then retention thresholds `0.02` and `0.06` with entry fixed at `0.08`. The winning policy uses both targets substantially, making their transition boundaries promising mutation points, although hysteresis\u2019s individual contribution remains unresolved.",
+            "**Try a bounded workload penalty.** Replace the pressure denominator with `1 + min(sweep_queries, 120.0) / 160.0`, keeping the existing thresholds. This preserves the successful workload adjustment while allowing sufficiently large losses to trigger growth even at high workload; the episode regressions motivate this hypothesis without establishing excessive workload suppression as their cause.",
+            "**Include deterioration remaining after memory refresh.** Compute `residual_loss = max(0.0, (previous_best_fitness - current_best_fitness) / max(1.0, abs(previous_best_fitness)))`, then substitute `0.5 * loss + 0.5 * residual_loss` into the existing pressure calculation. This distinguishes deterioration at the checked attractor from deterioration that surviving memories cannot compensate for, potentially retaining the economical target two when refresh already supplies a better attractor.",
+            "**Make recent progress modestly discourage expansion.** Define `progress = max(0.0, recent_improvement) / max(1.0, abs(previous_best_fitness))` and multiply the selected hysteresis threshold by `1 + 0.5 * min(1.0, progress / 0.02)`. This extends the successful small-population policy by requiring stronger loss evidence before allocating another particle to a recently productive swarm. Keep the adjustment bounded because this progress occurred during the preceding update and does not establish recovery after the current change.",
+            "**Add an exceptional target-four recovery branch.** Using the original adjusted pressure, request four above `0.20`, retain four above `0.12` when the previous request was four, and otherwise apply the two/three rule with its retention threshold for previous targets three or four. Fixed Four\u2019s weak results argue for restricting this extension to exceptional deterioration; the large episode regressions make it a plausible, unproven recovery variation. The existing one-particle resize limit means a swarm at two must sustain the condition across detections to reach four."
+          ],
+          "observed_completion_time_by_update_order": "2026-09-17T08:03:36+00:00"
+        }
+      ],
+      "mutation_prompt_injections": [
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-09c46fd7059445d6ac0e23b8b7361f3e.json",
+          "started_at": "2026-09-17T08:13:14.267322+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 6,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "68536249-e308-4a48-b6af-3004df891bf6"
+          },
+          "matched_recommendations": [
+            {
+              "artifact": "evolution/search_seed_670001/meta/meta_5.txt",
+              "recommendation_index": 2,
+              "observed_completion_time_by_update_order": "2026-09-17T08:03:36+00:00",
+              "recommendation_sha256": "049c44d8a022bc4d9af4742635eb595e2f22f33ea13ecf932f33e46498afa380"
+            }
+          ],
+          "unique_exact_recommendation_texts": 1,
+          "crossover_format_observed": false,
+          "recommendation_section_present": true,
+          "verification": "exact recorded recommendation text present"
+        },
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json",
+          "started_at": "2026-09-17T07:22:21.226765+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 1,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-4b3e5b03225948999884e17a7f9978ce.json",
+          "started_at": "2026-09-17T07:31:10.585829+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 2,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-642fc5e9723f47b8931f8aa76115ff8b.json",
+          "started_at": "2026-09-17T08:03:37.333937+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 5,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": true,
+          "recommendation_section_present": false,
+          "verification": "observed crossover prompt without a recommendation section; native crossover format omits meta injection"
+        },
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-64d52e4177ca4e66864265c9568ed96c.json",
+          "started_at": "2026-09-17T07:39:15.708581+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 3,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        },
+        {
+          "receipt": "evolution/search_seed_670001/engine_calls/mutation-6916ddfd3aff4544a665935d065d3a70.json",
+          "started_at": "2026-09-17T07:49:06.885493+00:00",
+          "preceding_native_sampling_context": {
+            "generation": 4,
+            "novelty_attempt": 1,
+            "resample_attempt": 1,
+            "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534"
+          },
+          "matched_recommendations": [],
+          "unique_exact_recommendation_texts": 0,
+          "crossover_format_observed": false,
+          "recommendation_section_present": false,
+          "verification": "before first observed completed meta update"
+        }
+      ]
+    },
+    "migration_history": [],
+    "native_migration_logs": []
+  },
+  "files": {
+    "evolution/search_seed_670001/manifest.json": {
+      "bytes_read": 10890,
+      "sha256_at_read": "0b1e9e5c4c20efee99b330f95d02b00bd8fa814005039874f6621ff78fe2fe9a"
+    },
+    "evolution/search_seed_670001/events.jsonl": {
+      "bytes_read": 1554223,
+      "sha256_at_read": "fee9192c574ca05adf5a2373fa806b47ab5db32a491dfdc985ba6daf055d06eb"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-60685e47bbd6498da106ff04e7765257.json": {
+      "bytes_read": 26692,
+      "sha256_at_read": "b029eb247fba82f81b6d63aa0b8d0e1f5689d61091e8dc8d4560fe2706c10817"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-6367975c348a4db5a79094e701e3b577.json": {
+      "bytes_read": 71035,
+      "sha256_at_read": "a3478e153e753d934bdb8c2cd8d44055a045505da8614621bc625155440a5307"
+    },
+    "evolution/search_seed_670001/engine_calls/meta-aa36ccab8bfb41088085765ba6e482f9.json": {
+      "bytes_read": 23069,
+      "sha256_at_read": "dc9550c4a50887d30579240450a676779dbacf26df1fdd09770809813f6d34da"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-09c46fd7059445d6ac0e23b8b7361f3e.json": {
+      "bytes_read": 54635,
+      "sha256_at_read": "4541e0f788542dc35d76a44af79ba05c21d21daee2caaa3ad1251f5a621e49c9"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json": {
+      "bytes_read": 28631,
+      "sha256_at_read": "5d29863d63d9d45318e90cd1987ff4404c78f99f8786d6a16d9ee7948853806a"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-4b3e5b03225948999884e17a7f9978ce.json": {
+      "bytes_read": 40232,
+      "sha256_at_read": "bcb1aeaac2245e37e27372d92db7b5c7d93328debc6a2b09dbfa83f51db77b5d"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-642fc5e9723f47b8931f8aa76115ff8b.json": {
+      "bytes_read": 53316,
+      "sha256_at_read": "a15b93914a6c2022d26e2ddf80cd05205fc9c33d8c5d9d21beebe83dbec4e5d2"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-64d52e4177ca4e66864265c9568ed96c.json": {
+      "bytes_read": 50876,
+      "sha256_at_read": "b846afa64b9bfe202eed7c99d8f93db66bdd758c65a970a0549ba96cc32a91a4"
+    },
+    "evolution/search_seed_670001/engine_calls/mutation-6916ddfd3aff4544a665935d065d3a70.json": {
+      "bytes_read": 52109,
+      "sha256_at_read": "19342f9cc940d457ecbf543fe53465b73cc909d89f30fcfad76d532a960331df"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-0a5cea442d2047dd98b6b4170c10c93a.json": {
+      "bytes_read": 3613,
+      "sha256_at_read": "4216937512a331125fffc1cadc3dd9173f6a9bdfecb6f3250078f45719a5375a"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-5ab3c77505d84b35ade0afb4c62b8629.json": {
+      "bytes_read": 3618,
+      "sha256_at_read": "435c36a9ec5fdd3aad55e39e71cf5f417d618a9ed99a031883b0014274517f54"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-88e802b2c5a04748a8df10903f11e044.json": {
+      "bytes_read": 5166,
+      "sha256_at_read": "f31a5fa5ef7638cf288fb22bcc7e27b5877830f2f2b1f1e21f8d770bf65546ad"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-a1da6b7d4b594dcd8e9a638621fd7e88.json": {
+      "bytes_read": 4436,
+      "sha256_at_read": "a6fb6b2c8f5da5f79f2955b3b41074ecf0039fc3a5fb958bb0ddda7802a3ec7b"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-b92f999c242a4594899385fc7264aa84.json": {
+      "bytes_read": 5133,
+      "sha256_at_read": "5c83c8980de81a555baa65177365dbaa5d82502d9c62236a480c2109c6070eb3"
+    },
+    "evolution/search_seed_670001/engine_calls/novelty-bce9a2c088b34843a9d4a8e291e54173.json": {
+      "bytes_read": 3606,
+      "sha256_at_read": "13f1a3a49a35f78e7a0be33449f29df249110e3c99bef7eea05f4ad99574970f"
+    },
+    "evolution/search_seed_670001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 25365,
+      "sha256_at_read": "bd8b1650ad2a0a657c3e470ab889f56a1285a9bc842af138d744b63a0d5e801e"
+    },
+    "evolution/search_seed_670001/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 36412,
+      "sha256_at_read": "93703584acd9b7ba673a8506a694f9d2e7fd000f116e78e08011b23774dc7605"
+    },
+    "evolution/search_seed_670001/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 46750,
+      "sha256_at_read": "d63fd0f8a5738c41f7c60777e8b0bbd51aaa415d993da7bbd5488b569325d623"
+    },
+    "evolution/search_seed_670001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 47204,
+      "sha256_at_read": "229f1a803b133e6340d2b39dcf4ee155f53170aa207e00f286bc314cb8fc40e0"
+    },
+    "evolution/search_seed_670001/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 48397,
+      "sha256_at_read": "ee0a09934e17ba515ad0f2c27b772f0ddceb260cc8c0abfff6a38fff3716442d"
+    },
+    "evolution/search_seed_670001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+      "bytes_read": 50044,
+      "sha256_at_read": "0f39c0dad758f12f60ba58361edd99abd6cee5d6a14f8adfd33bd3d264364d4b"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_034391693d08404ab5f27c3075f18596.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "6566d98456c841ee72a9ff0276642d561a777afce0065e6ffeed9d19dc901fe0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_1e9c74ca288049f28c48e2723362d885.md": {
+      "bytes_read": 12011,
+      "sha256_at_read": "abdf34e3e0799be0ac5065563ce8d6e2de73620b705d2fb5ca81ab20d71406fa"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_25b3f885e4894b108d53a07652ee5dbd.md": {
+      "bytes_read": 12228,
+      "sha256_at_read": "9d9fe9c1e950adfff9817f66d6e2c3e55cdd82c125a09549d0b9b7e0c12a3ec0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_29a86c4e789a4e42a846e26041ef33d2.md": {
+      "bytes_read": 50044,
+      "sha256_at_read": "0f39c0dad758f12f60ba58361edd99abd6cee5d6a14f8adfd33bd3d264364d4b"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_2e8851447c934f0caccad37d36b30ca8.md": {
+      "bytes_read": 36412,
+      "sha256_at_read": "93703584acd9b7ba673a8506a694f9d2e7fd000f116e78e08011b23774dc7605"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_34fa5a48d7204e2a8f436a21cae26c3d.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "3616336b3290475a397f7dee9d8fdc8acd4b38df79ff963152d0ae7a154d29a0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_495c1195d4744374a913a300ad88821c.md": {
+      "bytes_read": 3146,
+      "sha256_at_read": "3eb09863f8fa802dffcb69bbe2ef6cc54e8179bc7d3f87a080f1e87d7bcef82c"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_505fd046df0a4324b1a504c92f513595.md": {
+      "bytes_read": 11915,
+      "sha256_at_read": "d537529153d96f0c4ce9d4e8bef034cb8afcb6b04c07a6686ff9dc6bda8299dd"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_68f7fac1689045edbe7c70a6ce0d0a96.md": {
+      "bytes_read": 3113,
+      "sha256_at_read": "30604b6b4f9838e25f65a700f34af24ce3ebd4d871f37c64213353a518ad2346"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_7ffe3b8abf5d4f5f95ed2ff3f7dd7075.md": {
+      "bytes_read": 46750,
+      "sha256_at_read": "d63fd0f8a5738c41f7c60777e8b0bbd51aaa415d993da7bbd5488b569325d623"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_99dffd0b557b49008d4759cf78741461.md": {
+      "bytes_read": 19517,
+      "sha256_at_read": "e21e60d162956f2e48a72b2cbacd5242c52ea1308c2d88bafbc7ee8e3845ad5d"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_a3960df498e24ccfb51da208f424bc8e.md": {
+      "bytes_read": 12268,
+      "sha256_at_read": "8c3de40b95ff61c3057c2cf56a1785d156ebc30747db28ec4d67a794cb491f96"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_b64590a32e6d4805a92ae72b790e445f.md": {
+      "bytes_read": 12950,
+      "sha256_at_read": "165e26252a04648db095a87aed629a149c8442780b1e252334caa418fc738af6"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_d943ab2128e641ea8c03162f4a490d1a.md": {
+      "bytes_read": 47204,
+      "sha256_at_read": "229f1a803b133e6340d2b39dcf4ee155f53170aa207e00f286bc314cb8fc40e0"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_daf030800a6a4091b1cce81c3fa241ae.md": {
+      "bytes_read": 18314,
+      "sha256_at_read": "0a9c1dfcc8bfd833387aaae05283a91d4d9fd6552575301bfa19fbce68df72d6"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_e9200c53e94f46f89bcd550cca218dbf.md": {
+      "bytes_read": 1768,
+      "sha256_at_read": "52aca0c1de081a962dfe49d8cac421519c42b6c4e04401c2da3308949fc82346"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_eae8025c9c474726a4e43286cd93013f.md": {
+      "bytes_read": 48397,
+      "sha256_at_read": "ee0a09934e17ba515ad0f2c27b772f0ddceb260cc8c0abfff6a38fff3716442d"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_ee873f51e74e49d98252da3db4eb630b.md": {
+      "bytes_read": 25365,
+      "sha256_at_read": "bd8b1650ad2a0a657c3e470ab889f56a1285a9bc842af138d744b63a0d5e801e"
+    },
+    "evolution/search_seed_670001/headless_prompts/prompt_ef61183b20f34d8f9a286ea37b7ee344.md": {
+      "bytes_read": 2448,
+      "sha256_at_read": "f521c9d0b7d2d0d7144a9d5274ca8eb6820a4efc692c9ec437e150d1b394a08d"
+    },
+    "evolution/search_seed_670001/task_snapshot/task_system_prompt.txt": {
+      "bytes_read": 12108,
+      "sha256_at_read": "83127b50ad9d73bd7c058acf4b4eabe36b1eba34744041a2ce5f9023f7e1ba12"
+    },
+    "evolution/search_seed_670001/meta/meta_5.txt": {
+      "bytes_read": 12536,
+      "sha256_at_read": "ec9d68b5f863b66670df25250f11d7f305f27b21089dfcde0fda5b11f1cee3d6"
+    },
+    "evolution/search_seed_670001/gen_0/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    "evolution/search_seed_670001/gen_1/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38"
+    },
+    "evolution/search_seed_670001/gen_2/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8"
+    },
+    "evolution/search_seed_670001/gen_3/main.py": {
+      "bytes_read": 163,
+      "sha256_at_read": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d"
+    },
+    "evolution/search_seed_670001/gen_4/main.py": {
+      "bytes_read": 843,
+      "sha256_at_read": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c"
+    },
+    "evolution/search_seed_670001/gen_5/main.py": {
+      "bytes_read": 828,
+      "sha256_at_read": "799aa94d76f1b0963bc9f740d7ae726d3f3bb91d4e3b79d84bc97071cfe9713a"
+    },
+    "evolution/search_seed_670001/gen_6/main.py": {
+      "bytes_read": 861,
+      "sha256_at_read": "c34be04310fb23b1e3916f0f7c3e91a6922162c4f1de5b1b96d87ad05cf2b31f"
+    }
+  },
+  "limitations": []
+}

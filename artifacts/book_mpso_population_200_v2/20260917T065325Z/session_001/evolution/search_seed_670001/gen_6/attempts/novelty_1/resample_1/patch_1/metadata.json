@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "bounded_workload_penalty",
+  "patch_description": "Cap the workload penalty at 120 estimated queries while retaining the existing hysteresis thresholds. This preserves decisions at lower workloads and prevents the loss required to request three neutrals from growing indefinitely: entry requires loss above 0.14, and retention requires loss above 0.07. The hypothesis is that limiting workload suppression improves recovery during larger observed losses; the episode regressions motivate this test but do not establish its cause or guarantee improvement.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T10:13:59.470416",
+  "llm_cost": 0.424634,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "workload_recovery_hysteresis",
+  "patch_description": "Separates observation processing, workload adjustment, and target selection. Defaults to two neutrals, requesting three when observed deterioration warrants additional search. Separate entry and retention thresholds reduce switching using supplied history without persistent state. Contract checks passed; optimizer improvement remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T09:50:49.865174",
+  "llm_cost": 0.813106,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

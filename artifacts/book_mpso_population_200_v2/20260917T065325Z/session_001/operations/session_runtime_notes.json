@@ -1,0 +1,9 @@
+{
+  "initial_source_commit": "6bdcd9dab95896b9fe06204a83e7c125c51b54e0",
+  "prospective_native_persistence_commit": "31aabfed5eea9ef7035e767354c481e981179fa5",
+  "actual_inner_invocation": "operations/actual-inner-invocation.json",
+  "controller_restarts": 0,
+  "note": "No cross-process sampler restoration has occurred in Session1. Native startup writes then reads its initial seed meta checkpoint within the same process. A receipt-only follow-up separates actual RNG restore from saving a new drained boundary; final manifest may need explicit clarification because the launched wrapper predates that reporting fix. Numerical engine, suite, model route and scoring unchanged.",
+  "resolved_resume_rng_state_restored": false,
+  "resolution": "Final native manifest correctly reports false. No manifest correction was needed; no native process restart occurred. Validated sampler state is saved for a later user-launched session."
+}

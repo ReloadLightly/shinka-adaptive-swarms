@@ -1,0 +1,15 @@
+<NAME>
+fixed_three_neutrals
+</NAME>
+<DESCRIPTION>
+Request three neutrals, allowing the existing adapter to shrink gradually from five. Smaller groups reduce movement and memory-refresh costs per update, potentially permitting more update cycles within the fixed query budget. The supplied contemporary target-three control achieved mean error 2.091593 versus 2.191283 for five, corresponding to fitness 0.323458 versus 0.313354, with improvements in three of four development histories. This adopts the strongest supplied constant control; it does not establish a benefit from conditional adaptation or fresh-case generalization.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def choose_neutral_count(observation) -> int:
+    return 5
+=======
+def choose_neutral_count(observation) -> int:
+    return 3
+>>>>>>> REPLACE
+</DIFF>

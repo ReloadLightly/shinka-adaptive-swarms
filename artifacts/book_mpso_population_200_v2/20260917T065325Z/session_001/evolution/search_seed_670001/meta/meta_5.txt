@@ -1,0 +1,72 @@
+# INDIVIDUAL PROGRAM SUMMARIES
+
+The following are summaries of individual programs evaluated since the last meta update:
+
+**Program Name: Fixed Five-Neutral MPSO Baseline**
+- **Implementation**: `choose_neutral_count` always returns 5, ignoring observations and maintaining five neutral particles per subswarm without resizing. The enclosing engine uses ordinary PSO for neutrals except during detected changes, when they quantum-sample; one additional permanent quantum particle always samples.
+- **Performance**: Score 0.31, mean offline error 2.1913, worst-case error 2.7483, and case-error standard deviation 0.42 across four completed cases.
+- **Feedback**: All validation tests passed, and results exactly matched target_5; mean error was 0.09969 higher than target_3, with worse results in three of four cases. Evaluation reused development histories, so it demonstrates baseline reproduction without establishing evolutionary improvement or fresh-case generalization.
+**Program Identifier:** Generation 0 - Patch Name initial_program - Correct Program: 1
+
+**Program Name: Fixed Three-Neutral MPSO**
+- **Implementation**: Returns a constant neutral-particle target of three, ignoring observations despite the docstring describing five. The enclosing adapter starts at five and removes at most one neutral per detected change, retaining one permanent quantum particle.
+- **Performance**: Passed all validation tests across four cases, achieving score 0.32, mean offline error 2.0916, worst-case error 2.2565, and case-error standard deviation 0.22.
+- **Feedback**: Exactly matches the best tested fixed comparator, target_3, and lowers mean error versus target_5 by 0.0997, improving three cases while worsening one. These reused development histories demonstrate a competitive constant allocation, but provide no evidence of adaptive behavior, improvement beyond target_3, or generalization to fresh cases.
+**Program Identifier:** Generation 1 - Patch Name fixed_three_neutrals - Correct Program: True
+
+**Program Name: MPSO with Two Neutral Particles**
+- **Implementation**: Always requests two neutral particles per subswarm, ignoring observations despite the docstring describing five. The enclosing adapter starts at five and reduces population by at most one per detected event, retaining one permanent quantum particle; observed mean neutral counts were 2.18–2.20.
+- **Performance**: Achieved score 0.32, mean offline error 2.0804, worst-case error 2.2902, and case-error standard deviation 0.26 across four completed cases, passing all validation tests.
+- **Feedback**: Mean error decreased by 0.0112 versus target 3 and 0.1109 versus target 5, although individual cases and episodes showed both improvements and regressions. This is a constant population policy, and its small advantage over the strongest tested fixed comparator remains unverified on fresh cases because selection reused all four development histories.
+**Program Identifier:** Generation 2 - Patch Name two_neutral_budget_probe - Correct Program: True
+
+**Program Name: Fixed Four-Neutral MPSO**
+- **Implementation**: Always returns four neutral particles, ignoring all observation fields despite the five-neutral docstring. The shared adapter reduces subswarms from five neutrals toward four at detected changes, retaining one permanent quantum particle; realized neutral counts averaged approximately 4.04.
+- **Performance**: Passed validation across four 500,000-query development cases, scoring 0.31 with mean offline error 2.1814, worst-case error 2.3499, and case error standard deviation 0.26.
+- **Feedback**: Mean error was marginally better than target 5 (−0.00984), but worse than target 3 in every case (+0.08985 on average). All cases were reused development histories, so the results establish neither generalization nor a benefit from adaptive allocation.
+**Program Identifier:** Generation 3 - Patch Name constant_four - Correct Program: True
+
+**Program Name: Workload-Adjusted Neutral Population Hysteresis**
+- **Implementation**: Chooses two or three neutral particles per subswarm using nonnegative relative fitness loss divided by a workload penalty, `1 + sweep_queries/160`. Requests three when adjusted loss exceeds 0.08, lowered to 0.04 if the previous requested target was three, providing hysteresis without internal state.
+- **Performance**: Score 0.34; mean offline error 1.93, worst-case error 2.15, and case-error standard deviation 0.21 across four completed cases; all validation tests passed.
+- **Feedback**: Realized neutral counts averaged approximately 2.56, with mean error reductions of 0.163 versus fixed target 3 and 0.263 versus fixed target 5; it beat target 3 in every case but suffered some substantial episode-level regressions. These reused development histories demonstrate promising selection performance, without establishing fresh-case generalization or superiority over untested constant targets.
+**Program Identifier:** Generation 4 - Patch Name workload_recovery_hysteresis - Correct Program: True
+
+# GLOBAL INSIGHTS SCRATCHPAD
+
+The following are global insights about optimization approaches and their effectiveness:
+
+## Successful Algorithmic Patterns
+- **Workload-Adjusted Neutral Population Hysteresis is the strongest evaluated program:** score **0.3414**, mean error **1.9287**. Its combined loss, workload, and previous-target rule reduces mean error by **12.0% versus Fixed Five**, **7.8% versus Fixed Three**, and **7.3% versus Fixed Two**. These results support the complete policy; they do not isolate each component’s contribution.
+- **Smaller constant populations improved development performance.** Fixed Three raised the baseline score from **0.3134 to 0.3235**, reducing mean error by **0.09969**. Fixed Two improved further to **0.3246**, although its additional mean-error reduction was only **0.01120**.
+- **The best policy actively uses both targets.** It requested three on **36.7%** of decisions and two on **63.3%**, with **1,582 additions and 2,503 removals** across four cases. Its realized mean population of **2.55–2.57 neutrals** accompanied lower error than either constant endpoint.
+## Ineffective Approaches
+- **Fixed Four provided little benefit over Fixed Five.** Its score was **0.3143**, with mean error only **0.00984** below the baseline. It was worse than Fixed Three in every case, averaging **0.08985** more error. Retaining that additional neutral did not yield a compensating performance benefit in these histories; the specific causal pathway remains unresolved.
+- **Unconditional shrinking to two had a reliability tradeoff.** Compared with Fixed Three, Fixed Two slightly improved mean error but increased worst-case error from **2.2565 to 2.2902** and case-error standard deviation from **0.2212 to 0.2603**. Smaller populations therefore did not improve every performance measure.
+## Implementation Insights
+- **The best policy raises the loss threshold as workload grows.** With `W = total_particle_count + max(1, swarm_count)`, it requests three when nonnegative relative loss exceeds `threshold × (1 + W/160)`. Thus, the same observed deterioration is less likely to trigger growth when existing movement and detection workload is greater.
+- **Previous-target feedback creates explicit hysteresis.** Adjusted loss must exceed **0.08** to enter target three, but only **0.04** to retain it. Between those thresholds, the previous request determines the result. This creates persistence without mutable internal state, although reduced switching was not independently measured against a policy without hysteresis.
+- **Requested targets differ from realized populations.** The adapter starts swarms at five and changes population by at most one after detected change and memory refresh. Consequently, the best policy still realizes four- and five-neutral populations during transitions. Constant policies also exhibit population variation through this mechanism; their stale five-neutral docstrings do not describe their executed requests.
+- **Population changes affect several budgeted operations.** For the best policy, ordinary movement consumed approximately **53%** of queries, detection **21.2%**, and permanent quantum sampling **21.2%**. The workload estimate captures routine movement and detection, but omits additional memory, birth, and exclusion costs. These shares describe execution, not isolated causes of improvement.
+## Performance Analysis
+| Program | Score ↑ | Mean error ↓ | Worst-case error ↓ | Case-error SD ↓ |
+|---|---:|---:|---:|---:|
+| Fixed Five-Neutral Baseline | 0.3134 | 2.1913 | 2.7483 | 0.4241 |
+| Fixed Three-Neutral | 0.3235 | 2.0916 | 2.2565 | 0.2212 |
+| Fixed Two-Neutral | 0.3246 | 2.0804 | 2.2902 | 0.2603 |
+| Fixed Four-Neutral | 0.3143 | 2.1814 | 2.3499 | 0.2646 |
+| **Workload-Adjusted Hysteresis** | **0.3414** | **1.9287** | **2.1535** | **0.2081** |
+- **The best policy leads on every reported error summary.** Saved case results also show it beats Fixed Two, Three, and Four in all four cases. Against Fixed Five, it wins three cases and loses case_001 by **0.01767**.
+- **Fixed Two is the strongest evaluated constant by mean error.** The feedback’s `best_tested_fixed_target: target_3` label describes its comparator set; it does not incorporate the better generation-two constant into that label.
+- **Aggregate gains coexist with substantial episode regressions.** The best policy’s case_003/environment_31 error exceeded Fixed Three by **5.4574**; case_001/environment_2 exceeded Fixed Five by **10.9319**. Its lower worst-case whole-history error does not imply uniformly better recovery.
+- **Evidence remains development-only.** All programs passed validation under the same corrected engine and four reused 500,000-query histories. The findings establish observed selection performance, without establishing fresh-case generalization, superiority over every constant, or a causal advantage specifically attributable to hysteresis.
+
+# META RECOMMENDATIONS
+
+The following are actionable recommendations for the next program generations:
+
+1. **Tune entry and retention thresholds separately.** Preserve workload normalization and targets two/three; try entry thresholds `0.06` and `0.10` with retention fixed at `0.04`, then retention thresholds `0.02` and `0.06` with entry fixed at `0.08`. The winning policy uses both targets substantially, making their transition boundaries promising mutation points, although hysteresis’s individual contribution remains unresolved.
+2. **Try a bounded workload penalty.** Replace the pressure denominator with `1 + min(sweep_queries, 120.0) / 160.0`, keeping the existing thresholds. This preserves the successful workload adjustment while allowing sufficiently large losses to trigger growth even at high workload; the episode regressions motivate this hypothesis without establishing excessive workload suppression as their cause.
+3. **Include deterioration remaining after memory refresh.** Compute `residual_loss = max(0.0, (previous_best_fitness - current_best_fitness) / max(1.0, abs(previous_best_fitness)))`, then substitute `0.5 * loss + 0.5 * residual_loss` into the existing pressure calculation. This distinguishes deterioration at the checked attractor from deterioration that surviving memories cannot compensate for, potentially retaining the economical target two when refresh already supplies a better attractor.
+4. **Make recent progress modestly discourage expansion.** Define `progress = max(0.0, recent_improvement) / max(1.0, abs(previous_best_fitness))` and multiply the selected hysteresis threshold by `1 + 0.5 * min(1.0, progress / 0.02)`. This extends the successful small-population policy by requiring stronger loss evidence before allocating another particle to a recently productive swarm. Keep the adjustment bounded because this progress occurred during the preceding update and does not establish recovery after the current change.
+5. **Add an exceptional target-four recovery branch.** Using the original adjusted pressure, request four above `0.20`, retain four above `0.12` when the previous request was four, and otherwise apply the two/three rule with its retention threshold for previous targets three or four. Fixed Four’s weak results argue for restricting this extension to exceptional deterioration; the large episode regressions make it a plausible, unproven recovery variation. The existing one-particle resize limit means a swarm at two must sustain the condition across detections to reach four.

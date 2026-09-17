@@ -1,0 +1,158 @@
+{
+  "schema": "book-mpso-population-search-suite-v1",
+  "study": "book_mpso_population_200_v2",
+  "cases": [
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1371848574,
+      "optimizer_seed": 1949644975,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1024741923,
+      "optimizer_seed": 1979149083,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1695455020,
+      "optimizer_seed": 202638145,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 463558677,
+      "optimizer_seed": 734165703,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    }
+  ],
+  "feedback_references": {
+    "target_3": {
+      "method": "target_3",
+      "case_artifacts": [
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_000.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_001.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_002.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_003.json.gz"
+      ],
+      "case_sha256": [
+        "fef463168bb7c9141757ca31b69ff9545f0acd8cbf43a5aade1a4a5498847ce9",
+        "082682e2bc251525dada0f6c2d5a33c06b8ccbcbe95e555d74ffcae0b317e314",
+        "f76bea41cd333af979faf3bca1fcd06986a41ed94a1b99690ae86f8537b878e1",
+        "e1c468078a9a8f7d7502a92ac51b030771ea73a4a688ec8e02daf5b5efee79d2"
+      ],
+      "source_sha256": "9a7b2510dffd985f9f085eff746a1ca8ea27b5d3e9726c9a7a6d66e213763e15",
+      "scientific_sources": {
+        "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+        "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+        "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+        "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+        "src/adaptive_swarms/population_policy_v2.py": "a31fe44375cc0fa65a4dc5b563dd1e282d950d6794b8c67c451312dfeaa3d685",
+        "src/adaptive_swarms/book_population_v2.py": "2456dd01cc03780a3178710acd13f3582d4ec02109455ef8ad88b9e1c47fb229",
+        "src/adaptive_swarms/enclosing_ball.py": "2d280f4c31220451df3495e66b1aeba4b85e9537cb952b5eeaff49e461415391",
+        "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+      },
+      "permanent_quantum": 1
+    },
+    "target_5": {
+      "method": "target_5",
+      "case_artifacts": [
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_000.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_001.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_002.json.gz",
+        "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_003.json.gz"
+      ],
+      "case_sha256": [
+        "28dfe67e32fba719fd09ff22698f340a4bfad77a34cfe8c77456f3998de2b323",
+        "ffacc2b709266e82196f39fe19bf24ea8f35d177a6cf238f8e71fe700245222d",
+        "39bbab4a53dbffd0e0fceb8278164196527ac29b852ad1cde4c6de2cf29c98d7",
+        "d0f829a1bf44838f13fcfb0a800d671a7c5ed8a08744016ecccea502d033395e"
+      ],
+      "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+      "scientific_sources": {
+        "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+        "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+        "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+        "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+        "src/adaptive_swarms/population_policy_v2.py": "a31fe44375cc0fa65a4dc5b563dd1e282d950d6794b8c67c451312dfeaa3d685",
+        "src/adaptive_swarms/book_population_v2.py": "2456dd01cc03780a3178710acd13f3582d4ec02109455ef8ad88b9e1c47fb229",
+        "src/adaptive_swarms/enclosing_ball.py": "2d280f4c31220451df3495e66b1aeba4b85e9537cb952b5eeaff49e461415391",
+        "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+      },
+      "permanent_quantum": 1
+    }
+  },
+  "reference_manifest_sha256": "42ec1c2c108c4967ac4efea71eb1db3c5539e0fce3080fd7a104c56ad97dc743",
+  "development_only": true,
+  "permanent_quantum": 1,
+  "campaign_directory": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z"
+}

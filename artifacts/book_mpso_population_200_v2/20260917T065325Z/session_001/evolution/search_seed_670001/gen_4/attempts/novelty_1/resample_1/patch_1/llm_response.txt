@@ -1,0 +1,28 @@
+<NAME>
+workload_recovery_hysteresis
+</NAME>
+<DESCRIPTION>
+Separates observation processing, workload adjustment, and target selection. Defaults to two neutrals, requesting three when observed deterioration warrants additional search. Separate entry and retention thresholds reduce switching using supplied history without persistent state. Contract checks passed; optimizer improvement remains unmeasured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    """Choose two or three neutrals using workload-adjusted loss hysteresis."""
+    # Estimate movement and detection queries per optimizer sweep.
+    loss = max(0.0, observation["relative_fitness_drop"])
+    swarms = max(1, observation["swarm_count"])
+    sweep_queries = max(
+        1.0, observation["total_particle_count"] + swarms
+    )
+    # Greater existing workload raises the evidence required for growth.
+    recovery_pressure = loss / (1.0 + sweep_queries / 160.0)
+    # History is supplied by the caller; no state is retained here.
+    threshold = (
+        0.04 if observation["previous_requested_target"] == 3 else 0.08
+    )
+    return 3 if recovery_pressure > threshold else 2
+# EVOLVE-BLOCK-END
+```
+</CODE>

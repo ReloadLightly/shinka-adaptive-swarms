@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-09-17T08:34:20.349843+00:00",
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "authentication": "subscription",
+  "paid_api_fallback": false,
+  "evidence": [
+    "operations/actual-inner-invocation.json",
+    "operations/native-session1-machinery-audit.json"
+  ],
+  "logical_responses_requested": 19,
+  "logical_responses_returned": 19,
+  "by_role": {
+    "mutation": 6,
+    "novelty": 6,
+    "meta": 7
+  },
+  "native_wrapper_invocations": 15,
+  "supervising_model_effort": "Client selection not exposed; not changed by this process",
+  "counter_exclusions": [
+    "supervising usage",
+    "hidden provider retries"
+  ],
+  "preflight_fields_note": "Top-level inner_effort_effective/status are retained preflight observations, not runtime call counts; this annotation and role receipts record executed settings.",
+  "pre_annotation_manifest_sha256": "0b1e9e5c4c20efee99b330f95d02b00bd8fa814005039874f6621ff78fe2fe9a"
+}

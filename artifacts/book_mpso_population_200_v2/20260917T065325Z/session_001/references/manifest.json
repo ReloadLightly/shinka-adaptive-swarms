@@ -1,0 +1,176 @@
+{
+  "schema": "book-mpso-population-reference-v1",
+  "stage": "references",
+  "created_at": "2026-09-17T07:06:24.829055+00:00",
+  "cases": [
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1371848574,
+      "optimizer_seed": 1949644975,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1024741923,
+      "optimizer_seed": 1979149083,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 1695455020,
+      "optimizer_seed": 202638145,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    },
+    {
+      "dimension": 5,
+      "npeaks": 200,
+      "period": 5000,
+      "move_severity": 1.0,
+      "correlation": 0.0,
+      "budget": 500000,
+      "environment_seed": 463558677,
+      "optimizer_seed": 734165703,
+      "particles_per_swarm": 5,
+      "nexcess": 1,
+      "trace_interval": 100,
+      "snapshot_interval": 0,
+      "progress_interval": 5000,
+      "bounds": [
+        0.0,
+        100.0
+      ],
+      "height_severity": 7.0,
+      "width_severity": 1.0,
+      "chi": 0.729843788,
+      "c": 2.05
+    }
+  ],
+  "methods": {
+    "target_5": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 5,
+      "source": "programs/target_5.py",
+      "sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd"
+    },
+    "target_3": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 3,
+      "source": "programs/target_3.py",
+      "sha256": "9a7b2510dffd985f9f085eff746a1ca8ea27b5d3e9726c9a7a6d66e213763e15"
+    },
+    "target_2": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 2,
+      "source": "programs/target_2.py",
+      "sha256": "1f9866acdb3689e8eea4c3c56cc945a9251ca1053d1fe82eaa33d14dfc03aaf6"
+    },
+    "target_4": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 4,
+      "source": "programs/target_4.py",
+      "sha256": "f30f4ec41f2cd9ef510c05b7525aac40f8ab1381968661d10c4a0badc347e6f8"
+    },
+    "target_6": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 6,
+      "source": "programs/target_6.py",
+      "sha256": "6d0a8d6062ee34968dd3283730365fe6b543d103bbe8c5764eed8d77662205b4"
+    },
+    "target_7": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 7,
+      "source": "programs/target_7.py",
+      "sha256": "6788353ca28bfb3aff1a415cd98b3ee26051584899931e38eddcf639e27d3b9b"
+    },
+    "target_8": {
+      "kind": "neutral_population_target",
+      "permanent_quantum": 1,
+      "fixed_target": 8,
+      "source": "programs/target_8.py",
+      "sha256": "00b5685cb6fe3a1aca30c63e65f1dc873f8db0a974dac38e5e7b6a2c3d571699"
+    }
+  },
+  "maximum_new_executions": 28,
+  "whole_study_maximum_executions": 400,
+  "scientific_sources": {
+    "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+    "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+    "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+    "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+    "src/adaptive_swarms/population_policy_v2.py": "a31fe44375cc0fa65a4dc5b563dd1e282d950d6794b8c67c451312dfeaa3d685",
+    "src/adaptive_swarms/book_population_v2.py": "2456dd01cc03780a3178710acd13f3582d4ec02109455ef8ad88b9e1c47fb229",
+    "src/adaptive_swarms/enclosing_ball.py": "2d280f4c31220451df3495e66b1aeba4b85e9537cb952b5eeaff49e461415391",
+    "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+  },
+  "frozen_contract_sources": {
+    "docs/book_mpso_population_200_v2_protocol.md": "1ae86951af59545c9457f41829ab572b7c22acc2332bf8b38a2b1ef4d65bc189",
+    "tasks/book_mpso_population_200_v2/evaluate.py": "c7df3cfbbe5f4cedc5f816ea1b5a69d49e980dc8c3076752df83d33a55b83efa",
+    "docs/studies/book_mpso_population_200_v2/analysis_specification.json": "40c60bc4a17850124452263bf1edf202998430a59c8d170bcb94e5c20fee1991",
+    "docs/book_mpso_source_record.md": "1332f93342d0dbbb6c112b03428392932e641189b5b269555f1239506dd741ec",
+    "docs/book_mpso_population_200_v2_source_record.md": "070336ed2493c7ca2b9a4964f69f495056ebbac8a077958f9b8c2d8182b25776",
+    "src/adaptive_swarms/campaign_accounting.py": "0269de8da9985246066509aec843902f9ae4af505c51922f3faf8991a00008ff",
+    "configs/shinka/book_mpso_population_200_v2.json": "339388ea7d0e358cc27d0ea936b44a7ba88e8c249986dd3a6a878b11a54a530d",
+    "configs/book_mpso_population_200_v2/development.json": "0cb5052b6bcdb1ded15a5fd543bdb698f014d033b5ca3a2e3a393b3f3ef6053d",
+    "tasks/book_mpso_population_200_v2/initial.py": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+    "tasks/book_mpso_population_200_v2/context.md": "49fcf3daa3631ca748c5a26440ef619523f13e68d75346405d7bc426286015e6",
+    "tasks/book_mpso_population_200_v2/task_prompt.txt": "a30a4ca20bc67fbb84e3e79566a5c1d4a7a3760fb5eb4859b0b9743ce7edd833"
+  },
+  "development_cases_sha256": "83e7295d809f3e8f3323bd7287ba8657296f7236091ba3277fc23f36934aaf30"
+}

@@ -1,0 +1,74 @@
+# System Instructions
+
+You are an expert programming assistant analyzing an individual program. Create a standalone summary focusing on implementation details and evaluation feedback. Consider how this specific program performs and what implementation choices were made.
+
+# Previous Messages
+
+[]
+
+# User Request
+
+# Program to Analyze
+# Program to Analyze
+
+```python
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    return 2
+# EVOLVE-BLOCK-END
+
+```
+
+Performance metrics:
+Combined score to maximize: 0.32
+mean_offline_error: 2.08; worst_case_offline_error: 2.29; case_error_std: 0.26; cases_completed: 4
+
+The program is correct and passes all validation tests.
+
+Text feedback:
+Four reused DEVELOPMENT histories under the corrected enclosing-ball engine, each five-dimensional with 200 conical peaks, severity 1, change period 5000, correlation 0 and nexcess 1. These same cases are reused throughout selection; no fresh comparison outcome is supplied. Lower offline error is better; fitness=1/(1+mean error). Paired differences are candidate minus comparator (negative is better). Target 5 is the reconstructed chapter 5+1 and native seed. Fixed targets 3 and 5 start at five and resize by at most one per detected event using exactly the same adapter. Best tested fixed target by development mean (numeric target breaks ties): target_3. Only neutral population targets change. Every current neutral quantum-samples on detected change, otherwise uses ordinary PSO; one permanent quantum particle always samples. Whole trajectories, convergence/birth timing and later random draws can diverge. Available public workload fields are swarm_count and total_particle_count; previous_requested_target supplies the preceding target for the same subswarm. The policy may use these fields but need not branch or vary population.
+case_000 peaks=200,severity=1.0,period=5000: error=2.290227, deltatarget_3=+0.033768, deltatarget_5=-0.458097; interval-end error=1.3987834015850136; incomplete responses=0.
+Measured population behavior: {"additions": 0, "mean_neutral_count_per_subswarm_update": 2.1786234018225286, "neutral_count_sum": 251509, "no_change_requests": 3936, "policy_calls": 4197, "population_decisions": 4197, "realized_neutral_count_histogram": {"2": 105497, "3": 2952, "4": 3316, "5": 3679, "6": 0, "7": 0, "8": 0}, "recorded_swarm_count_range": [1, 61], "recorded_total_particle_count_range": [6, 188], "removals": 261, "requested_target_histogram": {"2": 4197, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0}, "total_neutral_updates": 115444, "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded", "trace_sampled_mean_swarm_count": 42.6636, "trace_sampled_mean_total_particle_count": 133.204}
+Query shares: {"birth": 0.003756, "detection": 0.230888, "exclusion": 0.005124, "initialization": 1.2e-05, "memory": 0.026316, "ordinary": 0.485618, "permanent_quantum": 0.230886, "temporary_quantum": 0.0174}
+Observed episodes versus target5 (descriptive extrema; retain unfavorable episodes): {"most_favorable": {"candidate_environment_error": 2.312887940916403, "completed_environment": 6, "difference": -8.003163764031042, "reference_environment_error": 10.316051704947444}, "most_unfavorable": {"candidate_environment_error": 5.471891495432558, "completed_environment": 28, "difference": 4.361563201145347, "reference_environment_error": 1.1103282942872115}}
+Observed episodes versus target_3: {"most_favorable": {"candidate_environment_error": 3.5153468874376825, "completed_environment": 11, "difference": -5.120441517007545, "reference_environment_error": 8.635788404445227}, "most_unfavorable": {"candidate_environment_error": 5.471891495432558, "completed_environment": 28, "difference": 3.595361523914867, "reference_environment_error": 1.8765299715176913}}
+case_001 peaks=200,severity=1.0,period=5000: error=2.050520, deltatarget_3=-0.158221, deltatarget_5=+0.129004; interval-end error=1.3535207786345584; incomplete responses=0.
+Measured population behavior: {"additions": 0, "mean_neutral_count_per_subswarm_update": 2.1985395869415747, "neutral_count_sum": 252610, "no_change_requests": 3938, "policy_calls": 4204, "population_decisions": 4204, "realized_neutral_count_histogram": {"2": 104035, "3": 3131, "4": 3518, "5": 4215, "6": 0, "7": 0, "8": 0}, "recorded_swarm_count_range": [1, 61], "recorded_total_particle_count_range": [6, 189], "removals": 266, "requested_target_histogram": {"2": 4204, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0}, "total_neutral_updates": 114899, "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded", "trace_sampled_mean_swarm_count": 42.6356, "trace_sampled_mean_total_particle_count": 133.2852}
+Query shares: {"birth": 0.004092, "detection": 0.229798, "exclusion": 0.00468, "initialization": 1.2e-05, "memory": 0.0264, "ordinary": 0.48776, "permanent_quantum": 0.229798, "temporary_quantum": 0.01746}
+Observed episodes versus target5 (descriptive extrema; retain unfavorable episodes): {"most_favorable": {"candidate_environment_error": 0.8593736863118705, "completed_environment": 66, "difference": -3.6089482510993416, "reference_environment_error": 4.468321937411212}, "most_unfavorable": {"candidate_environment_error": 13.968353035725569, "completed_environment": 2, "difference": 10.931850956701222, "reference_environment_error": 3.0365020790243475}}
+Observed episodes versus target_3: {"most_favorable": {"candidate_environment_error": 0.8593736863118705, "completed_environment": 66, "difference": -3.5226025156807608, "reference_environment_error": 4.381976201992631}, "most_unfavorable": {"candidate_environment_error": 2.640107192219205, "completed_environment": 16, "difference": 2.068398962258657, "reference_environment_error": 0.5717082299605483}}
+case_002 peaks=200,severity=1.0,period=5000: error=1.723802, deltatarget_3=-0.044991, deltatarget_5=-0.083837; interval-end error=1.032564263198371; incomplete responses=0.
+Measured population behavior: {"additions": 0, "mean_neutral_count_per_subswarm_update": 2.183397817374256, "neutral_count_sum": 251689, "no_change_requests": 4100, "policy_calls": 4371, "population_decisions": 4371, "realized_neutral_count_histogram": {"2": 105092, "3": 3026, "4": 3353, "5": 3803, "6": 0, "7": 0, "8": 0}, "recorded_swarm_count_range": [1, 67], "recorded_total_particle_count_range": [6, 207], "removals": 271, "requested_target_histogram": {"2": 4371, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0}, "total_neutral_updates": 115274, "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded", "trace_sampled_mean_swarm_count": 44.4104, "trace_sampled_mean_total_particle_count": 138.7056}
+Query shares: {"birth": 0.00372, "detection": 0.230548, "exclusion": 0.004404, "initialization": 1.2e-05, "memory": 0.027396, "ordinary": 0.485262, "permanent_quantum": 0.230546, "temporary_quantum": 0.018112}
+Observed episodes versus target5 (descriptive extrema; retain unfavorable episodes): {"most_favorable": {"candidate_environment_error": 1.383506757928668, "completed_environment": 14, "difference": -4.370900094803573, "reference_environment_error": 5.754406852732241}, "most_unfavorable": {"candidate_environment_error": 3.2172606650919513, "completed_environment": 34, "difference": 1.8315018998297115, "reference_environment_error": 1.3857587652622398}}
+Observed episodes versus target_3: {"most_favorable": {"candidate_environment_error": 1.141165297736576, "completed_environment": 17, "difference": -1.7251681158404655, "reference_environment_error": 2.8663334135770415}, "most_unfavorable": {"candidate_environment_error": 3.2172606650919513, "completed_environment": 34, "difference": 2.107940815580077, "reference_environment_error": 1.1093198495118743}}
+case_003 peaks=200,severity=1.0,period=5000: error=2.257017, deltatarget_3=+0.124637, deltatarget_5=-0.030637; interval-end error=1.3783620736906175; incomplete responses=0.
+Measured population behavior: {"additions": 0, "mean_neutral_count_per_subswarm_update": 2.1951681256078923, "neutral_count_sum": 252778, "no_change_requests": 3744, "policy_calls": 4007, "population_decisions": 4007, "realized_neutral_count_histogram": {"2": 104630, "3": 2895, "4": 3302, "5": 4325, "6": 0, "7": 0, "8": 0}, "recorded_swarm_count_range": [1, 61], "recorded_total_particle_count_range": [6, 192], "removals": 263, "requested_target_histogram": {"2": 4007, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0}, "total_neutral_updates": 115152, "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded", "trace_sampled_mean_swarm_count": 40.7532, "trace_sampled_mean_total_particle_count": 127.6388}
+Query shares: {"birth": 0.004332, "detection": 0.230304, "exclusion": 0.004284, "initialization": 1.2e-05, "memory": 0.02521, "ordinary": 0.488886, "permanent_quantum": 0.230302, "temporary_quantum": 0.01667}
+Observed episodes versus target5 (descriptive extrema; retain unfavorable episodes): {"most_favorable": {"candidate_environment_error": 0.9050248546730998, "completed_environment": 10, "difference": -4.827661176519164, "reference_environment_error": 5.732686031192263}, "most_unfavorable": {"candidate_environment_error": 5.287541876338801, "completed_environment": 45, "difference": 3.9010617495762316, "reference_environment_error": 1.3864801267625688}}
+Observed episodes versus target_3: {"most_favorable": {"candidate_environment_error": 0.8209002537451539, "completed_environment": 75, "difference": -2.6186031279936186, "reference_environment_error": 3.4395033817387723}, "most_unfavorable": {"candidate_environment_error": 6.561003900890927, "completed_environment": 28, "difference": 3.7507468533294, "reference_environment_error": 2.8102570475615267}}
+Paired regime summary: {"best_tested_fixed_target": "target_3", "cases": 4, "mean_offline_error": 2.0803915162058892, "regime": "peaks=200,severity=1.0,period=5000", "target_3_difference_sd": 0.12004313255126935, "target_3_mean_difference": -0.011201756768517646, "target_5_difference_sd": 0.24851156168622218, "target_5_mean_difference": -0.11089168624843426}
+Influential cases versus target_3: best={"case_id": "case_001", "offline_error": 2.0505198204988146, "paired_differences": {"target_3": -0.1582214144141263, "target_5": 0.12900370992948296}}; worst={"case_id": "case_003", "offline_error": 2.257016770916077, "paired_differences": {"target_3": 0.12463733809593425, "target_5": -0.030637056173671073}}
+Influential cases versus target_5: best={"case_id": "case_000", "offline_error": 2.290227412850835, "paired_differences": {"target_3": 0.033768209094435786, "target_5": -0.45809681782792744}}; worst={"case_id": "case_001", "offline_error": 2.0505198204988146, "paired_differences": {"target_3": -0.1582214144141263, "target_5": 0.12900370992948296}}
+The chapter suggests adaptive particles within subswarms as future work. This task tests allocation within groups without particle transfer or conserved global population. More trajectories, slower update cycling, convergence changes, memory quality and random closed-loop variation are competing explanations. Fixed targets do not exhaust all constants. Constants remain legitimate; complexity and population variability receive no reward. Every case uses the registered full 500000-query development horizon. Subswarm count does not directly measure distinct peak coverage. No protected outcome is supplied.
+
+
+
+# Instructions
+
+Create a standalone summary for this program using the following exact format:
+
+**Program Name: [Short summary name of the algorithm (up to 10 words)]**
+- **Implementation**: [Key implementation details (1-2 sentences)]
+- **Performance**: [Score/metrics summary (1 sentence)]
+- **Feedback**: [Key insights from evaluation (1-2 sentences)]
+
+Focus on:
+1. What specific implementation details were done
+2. How these details affected performance
+3. Implementation details that are relevant to the approach
+4. Any evaluation feedback that provides insights
+
+Keep the program summary concise but informative. Follow the format exactly.

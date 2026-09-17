@@ -1,0 +1,15 @@
+<NAME>
+constant_four
+</NAME>
+<DESCRIPTION>
+Request four neutrals, testing the unmeasured intermediate between targets three and five. This retains additional local-search capacity compared with two or three while reducing population cost relative to five. Native validation passed; improved benchmark performance remains to be measured.
+</DESCRIPTION>
+<CODE>
+```python
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    return 4
+# EVOLVE-BLOCK-END
+```
+</CODE>

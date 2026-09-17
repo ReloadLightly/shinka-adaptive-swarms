@@ -231,3 +231,20 @@ The focused tests establish implementation properties. A working pipeline,
 source correction or small diagnostic run does not establish that an evolved
 policy generalizes. That requires the actual search and frozen-policy
 comparisons reported with their seeds, scenarios, horizons and uncertainty.
+
+## Corrected 200-peak campaign continuation (population v2)
+
+`book_mpso_population_200_v2` uses the same four development histories as the
+archived 200-peak v1 attempt, but a new numerical identity: accurate neutral-only
+smallest-enclosing-ball convergence replaces the historical diameter approximation.
+Old-engine scores are not reused. See the [versioned fidelity record](book_mpso_population_200_v2_source_record.md)
+for the 1e-12 relative radius tolerance and all unchanged mechanisms.
+
+This is a resumable 50-descendant campaign. A short session target does not finalize
+selection or authorize fresh evaluation. The [session report](studies/book_mpso_population_200_v2/REPORT.md)
+and [one-command resume procedure](studies/book_mpso_population_200_v2/RESUME.md)
+record the actual database, validated meta/RNG checkpoint, cumulative receipts,
+per-session 180-minute/six-slot/80-response limits and campaign 400-response limit.
+The exact target-five seed reuses its four corrected control records. All seven
+constant-target controls must be available before final selection. Native snapshots,
+source hashes and per-case checkpoints are retained across sessions.

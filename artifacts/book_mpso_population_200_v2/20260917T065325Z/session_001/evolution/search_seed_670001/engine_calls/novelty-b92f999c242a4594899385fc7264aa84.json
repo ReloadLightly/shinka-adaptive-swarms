@@ -1,0 +1,49 @@
+{
+  "call_id": "novelty-b92f999c242a4594899385fc7264aa84",
+  "role": "novelty",
+  "method": "query",
+  "started_at": "2026-09-17T08:05:42.709733+00:00",
+  "requested_logical_responses": 1,
+  "configured_models": [
+    "headless/codex@gpt-6-astra?effort=xhigh"
+  ],
+  "status": "returned",
+  "configured_client_settings": {
+    "temperatures": 0.75,
+    "max_tokens": 4096,
+    "reasoning_efforts": "disabled"
+  },
+  "explicit_request_kwargs": null,
+  "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+  "system_msg": "You are an expert code reviewer tasked with determining if two code snippets are meaningfully different from each other.\n\nYour job is to analyze both programs and determine if the proposed code introduces meaningful changes compared to the existing code. Consider:\n\n1. **Algorithmic differences**: Different approaches, logic, or strategies\n2. **Structural changes**: Different data structures, control flow, or organization\n3. **Functional improvements**: New features, optimizations, or capabilities\n4. **Implementation variations**: Different ways of achieving the same goal that could lead to different performance characteristics\n5. **Hyperparameter changes**: Different hyperparameters that could lead to different performance characteristics\n\nIgnore trivial differences like:\n- Variable name changes\n- Minor formatting or style changes\n- Comments or documentation changes\n- Insignificant refactoring that doesn't change the core logic\n\nRespond with:\n- **NOVEL**: If the codes are meaningfully different\n- **NOT_NOVEL**: If the codes are essentially the same with only trivial differences\n\nAfter your decision, provide a brief explanation of your reasoning.",
+  "msg": "Please analyze these two code snippets:\n\n**EXISTING CODE:**\n```python\n\"\"\"Reconstructed MPSO 5+1: maintain five neutral particles.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_neutral_count(observation) -> int:\n    \"\"\"Choose two or three neutrals using workload-adjusted loss hysteresis.\"\"\"\n    # Estimate movement and detection queries per optimizer sweep.\n    loss = max(0.0, observation[\"relative_fitness_drop\"])\n    swarms = max(1, observation[\"swarm_count\"])\n    sweep_queries = max(\n        1.0, observation[\"total_particle_count\"] + swarms\n    )\n    # Greater existing workload raises the evidence required for growth.\n    recovery_pressure = loss / (1.0 + sweep_queries / 160.0)\n    # History is supplied by the caller; no state is retained here.\n    threshold = (\n        0.04 if observation[\"previous_requested_target\"] == 3 else 0.08\n    )\n    return 3 if recovery_pressure > threshold else 2\n# EVOLVE-BLOCK-END\n\n```\n\n**PROPOSED CODE:**\n```python\n\"\"\"Reconstructed MPSO 5+1: maintain five neutral particles.\"\"\"\n\n# EVOLVE-BLOCK-START\ndef choose_neutral_count(observation) -> int:\n    \"\"\"Request two or three neutrals from loss remaining after refresh.\"\"\"\n    previous_best = observation[\"previous_best_fitness\"]\n    remaining_loss = max(\n        0.0,\n        (previous_best - observation[\"current_best_fitness\"])\n        / max(1.0, abs(previous_best)),\n    )\n    loss = min(\n        max(0.0, observation[\"relative_fitness_drop\"]), remaining_loss\n    )\n    swarms = max(1, observation[\"swarm_count\"])\n    sweep_queries = max(1.0, observation[\"total_particle_count\"] + swarms)\n    threshold = (\n        0.04 if observation[\"previous_requested_target\"] == 3 else 0.08\n    )\n    if loss > threshold * (1.0 + sweep_queries / 160.0):\n        return 3\n    return 2\n# EVOLVE-BLOCK-END\n\n```\n\nAre these codes meaningfully different? Respond with NOVEL or NOT_NOVEL followed by your explanation.",
+  "count_scope": "logical native requests only; internal provider retry counts and coverage are unknown",
+  "initial_logical_responses": 1,
+  "exposed_native_retry_responses": 0,
+  "native_dispatch_attempts": [
+    {
+      "index": 1,
+      "started_at": "2026-09-17T08:05:42.719989+00:00",
+      "model_name": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "finished_at": "2026-09-17T08:05:56.349761+00:00"
+    }
+  ],
+  "reservation_scope": "Full initial batch plus exposed native-client retries; started reservations survive crashes; hidden provider retries unknown.",
+  "logical_response_limit": 400,
+  "session_response_limit": 80,
+  "session_start_responses": 0,
+  "run_reserved_logical_responses_at_reservation": 17,
+  "finished_at": "2026-09-17T08:05:56.369203+00:00",
+  "elapsed_seconds": 13.65949009700853,
+  "valid_responses": 1,
+  "responses": [
+    {
+      "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+      "input_tokens": 4342,
+      "output_tokens": 162,
+      "reported_api_cost": 0.06368,
+      "content": "**NOVEL**: The proposed code caps `relative_fitness_drop` by a newly computed normalized loss between previous and current best fitness. This can return 2 where the existing code returns 3, changing the growth decision. The workload adjustment and hysteresis thresholds remain equivalent."
+    }
+  ]
+}

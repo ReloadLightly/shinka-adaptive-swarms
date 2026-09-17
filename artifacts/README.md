@@ -34,6 +34,24 @@ itself and disposable Python bytecode caches.
 | `book_mpso_population_v1/20260916T183731Z` | Chapter-aligned within-subswarm population targets; published response fixed | 16 new control + 48 descendant executions = 32 million queries; eight historical target-five reuses plus eight native seed-cache records; seed + six valid descendants |
 | `book_mpso_population_v1_publication` | Closed-archive, portable analysis and remote publication verification | No objective evaluations or model requests |
 | `book_mpso_population_200_v1/20260917T025219Z` | Runtime-constrained 200-peak extension, stopped before native search | One planned target-five reference × 500,000 queries; zero native slots/model calls; four-case suite remains frozen and unranked |
+| `book_mpso_population_200_v2/20260917T065325Z/session_001` | Corrected enclosing-ball population campaign, immutable Session 1 checkpoint | Six valid descendants of a prospective 50; all seven constant targets complete; 44 physical executions × 500,000 queries, 12 reused case records and 19 logical model responses |
+| `book_mpso_population_200_v2_publication/session_001` | Session publication and remote verification | No new objective evaluations or model calls; campaign remains open |
+
+The [corrected 200-peak campaign, Session 1](../docs/studies/book_mpso_population_200_v2/REPORT.md)
+pauses after six valid descendants, with its real native database, meta memory,
+sampler state, pending meta-program IDs and cumulative accounting checkpointed.
+Generation four requests two or three neutrals using workload-adjusted fitness
+deterioration and previous-target hysteresis. Its development mean is **1.928740**,
+against corrected 5+1 **2.191283**, target three **2.091593**, and the best of all
+seven constant targets, target two, **2.080392**. These four-history comparisons
+are interim and selection-biased; no final winner or fresh comparison is frozen.
+The enclosing-ball source-fidelity repair is shared by every method and is not
+an evolutionary gain. The session consumed **22 million research queries** plus
+**401 separately counted fixture queries**. Its 56 stored case records represent
+44 physical executions and 12 exact reuses. Nineteen logical responses comprise
+six mutations, six novelty decisions and seven meta responses. The campaign
+remains at **6/50 descendant slots**; [resumption requires another user-launched
+session](../docs/studies/book_mpso_population_200_v2/RESUME.md).
 
 The [200-peak continuation](../docs/studies/book_mpso_population_200_v1/REPORT.md)
 stopped before native search after timing its first planned target-five case. Its

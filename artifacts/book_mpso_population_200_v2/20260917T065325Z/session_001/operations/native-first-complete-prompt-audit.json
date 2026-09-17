@@ -1,0 +1,286 @@
+{
+  "run": "evolution/search_seed_670001",
+  "status": "preflight",
+  "started_at": "20260917T072203.508799Z",
+  "finished_at": null,
+  "original_evaluated_generation_ids": [
+    0
+  ],
+  "database_rows_including_copies": 1,
+  "database_row_identity_digest": "89b861016f3205a4b92a8c35a193fef6d70bd577ccee9526f2ff0ed744b66b13",
+  "database_rows": [
+    {
+      "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+      "generation": 0,
+      "parent_id": null,
+      "code_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+      "island_at_snapshot": 0,
+      "patch_type": "init",
+      "correct": true
+    }
+  ],
+  "model_requested": "gpt-6-astra",
+  "inner_effort_requested": "xhigh",
+  "inner_effort_effective_manifest": null,
+  "inner_effort_status_manifest": "requested; no model invocation performed",
+  "role_totals": {
+    "mutation": {
+      "native_wrapper_invocations": 1,
+      "requested_logical_responses": 1,
+      "usable_responses_returned": 1,
+      "status_counts": {
+        "returned": 1
+      },
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 0.499546,
+      "native_reported_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ]
+    },
+    "novelty": {
+      "native_wrapper_invocations": 1,
+      "requested_logical_responses": 1,
+      "usable_responses_returned": 1,
+      "status_counts": {
+        "returned": 1
+      },
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 0.05699,
+      "native_reported_routes": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ]
+    },
+    "meta": {
+      "native_wrapper_invocations": 0,
+      "requested_logical_responses": 0,
+      "usable_responses_returned": 0,
+      "status_counts": {},
+      "unclosed_wrapper_invocations": 0,
+      "logical_responses_in_unclosed_wrappers": 0,
+      "closed_response_shortfall": 0,
+      "native_cost_estimate_sum": 0,
+      "native_reported_routes": []
+    }
+  },
+  "role_receipts": [
+    {
+      "path": "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json",
+      "call_id": "mutation-1d8a81aa5f454531a5138a029827672c",
+      "role": "mutation",
+      "method": "query",
+      "status": "returned",
+      "started_at": "2026-09-17T07:22:21.226765+00:00",
+      "finished_at": "2026-09-17T07:23:25.377963+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "configured_client_settings": {
+        "temperatures": [
+          0.0
+        ],
+        "max_tokens": 16384,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "error": null,
+      "system_prompt_sha256": "7322d67e7dea281d6e4ef8da25d41636d90ee722d8fa23325b778133354ef516",
+      "message_sha256": "0b819825a6f2bdfdda9ddcbfbf60e04de2e1bca5c6d3071d9572365763a979ca",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+          "input_tokens": 32287,
+          "output_tokens": 1442,
+          "reported_api_cost": 0.499546
+        }
+      ],
+      "preceding_native_sampling_context": {
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+      }
+    },
+    {
+      "path": "evolution/search_seed_670001/engine_calls/novelty-0a5cea442d2047dd98b6b4170c10c93a.json",
+      "call_id": "novelty-0a5cea442d2047dd98b6b4170c10c93a",
+      "role": "novelty",
+      "method": "query",
+      "status": "returned",
+      "started_at": "2026-09-17T07:23:25.484747+00:00",
+      "finished_at": "2026-09-17T07:23:40.800471+00:00",
+      "requested_logical_responses": 1,
+      "valid_responses": 1,
+      "configured_models": [
+        "headless/codex@gpt-6-astra?effort=xhigh"
+      ],
+      "configured_client_settings": {
+        "temperatures": 0.75,
+        "max_tokens": 4096,
+        "reasoning_efforts": "disabled"
+      },
+      "explicit_request_kwargs": null,
+      "effective_provider_effort": "unverified; configured/requested values are recorded separately",
+      "error": null,
+      "system_prompt_sha256": "11efafe143cc8c9e9f0e0e723c02d2e68d1d664ceb9f7b9858e4e324a0c05506",
+      "message_sha256": "8db2e62f9f46dbf103bbab43665d427eb94057480dc25284cbced1bc10e76a23",
+      "responses": [
+        {
+          "model_reported_by_native_client": "headless/codex@gpt-6-astra?effort=xhigh",
+          "input_tokens": 4008,
+          "output_tokens": 95,
+          "reported_api_cost": 0.05699
+        }
+      ],
+      "preceding_native_sampling_context": {
+        "generation": 1,
+        "novelty_attempt": 1,
+        "resample_attempt": 1,
+        "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+      }
+    }
+  ],
+  "event_receipt_coverage": {
+    "native_wrapper_starts_without_receipt": [],
+    "receipts_without_observed_start_event": []
+  },
+  "mutation_wrapper_counts_by_generation": {
+    "1": 1
+  },
+  "sampling_attempt_counts_by_generation": {
+    "1": 1
+  },
+  "retry_context_association": "Most recent native_sampling event before the wrapper-start event in saved event order; the frozen V3 launcher has one proposal worker. Saved prompt source/feedback checks separately verify this context.",
+  "degradation_events": [],
+  "patch_types_original_evaluated_rows": {
+    "init": 1
+  },
+  "native_sampling": [
+    {
+      "time": "2026-09-17T07:22:21+00:00",
+      "elapsed_s": 17.71,
+      "event": "native_sampling",
+      "message": "Native parent and inspiration selection completed",
+      "generation": 1,
+      "novelty_attempt": 1,
+      "resample_attempt": 1,
+      "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+      "parent_generation": 0,
+      "archive_inspiration_ids": [],
+      "top_k_inspiration_ids": [],
+      "needs_fix": false,
+      "saved_attempt_prompt_checks": [
+        {
+          "prompt": "evolution/search_seed_670001/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+          "frozen_task_context_present": true,
+          "sources": [
+            {
+              "native_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+              "row_present": true,
+              "generation": 0,
+              "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+              "full_source_present": true,
+              "feedback_sha256": "019f5feaa5999ea41c4fbdb20bdfe0a30622ddb93e12b3ac91f0d70fdbdb45eb",
+              "full_feedback_present": true
+            }
+          ]
+        }
+      ],
+      "coverage": "saved attempt prompt inspected"
+    }
+  ],
+  "novelty": {
+    "decision_count": 1,
+    "accepted": 1,
+    "rejected": 0,
+    "fallback": 0,
+    "decisions": [
+      {
+        "time": "2026-09-17T07:23:40+00:00",
+        "elapsed_s": 97.31,
+        "event": "novelty_decision",
+        "message": "Native novelty accepted candidate",
+        "accepted": true,
+        "fallback": false,
+        "novelty_checks_performed": 1,
+        "novelty_total_cost": 0.05699,
+        "novelty_explanation": "NOVEL: The proposed code changes the neutral particle count from 5 to 3. This is a meaningful hyperparameter change that can affect swarm behavior and optimization performance.",
+        "max_similarity": 0.9897165298461914,
+        "similarity_scores": [
+          0.9897165298461914
+        ]
+      }
+    ]
+  },
+  "native_embeddings": {
+    "starts": 2,
+    "completions": 2,
+    "dimensions": {
+      "768": 2
+    },
+    "events": [
+      {
+        "time": "2026-09-17T07:22:17+00:00",
+        "elapsed_s": 13.85,
+        "event": "embedding_start",
+        "message": "Waiting for local code embedding",
+        "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_0/main.py"
+      },
+      {
+        "time": "2026-09-17T07:23:25+00:00",
+        "elapsed_s": 81.9,
+        "event": "embedding_start",
+        "message": "Waiting for local code embedding",
+        "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_1/main.py"
+      },
+      {
+        "time": "2026-09-17T07:22:21+00:00",
+        "elapsed_s": 17.61,
+        "event": "embedding_complete",
+        "message": "Local code embedding returned",
+        "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_0/main.py",
+        "dimensions": 768
+      },
+      {
+        "time": "2026-09-17T07:23:25+00:00",
+        "elapsed_s": 81.97,
+        "event": "embedding_complete",
+        "message": "Local code embedding returned",
+        "program": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_1/main.py",
+        "dimensions": 768
+      }
+    ],
+    "degraded": []
+  },
+  "meta": {
+    "updates_started": [],
+    "updates_completed": [],
+    "updates_noop": [],
+    "saved_artifacts": [],
+    "mutation_prompt_injections": [
+      {
+        "receipt": "evolution/search_seed_670001/engine_calls/mutation-1d8a81aa5f454531a5138a029827672c.json",
+        "started_at": "2026-09-17T07:22:21.226765+00:00",
+        "preceding_native_sampling_context": {
+          "generation": 1,
+          "novelty_attempt": 1,
+          "resample_attempt": 1,
+          "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6"
+        },
+        "matched_recommendations": [],
+        "unique_exact_recommendation_texts": 0,
+        "crossover_format_observed": false,
+        "recommendation_section_present": false,
+        "verification": "before first observed completed meta update"
+      }
+    ]
+  },
+  "migration_history": [],
+  "native_migration_logs": []
+}

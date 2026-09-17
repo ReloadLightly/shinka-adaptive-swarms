@@ -1,0 +1,426 @@
+{
+  "storage_version": "streaming_gzip_case_checkpoint_v1",
+  "identity": {
+    "program_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+    "suite_sha256": "385cb547bcdbd14daec2a06f66526a516962ddb2b7407a1c793b8265b65f0c13",
+    "evaluation_version": "book_mpso_population_200_v2_reciprocal_v1",
+    "feedback_version": "paired_book_population_200_enclosing_ball_recovery_v2",
+    "evaluator_sha256": "c7df3cfbbe5f4cedc5f816ea1b5a69d49e980dc8c3076752df83d33a55b83efa",
+    "scientific_sources": {
+      "src/adaptive_swarms/simulator.py": "4e84243ced6e57e877991914b8d3ffd2ed076b1f7d55b02a891fa723ded0c563",
+      "src/adaptive_swarms/policies.py": "7eee0ca731008989aef6667f1c795b9ad7a59432689d16cf9b6e3252bca686fa",
+      "vendor/deap/movingpeaks.py": "5e2eb288e6e0ac43646fdbf05e4d256e0c7d78f6173934f89409e86ef36cd6d4",
+      "src/adaptive_swarms/population_policy.py": "2f45aa3a4593fb74d7a229c1315792531698073f7ac9c5fb993e6b9cbb8c589f",
+      "src/adaptive_swarms/population_policy_v2.py": "a31fe44375cc0fa65a4dc5b563dd1e282d950d6794b8c67c451312dfeaa3d685",
+      "src/adaptive_swarms/book_population_v2.py": "2456dd01cc03780a3178710acd13f3582d4ec02109455ef8ad88b9e1c47fb229",
+      "src/adaptive_swarms/enclosing_ball.py": "2d280f4c31220451df3495e66b1aeba4b85e9537cb952b5eeaff49e461415391",
+      "src/adaptive_swarms/book_mpso.py": "910a9ea3f4662d11f56c90d43137de8e99a08a25838ea957516cdbe1214e43e4"
+    },
+    "feedback_reference_artifacts": {
+      "target_3": [
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_000.json.gz",
+          "sha256": "fef463168bb7c9141757ca31b69ff9545f0acd8cbf43a5aade1a4a5498847ce9"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_001.json.gz",
+          "sha256": "082682e2bc251525dada0f6c2d5a33c06b8ccbcbe95e555d74ffcae0b317e314"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_002.json.gz",
+          "sha256": "f76bea41cd333af979faf3bca1fcd06986a41ed94a1b99690ae86f8537b878e1"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_3/case_003.json.gz",
+          "sha256": "e1c468078a9a8f7d7502a92ac51b030771ea73a4a688ec8e02daf5b5efee79d2"
+        }
+      ],
+      "target_5": [
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_000.json.gz",
+          "sha256": "28dfe67e32fba719fd09ff22698f340a4bfad77a34cfe8c77456f3998de2b323"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_001.json.gz",
+          "sha256": "ffacc2b709266e82196f39fe19bf24ea8f35d177a6cf238f8e71fe700245222d"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_002.json.gz",
+          "sha256": "39bbab4a53dbffd0e0fceb8278164196527ac29b852ad1cde4c6de2cf29c98d7"
+        },
+        {
+          "path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/references/target_5/case_003.json.gz",
+          "sha256": "d0f829a1bf44838f13fcfb0a800d671a7c5ed8a08744016ecccea502d033395e"
+        }
+      ]
+    }
+  },
+  "status": "completed",
+  "completed_cases": [
+    {
+      "case_id": "case_000",
+      "offline_error": 2.34992103906504,
+      "artifact": "case_000.json.gz",
+      "regime": "peaks=200,severity=1.0,period=5000",
+      "paired_differences": {
+        "target_3": 0.0934618353086405,
+        "target_5": -0.39840319161372273
+      },
+      "mean_interval_end_error": 1.5478801218167828,
+      "query_category_shares": {
+        "initialization": 1.2e-05,
+        "detection": 0.157978,
+        "ordinary": 0.60701,
+        "permanent_quantum": 0.157976,
+        "birth": 0.003444,
+        "exclusion": 0.004428,
+        "memory": 0.03852,
+        "temporary_quantum": 0.030632
+      },
+      "recovery_episodes": {
+        "target_3": {
+          "most_favorable": {
+            "completed_environment": 12,
+            "difference": -4.077052383220473,
+            "candidate_environment_error": 1.0966028144813027,
+            "reference_environment_error": 5.173655197701776
+          },
+          "most_unfavorable": {
+            "completed_environment": 5,
+            "difference": 4.349470473161742,
+            "candidate_environment_error": 9.802022022245206,
+            "reference_environment_error": 5.452551549083464
+          }
+        },
+        "target_5": {
+          "most_favorable": {
+            "completed_environment": 6,
+            "difference": -7.86941599493308,
+            "candidate_environment_error": 2.4466357100143648,
+            "reference_environment_error": 10.316051704947444
+          },
+          "most_unfavorable": {
+            "completed_environment": 96,
+            "difference": 3.6560391140790216,
+            "candidate_environment_error": 5.919581459676875,
+            "reference_environment_error": 2.2635423455978536
+          }
+        }
+      },
+      "population_stats": {
+        "policy_calls": 3829,
+        "population_decisions": 3829,
+        "requested_target_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 3829,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "realized_neutral_count_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 76120,
+          "5": 2869,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "additions": 0,
+        "removals": 115,
+        "no_change_requests": 3714,
+        "total_neutral_updates": 78989,
+        "neutral_count_sum": 318825,
+        "mean_neutral_count_per_subswarm_update": 4.03632151312208,
+        "recorded_total_particle_count_range": [
+          6,
+          277
+        ],
+        "trace_sampled_mean_total_particle_count": 195.3778,
+        "recorded_swarm_count_range": [
+          1,
+          55
+        ],
+        "trace_sampled_mean_swarm_count": 38.8878,
+        "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded"
+      },
+      "incomplete_responses": 0
+    },
+    {
+      "case_id": "case_001",
+      "offline_error": 2.2354283951910854,
+      "artifact": "case_001.json.gz",
+      "regime": "peaks=200,severity=1.0,period=5000",
+      "paired_differences": {
+        "target_3": 0.02668716027814444,
+        "target_5": 0.3139122846217537
+      },
+      "mean_interval_end_error": 1.4746951994479007,
+      "query_category_shares": {
+        "initialization": 1.2e-05,
+        "detection": 0.158198,
+        "ordinary": 0.608988,
+        "permanent_quantum": 0.158196,
+        "birth": 0.003744,
+        "exclusion": 0.003036,
+        "memory": 0.037778,
+        "temporary_quantum": 0.030048
+      },
+      "recovery_episodes": {
+        "target_3": {
+          "most_favorable": {
+            "completed_environment": 47,
+            "difference": -3.0990647736282804,
+            "candidate_environment_error": 1.3771583843921014,
+            "reference_environment_error": 4.476223158020382
+          },
+          "most_unfavorable": {
+            "completed_environment": 4,
+            "difference": 3.4911361243234444,
+            "candidate_environment_error": 3.994585459594383,
+            "reference_environment_error": 0.5034493352709385
+          }
+        },
+        "target_5": {
+          "most_favorable": {
+            "completed_environment": 41,
+            "difference": -3.1978987838473896,
+            "candidate_environment_error": 1.3565483131312557,
+            "reference_environment_error": 4.554447096978645
+          },
+          "most_unfavorable": {
+            "completed_environment": 2,
+            "difference": 10.924400330807561,
+            "candidate_environment_error": 13.96090240983191,
+            "reference_environment_error": 3.0365020790243475
+          }
+        }
+      },
+      "population_stats": {
+        "policy_calls": 3756,
+        "population_decisions": 3756,
+        "requested_target_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 3756,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "realized_neutral_count_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 75976,
+          "5": 3123,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "additions": 0,
+        "removals": 109,
+        "no_change_requests": 3647,
+        "total_neutral_updates": 79099,
+        "neutral_count_sum": 319519,
+        "mean_neutral_count_per_subswarm_update": 4.039482167916156,
+        "recorded_total_particle_count_range": [
+          6,
+          276
+        ],
+        "trace_sampled_mean_total_particle_count": 192.1894,
+        "recorded_swarm_count_range": [
+          1,
+          55
+        ],
+        "trace_sampled_mean_swarm_count": 38.2554,
+        "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded"
+      },
+      "incomplete_responses": 0
+    },
+    {
+      "case_id": "case_002",
+      "offline_error": 1.792776358155414,
+      "artifact": "case_002.json.gz",
+      "regime": "peaks=200,severity=1.0,period=5000",
+      "paired_differences": {
+        "target_3": 0.02398313774726968,
+        "target_5": -0.014862283324037495
+      },
+      "mean_interval_end_error": 1.0825097150055882,
+      "query_category_shares": {
+        "initialization": 1.2e-05,
+        "detection": 0.157938,
+        "ordinary": 0.606314,
+        "permanent_quantum": 0.157936,
+        "birth": 0.003816,
+        "exclusion": 0.003912,
+        "memory": 0.039024,
+        "temporary_quantum": 0.031048
+      },
+      "recovery_episodes": {
+        "target_3": {
+          "most_favorable": {
+            "completed_environment": 97,
+            "difference": -1.7610702956636117,
+            "candidate_environment_error": 1.8711066483071253,
+            "reference_environment_error": 3.632176943970737
+          },
+          "most_unfavorable": {
+            "completed_environment": 32,
+            "difference": 2.1154753784005282,
+            "candidate_environment_error": 3.1170715436735836,
+            "reference_environment_error": 1.0015961652730554
+          }
+        },
+        "target_5": {
+          "most_favorable": {
+            "completed_environment": 14,
+            "difference": -3.318131765470334,
+            "candidate_environment_error": 2.436275087261907,
+            "reference_environment_error": 5.754406852732241
+          },
+          "most_unfavorable": {
+            "completed_environment": 96,
+            "difference": 1.660766137906728,
+            "candidate_environment_error": 2.5274873236979394,
+            "reference_environment_error": 0.8667211857912114
+          }
+        }
+      },
+      "population_stats": {
+        "policy_calls": 3881,
+        "population_decisions": 3881,
+        "requested_target_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 3881,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "realized_neutral_count_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 76162,
+          "5": 2807,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "additions": 0,
+        "removals": 107,
+        "no_change_requests": 3774,
+        "total_neutral_updates": 78969,
+        "neutral_count_sum": 318683,
+        "mean_neutral_count_per_subswarm_update": 4.035545593840621,
+        "recorded_total_particle_count_range": [
+          6,
+          272
+        ],
+        "trace_sampled_mean_total_particle_count": 197.9148,
+        "recorded_swarm_count_range": [
+          1,
+          54
+        ],
+        "trace_sampled_mean_swarm_count": 39.3992,
+        "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded"
+      },
+      "incomplete_responses": 0
+    },
+    {
+      "case_id": "case_003",
+      "offline_error": 2.3476457762368925,
+      "artifact": "case_003.json.gz",
+      "regime": "peaks=200,severity=1.0,period=5000",
+      "paired_differences": {
+        "target_3": 0.21526634341674988,
+        "target_5": 0.05999194914714456
+      },
+      "mean_interval_end_error": 1.4583419523457464,
+      "query_category_shares": {
+        "initialization": 1.2e-05,
+        "detection": 0.157886,
+        "ordinary": 0.607032,
+        "permanent_quantum": 0.157886,
+        "birth": 0.003888,
+        "exclusion": 0.003684,
+        "memory": 0.038772,
+        "temporary_quantum": 0.03084
+      },
+      "recovery_episodes": {
+        "target_3": {
+          "most_favorable": {
+            "completed_environment": 71,
+            "difference": -3.698731233411594,
+            "candidate_environment_error": 0.7074777120508212,
+            "reference_environment_error": 4.406208945462415
+          },
+          "most_unfavorable": {
+            "completed_environment": 31,
+            "difference": 5.2607436033716,
+            "candidate_environment_error": 6.323582288525097,
+            "reference_environment_error": 1.0628386851534968
+          }
+        },
+        "target_5": {
+          "most_favorable": {
+            "completed_environment": 14,
+            "difference": -4.190475329217659,
+            "candidate_environment_error": 1.91432148003634,
+            "reference_environment_error": 6.104796809253998
+          },
+          "most_unfavorable": {
+            "completed_environment": 42,
+            "difference": 3.8561068024748884,
+            "candidate_environment_error": 4.600907765157836,
+            "reference_environment_error": 0.7448009626829477
+          }
+        }
+      },
+      "population_stats": {
+        "policy_calls": 3855,
+        "population_decisions": 3855,
+        "requested_target_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 3855,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "realized_neutral_count_histogram": {
+          "2": 0,
+          "3": 0,
+          "4": 75779,
+          "5": 3164,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "additions": 0,
+        "removals": 111,
+        "no_change_requests": 3744,
+        "total_neutral_updates": 78943,
+        "neutral_count_sum": 318936,
+        "mean_neutral_count_per_subswarm_update": 4.040079551068493,
+        "recorded_total_particle_count_range": [
+          6,
+          286
+        ],
+        "trace_sampled_mean_total_particle_count": 196.9662,
+        "recorded_swarm_count_range": [
+          1,
+          57
+        ],
+        "trace_sampled_mean_swarm_count": 39.2018,
+        "trace_mean_sampling": "Regular samples every 100 counted objective evaluations; first-query extra sample excluded"
+      },
+      "incomplete_responses": 0
+    }
+  ],
+  "active_case": null
+}

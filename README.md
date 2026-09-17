@@ -2,7 +2,7 @@
 
 **Can native ShinkaEvolve improve a published multi-swarm optimizer under matched conditions and evaluation budgets?**
 
-[200-peak runtime stop](docs/studies/book_mpso_population_200_v1/REPORT.md) · [Population study](docs/studies/book_mpso_population_v1/REPORT.md) · [Chapter schedule comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
+[Corrected 200-peak campaign](docs/studies/book_mpso_population_200_v2/REPORT.md) · [200-peak runtime stop](docs/studies/book_mpso_population_200_v1/REPORT.md) · [Population study](docs/studies/book_mpso_population_v1/REPORT.md) · [Chapter schedule comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
 
 ## Abstract
 
@@ -16,13 +16,20 @@ reconstructed 5+1 seed's mean development error, 1.744569.** Fixed targets three
 1.806340 and 1.871657. The closest descendant was the simple constant target six, at **1.776112**:
 paired difference **+0.031543 [−0.185736,+0.250921]**, descriptive 95%, with three wins/five losses.
 Conditional shrinking and growth changed actual population and query allocation but did not improve
-the mean. We retain five; the fresh-comparison trigger was not met. These results establish neither
+the mean. We retain five in that ten-peak study; its fresh-comparison trigger was not met. These results establish neither
 optimality nor equivalence, and reused development data do not establish generalization. Earlier
 relocation and retention studies remain cumulative evidence, including V3's null result.
 A subsequent **200-peak, severity-one continuation stopped at runtime assessment before native
 search**: its first planned reference case completed 500,000 queries, but even the smallest
 reserved search/fresh-comparison design did not fit the 120-minute ceiling. That partial
 reference stage supplies no evolutionary performance finding.
+
+A versioned continuation corrects neutral-only enclosing-ball convergence and
+adds durable native meta-memory resume. Its **200-peak campaign is still open**:
+Session 1's leading conditional rule obtains **1.928740** mean error on four
+development histories, versus **2.191283** for corrected 5+1 and **2.091593** for
+constant target three. These interim results are separate from the completed
+ten-peak studies. No fresh comparison or final campaign selection has occurred.
 
 ## 1. Introduction
 
@@ -123,8 +130,8 @@ fixed order, followed by the permanent quantum role. A new or excluded swarm rec
 initialization before it becomes an evaluated attractor. Convergence uses only the five designated
 neutral positions, excluding the permanent quantum particle.
 
-The source defines convergence using a smallest enclosing ball. We retain the documented DEAP
-approximation based on maximum pairwise neutral distance, with a swarm free above `2 × rexcl` and
+The source defines convergence using a smallest enclosing ball. The historical schedule and
+population studies retained the documented DEAP approximation based on maximum pairwise neutral distance, with a swarm free above `2 × rexcl` and
 `rexcl = domain_width / (2 × swarm_count**(1/dimension))`. This is **not an exact enclosing-ball
 calculation**. Other conventions include DEAP initialization, asynchronous attractor updates,
 unclipped particle positions and stopping at the exact query budget even within an operation.
@@ -136,6 +143,16 @@ The pinned upstream `convertQuantum` accidentally overwrote its distribution arg
 its intended branches unreachable. That historical correction belongs to the baseline. Adding
 the 5+1 reference and correcting update ordering are likewise implementation work, not discoveries
 made by evolution.
+
+The versioned [200-peak campaign continuation](docs/book_mpso_population_200_v2_protocol.md)
+repairs convergence with an accurate neutral-only enclosing-ball predicate. A triangle with side
+1.9 times the radius passes the old diameter rule but needs a larger enclosing ball. The new
+engine uses valid quick certificates and solves ambiguous configurations, with relative boundary
+tolerance 1e-12 and no objective/RNG calls. Its corrected controls are measured anew on the same
+four development histories; the old one-case score cannot be reused. This is a source-fidelity
+repair, never an evolutionary improvement. The [versioned source record](docs/book_mpso_population_200_v2_source_record.md)
+leaves the original hashed source record and historical engines intact. Table 6's printed MPSO
+score 2.18 conflicts with 2.12 in adjacent prose; neither is an exact reproduction target.
 
 ### 3.2 Retaining the published response; evolving population allocation
 
@@ -271,15 +288,29 @@ matched references, never against unmatched printed values as a claim to have �
 | Peaks | Movement severity | Chapter-aligned evidence |
 |---:|---:|---|
 | 10 | 1 | Completed schedule and population searches; eight development cases each |
-| 200 | 1 | Registered four-case extension; one target-five case measured, **native search unexecuted after runtime assessment** |
+| 200 | 1 | Historical one-case runtime stop; corrected enclosing-ball continuation now has paired controls and an interim native campaign on four development histories |
 | 10 | 5 | Still untested by the chapter-aligned search |
 | 200 | 5 | Still untested by the chapter-aligned search |
 
-The 200-peak extension retains the same 5D engine, 500,000-query horizon and population
-interface, with new seed pairs and controls three/five. It is a small MPSO extension, not
-complete reproduction of the chapter or an SPSO comparison. Its status differs from the
-completed ten-peak negative findings; [the bounded-stop report](docs/studies/book_mpso_population_200_v1/REPORT.md)
-retains the prospective suite and execution evidence.
+The corrected 200-peak continuation retains the four identities registered by the
+[bounded-stop study](docs/studies/book_mpso_population_200_v1/REPORT.md), the 5D,
+500,000-query horizon and population interface. Every corrected score is measured
+with the new enclosing-ball engine; the old single-case score is historical only.
+This is a small MPSO extension, not complete reproduction of the chapter or an SPSO
+comparison. The two severity-five conditions remain untested.
+
+Its [prospective campaign](docs/book_mpso_population_200_v2_protocol.md) spans 50
+descendant slots, with the seed included in final selection and all seven constant
+targets 2..8 compared on development data before that selection. Session 1 measures
+controls three/five and admits at most six descendants within 180 minutes. Later
+sessions require another user launch. Evolutionary feedback remains against
+three/five throughout. A distinct final native winner improving on seed permits a
+later frozen comparison on 50 new paired histories; interim rankings cannot trigger
+fresh testing. The [registered analysis](docs/studies/book_mpso_population_200_v2/analysis_specification.json)
+tests the primary comparison against corrected 5+1 before interpreting the secondary
+comparison against the development-selected constant, with whole-history paired
+bootstrap intervals. This design supersedes the old continuation's short-batch
+limits through a new identity; historical manifests remain unchanged.
 
 ## 5. Results
 
@@ -638,7 +669,7 @@ replication of the printed table.*
 
 ### 5.5 The 200-peak continuation stopped before evolution
 
-**No evolutionary result was obtained in the 200-peak condition.** The first already-planned
+**That initial 200-peak continuation obtained no evolutionary result.** The first already-planned
 fixed-target-five case completed its full 500,000 queries in **149.15 monotonic seconds /
 175.55 UTC seconds**. The discrepancy is unresolved; the larger observed duration informs
 the UTC ceiling. With 20% numerical variation, prior native latency, all twelve possible
@@ -652,7 +683,7 @@ offline error was **2.586443**, with **3,422** target-five requests, no addition
 mean **209.63 total particles** and **34.94 subswarms** on the 100-query grid. Ordinary
 movement used **64.59%** of queries, permanent sampling **13.60%**, detection **13.60%**,
 memory refresh **4.11%**, and temporary sampling **3.42%**. These describe one trajectory;
-there is no target-three contrast, development mean over four cases, selected program,
+that archive has no target-three contrast, development mean over four cases, selected program,
 fresh outcome or evidence for/against adaptation. Subswarm count does not measure peak coverage.
 
 ![Measured single 200-peak reference trajectory](assets/book_mpso_population_200_v1/population_and_tracking.png)
@@ -665,13 +696,101 @@ The bounded continuation consumed **one full execution / 500,000 objective queri
 **zero native slots or model responses**, and **zero numerical fixture queries**; 25 focused
 synthetic checks passed. New task/context, all four seed pairs, exact reference source,
 checkpoint, timing, analysis and [complete report](docs/studies/book_mpso_population_200_v1/REPORT.md)
-are preserved. The next decision is whether to arrange a longer execution window before
-resuming the frozen design with this case reused. No follow-on campaign was launched.
+are preserved. At that stop, the next decision was whether to arrange a longer execution window.
+The subsequently authorized versioned campaign below repairs convergence and measures controls
+anew; this historical diameter-engine case is not reused as a corrected control.
+
+### 5.6 Corrected 200-peak campaign: an interim conditional improvement
+
+The [versioned continuation](docs/studies/book_mpso_population_200_v2/REPORT.md)
+corrects the enclosing-ball source mismatch and preserves native meta-memory at
+session boundaries. **Six of the prospective 50 descendant slots are complete**;
+all six are valid. Generation four is the interim best, with seed included in the
+ranking. This is an open campaign with an improving development result, not a
+completed six-slot study or a fresh confirmation.
+
+The [exact native source](artifacts/book_mpso_population_200_v2/20260917T065325Z/session_001/evolution/search_seed_670001/gen_4/main.py)
+uses positive relative fitness deterioration divided by `1 + (N + M)/160`, where
+N is total particles and M is subswarms at the decision. It requests **three** when
+that pressure exceeds **0.04 if the preceding target was three, or 0.08 otherwise**;
+it requests **two** below the threshold. This hysteresis uses the existing public
+previous-target field. N+M is a workload proxy; it does not include every refresh,
+birth or exclusion query. The unchanged adapter starts groups at five and moves
+one particle toward the target only after detected change and memory refresh.
+
+| Method | Mean development error | Difference from corrected 5+1 | Paired wins/losses |
+|---|---:|---:|---:|
+| Corrected 5+1 / target five | 2.191283 | 0 | — |
+| Constant target three | 2.091593 | −0.099690 | 3 / 1 |
+| Native constant target two | 2.080392 | −0.110892 | 3 / 1 |
+| **Generation four: conditional targets two/three** | **1.928740** | **−0.262543** | **3 / 1** |
+
+All seven constant targets 2..8 completed development evaluation in this session.
+Their means are 2.080392, 2.091593, 2.181443, 2.191283, 2.349997, 2.352424 and
+2.586811 respectively. Target two leads these constants; generation four improves
+on it in all four histories, by 7.29% on average. This does not isolate adaptation's
+causal contribution or establish fresh generalization.
+
+The leading rule lowers mean error by **11.98%** against corrected 5+1 and **7.79%**
+against target three. The primary paired differences are −0.594850, +0.017667,
+−0.157189 and −0.315800. Their descriptive 95% bootstrap interval is
+[−0.485435, −0.065700], resampling whole histories. Case 000 contributes 56.64%
+of the net gain, although every leave-one-history-out mean remains negative.
+Four selected development histories cannot substitute for the registered later
+50-history comparison. No significance-based stopping or fresh testing occurred.
+
+The other descendants were constant three, two and four, then two conditional
+variants with means 1.989777 and 2.057724. The latter variants did not improve on
+generation four. Native lineage and saved prompts verify weighted parent sampling,
+archive/top inspirations, three diff, two full and one crossover mutations,
+embedding-plus-LLM novelty and one interval-five meta update. One recommendation
+is present verbatim in generation six's prompt; native crossover omits that section
+in generation five. These observations establish machinery use, not an isolated
+causal contribution to performance.
+
+The rule requests two/three in 63.27%/36.73% of decisions and repeatedly resizes:
+1,582 additions, 2,503 removals and 2,921 direction reversals across four histories.
+It uses workload and history fields that the preceding ten-peak descendants left
+unused. Average total particles fall from 215.48 to 93.26 and subswarms from 35.91
+to 26.41. Movement uses 75.62% of queries versus 81.49% for 5+1; detection plus
+memory uses 23.09% versus 17.82%. Births, convergence, exclusion and movement
+trajectories change together. Subswarm counts do not establish distinct-peak coverage.
+
+![Corrected 200-peak population and tracking](assets/book_mpso_population_200_v2/session_001/population_and_tracking.png)
+
+*Figure 15. **Interim 5D, 200-peak development evidence**, four paired 500,000-query
+histories. Population and tracking use counted evaluations. Solid population lines
+count particles and dashed lines count subswarms on the right axis. Neutral bands
+show population spread; the paired intervals are descriptive and selection-biased.*
+
+![Favorable and unfavorable corrected 200-peak episodes](assets/book_mpso_population_200_v2/session_001/tracking_episodes.png)
+
+*Figure 16. Saved favorable and unfavorable recovery episodes chosen by the
+registered largest-contribution rule, initialization excluded. Case 000/period 6
+favors the rule by 7.506815 mean-error units; case 001/period 2 favors 5+1 by
+10.931851. These extrema are not independent replications or typical-effect
+estimates. No simulation replays were run for either figure.*
+
+Session 1 used **44 physical full-case executions / 22 million queries**, twelve
+case-label reuses, 401 separate fixture queries and 19 logical native responses
+(six mutation, six novelty, seven meta). Inner calls used subscription
+**gpt-6-astra/xhigh**, with no paid API fallback; client-selected outer effort was
+not programmatically exposed. The native pause retains five processed and two
+pending meta programs. A killed aggregate-analysis process was recovered by
+processing saved methods sequentially, with identical prior statistics and no
+simulation replay.
+
+The [session report](docs/studies/book_mpso_population_200_v2/REPORT.md) preserves
+all paired cases, constant controls, actual population diagnostics, accounting,
+source hashes and the drained database/meta checkpoint. The campaign continues
+only through a [new user-launched session](docs/studies/book_mpso_population_200_v2/RESUME.md).
+The enclosing-ball repair is source-fidelity work; the evolutionary comparison
+uses the corrected engine for every method.
 
 ## 6. Discussion and Limitations
 
-The population search found **no development improvement over reconstructed 5+1**, and the
-preceding schedule search likewise retained its seed. The current decision is to keep **five neutrals,
+The completed ten-peak population search found **no development improvement over reconstructed 5+1**,
+and the preceding schedule search likewise retained its seed. Its decision was to keep **five neutrals,
 one permanent quantum particle and the published change response** in this setting. This is a
 negative result for the tested programs, not proof that either human choice is optimal or that
 conditional population allocation cannot help. The two searches reuse the same eight development
@@ -685,11 +804,13 @@ evidence of learned adaptation: even a uniform target produces different realize
 new swarms start at five. None of the accepted rules used the available global workload or
 previous-target fields, so the search did not exhaust the documented response space.
 
-A justified next experiment would examine **the chapter's 200-peak condition using simple fixed-target
-controls before another adaptive search**, where the authors' convergence/coverage tradeoff may differ.
-This is a recommendation only; no new condition, baseline-validation study or further campaign was
-launched. The present result covers one severity-one, ten-peak condition and the existing known-scale
-radius. It does not establish a direction-wide impossibility.
+The ten-peak result motivated the **200-peak condition with matched constant-target controls**,
+where the authors' convergence/coverage tradeoff may differ. The first 200-peak attempt stopped
+before evolution; the corrected continuation is now an explicitly resumable campaign. Its interim
+selection does not authorize fresh testing or establish generalization. The ten-peak negative
+result remains limited to its tested rules, condition and known-scale radius.
+Convergence geometry also changed in the corrected continuation; cross-study
+differences cannot be attributed solely to the number of peaks.
 
 The cumulative studies support explicit competent controls and behavior inspection. V2 improved a
 selected constant yet did not improve the corrected original baseline on average; V3's larger
@@ -702,8 +823,8 @@ reading sophisticated collective behavior into source-code complexity.
 These bounded native searches cannot establish that ShinkaEvolve is superior to another search
 method, that any single engine feature caused a gain, or that adaptive branching is necessary.
 The chapter includes other MPSO settings and SPSO; none was silently replaced by our two references.
-Known severity, one ten-peak synthetic setting, eight histories per stage and reconstruction
-conventions constrain transfer. Particle positions are not bounded by the peak domain. A shared-best
+Known severity, the studied synthetic conditions, small development suites and reconstruction
+conventions constrain transfer. The two severity-five conditions remain untested by chapter-aligned search. Particle positions are not bounded by the peak domain. A shared-best
 improvement attributed to an update records its immediate occurrence, not an isolated causal value
 for that particle type. Conversion and population changes alter later trajectories, query allocation, swarm birth/removal
 opportunities and the relative cost of detection and memory. The population experiment does not isolate

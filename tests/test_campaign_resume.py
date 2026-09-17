@@ -106,6 +106,7 @@ def test_roundtrip_meta_history_pending_processed_rng_and_next_generation(tmp_pa
     assert actual.meta_recommendations_history == meta.meta_recommendations_history
     assert actual.total_programs_processed == 5
     assert [p.id for p in actual.evaluated_since_last_meta] == ["program-5"]
+    assert restored._campaign_rng_restored is True
     assert (random.random(), np.random.random()) == expected
     asyncio.run(restored._start_proposals(1))
     assert restored.proposed == [6]
