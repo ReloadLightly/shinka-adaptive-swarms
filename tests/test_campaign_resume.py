@@ -254,3 +254,31 @@ def test_past_deadline_stops_before_transport_not_candidate_failure(tmp_path):
     assert receipt["status"] == "stopped_allowance"
     assert receipt["logical_response_limit"] == 400
     assert receipt["session_response_limit"] == 80
+
+
+def test_complete_evaluator_timing_raises_admission_and_ignores_partial_or_invalid(tmp_path):
+    from datetime import datetime, timezone, timedelta
+    def save_timing(generation, *, correct=True, cases=4, utc_seconds=1200, elapsed_seconds=1100):
+        folder = tmp_path / f"gen_{generation}" / "results"
+        folder.mkdir(parents=True)
+        (folder / "correct.json").write_text(json.dumps({"correct": correct}))
+        (folder / "metrics.json").write_text(json.dumps({"public": {"cases_completed": cases}}))
+        begin = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        events = [{"event":"evaluation_start", "cases":4, "time":begin.isoformat(), "elapsed_s":2},
+            {"event":"evaluation_complete", "cases_completed":cases,
+             "time":(begin + timedelta(seconds=utc_seconds)).isoformat(), "elapsed_s":2 + elapsed_seconds}]
+        (folder / "events.jsonl").write_text("\n".join(json.dumps(event) for event in events) + "\n")
+    save_timing(1)
+    save_timing(2, correct=False, utc_seconds=99999)
+    save_timing(3, cases=3, utc_seconds=99999)
+    deadline = (datetime.now(timezone.utc) + timedelta(seconds=1000)).isoformat()
+    runner = configured(tmp_path, [program(0)], deadline_utc=deadline,
+        admission_seconds=500, admission_overhead_seconds=100)
+    asyncio.run(runner._start_proposals(1))
+    assert runner._campaign_admission_seconds == 1720  # 1.35 * max(1200,1100) + 100
+    assert not runner.proposed
+    forecast = [event for name, event in runner.events if name == "campaign_admission_forecast"][-1]
+    assert forecast["complete_evaluation_timings"] == [{"program":"gen_1", "seconds":1200}]
+    save_timing(0, utc_seconds=10, elapsed_seconds=12)  # Source-identical seed reuse is fast.
+    runner._update_campaign_admission()
+    assert runner._campaign_admission_seconds == 1720

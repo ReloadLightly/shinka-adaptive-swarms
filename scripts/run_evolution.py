@@ -6,6 +6,7 @@ import argparse
 import contextlib
 import hashlib
 import json
+import math
 import os
 import signal
 import shutil
@@ -360,7 +361,7 @@ def run_native(args, run_dir: Path, log):
     if args.session_max_descendants is not None:
         runner.configure_campaign(campaign_generations=args.generations, log=log,
             deadline_utc=args.session_deadline_utc, admission_seconds=args.admission_seconds,
-            response_reserve=args.session_response_reserve)
+            response_reserve=args.session_response_reserve, admission_overhead_seconds=args.admission_overhead_seconds)
     remove_observers = install_engine_observers(runner, log, run_dir, logical_response_limit=args.logical_response_limit,
         session_response_limit=args.session_response_limit, session_response_start=args.session_response_start)
     log.event("engine_initialized", message="Native engine components initialized; subsequent events establish actual use",
@@ -413,6 +414,8 @@ def main() -> int:
                         help="ISO UTC research cutoff; provider waits and new-work admission respect it")
     parser.add_argument("--admission-seconds", type=float, default=0,
                         help="Conservative time required for mutation, full paired evaluation, meta and checkpoint")
+    parser.add_argument("--admission-overhead-seconds", type=float, default=None,
+                        help="Optional measured mutation/meta/checkpoint allowance; raises admission to 1.35 times max complete evaluator duration plus this overhead")
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
@@ -420,6 +423,8 @@ def main() -> int:
         parser.error("--search-seed must be an integer from 0 through 2**32 - 1.")
     if args.logical_response_limit is not None and args.logical_response_limit < 1:
         parser.error("--logical-response-limit must be positive.")
+    if args.admission_overhead_seconds is not None and (args.admission_overhead_seconds < 0 or not math.isfinite(args.admission_overhead_seconds)):
+        parser.error("Admission overhead must be a finite nonnegative number.")
     if args.session_max_descendants is not None and not 1 <= args.session_max_descendants <= 6:
         parser.error("Session descendant ceiling must be from one through six.")
     if args.session_response_limit is not None and (args.session_response_limit < 1 or args.logical_response_limit is None and not args.resume):
@@ -532,7 +537,7 @@ def main() -> int:
                 active["session_limits"] = {"max_descendants": args.session_max_descendants,
                     "generation_target": args.session_generation_target, "logical_responses": args.session_response_limit,
                     "response_start": args.session_response_start, "research_cutoff_utc": args.session_deadline_utc,
-                    "admission_seconds": args.admission_seconds}
+                    "admission_seconds": args.admission_seconds, "admission_overhead_seconds": args.admission_overhead_seconds}
                 active["campaign_status"] = "open"
             active["engine_features"] = engine_features
             active["execution_support_sha256"] = {

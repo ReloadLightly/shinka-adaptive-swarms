@@ -151,6 +151,7 @@ def run_session(folder,args):
                      '--session-response-limit','80','--session-response-start',str(session['response_start']),
                      '--session-deadline-utc',session['research_deadline_utc'],
                      '--admission-seconds',str(timing['complete_descendant_admission_seconds']),
+                     '--admission-overhead-seconds',str(timing.get('mutation_novelty_meta_allowance_seconds',360)+timing.get('drain_seconds',120)),
                      '--model','gpt-6-astra','--effort','xhigh',
                      '--engine-profile',str(ROOT/f'configs/shinka/{TASK}.json'),
                      '--embedding-model','local/jina-code-v2-q8@http://127.0.0.1:8910/v1',

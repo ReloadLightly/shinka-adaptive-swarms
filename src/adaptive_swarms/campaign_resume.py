@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 from pathlib import Path
 import random
 import sqlite3
@@ -76,7 +77,7 @@ class CampaignResumeRunnerMixin:
     """Enable only through configure_campaign; historical runs stay unchanged."""
 
     def configure_campaign(self, *, campaign_generations, log, deadline_utc=None,
-                           admission_seconds=0, response_reserve=12):
+                           admission_seconds=0, response_reserve=12, admission_overhead_seconds=None):
         self._campaign_size = campaign_generations
         self._campaign_log = log
         self._campaign_processed_ids = set()
@@ -86,6 +87,7 @@ class CampaignResumeRunnerMixin:
         self._campaign_had_checkpoint = (Path(self.results_dir) / "campaign-checkpoint.json").exists()
         self._campaign_pause_reason = None
         self._campaign_admission_seconds = float(admission_seconds)
+        self._campaign_admission_overhead = admission_overhead_seconds
         self._campaign_response_reserve = int(response_reserve)
         self._campaign_deadline = (datetime.fromisoformat(deadline_utc.replace("Z", "+00:00")).timestamp()
                                    if deadline_utc else None)
@@ -203,12 +205,63 @@ class CampaignResumeRunnerMixin:
         if hasattr(self, "_campaign_size"):
             self._restore_campaign()
 
+    def _update_campaign_admission(self):
+        """Raise the forecast using complete four-history evaluator timings only."""
+        if self._campaign_admission_overhead is None:
+            return
+        observed = []
+        for path in sorted(Path(self.results_dir).glob("gen_*/results/events.jsonl")):
+            try:
+                correct = json.loads((path.parent / "correct.json").read_text())
+                metrics = json.loads((path.parent / "metrics.json").read_text())
+            except (FileNotFoundError, json.JSONDecodeError):
+                continue
+            if correct.get("correct") is not True or metrics.get("public", {}).get("cases_completed") != 4:
+                continue
+            start = None
+            for line in path.read_text().splitlines():
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError:
+                    continue  # An interrupted append is not a completed timing.
+                if event.get("event") == "evaluation_start":
+                    start = event if event.get("cases") == 4 else None
+                elif event.get("event") == "evaluation_complete" and start is not None:
+                    if event.get("cases_completed") != 4:
+                        start = None
+                        continue
+                    durations = []
+                    try:
+                        durations.append(float(event["elapsed_s"]) - float(start["elapsed_s"]))
+                    except (KeyError, TypeError, ValueError):
+                        pass
+                    try:
+                        finish = datetime.fromisoformat(event["time"].replace("Z", "+00:00"))
+                        begin = datetime.fromisoformat(start["time"].replace("Z", "+00:00"))
+                        durations.append((finish - begin).total_seconds())
+                    except (KeyError, TypeError, ValueError):
+                        pass
+                    durations = [duration for duration in durations if math.isfinite(duration) and duration >= 0]
+                    if durations:
+                        observed.append({"program": path.parents[1].name, "seconds": max(durations)})
+                    start = None
+        previous = self._campaign_admission_seconds
+        maximum = max((entry["seconds"] for entry in observed), default=None)
+        if maximum is not None:
+            self._campaign_admission_seconds = max(previous, 1.35 * maximum + self._campaign_admission_overhead)
+        self._campaign_log.event("campaign_admission_forecast",
+            message="Admission forecast uses completed four-case evaluations and retains its conservative high-water mark",
+            complete_evaluation_timings=observed, maximum_complete_evaluation_seconds=maximum,
+            variation_multiplier=1.35, overhead_seconds=self._campaign_admission_overhead,
+            previous_required_seconds=previous, required_seconds=self._campaign_admission_seconds)
+
     async def _start_proposals(self, num_proposals):
         if hasattr(self, "_campaign_size"):
             # One proposal/evaluation worker, with no pipeline of unevaluated
             # proposals across a boundary: drain native maintenance/meta first.
             if self.running_jobs or self.active_proposal_tasks or self._get_completed_job_work_count() or self._has_background_side_effect_work():
                 return
+            self._update_campaign_admission()
             remaining = min(self._campaign_deadline - time.time(), self._campaign_monotonic_deadline - time.monotonic()) if self._campaign_deadline else float("inf")
             budget = getattr(self, "logical_response_budget", None)
             response_remaining = min(budget.limit - budget.used,
@@ -218,7 +271,7 @@ class CampaignResumeRunnerMixin:
                 self.evo_config.num_generations = self.next_generation_to_submit
                 self.slot_available.set()
                 self._campaign_log.event("campaign_admission_closed", message="No further proposal admitted; draining this session",
-                    reason=self._campaign_pause_reason, remaining_seconds=remaining, responses_remaining=response_remaining,
+                    reason=self._campaign_pause_reason, remaining_seconds=remaining, required_seconds=self._campaign_admission_seconds, responses_remaining=response_remaining,
                     generation_target=self.evo_config.num_generations)
                 return
             self._checkpoint_campaign("before_proposal", drained=True)
