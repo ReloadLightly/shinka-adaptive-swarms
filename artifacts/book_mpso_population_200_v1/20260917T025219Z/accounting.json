@@ -1,0 +1,62 @@
+{
+  "status": "bounded_stop_before_search",
+  "recorded_at": "2026-09-17T03:08:16.467606+00:00",
+  "stages": {
+    "references": {
+      "planned_case_records": 8,
+      "completed_case_records": 1,
+      "physical_full_executions": 1,
+      "exact_objective_queries": 500000,
+      "reused_case_records": 0,
+      "failed_or_partial_numerical_cases": 0
+    },
+    "native": {
+      "started": false,
+      "terminal_slots": 0,
+      "valid_descendants": 0,
+      "physical_full_executions": 0,
+      "exact_objective_queries": 0
+    },
+    "fresh": {
+      "started": false,
+      "identities_generated": false,
+      "trigger_evaluable": false,
+      "physical_full_executions": 0,
+      "exact_objective_queries": 0
+    }
+  },
+  "totals": {
+    "physical_full_executions": 1,
+    "research_objective_queries": 500000,
+    "failed_or_partial_attempts": 0,
+    "unknown_query_attempts": 0,
+    "reused_case_records": 0
+  },
+  "model": {
+    "requested_logical_responses": 0,
+    "limit": 36,
+    "roles": {
+      "mutation": 0,
+      "novelty": 0,
+      "meta": 0
+    },
+    "native_wrappers": 0,
+    "embedding_requests": 0,
+    "supervising_usage": "Not measured by native response counter",
+    "hidden_provider_retries": "Unobserved; no native request initiated"
+  },
+  "small_fixture_queries": 0,
+  "focused_check_results": {
+    "final_passed": 25,
+    "numerical_engine_fixtures_run": false,
+    "synthetic_controller_and_evaluator_only": true
+  },
+  "runtime_resolution": "operations/runtime-resolution.json",
+  "selected_native_program": null,
+  "reference_source": "programs/target_5.py",
+  "preservation": "One complete target-five case; missing references/descendants are unexecuted, not failed or negative.",
+  "final_saved_case_audit": "operations/saved-case-audit.json",
+  "final_native_audit": "operations/native-inspection-final.json",
+  "historical_preservation_audit": "operations/historical-preservation-check.json",
+  "session_elapsed_seconds_before_archive": 1309.598185
+}

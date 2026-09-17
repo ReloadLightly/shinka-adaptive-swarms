@@ -1,0 +1,71 @@
+{
+  "status": "runtime_constrained_stop_before_search",
+  "resolved_at": "2026-09-17T03:07:12.145577+00:00",
+  "decision_inputs_exclude_reference_scores": true,
+  "first_planned_case": {
+    "method": "target_5",
+    "case_id": "case_000",
+    "artifact": "references/target_5/case_000.json.gz",
+    "monotonic_seconds": 149.15278968999337,
+    "utc_seconds": 175.547427,
+    "counted_queries": 500000,
+    "case_completed_and_retained": true
+  },
+  "conservative_measured_case_seconds": 175.547427,
+  "variation_multiplier": 1.2,
+  "clock_discrepancy_seconds": 26.39463731000663,
+  "clock_interpretation": "Cause unverified; use larger observed duration to budget UTC ceiling, without relabeling monotonic time.",
+  "remaining_wall_seconds_at_resolution": 6306.854423,
+  "prospective_alternatives": [
+    {
+      "descendant_slots": 6,
+      "total_full_execution_ceiling": 44,
+      "remaining_full_executions_including_conditional_fresh": 43,
+      "numerical_runtime_seconds_with_20_percent_variation": 9058.2472332,
+      "native_model_reserve_seconds": 2100,
+      "publication_reserve_seconds": 900,
+      "remaining_registration_analysis_freeze_overhead_seconds": 180,
+      "total_remaining_seconds_required": 12238.2472332,
+      "fits": false
+    },
+    {
+      "descendant_slots": 4,
+      "total_full_execution_ceiling": 36,
+      "remaining_full_executions_including_conditional_fresh": 35,
+      "numerical_runtime_seconds_with_20_percent_variation": 7372.991934,
+      "native_model_reserve_seconds": 1500,
+      "publication_reserve_seconds": 900,
+      "remaining_registration_analysis_freeze_overhead_seconds": 180,
+      "total_remaining_seconds_required": 9952.991934,
+      "fits": false
+    },
+    {
+      "descendant_slots": 2,
+      "total_full_execution_ceiling": 28,
+      "remaining_full_executions_including_conditional_fresh": 27,
+      "numerical_runtime_seconds_with_20_percent_variation": 5687.7366348,
+      "native_model_reserve_seconds": 900,
+      "publication_reserve_seconds": 900,
+      "remaining_registration_analysis_freeze_overhead_seconds": 180,
+      "total_remaining_seconds_required": 7667.7366348,
+      "fits": false
+    }
+  ],
+  "native_latency_basis": "Prior six-descendant wrappers total1590.98 UTCseconds. Reserve300D+300seconds; two-slot cross-check prior firsttwo mutation/novelty164.236 +largestmetaround409.250, times1.5=860.229seconds, rounded900.",
+  "resolved_descendant_slots": 0,
+  "native_search_started": false,
+  "logical_model_responses": 0,
+  "fresh_comparison_started": false,
+  "scientific_interpretation": "Runtime feasibility result only. No control comparison, population-policy selection, or evolutionary negative finding.",
+  "next_action": "Publish single completed planned case, timing, unranked partial diagnostics, prospective suite and bounded-stop report; no further controls/campaign.",
+  "minimum_native_latency_cross_check": {
+    "prior_first_two_mutation_novelty_seconds_utc": 164.236,
+    "prior_largest_meta_round_seconds_utc": 409.25,
+    "sum_seconds": 573.486,
+    "reserved_seconds": 900,
+    "note": "Prior final pending meta runs even below five-program interval; planning reserve, not current usage.",
+    "with_50_percent_variation_seconds": 860.229
+  },
+  "native_latency_refined_at": "2026-09-17T03:11:29.954741+00:00",
+  "refinement": "Detailed prior-latency audit raises native closing/variation reserve by120 seconds for each option; stop unchanged. Original resolution retained separately."
+}

@@ -33,6 +33,17 @@ itself and disposable Python bytecode caches.
 | `book_mpso_schedule_v1/20260916T154109Z` | Chapter-aligned MPSO 5+0/5+1 reconstruction and native temporary-conversion search | 16 reference + 64 descendant executions = 40 million queries; eight cached seed records; seed + eight valid descendants; 31 logical model responses |
 | `book_mpso_population_v1/20260916T183731Z` | Chapter-aligned within-subswarm population targets; published response fixed | 16 new control + 48 descendant executions = 32 million queries; eight historical target-five reuses plus eight native seed-cache records; seed + six valid descendants |
 | `book_mpso_population_v1_publication` | Closed-archive, portable analysis and remote publication verification | No objective evaluations or model requests |
+| `book_mpso_population_200_v1/20260917T025219Z` | Runtime-constrained 200-peak extension, stopped before native search | One planned target-five reference × 500,000 queries; zero native slots/model calls; four-case suite remains frozen and unranked |
+
+The [200-peak continuation](../docs/studies/book_mpso_population_200_v1/REPORT.md)
+stopped before native search after timing its first planned target-five case. Its
+one complete checkpoint consumed **500,000 queries** and scored **2.586443**; this
+is not a paired comparison or an evolutionary negative result. The smallest plan
+with conditional fresh work and publication exceeded the remaining time. Four new
+development identities, exact control sources, runtime resolution, zero-query
+synthetic checks and measured single-case diagnostics are preserved. No target-three
+case, native program, model request or fresh identity was executed/generated. There
+is no native database for this stopped study and no substitute WebUI was fabricated.
 
 The [population study](../docs/studies/book_mpso_population_v1/REPORT.md) retains
 the reconstructed chapter 5+1 seed, `return 5`, with mean development error

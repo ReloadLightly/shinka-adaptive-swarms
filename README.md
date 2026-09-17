@@ -2,7 +2,7 @@
 
 **Can native ShinkaEvolve improve a published multi-swarm optimizer under matched conditions and evaluation budgets?**
 
-[Population study](docs/studies/book_mpso_population_v1/REPORT.md) · [Chapter schedule comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
+[200-peak runtime stop](docs/studies/book_mpso_population_200_v1/REPORT.md) · [Population study](docs/studies/book_mpso_population_v1/REPORT.md) · [Chapter schedule comparison](docs/studies/book_mpso_schedule_v1/REPORT.md) · [Source fidelity](docs/book_mpso_source_record.md) · [Programs and data](artifacts/README.md) · [Native ShinkaEvolve](docs/shinkaevolve.md)
 
 ## Abstract
 
@@ -19,6 +19,10 @@ Conditional shrinking and growth changed actual population and query allocation 
 the mean. We retain five; the fresh-comparison trigger was not met. These results establish neither
 optimality nor equivalence, and reused development data do not establish generalization. Earlier
 relocation and retention studies remain cumulative evidence, including V3's null result.
+A subsequent **200-peak, severity-one continuation stopped at runtime assessment before native
+search**: its first planned reference case completed 500,000 queries, but even the smallest
+reserved search/fresh-comparison design did not fit the 120-minute ceiling. That partial
+reference stage supplies no evolutionary performance finding.
 
 ## 1. Introduction
 
@@ -261,6 +265,21 @@ This is a **chapter-aligned reconstruction and comparison**, not reproduction of
 It preserves the core scenario and horizon but uses eight paired repetitions rather than 50,
 new seeds and declared implementation conventions. New scores are compared against contemporaneous
 matched references, never against unmatched printed values as a claim to have “beaten the book.”
+
+### 4.1 Chapter-condition coverage
+
+| Peaks | Movement severity | Chapter-aligned evidence |
+|---:|---:|---|
+| 10 | 1 | Completed schedule and population searches; eight development cases each |
+| 200 | 1 | Registered four-case extension; one target-five case measured, **native search unexecuted after runtime assessment** |
+| 10 | 5 | Still untested by the chapter-aligned search |
+| 200 | 5 | Still untested by the chapter-aligned search |
+
+The 200-peak extension retains the same 5D engine, 500,000-query horizon and population
+interface, with new seed pairs and controls three/five. It is a small MPSO extension, not
+complete reproduction of the chapter or an SPSO comparison. Its status differs from the
+completed ten-peak negative findings; [the bounded-stop report](docs/studies/book_mpso_population_200_v1/REPORT.md)
+retains the prospective suite and execution evidence.
 
 ## 5. Results
 
@@ -616,6 +635,38 @@ score remain unexecuted questions. Neither was automatically chained into the pr
 1.7024 (sample SD 0.7896). Those seeds and the older simulator path differ from this new matched
 chapter comparison; this figure is neither an evolved-versus-reference contrast nor numerical
 replication of the printed table.*
+
+### 5.5 The 200-peak continuation stopped before evolution
+
+**No evolutionary result was obtained in the 200-peak condition.** The first already-planned
+fixed-target-five case completed its full 500,000 queries in **149.15 monotonic seconds /
+175.55 UTC seconds**. The discrepancy is unresolved; the larger observed duration informs
+the UTC ceiling. With 20% numerical variation, prior native latency, all twelve possible
+fresh executions and publication reserved, even two descendants required **127.80 further
+minutes** against **105.11 remaining**. The explicit runtime contingency therefore stopped
+work before any native seed or descendant, without running the other controls or changing
+the frozen four-case suite.
+
+Only the reference `choose_neutral_count(observation): return 5` executed. Its single-case
+offline error was **2.586443**, with **3,422** target-five requests, no additions/removals,
+mean **209.63 total particles** and **34.94 subswarms** on the 100-query grid. Ordinary
+movement used **64.59%** of queries, permanent sampling **13.60%**, detection **13.60%**,
+memory refresh **4.11%**, and temporary sampling **3.42%**. These describe one trajectory;
+there is no target-three contrast, development mean over four cases, selected program,
+fresh outcome or evidence for/against adaptation. Subswarm count does not measure peak coverage.
+
+![Measured single 200-peak reference trajectory](assets/book_mpso_population_200_v1/population_and_tracking.png)
+
+*Figure 14. One measured **5D, 200-peak target-five reference case**, unranked and shown over
+the complete counted-query horizon. Population changes reflect unchanged swarm management;
+neutral counts remain five. This is not a completed method comparison or evolutionary result.*
+
+The bounded continuation consumed **one full execution / 500,000 objective queries**,
+**zero native slots or model responses**, and **zero numerical fixture queries**; 25 focused
+synthetic checks passed. New task/context, all four seed pairs, exact reference source,
+checkpoint, timing, analysis and [complete report](docs/studies/book_mpso_population_200_v1/REPORT.md)
+are preserved. The next decision is whether to arrange a longer execution window before
+resuming the frozen design with this case reused. No follow-on campaign was launched.
 
 ## 6. Discussion and Limitations
 

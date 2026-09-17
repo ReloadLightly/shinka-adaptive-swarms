@@ -1,0 +1,140 @@
+{
+  "saved_at": "2026-09-17T03:09:19.808527+00:00",
+  "scope": "Read-only operational evidence collected earlier during this task; zero objective/model calls, no authentication/environment files read. Saved retrospectively from successful tool results plus archived latency receipts.",
+  "installed_shinka": {
+    "version": "0.0.7",
+    "direct_url": {
+      "url": "https://github.com/SakanaAI/ShinkaEvolve.git",
+      "vcs_info": {
+        "vcs": "git",
+        "commit_id": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+        "requested_revision": "9912af12d423504b8d580f4179fd15f5f88b8c50"
+      }
+    }
+  },
+  "subscription_route": {
+    "source": "Successful earlier tools.exec_command scripts/check_runtime.py --model gpt-6-astra --effort xhigh during this task",
+    "ready": true,
+    "subscription_login_confirmed": true,
+    "codex_version": "codex-cli 0.154.0",
+    "shinka_version": "0.0.7",
+    "model_route": "headless/codex@gpt-6-astra?effort=xhigh",
+    "model_requested": "gpt-6-astra",
+    "inner_effort_requested": "xhigh",
+    "inner_effort_effective": null,
+    "paid_api_calls_authorized": false,
+    "model_calls_performed_by_check": 0
+  },
+  "embedding_health": {
+    "source": "Successful earlier curl http://127.0.0.1:8910/health during this task",
+    "status": "ready",
+    "model": "jina-code-v2-q8",
+    "repository": "jinaai/jina-embeddings-v2-base-code",
+    "revision": "516f4baf13dec4ddddda8631e019b5737c8bc250",
+    "dimensions": 768,
+    "provider": "CPUExecutionProvider",
+    "quantization": "official ONNX int8 artifact",
+    "threads": 2,
+    "chunk_tokens": 512,
+    "network_model_calls": false,
+    "server_source_sha256": "f154b14398398b518805af9cb3a199141a89ddef5089c3463f4fe53b2710e78e",
+    "model_manifest_sha256": "22e488956c5f7809cb4ec795d2a30cfb3611dbcae55b5a2694c25a2a8a4308d1"
+  },
+  "viewer_port_check": {
+    "source": "Successful earlier elevated ss -ltnp read during this task",
+    "occupied_ports": [
+      8888,
+      8889,
+      8890,
+      8891,
+      8892,
+      8893,
+      8894,
+      8895,
+      8896,
+      8897,
+      8898,
+      8910
+    ],
+    "prospective_new_webui_port": 8899,
+    "prospective_port_free_at_check": true,
+    "native_webui_launched": false
+  },
+  "prior_native_latency": {
+    "run": "artifacts/book_mpso_population_v1/20260916T183731Z/evolution/search_seed_650001",
+    "receipt_count": 22,
+    "roles": {
+      "mutation": {
+        "wrappers": 8,
+        "logical_responses": 8,
+        "UTC_seconds": {
+          "sum": 696.412505,
+          "median": 76.11139449999999,
+          "max": 215.406421
+        },
+        "monotonic_seconds": {
+          "sum": 652.8931566890242,
+          "median": 71.74064894000912,
+          "max": 200.24489758600248
+        }
+      },
+      "novelty": {
+        "wrappers": 8,
+        "logical_responses": 8,
+        "UTC_seconds": {
+          "sum": 203.485467,
+          "median": 13.1623365,
+          "max": 114.258902
+        },
+        "monotonic_seconds": {
+          "sum": 190.0897887809988,
+          "median": 12.063486920997093,
+          "max": 107.80422361200908
+        }
+      },
+      "meta": {
+        "wrappers": 6,
+        "logical_responses": 11,
+        "UTC_seconds": {
+          "sum": 691.079155,
+          "median": 112.8548065,
+          "max": 165.908742
+        },
+        "monotonic_seconds": {
+          "sum": 642.5904472680268,
+          "median": 104.06218407950655,
+          "max": 154.62279458700505
+        }
+      }
+    },
+    "previous_native_UTC_seconds": 1931.103949,
+    "previous_native_monotonic_seconds": 1804.35,
+    "sum_scope": "Per-wrapper durations are conservative planning evidence; overlapping activities need not sum to overall elapsed time."
+  },
+  "two_descendant_model_time_estimate": {
+    "basis": "Firsttwo prior mutation/novelty pairs plus largest observed prior meta round (conservative closingmeta proxy); no additional model calls.",
+    "first_two_mutation_novelty_UTC_seconds": 164.236149,
+    "first_two_mutation_novelty_monotonic_seconds": 155.37776277499506,
+    "prior_closing_two_program_meta_UTC_seconds": 281.829108,
+    "prior_five_program_meta_UTC_seconds": 409.250047,
+    "conservative_sum_UTC_seconds": 573.4861960000001,
+    "variation_multiplier": 1.5,
+    "buffered_seconds": 860.2292940000001,
+    "rounded_reserve_seconds": 900,
+    "caveat": "Three pending programs in a minimal seed+two search need not reproduce either observed meta duration; this is a conservative scheduling estimate."
+  },
+  "historical_seed_inventory_review": {
+    "function": "src/adaptive_swarms/joint_study.py:collect_used_seeds",
+    "files": ".json and .json.gz recursively, resolved-path deduplication",
+    "reserved": "All integer seed/*_seed values and integer *_seeds entries across roles; unreadable records fail closed."
+  },
+  "model_calls_performed": 0,
+  "objective_queries_performed": 0,
+  "fixture_queries": 0,
+  "supervising": {
+    "requested": "gpt-6-astra / Ultra",
+    "actual_label_independently_attested": false
+  },
+  "inner_effort": "xhigh supported by pinned route; no internal model invocation occurred.",
+  "later_refresh_note": "An optional repeat host-read command timed out in automatic approval review before process creation. Earlier successful readiness evidence above remains available; no blocked scientific action or retry/model call resulted."
+}
