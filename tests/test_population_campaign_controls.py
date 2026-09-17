@@ -111,3 +111,89 @@ def test_development_histories_preserved_exactly():
     new = json.loads((ROOT / "configs/book_mpso_population_200_v2/development.json").read_text())
     assert new["cases"] == old["cases"]
     assert new["results_reused"] is False
+
+
+def test_short_session_never_enables_final_selection(tmp_path, monkeypatch):
+    module = load_controller()
+    session = {'session_id':'synthetic','started_at':datetime.now(timezone.utc).isoformat(),
+               'response_start':0,'terminal_descendants_start':0,'full_attempts_start':0}
+    def counts(n):
+        return {'logical_responses':0,'terminal_descendants':n,'terminal_generations':list(range(n+1))}
+    research={'full_case_attempts':28,'attempts':[{'stage':'references','method':f'target_{k}','case_index':i,'status':'completed'} for k in range(2,9) for i in range(4)]}
+    monkeypatch.setattr(module,'native_counts',lambda folder:counts(6))
+    monkeypatch.setattr(module,'research_accounting',lambda folder:research)
+    atomic_json(tmp_path/'references/execution_ledger.json',research)
+    assert module.write_state(tmp_path,session,'research_paused')['final_selection_allowed'] is False
+    monkeypatch.setattr(module,'native_counts',lambda folder:counts(50))
+    assert module.write_state(tmp_path,session,'research_paused')['final_selection_allowed'] is True
+    research['attempts'].pop()
+    atomic_json(tmp_path/'references/execution_ledger.json',research)
+    assert module.write_state(tmp_path,session,'research_paused')['final_selection_allowed'] is False
+
+
+def test_proven_reused_controls_count_toward_completion_without_new_queries(tmp_path, monkeypatch):
+    module=load_controller()
+    session={'session_id':'synthetic','started_at':datetime.now(timezone.utc).isoformat(),
+             'response_start':0,'terminal_descendants_start':0,'full_attempts_start':0}
+    atomic_json(tmp_path/'references/execution_ledger.json',{'attempts':[
+        {'method':f'target_{k}','case_index':i,'status':'reused','actual_queries':0,'reserved_queries':0}
+        for k in range(2,9) for i in range(4)]})
+    monkeypatch.setattr(module,'native_counts',lambda folder:{'logical_responses':0,'terminal_descendants':50,'terminal_generations':list(range(51))})
+    state=module.write_state(tmp_path,session,'research_paused')
+    assert state['final_selection_allowed'] and state['all_seven_constant_controls_complete']
+    assert state['research']['full_case_attempts']==0
+
+
+def test_constant_equivalence_is_structural_not_score_matching():
+    load_controller()
+    from population_campaign_controls import literal_constant_target
+    assert literal_constant_target('"""label"""\ndef choose_neutral_count(observation) -> int:\n    """pure"""\n    return 2\n')==2
+    for source in ['def choose_neutral_count(observation):\n return True',
+                   'def choose_neutral_count(observation):\n return 2 if observation else 2',
+                   'x=2\ndef choose_neutral_count(observation):\n return x',
+                   'def choose_neutral_count(observation=2):\n return 2',
+                   '@other\ndef choose_neutral_count(observation):\n return 2']:
+        assert literal_constant_target(source) is None
+
+
+def test_native_constant_copy_gap_recovers_without_evaluation(tmp_path, monkeypatch):
+    load_controller()
+    import population_campaign_controls as controls
+    import sqlite3
+    from adaptive_swarms.artifacts import write_compressed_json
+    source='def choose_neutral_count(observation) -> int:\n    return 2\n'
+    program=tmp_path/'programs/target_2.py'; program.parent.mkdir(); program.write_text(source)
+    native=tmp_path/'evolution/search_seed_670001/gen_2'; results=native/'results';results.mkdir(parents=True)
+    (native/'main.py').write_text(source); (native.parent/'search-suite.json').write_text('{}')
+    identity={'scientific_sources':{},'program_sha256':controls.sha(program),
+              'suite_sha256':controls.sha(native.parent/'search-suite.json'),
+              'evaluation_version':'book_mpso_population_200_v2_reciprocal_v1','evaluator_sha256':'fixture'}
+    completed=[{'case_id':f'case_{i:03d}','offline_error':1.0} for i in range(4)]
+    atomic_json(results/'evaluation-checkpoint.json',{'status':'completed','identity':identity,'completed_cases':completed})
+    atomic_json(results/'correct.json',{'correct':True})
+    atomic_json(results/'metrics.json',{'public':{'cases_completed':4},'combined_score':0.5})
+    attempts=[{'case_id':c['case_id'],'status':'completed','exact_objective_queries':500000,'reserved_objective_queries':500000} for c in completed]
+    atomic_json(results/'execution-attempts.json',attempts)
+    with sqlite3.connect(native.parent/'programs.sqlite') as db:
+        db.execute('CREATE TABLE programs(id TEXT,code TEXT,correct INTEGER,combined_score REAL,generation INTEGER)')
+        db.execute('INSERT INTO programs VALUES(?,?,?,?,?)',('synthetic',source,1,0.5,2))
+    case={'case_id':'case_000','offline_error':1.0}
+    write_compressed_json(results/'case_000.json.gz',case)
+    write_compressed_json(tmp_path/'references/target_5/case_000.json.gz',case)
+    manifest={'methods':{'target_2':{'source':'programs/target_2.py','sha256':controls.sha(program)}},
+              'scientific_sources':{},'cases':[{}]*4,'frozen_contract_sources':{'tasks/book_mpso_population_200_v2/evaluate.py':'fixture'}}
+    monkeypatch.setattr(controls,'validate_completed_case',lambda *args:None)
+    monkeypatch.setattr(controls,'validate_pair',lambda *args:None)
+    destination=tmp_path/'references/target_2/case_000.json.gz';ledger={'attempts':[]}
+    assert controls.reuse_native_constant(tmp_path,manifest,'target_2',0,destination,ledger)
+    original=destination.read_bytes()
+    ledger={'attempts':[]}  # Atomic bytes reached disk before a lost ledger write.
+    assert controls.reuse_native_constant(tmp_path,manifest,'target_2',0,destination,ledger)
+    assert controls.reuse_native_constant(tmp_path,manifest,'target_2',0,destination,ledger)
+    assert len(ledger['attempts'])==1 and ledger['attempts'][0]['actual_queries']==0
+    assert destination.read_bytes()==original
+    assert json.loads((results/'execution-attempts.json').read_text())==attempts
+    assert research_accounting(tmp_path)['conservative_research_queries']==2000000
+    destination.write_bytes(b'conflict')
+    with pytest.raises(ValueError,match='differs from proven alias'):
+        controls.reuse_native_constant(tmp_path,manifest,'target_2',0,destination,ledger)

@@ -3,13 +3,16 @@
 from __future__ import annotations
 
 import argparse
+import ast
 from datetime import datetime, timezone
 import fcntl
 import hashlib
 import json
+import os
 from pathlib import Path
 import random
 import secrets
+import sqlite3
 import sys
 import time
 import traceback
@@ -32,6 +35,96 @@ def sha(path):
 
 def now():
     return datetime.now(timezone.utc).isoformat()
+
+
+def literal_constant_target(source):
+    """A narrow execution-equivalence proof, independent of measured fitness."""
+    def statements(body):
+        return [n for n in body if not (isinstance(n, ast.Expr) and
+                isinstance(n.value, ast.Constant) and isinstance(n.value.value, str))]
+    body = statements(ast.parse(source).body)
+    if len(body) != 1 or not isinstance(body[0], ast.FunctionDef): return None
+    fun = body[0]; args = fun.args; body = statements(fun.body)
+    if (fun.name != 'choose_neutral_count' or fun.decorator_list or getattr(fun, 'type_params', []) or args.posonlyargs or
+        len(args.args) != 1 or args.args[0].arg != 'observation' or args.args[0].annotation or
+        args.vararg or args.kwarg or args.kwonlyargs or args.defaults or args.kw_defaults or
+        (fun.returns is not None and not (isinstance(fun.returns, ast.Name) and fun.returns.id == 'int')) or
+        len(body) != 1): return None
+    stmt = body[0]
+    if (isinstance(stmt, ast.Return) and isinstance(stmt.value, ast.Constant) and
+        type(stmt.value.value) is int and 2 <= stmt.value.value <= 8): return stmt.value.value
+    return None
+
+
+def reuse_native_constant(folder, manifest, name, index, path, ledger):
+    """Copy an established identical native execution; recover a copy/ledger gap."""
+    method = manifest['methods'][name]
+    target = literal_constant_target((folder / method['source']).read_text())
+    attempts = [a for a in ledger['attempts'] if a['method'] == name and a['case_index'] == index]
+    if target is None or attempts and (len(attempts) != 1 or attempts[0]['status'] != 'reused'):
+        return False  # Never erase or disguise an actual control attempt.
+    for directory in sorted((folder / 'evolution').glob('search_seed_*/gen_*')):
+        checkpoint_path = directory / 'results/evaluation-checkpoint.json'
+        source = directory / 'main.py'
+        if not checkpoint_path.exists() or not source.exists(): continue
+        checkpoint = read_json(checkpoint_path)
+        if checkpoint['status'] != 'completed' or literal_constant_target(source.read_text()) != target: continue
+        source_case = directory / 'results' / f'case_{index:03d}.json.gz'
+        if attempts and attempts[0].get('source_artifact') != str(source_case.relative_to(folder)): continue
+        identity = checkpoint['identity']
+        if (identity['scientific_sources'] != manifest['scientific_sources'] or
+            identity['program_sha256'] != sha(source) or
+            identity['suite_sha256'] != sha(directory.parent / 'search-suite.json') or
+            identity['evaluation_version'] != 'book_mpso_population_200_v2_reciprocal_v1' or
+            identity['evaluator_sha256'] != manifest['frozen_contract_sources']['tasks/book_mpso_population_200_v2/evaluate.py']):
+            raise ValueError('Native constant reuse source/fingerprint changed')
+        if read_json(directory / 'results/correct.json')['correct'] is not True: continue
+        metrics = read_json(directory / 'results/metrics.json')
+        if metrics['public']['cases_completed'] != 4: continue
+        expected_ids = {f'case_{i:03d}' for i in range(4)}
+        completed = checkpoint['completed_cases']
+        native_attempt_path = directory / 'results/execution-attempts.json'
+        native_attempts = read_json(native_attempt_path)
+        if (len(completed) != 4 or {c['case_id'] for c in completed} != expected_ids or
+            len(native_attempts) != 4 or {c['case_id'] for c in native_attempts} != expected_ids or
+            any(c['status'] != 'completed' or c['exact_objective_queries'] != 500000 or
+                c['reserved_objective_queries'] != 500000 for c in native_attempts)):
+            raise ValueError('Native constant lacks four completed counted attempts')
+        generation = int(directory.name[4:])
+        with sqlite3.connect(f'file:{directory.parent / "programs.sqlite"}?mode=ro', uri=True) as db:
+            rows = db.execute('SELECT id,code,correct,combined_score FROM programs WHERE generation=?', (generation,)).fetchall()
+        if len(rows) != 1 or rows[0][1] != source.read_text() or not rows[0][2] or rows[0][3] != metrics['combined_score']:
+            raise ValueError('Native constant database provenance differs')
+        saved = read_json(source_case)
+        validate_completed_case(saved, manifest['cases'][index], method)
+        if saved['case_id'] != f'case_{index:03d}': raise ValueError('Native constant case pairing differs')
+        validate_pair(read_json(folder / 'references/target_5' / f'case_{index:03d}.json.gz'), saved)
+        if next(c['offline_error'] for c in completed if c['case_id'] == saved['case_id']) != saved['offline_error']:
+            raise ValueError('Native constant checkpoint score differs from case')
+        digest = sha(source_case)
+        if attempts and attempts[0]['artifact_sha256'] != digest:
+            raise ValueError('Established native reuse record differs')
+        if path.exists():
+            if sha(path) != digest: raise ValueError('Existing constant artifact differs from proven alias')
+        else:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_suffix(path.suffix + '.tmp')
+            with temporary.open('wb') as stream:
+                stream.write(source_case.read_bytes()); stream.flush(); os.fsync(stream.fileno())
+            os.replace(temporary, path)
+        if not attempts:
+            ledger['attempts'].append({'method':name, 'case_index':index, 'status':'reused',
+                'completed_at':now(), 'actual_queries':0, 'reserved_queries':0,
+                'offline_error':saved['offline_error'], 'artifact':str(path.relative_to(folder)),
+                'artifact_sha256':digest, 'source_artifact':str(source_case.relative_to(folder)),
+                'source_program_sha256':sha(source), 'control_program_sha256':method['sha256'],
+                'native_program_id':rows[0][0], 'native_generation':generation,
+                'native_attempt_ledger_sha256':sha(native_attempt_path),
+                'native_checkpoint_sha256':sha(checkpoint_path),
+                'proof':'Both modules contain only optional docstrings and one undecorated pure function returning the same literal integer. Same corrected scientific fingerprint, full paired configuration and RNG streams; original native physical attempt remains counted. No equality-of-score inference.'})
+            atomic_json(folder / 'references/execution_ledger.json', ledger)
+        return True
+    return False
 
 
 def verify_registration(folder, manifest):
@@ -177,6 +270,8 @@ def execute(folder, max_new_cases=None, stage="references", targets=(5, 3)):
                     if method["fixed_target"] not in targets:
                         continue
                     path = stage_dir / name / f"case_{i:03d}.json.gz"
+                    if stage == 'references':
+                        reuse_native_constant(folder, manifest, name, i, path, ledger)
                     if path.exists():
                         saved = read_json(path)
                         validate_completed_case(saved, config, method)

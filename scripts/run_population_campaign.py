@@ -41,17 +41,26 @@ def native_counts(folder):
             rows=[dict(r) for r in db.execute('SELECT id,generation,correct,combined_score FROM programs')]
     failures=terminal_failure_generations(run)
     terminal={r['generation'] for r in rows}|failures
+    allocated={int(p.name[4:]) for p in run.glob('gen_*') if p.is_dir() and p.name[4:].isdigit()} | terminal
     return {'logical_responses':sum(roles.values()),'model_role_counts':dict(roles),
             'terminal_generations':sorted(terminal),'terminal_descendants':len(terminal-{0}),
             'valid_descendants':sum(bool(r['correct']) and r['generation']>0 for r in rows),
             'failed_descendants':len(failures | {r['generation'] for r in rows if not r['correct'] and r['generation']>0}),
-            'programs':rows,'pending_generations':[int(p.parent.name[4:]) for p in run.glob('gen_*/storage-job.json') if int(p.parent.name[4:]) not in terminal]}
+            'programs':rows,'attempted_descendant_generations':sorted(allocated-{0}),
+            'pending_generations':sorted(allocated-terminal),
+            'accepted_pending_generations':[int(p.parent.name[4:]) for p in run.glob('gen_*/storage-job.json') if int(p.parent.name[4:]) not in terminal]}
 
 
 def write_state(folder, session, status):
     native=native_counts(folder); research=research_accounting(folder)
+    reference_ledger=folder/'references/execution_ledger.json'
+    control_records=read_json(reference_ledger)['attempts'] if reference_ledger.exists() else []
+    controls={(a.get('method'),a.get('case_index')) for a in control_records if a['status'] in {'completed','reused'}}
+    all_controls={(f'target_{k}',i) for k in range(2,9) for i in range(4)}.issubset(controls)
+    all_slots=set(range(51)).issubset(native['terminal_generations'])
+    development_complete=all_controls and all_slots
     state={'schema':'population-campaign-state-v2','updated_at':utcnow().isoformat(),
-           'campaign_status':'in_progress','session_status':status,'session_id':session['session_id'],
+           'campaign_status':'development_complete_awaiting_final_analysis' if development_complete else 'in_progress','session_status':status,'session_id':session['session_id'],
            'campaign_descendant_limit':50,'campaign_response_limit':400,'campaign_full_attempt_limit':400,
            'campaign_query_limit':200000000,'session_descendant_limit':6,'session_response_limit':80,
            'elapsed_wall_seconds':(utcnow()-datetime.fromisoformat(session['started_at'])).total_seconds(),
@@ -59,7 +68,8 @@ def write_state(folder, session, status):
            'session_terminal_descendants':native['terminal_descendants']-session['terminal_descendants_start'],
            'session_new_full_attempts':research['full_case_attempts']-session['full_attempts_start'],
            'fixture_queries_separate':401,'native':native,'research':research,
-           'final_selection_allowed':False,'fresh_testing_allowed_this_session':False}
+           'all_seven_constant_controls_complete':all_controls,'all_50_descendant_slots_terminal':all_slots,
+           'final_selection_allowed':development_complete,'fresh_testing_allowed_this_session':False}
     atomic_json(folder/'campaign_state.json',state)
     atomic_json(folder/'sessions'/session['session_id']/'state.json',state)
     return state
