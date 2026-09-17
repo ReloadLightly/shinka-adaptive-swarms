@@ -44,7 +44,7 @@ def native_counts(folder):
     return {'logical_responses':sum(roles.values()),'model_role_counts':dict(roles),
             'terminal_generations':sorted(terminal),'terminal_descendants':len(terminal-{0}),
             'valid_descendants':sum(bool(r['correct']) and r['generation']>0 for r in rows),
-            'failed_descendants':len(failures)+sum(not r['correct'] and r['generation']>0 for r in rows),
+            'failed_descendants':len(failures | {r['generation'] for r in rows if not r['correct'] and r['generation']>0}),
             'programs':rows,'pending_generations':[int(p.parent.name[4:]) for p in run.glob('gen_*/storage-job.json') if int(p.parent.name[4:]) not in terminal]}
 
 
@@ -123,12 +123,18 @@ def run_session(folder,args):
         with EventLogger(folder/'operations') as log:
             log.event('session_controller_start',session_id=session['session_id'],stage=args.stage,deadline=session['deadline_utc'])
             register(folder)
+            log.set_activity('waiting for corrected control cases; details in references/run.log')
             if args.stage in ('session','controls'):
-                execute(folder,args.limit_cases)
+                execute(folder,args.limit_cases,targets=tuple(int(k) for k in args.control_targets.split(',')))
                 timing=forecast(folder,session)
                 log.event('runtime_forecast',**timing)
                 write_state(folder,session,'controls_checkpoint')
                 if args.stage=='controls': return
+                ledger=read_json(folder/'references/execution_ledger.json')
+                complete=sum(a['status']=='completed' and a['method'] in {'target_3','target_5'} for a in ledger['attempts'])
+                if complete!=8:
+                    log.event('research_pause',reason='Corrected controls incomplete; checkpoint retained without native selection')
+                    write_state(folder,session,'controls_incomplete_pause'); return
             freeze_suite(folder)
             timing=forecast(folder,session)
             if timing['affordable_serial_descendants_now']<1:
@@ -154,6 +160,7 @@ def run_session(folder,args):
             atomic_json(folder/'sessions'/session['session_id']/'native_command.json',{'command':command,'recorded_at':utcnow().isoformat(),'forecast':timing})
             log.event('native_launch',command=command,admission_seconds=timing['complete_descendant_admission_seconds'])
             write_state(folder,session,'native_running')
+            log.set_activity('native evolution owns proposal/evaluation; waiting for flushed child progress')
             result=subprocess.run(command,cwd=ROOT,check=False)
             log.event('native_return',exit_code=result.returncode)
             write_state(folder,session,'research_paused' if result.returncode==0 else 'infrastructure_review_required')
@@ -169,8 +176,11 @@ def main():
     p.add_argument('--started-at')
     p.add_argument('--stage',choices=['session','controls','search'],default='session')
     p.add_argument('--limit-cases',type=int)
+    p.add_argument('--control-targets',default='5,3',help='Comma-separated registered constant targets; default Session1 controls5/3, later sessions may finish2,4,6,7,8')
     args=p.parse_args()
     if args.minutes!=180: p.error('Registered sessions use a 180-minute ceiling')
+    if not args.control_targets or any(k not in set('2345678') for k in args.control_targets.split(',')):
+        p.error('Control targets must be integers2..8')
     folder=args.run.resolve()
     if args.command=='status': print(json.dumps(write_state(folder,read_json(folder/'session.json'),'inspection'),indent=2))
     else: run_session(folder,args)

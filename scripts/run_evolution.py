@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from adaptive_swarms.logging import EventLogger, atomic_json
 from adaptive_swarms.execution import InfrastructureError, INFRASTRUCTURE_EXIT_CODE
 from adaptive_swarms.storage_runner import ResumeRunnerMixin
+from adaptive_swarms.campaign_resume import CampaignResumeRunnerMixin, reuse_existing_native_seed
 from adaptive_swarms.engine_config import resolve_engine, native_settings, feature_state, check_embedding_endpoint
 from adaptive_swarms.engine_runtime import install_engine_observers, install_sampling_observer
 from adaptive_swarms.engine_progress import terminal_failure_generations
@@ -39,9 +40,10 @@ TASK_VERSIONS = {
     "book_mpso_schedule_v1": "book_mpso_schedule_v1_reciprocal_v1",
     "book_mpso_population_v1": "book_mpso_population_v1_reciprocal_v1",
     "book_mpso_population_200_v1": "book_mpso_population_200_v1_reciprocal_v1",
+    "book_mpso_population_200_v2": "book_mpso_population_200_v2_reciprocal_v1",
 }
-TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py", "book_mpso_schedule_v1": "book_schedule.py", "book_mpso_population_v1": "population_policy.py", "book_mpso_population_200_v1": "population_policy.py"}
-TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md", "book_mpso_schedule_v1": "book_mpso_schedule_v1_protocol.md", "book_mpso_population_v1": "book_mpso_population_v1_protocol.md", "book_mpso_population_200_v1": "book_mpso_population_200_v1_protocol.md"}
+TASK_ADAPTERS = {"relocation_allocation_v2": "relocation_allocation.py", "joint_relocation_v3": "joint_relocation.py", "radius_velocity_sprint": "recovery_response.py", "particle_retention_v1": "particle_retention.py", "book_mpso_schedule_v1": "book_schedule.py", "book_mpso_population_v1": "population_policy.py", "book_mpso_population_200_v1": "population_policy.py", "book_mpso_population_200_v2": "population_policy_v2.py"}
+TASK_PROTOCOLS = {"relocation_allocation_v2": "followup_relocation_allocation_v2.md", "joint_relocation_v3": "followup_joint_relocation_v3.md", "radius_velocity_sprint": "radius_velocity_sprint_protocol.md", "particle_retention_v1": "particle_retention_v1_protocol.md", "book_mpso_schedule_v1": "book_mpso_schedule_v1_protocol.md", "book_mpso_population_v1": "book_mpso_population_v1_protocol.md", "book_mpso_population_200_v1": "book_mpso_population_200_v1_protocol.md", "book_mpso_population_200_v2": "book_mpso_population_200_v2_protocol.md"}
 
 
 TASK_PROMPT = """You are evolving an interpretable response policy for dynamic
@@ -167,7 +169,7 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
         if "evolution_context.md" in hashes and file_hash(destination / "evolution_context.md") != hashes["evolution_context.md"]:
             raise RuntimeError("Saved scientific context snapshot changed.")
         if task != "adaptive_swarm":
-            for name in (TASK_ADAPTERS[task], *(("book_mpso.py",) if task == "book_mpso_schedule_v1" else ("book_population.py", "book_mpso.py") if task in {"book_mpso_population_v1", "book_mpso_population_200_v1"} else ())):
+            for name in (TASK_ADAPTERS[task], *(("book_population_v2.py", "book_population.py", "book_mpso.py", "enclosing_ball.py", "population_policy.py") if task == "book_mpso_population_200_v2" else ("book_mpso.py",) if task == "book_mpso_schedule_v1" else ("book_population.py", "book_mpso.py") if task in {"book_mpso_population_v1", "book_mpso_population_200_v1"} else ())):
                 if file_hash(ROOT / "src/adaptive_swarms" / name) != hashes[name]:
                     raise RuntimeError(f"Cannot resume with changed task adapter: {name}.")
                 if file_hash(destination / name) != hashes[name]:
@@ -206,6 +208,11 @@ def prepare_snapshot(args, run_dir: Path) -> dict:
                 source = ROOT / "src/adaptive_swarms/book_mpso.py"
                 shutil.copyfile(source, destination / source.name)
                 hashes[source.name] = file_hash(source)
+        if task == "book_mpso_population_200_v2":
+            for name in ("book_population_v2.py", "book_population.py", "book_mpso.py", "enclosing_ball.py", "population_policy.py"):
+                source = ROOT / "src/adaptive_swarms" / name
+                shutil.copyfile(source, destination / name)
+                hashes[name] = file_hash(source)
         prompt = (destination / "task_prompt.txt").read_text()
         prompt += "\n\n# Scientific context supplied to mutation\n\n" + (destination / "evolution_context.md").read_text()
         (destination / "task_system_prompt.txt").write_text(prompt)
@@ -279,18 +286,14 @@ def run_native(args, run_dir: Path, log):
     os.environ.pop("CODEX_API_KEY", None)
     os.environ.pop("ADAPTIVE_SWARMS_STORAGE_CONFIG", None)
 
-    class VisibleRunner(ResumeRunnerMixin, NativeStorageMixin, ShinkaEvolveRunner):
+    class VisibleRunner(CampaignResumeRunnerMixin, ResumeRunnerMixin, NativeStorageMixin, ShinkaEvolveRunner):
         # These wrappers add observability only; upstream owns search and persistence.
         async def _setup_async(self):
             await super()._setup_async()
             install_sampling_observer(self, log)
 
         async def _setup_initial_program(self, code):
-            if args.resume and await self.async_db.get_total_program_count_async() > 0:
-                # Pinned upstream recognizes resumes only at last_iteration > 0.
-                # Restore native counters for an existing generation-0 seed too.
-                await self._restore_resume_progress()
-                log.event("seed_reused", message="Existing native seed retained without another evaluation", completed_generations=self.completed_generations)
+            if await reuse_existing_native_seed(self, resuming=bool(args.resume), log=log):
                 return
             log.set_activity("native seed evaluation")
             log.event("seed_evaluation", message="Native Shinka is evaluating the initial response program")
@@ -333,7 +336,7 @@ def run_native(args, run_dir: Path, log):
         task_sys_msg=task_prompt,
         init_program_path=str(task_snapshot / "initial.py"),
         results_dir=str(run_dir),
-        num_generations=1 if args.seed_only else args.generations,
+        num_generations=1 if args.seed_only else (args.session_generation_target if args.session_max_descendants is not None else args.generations),
         **evolution_settings,
     )
     database = DatabaseConfig(**database_settings)
@@ -354,7 +357,12 @@ def run_native(args, run_dir: Path, log):
         verbose=True,
     )
     runner.configure_resume(log)
-    remove_observers = install_engine_observers(runner, log, run_dir, logical_response_limit=args.logical_response_limit)
+    if args.session_max_descendants is not None:
+        runner.configure_campaign(campaign_generations=args.generations, log=log,
+            deadline_utc=args.session_deadline_utc, admission_seconds=args.admission_seconds,
+            response_reserve=args.session_response_reserve)
+    remove_observers = install_engine_observers(runner, log, run_dir, logical_response_limit=args.logical_response_limit,
+        session_response_limit=args.session_response_limit, session_response_start=args.session_response_start)
     log.event("engine_initialized", message="Native engine components initialized; subsequent events establish actual use",
               meta_created=runner.meta_summarizer is not None, novelty_created=runner.novelty_judge is not None,
               embedding_created=runner.embedding_client is not None, resolved_native_config=str(config_path))
@@ -362,6 +370,9 @@ def run_native(args, run_dir: Path, log):
     try:
         with install_native_storage(runner):
             runner.run()
+            return {"effective_session_generation_target": runner.evo_config.num_generations,
+                    "campaign_pause_reason": getattr(runner, "_campaign_pause_reason", None),
+                    "resume_rng_state_restored": bool(getattr(runner, "_campaign_rng_restored", False))}
     finally:
         log.on_io_error = None
         remove_observers()
@@ -389,6 +400,19 @@ def main() -> int:
     parser.add_argument("--proposal-timeout-seconds", type=float, default=3600)
     parser.add_argument("--logical-response-limit", type=int, default=None,
                         help="Optional run-local allowance including exposed native retries and batched meta responses; inherited unchanged on resume")
+    parser.add_argument("--session-max-descendants", type=int, default=None,
+                        help="Opt into resumable campaign mode; --generations remains the immutable campaign total including seed")
+    parser.add_argument("--session-stop-generation", type=int, default=None,
+                        help="Optional cumulative session terminal-slot target including seed; cannot exceed session or campaign ceilings")
+    parser.add_argument("--session-response-limit", type=int, default=None)
+    parser.add_argument("--session-response-start", type=int, default=None,
+                        help="Receipt count at the outer user session start; retain across recovery launches")
+    parser.add_argument("--session-response-reserve", type=int, default=12,
+                        help="Do not admit a proposal with fewer unreserved responses than this")
+    parser.add_argument("--session-deadline-utc", default=None,
+                        help="ISO UTC research cutoff; provider waits and new-work admission respect it")
+    parser.add_argument("--admission-seconds", type=float, default=0,
+                        help="Conservative time required for mutation, full paired evaluation, meta and checkpoint")
     args = parser.parse_args()
     if args.generations < 1 or args.heartbeat_seconds <= 0 or args.proposal_timeout_seconds <= 0:
         parser.error("Generation count and timeout/heartbeat values must be positive.")
@@ -396,6 +420,15 @@ def main() -> int:
         parser.error("--search-seed must be an integer from 0 through 2**32 - 1.")
     if args.logical_response_limit is not None and args.logical_response_limit < 1:
         parser.error("--logical-response-limit must be positive.")
+    if args.session_max_descendants is not None and not 1 <= args.session_max_descendants <= 6:
+        parser.error("Session descendant ceiling must be from one through six.")
+    if args.session_response_limit is not None and (args.session_response_limit < 1 or args.logical_response_limit is None and not args.resume):
+        parser.error("Session response limit requires a positive campaign response limit.")
+    if args.session_deadline_utc:
+        try:
+            datetime.fromisoformat(args.session_deadline_utc.replace("Z", "+00:00"))
+        except ValueError:
+            parser.error("Session deadline must be an ISO UTC timestamp.")
     saved_manifest = None
     if args.resume:
         args.resume = args.resume.resolve()
@@ -414,6 +447,10 @@ def main() -> int:
         if args.logical_response_limit is not None and args.logical_response_limit != saved_limit:
             parser.error("--logical-response-limit differs from the saved run; a run-local allowance cannot silently change on resume.")
         args.logical_response_limit = saved_limit
+        saved_campaign = saved_manifest.get("campaign_generations")
+        if saved_campaign is not None:
+            if args.generations != saved_campaign or args.session_max_descendants is None:
+                parser.error("Resume must retain --generations campaign total and explicit --session-max-descendants.")
     args.task = args.task or "adaptive_swarm"
     if args.task not in TASK_VERSIONS:
         parser.error(f"Unknown saved task: {args.task}")
@@ -455,6 +492,19 @@ def main() -> int:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     run_dir = args.resume or args.run_dir or (args.results_root / (stamp + ("-seed" if args.seed_only else "-search")))
     target = 1 if args.seed_only else args.generations
+    if args.session_max_descendants is not None:
+        existing = summarize_database(run_dir) if args.resume else {"terminal_generation_ids": []}
+        existing_terminal = set(existing.get("terminal_generation_ids", []))
+        # Terminal failures are allocated slots. Accepted pending proposals also
+        # retain their IDs and fit within this session's cumulative boundary.
+        next_slot = max(existing_terminal | {0}) + 1
+        args.session_generation_target = min(args.generations, next_slot + args.session_max_descendants)
+        if args.session_stop_generation is not None:
+            if not next_slot <= args.session_stop_generation <= args.session_generation_target:
+                parser.error("Session stop target must extend existing work within the session slot ceiling.")
+            args.session_generation_target = args.session_stop_generation
+    else:
+        args.session_generation_target = target
     try:
         if not args.resume and run_dir.exists() and (not run_dir.is_dir() or any(run_dir.iterdir())):
             parser.error("New run directory contains saved work; use --resume instead of overwriting it.")
@@ -477,12 +527,19 @@ def main() -> int:
             manifest.setdefault("engine_config", args.engine_config)
             manifest.setdefault("search_seed", args.search_seed)
             manifest.setdefault("logical_response_limit", args.logical_response_limit)
+            if args.session_max_descendants is not None:
+                manifest.setdefault("campaign_generations", args.generations)
+                active["session_limits"] = {"max_descendants": args.session_max_descendants,
+                    "generation_target": args.session_generation_target, "logical_responses": args.session_response_limit,
+                    "response_start": args.session_response_start, "research_cutoff_utc": args.session_deadline_utc,
+                    "admission_seconds": args.admission_seconds}
+                active["campaign_status"] = "open"
             active["engine_features"] = engine_features
             active["execution_support_sha256"] = {
                 str(path.relative_to(ROOT)): file_hash(path)
                 for path in [Path(__file__), ROOT / "scripts/check_runtime.py",
                              *[ROOT / "src/adaptive_swarms" / name for name in
-                               ("engine_config.py", "engine_runtime.py", "engine_progress.py", "storage_runner.py", "native_storage.py", "sprint_budget.py")]]
+                               ("engine_config.py", "engine_runtime.py", "engine_progress.py", "storage_runner.py", "native_storage.py", "sprint_budget.py", "campaign_resume.py")]]
             }
             active["search_randomness"] = {"search_seed": args.search_seed,
                                           "seed_applied": args.search_seed is not None and not bool(args.resume),
@@ -527,17 +584,26 @@ def main() -> int:
                 raise KeyboardInterrupt
             previous_term = signal.signal(signal.SIGTERM, interrupted)
             try:
-                run_native(args, run_dir, log)
+                run_result = run_native(args, run_dir, log) or {}
+                active["search_randomness"]["resume_rng_state_restored"] = run_result.get("resume_rng_state_restored", False)
+                if args.session_max_descendants is not None:
+                    active["search_randomness"]["note"] = "Python/NumPy sampler state restored from the last validated drained boundary when present; interrupted proposals and LLM outputs are not replay-guaranteed."
+                    active["effective_session_generation_target"] = run_result.get("effective_session_generation_target", args.session_generation_target)
+                    active["campaign_pause_reason"] = run_result.get("campaign_pause_reason")
                 summary = summarize_database(run_dir)
-                expected = target
+                expected = run_result.get("effective_session_generation_target", args.session_generation_target)
                 terminal_ids = set(summary.get("terminal_generation_ids", range(summary["generation_records"])))
                 missing_slots = sorted(set(range(expected)) - terminal_ids)
                 if missing_slots or not summary.get("valid_seed", bool(summary["valid_programs"])):
                     raise RuntimeError(f"Native run did not finish a valid seed and all requested terminal slots; missing={missing_slots}, summary={summary}")
-                active.update({"status": "seed_complete" if args.seed_only else "search_complete", **summary})
+                campaign_complete = args.session_max_descendants is not None and set(range(args.generations)).issubset(terminal_ids)
+                status = ("campaign_complete" if campaign_complete else "campaign_paused") if args.session_max_descendants is not None else "seed_complete" if args.seed_only else "search_complete"
+                active.update({"status": status, **summary})
+                if args.session_max_descendants is not None:
+                    active["campaign_status"] = "complete" if campaign_complete else "open"
                 if args.resume:
                     manifest.update({"status": active["status"], "latest_summary": summary})
-                log.event("run_complete", message="Native seed evaluation complete; no mutation calls" if args.seed_only else "Native search complete; inspect scientific outcomes and descendants", **summary)
+                log.event("run_complete", message="Campaign session paused; no final selection or fresh evaluation" if status == "campaign_paused" else "Native seed evaluation complete; no mutation calls" if args.seed_only else "Native search complete; inspect scientific outcomes and descendants", **summary)
                 return 0
             except SprintLimitReached as exc:
                 summary = summarize_database(run_dir)

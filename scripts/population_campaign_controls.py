@@ -213,6 +213,7 @@ def execute(folder, max_new_cases=None, stage="references", targets=(5, 3)):
                     start = time.monotonic()
                     log.set_activity(f"{stage} {name} case {i + 1}/{len(manifest['cases'])}")
                     log.event("case_start", method=name, case_index=i, budget=config["budget"])
+                    operations.set_activity(f"{stage} {name} case {i + 1}/{len(manifest['cases'])}; waiting for counted simulator progress")
                     operations.event("case_start", stage=stage, method=name, case_index=i, completed=len(ledger["attempts"])-1)
 
                     def progress(event):
@@ -292,4 +293,3 @@ def freeze_suite(folder):
                   exact_seed_cache_cases=4, reference_new_executions=sum(a["status"] == "completed" for a in ledger["attempts"]),
                   reference_objective_queries=sum(a.get("actual_queries", 0) for a in ledger["attempts"]))
     print(json.dumps({"suite": str(path), "sha256": sha(path), "roles": list(references)}))
-

@@ -6,6 +6,7 @@ They record logical requests (not hidden provider retry or token-stream counts).
 from __future__ import annotations
 
 import math
+import asyncio
 import logging
 import time
 import uuid
@@ -37,10 +38,11 @@ def install_sampling_observer(runner, log) -> None:
     database.sample_with_fix_mode_async = sample
 
 
-def install_engine_observers(runner, log, run_dir: Path, logical_response_limit=None) -> Callable[[], None]:
+def install_engine_observers(runner, log, run_dir: Path, logical_response_limit=None, session_response_limit=None, session_response_start=None) -> Callable[[], None]:
     from .sprint_budget import (LogicalResponseBudget, SprintLimitReached,
                                 install_native_retry_observer, native_request_context)
-    budget = LogicalResponseBudget(run_dir, logical_response_limit) if logical_response_limit is not None else None
+    budget = LogicalResponseBudget(run_dir, logical_response_limit, session_limit=session_response_limit, session_start=session_response_start) if logical_response_limit is not None else None
+    runner.logical_response_budget = budget
     def stop_for_allowance(error):
         log.event("sprint_limit_reached", message=str(error), limit=budget.limit,
                   reserved_logical_responses=budget.used, scientific_failure=False)
@@ -98,7 +100,20 @@ def install_engine_observers(runner, log, run_dir: Path, logical_response_limit=
                               call_id=call_id, role=role, requested_logical_responses=requested, receipt=str(path))
                     token = native_request_context.set((receipt, path)) if budget else None
                     try:
-                        result = await original(*args, **kwargs)
+                        timeout = getattr(runner, "_campaign_deadline", None)
+                        if timeout is not None:
+                            remaining = min(timeout - time.time(), runner._campaign_monotonic_deadline - time.monotonic())
+                            if remaining <= 0:
+                                runner._fail_infrastructure(SprintLimitReached("Session research cutoff reached before native model dispatch"))
+                            try:
+                                result = await asyncio.wait_for(original(*args, **kwargs), timeout=remaining)
+                            except asyncio.TimeoutError as exc:
+                                from .execution import InfrastructureError
+                                runner._fail_infrastructure(InfrastructureError(
+                                    "Native model wait reached the bounded session deadline; preserve pending work"))
+                                raise exc
+                        else:
+                            result = await original(*args, **kwargs)
                     except SprintLimitReached as exc:
                         receipt.update(status="stopped_allowance", finished_at=datetime.now(timezone.utc).isoformat(),
                                        error=str(exc), elapsed_seconds=time.monotonic() - started)
