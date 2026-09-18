@@ -4,6 +4,10 @@
 UTC from generation 7. Attach to its log/WebUI while it runs; do not execute the
 `--new-session` command concurrently. The current research cutoff is 10:58:43 UTC.
 Its terminal log is `operations/session_002-terminal.log` under the live run.
+At 08:33 UTC it recovered from an optimizer-runtime restoration error and resumed
+generation 8 with the same limits; generation 7 remains an operational failed slot.
+The optimizer requires the archived **Python 3.13.5 / NumPy 2.5.3** runtime. The
+Python 3.10.12 encoder is separate. The launcher now checks this before any calls.
 The instructions below remain the procedure for subsequent explicitly launched
 sessions after a published pause, or recovery of the current session as indicated.
 

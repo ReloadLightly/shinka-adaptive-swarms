@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-18T08:29:15.849614+00:00",
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "shinka_evolve": "0.0.7"
+  },
+  "cases": [
+    {
+      "case": 0,
+      "matching_environments": 101,
+      "objective_evaluations": 0
+    },
+    {
+      "case": 1,
+      "matching_environments": 101,
+      "objective_evaluations": 0
+    },
+    {
+      "case": 2,
+      "matching_environments": 101,
+      "objective_evaluations": 0
+    },
+    {
+      "case": 3,
+      "matching_environments": 101,
+      "objective_evaluations": 0
+    }
+  ],
+  "total_matching_environments": 404,
+  "objective_queries": 0,
+  "model_calls": 0,
+  "method": "Replay only the independent environment RNG/change generator, no objective calls or optimizer runs",
+  "conclusion": "Recorded optimizer runtime reproduces all four archived environmental trajectories exactly; no pairing tolerance change needed."
+}

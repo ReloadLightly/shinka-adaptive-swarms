@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-18T08:30:26.695762+00:00",
+  "pid": 17047,
+  "command": [
+    "/home/roland/actir/shinka-adaptive-swarms/.venv/bin/python",
+    "-u",
+    "scripts/run_population_campaign.py",
+    "session",
+    "--run",
+    "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z",
+    "--minutes",
+    "180",
+    "--control-targets",
+    "2,4,6,7,8"
+  ],
+  "same_session": true,
+  "same_deadline": true,
+  "next_generation": 8,
+  "invalid_generation_7_preserved": true,
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.5.3"
+  }
+}
