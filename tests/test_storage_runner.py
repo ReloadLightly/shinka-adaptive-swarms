@@ -44,6 +44,30 @@ class ResumableFake(ResumeRunnerMixin, FakeNative):
     pass
 
 
+def test_evaluation_timeout_excludes_proposal_and_preserves_native_timing():
+    runner = ResumableFake()
+    seen = []
+    def check(job):
+        seen.append(job)
+        # A 100-second limit at t=250: proposal began at 10, evaluation at 200.
+        return 250 - job.start_time <= 100
+    runner.scheduler = SimpleNamespace(run=lambda *a: None,
+        get_job_results_async=lambda *a: None, check_job_status=check)
+    runner.configure_resume(SimpleNamespace(event=lambda *a, **k: None))
+    process = object()
+    job = SimpleNamespace(start_time=10, evaluation_started_at=200,
+                          job_id=process, generation=9)
+    assert runner.scheduler.check_job_status(job)
+    assert job.start_time == 10
+    assert seen[-1].job_id is process and seen[-1].generation == 9
+    job.evaluation_started_at = 100
+    assert not runner.scheduler.check_job_status(job)
+    # Legacy/seed jobs without a separate evaluation clock keep their behavior.
+    legacy = SimpleNamespace(start_time=10)
+    assert not runner.scheduler.check_job_status(legacy)
+    assert seen[-1] is legacy
+
+
 def test_scheduler_accepts_work_with_historical_storage_stop(tmp_path, monkeypatch):
     (tmp_path / "storage-stop.json").write_text('{"status":"storage_paused"}')
     monkeypatch.setenv("ADAPTIVE_SWARMS_STORAGE_CONFIG", '{"checkpoint_gib":10}')

@@ -1,0 +1,35 @@
+<NAME>
+exceptional_four_recovery
+</NAME>
+<DESCRIPTION>
+Restore the uncapped workload penalty from the stronger prior rule (development error 1.928740 versus 2.057724). Request four neutrals only when adjusted deterioration exceeds 0.20; retain that request above 0.12. Otherwise, preserve the two/three rule, applying its lower retention threshold after either three or four. This tests whether exceptional losses justify additional recovery trajectories despite their query cost. Improvement remains unmeasured; compilation and 12 boundary, history, integer-return and immutable-observation checks passed.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    """Choose two or three neutrals using workload-adjusted loss hysteresis."""
+=======
+    """Choose two to four neutrals with workload-adjusted recovery hysteresis."""
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    # Raise the evidence required for growth, with a bounded workload penalty.
+    recovery_pressure = loss / (1.0 + min(sweep_queries, 120.0) / 160.0)
+    # History is supplied by the caller; no state is retained here.
+    threshold = (
+        0.04 if observation["previous_requested_target"] == 3 else 0.08
+    )
+    return 3 if recovery_pressure > threshold else 2
+=======
+    # Greater existing workload raises the evidence required for growth.
+    recovery_pressure = loss / (1.0 + sweep_queries / 160.0)
+    previous_target = observation["previous_requested_target"]
+    # Reserve target four for severe loss, retaining it at a lower threshold.
+    if recovery_pressure > 0.20 or (
+        previous_target == 4 and recovery_pressure > 0.12
+    ):
+        return 4
+    threshold = (
+        0.04 if previous_target == 3 or previous_target == 4 else 0.08
+    )
+    return 3 if recovery_pressure > threshold else 2
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,67 @@
+{
+  "reviewed_at": "2026-09-18T09:14:04.850930+00:00",
+  "generation": 9,
+  "case_id": "case_003",
+  "cause": "Native local scheduler measured its 993-second evaluation timeout from proposal start, including mutation and novelty latency",
+  "evidence": "session_002-terminal.log records Process 25469 exceeded timeout of 00:16:33; case_003 last environment event evaluations=140000",
+  "decision": "Retain accepted source and three complete cases; preserve interrupted fourth attempt and charge its full 500000 reservation; execute only case_003 once with unchanged frozen engine/config/runtime",
+  "partial_observed_queries_lower_bound": 140000,
+  "partial_exact_queries": null,
+  "partial_reserved_queries": 500000,
+  "additional_reserved_queries": 500000,
+  "new_model_calls": 0,
+  "same_session_limits": true,
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "shinka_evolve": "0.0.7"
+  },
+  "program_sha256": "ac326bd5a8f58ef772353f047f5fa8f594dde9eb0d72a5495717d8293dd2aed4",
+  "completed_case_hashes": {
+    "case_001.json.gz": "ea03617195ebf427cb6ef13c5a76ebebe1b4b297969e91db72557ca5b9cf9e1e",
+    "case_000.json.gz": "f2b06ba5bc3c844ea52de796a81e42bcb68a9ae008514c741c81268cfa14206e",
+    "case_002.json.gz": "de95bc25c5f46fef227d9a0f1130e8cf60436056718236bd59ea41f4ec51fbf0"
+  },
+  "preserved_files": {
+    "execution-attempts.json": {
+      "kind": "byte_identical_copy",
+      "source": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_9/results/execution-attempts.json",
+      "bytes": 782,
+      "sha256": "d26a4d2ba0f1ffc2f85f332b0af087a84e8f09d936fe82a3dcc3021898d301c4",
+      "copy_started_at": "2026-09-18T09:14:04.785256+00:00",
+      "copy_finished_at": "2026-09-18T09:14:04.798950+00:00",
+      "source_size_at_close": 782,
+      "source_grew_during_snapshot": false
+    },
+    "evaluation-checkpoint.json": {
+      "kind": "byte_identical_copy",
+      "source": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_9/results/evaluation-checkpoint.json",
+      "bytes": 12464,
+      "sha256": "f4b29ce80e02aae0f48cdc0722afceb2c752c1262618c0b0cedad3b5ec985832",
+      "copy_started_at": "2026-09-18T09:14:04.799353+00:00",
+      "copy_finished_at": "2026-09-18T09:14:04.805463+00:00",
+      "source_size_at_close": 12464,
+      "source_grew_during_snapshot": false
+    },
+    "events.jsonl": {
+      "kind": "byte_identical_copy",
+      "source": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_9/results/events.jsonl",
+      "bytes": 192368,
+      "sha256": "116a53ca04083d345e4b6868c6ff19e6c89b006c72df1e985016dd2ee7e1fd45",
+      "copy_started_at": "2026-09-18T09:14:04.805569+00:00",
+      "copy_finished_at": "2026-09-18T09:14:04.814446+00:00",
+      "source_size_at_close": 192368,
+      "source_grew_during_snapshot": false
+    },
+    "run.log": {
+      "kind": "byte_identical_copy",
+      "source": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_9/results/run.log",
+      "bytes": 142941,
+      "sha256": "9e5c6b3b8b03352114ba2edd1a5a0e51750c8b138418d2f46943824f482f60ec",
+      "copy_started_at": "2026-09-18T09:14:04.814616+00:00",
+      "copy_finished_at": "2026-09-18T09:14:04.823063+00:00",
+      "source_size_at_close": 142941,
+      "source_grew_during_snapshot": false
+    }
+  }
+}

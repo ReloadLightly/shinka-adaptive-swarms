@@ -6,11 +6,11 @@
 
 [Current results](#4-results-the-corrected-200-peak-campaign) · [Reconstruction](#2-source-and-reconstruction) · [Earlier evidence](#5-cumulative-evidence) · [Continue the campaign](#8-reproducibility-and-continuation) · [Programs and data](artifacts/README.md)
 
-> **Research status — evidence through 17 September 2026.** The corrected 200-peak campaign has completed **6 of 50 descendant slots** and every registered constant-target control. A conditional rule leads on **four development histories**, but no final campaign winner has been frozen and no fresh confirmation has occurred. The completed ten-peak studies retained their reference. These are different studies and different engine versions, not contradictory results.
+> **Research status — 18 September 2026, 09:17 UTC.** The corrected 200-peak campaign has completed **9 of 50 descendant slots: eight valid descendants and one operational failure**, plus the seed and every registered constant-target control. Shinka is updating its meta-memory before proposing generation 10. A conditional rule leads on **four development histories**, but no final campaign winner has been frozen and no fresh confirmation has occurred. The completed ten-peak studies retained their reference. These are different studies and different engine versions, not contradictory results.
 
-**Continuation launched 18 September 2026, 08:18 UTC:** [Session 2](docs/studies/book_mpso_population_200_v2/SESSION_002.md) restored the verified checkpoint and resumed at generation 7, allowing up to six more descendants. At 08:22 UTC, generation 7 entered numerical evaluation; it had no complete four-history score yet. The completed findings below remain Session 1 evidence. [Native live WebUI](http://localhost:8899/viz_tree.html?db_path=search_seed_670001%2Fprograms.sqlite) · [Emergence across substrates](docs/emergence_across_substrates.md).
+**Continuation after WSL returned:** [Session 2](docs/studies/book_mpso_population_200_v2/SESSION_002.md) preserves the original generation-12 stop, response allowance and 10:58:43 UTC research cutoff. Generations 8 and 9 completed with development means **2.023027** and **1.995239**; neither beats generation 4 (**1.928740**). The session report gives exact edits, case results, lineage and recovery accounting. [Native live WebUI](http://localhost:8899/viz_tree.html?db_path=search_seed_670001%2Fprograms.sqlite) · [Emergence across substrates](docs/emergence_across_substrates.md).
 
-**08:33 UTC recovery:** generation 7's first full case exposed a mistaken optimizer-runtime restoration and failed landscape pairing. Its slot and 500,000 queries remain counted, with no valid optimizer score. The recorded Python 3.13.5 / NumPy 2.5.3 runtime now reproduces all 404 archived environment snapshots, and Session 2 continues at generation 8 under its original limits. Six valid descendants remain established; [the recovery record](docs/studies/book_mpso_population_200_v2/SESSION_002.md#observed-runtime-failure-and-bounded-recovery) distinguishes this operational failure from optimizer performance.
+**Operational corrections remain separate from optimizer findings:** generation 7 failed pairing after a mistaken runtime restoration; the recorded Python 3.13.5 / NumPy 2.5.3 runtime was restored and reproduces all 404 archived environment snapshots. Generation 9 later hit a scheduler timeout that included proposal latency. Its accepted source and three complete cases were retained; the interrupted fourth attempt remains charged separately from its reviewed replay. [Both recovery records](docs/studies/book_mpso_population_200_v2/SESSION_002.md) preserve the errors and accounting without treating repairs as evolutionary gains.
 
 ## Abstract
 
@@ -135,7 +135,7 @@ The [prospective protocol](docs/book_mpso_population_200_v2_protocol.md) and [an
 
 ### 4.1 A conditional development leader, not yet a confirmed winner
 
-Generation four leads the six completed descendants and the seed. Its exact executed behavior is preserved in the [native source](artifacts/book_mpso_population_200_v2/20260917T065325Z/session_001/evolution/search_seed_670001/gen_4/main.py):
+Generation four remains the interim leader through nine completed descendant slots. Its exact executed behavior is preserved in the [native source](artifacts/book_mpso_population_200_v2/20260917T065325Z/session_001/evolution/search_seed_670001/gen_4/main.py):
 
 ```python
 def choose_neutral_count(observation) -> int:
@@ -179,6 +179,12 @@ The leading rule lowers development mean error by **11.98% against corrected 5+1
 Against corrected 5+1, the four paired differences are −0.594850, +0.017667, −0.157189 and −0.315800; the descriptive 95% interval is [−0.485435, −0.065700]. Case 000 contributes 56.64% of the net gain, although all leave-one-history-out means remain negative. Against target two, all four histories improve, with mean difference −0.151651 and descriptive interval [−0.241707, −0.089203]. **These selection-biased, four-history summaries do not establish fresh generalization.**
 
 The first three descendants were constants three, two and four. The two descendants after generation four had means 1.989777 and 2.057724 and did not improve on it. All six descendants completed every history; no failed or partial program was promoted. The [full Session 1 report](docs/studies/book_mpso_population_200_v2/REPORT.md) preserves exact sources, all paired cases, lineage and diagnostics.
+
+Session 2 adds generation 8's rare target-four recovery rule and generation 9's return to targets two/three with earlier shrinkage. Each improves on its actual parent, but both remain behind generation 4. Generation 7 has no comparable score because of the runtime restoration failure. These are whole-policy development comparisons, not isolated causal tests of population size or hysteresis.
+
+![Observed native evolution through generation nine](docs/studies/book_mpso_population_200_v2/session_002_figures/native_evolution.png)
+
+*Means from four reused 5D development histories, 500,000 counted queries per case. Lines connect actual parents and descendants; generation 7 has no score. [Sources, checkpoints and recovery evidence](docs/studies/book_mpso_population_200_v2/SESSION_002.md#measured-evolution-after-wsl-returned) accompany the plot. No fresh confirmation has occurred.*
 
 ### 4.2 What the rule actually changes
 

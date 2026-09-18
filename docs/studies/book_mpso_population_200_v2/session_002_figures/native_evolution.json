@@ -1,0 +1,89 @@
+{
+  "database": "artifacts/book_mpso_population_200_v2_publication/session_002_generation_009/programs.sqlite",
+  "through_generation": 9,
+  "new_objective_evaluations": 0,
+  "new_model_calls": 0,
+  "interpretation": "Development comparison of whole policies, not isolated causal effects",
+  "programs": [
+    {
+      "generation": 0,
+      "id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+      "parent_id": null,
+      "correct": true,
+      "source_sha256": "7e66f66ab613b6113eaea186f8c12af91a01c94d87b87822784bfc9396e4aebd",
+      "mean_offline_error": 2.1912832024543234
+    },
+    {
+      "generation": 1,
+      "id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+      "parent_id": "3d9e8e28-72bc-4f09-858d-a542235694c6",
+      "correct": true,
+      "source_sha256": "3a391da64d81000df94eccefee65f6f51d33281775c56e90839046dd5696ed38",
+      "mean_offline_error": 2.0915932729744067
+    },
+    {
+      "generation": 2,
+      "id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+      "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+      "correct": true,
+      "source_sha256": "ce3a088486cca803f8585b11023e130bd16eebd3d57dd8388c05945ce7f2f5e8",
+      "mean_offline_error": 2.0803915162058892
+    },
+    {
+      "generation": 3,
+      "id": "1bb72fee-01b5-413b-8060-a8b2b43b77fb",
+      "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+      "correct": true,
+      "source_sha256": "47bdf93709e49f2d5b60295849f3379ec3a5634a070c66f3c6d79ed2bc622e0d",
+      "mean_offline_error": 2.181442892162108
+    },
+    {
+      "generation": 4,
+      "id": "68536249-e308-4a48-b6af-3004df891bf6",
+      "parent_id": "7ec41cb8-ebf2-43fd-a34f-fe55d8a0c534",
+      "correct": true,
+      "source_sha256": "85a203cf0fdd5ba2c6a34cda2ec80133e84cb22bf821d36bafae99d48b0b475c",
+      "mean_offline_error": 1.9287400327972029
+    },
+    {
+      "generation": 5,
+      "id": "7b88bffd-053e-4072-8378-07b063a17364",
+      "parent_id": "2c74c093-2a63-435e-8faa-0641cfde431c",
+      "correct": true,
+      "source_sha256": "799aa94d76f1b0963bc9f740d7ae726d3f3bb91d4e3b79d84bc97071cfe9713a",
+      "mean_offline_error": 1.9897772921634755
+    },
+    {
+      "generation": 6,
+      "id": "d225c0cd-aa19-441e-b866-c3aa228909b8",
+      "parent_id": "68536249-e308-4a48-b6af-3004df891bf6",
+      "correct": true,
+      "source_sha256": "c34be04310fb23b1e3916f0f7c3e91a6922162c4f1de5b1b96d87ad05cf2b31f",
+      "mean_offline_error": 2.0577237198827083
+    },
+    {
+      "generation": 7,
+      "id": "3009f8da-ef93-4586-b98f-ba87449022d6",
+      "parent_id": "7b88bffd-053e-4072-8378-07b063a17364",
+      "correct": false,
+      "source_sha256": "c6b11f38df4be1ae2755f27490c041a5415c4dcf229ae84b130f820642a9e742",
+      "mean_offline_error": null
+    },
+    {
+      "generation": 8,
+      "id": "d599ca7d-9e7a-4314-99d2-055869b793f5",
+      "parent_id": "d225c0cd-aa19-441e-b866-c3aa228909b8",
+      "correct": true,
+      "source_sha256": "72220d7d6f772fbf65422e7c86e3aa37528eed886da1baf4ab16bb3376263b7a",
+      "mean_offline_error": 2.023026773770427
+    },
+    {
+      "generation": 9,
+      "id": "2a24cd9c-b758-48c7-a2de-980265dcdba1",
+      "parent_id": "d599ca7d-9e7a-4314-99d2-055869b793f5",
+      "correct": true,
+      "source_sha256": "ac326bd5a8f58ef772353f047f5fa8f594dde9eb0d72a5495717d8293dd2aed4",
+      "mean_offline_error": 1.99523944713752
+    }
+  ]
+}

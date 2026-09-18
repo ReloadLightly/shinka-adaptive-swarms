@@ -4,6 +4,10 @@
 UTC from generation 7. Attach to its log/WebUI while it runs; do not execute the
 `--new-session` command concurrently. The current research cutoff is 10:58:43 UTC.
 Its terminal log is `operations/session_002-terminal.log` under the live run.
+At 09:17 UTC, generations 8 and 9 were complete and Shinka was updating
+meta-memory before generation 10: eight valid descendants plus seed, with generation 7 an operational
+failed slot. The current controller resumed at 09:15:54 after a reviewed
+generation-9 fourth-case recovery; do not launch a second controller.
 At 08:33 UTC it recovered from an optimizer-runtime restoration error and resumed
 generation 8 with the same limits; generation 7 remains an operational failed slot.
 The optimizer requires the archived **Python 3.13.5 / NumPy 2.5.3** runtime. The

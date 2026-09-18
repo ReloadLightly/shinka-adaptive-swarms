@@ -1,11 +1,11 @@
 # Corrected 200-peak campaign — Session 2 continuation
 
-**Runtime recovery, 08:33 UTC:** six valid descendants remain established.
-Generation 7 consumed one slot and one full case but has no comparable score;
-the initial restoration mistakenly used the embedding runtime for the optimizer.
-The original Python 3.13.5 / NumPy 2.5.3 runtime is restored, and the same session
-has resumed at generation 8. Details and accounting are below. The WebUI remains
-available, with generation 7 labeled invalid and its operational cause recorded.
+**WSL continuation, 18 September 2026, 09:17 UTC:** generations 8 and 9 completed
+all four cases, bringing the count to **eight valid descendants plus seed
+generation 0**, across nine completed descendant slots. Generation 7 remains an
+operational failure without a comparable score. Shinka is updating meta-memory before proposing generation 10.
+Generation 9 required the reviewed fourth-case recovery below. The native WebUI
+is available on the actual database.
 
 **Session 2 was launched on 18 September 2026 at 08:18:43 UTC from the
 published Session 1 checkpoint.** This is a running-session record, not final
@@ -133,6 +133,106 @@ restarts retain the same Session 2 response baseline, generation-12 stop and
 contains the version check, landscape diagnostic, original failed database state,
 failure explanation and restart receipt. This is an operational snapshot, not a
 drained final-session archive or a scientific improvement.
+
+## Measured evolution after WSL returned
+
+Generation 8, `exceptional_four_recovery`, completed at 08:49:53 UTC. Its parent
+is generation 6, with generations 4 and 5 as inspirations. It removes the parent's
+workload cap and permits target four under unusually high workload-adjusted loss
+(entry threshold 0.20, retention threshold 0.12); otherwise it retains the
+two/three-target hysteresis. Its four-case mean is **2.023027**, compared with
+**2.057724** for its parent and **1.928740** for the still-leading generation 4.
+It improves on its parent by 0.034697 but does not establish a new leader. The
+two simultaneous edits do not isolate the effect of allowing target four.
+
+| Development case | G8 offline error | Difference from corrected target 5 |
+|---|---:|---:|
+| 000 | 2.125693 | −0.622631 |
+| 001 | 2.142308 | +0.220792 |
+| 002 | 1.768030 | −0.039608 |
+| 003 | 2.056076 | −0.231578 |
+
+Generation 8 requested targets two/three/four **6,421 / 3,300 / 354** times.
+Target four was therefore used, rather than merely present in source. These are
+policy decisions, not realized population counts: the adapter moves by at most one.
+The four cases consumed two million queries on the same development histories;
+they are not fresh confirmation. Its [verified completed-generation snapshot](../../../artifacts/book_mpso_population_200_v2_publication/session_002_generation_008/MANIFEST.json)
+contains its executed source, exact diff, native proposal evidence, all four cases
+and a consistent database backup. It is an interim snapshot, not a drained session
+archive.
+
+![Saved native evolution through generation nine](session_002_figures/native_evolution.png)
+
+Lines connect actual parents and children; invalid generation 7 has no plotted
+score. This is a plot of measured five-dimensional experiments, not a 2D swarm
+illustration. It was generated from the saved database with zero new model calls
+or objective evaluations.
+
+Generation 9, `two_three_fast_release`, descends from generation 8. It removes
+target four and increases the target-three retention threshold from 0.04 to 0.05,
+testing earlier population shrinkage after recovery. The workload normalization
+remains unbounded. This compares whole policies; it cannot separately identify
+the causal effect of either edit.
+
+After the recovery below, the native evaluator reused all four saved artifacts and
+recorded generation 9 at **09:16:15 UTC**, with mean **1.995239**, worst-case error
+**2.124206**, and case standard deviation **0.177222**. Its mean is 0.027787 lower
+than parent generation 8 and 0.066499 higher than leader generation 4. The native
+database contains the original accepted lineage. The
+[generation-9 snapshot](../../../artifacts/book_mpso_population_200_v2_publication/session_002_generation_009/MANIFEST.json)
+retains all cases, source/proposal evidence, consistent database, recovery review,
+original interrupted ledger, recovery script/log and viewer verification.
+
+Through this checkpoint, the cumulative ledger has **54 full-budget attempts**:
+**53 completed physical cases / 26.5 million known completed queries**, plus the
+interrupted attempt reserved at 500,000 queries. Conservative charged work is
+**27 million queries**; the interrupted attempt's observed lower bound adds
+140,000 to the known completed total, but its exact total is unavailable. These
+counts include generation 7's full failed-runtime case and generation 9's replay.
+Cached records add no objective queries. Historical `stage_complete` control log
+fields labeled `new_executions` reported cumulative totals; all 20 requested
+control checks on this restart reused saved cases. The logger now distinguishes
+per-invocation work from cumulative totals explicitly.
+
+## Evaluation-timeout recovery and viewer repair
+
+At 09:07:30 UTC, the controller correctly stopped without scoring generation 9
+because its evaluator had not produced final metrics. The native scheduler log
+records an explicit **00:16:33 timeout**. Inspection showed that the scheduler
+compares this evaluation limit against `job.start_time`, which includes earlier
+mutation and novelty work. Three complete cases were checkpointed; the fourth
+last recorded **140,000 queries**. Its exact final query count is unknown.
+
+The resume compatibility layer now passes the evaluation start time to that
+scheduler check, preserving the native proposal timestamps elsewhere. Four focused
+checks pass, including a regression that allows an evaluation within its own
+limit, still stops one over its limit, and preserves the original job timestamps.
+This is an infrastructure correction, not an evolutionary improvement.
+
+A written recovery review preserves the original partial ledger and logs. The
+interrupted fourth attempt keeps its full **500,000-query reservation**, an
+observed lower bound of 140,000, and an unknown exact total. One additional full
+500,000-query attempt runs only the fourth case using the exact accepted source,
+frozen evaluator helpers, unchanged config, scientific fingerprints and recorded
+Python 3.13.5 / NumPy 2.5.3 runtime. The three completed case files are hash-checked
+before and after; native resume reuses them. No model call generates a replacement
+program, and no session allowance or deadline is reset.
+
+The fourth-case replay completed at **09:15:29 UTC** and passed pairing against
+both frozen feedback references. The controller resumed at **09:15:54 UTC**;
+its four `case_reused` events and full native score establish successful recovery.
+The ordinary interval-five meta update then began; generation 10 is queued under
+the original session ceiling.
+
+Separately, an idle browser socket blocked the pinned viewer's single-connection
+TCP server. `scripts/native_webui.py` retains native handlers/pages and switches
+only the viewer's transport to concurrent connections. Browser verification
+opened the actual generation-8 lineage/source/score and reported no page errors.
+A native API request returned nine program rows while a separate idle socket
+remained open, reproducing and resolving the specific failure. The first wrapper
+attempt failed during import due to a standard-library class conflict; its log
+is preserved. The corrected wrapper limits the substitution to the viewer module.
+Automated browser sessions were closed after verification; the viewer stays up.
 
 ## Watch the running session
 

@@ -1,0 +1,24 @@
+"""Reconstructed MPSO 5+1: maintain five neutral particles."""
+
+# EVOLVE-BLOCK-START
+def choose_neutral_count(observation) -> int:
+    """Choose two to four neutrals with workload-adjusted recovery hysteresis."""
+    # Estimate movement and detection queries per optimizer sweep.
+    loss = max(0.0, observation["relative_fitness_drop"])
+    swarms = max(1, observation["swarm_count"])
+    sweep_queries = max(
+        1.0, observation["total_particle_count"] + swarms
+    )
+    # Greater existing workload raises the evidence required for growth.
+    recovery_pressure = loss / (1.0 + sweep_queries / 160.0)
+    previous_target = observation["previous_requested_target"]
+    # Reserve target four for severe loss, retaining it at a lower threshold.
+    if recovery_pressure > 0.20 or (
+        previous_target == 4 and recovery_pressure > 0.12
+    ):
+        return 4
+    threshold = (
+        0.04 if previous_target == 3 or previous_target == 4 else 0.08
+    )
+    return 3 if recovery_pressure > threshold else 2
+# EVOLVE-BLOCK-END

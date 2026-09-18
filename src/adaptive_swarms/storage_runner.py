@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+from copy import copy
 from dataclasses import fields
 import sqlite3
 from pathlib import Path
@@ -46,6 +47,21 @@ class ResumeRunnerMixin:
 
             self.scheduler.run = run
             self.scheduler.get_job_results_async = results
+            if hasattr(self.scheduler, "check_job_status"):
+                original_status = self.scheduler.check_job_status
+
+                def status(job):
+                    # Native start_time includes mutation/novelty latency. The
+                    # local scheduler uses it for the *evaluation* timeout.
+                    # Preserve native lineage/timing; adjust only its view.
+                    started = getattr(job, "evaluation_started_at", None)
+                    if started is not None:
+                        evaluation_job = copy(job)
+                        evaluation_job.start_time = started
+                        return original_status(evaluation_job)
+                    return original_status(job)
+
+                self.scheduler.check_job_status = status
 
     def _fail_infrastructure(self, error):
         failure = error if isinstance(error, InfrastructureError) else InfrastructureError(str(error))

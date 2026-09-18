@@ -261,6 +261,7 @@ def execute(folder, max_new_cases=None, stage="references", targets=(5, 3)):
     ledger_path = stage_dir / "execution_ledger.json"
     ledger = read_json(ledger_path) if ledger_path.exists() else {"attempts": [], "status": "registered"}
     new_count = 0
+    new_queries = 0
     with (stage_dir / "controller.lock").open("a") as lock, EventLogger(stage_dir) as log:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         with EventLogger(folder / "operations") as operations:
@@ -329,6 +330,7 @@ def execute(folder, max_new_cases=None, stage="references", targets=(5, 3)):
                                        actual_queries=result["evaluations"], offline_error=result["offline_error"],
                                        elapsed_seconds=time.monotonic()-start, artifact_sha256=sha(path))
                         new_count += 1
+                        new_queries += result["evaluations"]
                         atomic_json(ledger_path, ledger)
                         log.event("case_complete", method=name, case_index=i, offline_error=result["offline_error"], elapsed_seconds=attempt["elapsed_seconds"], completed=len(ledger["attempts"]))
                         operations.event("case_complete", stage=stage, method=name, case_index=i, offline_error=result["offline_error"], elapsed_seconds=attempt["elapsed_seconds"], completed=len(ledger["attempts"]))
@@ -343,7 +345,10 @@ def execute(folder, max_new_cases=None, stage="references", targets=(5, 3)):
                         raise
             ledger.update(status="session_targets_completed", completed_targets=list(targets), completed_at=datetime.now(timezone.utc).isoformat())
             atomic_json(ledger_path, ledger)
-            operations.event("stage_complete", stage=stage, new_executions=sum(a["status"] == "completed" for a in ledger["attempts"]), objective_queries=sum(a.get("actual_queries", 0) for a in ledger["attempts"]))
+            operations.event("stage_complete", stage=stage,
+                             new_executions=new_count, new_objective_queries=new_queries,
+                             cumulative_completed_executions=sum(a["status"] == "completed" for a in ledger["attempts"]),
+                             cumulative_objective_queries=sum(a.get("actual_queries", 0) for a in ledger["attempts"]))
 
 
 def freeze_suite(folder):
@@ -385,6 +390,6 @@ def freeze_suite(folder):
         atomic_json(path, suite)
     with EventLogger(folder / "operations") as log:
         log.event("search_suite_frozen", suite=str(path), sha256=sha(path), seed_source_sha256=references["target_5"]["source_sha256"],
-                  exact_seed_cache_cases=4, reference_new_executions=sum(a["status"] == "completed" for a in ledger["attempts"]),
-                  reference_objective_queries=sum(a.get("actual_queries", 0) for a in ledger["attempts"]))
+                  exact_seed_cache_cases=4, cumulative_reference_executions=sum(a["status"] == "completed" for a in ledger["attempts"]),
+                  cumulative_reference_objective_queries=sum(a.get("actual_queries", 0) for a in ledger["attempts"]))
     print(json.dumps({"suite": str(path), "sha256": sha(path), "roles": list(references)}))

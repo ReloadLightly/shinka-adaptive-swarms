@@ -36,6 +36,8 @@ itself and disposable Python bytecode caches.
 | `book_mpso_population_200_v1/20260917T025219Z` | Runtime-constrained 200-peak extension, stopped before native search | One planned target-five reference × 500,000 queries; zero native slots/model calls; four-case suite remains frozen and unranked |
 | `book_mpso_population_200_v2/20260917T065325Z/session_001` | Corrected enclosing-ball population campaign, immutable Session 1 checkpoint | Six valid descendants of a prospective 50; all seven constant targets complete; 44 physical executions × 500,000 queries, 12 reused case records and 19 logical model responses |
 | `book_mpso_population_200_v2_publication/session_001` | Session publication and remote verification | No new objective evaluations or model calls; campaign remains open |
+| `book_mpso_population_200_v2_publication/session_002_generation_008` | Interim completed-generation snapshot while Session 2 continues | G8 source, proposal evidence, four full development cases, consistent native database; not a drained resume archive |
+| `book_mpso_population_200_v2_publication/session_002_generation_009` | Interim completed-generation snapshot and operational recovery | G9 source, four full cases, original interrupted ledger and reviewed replay evidence, native database and WebUI verification; campaign remains open |
 
 The [corrected 200-peak campaign, Session 1](../docs/studies/book_mpso_population_200_v2/REPORT.md)
 pauses after six valid descendants, with its real native database, meta memory,

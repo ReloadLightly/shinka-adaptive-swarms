@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "exceptional_four_recovery",
+  "patch_description": "Restore the uncapped workload penalty from the stronger prior rule (development error 1.928740 versus 2.057724). Request four neutrals only when adjusted deterioration exceeds 0.20; retain that request above 0.12. Otherwise, preserve the two/three rule, applying its lower retention threshold after either three or four. This tests whether exceptional losses justify additional recovery trajectories despite their query cost. Improvement remains unmeasured; compilation and 12 boundary, history, integer-return and immutable-observation checks passed.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T10:35:28.918581",
+  "llm_cost": 0.72089,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

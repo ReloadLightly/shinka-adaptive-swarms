@@ -12,4 +12,4 @@ fi
 printf 'Native ShinkaEvolve WebUI: http://localhost:%s\n' "$webui_port"
 python_bin="${project_root}/.venv/bin/python"
 if [[ ! -x "$python_bin" ]]; then python_bin="python"; fi
-exec "$python_bin" -u -m shinka.webui.visualization "$results_root" --port "$webui_port"
+exec "$python_bin" -u "${project_root}/scripts/native_webui.py" "$results_root" --port "$webui_port"
