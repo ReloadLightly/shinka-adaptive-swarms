@@ -1,0 +1,15 @@
+{
+  "generation": 27,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "paired_external_cleanup",
+  "patch_description": "After successful rewiring, prioritize deleting the removed external partner\u2019s remaining opposite-layer edge. That relationship has already lost its overlap benefit, so concentrating both deletions there may preserve overlap elsewhere while clearing costly external ties for cohort construction. Refresh neighbors before deletion and retain the existing fallback when the paired edge is absent.\nThis could sacrifice useful triangles or delay more beneficial pruning. The hypothesis remains unevaluated: assess terminal utility on the frozen 288-condition panel, with paired uncertainty across 36 history families and shocked/unshocked loss checks.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T01:39:42.399623",
+  "llm_cost": 0.2097,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_27/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

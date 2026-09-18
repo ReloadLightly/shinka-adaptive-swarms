@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "relief_ranked_pruning",
+  "patch_description": "Rank cross-cohort deletion candidates across both layers by quadratic degree-cost relief minus lost direct and overlap benefits. Keep pruning even when every ranked value is negative, preserving the existing cohort-formation mechanism. After successful rewiring, recompute the ranking from current neighbor lists before choosing the second deletion.\nThis tests whether prioritizing cost relief while preserving overlap improves recovery. The ranking omits triangle losses, so it is a heuristic rather than an exact utility gain. Improvement remains to be measured on the full frozen panel.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T00:31:01.384248",
+  "llm_cost": 0.22008,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

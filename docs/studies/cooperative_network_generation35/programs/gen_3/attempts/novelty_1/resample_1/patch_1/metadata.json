@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "protected_triadic_overlap",
+  "patch_description": "Preserve the original policy in low-synergy conditions, while using systematic overlap and friend-of-friend search when multiplex or triangle incentives justify coordination. The policy prioritizes immediately profitable overlap and triangle-closing additions, then samples bounded random candidates. For d above the exact high-cost coordination barrier, a degree-one actor may temporarily accept or propose one locally costly second edge when a single future triangle would repay the loss. That layer is protected briefly from unilateral deletion, giving either endpoint time to close the triangle. Otherwise, only strictly beneficial additions and deletions are made. This targets the formation barrier at d>=1.2 under cost 0.6 without introducing indiscriminate noise, while exploiting overlap incentives and retaining the frozen source behavior where neither mechanism is promising.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T20:26:21.826687",
+  "llm_cost": 0.2400064,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

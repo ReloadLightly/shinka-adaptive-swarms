@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "terminal_greedy_polish",
+  "patch_description": "Keep cohort formation and recovery through time 94, then use the original p=0 decision and acceptance rules from time 95 onward. This creates a short terminal refinement phase after coordinated structures have formed.\nThe current policy can retain costly peripheral ties because cohort membership alone determines whether an edge is wanted. Near the terminal measurement, unconditional additions and acceptance can also incur sacrifices with little remaining time to recover. The final phase instead uses inspected utility improvements, native swaps and deletions, and strict recipient acceptance.\nThis may remove residual costly ties while preserving completed, individually stable cliques. It can also interrupt unfinished coordination or impose losses on neighbors through deletions, so aggregate improvement remains a hypothesis for the full 288-condition evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T21:52:37.886815",
+  "llm_cost": 0.4374,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

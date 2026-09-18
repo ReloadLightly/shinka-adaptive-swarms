@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "triadic_overlap_bridge",
+  "patch_description": "Prioritize locally observable additions that close triangles or duplicate a relationship across layers. Their exact marginal utility can be computed from current degree, common neighbors, cost, triangle benefit, and spillover benefit; the engine oracle verifies the best candidate before proposing it. When no such improvement exists, retain the original action routine, preserving its mature deletion, rewiring, and post-shock behavior.\nFor d>0.8 during early formation, permit each actor at most one bounded bridge-building sacrifice when the immediate loss is smaller than one potential triangle benefit. Recipients use the same one-sacrifice limit. This directly tests the documented coordination-barrier mechanism while bounding the cost of stranded paths. After time 40, all offers require strict recipient improvement, so shocks cannot trigger further speculative construction.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T20:22:02.530525",
+  "llm_cost": 0.1936464,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

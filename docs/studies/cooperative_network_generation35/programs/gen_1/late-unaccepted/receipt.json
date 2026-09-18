@@ -1,0 +1,43 @@
+{
+  "accepted_job_created": false,
+  "actual_first_dispatch_lineage": {
+    "archive_inspiration_ids": [],
+    "effective_islands": 3,
+    "event": "native_parent_sample",
+    "generation": 1,
+    "island": 2,
+    "parent_id": "be1b3cc4-409b-414c-ab99-4c55c209a905",
+    "time": 1789666598.3452697,
+    "top_k_inspiration_ids": []
+  },
+  "campaign_id": "paper_trajectory_v2",
+  "candidate_compilation_performed": false,
+  "captured_at": 1789667097.1488502,
+  "continuation_boundary": "This retained model proposal has not been accepted/evaluated by native Shinka. Existing accepted-evaluation recovery CLI does not apply; explicit source/lineage-aware reconciliation is required before evaluation or ordinary resume.",
+  "dispatch_path": "results/paper_trajectory_v2/search/dispatches/349bfa5b25404cbfbb69272cf38f8316.json",
+  "extraction": "Exactly the single java-fenced block of the identity-matched final provider response; no source edits.",
+  "lineage_evidence": {
+    "event_line_sha256": "297ba17a6119677ff469a61aa8fbca9133b4aef98dcb90d5fa9619cec2e26a4b",
+    "path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+    "selection_rule": "Last generation1native_parent_sample preceding the exact completed provider dispatch."
+  },
+  "native_adapter_result": "Original native usage receipt reports timeout; preserve it unchanged. Subsequent budget-denied attempts launched no additional Headless command.",
+  "native_population_insertion": false,
+  "numerical_evaluation_performed": false,
+  "original_failure_evidence": {
+    "note": "Terminal failure parent belongs to later locally budget-denied resampling. The completed first provider response belongs to actual_first_dispatch_lineage above, not this later parent.",
+    "parent_id": "d25e97bc-a5b3-40d4-9c86-fff7ce96a0fe",
+    "path": "results/paper_trajectory_v2/search/gen_1/failure.json",
+    "sha256": "b449de9937f8d158c13173cc4d9d34a980a5f1914f1a9866aa8810c0f7a1016d"
+  },
+  "original_generation": 1,
+  "patch_name": "high_triangle_completion",
+  "provider_evidence_path": "results/paper_trajectory_v2/operations/provider-timeout-drain/completed-provider-evidence.json",
+  "response_path": "results/paper_trajectory_v2/operations/provider-timeout-drain/late-provider-response.txt",
+  "response_sha256": "35435b2381ff7feb8c5f5f93e8499fd5d79e4ee490fcc8c90377ffbc788cb654",
+  "schema": "paper-retained-late-proposal-source-v1",
+  "slot_budget_reset": false,
+  "source_path": "results/paper_trajectory_v2/operations/late-candidate/CandidatePolicy.java",
+  "source_sha256": "24a42be60c23561c862a7fe60f929f5ae95522f4b4b7d1aef0a6cb4abc104f94",
+  "usage_receipt_id": "0778d68e1636431aad15c33a70eb2163"
+}

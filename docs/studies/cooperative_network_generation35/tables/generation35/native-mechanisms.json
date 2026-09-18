@@ -1,0 +1,2900 @@
+{
+  "all_observed_search_event_counts": {
+    "administrative_copy": 2,
+    "native_migration": 3,
+    "native_parent_sample": 43,
+    "native_ucb_reward": 33,
+    "native_ucb_selection": 35,
+    "native_ucb_state_restored": 38,
+    "native_ucb_submitted": 43
+  },
+  "bandit_summary": {
+    "campaign_id": "paper_trajectory_v2",
+    "campaign_identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+    "legacy_filename_only": true,
+    "monetary_cost_weight": 0.0,
+    "native_state": {
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "baseline": 0.0,
+      "divs": [
+        6.5952964669029805,
+        8.90821123862106
+      ],
+      "max_cost_observed": 0.8748624,
+      "min_cost_observed": 0.0822224,
+      "n_completed": [
+        13.0,
+        20.0
+      ],
+      "n_costs": [
+        14.0,
+        20.0
+      ],
+      "n_submitted": [
+        23.0,
+        20.0
+      ],
+      "obs_max": -1.1761557974064059,
+      "obs_min": null,
+      "s": [
+        -1.3181085316845822,
+        -1.1595134688626811
+      ],
+      "total_costs": [
+        4.177594,
+        3.9290824000000004
+      ]
+    },
+    "rewarded_program_ids": [
+      "105526b0-6585-42d3-882b-9c781971299a",
+      "136d67a5-e595-4d0e-bf68-fb652a102458",
+      "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+      "1a24cf47-9e53-4f99-8168-25495a1396bb",
+      "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+      "21d89a1f-3934-4d35-b956-9cff91594c04",
+      "24c1324b-b127-44aa-81ee-57d490e2b862",
+      "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+      "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+      "47611a92-b70c-49f6-ada8-eb6b3359f497",
+      "48d2b235-f61c-4e9b-853a-f59a2a181910",
+      "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e",
+      "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+      "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+      "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+      "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+      "6d204768-9c67-4fb6-82b0-80e9538137cc",
+      "76f5377c-4401-4d21-8dac-e4516aeedbae",
+      "8277114e-8305-4cbe-b941-b994ae83862f",
+      "9762cccc-190f-43a1-b74e-7bebb6713da7",
+      "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+      "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+      "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+      "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+      "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+      "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+      "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+      "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+      "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+      "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+      "e75b2b28-0dd5-45cb-910f-286f500ff464",
+      "e84248e7-54ff-4572-b87b-570475b563ce",
+      "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+    ],
+    "rng_limitation": "SQLite ORDER BY RANDOM and UUID generation cannot be restored through supported native RNG state; bit-identical continuation is not claimed."
+  },
+  "campaign": "paper_trajectory_v2",
+  "evidence": {
+    "results/paper_trajectory_v2/search/checkpoints/native-031/native_memory/state.json": {
+      "bytes": 1723430,
+      "sha256": "0b37e1feb1fb80a5854b9a5f76e69243601c5c3b074031502eb9342938406eab"
+    },
+    "results/paper_trajectory_v2/search/controller-events.jsonl": {
+      "bytes": 33095,
+      "sha256": "f73c1f5de62d28d6bb5bd8cc9fd88c054a88d4fdddc3fe04dfac09e8325c0b8c"
+    },
+    "results/paper_trajectory_v2/search/gen_22/results/case_results.json": {
+      "bytes": 130334,
+      "sha256": "5209abb736cae207415c212c1f29a00bf82fb1fdbc73fff4886eecd532a735b5"
+    },
+    "results/paper_trajectory_v2/search/gen_31/accepted-job.json": {
+      "bytes": 171002,
+      "sha256": "c21209fe4ec374a311bc799b721ae4de2e2b6f320fd51c63495b6ff8d402e84c"
+    },
+    "results/paper_trajectory_v2/search/gen_31/main.java": {
+      "bytes": 8210,
+      "sha256": "00d985678e34e618191d6c54bc693f7ffab40b631e3face43e257ee1833f4d58"
+    },
+    "results/paper_trajectory_v2/search/gen_31/results/case_results.json": {
+      "bytes": 130334,
+      "sha256": "2eac0ca4c794ab50fea396419b824a53819ace361f7719b3acc1b16afb0db0e7"
+    },
+    "results/paper_trajectory_v2/search/gen_31/results/correct.json": {
+      "bytes": 39,
+      "sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+    },
+    "results/paper_trajectory_v2/search/gen_31/results/metrics.json": {
+      "bytes": 22269,
+      "sha256": "e217c8a6ed6b628bd811fc9760f7164e7436260640d88372728be8bba61a6824"
+    },
+    "results/paper_trajectory_v2/search/gen_32/accepted-job.json": {
+      "bytes": 161939,
+      "sha256": "1483c20c2f9adfb364c29a86db9c2cade7caf1019be2a9b4bc6c2bbddb63609d"
+    },
+    "results/paper_trajectory_v2/search/gen_32/main.java": {
+      "bytes": 8309,
+      "sha256": "144c0519e6b814425598a53d84313d9c370c0ab7d0b9a33930f2ac095cd59c6f"
+    },
+    "results/paper_trajectory_v2/search/gen_32/results/correct.json": {
+      "bytes": 39,
+      "sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+    },
+    "results/paper_trajectory_v2/search/gen_32/results/metrics.json": {
+      "bytes": 22270,
+      "sha256": "201da7b35af5774a42aac7d9bf1e3e8710b612e6498aea0b31c84b316c638209"
+    },
+    "results/paper_trajectory_v2/search/gen_33/accepted-job.json": {
+      "bytes": 159847,
+      "sha256": "4edb6a34c3424267546dd5561360934195e51c9cb7723dc18ed951e93326c5bb"
+    },
+    "results/paper_trajectory_v2/search/gen_33/main.java": {
+      "bytes": 8733,
+      "sha256": "e66541db2945f22f68cd3a7cc06dc9e8d9faafc6842f30325b69afcb2d08e5b1"
+    },
+    "results/paper_trajectory_v2/search/gen_33/results/correct.json": {
+      "bytes": 39,
+      "sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+    },
+    "results/paper_trajectory_v2/search/gen_33/results/metrics.json": {
+      "bytes": 22270,
+      "sha256": "7b8693b3e6ab19c172dc28cde7cc377df13ba10b2d8eb500eaeb1a1e705c530c"
+    },
+    "results/paper_trajectory_v2/search/gen_34/accepted-job.json": {
+      "bytes": 178615,
+      "sha256": "7d09b80dbc082bab7c030f00b6582c6d6cb2178926d932e15b3ef513232dad3e"
+    },
+    "results/paper_trajectory_v2/search/gen_34/main.java": {
+      "bytes": 8512,
+      "sha256": "3ec3c014719600a2ed45e1ab73b89a2b473818cfe045e2819c70c685ab258d4e"
+    },
+    "results/paper_trajectory_v2/search/gen_34/results/correct.json": {
+      "bytes": 39,
+      "sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+    },
+    "results/paper_trajectory_v2/search/gen_34/results/metrics.json": {
+      "bytes": 22269,
+      "sha256": "9dfb38e5eea774055b6c777d3d4cfa4dab9f4b690d73958021260af378ce3414"
+    },
+    "results/paper_trajectory_v2/search/gen_35/accepted-job.json": {
+      "bytes": 163150,
+      "sha256": "13295d86806ba27aca528ad2770c30680395f4d34d791cc7e0ab330eb1e58989"
+    },
+    "results/paper_trajectory_v2/search/gen_35/main.java": {
+      "bytes": 9202,
+      "sha256": "69d4fee3edbdb8f5330c02b5b3eee70fb6333d87e7edf50e41c52c85249b21aa"
+    },
+    "results/paper_trajectory_v2/search/gen_35/results/correct.json": {
+      "bytes": 39,
+      "sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+    },
+    "results/paper_trajectory_v2/search/gen_35/results/metrics.json": {
+      "bytes": 22270,
+      "sha256": "a5feda736cba52f80e59a141706651b2828a436df4a1041f952c9bfc18e69750"
+    },
+    "results/paper_trajectory_v2/search/native_memory/state.json": {
+      "bytes": 870187,
+      "sha256": "a12926253eda9985a8bd9b13df6ea8037e25889878daab17a192710e8637ae74"
+    },
+    "results/paper_trajectory_v2/search/phase-b-bandit-summary.json": {
+      "bytes": 2508,
+      "sha256": "b27710288a7714f3f6a69f99b0dff759d42b7f656e3e793af654407a537705fe"
+    },
+    "results/paper_trajectory_v2/search/phase-b-search-events.jsonl": {
+      "bytes": 75106,
+      "sha256": "2032d9d38ad53e7e44e40474f1e37762b1ffc8621c6cff386c510a5a72acb45f"
+    },
+    "results/paper_trajectory_v2/search/programs.sqlite#table=programs": {
+      "logical_rows_sha256": "75fc35d7e2b2160d9e1d1ee4eed6dcb63e916917d2f2eaf4dde6fc818ffc01d8",
+      "method": "Separate SQLite read-only transaction; includes committed WAL state",
+      "rows": 36
+    },
+    "results/paper_trajectory_v2/search/prompts.sqlite#table=prompt_archive": {
+      "logical_rows_sha256": "4eb6b1df601c9fabccae1c7770a29b01e85d9ab02bd1f26cf2a55b4d38e36db2",
+      "method": "Separate SQLite read-only transaction; includes committed WAL state",
+      "rows": 4
+    },
+    "results/paper_trajectory_v2/search/prompts.sqlite#table=system_prompts": {
+      "logical_rows_sha256": "db485ff2a6d367f4626c88f6a82f3f7ba6c8b5ba4389e2c3dd55e25b6d7f714e",
+      "method": "Separate SQLite read-only transaction; includes committed WAL state",
+      "rows": 4
+    },
+    "results/paper_trajectory_v2/search/usage/143b8d4d8eba429da3a56048f8ce7636.json": {
+      "bytes": 162767,
+      "sha256": "5a65cd2771764afdf57d16aae16d5e460138f0cbe77f169fb1e23c3ea4d30d39"
+    },
+    "results/paper_trajectory_v2/search/usage/17e28e0f86f5427f9f311137ee26ce3e.json": {
+      "bytes": 35710,
+      "sha256": "0206407be2b3a4f482c01427ea8e1a7298688c852f72a2e9b0c6aba79e609dfa"
+    },
+    "results/paper_trajectory_v2/search/usage/1e1cbfedffaa464c9a2d1fd005cfe131.json": {
+      "bytes": 160160,
+      "sha256": "353be605305b29c8f5447529829fdbfe2f0bc404ab6fbdc131c02c94679f4f74"
+    },
+    "results/paper_trajectory_v2/search/usage/2dcf373f94a049d99538cd73b4e33973.json": {
+      "bytes": 36120,
+      "sha256": "bba46c8d02af9f467fbb002f8350df6e451f3ed71c352f217d9b4266060b7dd8"
+    },
+    "results/paper_trajectory_v2/search/usage/304f677ec0ea43b4919f145adaacfb00.json": {
+      "bytes": 31500,
+      "sha256": "342aa75981155b5480f2d75bf074db3343d22f273efccc3918e1d85c151b5116"
+    },
+    "results/paper_trajectory_v2/search/usage/32f397936a404de196db18da3937e2d2.json": {
+      "bytes": 143080,
+      "sha256": "b39bc3c2beb31cc1feac7414d159a5c95d182fd1c1da6beba12cbf69f327f376"
+    },
+    "results/paper_trajectory_v2/search/usage/41497c33a8df4c068b83a171f816a4bf.json": {
+      "bytes": 101216,
+      "sha256": "6246bf6dc548801f4474ec1fc69c72988826efce320316f443a4cd746073dcb7"
+    },
+    "results/paper_trajectory_v2/search/usage/4f9006b3efd3480c96439cacd4745995.json": {
+      "bytes": 156733,
+      "sha256": "ebe7ee84cd2be64577d2e836a45650ae28a2e1e9be880c36be65c41c1c03cfba"
+    },
+    "results/paper_trajectory_v2/search/usage/6dd69e0ed5b544bfaea7dbf784539a74.json": {
+      "bytes": 59016,
+      "sha256": "a87865131cad14c0a822b1c48daf982a592d1baa6e02777c9241c28345b57138"
+    },
+    "results/paper_trajectory_v2/search/usage/85aead156c4246a6b3f756727cf7021a.json": {
+      "bytes": 141444,
+      "sha256": "91e156cc173720e93c1f86749fd88e53bd5dcdea13c7ca1c2567437d1bdc0598"
+    },
+    "results/paper_trajectory_v2/search/usage/86f40c0009e9466687ef72cc56380d31.json": {
+      "bytes": 62855,
+      "sha256": "c89cea9a8e11412fdafe64ce469311e76a66054620b3030ce3b438d83f83c2dd"
+    },
+    "results/paper_trajectory_v2/search/usage/9cee947335b248eda30c7995113d4691.json": {
+      "bytes": 145738,
+      "sha256": "8741195b1d2d41dde5e52515d993ad12bca15221d08d443576c361b2c46d31ca"
+    },
+    "results/paper_trajectory_v2/search/usage/a223dad88f654c369a90929b350395ad.json": {
+      "bytes": 35403,
+      "sha256": "94359d0985d87acaa2ef03f022eba39175d0d148b174f92c5673740ed94f5943"
+    },
+    "results/paper_trajectory_v2/search/usage/a2cd502a91fc470eaeea71257b94c6d3.json": {
+      "bytes": 34744,
+      "sha256": "5c3fa4c3b76edfde367f12c08454ed807bfd51059f2d74a3c95043d823553d15"
+    },
+    "results/paper_trajectory_v2/search/usage/affd128c3dff447dbec74a4082209812.json": {
+      "bytes": 33728,
+      "sha256": "a41759ef712f95ce9c4a1c74e43f7e4d709aa14f5629f564eae4e60405c4e3f4"
+    },
+    "results/paper_trajectory_v2/search/usage/bb82c6a4f61e4a8bba777941bd1dc198.json": {
+      "bytes": 36605,
+      "sha256": "df893535cb0a4f4e7ce753471f4902d2464ebe536c2a37e55116ec415192bc00"
+    },
+    "results/paper_trajectory_v2/search/usage/c8fd818af5c143a6acb23b2f9c95a09d.json": {
+      "bytes": 35521,
+      "sha256": "adc9600ffb68d3a5b96c9fe9bdd48211e02a02c52dd12ddbf5f5947a67cef6a4"
+    },
+    "results/paper_trajectory_v2/search/usage/df74e7cc67434e908c9d06802ce7c91c.json": {
+      "bytes": 33411,
+      "sha256": "e89c4bfcd033256cbfc2693356ab3ef9bdd2c135bc217e076d90b7c463c2698d"
+    },
+    "results/paper_trajectory_v2/search/usage/f10e50825e2d4275bed0ff2fe448ca3f.json": {
+      "bytes": 33036,
+      "sha256": "63bd1c7f1c8c185a039523986ff5afdc1e3d88c7c197d53763fab8c62150da02"
+    }
+  },
+  "g31_vs_g22_case_comparison": {
+    "all_288_exact_equal": true,
+    "case_counts": [
+      288,
+      288
+    ],
+    "different_case_ids": [],
+    "exact_equal_count": 288,
+    "generations": [
+      31,
+      22
+    ],
+    "references": [
+      "results/paper_trajectory_v2/search/gen_31/results/case_results.json",
+      "results/paper_trajectory_v2/search/gen_22/results/case_results.json"
+    ],
+    "same_case_ids": true,
+    "scope": "Exact terminal population means only; no actor, adjacency or path equality claim"
+  },
+  "memory_at_audit": {
+    "campaign_id": "paper_trajectory_v2",
+    "campaign_identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+    "continuity": {
+      "bootstrap": {
+        "status": "disabled"
+      },
+      "evolution_program_ids": [
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+        "76f5377c-4401-4d21-8dac-e4516aeedbae",
+        "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e"
+      ],
+      "fitness_program_ids": [
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+        "76f5377c-4401-4d21-8dac-e4516aeedbae",
+        "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e"
+      ],
+      "identity": {
+        "bootstrap_program_ids": [],
+        "immutable_prompt_sha256": "d43d773c0fd1b66d8f17c4c2237bd96f6d310ee4bef85618b6d2265e81228599",
+        "initial_search_prompt_sha256": "fb987a2eff2bd428f95307523cf3867f33bf669428ac13454f8696b82b6418a2",
+        "meta_interval": 10,
+        "overall_target_slots": 51,
+        "percentile_interval": 20,
+        "phase_start_generation": 0,
+        "prompt_interval": 10,
+        "schema_version": 1
+      },
+      "meta_updates": 3,
+      "operation": null,
+      "percentile_recompute_pending": false,
+      "prompt_evolution_counter": 3,
+      "prompt_percentile_recompute_counter": 12,
+      "saved_at": 1789728692.1321015,
+      "seen_meta_ids": [
+        "9c88b164-3267-4693-ad19-5be39c6b47d8",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+        "76f5377c-4401-4d21-8dac-e4516aeedbae",
+        "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e"
+      ]
+    },
+    "path": "results/paper_trajectory_v2/search/native_memory/state.json",
+    "pending_programs": [
+      {
+        "generation": 32,
+        "id": "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8"
+      },
+      {
+        "generation": 33,
+        "id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+      },
+      {
+        "generation": 34,
+        "id": "76f5377c-4401-4d21-8dac-e4516aeedbae"
+      },
+      {
+        "generation": 35,
+        "id": "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e"
+      }
+    ],
+    "recommendation_history_count": 3,
+    "retained_memory_hashes": {
+      "meta_recommendations": "a2d9534be41f6aabea96385f3adc24898c9b21cd812b6b49157bb76081402157",
+      "meta_recommendations_history": "28d7ea7397f3bf32d1998ee082c162baaf4f5210a3978a61276d56a232061b83",
+      "meta_scratch_pad": "afd77ea5474873ece59eaffbb4ea2572e500cfc1dfe929d2bb76e0e1907a0581",
+      "meta_summary": "b753e290356597cb96bfb16ccdc9c6e011c56eb96bcacc6b9407dac3b5ae6315"
+    },
+    "total_programs_meta_processed": 30
+  },
+  "memory_before_continuation": {
+    "campaign_id": "paper_trajectory_v2",
+    "campaign_identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+    "continuity": {
+      "bootstrap": {
+        "status": "disabled"
+      },
+      "evolution_program_ids": [
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7"
+      ],
+      "fitness_program_ids": [
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7"
+      ],
+      "identity": {
+        "bootstrap_program_ids": [],
+        "immutable_prompt_sha256": "d43d773c0fd1b66d8f17c4c2237bd96f6d310ee4bef85618b6d2265e81228599",
+        "initial_search_prompt_sha256": "fb987a2eff2bd428f95307523cf3867f33bf669428ac13454f8696b82b6418a2",
+        "meta_interval": 10,
+        "overall_target_slots": 51,
+        "percentile_interval": 20,
+        "phase_start_generation": 0,
+        "prompt_interval": 10,
+        "schema_version": 1
+      },
+      "meta_updates": 2,
+      "operation": null,
+      "percentile_recompute_pending": false,
+      "prompt_evolution_counter": 8,
+      "prompt_percentile_recompute_counter": 7,
+      "saved_at": 1789690839.1782944,
+      "seen_meta_ids": [
+        "9c88b164-3267-4693-ad19-5be39c6b47d8",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7"
+      ]
+    },
+    "path": "results/paper_trajectory_v2/search/checkpoints/native-031/native_memory/state.json",
+    "pending_programs": [
+      {
+        "generation": 22,
+        "id": "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+      },
+      {
+        "generation": 23,
+        "id": "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+      },
+      {
+        "generation": 24,
+        "id": "6181eb4c-f941-4771-a2a3-7eeeb816b9f7"
+      },
+      {
+        "generation": 25,
+        "id": "105526b0-6585-42d3-882b-9c781971299a"
+      },
+      {
+        "generation": 26,
+        "id": "47611a92-b70c-49f6-ada8-eb6b3359f497"
+      },
+      {
+        "generation": 27,
+        "id": "df6aa835-8ce1-453a-b011-5d98f86ffb7d"
+      },
+      {
+        "generation": 28,
+        "id": "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      },
+      {
+        "generation": 29,
+        "id": "6d204768-9c67-4fb6-82b0-80e9538137cc"
+      },
+      {
+        "generation": 30,
+        "id": "9762cccc-190f-43a1-b74e-7bebb6713da7"
+      }
+    ],
+    "recommendation_history_count": 2,
+    "retained_memory_hashes": {
+      "meta_recommendations": "8d5d9fbedfcc3fe8b8ac8e6e75d0c3b73478447341720bf835a156a035e84b4f",
+      "meta_recommendations_history": "b03999746163508016697fcd005e3e3415e32a081f703185367c741b894171c1",
+      "meta_scratch_pad": "96e9038d21455c9688790e060c125b31ef9f153f238d6d0339c57ae51caae24d",
+      "meta_summary": "e9b5dd03e307259b3d5bdd9bddf88ccac8204a5b510aa90ae37e9189ae6d10aa"
+    },
+    "total_programs_meta_processed": 20
+  },
+  "meta_trigger_explanation": {
+    "before_pending_generations": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "note": "An operation or returned individual summary is not a completed update; completion requires native_meta_memory_updated / advanced meta_updates.",
+    "operation_pending_generations": [],
+    "rule": "Native interval counts evaluated programs added to retained buffer; it is not proposal generation modulo10.",
+    "source": "cooperative/native_memory.py:45 and native-memory operation/pending IDs"
+  },
+  "native_controller_events": [
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 151,
+      "event": "seed_verified",
+      "score": 0.0,
+      "seed_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+      "time": 1789725441.062308
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 152,
+      "administrative_copies": 2,
+      "campaign_id": "paper_trajectory_v2",
+      "event": "paper_task_state_verified",
+      "identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+      "original_programs": 29,
+      "time": 1789725441.1921146
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 153,
+      "archive_ids": [
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+      ],
+      "event": "native_sampling",
+      "generation": 31,
+      "needs_fix": false,
+      "parent_generation": 15,
+      "parent_id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+      "parent_is_administrative_copy": false,
+      "parent_island": 1,
+      "time": 1789725441.2839525,
+      "top_ids": [
+        "24c1324b-b127-44aa-81ee-57d490e2b862"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 154,
+      "event": "native_meta_memory_updated",
+      "time": 1789726307.8862512,
+      "total_programs_processed": 30,
+      "update_count": 3
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 155,
+      "batch_target": 32,
+      "event": "native_meta_final_deferred",
+      "time": 1789726311.852468
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 156,
+      "event": "seed_verified",
+      "score": 0.0,
+      "seed_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+      "time": 1789726341.780218
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 157,
+      "administrative_copies": 2,
+      "campaign_id": "paper_trajectory_v2",
+      "event": "paper_task_state_verified",
+      "identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+      "original_programs": 30,
+      "time": 1789726341.8630133
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 158,
+      "archive_ids": [
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+      ],
+      "event": "native_sampling",
+      "generation": 32,
+      "needs_fix": false,
+      "parent_generation": 21,
+      "parent_id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+      "parent_is_administrative_copy": false,
+      "parent_island": 1,
+      "time": 1789726341.9410346,
+      "top_ids": [
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 159,
+      "batch_target": 33,
+      "event": "native_meta_final_deferred",
+      "time": 1789727320.997744
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 160,
+      "event": "seed_verified",
+      "score": 0.0,
+      "seed_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+      "time": 1789727355.2011106
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 161,
+      "administrative_copies": 2,
+      "campaign_id": "paper_trajectory_v2",
+      "event": "paper_task_state_verified",
+      "identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+      "original_programs": 31,
+      "time": 1789727355.2755015
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 162,
+      "archive_ids": [
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+      ],
+      "event": "native_sampling",
+      "generation": 33,
+      "needs_fix": false,
+      "parent_generation": 29,
+      "parent_id": "6d204768-9c67-4fb6-82b0-80e9538137cc",
+      "parent_is_administrative_copy": false,
+      "parent_island": 0,
+      "time": 1789727355.3467999,
+      "top_ids": [
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 163,
+      "batch_target": 34,
+      "event": "native_meta_final_deferred",
+      "time": 1789727831.5041232
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 164,
+      "event": "seed_verified",
+      "score": 0.0,
+      "seed_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+      "time": 1789727851.6998816
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 165,
+      "administrative_copies": 2,
+      "campaign_id": "paper_trajectory_v2",
+      "event": "paper_task_state_verified",
+      "identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+      "original_programs": 32,
+      "time": 1789727851.771006
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 166,
+      "archive_ids": [
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+      ],
+      "event": "native_sampling",
+      "generation": 34,
+      "needs_fix": false,
+      "parent_generation": 30,
+      "parent_id": "9762cccc-190f-43a1-b74e-7bebb6713da7",
+      "parent_is_administrative_copy": false,
+      "parent_island": 2,
+      "time": 1789727851.8358326,
+      "top_ids": [
+        "47611a92-b70c-49f6-ada8-eb6b3359f497"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 167,
+      "batch_target": 35,
+      "event": "native_meta_final_deferred",
+      "time": 1789728265.8428433
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 168,
+      "event": "seed_verified",
+      "score": 0.0,
+      "seed_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+      "time": 1789728288.539944
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 169,
+      "administrative_copies": 2,
+      "campaign_id": "paper_trajectory_v2",
+      "event": "paper_task_state_verified",
+      "identity_sha256": "73cb95b6f86a08f997c9b52e1ec531dc24d46913382548384345dee7491f8fa1",
+      "original_programs": 33,
+      "time": 1789728288.6272638
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 170,
+      "archive_ids": [
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+      ],
+      "event": "native_sampling",
+      "generation": 35,
+      "needs_fix": false,
+      "parent_generation": 16,
+      "parent_id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+      "parent_is_administrative_copy": false,
+      "parent_island": 0,
+      "time": 1789728288.6938365,
+      "top_ids": [
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/controller-events.jsonl",
+      "_line": 171,
+      "batch_target": 36,
+      "event": "native_meta_final_deferred",
+      "time": 1789728691.6006272
+    }
+  ],
+  "native_search_events": [
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 173,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "campaign_id": "paper_trajectory_v2",
+      "event": "native_ucb_state_restored",
+      "n_completed": [
+        11.0,
+        17.0
+      ],
+      "rewarded_program_ids": [
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      ],
+      "time": 1789725441.0423121
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 174,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "event": "native_ucb_selection",
+      "generation": 31,
+      "posterior": [
+        0.2,
+        0.8
+      ],
+      "selected": [
+        0.0,
+        1.0
+      ],
+      "time": 1789725441.2353754
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 175,
+      "archive_inspiration_ids": [
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+      ],
+      "effective_islands": 3,
+      "event": "native_parent_sample",
+      "generation": 31,
+      "island": 1,
+      "parent_id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+      "time": 1789725441.2833989,
+      "top_k_inspiration_ids": [
+        "24c1324b-b127-44aa-81ee-57d490e2b862"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 176,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "event": "native_ucb_submitted",
+      "generation": 31,
+      "n_submitted": [
+        21.0,
+        18.0
+      ],
+      "time": 1789725441.291166
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 177,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "cost_weight": 0.0,
+      "event": "native_ucb_reward",
+      "generation": 31,
+      "island": 1,
+      "n_completed": [
+        11.0,
+        18.0
+      ],
+      "native_update_result": [
+        5.9256930085016535e-05,
+        2.845900348014943
+      ],
+      "parent_baseline": 2.845900348014943,
+      "parent_id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+      "program_id": "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+      "raw_reward": 2.845959604945028,
+      "time": 1789726307.9180038
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 178,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "campaign_id": "paper_trajectory_v2",
+      "event": "native_ucb_state_restored",
+      "n_completed": [
+        11.0,
+        18.0
+      ],
+      "rewarded_program_ids": [
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      ],
+      "time": 1789726341.7415771
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 179,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "event": "native_ucb_selection",
+      "generation": 32,
+      "posterior": [
+        0.2,
+        0.8
+      ],
+      "selected": [
+        1.0,
+        0.0
+      ],
+      "time": 1789726341.8974152
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 180,
+      "archive_inspiration_ids": [
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+      ],
+      "effective_islands": 3,
+      "event": "native_parent_sample",
+      "generation": 32,
+      "island": 1,
+      "parent_id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+      "time": 1789726341.9405046,
+      "top_k_inspiration_ids": [
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 181,
+      "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+      "event": "native_ucb_submitted",
+      "generation": 32,
+      "n_submitted": [
+        22.0,
+        18.0
+      ],
+      "time": 1789726341.956064
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 182,
+      "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+      "cost_weight": 0.0,
+      "event": "native_ucb_reward",
+      "generation": 32,
+      "island": 1,
+      "n_completed": [
+        12.0,
+        18.0
+      ],
+      "native_update_result": [
+        0.0,
+        2.8459501629067177
+      ],
+      "parent_baseline": 2.8459501629067177,
+      "parent_id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+      "program_id": "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+      "raw_reward": 2.8459493489378977,
+      "time": 1789727311.6710944
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 183,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "campaign_id": "paper_trajectory_v2",
+      "event": "native_ucb_state_restored",
+      "n_completed": [
+        12.0,
+        18.0
+      ],
+      "rewarded_program_ids": [
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      ],
+      "time": 1789727355.1811454
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 184,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "event": "native_ucb_selection",
+      "generation": 33,
+      "posterior": [
+        0.2,
+        0.8
+      ],
+      "selected": [
+        0.0,
+        1.0
+      ],
+      "time": 1789727355.2976494
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 185,
+      "archive_inspiration_ids": [
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+      ],
+      "effective_islands": 3,
+      "event": "native_parent_sample",
+      "generation": 33,
+      "island": 0,
+      "parent_id": "6d204768-9c67-4fb6-82b0-80e9538137cc",
+      "time": 1789727355.346188,
+      "top_k_inspiration_ids": [
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 186,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "event": "native_ucb_submitted",
+      "generation": 33,
+      "n_submitted": [
+        22.0,
+        19.0
+      ],
+      "time": 1789727355.352702
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 187,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "cost_weight": 0.0,
+      "event": "native_ucb_reward",
+      "generation": 33,
+      "island": 0,
+      "n_completed": [
+        12.0,
+        19.0
+      ],
+      "native_update_result": [
+        5.4373117165607e-05,
+        2.84590637138421
+      ],
+      "parent_baseline": 2.84590637138421,
+      "parent_id": "6d204768-9c67-4fb6-82b0-80e9538137cc",
+      "program_id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+      "raw_reward": 2.8459607445013755,
+      "time": 1789727824.8747532
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 188,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "campaign_id": "paper_trajectory_v2",
+      "event": "native_ucb_state_restored",
+      "n_completed": [
+        12.0,
+        19.0
+      ],
+      "rewarded_program_ids": [
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      ],
+      "time": 1789727851.678868
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 189,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "event": "native_ucb_selection",
+      "generation": 34,
+      "posterior": [
+        0.2,
+        0.8
+      ],
+      "selected": [
+        0.0,
+        1.0
+      ],
+      "time": 1789727851.7939339
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 190,
+      "archive_inspiration_ids": [
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+      ],
+      "effective_islands": 3,
+      "event": "native_parent_sample",
+      "generation": 34,
+      "island": 2,
+      "parent_id": "9762cccc-190f-43a1-b74e-7bebb6713da7",
+      "time": 1789727851.8351133,
+      "top_k_inspiration_ids": [
+        "47611a92-b70c-49f6-ada8-eb6b3359f497"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 191,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "event": "native_ucb_submitted",
+      "generation": 34,
+      "n_submitted": [
+        22.0,
+        20.0
+      ],
+      "time": 1789727851.8418014
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 192,
+      "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "cost_weight": 0.0,
+      "event": "native_ucb_reward",
+      "generation": 34,
+      "island": 2,
+      "n_completed": [
+        12.0,
+        20.0
+      ],
+      "native_update_result": [
+        4.053564722816816e-05,
+        2.845955209513401
+      ],
+      "parent_baseline": 2.845955209513401,
+      "parent_id": "9762cccc-190f-43a1-b74e-7bebb6713da7",
+      "program_id": "76f5377c-4401-4d21-8dac-e4516aeedbae",
+      "raw_reward": 2.845995745160629,
+      "time": 1789728262.4801672
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 193,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "campaign_id": "paper_trajectory_v2",
+      "event": "native_ucb_state_restored",
+      "n_completed": [
+        12.0,
+        20.0
+      ],
+      "rewarded_program_ids": [
+        "105526b0-6585-42d3-882b-9c781971299a",
+        "136d67a5-e595-4d0e-bf68-fb652a102458",
+        "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+        "1a24cf47-9e53-4f99-8168-25495a1396bb",
+        "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+        "21d89a1f-3934-4d35-b956-9cff91594c04",
+        "24c1324b-b127-44aa-81ee-57d490e2b862",
+        "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+        "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+        "47611a92-b70c-49f6-ada8-eb6b3359f497",
+        "48d2b235-f61c-4e9b-853a-f59a2a181910",
+        "500f33e1-7dec-4b63-bd50-81d76a96beb3",
+        "5bc0a8a9-b9eb-40a8-abbe-292d1231f092",
+        "6181eb4c-f941-4771-a2a3-7eeeb816b9f7",
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+        "6d204768-9c67-4fb6-82b0-80e9538137cc",
+        "76f5377c-4401-4d21-8dac-e4516aeedbae",
+        "8277114e-8305-4cbe-b941-b994ae83862f",
+        "9762cccc-190f-43a1-b74e-7bebb6713da7",
+        "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+        "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+        "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+        "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+        "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+        "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+        "cc93d025-6dd2-4454-9ae7-06f16b44657c",
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313",
+        "df6aa835-8ce1-453a-b011-5d98f86ffb7d",
+        "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+        "e75b2b28-0dd5-45cb-910f-286f500ff464",
+        "e84248e7-54ff-4572-b87b-570475b563ce",
+        "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+      ],
+      "time": 1789728288.517968
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 194,
+      "arm_names": [
+        "headless/codex@gpt-6-astra?effort=xhigh",
+        "headless/codex@gpt-5.6-sol?effort=xhigh"
+      ],
+      "event": "native_ucb_selection",
+      "generation": 35,
+      "posterior": [
+        0.8,
+        0.2
+      ],
+      "selected": [
+        1.0,
+        0.0
+      ],
+      "time": 1789728288.6508079
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 195,
+      "archive_inspiration_ids": [
+        "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+      ],
+      "effective_islands": 3,
+      "event": "native_parent_sample",
+      "generation": 35,
+      "island": 0,
+      "parent_id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+      "time": 1789728288.6932063,
+      "top_k_inspiration_ids": [
+        "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+      ]
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 196,
+      "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+      "event": "native_ucb_submitted",
+      "generation": 35,
+      "n_submitted": [
+        23.0,
+        20.0
+      ],
+      "time": 1789728288.6997416
+    },
+    {
+      "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+      "_line": 197,
+      "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+      "cost_weight": 0.0,
+      "event": "native_ucb_reward",
+      "generation": 35,
+      "island": 0,
+      "n_completed": [
+        13.0,
+        20.0
+      ],
+      "native_update_result": [
+        0.0,
+        2.8459467442376742
+      ],
+      "parent_baseline": 2.8459467442376742,
+      "parent_id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+      "program_id": "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e",
+      "raw_reward": 2.8459399068995874,
+      "time": 1789728685.2586932
+    }
+  ],
+  "observed_at_utc": "2026-09-18T10:54:51.917469+00:00",
+  "prompt_rows": [
+    {
+      "attributed_programs": [
+        {
+          "current_island": 1,
+          "generation": 2,
+          "id": "e75b2b28-0dd5-45cb-910f-286f500ff464"
+        },
+        {
+          "current_island": 2,
+          "generation": 3,
+          "id": "8277114e-8305-4cbe-b941-b994ae83862f"
+        },
+        {
+          "current_island": 1,
+          "generation": 4,
+          "id": "48d2b235-f61c-4e9b-853a-f59a2a181910"
+        },
+        {
+          "current_island": 2,
+          "generation": 5,
+          "id": "c980df14-7c2d-4f90-b98a-71c53f0fdf99"
+        },
+        {
+          "current_island": 0,
+          "generation": 6,
+          "id": "1a24cf47-9e53-4f99-8168-25495a1396bb"
+        },
+        {
+          "current_island": 2,
+          "generation": 7,
+          "id": "136d67a5-e595-4d0e-bf68-fb652a102458"
+        },
+        {
+          "current_island": 0,
+          "generation": 8,
+          "id": "33db1b8b-1da6-43f8-94dc-1fb6850efab5"
+        },
+        {
+          "current_island": 2,
+          "generation": 9,
+          "id": "1f2fe774-ed5b-408e-a363-e3e9b8db2a85"
+        },
+        {
+          "current_island": 1,
+          "generation": 10,
+          "id": "9ba92f8a-50a2-4878-8992-8657269d3a3f"
+        },
+        {
+          "current_island": 2,
+          "generation": 11,
+          "id": "992af3e2-f8ec-4171-b240-b2cec3c4aa33"
+        },
+        {
+          "current_island": 0,
+          "generation": 16,
+          "id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+        },
+        {
+          "current_island": 1,
+          "generation": 21,
+          "id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+        },
+        {
+          "current_island": 0,
+          "generation": 25,
+          "id": "105526b0-6585-42d3-882b-9c781971299a"
+        }
+      ],
+      "correct_program_count": 12,
+      "created_during_window": false,
+      "description": "Only these search instructions may coevolve.",
+      "fitness": 0.4069696969696969,
+      "generation": 0,
+      "id": "67b8aa00-ce1b-4a8a-aa44-a11743b98512",
+      "in_prompt_archive": true,
+      "name": "initial_search_instructions",
+      "parent_id": null,
+      "patch_type": "init",
+      "program_count": 13,
+      "program_generation": 0,
+      "text_sha256": "fb987a2eff2bd428f95307523cf3867f33bf669428ac13454f8696b82b6418a2",
+      "timestamp": 1789666060.1547127,
+      "total_improvement": 8.209177204985942
+    },
+    {
+      "attributed_programs": [
+        {
+          "current_island": 1,
+          "generation": 23,
+          "id": "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+        },
+        {
+          "current_island": 1,
+          "generation": 24,
+          "id": "6181eb4c-f941-4771-a2a3-7eeeb816b9f7"
+        },
+        {
+          "current_island": 2,
+          "generation": 26,
+          "id": "47611a92-b70c-49f6-ada8-eb6b3359f497"
+        },
+        {
+          "current_island": 2,
+          "generation": 27,
+          "id": "df6aa835-8ce1-453a-b011-5d98f86ffb7d"
+        },
+        {
+          "current_island": 2,
+          "generation": 28,
+          "id": "fde49171-5f4c-4be3-b347-bb5d6225bbab"
+        },
+        {
+          "current_island": 0,
+          "generation": 29,
+          "id": "6d204768-9c67-4fb6-82b0-80e9538137cc"
+        },
+        {
+          "current_island": 2,
+          "generation": 30,
+          "id": "9762cccc-190f-43a1-b74e-7bebb6713da7"
+        },
+        {
+          "current_island": 1,
+          "generation": 31,
+          "id": "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0"
+        },
+        {
+          "current_island": 1,
+          "generation": 32,
+          "id": "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8"
+        }
+      ],
+      "correct_program_count": 9,
+      "created_during_window": false,
+      "description": "1. Program 1 evaluates realizable balanced partitions using actor-weighted clique utility. Encode its exact cohort-count scan, population weights and tie handling, replacing the vague suggestion to optimize actual group sizes.\n2. Program 1 combines a time-93 completion check with a time-95 hard cutoff. Encode its precise completion predicate: no unblocked partner is missing on either layer. Store the handoff permanently in separate Memory and apply it to both action and acceptance.\nProgram 1 reports 2.8459596 versus 2.8459563 for Programs 2\u20133. This tiny development difference supports testing the combined design, without establishing either change\u2019s independent benefit. Preserve the simpler time-93 policy as a comparison and change one mechanism at a time.",
+      "fitness": 0.8098144027058098,
+      "generation": 2,
+      "id": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "in_prompt_archive": true,
+      "name": "balanced_partition_completion",
+      "parent_id": "e88db60f-c258-4e34-998c-02d7df23abdf",
+      "patch_type": "diff",
+      "program_count": 9,
+      "program_generation": 22,
+      "text_sha256": "04e06cf01e090bb4374b2751a9a91897cdcc7790d22cde690a094a8b622e6d2e",
+      "timestamp": 1789685921.4744456,
+      "total_improvement": 6.576868064378516e-05
+    },
+    {
+      "attributed_programs": [
+        {
+          "current_island": 0,
+          "generation": 33,
+          "id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+        },
+        {
+          "current_island": 2,
+          "generation": 34,
+          "id": "76f5377c-4401-4d21-8dac-e4516aeedbae"
+        },
+        {
+          "current_island": 0,
+          "generation": 35,
+          "id": "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e"
+        }
+      ],
+      "correct_program_count": 3,
+      "created_during_window": true,
+      "description": "- All three leaders directly optimize actor-weighted utility across realizable balanced partitions. The rewrite makes this the structural baseline and specifies its singleton baseline and tie rules.\n- The best program prioritizes overlapping ties within the sparser layer before considering the other layer. The rewrite specifies its two-pass reservoir sampling and random-draw behavior.\n- Successful implementations combine persistent partner failure memory, permissive within-cohort acceptance, and precise rewiring cleanup. These behaviors are explicit, including their different effects on proposals and acceptance.\n- Hard time-93 recovery and completion-aware extensions produce nearly equal scores. The rewrite separates timing experiments from partner-selection changes.\n- Future changes must address a concrete behavioral bottleneck while preserving the selected parent\u2019s unrelated behavior. Tiny development differences remain provisional.",
+      "fitness": 0.827854171971819,
+      "generation": 3,
+      "id": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "in_prompt_archive": true,
+      "name": "overlap_first_balanced_cohorts",
+      "parent_id": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "patch_type": "full",
+      "program_count": 3,
+      "program_generation": 32,
+      "text_sha256": "5b138a2641a96df0224c78e9db3358d2b42fe309c44a6aa38dfacab58edca59b",
+      "timestamp": 1789727311.5972087,
+      "total_improvement": 8.807142630695708e-05
+    },
+    {
+      "attributed_programs": [
+        {
+          "current_island": 0,
+          "generation": 12,
+          "id": "bbcce33c-c94b-46e3-935f-244a5575cb1d"
+        },
+        {
+          "current_island": 2,
+          "generation": 13,
+          "id": "e84248e7-54ff-4572-b87b-570475b563ce"
+        },
+        {
+          "current_island": 1,
+          "generation": 15,
+          "id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd"
+        },
+        {
+          "current_island": 1,
+          "generation": 17,
+          "id": "cc93d025-6dd2-4454-9ae7-06f16b44657c"
+        },
+        {
+          "current_island": 1,
+          "generation": 18,
+          "id": "24c1324b-b127-44aa-81ee-57d490e2b862"
+        },
+        {
+          "current_island": 0,
+          "generation": 19,
+          "id": "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+        },
+        {
+          "current_island": 2,
+          "generation": 20,
+          "id": "21d89a1f-3934-4d35-b956-9cff91594c04"
+        },
+        {
+          "current_island": 2,
+          "generation": 22,
+          "id": "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+        }
+      ],
+      "correct_program_count": 8,
+      "created_during_window": false,
+      "description": "- Extracted the strongest bundle: exhaustive utility-based degree selection, balanced actor-ID cohorts shared across layers, coordinated proposals and acceptance, layer balancing, persistent pruning, and failed-partner memory.\n- Incorporated concrete implementation patterns: reservoir sampling, explicit action fallbacks, refreshed neighbors after rewiring, and policy state confined to supplied Memory.\n- Preserved the best policy\u2019s conditional construction window and late return to original behavior while treating its small measured advantage as uncertain.\n- Added focused improvement hypotheses, including optimizing realized cohort sizes and revisiting persistent rejection memory, without claiming that individual components caused the observed gains.",
+      "fitness": 0.7329545454545454,
+      "generation": 1,
+      "id": "e88db60f-c258-4e34-998c-02d7df23abdf",
+      "in_prompt_archive": true,
+      "name": "balanced_cohort_refinement",
+      "parent_id": "67b8aa00-ce1b-4a8a-aa44-a11743b98512",
+      "patch_type": "full",
+      "program_count": 8,
+      "program_generation": 11,
+      "text_sha256": "b74a4306698e91b2d00e2932e8a750d1c1479e8c5c953e875513ae532e20ad82",
+      "timestamp": 1789678092.7545757,
+      "total_improvement": 0.004608528664200584
+    }
+  ],
+  "proposal_range": [
+    31,
+    35
+  ],
+  "proposals": [
+    {
+      "accepted_source_sha256": "00d985678e34e618191d6c54bc693f7ffab40b631e3face43e257ee1833f4d58",
+      "archive_inspirations": [
+        {
+          "current_island": 1,
+          "generation": 21,
+          "id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+        }
+      ],
+      "author_description": "Combines balanced cohort construction with direct population-weighted partition optimization and a completion-aware recovery handoff. It retains the stronger simple partner sampling, shared failure memory, denser-layer pruning, and two-layer rewiring sequence. Cohort behavior runs from time 50 to 93, extends at most to time 95 only while an actor still has an eligible missing cohort link, and then permanently returns that actor\u2019s actions and acceptance decisions to original behavior. This avoids the current program\u2019s underperforming population-wide strong-incentive override while allowing nearly completed cohorts a short, bounded finishing window.",
+      "combined_score": 2.845959604945028,
+      "correct": {
+        "correct": true,
+        "error": null
+      },
+      "current_island": 1,
+      "effective_islands_at_sampling": 3,
+      "embedding": {
+        "dimensions": 768,
+        "present": true,
+        "vector_sha256": "2160bdea4613f18138d0b4edb009a815024e889b72390c4e6a81079669828484"
+      },
+      "failure": null,
+      "generation": 31,
+      "mutation_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "novelty": {
+        "novelty_attempt": 1,
+        "novelty_checks_performed": 0,
+        "novelty_cost": 0.0,
+        "novelty_explanation": "",
+        "similarity_scores": [
+          0.7068068981170654,
+          0.8601549863815308,
+          0.9295164942741394,
+          0.9526576399803162,
+          0.9707475304603577,
+          0.9608178734779358,
+          0.9471074938774109,
+          0.9359850883483887,
+          0.9515278339385986,
+          0.9572766423225403
+        ]
+      },
+      "parent": {
+        "current_island": 1,
+        "generation": 15,
+        "id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd"
+      },
+      "patch_name": "completion_aware_balanced_cohorts",
+      "patch_type": "cross",
+      "program_id": "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+      "prompt_id": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "public_metrics": {
+        "development_trajectories": 288,
+        "external_conditions": 288,
+        "history_seed_families": 36,
+        "raw_mean_terminal_population_utility_difference": 607.0136805555555
+      },
+      "raw_gain_over_parent": 0.012638888888886868,
+      "references": [
+        "results/paper_trajectory_v2/search/gen_31/accepted-job.json",
+        "results/paper_trajectory_v2/search/gen_31/results/correct.json",
+        "results/paper_trajectory_v2/search/gen_31/results/metrics.json"
+      ],
+      "sampled_island": 1,
+      "search_events": [
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 174,
+          "arm_names": [
+            "headless/codex@gpt-6-astra?effort=xhigh",
+            "headless/codex@gpt-5.6-sol?effort=xhigh"
+          ],
+          "event": "native_ucb_selection",
+          "generation": 31,
+          "posterior": [
+            0.2,
+            0.8
+          ],
+          "selected": [
+            0.0,
+            1.0
+          ],
+          "time": 1789725441.2353754
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 175,
+          "archive_inspiration_ids": [
+            "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+          ],
+          "effective_islands": 3,
+          "event": "native_parent_sample",
+          "generation": 31,
+          "island": 1,
+          "parent_id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+          "time": 1789725441.2833989,
+          "top_k_inspiration_ids": [
+            "24c1324b-b127-44aa-81ee-57d490e2b862"
+          ]
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 176,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "event": "native_ucb_submitted",
+          "generation": 31,
+          "n_submitted": [
+            21.0,
+            18.0
+          ],
+          "time": 1789725441.291166
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 177,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "cost_weight": 0.0,
+          "event": "native_ucb_reward",
+          "generation": 31,
+          "island": 1,
+          "n_completed": [
+            11.0,
+            18.0
+          ],
+          "native_update_result": [
+            5.9256930085016535e-05,
+            2.845900348014943
+          ],
+          "parent_baseline": 2.845900348014943,
+          "parent_id": "172965e7-9e12-4ec2-b066-f70fbb57e3cd",
+          "program_id": "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0",
+          "raw_reward": 2.845959604945028,
+          "time": 1789726307.9180038
+        }
+      ],
+      "source_sha256": "00d985678e34e618191d6c54bc693f7ffab40b631e3face43e257ee1833f4d58",
+      "status": "persisted_valid",
+      "top_inspirations": [
+        {
+          "current_island": 1,
+          "generation": 18,
+          "id": "24c1324b-b127-44aa-81ee-57d490e2b862"
+        }
+      ]
+    },
+    {
+      "accepted_source_sha256": "144c0519e6b814425598a53d84313d9c370c0ab7d0b9a33930f2ac095cd59c6f",
+      "archive_inspirations": [
+        {
+          "current_island": 1,
+          "generation": 23,
+          "id": "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+        }
+      ],
+      "author_description": "Replace uniform partner selection with one local ranking rule: prefer eligible cohort members already connected on the opposite layer, then maximize common within-cohort neighbors on the addition layer, reservoir-sampling ties. If no eligible overlap partner exists, preserve the original uniform selection and random-draw order. Count common neighbors only through permitted same-layer neighbor queries.\nThis may accelerate overlap and triangle formation before the unchanged time-93 recovery handoff. Acceptance, failure memory, cohort targets and pruning remain unchanged, including consent to finite negative-gain cohort offers. The risk is concentrating construction around existing clusters while delaying other links. This is an untested hypothesis; support requires improved full-panel terminal utility, assessed across the 36 history families with actor-level losses retained.",
+      "combined_score": 2.8459493489378977,
+      "correct": {
+        "correct": true,
+        "error": null
+      },
+      "current_island": 1,
+      "effective_islands_at_sampling": 3,
+      "embedding": {
+        "dimensions": 768,
+        "present": true,
+        "vector_sha256": "69acec6588feffc97de2246894d320d2944e816b598fae3bfbf75e04a7a7308a"
+      },
+      "failure": null,
+      "generation": 32,
+      "mutation_model": "headless/codex@gpt-6-astra?effort=xhigh",
+      "novelty": {
+        "novelty_attempt": 1,
+        "novelty_checks_performed": 0,
+        "novelty_cost": 0.0,
+        "novelty_explanation": "",
+        "similarity_scores": [
+          0.7109872102737427,
+          0.8570524454116821,
+          0.9394100308418274,
+          0.9495095014572144,
+          0.9274364709854126,
+          0.9320405721664429,
+          0.9719079732894897,
+          0.9800803661346436,
+          0.9758397936820984,
+          0.9750411510467529,
+          0.9504606127738953
+        ]
+      },
+      "parent": {
+        "current_island": 1,
+        "generation": 21,
+        "id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0"
+      },
+      "patch_name": "overlap_triangle_priority",
+      "patch_type": "diff",
+      "program_id": "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+      "prompt_id": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "public_metrics": {
+        "development_trajectories": 288,
+        "external_conditions": 288,
+        "history_seed_families": 36,
+        "raw_mean_terminal_population_utility_difference": 607.0114930555555
+      },
+      "raw_gain_over_parent": -0.00017361111110858474,
+      "references": [
+        "results/paper_trajectory_v2/search/gen_32/accepted-job.json",
+        "results/paper_trajectory_v2/search/gen_32/results/correct.json",
+        "results/paper_trajectory_v2/search/gen_32/results/metrics.json"
+      ],
+      "sampled_island": 1,
+      "search_events": [
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 179,
+          "arm_names": [
+            "headless/codex@gpt-6-astra?effort=xhigh",
+            "headless/codex@gpt-5.6-sol?effort=xhigh"
+          ],
+          "event": "native_ucb_selection",
+          "generation": 32,
+          "posterior": [
+            0.2,
+            0.8
+          ],
+          "selected": [
+            1.0,
+            0.0
+          ],
+          "time": 1789726341.8974152
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 180,
+          "archive_inspiration_ids": [
+            "5bc0a8a9-b9eb-40a8-abbe-292d1231f092"
+          ],
+          "effective_islands": 3,
+          "event": "native_parent_sample",
+          "generation": 32,
+          "island": 1,
+          "parent_id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+          "time": 1789726341.9405046,
+          "top_k_inspiration_ids": [
+            "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0"
+          ]
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 181,
+          "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+          "event": "native_ucb_submitted",
+          "generation": 32,
+          "n_submitted": [
+            22.0,
+            18.0
+          ],
+          "time": 1789726341.956064
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 182,
+          "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+          "cost_weight": 0.0,
+          "event": "native_ucb_reward",
+          "generation": 32,
+          "island": 1,
+          "n_completed": [
+            12.0,
+            18.0
+          ],
+          "native_update_result": [
+            0.0,
+            2.8459501629067177
+          ],
+          "parent_baseline": 2.8459501629067177,
+          "parent_id": "dfdc96a3-5f6e-49e3-bff1-89f6c89492e0",
+          "program_id": "a7b57ffd-d0cd-427b-a94b-ecaaf50518b8",
+          "raw_reward": 2.8459493489378977,
+          "time": 1789727311.6710944
+        }
+      ],
+      "source_sha256": "144c0519e6b814425598a53d84313d9c370c0ab7d0b9a33930f2ac095cd59c6f",
+      "status": "persisted_valid",
+      "top_inspirations": [
+        {
+          "current_island": 1,
+          "generation": 31,
+          "id": "a1b7a85e-6cd8-416a-8c9f-1624d5e082a0"
+        }
+      ]
+    },
+    {
+      "accepted_source_sha256": "e66541db2945f22f68cd3a7cc06dc9e8d9faafc6842f30325b69afcb2d08e5b1",
+      "archive_inspirations": [
+        {
+          "current_island": 0,
+          "generation": 16,
+          "id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+        }
+      ],
+      "author_description": "Shorten the shared cohort-construction window from time 95 to time 93 while preserving every other mechanism. This switches both action and acceptance back to original behavior together, giving the completed cohort structures seven terminal rounds for decentralized cleanup and adaptation. The saved evidence identifies the hard time-93 handoff as the strongest evaluated timing variant, while the current time-95 policy scores slightly lower.",
+      "combined_score": 2.8459607445013755,
+      "correct": {
+        "correct": true,
+        "error": null
+      },
+      "current_island": 0,
+      "effective_islands_at_sampling": 3,
+      "embedding": {
+        "dimensions": 768,
+        "present": true,
+        "vector_sha256": "04ca197a1fe552ed4f79db73151c87452135991e2ce16f54b8e47468bff3580a"
+      },
+      "failure": null,
+      "generation": 33,
+      "mutation_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "novelty": {
+        "novelty_attempt": 1,
+        "novelty_checks_performed": 1,
+        "novelty_cost": 0.10111,
+        "novelty_explanation": "**NOVEL**: The construction-phase cutoff changes from `95.0` to `93.0`. For `93.0 <= time < 95.0` with `triangleBenefit() >= 0.4`, the proposed code uses original turn and acceptance behavior instead of cohort-based rules. This timing hyperparameter change can alter network evolution and outcomes; all other logic is unchanged.",
+        "similarity_scores": [
+          0.695976734161377,
+          0.8267310857772827,
+          0.9613837003707886,
+          0.963740885257721,
+          0.9586747884750366,
+          0.9902927875518799,
+          0.9709347486495972,
+          0.9995416402816772
+        ]
+      },
+      "parent": {
+        "current_island": 0,
+        "generation": 29,
+        "id": "6d204768-9c67-4fb6-82b0-80e9538137cc"
+      },
+      "patch_name": "handoff_at_93",
+      "patch_type": "diff",
+      "program_id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+      "prompt_id": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "public_metrics": {
+        "development_trajectories": 288,
+        "external_conditions": 288,
+        "history_seed_families": 36,
+        "raw_mean_terminal_population_utility_difference": 607.0139236111111
+      },
+      "raw_gain_over_parent": 0.011597222222121673,
+      "references": [
+        "results/paper_trajectory_v2/search/gen_33/accepted-job.json",
+        "results/paper_trajectory_v2/search/gen_33/results/correct.json",
+        "results/paper_trajectory_v2/search/gen_33/results/metrics.json"
+      ],
+      "sampled_island": 0,
+      "search_events": [
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 184,
+          "arm_names": [
+            "headless/codex@gpt-6-astra?effort=xhigh",
+            "headless/codex@gpt-5.6-sol?effort=xhigh"
+          ],
+          "event": "native_ucb_selection",
+          "generation": 33,
+          "posterior": [
+            0.2,
+            0.8
+          ],
+          "selected": [
+            0.0,
+            1.0
+          ],
+          "time": 1789727355.2976494
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 185,
+          "archive_inspiration_ids": [
+            "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+          ],
+          "effective_islands": 3,
+          "event": "native_parent_sample",
+          "generation": 33,
+          "island": 0,
+          "parent_id": "6d204768-9c67-4fb6-82b0-80e9538137cc",
+          "time": 1789727355.346188,
+          "top_k_inspiration_ids": [
+            "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+          ]
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 186,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "event": "native_ucb_submitted",
+          "generation": 33,
+          "n_submitted": [
+            22.0,
+            19.0
+          ],
+          "time": 1789727355.352702
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 187,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "cost_weight": 0.0,
+          "event": "native_ucb_reward",
+          "generation": 33,
+          "island": 0,
+          "n_completed": [
+            12.0,
+            19.0
+          ],
+          "native_update_result": [
+            5.4373117165607e-05,
+            2.84590637138421
+          ],
+          "parent_baseline": 2.84590637138421,
+          "parent_id": "6d204768-9c67-4fb6-82b0-80e9538137cc",
+          "program_id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a",
+          "raw_reward": 2.8459607445013755,
+          "time": 1789727824.8747532
+        }
+      ],
+      "source_sha256": "e66541db2945f22f68cd3a7cc06dc9e8d9faafc6842f30325b69afcb2d08e5b1",
+      "status": "persisted_valid",
+      "top_inspirations": [
+        {
+          "current_island": 0,
+          "generation": 19,
+          "id": "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+        }
+      ]
+    },
+    {
+      "accepted_source_sha256": "3ec3c014719600a2ed45e1ab73b89a2b473818cfe045e2819c70c685ab258d4e",
+      "archive_inspirations": [
+        {
+          "current_island": 2,
+          "generation": 22,
+          "id": "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+        }
+      ],
+      "author_description": "Replace contiguous actor-ID intervals with balanced round-robin cohorts defined by `actor % cohortCount`. The optimized cohort count, overlap-first partner sampling, failure memory, acceptance gate, action sequencing, and paired cleanup remain unchanged. This tests whether dispersing cohort members across actor IDs improves construction and recovery while preserving the exact optimized cohort-size distribution.",
+      "combined_score": 2.845995745160629,
+      "correct": {
+        "correct": true,
+        "error": null
+      },
+      "current_island": 2,
+      "effective_islands_at_sampling": 3,
+      "embedding": {
+        "dimensions": 768,
+        "present": true,
+        "vector_sha256": "b68459454d3b8358c773689b503f42b420a5052ac0f1bcb69e540a5b6c96b1cd"
+      },
+      "failure": null,
+      "generation": 34,
+      "mutation_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "novelty": {
+        "novelty_attempt": 1,
+        "novelty_checks_performed": 0,
+        "novelty_cost": 0.0,
+        "novelty_explanation": "",
+        "similarity_scores": [
+          0.6470803022384644,
+          0.8446884155273438,
+          0.9326732754707336,
+          0.7876967191696167,
+          0.7959633469581604,
+          0.9238528609275818,
+          0.9275040626525879,
+          0.9347449541091919,
+          0.9543230533599854,
+          0.9759191274642944,
+          0.9519808888435364,
+          0.9354004859924316,
+          0.9737986922264099
+        ]
+      },
+      "parent": {
+        "current_island": 2,
+        "generation": 30,
+        "id": "9762cccc-190f-43a1-b74e-7bebb6713da7"
+      },
+      "patch_name": "round_robin_cohorts",
+      "patch_type": "full",
+      "program_id": "76f5377c-4401-4d21-8dac-e4516aeedbae",
+      "prompt_id": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "public_metrics": {
+        "development_trajectories": 288,
+        "external_conditions": 288,
+        "history_seed_families": 36,
+        "raw_mean_terminal_population_utility_difference": 607.0213888888889
+      },
+      "raw_gain_over_parent": 0.008645833333275732,
+      "references": [
+        "results/paper_trajectory_v2/search/gen_34/accepted-job.json",
+        "results/paper_trajectory_v2/search/gen_34/results/correct.json",
+        "results/paper_trajectory_v2/search/gen_34/results/metrics.json"
+      ],
+      "sampled_island": 2,
+      "search_events": [
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 189,
+          "arm_names": [
+            "headless/codex@gpt-6-astra?effort=xhigh",
+            "headless/codex@gpt-5.6-sol?effort=xhigh"
+          ],
+          "event": "native_ucb_selection",
+          "generation": 34,
+          "posterior": [
+            0.2,
+            0.8
+          ],
+          "selected": [
+            0.0,
+            1.0
+          ],
+          "time": 1789727851.7939339
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 190,
+          "archive_inspiration_ids": [
+            "500f33e1-7dec-4b63-bd50-81d76a96beb3"
+          ],
+          "effective_islands": 3,
+          "event": "native_parent_sample",
+          "generation": 34,
+          "island": 2,
+          "parent_id": "9762cccc-190f-43a1-b74e-7bebb6713da7",
+          "time": 1789727851.8351133,
+          "top_k_inspiration_ids": [
+            "47611a92-b70c-49f6-ada8-eb6b3359f497"
+          ]
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 191,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "event": "native_ucb_submitted",
+          "generation": 34,
+          "n_submitted": [
+            22.0,
+            20.0
+          ],
+          "time": 1789727851.8418014
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 192,
+          "arm": "headless/codex@gpt-5.6-sol?effort=xhigh",
+          "cost_weight": 0.0,
+          "event": "native_ucb_reward",
+          "generation": 34,
+          "island": 2,
+          "n_completed": [
+            12.0,
+            20.0
+          ],
+          "native_update_result": [
+            4.053564722816816e-05,
+            2.845955209513401
+          ],
+          "parent_baseline": 2.845955209513401,
+          "parent_id": "9762cccc-190f-43a1-b74e-7bebb6713da7",
+          "program_id": "76f5377c-4401-4d21-8dac-e4516aeedbae",
+          "raw_reward": 2.845995745160629,
+          "time": 1789728262.4801672
+        }
+      ],
+      "source_sha256": "3ec3c014719600a2ed45e1ab73b89a2b473818cfe045e2819c70c685ab258d4e",
+      "status": "persisted_valid",
+      "top_inspirations": [
+        {
+          "current_island": 2,
+          "generation": 26,
+          "id": "47611a92-b70c-49f6-ada8-eb6b3359f497"
+        }
+      ]
+    },
+    {
+      "accepted_source_sha256": "69d4fee3edbdb8f5330c02b5b3eee70fb6333d87e7edf50e41c52c85249b21aa",
+      "archive_inspirations": [
+        {
+          "current_island": 0,
+          "generation": 19,
+          "id": "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+        }
+      ],
+      "author_description": "When total layer degrees tie, choose the layer with more eligible cohort partners already connected on the opposite layer. Exclude self and remembered failures, and retain layer 0 when counts tie. The counting step consumes no randomness; existing reservoir sampling remains unchanged.\nThis targets recovery states where external ties or failed partners make equally populated layers offer different overlap opportunities. It may accelerate spillover accumulation during cohort construction. Partner selection remains uniform within the chosen layer\u2019s eligible pool, so overlap is not guaranteed. The change could also delay useful triangle closure. Partition arithmetic, acceptance, pruning, memory and phase transitions retain their current behavior.\nThis proposal is unevaluated. Improvement requires an authorized full-panel comparison, assessed across the 36 history families and available shocked/unshocked outcomes.",
+      "combined_score": 2.8459399068995874,
+      "correct": {
+        "correct": true,
+        "error": null
+      },
+      "current_island": 0,
+      "effective_islands_at_sampling": 3,
+      "embedding": {
+        "dimensions": 768,
+        "present": true,
+        "vector_sha256": "12a3c01b0b310ccd616c35bf6db36de977b3b3f2e5c49bba43a0958d785c43c9"
+      },
+      "failure": null,
+      "generation": 35,
+      "mutation_model": "headless/codex@gpt-6-astra?effort=xhigh",
+      "novelty": {
+        "novelty_attempt": 1,
+        "novelty_checks_performed": 0,
+        "novelty_cost": 0.0,
+        "novelty_explanation": "",
+        "similarity_scores": [
+          0.685700535774231,
+          0.8109583258628845,
+          0.9547234773635864,
+          0.9405942559242249,
+          0.972987174987793,
+          0.9422786235809326,
+          0.9553342461585999,
+          0.9473685622215271,
+          0.9477913975715637
+        ]
+      },
+      "parent": {
+        "current_island": 0,
+        "generation": 16,
+        "id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038"
+      },
+      "patch_name": "overlap_availability_tiebreak",
+      "patch_type": "diff",
+      "program_id": "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e",
+      "prompt_id": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "public_metrics": {
+        "development_trajectories": 288,
+        "external_conditions": 288,
+        "history_seed_families": 36,
+        "raw_mean_terminal_population_utility_difference": 607.0094791666667
+      },
+      "raw_gain_over_parent": -0.0014583333332893744,
+      "references": [
+        "results/paper_trajectory_v2/search/gen_35/accepted-job.json",
+        "results/paper_trajectory_v2/search/gen_35/results/correct.json",
+        "results/paper_trajectory_v2/search/gen_35/results/metrics.json"
+      ],
+      "sampled_island": 0,
+      "search_events": [
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 194,
+          "arm_names": [
+            "headless/codex@gpt-6-astra?effort=xhigh",
+            "headless/codex@gpt-5.6-sol?effort=xhigh"
+          ],
+          "event": "native_ucb_selection",
+          "generation": 35,
+          "posterior": [
+            0.8,
+            0.2
+          ],
+          "selected": [
+            1.0,
+            0.0
+          ],
+          "time": 1789728288.6508079
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 195,
+          "archive_inspiration_ids": [
+            "dd0e70d3-7a66-401b-9cf4-6b4e1bbb8313"
+          ],
+          "effective_islands": 3,
+          "event": "native_parent_sample",
+          "generation": 35,
+          "island": 0,
+          "parent_id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+          "time": 1789728288.6932063,
+          "top_k_inspiration_ids": [
+            "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+          ]
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 196,
+          "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+          "event": "native_ucb_submitted",
+          "generation": 35,
+          "n_submitted": [
+            23.0,
+            20.0
+          ],
+          "time": 1789728288.6997416
+        },
+        {
+          "_evidence_path": "results/paper_trajectory_v2/search/phase-b-search-events.jsonl",
+          "_line": 197,
+          "arm": "headless/codex@gpt-6-astra?effort=xhigh",
+          "cost_weight": 0.0,
+          "event": "native_ucb_reward",
+          "generation": 35,
+          "island": 0,
+          "n_completed": [
+            13.0,
+            20.0
+          ],
+          "native_update_result": [
+            0.0,
+            2.8459467442376742
+          ],
+          "parent_baseline": 2.8459467442376742,
+          "parent_id": "2fef625b-4dff-41c2-a7cf-8acc6a56e038",
+          "program_id": "4b2aefe3-6ec5-4a10-9bbc-67acb320ef2e",
+          "raw_reward": 2.8459399068995874,
+          "time": 1789728685.2586932
+        }
+      ],
+      "source_sha256": "69d4fee3edbdb8f5330c02b5b3eee70fb6333d87e7edf50e41c52c85249b21aa",
+      "status": "persisted_valid",
+      "top_inspirations": [
+        {
+          "current_island": 0,
+          "generation": 33,
+          "id": "6cb252e8-d682-4aec-9aae-2aff65a32c6a"
+        }
+      ]
+    }
+  ],
+  "schema": "paper-v2-native-mechanism-audit-v1",
+  "scope": {
+    "atomic_checkpoint": false,
+    "live_campaign_writes": 0,
+    "new_model_calls": 0,
+    "new_simulations": 0,
+    "note": "Separate saved-file reads and SQLite read-only transactions; rerun after drain for final publication.",
+    "pickle_loads": 0
+  },
+  "warnings": [],
+  "window": {
+    "end_exclusive_epoch": null,
+    "end_rule": "First native event attributed to a generation above requested last, or audit time",
+    "start_epoch": 1789725441.0423121,
+    "start_rule": "Latest native UCB restore at/before first selected generation; otherwise first event"
+  },
+  "window_controller_event_counts": {
+    "native_meta_final_deferred": 5,
+    "native_meta_memory_updated": 1,
+    "native_sampling": 5,
+    "paper_task_state_verified": 5,
+    "seed_verified": 5
+  },
+  "window_search_event_counts": {
+    "native_parent_sample": 5,
+    "native_ucb_reward": 5,
+    "native_ucb_selection": 5,
+    "native_ucb_state_restored": 5,
+    "native_ucb_submitted": 5
+  },
+  "window_usage_counts": [
+    {
+      "count": 10,
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "count": 1,
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": "periodic.recommendations"
+    },
+    {
+      "count": 1,
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": "periodic.scratchpad"
+    },
+    {
+      "count": 3,
+      "role": "mutation",
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "count": 2,
+      "role": "mutation",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "count": 1,
+      "role": "novelty",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": "query"
+    },
+    {
+      "count": 1,
+      "role": "prompt",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "status": "returned",
+      "subrole": "evolution"
+    }
+  ],
+  "window_usage_receipts": [
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 64.96115323100003,
+      "finished_at": 1789725510.6952593,
+      "id": "143b8d4d8eba429da3a56048f8ce7636",
+      "is_retry": false,
+      "model_requested": "gpt-5.6-sol",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/143b8d4d8eba429da3a56048f8ce7636.json",
+      "provider_usage": {
+        "input_tokens": 17934,
+        "output_tokens": 3388
+      },
+      "role": "mutation",
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "started_at": 1789725441.2925878,
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 29.76964089500052,
+      "finished_at": 1789725940.2749507,
+      "id": "a2cd502a91fc470eaeea71257b94c6d3",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/a2cd502a91fc470eaeea71257b94c6d3.json",
+      "provider_usage": {
+        "input_tokens": 6449,
+        "output_tokens": 680
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.37013,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 50.74849519200052,
+      "finished_at": 1789725961.3934162,
+      "id": "f10e50825e2d4275bed0ff2fe448ca3f",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/f10e50825e2d4275bed0ff2fe448ca3f.json",
+      "provider_usage": {
+        "input_tokens": 6354,
+        "output_tokens": 482
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5095267,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 69.49435331800032,
+      "finished_at": 1789725982.2747886,
+      "id": "304f677ec0ea43b4919f145adaacfb00",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/304f677ec0ea43b4919f145adaacfb00.json",
+      "provider_usage": {
+        "input_tokens": 6262,
+        "output_tokens": 431
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5122917,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 97.5034418690002,
+      "finished_at": 1789726012.4585795,
+      "id": "17e28e0f86f5427f9f311137ee26ce3e",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/17e28e0f86f5427f9f311137ee26ce3e.json",
+      "provider_usage": {
+        "input_tokens": 6442,
+        "output_tokens": 599
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5154767,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 120.0135787700001,
+      "finished_at": 1789726034.971476,
+      "id": "df74e7cc67434e908c9d06802ce7c91c",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/df74e7cc67434e908c9d06802ce7c91c.json",
+      "provider_usage": {
+        "input_tokens": 6363,
+        "output_tokens": 544
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5565724,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 141.91913411699989,
+      "finished_at": 1789726059.0341814,
+      "id": "c8fd818af5c143a6acb23b2f9c95a09d",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/c8fd818af5c143a6acb23b2f9c95a09d.json",
+      "provider_usage": {
+        "input_tokens": 6492,
+        "output_tokens": 517
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5590296,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 164.30381285899966,
+      "finished_at": 1789726083.57893,
+      "id": "bb82c6a4f61e4a8bba777941bd1dc198",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/bb82c6a4f61e4a8bba777941bd1dc198.json",
+      "provider_usage": {
+        "input_tokens": 6581,
+        "output_tokens": 536
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5616693,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 192.34047887199995,
+      "finished_at": 1789726113.8024144,
+      "id": "a223dad88f654c369a90929b350395ad",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/a223dad88f654c369a90929b350395ad.json",
+      "provider_usage": {
+        "input_tokens": 6434,
+        "output_tokens": 549
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5636187,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 211.90555864399994,
+      "finished_at": 1789726133.3694685,
+      "id": "2dcf373f94a049d99538cd73b4e33973",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/2dcf373f94a049d99538cd73b4e33973.json",
+      "provider_usage": {
+        "input_tokens": 6516,
+        "output_tokens": 388
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.5779266,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 236.2172378310006,
+      "finished_at": 1789726159.8583798,
+      "id": "affd128c3dff447dbec74a4082209812",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/affd128c3dff447dbec74a4082209812.json",
+      "provider_usage": {
+        "input_tokens": 6377,
+        "output_tokens": 645
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789725908.580792,
+      "status": "returned",
+      "subrole": "periodic.individual_summary"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 82.65645571499954,
+      "finished_at": 1789726248.9783561,
+      "id": "41497c33a8df4c068b83a171f816a4bf",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/41497c33a8df4c068b83a171f816a4bf.json",
+      "provider_usage": {
+        "input_tokens": 10034,
+        "output_tokens": 2725
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789726159.86295,
+      "status": "returned",
+      "subrole": "periodic.scratchpad"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 56.61175447200003,
+      "finished_at": 1789726307.876401,
+      "id": "86f40c0009e9466687ef72cc56380d31",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/86f40c0009e9466687ef72cc56380d31.json",
+      "provider_usage": {
+        "input_tokens": 8190,
+        "output_tokens": 1651
+      },
+      "role": "meta",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789726248.9824688,
+      "status": "returned",
+      "subrole": "periodic.recommendations"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 395.84190144700005,
+      "finished_at": 1789726766.4311767,
+      "id": "85aead156c4246a6b3f756727cf7021a",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/85aead156c4246a6b3f756727cf7021a.json",
+      "provider_usage": {
+        "input_tokens": 1223,
+        "output_tokens": 1866
+      },
+      "role": "mutation",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789726341.9571588,
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 111.37529632400037,
+      "finished_at": 1789727311.588014,
+      "id": "4f9006b3efd3480c96439cacd4745995",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/4f9006b3efd3480c96439cacd4745995.json",
+      "provider_usage": {
+        "input_tokens": 13244,
+        "output_tokens": 3144
+      },
+      "role": "prompt",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789727193.8564174,
+      "status": "returned",
+      "subrole": "evolution"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 16.183520925000266,
+      "finished_at": 1789727371.537943,
+      "id": "32f397936a404de196db18da3937e2d2",
+      "is_retry": false,
+      "model_requested": "gpt-5.6-sol",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/32f397936a404de196db18da3937e2d2.json",
+      "provider_usage": {
+        "input_tokens": 17747,
+        "output_tokens": 339
+      },
+      "role": "mutation",
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "started_at": 1789727355.35407,
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 15.009238641000593,
+      "finished_at": 1789727394.5385194,
+      "id": "6dd69e0ed5b544bfaea7dbf784539a74",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/6dd69e0ed5b544bfaea7dbf784539a74.json",
+      "provider_usage": {
+        "input_tokens": 8150,
+        "output_tokens": 149
+      },
+      "role": "novelty",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789727377.4258235,
+      "status": "returned",
+      "subrole": "query"
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 48.11746060299993,
+      "finished_at": 1789727904.6754718,
+      "id": "1e1cbfedffaa464c9a2d1fd005cfe131",
+      "is_retry": false,
+      "model_requested": "gpt-5.6-sol",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/1e1cbfedffaa464c9a2d1fd005cfe131.json",
+      "provider_usage": {
+        "input_tokens": 22172,
+        "output_tokens": 2174
+      },
+      "role": "mutation",
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "started_at": 1789727851.8428836,
+      "status": "returned",
+      "subrole": null
+    },
+    {
+      "attempt": 1,
+      "effort_requested": "xhigh",
+      "elapsed_seconds": 42.70505097400019,
+      "finished_at": 1789728333.5404885,
+      "id": "9cee947335b248eda30c7995113d4691",
+      "is_retry": false,
+      "model_requested": "gpt-6-astra",
+      "paid_api_authorized": false,
+      "path": "results/paper_trajectory_v2/search/usage/9cee947335b248eda30c7995113d4691.json",
+      "provider_usage": {
+        "input_tokens": 15285,
+        "output_tokens": 1211
+      },
+      "role": "mutation",
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "started_at": 1789728288.7012198,
+      "status": "returned",
+      "subrole": null
+    }
+  ]
+}

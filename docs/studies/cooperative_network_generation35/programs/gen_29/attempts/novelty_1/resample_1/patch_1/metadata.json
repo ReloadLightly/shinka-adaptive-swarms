@@ -1,0 +1,15 @@
+{
+  "generation": 29,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "overlap_first_partner_sampling",
+  "patch_description": "Prioritize eligible cohort partners already connected on the opposite layer, sampling uniformly within that group. If none qualify, preserve the existing uniform search and its random draws. Cohort membership, failure memory, acceptance, pruning and recovery timing remain unchanged.\nEarlier overlap can earn spillover benefits during construction and align neighborhoods across layers. It may also delay useful triangle closures or repeatedly target recipients who reject proposals. This modification is untested: improvement requires higher terminal population utility on the full frozen panel, with uncertainty assessed across 36 history families and attention to shocked/unshocked effects and actor losses.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T02:00:33.156304",
+  "llm_cost": 0.2179,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_29/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,111 @@
+{
+  "actual_lineage": {
+    "archive_inspiration_ids": [],
+    "effective_islands": 3,
+    "event": "native_parent_sample",
+    "generation": 1,
+    "island": 2,
+    "parent_id": "be1b3cc4-409b-414c-ab99-4c55c209a905",
+    "time": 1789666598.3452697,
+    "top_k_inspiration_ids": []
+  },
+  "campaign_id": "paper_trajectory_v2",
+  "checkpoint_comparison": {
+    "bandit_completed_after": [
+      0.0,
+      0.0
+    ],
+    "bandit_completed_before": [
+      0.0,
+      0.0
+    ],
+    "bandit_submitted_after": [
+      9.0,
+      0.0
+    ],
+    "bandit_submitted_before": [
+      0.0,
+      0.0
+    ],
+    "failure_change": "one terminal failed proposal attempt_log row; generation1 failure artifact",
+    "later_program_rows": 0,
+    "meta_export_semantically_equal": true,
+    "meta_state_change": "only _continuity.saved_at; no attribution, recommendation or processing change",
+    "program_tables_equal": {
+      "archive": true,
+      "generation_event_log": true,
+      "metadata_store": true,
+      "programs": true
+    },
+    "prompt_tables_equal_ignoring_row_order": {
+      "prompt_archive": true,
+      "prompt_metadata_store": true,
+      "system_prompts": true
+    },
+    "rewarded_program_ids_after": [],
+    "rewarded_program_ids_before": [],
+    "rng_changed": [
+      "python_random_state",
+      "numpy_random_state",
+      "bandit_rng_state"
+    ]
+  },
+  "created_at": 1789668656.8789732,
+  "decision": "retain_terminal_failure_and_archive_late_response; continue remaining49descendant slots",
+  "evidence_sha256": {
+    "results/paper_trajectory_v2/operations/late-candidate/CandidatePolicy.java": "24a42be60c23561c862a7fe60f929f5ae95522f4b4b7d1aef0a6cb4abc104f94",
+    "results/paper_trajectory_v2/operations/late-candidate/receipt.json": "95318afc67a3176ef95c22329be076dc6afc94f32ded764e7d843135bfc7c7e9",
+    "results/paper_trajectory_v2/operations/provider-timeout-drain/late-provider-response.txt": "35435b2381ff7feb8c5f5f93e8499fd5d79e4ee490fcc8c90377ffbc788cb654",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/bandit_state.pkl": "0a650d273b7f9415a3f0966281d595d85812be9c3429ddf6c98757178796934c",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/native-task-identity.json": "b25635d29abddb2acf884ac6638fc36a4113f791d5f07e7e45f8d4a02c86225d",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/native_memory/native-meta-export.json": "911fac357b22de9c83a7066579d827d2d3209b56ed67878119fbbaed2efac7aa",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/native_memory/state.json": "39c2e666d60ed1d5ceb48753ae04a8be8fea87dfb88bf153070a5b90986ff264",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/phase-b-bandit-summary.json": "1849bb8ef98319a1ffc7839c666ab2adb79391b3f44fd83d9a3f89b71c29af2c",
+    "results/paper_trajectory_v2/search/checkpoints/native-001/prompts.sqlite": "ac10a0e2bdc7b338943dd3a5af055d37775d52467f2e7f3a19c0e0258b81dbcb",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/bandit_state.pkl": "4a94e9ee3cd54a8a2911af5b22060ae68ce64d7fff991b38c93d81b410433c70",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/native-task-identity.json": "b25635d29abddb2acf884ac6638fc36a4113f791d5f07e7e45f8d4a02c86225d",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/native_memory/native-meta-export.json": "dd9a370603194a12c3b7bb1d692c987120c5f95f6675faea1c379e2a3c529f0f",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/native_memory/state.json": "2392edba425bee46d827c8ae9b5fecbb954a773909b35704eb23b00338caa65f",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/phase-b-bandit-summary.json": "68884183d7c9533c5dd4d93baa5177ebeb6d58d100b878a2d61a13f498308414",
+    "results/paper_trajectory_v2/search/checkpoints/native-002/prompts.sqlite": "a7bc8d890fd692fe7ff24d21ec9e52a42011bd6f8d0bf663af4e27a6ac28f84c",
+    "results/paper_trajectory_v2/search/checkpoints/programs-001.sqlite": "d480064aaa976fee641787d5a217b6a41a513297509b40b9326055c77bb855bd",
+    "results/paper_trajectory_v2/search/checkpoints/programs-002.sqlite": "00d856c5ba5dc3edf580a12b6b25d9ade98781c57b4471617e051fa87d8021be",
+    "results/paper_trajectory_v2/search/dispatches/349bfa5b25404cbfbb69272cf38f8316.json": "ef7365359e748e330afd25eb2bb795c58555f40d92d652ebf4549ec747ad2445",
+    "results/paper_trajectory_v2/search/gen_1/failure.json": "b449de9937f8d158c13173cc4d9d34a980a5f1914f1a9866aa8810c0f7a1016d",
+    "results/paper_trajectory_v2/search/phase-b-search-events.jsonl": "25d9168fa26dc0b80a38a2eee9a899943506d422a5a009730c02bc908688899a",
+    "results/paper_trajectory_v2/search/usage/0778d68e1636431aad15c33a70eb2163.json": "fde7b326f6e273245ea14ade999d92adcca7ae90654ae7fe42466d058cebaab8"
+  },
+  "generation": 1,
+  "native_parse_check": {
+    "assembled_sha256": "24a42be60c23561c862a7fe60f929f5ae95522f4b4b7d1aef0a6cb4abc104f94",
+    "error": null,
+    "matches_retained_source": true,
+    "native_function": "shinka.edit.apply_full.apply_full_patch",
+    "num_applied": 1,
+    "outside_evolve_regions": "native full patch preserves original scaffold",
+    "scope": "Parsing only in temporary directory; no compilation, novelty or evaluation."
+  },
+  "preservation": {
+    "checkpoints_unchanged": true,
+    "database_unchanged": true,
+    "new_model_calls": 0,
+    "new_numerical_calls": 0,
+    "novelty_calls": 0,
+    "original_failure_unchanged": true,
+    "original_usage_unchanged": true,
+    "slot_budget_unchanged": true,
+    "source_not_inserted": true
+  },
+  "prompt_sha256": "2b54bb30918f9218804e4fd62690894464ede7b89cf69968b173b1c77c8189d7",
+  "reasons": [
+    "No accepted-job.json exists: current evidence-bound recovery requires an accepted evaluation and explicitly refuses this terminal failed proposal.",
+    "Pinned _generate_evolved_proposal selects an arm and resamples parent/prompt before parsing; _run_patch_async registers a new submission and calls the mutation provider. There is no saved-response continuation entry point.",
+    "Restoring native-001 would erase nine observed native submission counters and all intervening sampler RNG advancement; original first parent can be forced from evidence but SQLite ORDER BY RANDOM is not checkpointed. Replaying safely therefore requires a new journaled proposal-reconciliation adapter with explicit sampler/accounting and terminal-failure supersession, beyond this bounded supported-repair assessment.",
+    "Direct insertion/evaluation of retained source would bypass native novelty/admission and falsely treat a provider response as an accepted job."
+  ],
+  "recovery_supported_without_new_adapter": false,
+  "response_sha256": "35435b2381ff7feb8c5f5f93e8499fd5d79e4ee490fcc8c90377ffbc788cb654",
+  "schema": "paper-late-proposal-recovery-assessment-v1",
+  "source_sha256": "24a42be60c23561c862a7fe60f929f5ae95522f4b4b7d1aef0a6cb4abc104f94",
+  "terminal_failure_parent": "d25e97bc-a5b3-40d4-9c86-fff7ce96a0fe"
+}

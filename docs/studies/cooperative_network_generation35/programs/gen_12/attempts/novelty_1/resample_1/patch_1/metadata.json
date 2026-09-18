@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "optimize_balanced_partition",
+  "patch_description": "Choose the cohort count by directly scoring every realizable balanced partition instead of rounding an independently optimal clique degree. For each cohort count, compute the population-weighted utility of its actual small and large cohort sizes using the existing overlapping-clique utility model. Strict comparison and descending enumeration retain smaller cohorts on ties, reducing unnecessary construction. This should better align formation and acceptance with achievable N=40 partitions, though the structural estimate may still understate transition costs and post-shock partition disagreement.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T22:52:56.886155",
+  "llm_cost": 0.1011584,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "terminal_cohort_builder",
+  "patch_description": "Replaces post-shock greedy search with a terminal-topology controller. Each actor analytically selects its utility-maximizing overlapped clique degree, joins a deterministic balanced cohort, removes incompatible ties, and constructs missing cohort ties across both layers. Private memory prevents repeated proposals to actors whose own post-shock cohort rule rejected them. The original behavior remains active during formation and in the no-triangle regime.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T20:41:38.749798",
+  "llm_cost": 0.7821968,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

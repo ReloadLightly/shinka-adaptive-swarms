@@ -1,0 +1,148 @@
+{
+  "campaign_id": "paper_trajectory_v2",
+  "database": {
+    "archive_criteria": {
+      "combined_score": 1.0
+    },
+    "archive_selection_strategy": "fitness",
+    "archive_size": 64,
+    "elite_selection_ratio": 0.3,
+    "enable_dynamic_islands": true,
+    "enforce_island_separation": true,
+    "exploitation_alpha": 1.0,
+    "exploitation_ratio": 0.2,
+    "island_elitism": true,
+    "island_selection_strategy": "uniform",
+    "island_spawn_strategy": "archive_random",
+    "island_spawn_subtree_size": 1,
+    "max_stdout_log_chars": null,
+    "migration_interval": 10,
+    "migration_rate": 0.1,
+    "num_archive_inspirations": 1,
+    "num_beams": 5,
+    "num_islands": 3,
+    "num_top_k_inspirations": 1,
+    "parent_selection_lambda": 10.0,
+    "parent_selection_strategy": "weighted",
+    "stagnation_threshold": 20
+  },
+  "evolution": {
+    "code_embed_sim_threshold": 0.99,
+    "embedding_model": "local/jina-code-v2-q8@http://127.0.0.1:8910/v1",
+    "enable_controlled_oversubscription": false,
+    "enable_wandb_logging": false,
+    "evolve_prompts": true,
+    "inspiration_sort_order": "ascending",
+    "job_type": "local",
+    "language": "java",
+    "llm_dynamic_selection": "ucb",
+    "llm_dynamic_selection_kwargs": {
+      "cost_aware_coef": 0.0
+    },
+    "llm_kwargs": {
+      "max_tokens": 16384,
+      "temperatures": [
+        0.0
+      ]
+    },
+    "llm_models": [
+      "headless/codex@gpt-6-astra?effort=xhigh",
+      "headless/codex@gpt-5.6-sol?effort=xhigh"
+    ],
+    "max_api_costs": null,
+    "max_novelty_attempts": 3,
+    "max_patch_attempts": 3,
+    "max_patch_resamples": 3,
+    "meta_llm_kwargs": {
+      "max_tokens": 8192,
+      "temperatures": [
+        0.0
+      ]
+    },
+    "meta_llm_models": [
+      "headless/codex@gpt-6-astra?effort=xhigh"
+    ],
+    "meta_max_recommendations": 5,
+    "meta_rec_interval": 10,
+    "novelty_llm_kwargs": {
+      "max_tokens": 4096,
+      "temperatures": [
+        0.0
+      ]
+    },
+    "novelty_llm_models": [
+      "headless/codex@gpt-6-astra?effort=xhigh"
+    ],
+    "patch_type_probs": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "patch_types": [
+      "diff",
+      "full",
+      "cross"
+    ],
+    "prompt_archive_size": 10,
+    "prompt_epsilon": 0.1,
+    "prompt_evo_top_k_programs": 3,
+    "prompt_evolution_interval": 10,
+    "prompt_llm_kwargs": {
+      "max_tokens": 8192,
+      "temperatures": [
+        0.0
+      ]
+    },
+    "prompt_llm_models": [
+      "headless/codex@gpt-6-astra?effort=xhigh"
+    ],
+    "prompt_patch_type_probs": [
+      0.5,
+      0.5
+    ],
+    "prompt_patch_types": [
+      "diff",
+      "full"
+    ],
+    "prompt_percentile_recompute_interval": 20,
+    "prompt_ucb_exploration_constant": 1.0,
+    "proposal_buffer_max": 0,
+    "proposal_target_ewma_alpha": 0.3,
+    "proposal_target_hard_cap": 1,
+    "proposal_target_min_samples": 5,
+    "proposal_target_mode": "adaptive",
+    "proposal_target_ratio_cap": 2.0,
+    "sample_single_meta_rec": true,
+    "task_sys_msg": "# Immutable scientific task: paper_trajectory_v2\n\nEvolve a decentralized Java decision policy used by EVERY actor for its whole life in a two-layer network. The task is population-wide formation, shock and recovery in an abstract cooperation model. The same candidate code controls all actors, including each recipient's acceptance decision; each actor has separate private persistent memory. Optimize the measured aggregate objective below through permitted local decisions. This is a new scientific task: historical focal-actor exploration scores and prompts from adaptive_exploration_v1 do not apply.\n\nThe frozen experiment, utility, engine, interface, cases, comparator, objective and information restrictions are authoritative. Only the candidate's allowed evolution block may change. Search instructions, archive examples and model-generated recommendations cannot change this contract.\n\n## Frozen trajectory and objective\n\nThere are N=40 actors, two initially empty undirected layers and search size m=10. Each actor receives one activation per round in a fresh shuffled order. The initial network forms through time 50. Immediately after recording time 50, the selected actors' tie cost changes on both layers. Formation continues through time 100 without resetting topology or memory; terminal population mean utility at time 100 is the objective. The fixed horizon overrides the original equilibrium stopping condition. Action identities and microstep time are supplied by the engine.\n\nFor actor i, utility is the sum across layers of degree minus cost times squared degree plus d times the number of incident triangles, plus e times overlap degree (neighbors tied to i in both layers). The unchanged upstream utility oracle and arithmetic order determine actual values. Tie additions need the recipient's consent; incident tie deletions are unilateral. There are no transfers, central planner, side payments, global-information channel or calibrated real-world welfare interpretation.\n\nThe development panel contains exactly 288 equally weighted external conditions and one frozen repetition per condition. Independently cross d and e in {0, 0.4, 0.8, 1.2, 1.6, 2}, giving 36 incentive pairs. For each pair evaluate cost 0.2 to 0.6 with 13, 26 or 40 shocked actors; cost 0.6 to 0.2 with 13, 26 or 40 shocked actors; and unchanged-cost controls 0.2 to 0.2 and 0.6 to 0.6. Controls have zero shocked actors. Systemic shock cases have no unshocked comparison group; undefined subgroup quantities remain absent/null. All these conditions remain in every candidate's evaluation. The engine interpretation is source_executable and baseline partner sampling is random.\n\nThe one globally selected fixed-noise comparator has p=0. Its raw equal-condition terminal population mean is 75.03909722222222. Its code is the original behavior through this same policy interface. Comparator selection used the largest equal-weight raw mean across the completed fixed-p reference variants, not separate winning p values per condition. Fixed p is a reference-policy choice, not an extra external-condition axis for evolved policies. The candidate can make its own bounded exploration, partner, edit and acceptance decisions. configuredNoise exposes the selected comparator constant; it does not force a random action branch on a manual source_executable policy.\n\nFor case c let U_c be mean terminal utility over all 40 actors, and B_c its frozen comparator value. The raw effect is mean_c(U_c-B_c), equivalently mean_c(U_c) minus the one frozen comparator mean. The selection score is this raw effect divided by the SINGLE positive scalar 213.28963331061775. This scalar is the root mean square of the 288 comparator terminal population utilities, frozen before descendants. It cannot change ordering, and there is no per-case, per-regime, per-policy or sign-changing normalization. A correct comparator seed scores zero subject to exact replay arithmetic. Fitness is terminal utility, not cumulative utility, rank/CDF color, degree, clustering, the best subgroup or a focal actor's gain.\n\nExact panel and comparator evidence are saved in experiments/paper_trajectory_v2/development_cases.json and development_baseline.json. Independent shock_seed/explicit recipient lists pair external shock recipients across policies; action RNG consumption cannot change which actors are shocked. This is a disclosed experimental override of the original driver's action-RNG-dependent shock draw. A candidate receives neither these seeds nor the recipient list. Different policies may consume the action stream differently; matched conditions are not identical endogenous trajectories.\n\n## Executable policy interface\n\nKeep `public final class CandidatePolicy implements ActorPolicy`, its imports and evolution markers. Implement `public void act(Turn turn, Memory memory)` and `public Decision accept(Offer offer, Memory memory)`. Helpers inside the evolution block may use local temporaries, but no instance/static fields, extra classes, constructors with side effects, persistent state outside Memory, I/O, reflection, clocks, environment access, threads, process/network calls or foreign APIs. Use permitted paper capabilities and pure permitted math only; Math.random is forbidden. Policies must terminate with bounded work and finite valid outputs. Compilation, capability, budget or runtime violations fail the candidate rather than redefine the experiment.\n\nEach actor's Memory has 64 initially zero double cells. `get(index)`, `set(index,value)` and `size()` are available. Stored values must be finite and have absolute value at most 1e12. Memory persists across that actor's own activations, received offers and the shock, and is never shared with another actor. Keep any state compact and explainable. Do not retain a Turn capability: it expires after its owning callback and cannot be used in recipient callbacks.\n\n`turn.observation()` returns the activation's initial Observation. Available accessors are actor, population, eventId, activationId, microstep, time, ownTurns, utility, utilityChange, cost0, cost1, triangleBenefit, spilloverBenefit, degree0, degree1, triangles0, triangles1, overlap, configuredNoise, searchSize, interpretation, previousEventId, previousPartner, previousLayer and previousOutcome. Costs are positive costs. utilityChange is since that actor's PREVIOUS observation callback, including acceptance callbacks; it is not necessarily the change since the previous own activation. The previous event fields describe the last actual recorded event and may repeat across observations. Track previousEventId in private memory to avoid counting the same outcome twice. Event outcomes distinguish proposal_accepted, proposal_rejected, offer_accepted, offer_rejected, dropped and tie_dropped_by_partner.\n\n`turn.neighbors(layer)` returns own neighbors. `turn.neighborsOfNeighbor(neighbor,layer)` is allowed only when neighbor is already an own neighbor on that SAME layer. `randomActor()` samples a population identity; `randomUnit()` supplies the engine RNG. Their combined query budget is at most 8*N*m per activation. Self/existing partners can occur in random draws; guard them. No API exposes the entire adjacency matrix, global utility, other actors' utility/costs/private memory, shock membership or future shocks. Using supplied time, static incentives and one's observed cost/history is allowed. Do not infer hidden case identifiers or use hard-coded seed/actor lookup tables.\n\n`inspectAdd(partner,layer)` returns own hypothetical utility after addition and spends one of m ADDITION queries on that layer, including invalid/wasted queries. Self or existing edges return NaN. `inspectDrop(partner,layer)` returns own hypothetical utility after deleting an existing incident edge; self or absent edges return NaN. All existing own deletions may be inspected. `inspectRewire(addPartner,addLayer,dropPartner,dropLayer)` returns own hypothetical utility after that swap. In the source interpretation only ONE distinct addition partner/layer can be inspected for swaps during an activation, and at most m deletion queries on each layer for it; invalid queries still consume budget. Addition-query and swap-query counters are separate. Compare these utility VALUES with the initial observed utility, not with zero; after making an edit the initial Observation remains a snapshot. Never exploit transient hypothetical calculations or request invalid indices.\n\nActions are `add(partner,layer)`, `drop(partner,layer)`, `rewire(addPartner,addLayer,dropPartner,dropLayer)`, `noOp()` and `originalTurn()`. At most ONE proposal attempt, including rejection, is allowed per activation. Add/rewire return whether the recipient accepted. Rewire drops the nominated existing edge only if its addition is accepted. At most one edge may be added. At most one old edge may be deleted unless an addition was accepted, in which case source behavior permits two old-edge deletions. The edge just added cannot be deleted in that activation. Guard self/existing additions and invalid deletion targets. A rejected proposal does not permit a second proposal. `originalTurn()` invokes the exact native baseline action routine; it must be called once, as the first and exclusive action/inspection path. Reading an observation or neighbors is permitted before it; mixing it with manual RNG, inspections or edits is not.\n\nThe receiving actor always runs its OWN `accept` callback, even when the offer improves its utility. Offer exposes `observation()`, `proposer()`, `layer()`, `utilityIfAccepted()` and `gain()` (the difference from the recipient's observed current utility). Return `Decision.yes()`, `Decision.no()` or `Decision.random(probability)` with probability finite in [0,1]. `offer.originalAcceptance()` accepts a strict utility improvement and otherwise draws the configured fixed noise. Recipient memory is private to that recipient; receiving an offer is not an additional outgoing edit opportunity. You may change this acceptance policy, including rejecting an immediately beneficial offer, within the frozen interface.\n\n## Preserved source behavior and mechanism\n\nThe primary reference is the pinned original Java at commit b3d7737613578da260fee561b6f73122dc4f2ab0, with the stated horizon and externally paired shock overrides. The originalTurn helper preserves replacement sampling/wasted opportunities, original strict comparisons and RNG calls, the swap-search counter quirk that examines deletion candidates only for the first eligible addition, and the possible extra standalone deletion after a swap. These are preserved experimental semantics, not defects for the candidate to patch in the engine. The alternate paper-directed scheduler/smart interpretation and incomplete supplementary reference studies are separately recorded sensitivity evidence; they do not replace the frozen source/random development environment. Do not silently impose paper prose when it disagrees with executed code.\n\nFigure 4 illustrates a possible coordination barrier, not a universal prescription. In one layer with benefit 1, cost 0.6 and e=0, an edge i-j plus isolated k gives utilities (0.4,0.4,0). Adding a bridge can lower its central actor to -0.4 before a triangle forms. In the triangle each actor gets d-0.4; closing the path gives an endpoint gain d-0.8. Thus d>0.8 permits strict closure and improves every actor over the original edge, while the aggregate triangle-versus-edge welfare crossover is d>2/3. The paper caption's global-maximum language conflates these thresholds. The unchanged executable preserves its tiny floating residual at nominal d=0.8, with no epsilon repair. Local, temporary sacrifice or selective acceptance may enable later beneficial structure, but may also create costly persistence or harm; evaluate the actual full panel.\n\n## Measured starting feedback and limits\n\nThe completed source_executable/random N=40 repetition-0 reference block contains 1,152 histories: the 288 external conditions for each p in {0,0.25,0.5,0.75}. Equal-condition mean terminal population utilities are p=0: 75.0390972222; p=0.25: 58.9652777778; p=0.5: 13.4203819444; p=0.75: 1.51690972222. These measured development values selected the SINGLE p=0 comparator. They support neither uniformly increasing noise nor a claim that zero exploration must be optimal for an adaptive decision policy.\n\nFor medium (26-actor) shocks and d>=1.2, the measured p=0.5 minus p=0 terminal population mean contrast is -196.865 in low-to-high cost and -48.026667 in high-to-low cost, each over 18 incentive cells. Different fixed-p variants used different action seeds, so these are matched external-design contrasts, not paired identical random histories. Source evidence is results/paper_trajectory_v2/checkpoints/reference-report-1152-source-rep0/characterization.md. Before model admission, the original-behavior seed must pass an independent check through the compiled candidate interface on all 288 cases; the admission receipt and actual native seed feedback establish whether it passed. Expected score is zero, but this prompt does not substitute for the completed check. Its actual frozen metrics and case-level feedback accompany the admitted native seed. A large inherited raw utility is not already an evolved improvement.\n\nThis is one development repetition per condition; related shock/control conditions share history families. Selection on these reused cases can overfit. Development improvement does not demonstrate fresh-history generalization, a faithful reproduction of every paper panel, or mutual benefit for every actor. Retain raw overall effects, effects by regime and direct/unshocked status, actor-level losses and failure evidence. Fresh confirmation is separate after selection. Use available native parent/archive feedback to seek a simple, executable, interpretable rule; make a substantive testable modification and explain its local mechanism rather than promising broad welfare improvements.\n",
+    "use_text_feedback": true,
+    "wandb_config": {},
+    "wandb_dir": null,
+    "wandb_entity": null,
+    "wandb_group": null,
+    "wandb_mode": null,
+    "wandb_name": null,
+    "wandb_notes": null,
+    "wandb_project": "shinka-evolve",
+    "wandb_resume": "allow",
+    "wandb_run_id": null,
+    "wandb_tags": []
+  },
+  "immutable_prompt_sha256": "d43d773c0fd1b66d8f17c4c2237bd96f6d310ee4bef85618b6d2265e81228599",
+  "initialization_programs": 1,
+  "job": {
+    "activate_script": null,
+    "conda_env": null,
+    "eval_program_path": "<local-evaluator>",
+    "eval_program_sha256": "134ff78cca663ce152f31fe2a46ea8c3d6be68d9e22aecb89ffc03dc8ccc1091",
+    "eval_verbose": true,
+    "extra_cmd_args": {},
+    "numeric_threads_per_job": 1,
+    "python_executable": "<local-python-interpreter>",
+    "time": "00:13:17"
+  },
+  "max_descendant_proposals": 50,
+  "schema_version": 2,
+  "scientific_identity": "2e539b8491c4640187622a15da826280e19ee9322e1be5a2bf02f2d6485c82cc",
+  "search_prompt_sha256": "fb987a2eff2bd428f95307523cf3867f33bf669428ac13454f8696b82b6418a2",
+  "seed_sha256": "4f0eb0cf865b6ecff1a46a81dcc6562d15f8db887c43686c86b243045091cdb6"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 31,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "completion_aware_balanced_cohorts",
+  "patch_description": "Combines balanced cohort construction with direct population-weighted partition optimization and a completion-aware recovery handoff. It retains the stronger simple partner sampling, shared failure memory, denser-layer pruning, and two-layer rewiring sequence. Cohort behavior runs from time 50 to 93, extends at most to time 95 only while an actor still has an eligible missing cohort link, and then permanently returns that actor\u2019s actions and acceptance decisions to original behavior. This avoids the current program\u2019s underperforming population-wide strong-incentive override while allowing nearly completed cohorts a short, bounded finishing window.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T11:58:30.732085",
+  "llm_cost": 0.1439504,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_31/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

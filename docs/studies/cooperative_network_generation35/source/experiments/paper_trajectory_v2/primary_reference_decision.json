@@ -1,0 +1,112 @@
+{
+  "authority": "Explicit user scientific amendment received during the current reference session",
+  "campaign_id": "paper_trajectory_v2",
+  "candidate_comparison": "Freeze source_executable environmental semantics and matched complete conditions for baseline and all-actor candidates. Actor decisions may change only inside the authorized bounded interface; evaluator/utility/shocks/environment remain immutable. Report any allowed defect-repair mechanism accurately.",
+  "comparison_description": "Reproduction and extension of the published implementation under paper-derived experimental settings; not proof of exact historical numerical replication.",
+  "decision_id": "published-executable-precedence-2026-09-17",
+  "decision_rule": "Where descriptive prose and executable behavioral logic disagree, the pinned code takes precedence for the PRIMARY reproduction and Shinka comparison.",
+  "engine_sha256": "f19675695c7bd723c524b57e8ec24777e5d150053835c17d3bbc4e9701472c56",
+  "equivalence_evidence": {
+    "docs/paper_trajectory_v2/engine_checks.json": "6b75cbbebf930c423371c62d9b6c805d3056d59ca5fc63922eaff2359dfda91f",
+    "experiments/paper_trajectory_v2/reference_engine_v1.json": "85a3329de15a34c3113eababfab0f78feed6afd75f6826520fe2c5e61022c881",
+    "java-paper/ENGINE_CONTRACT.md": "43a76e86301045a326789158dda3370f18b5582021b975fdf75065931b940d94",
+    "java-paper/agents/PaperChecks.java": "3ee6b2bb9dc8ed14f94cab977c674bc0d241548d1329dd1bae6a8d02b2a17374"
+  },
+  "equivalence_scope": "Reuse the 53,411 existing focused assertions, including four N40 full100-round original-controller comparisons at p0/.25/.5/.75 with exact topology, current/cumulative actor utility and RNG-state agreement under identical timing/recipient overrides. These are focused engineering checks, not all-grid historical reproduction.",
+  "historical_selection_context": "Decision recorded after preliminary comparison outputs existed; authority is the explicit user precedence rule, not selection for favorable candidate outcomes.",
+  "identity_sha256": "fc3fa6fe30970f98aed5c732870c02d66b3bae112ff4b47f04104e12cbbf68d3",
+  "new_model_calls_to_record_decision": 0,
+  "new_numerical_runs_to_record_decision": 0,
+  "not_waived": [
+    "required reference executions and comparison outputs",
+    "actual source-equivalence evidence",
+    "unresolved numerical/evaluator defects",
+    "dormant source-smart execution defect",
+    "matched frozen baseline/candidate environment and information/action budgets",
+    "50 descendant proposal ceiling"
+  ],
+  "numerical_history_policy": "Preserve every completed trajectory and analysis; neither grid is restarted. Results predate this choice and keep their original interpretation identities. No v2 fitness or descendants exist.",
+  "outcome_independent": true,
+  "primary": "source_executable",
+  "primary_behavior": [
+    "shuffled once-per-actor scheduling",
+    "fixed-noise invocation",
+    "original active random partner sampling",
+    "original autonomous offer acceptance",
+    "original addition/deletion/rewiring ordering",
+    "original swap-search counter behavior and possible second old-edge deletion"
+  ],
+  "recorded_at_utc": "2026-09-17T16:19:29.962459+00:00",
+  "resolved_by_this_decision": [
+    "scheduler_and_sampling_precedence",
+    "absence_of_original_seeds_is_not_itself_a_discovery_blocker",
+    "disagreement_between_tracks_is_not_itself_a_discovery_blocker",
+    "paper_derived_settings_override_hardcoded_batch_defaults"
+  ],
+  "schema": "paper-primary-reference-decision-v1",
+  "sensitivity": [
+    "paper_directed"
+  ],
+  "settings_and_overrides": {
+    "cost_directions_and_controls": [
+      [
+        0.2,
+        0.6
+      ],
+      [
+        0.6,
+        0.2
+      ],
+      [
+        0.2,
+        0.2
+      ],
+      [
+        0.6,
+        0.6
+      ]
+    ],
+    "fixed_reference_noise": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "formation_observation": 50,
+    "independent_triangle_spillover_grid": [
+      0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2
+    ],
+    "m": 10,
+    "main_n": 40,
+    "main_shock_counts": [
+      13,
+      26,
+      40
+    ],
+    "production_metadata": "The declared grid/repeats are source-anchored reconstruction choices; exact production seeds/repetition metadata are unavailable and are not invented.",
+    "repetitions": 5,
+    "shock": "Immediately after observation50, before the next activation",
+    "shock_coupling": "Separately seeded external shock recipients are shared by paired policies; this declared coupling overrides selection from the evolving action RNG, and is not described as untouched original batch behavior.",
+    "source_evidence_paths": [
+      "docs/paper_trajectory_v2/source_methods.md",
+      "java-paper/ENGINE_CONTRACT.md",
+      "experiments/paper_trajectory_v2/design.json"
+    ],
+    "stopping": "Observe the full paper-derived horizon rather than early equilibrium termination; this is an explicit experimental override.",
+    "supplement_n": 100,
+    "supplement_shock_counts": [
+      33,
+      66,
+      100
+    ],
+    "terminal_observation": 100,
+    "time_unit": "One primary source round is one complete shuffled sweep of N actor activations; integer observations include the empty state at0."
+  },
+  "upstream_commit": "b3d7737613578da260fee561b6f73122dc4f2ab0",
+  "upstream_repository": "https://github.com/KeithBurghardt/MultiplexShockCode"
+}

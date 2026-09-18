@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "cohort_recovery_cooldown",
+  "patch_description": "The current policy uses a high-benefit threshold, balanced-layer growth, local triangle/overlap preference, unconditional acceptance, and random bridge creation. The replacement instead computes the utility-maximizing symmetric clique degree from the actor\u2019s current costs, triangle benefit, and spillover benefit, then reorganizes both layers into deterministic compatible cohorts after time 50. It retains original behavior during formation and for d&lt;0.4. Failed cohort proposals now receive a five-round cooldown rather than permanent exclusion, allowing links to be reconsidered after topology changes while limiting repeated rejection costs. Rewiring prioritizes removal of out-of-cohort ties and can use the permitted second deletion after a successful addition.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T22:38:32.410561",
+  "llm_cost": 0.1455024,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

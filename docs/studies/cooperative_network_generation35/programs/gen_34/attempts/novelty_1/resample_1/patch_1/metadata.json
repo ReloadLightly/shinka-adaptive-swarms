@@ -1,0 +1,15 @@
+{
+  "generation": 34,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "round_robin_cohorts",
+  "patch_description": "Replace contiguous actor-ID intervals with balanced round-robin cohorts defined by `actor % cohortCount`. The optimized cohort count, overlap-first partner sampling, failure memory, acceptance gate, action sequencing, and paired cleanup remain unchanged. This tests whether dispersing cohort members across actor IDs improves construction and recovery while preserving the exact optimized cohort-size distribution.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T12:38:24.691302",
+  "llm_cost": 0.1366224,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_34/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,167 @@
+{
+  "source": "results/paper_trajectory_v2/report/generation-30-review/review.json",
+  "source_sha256": "8cad1fd0a854e699e7139dad286c9c799841dd11238043f6054261fb70d0b2ab",
+  "method": "Count edges by endpoint costs in four deterministically selected existing representative snapshots at time100. No simulation, evaluator or live-state write. Not a representative estimate.",
+  "cases": [
+    {
+      "case_id": "6e08f32626dad8d078a9c925",
+      "condition": "LH-13",
+      "d": 0.8,
+      "e": 2.0,
+      "models": {
+        "baseline": [
+          {
+            "low_low": 61,
+            "high_high": 8,
+            "mixed_cost": 38,
+            "isolates": 0,
+            "edges": 107
+          },
+          {
+            "low_low": 61,
+            "high_high": 8,
+            "mixed_cost": 38,
+            "isolates": 0,
+            "edges": 107
+          }
+        ],
+        "g26": [
+          {
+            "low_low": 351,
+            "high_high": 4,
+            "mixed_cost": 0,
+            "isolates": 5,
+            "edges": 355
+          },
+          {
+            "low_low": 351,
+            "high_high": 5,
+            "mixed_cost": 0,
+            "isolates": 3,
+            "edges": 356
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "6e7612cbe1d242b48a1987a0",
+      "condition": "HL-26",
+      "d": 1.2,
+      "e": 1.6,
+      "models": {
+        "baseline": [
+          {
+            "low_low": 134,
+            "high_high": 7,
+            "mixed_cost": 50,
+            "isolates": 1,
+            "edges": 191
+          },
+          {
+            "low_low": 134,
+            "high_high": 7,
+            "mixed_cost": 50,
+            "isolates": 1,
+            "edges": 191
+          }
+        ],
+        "g26": [
+          {
+            "low_low": 325,
+            "high_high": 91,
+            "mixed_cost": 364,
+            "isolates": 0,
+            "edges": 780
+          },
+          {
+            "low_low": 325,
+            "high_high": 91,
+            "mixed_cost": 364,
+            "isolates": 0,
+            "edges": 780
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "eb23a246f1fa5ecf9e64ce8c",
+      "condition": "HH-0",
+      "d": 1.2,
+      "e": 0.0,
+      "models": {
+        "baseline": [
+          {
+            "low_low": 0,
+            "high_high": 20,
+            "mixed_cost": 0,
+            "isolates": 0,
+            "edges": 20
+          },
+          {
+            "low_low": 0,
+            "high_high": 20,
+            "mixed_cost": 0,
+            "isolates": 0,
+            "edges": 20
+          }
+        ],
+        "g26": [
+          {
+            "low_low": 0,
+            "high_high": 780,
+            "mixed_cost": 0,
+            "isolates": 0,
+            "edges": 780
+          },
+          {
+            "low_low": 0,
+            "high_high": 780,
+            "mixed_cost": 0,
+            "isolates": 0,
+            "edges": 780
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "f4477faf0cefc316a6433134",
+      "condition": "LH-26 | worst loss",
+      "d": 0.8,
+      "e": 2.0,
+      "models": {
+        "baseline": [
+          {
+            "low_low": 13,
+            "high_high": 34,
+            "mixed_cost": 51,
+            "isolates": 0,
+            "edges": 98
+          },
+          {
+            "low_low": 13,
+            "high_high": 34,
+            "mixed_cost": 51,
+            "isolates": 0,
+            "edges": 98
+          }
+        ],
+        "g26": [
+          {
+            "low_low": 91,
+            "high_high": 32,
+            "mixed_cost": 0,
+            "isolates": 2,
+            "edges": 123
+          },
+          {
+            "low_low": 91,
+            "high_high": 32,
+            "mixed_cost": 0,
+            "isolates": 2,
+            "edges": 123
+          }
+        ]
+      }
+    }
+  ]
+}

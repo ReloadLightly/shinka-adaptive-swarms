@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "completion_aware_cohort_polish",
+  "patch_description": "Combines sustained cohort construction with terminal cleanup. From time 93, an actor switches permanently to the original routine when no unblocked cohort additions remain; unfinished construction can continue until time 97. A private memory flag keeps its acceptance behavior consistent with that transition. Permanent rejection filtering avoids repeated incompatible proposals, while precomputed cohort boundaries simplify partner selection. The hypothesis is that additional construction time preserves useful coordination before final utility-based adjustments. Temporary sacrifices and cleanup can still harm actors; full-panel performance remains unmeasured.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T23:38:05.817365",
+  "llm_cost": 0.39697,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

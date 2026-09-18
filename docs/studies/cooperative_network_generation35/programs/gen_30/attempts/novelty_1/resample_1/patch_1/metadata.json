@@ -1,0 +1,15 @@
+{
+  "generation": 30,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "paired_external_cleanup",
+  "patch_description": "This policy treats an external partner as a two-layer relationship rather than pruning each layer independently. It retains the successful balanced-cohort construction, overlap-first partner selection, and original-recovery handoff. After a successful rewire removes one external edge, it preferentially deletes the same external partner\u2019s edge on the opposite layer. That residual edge has already lost its overlap contribution, so this preserves overlap on other relationships while accelerating cohort cleanup. If no paired edge remains, it falls back to the existing unwanted-edge deletion rule. The main risk is removing a residual external edge that still supports valuable triangles.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T02:11:31.184836",
+  "llm_cost": 0.1326824,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_30/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

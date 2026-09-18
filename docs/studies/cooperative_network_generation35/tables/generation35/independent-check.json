@@ -1,0 +1,1073 @@
+{
+  "schema": "g35-final-independent-read-only-check-v1",
+  "observed_at_utc": "2026-09-18T11:05:33.346190+00:00",
+  "scope": "Independent stdlib queries of saved live SQLite in read-only/query-only mode, JSON receipts, and compact retained endpoints; no simulations, model calls, imports of evaluator, repository writes or raw prompt/vector export. Not an atomic publication verifier.",
+  "counts": {
+    "database_rows": 36,
+    "correct_rows_including_seed_copies": 35,
+    "valid_descendants": 32,
+    "descendant_rows": 33,
+    "maximum_generation": 35,
+    "seed_rows": 3,
+    "missing_descendant_generations": [
+      1,
+      14
+    ],
+    "invalid_database_generations": [
+      2
+    ]
+  },
+  "island_counts": [
+    {
+      "island_idx": 0,
+      "rows": 10,
+      "correct": 10
+    },
+    {
+      "island_idx": 1,
+      "rows": 12,
+      "correct": 11
+    },
+    {
+      "island_idx": 2,
+      "rows": 14,
+      "correct": 14
+    }
+  ],
+  "archive_entries": 35,
+  "migrations": [
+    {
+      "generation": 10,
+      "moves": 2
+    },
+    {
+      "generation": 20,
+      "moves": 3
+    },
+    {
+      "generation": 30,
+      "moves": 3
+    }
+  ],
+  "window_returned_role_counts": {
+    "mutation": 5,
+    "meta": 12,
+    "prompt": 1,
+    "novelty": 1
+  },
+  "pending_meta_generations": [
+    32,
+    33,
+    34,
+    35
+  ],
+  "prompt_counts": {
+    "system_prompts": 4,
+    "prompt_archive": 4
+  },
+  "programs": [
+    {
+      "generation": 31,
+      "parent": 15,
+      "archive_inspirations": [
+        21
+      ],
+      "top_inspirations": [
+        18
+      ],
+      "island": 1,
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "patch_type": "cross",
+      "score": 2.845959604945028,
+      "raw_gain": 607.0136805555555,
+      "parent_raw_gain_delta": 0.012638888888886868,
+      "incumbent_raw_gain_delta": -0.0002430555556429681,
+      "terminal_losses": 289,
+      "cumulative_losses": 1550,
+      "isolates": 96,
+      "mean_cumulative_gain": 13925.668472222223
+    },
+    {
+      "generation": 32,
+      "parent": 21,
+      "archive_inspirations": [
+        23
+      ],
+      "top_inspirations": [
+        31
+      ],
+      "island": 1,
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "patch_type": "diff",
+      "score": 2.8459493489378977,
+      "raw_gain": 607.0114930555555,
+      "parent_raw_gain_delta": -0.00017361111110858474,
+      "incumbent_raw_gain_delta": -0.002430555555633873,
+      "terminal_losses": 308,
+      "cumulative_losses": 1543,
+      "isolates": 113,
+      "mean_cumulative_gain": 14089.56777777778
+    },
+    {
+      "generation": 33,
+      "parent": 29,
+      "archive_inspirations": [
+        16
+      ],
+      "top_inspirations": [
+        19
+      ],
+      "island": 0,
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "patch_type": "diff",
+      "score": 2.8459607445013755,
+      "raw_gain": 607.0139236111111,
+      "parent_raw_gain_delta": 0.011597222222349046,
+      "incumbent_raw_gain_delta": -1.1368683772161603e-13,
+      "terminal_losses": 287,
+      "cumulative_losses": 1531,
+      "isolates": 105,
+      "mean_cumulative_gain": 14117.387638888891
+    },
+    {
+      "generation": 34,
+      "parent": 30,
+      "archive_inspirations": [
+        22
+      ],
+      "top_inspirations": [
+        26
+      ],
+      "island": 2,
+      "route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "patch_type": "full",
+      "score": 2.845995745160629,
+      "raw_gain": 607.0213888888889,
+      "parent_raw_gain_delta": 0.008645833333275732,
+      "incumbent_raw_gain_delta": 0.007465277777669144,
+      "terminal_losses": 271,
+      "cumulative_losses": 1549,
+      "isolates": 118,
+      "mean_cumulative_gain": 14118.029131944446
+    },
+    {
+      "generation": 35,
+      "parent": 16,
+      "archive_inspirations": [
+        19
+      ],
+      "top_inspirations": [
+        33
+      ],
+      "island": 0,
+      "route": "headless/codex@gpt-6-astra?effort=xhigh",
+      "patch_type": "diff",
+      "score": 2.8459399068995874,
+      "raw_gain": 607.0094791666667,
+      "parent_raw_gain_delta": -0.0014583333332893744,
+      "incumbent_raw_gain_delta": -0.011909722222185337,
+      "terminal_losses": 310,
+      "cumulative_losses": 1586,
+      "isolates": 107,
+      "mean_cumulative_gain": 13924.22965277778
+    }
+  ],
+  "checks": [
+    {
+      "check": "island row/correct counts",
+      "passed": true,
+      "observed": [
+        {
+          "island_idx": 0,
+          "rows": 10,
+          "correct": 10
+        },
+        {
+          "island_idx": 1,
+          "rows": 12,
+          "correct": 11
+        },
+        {
+          "island_idx": 2,
+          "rows": 14,
+          "correct": 14
+        }
+      ],
+      "expected": [
+        {
+          "island_idx": 0,
+          "rows": 10,
+          "correct": 10
+        },
+        {
+          "island_idx": 1,
+          "rows": 12,
+          "correct": 11
+        },
+        {
+          "island_idx": 2,
+          "rows": 14,
+          "correct": 14
+        }
+      ]
+    },
+    {
+      "check": "archive entries",
+      "passed": true,
+      "observed": 35,
+      "expected": 35
+    },
+    {
+      "check": "valid descendants",
+      "passed": true,
+      "observed": 32,
+      "expected": 32
+    },
+    {
+      "check": "maximum proposal",
+      "passed": true,
+      "observed": 35,
+      "expected": 35
+    },
+    {
+      "check": "historical migration events and move counts",
+      "passed": true,
+      "observed": [
+        {
+          "generation": 10,
+          "moves": 2
+        },
+        {
+          "generation": 20,
+          "moves": 3
+        },
+        {
+          "generation": 30,
+          "moves": 3
+        }
+      ],
+      "expected": [
+        {
+          "generation": 10,
+          "moves": 2
+        },
+        {
+          "generation": 20,
+          "moves": 3
+        },
+        {
+          "generation": 30,
+          "moves": 3
+        }
+      ]
+    },
+    {
+      "check": "no new migrations31\u201335",
+      "passed": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "check": "all observed event counts",
+      "passed": true,
+      "observed": {
+        "administrative_copy": 2,
+        "native_ucb_state_restored": 38,
+        "native_ucb_selection": 35,
+        "native_parent_sample": 43,
+        "native_ucb_submitted": 43,
+        "native_ucb_reward": 33,
+        "native_migration": 3
+      },
+      "expected": {
+        "administrative_copy": 2,
+        "native_migration": 3,
+        "native_parent_sample": 43,
+        "native_ucb_reward": 33,
+        "native_ucb_selection": 35,
+        "native_ucb_state_restored": 38,
+        "native_ucb_submitted": 43
+      }
+    },
+    {
+      "check": "native window event counts",
+      "passed": true,
+      "observed": {
+        "native_ucb_state_restored": 5,
+        "native_ucb_selection": 5,
+        "native_parent_sample": 5,
+        "native_ucb_submitted": 5,
+        "native_ucb_reward": 5
+      },
+      "expected": {
+        "native_parent_sample": 5,
+        "native_ucb_reward": 5,
+        "native_ucb_selection": 5,
+        "native_ucb_state_restored": 5,
+        "native_ucb_submitted": 5
+      }
+    },
+    {
+      "check": "returned role counts",
+      "passed": true,
+      "observed": {
+        "mutation": 5,
+        "meta": 12,
+        "prompt": 1,
+        "novelty": 1
+      },
+      "expected": {
+        "mutation": 5,
+        "meta": 12,
+        "novelty": 1,
+        "prompt": 1
+      }
+    },
+    {
+      "check": "usage receipt IDs",
+      "passed": true,
+      "observed": [
+        "143b8d4d8eba429da3a56048f8ce7636",
+        "17e28e0f86f5427f9f311137ee26ce3e",
+        "1e1cbfedffaa464c9a2d1fd005cfe131",
+        "2dcf373f94a049d99538cd73b4e33973",
+        "304f677ec0ea43b4919f145adaacfb00",
+        "32f397936a404de196db18da3937e2d2",
+        "41497c33a8df4c068b83a171f816a4bf",
+        "4f9006b3efd3480c96439cacd4745995",
+        "6dd69e0ed5b544bfaea7dbf784539a74",
+        "85aead156c4246a6b3f756727cf7021a",
+        "86f40c0009e9466687ef72cc56380d31",
+        "9cee947335b248eda30c7995113d4691",
+        "a223dad88f654c369a90929b350395ad",
+        "a2cd502a91fc470eaeea71257b94c6d3",
+        "affd128c3dff447dbec74a4082209812",
+        "bb82c6a4f61e4a8bba777941bd1dc198",
+        "c8fd818af5c143a6acb23b2f9c95a09d",
+        "df74e7cc67434e908c9d06802ce7c91c",
+        "f10e50825e2d4275bed0ff2fe448ca3f"
+      ],
+      "expected": [
+        "143b8d4d8eba429da3a56048f8ce7636",
+        "17e28e0f86f5427f9f311137ee26ce3e",
+        "1e1cbfedffaa464c9a2d1fd005cfe131",
+        "2dcf373f94a049d99538cd73b4e33973",
+        "304f677ec0ea43b4919f145adaacfb00",
+        "32f397936a404de196db18da3937e2d2",
+        "41497c33a8df4c068b83a171f816a4bf",
+        "4f9006b3efd3480c96439cacd4745995",
+        "6dd69e0ed5b544bfaea7dbf784539a74",
+        "85aead156c4246a6b3f756727cf7021a",
+        "86f40c0009e9466687ef72cc56380d31",
+        "9cee947335b248eda30c7995113d4691",
+        "a223dad88f654c369a90929b350395ad",
+        "a2cd502a91fc470eaeea71257b94c6d3",
+        "affd128c3dff447dbec74a4082209812",
+        "bb82c6a4f61e4a8bba777941bd1dc198",
+        "c8fd818af5c143a6acb23b2f9c95a09d",
+        "df74e7cc67434e908c9d06802ce7c91c",
+        "f10e50825e2d4275bed0ff2fe448ca3f"
+      ]
+    },
+    {
+      "check": "all usage returned",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "pending meta generations",
+      "passed": true,
+      "observed": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "expected": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "check": "meta operations drained",
+      "passed": true,
+      "observed": null,
+      "expected": null
+    },
+    {
+      "check": "native meta updates",
+      "passed": true,
+      "observed": 3,
+      "expected": 3
+    },
+    {
+      "check": "meta programs processed",
+      "passed": true,
+      "observed": 30,
+      "expected": 30
+    },
+    {
+      "check": "prompt rows",
+      "passed": true,
+      "observed": {
+        "system_prompts": 4,
+        "prompt_archive": 4
+      },
+      "expected": {
+        "system_prompts": 4,
+        "prompt_archive": 4
+      }
+    },
+    {
+      "check": "g31 parent",
+      "passed": true,
+      "observed": 15,
+      "expected": 15
+    },
+    {
+      "check": "g31 audit archive",
+      "passed": true,
+      "observed": [
+        21
+      ],
+      "expected": [
+        21
+      ]
+    },
+    {
+      "check": "g31 audit top",
+      "passed": true,
+      "observed": [
+        18
+      ],
+      "expected": [
+        18
+      ]
+    },
+    {
+      "check": "g31 audit patch_type",
+      "passed": true,
+      "observed": "cross",
+      "expected": "cross"
+    },
+    {
+      "check": "g31 audit patch_name",
+      "passed": true,
+      "observed": "completion_aware_balanced_cohorts",
+      "expected": "completion_aware_balanced_cohorts"
+    },
+    {
+      "check": "g31 audit mutation_model",
+      "passed": true,
+      "observed": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "expected": "headless/codex@gpt-5.6-sol?effort=xhigh"
+    },
+    {
+      "check": "g31 audit prompt_id",
+      "passed": true,
+      "observed": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "expected": "aab9b733-663b-48d2-8d3f-6885f152f239"
+    },
+    {
+      "check": "g31 correct",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g31 native score",
+      "passed": true,
+      "observed": [
+        2.845959604945028,
+        2.845959604945028,
+        2.845959604945028
+      ],
+      "expected": [
+        2.845959604945028,
+        2.845959604945028,
+        2.845959604945028
+      ]
+    },
+    {
+      "check": "g31 raw gain",
+      "passed": true,
+      "observed": 607.0136805555555,
+      "expected": 607.0136805555555
+    },
+    {
+      "check": "g31 case count",
+      "passed": true,
+      "observed": 288,
+      "expected": 288
+    },
+    {
+      "check": "g31 source SHA",
+      "passed": true,
+      "observed": "00d985678e34e618191d6c54bc693f7ffab40b631e3face43e257ee1833f4d58",
+      "expected": "00d985678e34e618191d6c54bc693f7ffab40b631e3face43e257ee1833f4d58"
+    },
+    {
+      "check": "g31 terminal-loss count from compact endpoints",
+      "passed": true,
+      "observed": 289,
+      "expected": 289
+    },
+    {
+      "check": "g31 cumulative-loss count from compact endpoints",
+      "passed": true,
+      "observed": 1550,
+      "expected": 1550
+    },
+    {
+      "check": "g31 isolate count from compact endpoints",
+      "passed": true,
+      "observed": 96,
+      "expected": 96
+    },
+    {
+      "check": "g31 network degree_per_layer within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g31 network clustering_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g31 network overlap_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g32 parent",
+      "passed": true,
+      "observed": 21,
+      "expected": 21
+    },
+    {
+      "check": "g32 audit archive",
+      "passed": true,
+      "observed": [
+        23
+      ],
+      "expected": [
+        23
+      ]
+    },
+    {
+      "check": "g32 audit top",
+      "passed": true,
+      "observed": [
+        31
+      ],
+      "expected": [
+        31
+      ]
+    },
+    {
+      "check": "g32 audit patch_type",
+      "passed": true,
+      "observed": "diff",
+      "expected": "diff"
+    },
+    {
+      "check": "g32 audit patch_name",
+      "passed": true,
+      "observed": "overlap_triangle_priority",
+      "expected": "overlap_triangle_priority"
+    },
+    {
+      "check": "g32 audit mutation_model",
+      "passed": true,
+      "observed": "headless/codex@gpt-6-astra?effort=xhigh",
+      "expected": "headless/codex@gpt-6-astra?effort=xhigh"
+    },
+    {
+      "check": "g32 audit prompt_id",
+      "passed": true,
+      "observed": "aab9b733-663b-48d2-8d3f-6885f152f239",
+      "expected": "aab9b733-663b-48d2-8d3f-6885f152f239"
+    },
+    {
+      "check": "g32 correct",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g32 native score",
+      "passed": true,
+      "observed": [
+        2.8459493489378977,
+        2.8459493489378977,
+        2.8459493489378977
+      ],
+      "expected": [
+        2.8459493489378977,
+        2.8459493489378977,
+        2.8459493489378977
+      ]
+    },
+    {
+      "check": "g32 raw gain",
+      "passed": true,
+      "observed": 607.0114930555555,
+      "expected": 607.0114930555555
+    },
+    {
+      "check": "g32 case count",
+      "passed": true,
+      "observed": 288,
+      "expected": 288
+    },
+    {
+      "check": "g32 source SHA",
+      "passed": true,
+      "observed": "144c0519e6b814425598a53d84313d9c370c0ab7d0b9a33930f2ac095cd59c6f",
+      "expected": "144c0519e6b814425598a53d84313d9c370c0ab7d0b9a33930f2ac095cd59c6f"
+    },
+    {
+      "check": "g32 terminal-loss count from compact endpoints",
+      "passed": true,
+      "observed": 308,
+      "expected": 308
+    },
+    {
+      "check": "g32 cumulative-loss count from compact endpoints",
+      "passed": true,
+      "observed": 1543,
+      "expected": 1543
+    },
+    {
+      "check": "g32 isolate count from compact endpoints",
+      "passed": true,
+      "observed": 113,
+      "expected": 113
+    },
+    {
+      "check": "g32 network degree_per_layer within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g32 network clustering_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g32 network overlap_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g33 parent",
+      "passed": true,
+      "observed": 29,
+      "expected": 29
+    },
+    {
+      "check": "g33 audit archive",
+      "passed": true,
+      "observed": [
+        16
+      ],
+      "expected": [
+        16
+      ]
+    },
+    {
+      "check": "g33 audit top",
+      "passed": true,
+      "observed": [
+        19
+      ],
+      "expected": [
+        19
+      ]
+    },
+    {
+      "check": "g33 audit patch_type",
+      "passed": true,
+      "observed": "diff",
+      "expected": "diff"
+    },
+    {
+      "check": "g33 audit patch_name",
+      "passed": true,
+      "observed": "handoff_at_93",
+      "expected": "handoff_at_93"
+    },
+    {
+      "check": "g33 audit mutation_model",
+      "passed": true,
+      "observed": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "expected": "headless/codex@gpt-5.6-sol?effort=xhigh"
+    },
+    {
+      "check": "g33 audit prompt_id",
+      "passed": true,
+      "observed": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "expected": "b1b2c70d-9030-41be-a518-0bfcfd72a73c"
+    },
+    {
+      "check": "g33 correct",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g33 native score",
+      "passed": true,
+      "observed": [
+        2.8459607445013755,
+        2.8459607445013755,
+        2.8459607445013755
+      ],
+      "expected": [
+        2.8459607445013755,
+        2.8459607445013755,
+        2.8459607445013755
+      ]
+    },
+    {
+      "check": "g33 raw gain",
+      "passed": true,
+      "observed": 607.0139236111111,
+      "expected": 607.0139236111111
+    },
+    {
+      "check": "g33 case count",
+      "passed": true,
+      "observed": 288,
+      "expected": 288
+    },
+    {
+      "check": "g33 source SHA",
+      "passed": true,
+      "observed": "e66541db2945f22f68cd3a7cc06dc9e8d9faafc6842f30325b69afcb2d08e5b1",
+      "expected": "e66541db2945f22f68cd3a7cc06dc9e8d9faafc6842f30325b69afcb2d08e5b1"
+    },
+    {
+      "check": "g33 terminal-loss count from compact endpoints",
+      "passed": true,
+      "observed": 287,
+      "expected": 287
+    },
+    {
+      "check": "g33 cumulative-loss count from compact endpoints",
+      "passed": true,
+      "observed": 1531,
+      "expected": 1531
+    },
+    {
+      "check": "g33 isolate count from compact endpoints",
+      "passed": true,
+      "observed": 105,
+      "expected": 105
+    },
+    {
+      "check": "g33 network degree_per_layer within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g33 network clustering_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g33 network overlap_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g34 parent",
+      "passed": true,
+      "observed": 30,
+      "expected": 30
+    },
+    {
+      "check": "g34 audit archive",
+      "passed": true,
+      "observed": [
+        22
+      ],
+      "expected": [
+        22
+      ]
+    },
+    {
+      "check": "g34 audit top",
+      "passed": true,
+      "observed": [
+        26
+      ],
+      "expected": [
+        26
+      ]
+    },
+    {
+      "check": "g34 audit patch_type",
+      "passed": true,
+      "observed": "full",
+      "expected": "full"
+    },
+    {
+      "check": "g34 audit patch_name",
+      "passed": true,
+      "observed": "round_robin_cohorts",
+      "expected": "round_robin_cohorts"
+    },
+    {
+      "check": "g34 audit mutation_model",
+      "passed": true,
+      "observed": "headless/codex@gpt-5.6-sol?effort=xhigh",
+      "expected": "headless/codex@gpt-5.6-sol?effort=xhigh"
+    },
+    {
+      "check": "g34 audit prompt_id",
+      "passed": true,
+      "observed": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "expected": "b1b2c70d-9030-41be-a518-0bfcfd72a73c"
+    },
+    {
+      "check": "g34 correct",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g34 native score",
+      "passed": true,
+      "observed": [
+        2.845995745160629,
+        2.845995745160629,
+        2.845995745160629
+      ],
+      "expected": [
+        2.845995745160629,
+        2.845995745160629,
+        2.845995745160629
+      ]
+    },
+    {
+      "check": "g34 raw gain",
+      "passed": true,
+      "observed": 607.0213888888889,
+      "expected": 607.0213888888889
+    },
+    {
+      "check": "g34 case count",
+      "passed": true,
+      "observed": 288,
+      "expected": 288
+    },
+    {
+      "check": "g34 source SHA",
+      "passed": true,
+      "observed": "3ec3c014719600a2ed45e1ab73b89a2b473818cfe045e2819c70c685ab258d4e",
+      "expected": "3ec3c014719600a2ed45e1ab73b89a2b473818cfe045e2819c70c685ab258d4e"
+    },
+    {
+      "check": "g34 terminal-loss count from compact endpoints",
+      "passed": true,
+      "observed": 271,
+      "expected": 271
+    },
+    {
+      "check": "g34 cumulative-loss count from compact endpoints",
+      "passed": true,
+      "observed": 1549,
+      "expected": 1549
+    },
+    {
+      "check": "g34 isolate count from compact endpoints",
+      "passed": true,
+      "observed": 118,
+      "expected": 118
+    },
+    {
+      "check": "g34 network degree_per_layer within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g34 network clustering_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g34 network overlap_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g35 parent",
+      "passed": true,
+      "observed": 16,
+      "expected": 16
+    },
+    {
+      "check": "g35 audit archive",
+      "passed": true,
+      "observed": [
+        19
+      ],
+      "expected": [
+        19
+      ]
+    },
+    {
+      "check": "g35 audit top",
+      "passed": true,
+      "observed": [
+        33
+      ],
+      "expected": [
+        33
+      ]
+    },
+    {
+      "check": "g35 audit patch_type",
+      "passed": true,
+      "observed": "diff",
+      "expected": "diff"
+    },
+    {
+      "check": "g35 audit patch_name",
+      "passed": true,
+      "observed": "overlap_availability_tiebreak",
+      "expected": "overlap_availability_tiebreak"
+    },
+    {
+      "check": "g35 audit mutation_model",
+      "passed": true,
+      "observed": "headless/codex@gpt-6-astra?effort=xhigh",
+      "expected": "headless/codex@gpt-6-astra?effort=xhigh"
+    },
+    {
+      "check": "g35 audit prompt_id",
+      "passed": true,
+      "observed": "b1b2c70d-9030-41be-a518-0bfcfd72a73c",
+      "expected": "b1b2c70d-9030-41be-a518-0bfcfd72a73c"
+    },
+    {
+      "check": "g35 correct",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g35 native score",
+      "passed": true,
+      "observed": [
+        2.8459399068995874,
+        2.8459399068995874,
+        2.8459399068995874
+      ],
+      "expected": [
+        2.8459399068995874,
+        2.8459399068995874,
+        2.8459399068995874
+      ]
+    },
+    {
+      "check": "g35 raw gain",
+      "passed": true,
+      "observed": 607.0094791666667,
+      "expected": 607.0094791666667
+    },
+    {
+      "check": "g35 case count",
+      "passed": true,
+      "observed": 288,
+      "expected": 288
+    },
+    {
+      "check": "g35 source SHA",
+      "passed": true,
+      "observed": "69d4fee3edbdb8f5330c02b5b3eee70fb6333d87e7edf50e41c52c85249b21aa",
+      "expected": "69d4fee3edbdb8f5330c02b5b3eee70fb6333d87e7edf50e41c52c85249b21aa"
+    },
+    {
+      "check": "g35 terminal-loss count from compact endpoints",
+      "passed": true,
+      "observed": 310,
+      "expected": 310
+    },
+    {
+      "check": "g35 cumulative-loss count from compact endpoints",
+      "passed": true,
+      "observed": 1586,
+      "expected": 1586
+    },
+    {
+      "check": "g35 isolate count from compact endpoints",
+      "passed": true,
+      "observed": 107,
+      "expected": 107
+    },
+    {
+      "check": "g35 network degree_per_layer within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g35 network clustering_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "g35 network overlap_zero within1e-12",
+      "passed": true,
+      "observed": true,
+      "expected": true
+    },
+    {
+      "check": "selected winner",
+      "passed": true,
+      "observed": 34,
+      "expected": 34
+    }
+  ],
+  "failed_checks": [],
+  "documentation_issues": [
+    {
+      "source": "docs/paper_trajectory_v2/generation35_review.md",
+      "issue": "G34 initially labeled a diff patch; accepted receipt says full.",
+      "still_present_at_check": true,
+      "reported_to_supervisor": true
+    }
+  ],
+  "limitations": [
+    "Actor/network counts independently recomputed from report compact endpoints, not reread/decompressed from every raw cached trajectory.",
+    "Known pending G35 draft prose is being updated by supervisor.",
+    "Publication/remote checks are outside this read-only task."
+  ],
+  "sources_sha256": {
+    "results/paper_trajectory_v2/report/generation-35-review/review.json": "aea6448fea371cac72ef39556c68f6d75bac9e2e38497940816f13797a2970f6",
+    "results/paper_trajectory_v2/report/generation-35-review/native-mechanisms.json": "15ec678cf7c6c7a1bc7bff4d38112d75a0e45a96806c4a5df264b86019dfeeb7",
+    "results/paper_trajectory_v2/report/generation-35-review/compact-observations.json.gz": "2d93373c99494d99e58b8cb70fa926b2125225bf3bd3f7eb6c446dd1054093bb",
+    "docs/paper_trajectory_v2/generation35_review.md": "7412a621b01c117a8136bbb0a79d309b89b6ef581ed533eb91822d6967048ce2",
+    "results/paper_trajectory_v2/search/phase-b-search-events.jsonl": "2032d9d38ad53e7e44e40474f1e37762b1ffc8621c6cff386c510a5a72acb45f",
+    "results/paper_trajectory_v2/search/native_memory/state.json": "a12926253eda9985a8bd9b13df6ea8037e25889878daab17a192710e8637ae74"
+  }
+}

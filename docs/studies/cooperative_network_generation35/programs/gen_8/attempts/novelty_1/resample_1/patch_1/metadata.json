@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "duplex_cohort_rewiring",
+  "patch_description": "After the shock, replace myopic search with coordinated duplex-clique formation. Each actor computes the locally optimal clique degree from its observed costs and incentives, derives the same deterministic cohort partition, and rewires both layers toward that cohort. Cohort members accept temporary losses, overcoming triangle-formation barriers, while rejected partners are remembered to avoid repeated waste. Rewiring also removes obsolete ties quickly, improving recovery after cost increases. Low-triangle cases retain the reliable original policy.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T21:30:42.569833",
+  "llm_cost": 0.8748624,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

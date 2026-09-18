@@ -1,0 +1,102 @@
+{
+  "schema": "v2-incremental-figure-provenance-v1",
+  "created_at_utc": "2026-09-18T11:01:39.653838+00:00",
+  "proposal_range": [
+    31,
+    35
+  ],
+  "input_sha256": {
+    "results/paper_trajectory_v2/report/generation-35-review/review.json": "aea6448fea371cac72ef39556c68f6d75bac9e2e38497940816f13797a2970f6",
+    "docs/paper_trajectory_v2/research-team/actor34-paths.json": "67bbf070e692d499dd431a8013ea823c62f7ebb1fe4bdd2620c47aa1d466358a"
+  },
+  "renderer": "scripts/analysis/generation35_figures.py",
+  "renderer_sha256": "9bd2bda0af257c9e9cdae19a598cb32c14bf0fa90a4ab6abbd3a0ec9c4ab0ac3",
+  "figures_sha256": {
+    "actor34-construction-and-cleanup.png": "fb321b9202edf04213db3358961d5406ad09de5d63387cf419e6a356559d44cf",
+    "continuation-progress.png": "0cc7de1f5772d3f6bdc580c8132ae0fd4ac3c7e0779393e1758e61bb14862d92",
+    "utility-and-actor-losses.png": "2ae61d8ee758647223f70d19a2d5f8e56ee13aabce4887f720a545016c9b7977"
+  },
+  "figure_notes": {
+    "continuation-progress.png": {
+      "variables": "New valid terminal mean minus G26 terminal mean; best-so-far line; separate terminal-slot status.",
+      "generations": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "reference_generation": 26,
+      "failed_invalid_display": "Status panel only; no fabricated zero score."
+    },
+    "utility-and-actor-losses.png": {
+      "variables": "Terminal mean utility, substantive actor-loss count, isolates, cumulative-utility loss count.",
+      "generations": [
+        5,
+        12,
+        26,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "selected_generation": 34,
+      "loss_tolerance": -1e-09,
+      "observation_dependence": "11520 actor-case observations in 36 related-history families; not independent actors."
+    },
+    "actor34-construction-and-cleanup.png": {
+      "case_id": "f4477faf0cefc316a6433134",
+      "actor": 34,
+      "selection": "Already selected worst G26 terminal actor-loss case; not a representative estimate.",
+      "models": [
+        "baseline",
+        "g5",
+        "g12",
+        "g26",
+        "g31",
+        "g32",
+        "g33",
+        "g34",
+        "g35"
+      ],
+      "coincident_curve_groups": [
+        [
+          "baseline"
+        ],
+        [
+          "g5",
+          "g12"
+        ],
+        [
+          "g26",
+          "g33"
+        ],
+        [
+          "g31"
+        ],
+        [
+          "g32"
+        ],
+        [
+          "g34"
+        ],
+        [
+          "g35"
+        ]
+      ],
+      "phase_shading": "G26 only: construction [50,93), original-policy cleanup [93,100].",
+      "cumulative_convention": "Undiscounted sum of end-of-integer-round actor utility, compared with original.",
+      "causal_limit": "One historically selected case; saved temporal ordering does not identify the initiating event."
+    }
+  },
+  "new_simulations": 0,
+  "new_model_calls": 0,
+  "new_evaluator_invocations": 0,
+  "reads_raw_trajectories": false,
+  "modifies_live_campaign_state": false,
+  "library_versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3"
+  }
+}

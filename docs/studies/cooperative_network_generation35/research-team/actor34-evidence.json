@@ -1,0 +1,876 @@
+{
+  "scope": "Read-only extraction of saved generation-30 evidence; no simulations, evaluator invocations, or research model calls.",
+  "review_path": "results/paper_trajectory_v2/report/generation-30-review/review.json",
+  "review_sha256": "8cad1fd0a854e699e7139dad286c9c799841dd11238043f6054261fb70d0b2ab",
+  "case_id": "f4477faf0cefc316a6433134",
+  "actor": 34,
+  "programs": {
+    "baseline": {
+      "path": "results/paper_trajectory_v2/cache/3e/3e32bf132da9753d0dbdce84ad80fa55cc2dead65a12d20514c8c3bfb84653ed.json.xz",
+      "sha256": "2a0321e00b50fd4397be941f87574a43b871b203418ca5e03f6a2d4d94516c44",
+      "selected_actor_observations": [
+        {
+          "time": 50,
+          "utility": 61.2,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 36,
+          "triangles1": 36,
+          "overlap": 9,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2401.6
+        },
+        {
+          "time": 51,
+          "utility": -1.999999999999993,
+          "degree0": 8,
+          "degree1": 3,
+          "triangles0": 28,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2399.6
+        },
+        {
+          "time": 60,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2453.6
+        },
+        {
+          "time": 70,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2513.6
+        },
+        {
+          "time": 80,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2573.6
+        },
+        {
+          "time": 90,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2633.6
+        },
+        {
+          "time": 92,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2645.6
+        },
+        {
+          "time": 93,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2651.6
+        },
+        {
+          "time": 94,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2657.6
+        },
+        {
+          "time": 95,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2663.6
+        },
+        {
+          "time": 96,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2669.6
+        },
+        {
+          "time": 97,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2675.6
+        },
+        {
+          "time": 98,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2681.6
+        },
+        {
+          "time": 99,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2687.6
+        },
+        {
+          "time": 100,
+          "utility": 6.000000000000002,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 3,
+          "triangles1": 3,
+          "overlap": 3,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2693.6
+        }
+      ],
+      "case_parameters": {
+        "d": 0.8,
+        "e": 2.0,
+        "cost_before": 0.2,
+        "cost_after": 0.6,
+        "shock_count": 26
+      }
+    },
+    "g5": {
+      "path": "results/paper_trajectory_v2/cache/d6/d6c85ae43d61877c073d07c2ed86d45ed5d956b8a67c5496c702eee7b639039d.json.xz",
+      "sha256": "4bb9796b653c1be3548638a7b2e565d8c96c860e00784e3b908a74ca74e29027",
+      "selected_actor_observations": [
+        {
+          "time": 50,
+          "utility": 61.2,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 36,
+          "triangles1": 36,
+          "overlap": 9,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2401.6
+        },
+        {
+          "time": 51,
+          "utility": -23.6,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 21,
+          "triangles1": 31,
+          "overlap": 7,
+          "previous_outcome": "offer_accepted",
+          "cumulative_utility": 2378.0
+        },
+        {
+          "time": 60,
+          "utility": 2.4000000000000012,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 4,
+          "triangles1": 3,
+          "overlap": 4,
+          "previous_outcome": "dropped",
+          "cumulative_utility": 2279.2
+        },
+        {
+          "time": 70,
+          "utility": 4.000000000000001,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 5,
+          "triangles1": 4,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2310.3999999999996
+        },
+        {
+          "time": 80,
+          "utility": 5.600000000000001,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 5,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2356.8000000000006
+        },
+        {
+          "time": 90,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2420.0000000000014
+        },
+        {
+          "time": 92,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2432.8000000000015
+        },
+        {
+          "time": 93,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2439.2000000000016
+        },
+        {
+          "time": 94,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2445.6000000000017
+        },
+        {
+          "time": 95,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2452.000000000002
+        },
+        {
+          "time": 96,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2458.400000000002
+        },
+        {
+          "time": 97,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2464.800000000002
+        },
+        {
+          "time": 98,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2471.200000000002
+        },
+        {
+          "time": 99,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2477.600000000002
+        },
+        {
+          "time": 100,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2484.0000000000023
+        }
+      ],
+      "case_parameters": {
+        "d": 0.8,
+        "e": 2.0,
+        "cost_before": 0.2,
+        "cost_after": 0.6,
+        "shock_count": 26
+      },
+      "panel_summary": {
+        "generation": 5,
+        "parent_generation": 4,
+        "native_patch_name": "randomized_cohort_rewiring",
+        "model_route": "headless/codex@gpt-6-astra?effort=xhigh",
+        "terminal_mean": 681.1688541666666,
+        "raw_gain": 606.1297569444444,
+        "baseline_actor_effects": {
+          "n": 11520,
+          "mean": 606.1297569444444,
+          "minimum": -1.1999999999999993,
+          "p05": 0.0,
+          "median": 109.19999999999982,
+          "p95": 2096.7999999999997,
+          "maximum": 2511.6,
+          "strict_losses": 95,
+          "losses_below_minus_1e_9": 31,
+          "ties_within_1e_9": 2527,
+          "gains_above_1e_9": 8962
+        },
+        "network": {
+          "utility": 681.1688541666667,
+          "degree_per_layer": 25.272916666666667,
+          "clustering_zero": 0.7856837630321597,
+          "overlap_zero": 0.9591579861111111,
+          "link_cost": 678.1666319444444,
+          "actor_cases": 11520,
+          "isolates": 3,
+          "clustering_defined_mean": 0.8760237079104221,
+          "clustering_undefined_count": 2376,
+          "overlap_defined_mean": 0.9594078319006686,
+          "overlap_undefined_count": 3
+        },
+        "cumulative_utility_difference_from_baseline": {
+          "n": 11520,
+          "mean": 13918.266875000003,
+          "minimum": -7950.800000000007,
+          "p05": -3420.820000000004,
+          "median": 1497.0000000000011,
+          "p95": 53026.100000000006,
+          "maximum": 109981.20000000007,
+          "strict_losses": 1534,
+          "losses_below_minus_1e_9": 1533,
+          "ties_within_1e_9": 2045,
+          "gains_above_1e_9": 7942
+        }
+      }
+    },
+    "g12": {
+      "path": "results/paper_trajectory_v2/cache/1c/1cdbbceb6c00cc9765d5c5d44779fe0cd7724d2160eefed77eb5fd1106b858e4.json.xz",
+      "sha256": "4bb9796b653c1be3548638a7b2e565d8c96c860e00784e3b908a74ca74e29027",
+      "selected_actor_observations": [
+        {
+          "time": 50,
+          "utility": 61.2,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 36,
+          "triangles1": 36,
+          "overlap": 9,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2401.6
+        },
+        {
+          "time": 51,
+          "utility": -23.6,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 21,
+          "triangles1": 31,
+          "overlap": 7,
+          "previous_outcome": "offer_accepted",
+          "cumulative_utility": 2378.0
+        },
+        {
+          "time": 60,
+          "utility": 2.4000000000000012,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 4,
+          "triangles1": 3,
+          "overlap": 4,
+          "previous_outcome": "dropped",
+          "cumulative_utility": 2279.2
+        },
+        {
+          "time": 70,
+          "utility": 4.000000000000001,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 5,
+          "triangles1": 4,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2310.3999999999996
+        },
+        {
+          "time": 80,
+          "utility": 5.600000000000001,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 5,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2356.8000000000006
+        },
+        {
+          "time": 90,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2420.0000000000014
+        },
+        {
+          "time": 92,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2432.8000000000015
+        },
+        {
+          "time": 93,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2439.2000000000016
+        },
+        {
+          "time": 94,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2445.6000000000017
+        },
+        {
+          "time": 95,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2452.000000000002
+        },
+        {
+          "time": 96,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2458.400000000002
+        },
+        {
+          "time": 97,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2464.800000000002
+        },
+        {
+          "time": 98,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2471.200000000002
+        },
+        {
+          "time": 99,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2477.600000000002
+        },
+        {
+          "time": 100,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2484.0000000000023
+        }
+      ],
+      "case_parameters": {
+        "d": 0.8,
+        "e": 2.0,
+        "cost_before": 0.2,
+        "cost_after": 0.6,
+        "shock_count": 26
+      },
+      "panel_summary": {
+        "generation": 12,
+        "parent_generation": 8,
+        "native_patch_name": "optimize_balanced_partition",
+        "model_route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+        "terminal_mean": 681.1947569444444,
+        "raw_gain": 606.1556597222223,
+        "baseline_actor_effects": {
+          "n": 11520,
+          "mean": 606.1556597222223,
+          "minimum": -0.799999999999998,
+          "p05": 0.0,
+          "median": 109.19999999999982,
+          "p95": 2096.7999999999997,
+          "maximum": 2511.6,
+          "strict_losses": 83,
+          "losses_below_minus_1e_9": 5,
+          "ties_within_1e_9": 2551,
+          "gains_above_1e_9": 8964
+        },
+        "network": {
+          "utility": 681.1947569444445,
+          "degree_per_layer": 25.271527777777777,
+          "clustering_zero": 0.783073344375911,
+          "overlap_zero": 0.9591579861111111,
+          "link_cost": 678.1857291666666,
+          "actor_cases": 11520,
+          "isolates": 3,
+          "clustering_defined_mean": 0.8758257210883976,
+          "clustering_undefined_count": 2440,
+          "overlap_defined_mean": 0.9594078319006686,
+          "overlap_undefined_count": 3
+        },
+        "cumulative_utility_difference_from_baseline": {
+          "n": 11520,
+          "mean": 13920.787569444448,
+          "minimum": -7950.800000000007,
+          "p05": -3420.820000000004,
+          "median": 1508.1999999999996,
+          "p95": 53026.100000000006,
+          "maximum": 109981.20000000007,
+          "strict_losses": 1501,
+          "losses_below_minus_1e_9": 1500,
+          "ties_within_1e_9": 2057,
+          "gains_above_1e_9": 7963
+        }
+      }
+    },
+    "g26": {
+      "path": "results/paper_trajectory_v2/cache/32/32977afa1dceeaa0f3562433654b6e5737b3536da70c5a6dd0939129c58b1e01.json.xz",
+      "sha256": "685d40037cfaeb7d2e72c6986a00093fbbc14f97324afbc969d7645e8e858bae",
+      "selected_actor_observations": [
+        {
+          "time": 50,
+          "utility": 61.2,
+          "degree0": 9,
+          "degree1": 9,
+          "triangles0": 36,
+          "triangles1": 36,
+          "overlap": 9,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2401.6
+        },
+        {
+          "time": 51,
+          "utility": -13.599999999999994,
+          "degree0": 8,
+          "degree1": 9,
+          "triangles0": 22,
+          "triangles1": 31,
+          "overlap": 7,
+          "previous_outcome": "dropped",
+          "cumulative_utility": 2388.0
+        },
+        {
+          "time": 60,
+          "utility": -3.5999999999999996,
+          "degree0": 5,
+          "degree1": 5,
+          "triangles0": 4,
+          "triangles1": 4,
+          "overlap": 5,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2222.7999999999997
+        },
+        {
+          "time": 70,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2278.0
+        },
+        {
+          "time": 80,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2342.000000000001
+        },
+        {
+          "time": 90,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2406.000000000002
+        },
+        {
+          "time": 92,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2418.800000000002
+        },
+        {
+          "time": 93,
+          "utility": 6.400000000000002,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 6,
+          "triangles1": 6,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2425.200000000002
+        },
+        {
+          "time": 94,
+          "utility": 3.200000000000001,
+          "degree0": 4,
+          "degree1": 4,
+          "triangles0": 5,
+          "triangles1": 3,
+          "overlap": 4,
+          "previous_outcome": "offer_rejected",
+          "cumulative_utility": 2428.400000000002
+        },
+        {
+          "time": 95,
+          "utility": 2.4000000000000012,
+          "degree0": 3,
+          "degree1": 3,
+          "triangles0": 1,
+          "triangles1": 3,
+          "overlap": 2,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2430.800000000002
+        },
+        {
+          "time": 96,
+          "utility": 0.40000000000000013,
+          "degree0": 0,
+          "degree1": 2,
+          "triangles0": 0,
+          "triangles1": 1,
+          "overlap": 0,
+          "previous_outcome": "tie_dropped_by_partner",
+          "cumulative_utility": 2431.200000000002
+        },
+        {
+          "time": 97,
+          "utility": 0.0,
+          "degree0": 0,
+          "degree1": 0,
+          "triangles0": 0,
+          "triangles1": 0,
+          "overlap": 0,
+          "previous_outcome": "proposal_rejected",
+          "cumulative_utility": 2431.200000000002
+        },
+        {
+          "time": 98,
+          "utility": 0.0,
+          "degree0": 0,
+          "degree1": 0,
+          "triangles0": 0,
+          "triangles1": 0,
+          "overlap": 0,
+          "previous_outcome": "proposal_rejected",
+          "cumulative_utility": 2431.200000000002
+        },
+        {
+          "time": 99,
+          "utility": 0.0,
+          "degree0": 0,
+          "degree1": 0,
+          "triangles0": 0,
+          "triangles1": 0,
+          "overlap": 0,
+          "previous_outcome": "proposal_rejected",
+          "cumulative_utility": 2431.200000000002
+        },
+        {
+          "time": 100,
+          "utility": 0.0,
+          "degree0": 0,
+          "degree1": 0,
+          "triangles0": 0,
+          "triangles1": 0,
+          "overlap": 0,
+          "previous_outcome": "proposal_rejected",
+          "cumulative_utility": 2431.200000000002
+        }
+      ],
+      "case_parameters": {
+        "d": 0.8,
+        "e": 2.0,
+        "cost_before": 0.2,
+        "cost_after": 0.6,
+        "shock_count": 26
+      },
+      "panel_summary": {
+        "generation": 26,
+        "parent_generation": 20,
+        "native_patch_name": "overlap_first_partner",
+        "model_route": "headless/codex@gpt-5.6-sol?effort=xhigh",
+        "terminal_mean": 682.0530208333334,
+        "raw_gain": 607.0139236111112,
+        "baseline_actor_effects": {
+          "n": 11520,
+          "mean": 607.0139236111112,
+          "minimum": -6.000000000000002,
+          "p05": 0.0,
+          "median": 109.19999999999982,
+          "p95": 2096.7999999999997,
+          "maximum": 2511.6,
+          "strict_losses": 399,
+          "losses_below_minus_1e_9": 287,
+          "ties_within_1e_9": 2601,
+          "gains_above_1e_9": 8632
+        },
+        "network": {
+          "utility": 682.0530208333334,
+          "degree_per_layer": 25.10329861111111,
+          "clustering_zero": 0.750462962962963,
+          "overlap_zero": 0.9356336805555555,
+          "link_cost": 676.4617013888887,
+          "actor_cases": 11520,
+          "isolates": 105,
+          "clustering_defined_mean": 0.8792162446184615,
+          "clustering_undefined_count": 3374,
+          "overlap_defined_mean": 0.9442400350416119,
+          "overlap_undefined_count": 105
+        },
+        "cumulative_utility_difference_from_baseline": {
+          "n": 11520,
+          "mean": 14117.387638888891,
+          "minimum": -13465.600000000002,
+          "p05": -2971.880000000007,
+          "median": 1840.200000000001,
+          "p95": 53204.319999999956,
+          "maximum": 107665.60000000006,
+          "strict_losses": 1533,
+          "losses_below_minus_1e_9": 1531,
+          "ties_within_1e_9": 2056,
+          "gains_above_1e_9": 7933
+        }
+      }
+    }
+  },
+  "code_sources": {
+    "5": {
+      "path": "results/paper_trajectory_v2/search/gen_5/main.java",
+      "sha256": "27355c51fd9b95164017818d6740189eed9ed68f4bad4e68ab30e8690485bf69"
+    },
+    "12": {
+      "path": "results/paper_trajectory_v2/search/gen_12/main.java",
+      "sha256": "8ea7debe0dab04a08c78f3fd6cd68c459e0c8aad21b87c7f951afc8b2e933fef"
+    },
+    "26": {
+      "path": "results/paper_trajectory_v2/search/gen_26/main.java",
+      "sha256": "7adef362b7c532653088b831daaae8a23ad16bca4271073f666dccb26d28402a"
+    }
+  }
+}

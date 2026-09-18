@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "randomized_cohort_rewiring",
+  "patch_description": "Preserve original behavior during formation and at low triangle benefit. During recovery, retain the parent's cost-dependent cohorts but sample eligible partners uniformly, reducing concentration on low-numbered actors. Combine cohort reconstruction with the baseline's swap-and-delete mechanism: an accepted rewire replaces one unwanted edge and permits one additional deletion; rejection permits only the standalone deletion. This may accelerate reconstruction, but cohort changes can sacrifice useful ties. Improvement requires full-panel evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T20:53:53.874766",
+  "llm_cost": 0.33352,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

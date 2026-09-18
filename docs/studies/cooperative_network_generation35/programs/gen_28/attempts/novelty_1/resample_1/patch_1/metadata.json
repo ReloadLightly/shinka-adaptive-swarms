@@ -1,0 +1,15 @@
+{
+  "generation": 28,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "eligible_cohort_deficit",
+  "patch_description": "Prioritize construction on the layer with more missing, nonexcluded cohort partners, retaining the existing sparser-layer rule on ties. Total degree includes external ties and can therefore misrepresent progress toward the intended overlapping cohorts.\nThe deficit calculation uses the same eligibility rules as partner selection and consumes no randomness. Reservoir sampling, acceptance, pruning, failure memory and recovery timing remain unchanged. This isolates whether balancing eligible construction deficits improves completion before recovery.\nThe possible cost is delaying additions that yield immediate overlap or triangle benefits. This proposal is unevaluated; support requires improved terminal population utility across the frozen 288-condition panel, assessed with paired uncertainty across 36 history families and shocked/unshocked and actor-loss evidence.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T01:50:04.883736",
+  "llm_cost": 0.20114,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_28/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

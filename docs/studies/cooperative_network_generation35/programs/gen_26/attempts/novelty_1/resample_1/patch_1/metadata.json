@@ -1,0 +1,15 @@
+{
+  "generation": 26,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "overlap_first_partner",
+  "patch_description": "Prioritize missing cohort partners who are already connected to the actor on the opposite layer, while retaining uniform reservoir sampling and the existing fallback across all eligible partners. This should align the two layer-construction processes, realize spillover benefits earlier, and reduce partially completed cross-layer dyads before the time-93 recovery handoff. The final cohort target, failure memory, pruning, acceptance, and phase timing remain unchanged. The tradeoff is that concentrating overlap may delay triangle-closing links when spillover is weak; improvement would be supported by higher full-panel utility without worse family-level or actor-loss tails.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T01:29:53.819523",
+  "llm_cost": 0.0975144,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_26/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

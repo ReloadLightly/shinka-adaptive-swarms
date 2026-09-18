@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "terminal93_bounded_cohorts",
+  "patch_description": "Combines the higher-scoring fixed time-93 transition with the current program's efficient direct cohort-bound calculations. Cohort construction and acceptance remain synchronized from time 50 through 93, while the final seven rounds return to original behavior, avoiding late incomplete restructuring. Direct bounds restrict partner scans to the actor's cohort without changing reservoir-sampling probabilities. Permanent rejected-partner memory, layer balancing, cross-cohort pruning, and post-rewire cleanup are preserved. This is a development-panel hypothesis; its generalization and actor-level effects still require evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T23:50:06.769609",
+  "llm_cost": 0.1118544,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

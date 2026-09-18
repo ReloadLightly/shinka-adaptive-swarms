@@ -1,0 +1,323 @@
+{
+  "before": {
+    "administrative_copies": 2,
+    "campaign_id": "paper_trajectory_v2",
+    "database": {
+      "best_generation": 13,
+      "best_program_id": "e84248e7-54ff-4572-b87b-570475b563ce",
+      "best_score": 2.8459563490697484,
+      "generations": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "program_rows": 15,
+      "records": [
+        {
+          "candidate_sha256": "4f0eb0cf865b6ecff1a46a81dcc6562d15f8db887c43686c86b243045091cdb6",
+          "combined_score": 0.0,
+          "correct": 1,
+          "generation": 0,
+          "id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+          "language": "java",
+          "parent_id": null
+        },
+        {
+          "administrative_copy": true,
+          "candidate_sha256": "4f0eb0cf865b6ecff1a46a81dcc6562d15f8db887c43686c86b243045091cdb6",
+          "combined_score": 0.0,
+          "copied_from_program_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+          "correct": 1,
+          "generation": 0,
+          "id": "be1b3cc4-409b-414c-ab99-4c55c209a905",
+          "language": "java",
+          "parent_id": null
+        },
+        {
+          "administrative_copy": true,
+          "candidate_sha256": "4f0eb0cf865b6ecff1a46a81dcc6562d15f8db887c43686c86b243045091cdb6",
+          "combined_score": 0.0,
+          "copied_from_program_id": "9c88b164-3267-4693-ad19-5be39c6b47d8",
+          "correct": 1,
+          "generation": 0,
+          "id": "d25e97bc-a5b3-40d4-9c86-fff7ce96a0fe",
+          "language": "java",
+          "parent_id": null
+        },
+        {
+          "candidate_sha256": "86bc8ad4905d493fd22f593544d86602817b2b7562cdb24b608a134729655bc1",
+          "combined_score": -1000000000.0,
+          "correct": 0,
+          "generation": 2,
+          "id": "e75b2b28-0dd5-45cb-910f-286f500ff464",
+          "language": "java",
+          "parent_id": "d25e97bc-a5b3-40d4-9c86-fff7ce96a0fe"
+        },
+        {
+          "candidate_sha256": "989b3bfdb68dd7f2274da9b4f1eff6860b2b8173584b875ad7287ed9acaabc84",
+          "combined_score": -0.3138888424718311,
+          "correct": 1,
+          "generation": 3,
+          "id": "8277114e-8305-4cbe-b941-b994ae83862f",
+          "language": "java",
+          "parent_id": "be1b3cc4-409b-414c-ab99-4c55c209a905"
+        },
+        {
+          "candidate_sha256": "a2548acc5092f9ea9a1f8ebd8d2a7d70033074bd4771e9e4d91f5f0a5b9e9374",
+          "combined_score": 2.4210789509616557,
+          "correct": 1,
+          "generation": 4,
+          "id": "48d2b235-f61c-4e9b-853a-f59a2a181910",
+          "language": "java",
+          "parent_id": "d25e97bc-a5b3-40d4-9c86-fff7ce96a0fe"
+        },
+        {
+          "candidate_sha256": "27355c51fd9b95164017818d6740189eed9ed68f4bad4e68ab30e8690485bf69",
+          "combined_score": 2.841815364095667,
+          "correct": 1,
+          "generation": 5,
+          "id": "c980df14-7c2d-4f90-b98a-71c53f0fdf99",
+          "language": "java",
+          "parent_id": "48d2b235-f61c-4e9b-853a-f59a2a181910"
+        },
+        {
+          "candidate_sha256": "58ac1a1ab14dc3526380b4d2b8e2a81a86f712e8f05197958adc72444a67f524",
+          "combined_score": 2.64342072026547,
+          "correct": 1,
+          "generation": 6,
+          "id": "1a24cf47-9e53-4f99-8168-25495a1396bb",
+          "language": "java",
+          "parent_id": "be1b3cc4-409b-414c-ab99-4c55c209a905"
+        },
+        {
+          "candidate_sha256": "b07a42f8e946a31f973189cc79086afe9bfeaa25850a8271f990e7fd52e1aaea",
+          "combined_score": 2.64342072026547,
+          "correct": 1,
+          "generation": 7,
+          "id": "136d67a5-e595-4d0e-bf68-fb652a102458",
+          "language": "java",
+          "parent_id": "1a24cf47-9e53-4f99-8168-25495a1396bb"
+        },
+        {
+          "candidate_sha256": "a7ed6f02a4cb6f4b5cdd3bd125f4291c8123222b9710b10fa51878de58d70c81",
+          "combined_score": 2.841815364095667,
+          "correct": 1,
+          "generation": 8,
+          "id": "33db1b8b-1da6-43f8-94dc-1fb6850efab5",
+          "language": "java",
+          "parent_id": "9c88b164-3267-4693-ad19-5be39c6b47d8"
+        },
+        {
+          "candidate_sha256": "9d0b70b6a10de662929087b7793656cdbdecbdc99865175997fe529d6b5c4b4b",
+          "combined_score": 2.7972292452260485,
+          "correct": 1,
+          "generation": 9,
+          "id": "1f2fe774-ed5b-408e-a363-e3e9b8db2a85",
+          "language": "java",
+          "parent_id": "136d67a5-e595-4d0e-bf68-fb652a102458"
+        },
+        {
+          "candidate_sha256": "824f15d3096fd98bd95f74a0530e3f651de6be65c9f83b42f1ab620b7a8ccc48",
+          "combined_score": 2.845900348014943,
+          "correct": 1,
+          "generation": 10,
+          "id": "9ba92f8a-50a2-4878-8992-8657269d3a3f",
+          "language": "java",
+          "parent_id": "c980df14-7c2d-4f90-b98a-71c53f0fdf99"
+        },
+        {
+          "candidate_sha256": "a4d6d981975b05576f67c64362b762dec46ed567e13a44ee8acb890d1338b6d2",
+          "combined_score": 2.8312251413681855,
+          "correct": 1,
+          "generation": 11,
+          "id": "992af3e2-f8ec-4171-b240-b2cec3c4aa33",
+          "language": "java",
+          "parent_id": "1f2fe774-ed5b-408e-a363-e3e9b8db2a85"
+        },
+        {
+          "candidate_sha256": "8ea7debe0dab04a08c78f3fd6cd68c459e0c8aad21b87c7f951afc8b2e933fef",
+          "combined_score": 2.8419368082435876,
+          "correct": 1,
+          "generation": 12,
+          "id": "bbcce33c-c94b-46e3-935f-244a5575cb1d",
+          "language": "java",
+          "parent_id": "33db1b8b-1da6-43f8-94dc-1fb6850efab5"
+        },
+        {
+          "candidate_sha256": "27f8c4904a36a205cb6721a4ae4b79f6b130ade6dfa1335935fe1551ac77c36d",
+          "combined_score": 2.8459563490697484,
+          "correct": 1,
+          "generation": 13,
+          "id": "e84248e7-54ff-4572-b87b-570475b563ce",
+          "language": "java",
+          "parent_id": "c980df14-7c2d-4f90-b98a-71c53f0fdf99"
+        }
+      ],
+      "records_sha256": "f3d690263c8bc9e307f89165c715b48bb5bca96312ea20bda1ac661737175c45"
+    },
+    "database_exists": true,
+    "database_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/programs.sqlite",
+    "descendant_proposal_ceiling": 50,
+    "failed_proposal_slots": [
+      1
+    ],
+    "initialization_programs": 1,
+    "invalid_descendants": 1,
+    "locally_denied_provider_attempts": 9,
+    "logical_completed_model_responses": 27,
+    "model_attempts": 36,
+    "model_responses": 26,
+    "model_retries": 6,
+    "numerical": {
+      "completed_physical_trajectories": 8027,
+      "evaluation_invocations": 16,
+      "exact_cache_reuses": 288,
+      "failed_trajectories": 0,
+      "serial_numerical_seconds": 16007.604407932758
+    },
+    "output_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2",
+    "planned_initialization_programs": 1,
+    "preserved_provider_token_usage": {
+      "cache_write_input_tokens": 0,
+      "cached_input_tokens": 217472,
+      "input_tokens": 262666,
+      "output_tokens": 8632,
+      "reasoning_output_tokens": 5362,
+      "total_tokens": 271298
+    },
+    "provider_completions_preserved_after_adapter_failure": 1,
+    "reference_blocked_pending_cases": 5760,
+    "reference_completed": 4559,
+    "reference_feasible_remaining": 24241,
+    "reference_planned": 34560,
+    "remaining_descendant_slots": 37,
+    "terminal_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "unique_evaluated_programs": 13,
+    "usage_by_arm": {
+      "headless/codex@gpt-5.6-sol?effort=xhigh": {
+        "attempts": 9,
+        "elapsed_seconds": 1412.7180440659977,
+        "input_tokens": 240166,
+        "output_tokens": 58219,
+        "responses": 9
+      },
+      "headless/codex@gpt-6-astra?effort=xhigh": {
+        "attempts": 27,
+        "elapsed_seconds": 2640.5354696050017,
+        "input_tokens": 141238,
+        "output_tokens": 31970,
+        "responses": 17
+      }
+    },
+    "usage_by_role": {
+      "meta": {
+        "attempts": 12,
+        "elapsed_seconds": 1502.4223312429967,
+        "input_tokens": 82481,
+        "output_tokens": 8512,
+        "responses": 12
+      },
+      "mutation": {
+        "attempts": 23,
+        "elapsed_seconds": 2475.3862529820035,
+        "input_tokens": 288554,
+        "output_tokens": 79554,
+        "responses": 13
+      },
+      "prompt": {
+        "attempts": 1,
+        "elapsed_seconds": 75.44492944599915,
+        "input_tokens": 10369,
+        "output_tokens": 2123,
+        "responses": 1
+      }
+    },
+    "usage_by_subrole": {
+      "meta/periodic.individual_summary": {
+        "attempts": 10,
+        "elapsed_seconds": 1360.2954276319979,
+        "input_tokens": 55043,
+        "output_tokens": 4656,
+        "responses": 10
+      },
+      "meta/periodic.recommendations": {
+        "attempts": 1,
+        "elapsed_seconds": 70.70467269599976,
+        "input_tokens": 7005,
+        "output_tokens": 1874,
+        "responses": 1
+      },
+      "meta/periodic.scratchpad": {
+        "attempts": 1,
+        "elapsed_seconds": 71.42223091499909,
+        "input_tokens": 20433,
+        "output_tokens": 1982,
+        "responses": 1
+      },
+      "mutation/unspecified": {
+        "attempts": 23,
+        "elapsed_seconds": 2475.3862529820035,
+        "input_tokens": 288554,
+        "output_tokens": 79554,
+        "responses": 13
+      },
+      "prompt/evolution": {
+        "attempts": 1,
+        "elapsed_seconds": 75.44492944599915,
+        "input_tokens": 10369,
+        "output_tokens": 2123,
+        "responses": 1
+      }
+    },
+    "valid_descendants": 11
+  },
+  "cause": "Pinned local embedding connection failed after mutation response and native patch; no accepted evaluation",
+  "decision": "Preserve unevaluated source and receipts; close consumed proposal slot as failed; continue same native population at generation15",
+  "evidence_sha256": {
+    "results/paper_trajectory_v2/search/bandit_state.pkl": "eba42497fb3b3b373801687b2f3218320ae3182705de4db006964f8214d6a497",
+    "results/paper_trajectory_v2/search/gen_14/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": "ad3c5f9e6c5a961445c11d5487fc4af9522950114891ad9380f241ad68bec05e",
+    "results/paper_trajectory_v2/search/gen_14/attempts/novelty_1/resample_1/patch_1/llm_response.txt": "70eb5e2212fb0f9fe62f3a468996bbf6810cbb56aff518435d0c01f1d065fc4b",
+    "results/paper_trajectory_v2/search/gen_14/attempts/novelty_1/resample_1/patch_1/metadata.json": "2056eb10636dfdb549610aaa893c77925420cf1de8666ae6b9489768d7e82dd9",
+    "results/paper_trajectory_v2/search/gen_14/attempts/novelty_1/resample_1/patch_1/patch.txt": "16d29fbc0561bac0d99cd996f3c986ea0cf9c09fd52977d30ec80da3c745de77",
+    "results/paper_trajectory_v2/search/gen_14/edit.diff": "16d29fbc0561bac0d99cd996f3c986ea0cf9c09fd52977d30ec80da3c745de77",
+    "results/paper_trajectory_v2/search/gen_14/main.java": "4eeba1ef5a37f6f428b4dc6e7669be62b93b6eafa0376c7706b0231168cdcdb1",
+    "results/paper_trajectory_v2/search/gen_14/original.java": "a4d6d981975b05576f67c64362b762dec46ed567e13a44ee8acb890d1338b6d2",
+    "results/paper_trajectory_v2/search/gen_14/prepared-patch.json": "edd9031da04ed7d9cbd7c6a2245bde205f34c656aee8ad6f6ab7b39c09c81bde",
+    "results/paper_trajectory_v2/search/gen_14/rewrite.txt": "b4b8c5d1a6f9a83225921c33c540cf558562e9282787d8f4cd5e774f30655844",
+    "results/paper_trajectory_v2/search/native-task-identity.json": "b25635d29abddb2acf884ac6638fc36a4113f791d5f07e7e45f8d4a02c86225d",
+    "results/paper_trajectory_v2/search/native_memory/state.json": "1633e620ba8f15ee313608c74ea4e9a3aab2e7671c506384f702c0605317616d",
+    "results/paper_trajectory_v2/search/phase-b-bandit-summary.json": "9226e98a6593b7a7b1badfeb655562cef2a6d961a690c8fd2a7b9bd5fb2a1022"
+  },
+  "generation": 14,
+  "new_model_responses": 0,
+  "new_numerical_cases": 0,
+  "recorded_at": 1789680405.154723,
+  "recovery_assessment": "Frozen PaperTrajectoryRunner rejects prepared-only replay. Accepted-evaluation recovery requires accepted-job.json, which is absent. Replaying would require a new adapter and sampler/novelty accounting changes. No new adapter authorized or introduced.",
+  "schema": "paper-unaccepted-proposal-reconciliation-v1",
+  "scientific_identity_unchanged": true
+}

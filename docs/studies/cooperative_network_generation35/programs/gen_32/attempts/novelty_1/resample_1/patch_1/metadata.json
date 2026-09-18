@@ -1,0 +1,15 @@
+{
+  "generation": 32,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "overlap_triangle_priority",
+  "patch_description": "Replace uniform partner selection with one local ranking rule: prefer eligible cohort members already connected on the opposite layer, then maximize common within-cohort neighbors on the addition layer, reservoir-sampling ties. If no eligible overlap partner exists, preserve the original uniform selection and random-draw order. Count common neighbors only through permitted same-layer neighbor queries.\nThis may accelerate overlap and triangle formation before the unchanged time-93 recovery handoff. Acceptance, failure memory, cohort targets and pruning remain unchanged, including consent to finite negative-gain cohort offers. The risk is concentrating construction around existing clusters while delaying other links. This is an untested hypothesis; support requires improved full-panel terminal utility, assessed across the 36 history families with actor-level losses retained.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T12:19:26.506334",
+  "llm_cost": 0.136634,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_32/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

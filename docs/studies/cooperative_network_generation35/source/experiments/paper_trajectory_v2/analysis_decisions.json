@@ -1,0 +1,358 @@
+{
+  "analysis_reconstruction_application": {
+    "adopted_resolution_keys": [
+      "cdf_reference_pool",
+      "figure3_color_transform",
+      "figure5_graph_settings",
+      "neighbor_exposure",
+      "regression_grouping",
+      "s1_caption_shock_counts"
+    ],
+    "applied_at_utc": "2026-09-17T16:41:24.726489+00:00",
+    "approval": "Supervising session explicitly reviewed and adopted all six entries under the user-authorized disclosed reconstruction scope.",
+    "changes": "Evidence path/hash validation, dependency publication and correct resolved classifications only; numerical analysis formulas, engine, case declaration and saved trajectories unchanged.",
+    "comparison_review_policy": "Existing comparison statuses and discrepancies remain pending their own evidenced reviews; none is waived by these six resolutions.",
+    "implementation_sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8",
+    "metadata_revisions": [
+      {
+        "implementation_sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8",
+        "new_numerical_runs": 0,
+        "prior_decisions": {
+          "path": "experiments/paper_trajectory_v2/analysis_decisions_history/analysis_decisions-20260917T164124.json",
+          "sha256": "b9bd9ba137148e6a28e8614b44974cf8a0f500e2238710ee6a57fb00387ffa85"
+        },
+        "prior_implementation_sha256": "0e0b011e8bb94fe44c6eb66823e7b774c1904e711a576c30c8bd23cbcdaabce0",
+        "reason": "Figure4-only qualified comparison review and path/hash validation for comparison reviews; no numerical analysis formulas changed. Historical proposal remains untouched.",
+        "recorded_at_utc": "2026-09-17T17:02:34.263535+00:00",
+        "trajectory_analysis_reruns": 0
+      }
+    ],
+    "new_model_calls": 0,
+    "new_numerical_runs": 0,
+    "observed_discovery_state": {
+      "candidate_outcomes": 0,
+      "model_responses": 0,
+      "native_database_exists": false,
+      "terminal_descendant_slots": 0
+    },
+    "observed_reference_state": {
+      "blocked_pending_cases": 5760,
+      "completed": 3588,
+      "feasible_remaining": 25212,
+      "index_sha256": "dac7216d729adc54e723637751b914d7e6bbab2ac433636d9656bb0ce05afa04",
+      "is_publication_checkpoint": false,
+      "observed_at_utc": "2026-09-17T16:41:24.726489+00:00",
+      "planned": 34560,
+      "scope": "Atomic index read while the controller may continue; not the older saved manifest accounting."
+    },
+    "phase": "reference_execution_before_discovery",
+    "proposal": {
+      "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+      "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+    },
+    "registration_scope": "These methods already existed and partial reference outputs had been inspected. Approval records transparent methods and reporting choices, not recovered historical metadata or registration before any data. No choice was selected from candidate outcomes; no candidate outcome exists.",
+    "trajectory_analysis_reruns": 0
+  },
+  "behavior_precedence": {
+    "authority": {
+      "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+      "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+    },
+    "engine_sha256": "f19675695c7bd723c524b57e8ec24777e5d150053835c17d3bbc4e9701472c56",
+    "outcome_independent": true,
+    "primary": "source_executable",
+    "sensitivity": [
+      "paper_directed"
+    ],
+    "source_mapping": {
+      "path": "docs/paper_trajectory_v2/source_behavior_mapping.md",
+      "sha256": "c0da3d2f2da9c3563a3c66282f4f5fa3383114cd60a79e4afa44ca46603b6f4e"
+    },
+    "upstream_commit": "b3d7737613578da260fee561b6f73122dc4f2ab0"
+  },
+  "campaign_id": "paper_trajectory_v2",
+  "comparison_reviews": {
+    "Figure4": {
+      "authority": "Explicit supervising-session instruction to apply this Figure4-only review under the user-authorized source-fidelity reconstruction scope.",
+      "classification": "qualified_caption_and_floating_point_discrepancy",
+      "consequential": false,
+      "engine_changes": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/figure4_fixture.json",
+          "sha256": "6009f9f3caf953872d6e0c14b00befa8f8b1902350069fb05ab3acc7a3108ca9"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/engine_checks.json",
+          "sha256": "6b75cbbebf930c423371c62d9b6c805d3056d59ca5fc63922eaff2359dfda91f"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "java-paper/agents/PaperChecks.java",
+          "sha256": "3ee6b2bb9dc8ed14f94cab977c674bc0d241548d1329dd1bae6a8d02b2a17374"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "experiments/paper_trajectory_v2/analysis_decisions_history/analysis_decisions-20260917T164124.json",
+          "sha256": "b9bd9ba137148e6a28e8614b44974cf8a0f500e2238710ee6a57fb00387ffa85"
+        }
+      ],
+      "justification": "The retained executed three-actor fixture agrees with the unchanged utility oracle for the edge, bridge and triangle at d=0.79, 0.8, 0.81. It establishes the short-term utility barrier and strict closure/endpoint-improvement threshold d>0.8. The caption's 0.8 is sufficient for strict closure/Pareto improvement, but the exact aggregate-welfare crossover against the initial edge is d=2/3. Original binary arithmetic leaves a positive residual near 1.11e-16 at nominal 0.8, and the original strict comparison is retained. This is a bounded caption/threshold qualification, not a missing behavior or numerical/evaluator defect; no engine repair is warranted. Preserve executed_discrepant and all qualifications rather than claiming exact caption reproduction.",
+      "new_model_calls": 0,
+      "new_numerical_runs": 0,
+      "reviewed_at_utc": "2026-09-17T17:02:34.263535+00:00",
+      "scope": "Figure4 mechanism/threshold interpretation only. Other panel comparisons, source-smart incompatibility and the incomplete declared reference matrix remain pending. The review follows existing fixture results and the explicit source-precedence decision; it is not pre-data registration or a choice based on candidate outcomes.",
+      "status": "reviewed_nonconsequential_qualified_discrepancy",
+      "trajectory_analysis_reruns": 0
+    }
+  },
+  "no_new_numerical_or_model_calls": true,
+  "resolutions": {
+    "cdf_reference_pool": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/supplement.pdf",
+          "sha256": "6cc80776b87b33e05af3e921e846c7fc380b2007012cb69bef0c2100e7811a1f"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Adopt the current exact right-continuous empirical CDF per (interpretation, N, sampling), using every actor at all 101 integer times 0 through 100 across that method's complete declared reference conditions. Pre/post observations and direct/unshocked groups share the same pool. Retain exact float64 values, multiplicities, case IDs and hashes, with no rounding, cross-method pooling or candidate values. Supplemental pooling and retained-time/tie rules are disclosed reconstruction choices. Partial pools remain partial and cannot become a frozen candidate normalizer; no new fitness choice is made.",
+      "status": "resolved_for_v2"
+    },
+    "figure3_color_transform": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Use the implemented raw terminal mean utility plots and numerical tables with shared color limits across noise within each method and numerical cost direction. The paper's 0\u20131 color transformation is unidentified; no transform is inferred, fitted or invented to match it. Retain reported effect directions and mismatches. Missing historical color metadata is a bounded presentation limitation, not an engine or evaluator defect.",
+      "status": "resolved_for_v2"
+    },
+    "figure5_graph_settings": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Retain the implemented deterministic repetition 0 examples at N=40, d=e=1.2, t=100 and all four declared noise values, displaying both layers and separate LL/HH/LH/HL conditions; changed-cost examples use 26 shocked. Publish exact case IDs, seeds, settings and adjacency-derived density/clustering, with the current deterministic circular layout. These are reconstructed illustrations, not recovered historical networks; no seed, layer or condition is selected to imitate published density/clustering. Preserve unavailable original settings and do not require their recovery as a discovery prerequisite.",
+      "status": "resolved_for_v2"
+    },
+    "neighbor_exposure": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "upstream/multiplex/Analysis/NodalStatistics.py",
+          "sha256": "b96553526a52ae30350ca033cb35c654f8bfcf2c7960b901be37d43b12cd7be4"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Retain both implemented exposure fits and their exact labels. Figure 6/S2 plots and qualitative comparisons continue to use paper_layer_weighted from Equation 8; the companion source_unique_neighbor fit retains original NodalStatistics.py semantics. Layer-weighted isolate ratios remain null and those regression rows are excluded with counts. Source union-neighbor ratios also remain null mathematically; the separately named source-zero convention is used only in the source fit. Raw numerators/denominators and both fits remain published. Source behavioral precedence does not silently equate these different analysis definitions.",
+      "status": "resolved_for_v2"
+    },
+    "published_grid_repetitions": {
+      "classification": "declared_methodological_choice",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/source_behavior_mapping.md",
+          "sha256": "c0da3d2f2da9c3563a3c66282f4f5fa3383114cd60a79e4afa44ca46603b6f4e"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/engine_checks.json",
+          "sha256": "6b75cbbebf930c423371c62d9b6c805d3056d59ca5fc63922eaff2359dfda91f"
+        }
+      ],
+      "justification": "The user accepts reproduction of preserved implementation under the declared paper-derived settings, source-anchored six-value independent reward grid, five repetitions and recorded v2 seeds. Exact historical seed/grid/repetition recovery is not required and is not claimed. Every already declared reference case remains required.",
+      "status": "resolved_for_v2"
+    },
+    "regression_grouping": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/supplement.pdf",
+          "sha256": "6cc80776b87b33e05af3e921e846c7fc380b2007012cb69bef0c2100e7811a1f"
+        },
+        {
+          "path": "upstream/multiplex/Analysis/NodalStatistics.py",
+          "sha256": "b96553526a52ae30350ca033cb35c654f8bfcf2c7960b901be37d43b12cd7be4"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Adopt the current Equation 7 OLS reconstruction with its eight declared fixed predictors, CR1 covariance clustered on independent (N, dynamics seed, shock seed) families, and Student-t intervals with G-1 degrees of freedom. Related nodes and shock/cost variants share a cluster. Preserve sample exclusions, rank and unavailable covariance/coefficients without fabricating estimates. The published mixed-effects grouping is unidentified; this is a disclosed reconstructed estimator, not recovered author code. No coefficients or uncertainty are tuned to match published signs.",
+      "status": "resolved_for_v2"
+    },
+    "s1_caption_shock_counts": {
+      "classification": "declared_analysis_reconstruction",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_review.md",
+          "sha256": "4e095c1a8c0bcbc1959c8f7424207e0528568528036665201722bdc50620b7cf"
+        },
+        {
+          "path": "paper_trajectory_v2/analysis.py",
+          "sha256": "840bc7db6db75427b5282334e7c91e1a17c08d0948be7b5cb5d6b9a3c00b87a8"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/article.xml",
+          "sha256": "03b50ae56d61e9ebd73afb69d3b4988f331e501eae95ce102350f04ed6d8f726"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/sources/supplement.pdf",
+          "sha256": "6cc80776b87b33e05af3e921e846c7fc380b2007012cb69bef0c2100e7811a1f"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/remaining_analysis_resolution_proposal.json",
+          "sha256": "1294f8188e66af05399ac061b5f7eb57eb37c6d0b7bc95f61270847052e40b93"
+        }
+      ],
+      "justification": "Retain the unchanged declared full fractional-shock panels: N=40 shock counts 13/26/40 and N=100 shock counts 33/66/100, with p=0, both numerical cost directions, and each declared search/scheduler method. Label S1 as a reconstruction using explicit Figure 2/S3 count grids and preserve the contradictory 26-shocked caption as historical uncertainty. Do not add, remove or relabel trajectories. This decision clears no source-smart incompatibility, missing case or incomplete panel.",
+      "status": "resolved_for_v2"
+    },
+    "scheduler_and_sampling": {
+      "classification": "declared_methodological_choice",
+      "consequential": false,
+      "evidence": [
+        {
+          "path": "experiments/paper_trajectory_v2/primary_reference_decision.json",
+          "sha256": "6070d9f9e7ee98bc1c6791279626921ab21d1cae860f37d6c92764866adb47e3"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/source_behavior_mapping.md",
+          "sha256": "c0da3d2f2da9c3563a3c66282f4f5fa3383114cd60a79e4afa44ca46603b6f4e"
+        },
+        {
+          "path": "docs/paper_trajectory_v2/engine_checks.json",
+          "sha256": "6b75cbbebf930c423371c62d9b6c805d3056d59ca5fc63922eaff2359dfda91f"
+        }
+      ],
+      "justification": "Explicit user precedence selects the pinned source executable as primary, retaining exact shuffled scheduling, noise invocation, active sampling, acceptance, action ordering and counter behavior under the declared experimental overrides. The literal prose track remains sensitivity; historical author intent and agreement between tracks are not required.",
+      "status": "resolved_for_v2"
+    }
+  },
+  "review_policy": "Published-trend or table disagreement alone is not a numerical defect. Retain non-reproduction and conduct an evidenced methodological review when a panel is complete; do not automatically waive unresolved numerical/evaluator defects.",
+  "schema": "paper-analysis-decisions-v1",
+  "unchanged_blockers": [
+    "remaining_required_reference_cases",
+    "smart_search_executable",
+    "required_panel_comparisons_and_discrepancy_reviews",
+    "unresolved_numerical_or_evaluator_defects"
+  ]
+}

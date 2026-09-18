@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "actor_local_dense_threshold",
+  "patch_description": "Remove the global triangle-benefit floor of 1.2 and activate coordinated dense formation whenever triangle benefit is at least twice the actor's own cost on both layers. This extends the successful mechanism to low-cost d=0.4 and d=0.8 conditions while retaining original behavior for high-cost actors where densification is unsafe. In a clique, adding an edge at degree k has approximate local gain 1-c(2k+1)+dk; when d=2c this remains positive by 1-c, before any overlap benefit. Acceptance uses the same actor-local criterion, so actors whose post-shock costs are too high do not indiscriminately support densification.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T21:41:05.246679",
+  "llm_cost": 0.0989344,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

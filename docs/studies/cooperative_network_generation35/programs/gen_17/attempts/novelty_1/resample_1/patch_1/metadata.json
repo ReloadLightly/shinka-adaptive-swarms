@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "staged_cohort_handoff",
+  "patch_description": "This policy turns cohort construction into a deadline-aware three-phase process. From time 50 to 90 it performs full cohort migration through additions, rewiring, and cross-cohort pruning. From 90 to 95 it stops pruning and concentrates solely on completing missing within-cohort links, avoiding destructive edits that may not pay back before the horizon. At 95 it restores original behavior for final utility-sensitive cleanup.\nIt retains the population-weighted balanced-cohort calculation, but replaces permanent failed-partner exclusion with a short three-activation cooldown. This allows rejected links to be retried after other actors have changed the local topology while preventing repeated immediate failures. The main risks are incomplete pruning at time 90 and original behavior disturbing completed cohorts during the final five rounds.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T23:44:39.675137",
+  "llm_cost": 0.1381144,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

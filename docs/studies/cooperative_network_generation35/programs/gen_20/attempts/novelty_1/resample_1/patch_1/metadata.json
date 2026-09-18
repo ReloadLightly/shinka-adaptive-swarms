@@ -1,0 +1,15 @@
+{
+  "generation": 20,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 4,
+  "patch_name": "balanced_cohort_optimization",
+  "patch_description": "Choose the cohort count by directly maximizing predicted total population utility across the actual balanced group sizes, rather than first optimizing an ideal individual degree and then rounding its preferred group size. This accounts for indivisible population partitions and weights both resulting group sizes by their actor counts. Scanning from many cohorts toward one and updating only on strict improvement preserves the lower-degree solution on ties. The hypothesis is that better-aligned cohort sizes improve clique completion and terminal utility; a possible cost is greater shocked/unshocked disagreement about cohort boundaries.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T00:22:32.501707",
+  "llm_cost": 0.1214304,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_20/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

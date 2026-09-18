@@ -1,0 +1,15 @@
+{
+  "generation": 15,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "early_density_cohort_recovery",
+  "patch_description": "This crossover uses the inspiration\u2019s sustained densification when triangle incentives satisfy its strong-incentive threshold. Elsewhere, it retains the current policy\u2019s cohort construction during times 50\u201395 and original behavior outside that window. Activation and acceptance use the same regime selection.\nDensification uses uniform reservoir sampling over missing partners, avoiding wasted random-actor draws. Cohort boundaries are computed once per activation; pruning, rewiring and failed-partner memory retain the current policy\u2019s behavior.\nEarlier construction may provide more time to complete mutually accepted dense networks. Possible costs include negative intermediate utility and reduced flexibility. This proposal is unevaluated: improvement must be measured on the unchanged 288-condition panel and would not establish generalization or mutual benefit.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T23:30:33.650225",
+  "llm_cost": 0.35283,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_15/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

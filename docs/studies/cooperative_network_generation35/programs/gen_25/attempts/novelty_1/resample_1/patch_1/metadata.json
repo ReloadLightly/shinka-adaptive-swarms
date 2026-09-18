@@ -1,0 +1,15 @@
+{
+  "generation": 25,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "eligible_cohort_deficit_layer",
+  "patch_description": "Choose the construction layer by its number of missing, nonexcluded within-cohort partners. Total degree currently counts unwanted external neighbors, which can make an internally incomplete layer appear full and divert additions to the other layer. Prioritizing the larger eligible cohort deficit should complete the intended two-layer cliques more reliably; the existing sparser-layer rule remains the deterministic tie-breaker.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T01:20:15.166391",
+  "llm_cost": 0.0866464,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_25/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

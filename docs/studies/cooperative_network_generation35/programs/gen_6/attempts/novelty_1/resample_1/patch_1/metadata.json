@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "high_triangle_reciprocal_densification",
+  "patch_description": "Test sustained reciprocal formation in the high-triangle regime d>=1.2. When d also covers twice each observed layer cost, propose a missing tie on the less connected layer and accept incoming offers, including temporary losses. Preserve original behavior elsewhere.\nFor a clique of degree k, per-layer utility is k-c*k*k+d*k*(k-1)/2. Increasing clique degree by one changes this by 1-c+(d-2*c)*k, which is positive under this gate throughout the declared cost panel. This motivates completing larger mutually connected groups instead of protecting isolated bridges. Nonnegative overlap benefits add another incentive.\nThe rule uses only private observations, own neighbors and bounded random sampling. Incomplete formation can incur substantial temporary costs; its terminal benefit remains a hypothesis for the full 288-case evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-09-17T21:03:47.608399",
+  "llm_cost": 0.4081,
+  "llm_model": "headless/codex@gpt-6-astra?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

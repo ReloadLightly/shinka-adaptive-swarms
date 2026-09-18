@@ -1,0 +1,15 @@
+{
+  "generation": 23,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "paired_external_cleanup",
+  "patch_description": "After a successful rewire removes one cross-cohort edge, the policy first deletes the same external partner\u2019s edge on the opposite layer when present. That remaining edge has already lost its overlap benefit, so this cleanup avoids breaking overlap with a different external partner. If no paired edge exists, the existing utility-ranked cleanup remains the fallback. All cohort construction, acceptance, failure memory, phase timing, and partner sampling behavior are otherwise unchanged.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T01:00:31.343069",
+  "llm_cost": 0.1160264,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_23/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

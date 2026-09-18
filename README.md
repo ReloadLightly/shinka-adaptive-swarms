@@ -2,7 +2,7 @@
 
 ### Interpretable population adaptation for multi-swarm PSO with ShinkaEvolve
 
-**Separate study:** [Cooperative-network generation-35 scientific report](docs/studies/cooperative_network_generation35/README.md), selected Java policy and figures from source commit `42ccaaf`. These are Burghardt–Maoz multiplex-network results, not PSO results.
+**Separate cooperative-network study:** [Generation-35 paper](docs/studies/cooperative_network_generation35/README.md) · [Scientific review](docs/studies/cooperative_network_generation35/generation35_review.md) · [All proposals 0–35](docs/studies/cooperative_network_generation35/PROGRAM_INDEX.md) · [Final checkpoint](docs/studies/cooperative_network_generation35/checkpoint/README.md). These are Burghardt–Maoz multiplex-network results from `42ccaaf`, separate from the PSO studies below.
 
 **Can an evolved rule improve a published optimizer's ability to track changing opportunities under the same objective-evaluation budget?**
 

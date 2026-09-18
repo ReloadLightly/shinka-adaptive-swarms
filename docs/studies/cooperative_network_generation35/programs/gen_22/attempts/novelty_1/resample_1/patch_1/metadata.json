@@ -1,0 +1,15 @@
+{
+  "generation": 22,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "weighted_cohort_cleanup",
+  "patch_description": "Combines population-weighted cohort selection with adaptive terminal cleanup. It selects the balanced partition maximizing predicted population utility, constructs overlapping within-cohort cliques, and prunes cross-cohort ties. From time 93, completed actors return individually to original behavior while unfinished actors receive a bounded opportunity through time 95 to finish attainable cohort links. This targets incomplete recovery without prolonging forced construction for already-complete actors; the principal risk is that late additions may remain unfinished or temporarily costly.",
+  "error_msg": null,
+  "timestamp": "2026-09-18T00:48:49.565805",
+  "llm_cost": 0.1387984,
+  "llm_model": "headless/codex@gpt-5.6-sol?effort=xhigh",
+  "headless_prompt_path": "/home/roland/actir/shinka-cooperative-network/results/paper_trajectory_v2/search/gen_22/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
