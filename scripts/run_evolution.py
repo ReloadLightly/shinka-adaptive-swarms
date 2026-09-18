@@ -28,6 +28,7 @@ from adaptive_swarms.campaign_resume import CampaignResumeRunnerMixin, reuse_exi
 from adaptive_swarms.engine_config import resolve_engine, native_settings, feature_state, check_embedding_endpoint
 from adaptive_swarms.engine_runtime import install_engine_observers, install_sampling_observer
 from adaptive_swarms.engine_progress import terminal_failure_generations
+from adaptive_swarms.program_narrative import log_test_contract, log_proposal, log_outcome
 from adaptive_swarms.sprint_budget import SprintLimitReached
 from check_runtime import HEADLESS_COMMAND, PINNED_SHINKA, inspect_runtime
 
@@ -305,7 +306,18 @@ def run_native(args, run_dir: Path, log):
             log.set_activity(f"generation {generation}: parent sampling and Codex proposal")
             log.event("proposal_start", message=f"Generation {generation}: native parent/inspiration sampling and mutation", generation=generation)
             result = await super()._generate_proposal_async(generation, task_id)
+            if result is not None:
+                parent = await self.async_db.get_async(result.parent_id) if result.parent_id else None
+                log_proposal(log, result, parent)
             log.event("proposal_returned", message=f"Generation {generation}: proposal stage returned", generation=generation)
+            return result
+
+        async def _persist_completed_job(self, job):
+            result = await super()._persist_completed_job(job)
+            if result.success and result.persisted_event is not None:
+                program = result.persisted_event.program
+                parent = await self.async_db.get_async(program.parent_id) if program.parent_id else None
+                log_outcome(log, program, parent)
             return result
 
         async def _record_attempt_event(self, generation, stage, status, details=None):
@@ -582,6 +594,8 @@ def main() -> int:
                 random.seed(args.search_seed)
                 np.random.seed(args.search_seed)
             log.event("runtime_ready", message="Runtime check passed; starting native ShinkaEvolve", results=str(run_dir))
+            if args.task == "book_mpso_population_200_v2":
+                log_test_contract(log, args.suite, args.task)
             stop = threading.Event()
             monitor = threading.Thread(target=relay_evaluator_events, args=(run_dir, log, stop, bool(args.resume)), daemon=True)
             monitor.start()
