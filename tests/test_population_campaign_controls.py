@@ -24,6 +24,32 @@ def load_controller():
     return module
 
 
+def test_resume_rejects_wrong_numerical_runtime_before_session_or_calls(tmp_path, monkeypatch):
+    controller = load_controller()
+    atomic_json(tmp_path / 'operations/numerical-runtime.json',
+                {'python': '3.13.5', 'numpy': '2.5.3', 'shinka_evolve': '0.0.7'})
+    monkeypatch.setattr(controller.platform, 'python_version', lambda: '3.10.12')
+    monkeypatch.setattr(controller.importlib.metadata, 'version',
+                        lambda name: {'numpy': '2.2.6', 'shinka-evolve': '0.0.7'}[name])
+    with pytest.raises(RuntimeError, match='Optimizer runtime differs'):
+        controller.run_session(tmp_path, SimpleNamespace())
+    assert not (tmp_path / 'session.json').exists()
+    assert not (tmp_path / 'campaign-controller.lock').exists()
+
+
+def test_resume_accepts_recorded_runtime_and_rejects_missing_record(tmp_path, monkeypatch):
+    controller = load_controller()
+    atomic_json(tmp_path / 'session.json', {'session_id': 'session_002'})
+    with pytest.raises(RuntimeError, match='lacks its recorded'):
+        controller.verify_numerical_runtime(tmp_path)
+    expected = {'python': '3.13.5', 'numpy': '2.5.3', 'shinka_evolve': '0.0.7'}
+    atomic_json(tmp_path / 'operations/numerical-runtime.json', expected)
+    monkeypatch.setattr(controller.platform, 'python_version', lambda: '3.13.5')
+    monkeypatch.setattr(controller.importlib.metadata, 'version',
+                        lambda name: {'numpy': '2.5.3', 'shinka-evolve': '0.0.7'}[name])
+    assert controller.verify_numerical_runtime(tmp_path) == expected
+
+
 def test_conservative_research_counts_all_stages_and_preserves_partial(tmp_path):
     atomic_json(tmp_path / "references/execution_ledger.json", {"attempts": [
         {"status": "completed", "actual_queries": 500000, "reserved_queries": 500000},

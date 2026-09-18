@@ -5,9 +5,11 @@ import argparse
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 import fcntl
+import importlib.metadata
 import json
 import math
 import os
+import platform
 from pathlib import Path
 import sqlite3
 import statistics
@@ -27,6 +29,24 @@ SEARCH_SEED=670001
 
 
 def utcnow(): return datetime.now(timezone.utc)
+
+
+def verify_numerical_runtime(folder):
+    """A resumed campaign must use its recorded optimizer runtime, not the encoder's."""
+    path=folder/'operations/numerical-runtime.json'
+    if not path.exists():
+        if (folder/'session.json').exists():
+            raise RuntimeError('Resumed campaign lacks its recorded numerical-runtime.json; restore it before launch')
+        return None
+    expected=read_json(path)
+    actual={'python':platform.python_version(),
+            'numpy':importlib.metadata.version('numpy'),
+            'shinka_evolve':importlib.metadata.version('shinka-evolve')}
+    mismatches={key:{'recorded':expected.get(key),'installed':value}
+                for key,value in actual.items() if expected.get(key)!=value}
+    if mismatches:
+        raise RuntimeError(f'Optimizer runtime differs from the saved campaign: {mismatches}. Restore the recorded runtime before any model/evaluation calls; the local embedding service has a separate runtime.')
+    return actual
 
 
 def native_counts(folder):
@@ -126,12 +146,14 @@ def forecast(folder,session):
 
 def run_session(folder,args):
     folder.mkdir(parents=True,exist_ok=True)
+    runtime=verify_numerical_runtime(folder)
     with (folder/'campaign-controller.lock').open('a+') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         lock.seek(0);lock.truncate();lock.write(str(os.getpid()));lock.flush()
         session=session_record(folder,args)
         with EventLogger(folder/'operations') as log:
             log.event('session_controller_start',session_id=session['session_id'],stage=args.stage,deadline=session['deadline_utc'])
+            if runtime: log.event('numerical_runtime_verified',**runtime)
             register(folder)
             log.set_activity('waiting for corrected control cases; details in references/run.log')
             if args.stage in ('session','controls'):
