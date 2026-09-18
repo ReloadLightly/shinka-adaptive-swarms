@@ -1,0 +1,150 @@
+[
+  {
+    "time": "2026-09-18T08:18:52+00:00",
+    "elapsed_s": 0.34,
+    "event": "scientific_test",
+    "task": "book_mpso_population_200_v2",
+    "message": "Test whether this population rule lowers mean offline error on the same development histories at equal counted objective budgets.",
+    "case_count": 4,
+    "budgets": [
+      500000,
+      500000,
+      500000,
+      500000
+    ],
+    "dimensions": [
+      5
+    ],
+    "peaks": [
+      200
+    ],
+    "feedback_comparators": [
+      "target_3",
+      "target_5"
+    ],
+    "intervention": "choose_neutral_count: target 2..8; at most one resize after detected change and counted memory refresh",
+    "fixed": "corrected enclosing-ball engine, permanent quantum particle, movement, exclusion, birth/removal, separate environment RNG",
+    "accounting": "Detection and memory refresh consume objective queries; completed cases are checkpointed.",
+    "interpretation": "Development selection only. No fresh histories or causal emergence test in this session."
+  },
+  {
+    "time": "2026-09-18T08:19:01+00:00",
+    "elapsed_s": 9.14,
+    "event": "campaign_restored",
+    "message": "Meta state and known sampler state restored before proposal admission",
+    "pending_meta_ids": [
+      "7b88bffd-053e-4072-8378-07b063a17364",
+      "d225c0cd-aa19-441e-b866-c3aa228909b8"
+    ],
+    "processed_meta": 5,
+    "rng_restored": true,
+    "previous_checkpoint_drained": true
+  },
+  {
+    "time": "2026-09-18T08:19:01+00:00",
+    "elapsed_s": 9.29,
+    "event": "native_sampling",
+    "message": "Native parent and inspiration selection completed",
+    "generation": 7,
+    "novelty_attempt": 1,
+    "resample_attempt": 1,
+    "parent_id": "68536249-e308-4a48-b6af-3004df891bf6",
+    "parent_generation": 4,
+    "archive_inspiration_ids": [
+      "1bb72fee-01b5-413b-8060-a8b2b43b77fb"
+    ],
+    "top_k_inspiration_ids": [
+      "7b88bffd-053e-4072-8378-07b063a17364"
+    ],
+    "needs_fix": false
+  },
+  {
+    "time": "2026-09-18T08:20:15+00:00",
+    "elapsed_s": 80.29,
+    "event": "novelty_decision",
+    "message": "Native novelty rejected candidate",
+    "accepted": false,
+    "fallback": false,
+    "novelty_checks_performed": 1,
+    "novelty_total_cost": 0.10492,
+    "novelty_explanation": "NOT_NOVEL: Both snippets use identical workload calculations, recovery pressure, hysteresis thresholds, and return logic. Only comments, docstrings, and formatting differ; behavior and performance are unchanged.",
+    "max_similarity": 0.9892916679382324,
+    "similarity_scores": [
+      0.8921576738357544,
+      0.8935885429382324,
+      0.8828648328781128,
+      0.8948166370391846,
+      0.9862744808197021,
+      0.9626430869102478,
+      0.9892916679382324
+    ]
+  },
+  {
+    "time": "2026-09-18T08:20:15+00:00",
+    "elapsed_s": 80.4,
+    "event": "native_sampling",
+    "message": "Native parent and inspiration selection completed",
+    "generation": 7,
+    "novelty_attempt": 2,
+    "resample_attempt": 1,
+    "parent_id": "7b88bffd-053e-4072-8378-07b063a17364",
+    "parent_generation": 5,
+    "archive_inspiration_ids": [
+      "68536249-e308-4a48-b6af-3004df891bf6"
+    ],
+    "top_k_inspiration_ids": [
+      "d225c0cd-aa19-441e-b866-c3aa228909b8"
+    ],
+    "needs_fix": false
+  },
+  {
+    "time": "2026-09-18T08:22:14+00:00",
+    "elapsed_s": 195.25,
+    "event": "novelty_decision",
+    "message": "Native novelty accepted candidate",
+    "accepted": true,
+    "fallback": false,
+    "novelty_checks_performed": 1,
+    "novelty_total_cost": 0.06412,
+    "novelty_explanation": "**NOVEL**: The proposed code replaces the minimum loss with a weighted blend that retains 75% of detected deterioration even after full recovery. This can trigger three neutral particles where the existing code would choose two, meaningfully changing the adaptation strategy.",
+    "max_similarity": 0.9662748575210571,
+    "similarity_scores": [
+      0.8858230710029602,
+      0.8885809779167175,
+      0.8825895190238953,
+      0.8902088403701782,
+      0.9531180262565613,
+      0.9662748575210571,
+      0.9581866264343262
+    ]
+  },
+  {
+    "time": "2026-09-18T08:22:14+00:00",
+    "elapsed_s": 195.3,
+    "event": "program_under_test",
+    "generation": 7,
+    "parent_id": "7b88bffd-053e-4072-8378-07b063a17364",
+    "parent_generation": 5,
+    "archive_inspiration_ids": [
+      "68536249-e308-4a48-b6af-3004df891bf6"
+    ],
+    "top_inspiration_ids": [
+      "d225c0cd-aa19-441e-b866-c3aa228909b8"
+    ],
+    "mutation_type": "diff",
+    "name": "soft_refresh_discount",
+    "author_hypothesis": "Replace the hard residual-loss cap with a weighted blend: 75% detected loss and 25% capped residual loss. Detector-only feedback achieved lower development error than the current hard cap; partial discounting tests whether refreshed memories can inform allocation without completely suppressing the deterioration signal. Keep the unbounded workload penalty and hysteresis thresholds unchanged. The proposal compiles and passes integer-range and determinism checks on immutable synthetic observations; performance remains unmeasured.",
+    "hypothesis_status": "Native proposal description; benefits remain unverified until measured.",
+    "observation_fields_referenced": [
+      "current_best_fitness",
+      "previous_best_fitness",
+      "previous_requested_target",
+      "relative_fitness_drop",
+      "swarm_count",
+      "total_particle_count"
+    ],
+    "source": "/home/roland/actir/shinka-adaptive-swarms/results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001/gen_7/main.py",
+    "source_sha256": "c6b11f38df4be1ae2755f27490c041a5415c4dcf229ae84b130f820642a9e742",
+    "exact_parent_diff": "--- parent\n+++ generation_7\n@@ -2,16 +2,16 @@\n \n # EVOLVE-BLOCK-START\n def choose_neutral_count(observation) -> int:\n-    \"\"\"Request two or three neutrals from loss remaining after refresh.\"\"\"\n+    \"\"\"Request two or three neutrals from partially discounted detected loss.\"\"\"\n     previous_best = observation[\"previous_best_fitness\"]\n     remaining_loss = max(\n         0.0,\n         (previous_best - observation[\"current_best_fitness\"])\n         / max(1.0, abs(previous_best)),\n     )\n-    loss = min(\n-        max(0.0, observation[\"relative_fitness_drop\"]), remaining_loss\n-    )\n+    detected_loss = max(0.0, observation[\"relative_fitness_drop\"])\n+    # Refreshed recovery discounts, but does not erase, detected deterioration.\n+    loss = 0.75 * detected_loss + 0.25 * min(detected_loss, remaining_loss)\n     swarms = max(1, observation[\"swarm_count\"])\n     sweep_queries = max(1.0, observation[\"total_particle_count\"] + swarms)\n     threshold = ("
+  }
+]

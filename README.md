@@ -8,6 +8,8 @@
 
 > **Research status — evidence through 17 September 2026.** The corrected 200-peak campaign has completed **6 of 50 descendant slots** and every registered constant-target control. A conditional rule leads on **four development histories**, but no final campaign winner has been frozen and no fresh confirmation has occurred. The completed ten-peak studies retained their reference. These are different studies and different engine versions, not contradictory results.
 
+**Continuation launched 18 September 2026, 08:18 UTC:** [Session 2](docs/studies/book_mpso_population_200_v2/SESSION_002.md) restored the verified checkpoint and resumed at generation 7, allowing up to six more descendants. At 08:22 UTC, generation 7 entered numerical evaluation; it had no complete four-history score yet. The completed findings below remain Session 1 evidence. [Native live WebUI](http://localhost:8899/viz_tree.html?db_path=search_seed_670001%2Fprograms.sqlite) · [Emergence across substrates](docs/emergence_across_substrates.md).
+
 ## Abstract
 
 Collective search must balance exploiting discoveries, retaining alternative trajectories, and recovering when previously useful information becomes stale. This repository reconstructs the multi-swarm particle swarm optimizer (MPSO) of Blackwell, Branke and Li (2008), then uses native ShinkaEvolve to search for small, inspectable adaptation rules. The active experiment addresses a future-work direction stated in the chapter: adapting particle numbers within subswarms. The simulator, evaluation budget, quantum response, and swarm-management mechanisms remain fixed; only a function choosing the neutral-particle target evolves.
@@ -405,6 +407,8 @@ It is **not a geopolitical simulator or a demonstrated model of institutional em
 
 A future social-science application would have to specify the actors, observations, incentives and interaction mechanisms independently, then test that mapping against evidence. The present experiment can inform questions about adaptation and collective search; it cannot establish conclusions about particular countries, regional arrangements or policies. Preserving that boundary lets the algorithmic result stand on its own merits.
 
+The [cross-substrate research note](docs/emergence_across_substrates.md) compares information sharing, coordination within groups, differentiation between groups, memory and feedback with primary research on international cooperation. It separates these analogies from shared causal mechanisms and proposes falsifiable tests. Current MPSO implements cooperation; voluntary sharing, defection, conflicting actor interests and institution formation are absent.
+
 ## 8. Reproducibility and continuation
 
 ### 8.1 Evidence and entry points
@@ -417,7 +421,7 @@ For the active campaign, the saved record reports subscription-backed inner `gpt
 
 ### 8.2 Continue the existing campaign, not a new experiment
 
-The next registered step is **generation seven of the same 50-descendant campaign**. All seven constant controls are already complete. On the original workspace, with the live run and existing runtime available, the [exact resume procedure](docs/studies/book_mpso_population_200_v2/RESUME.md) gives:
+**Session 2 has already been launched from generation seven of the same 50-descendant campaign.** All seven constant controls are complete. Use the attachment commands below while it is running; do not launch another controller. For a later explicitly launched session after publication, the [exact resume procedure](docs/studies/book_mpso_population_200_v2/RESUME.md) gives:
 
 ```bash
 .venv/bin/python -u scripts/run_population_campaign.py session \
@@ -431,12 +435,14 @@ The corrected campaign restores meta state and Python/NumPy sampler state at cle
 
 ```bash
 # Observe the retained live run.
-tail -F results/book_mpso_population_200_v2/20260917T065325Z/operations/run.log
+tail -F results/book_mpso_population_200_v2/20260917T065325Z/operations/session_002-terminal.log
 bash scripts/progress.sh results/book_mpso_population_200_v2/20260917T065325Z/evolution/search_seed_670001
 
 # Start only if the existing viewer has ended and port 8899 is free.
 bash scripts/webui.sh results/book_mpso_population_200_v2/20260917T065325Z/evolution 8899
 ```
+
+The live log explicitly names the scientific test, each proposal's parent and inspirations, mutation hypothesis, source hash and exact code changes, then records completed cases and measured error. Rejected novelty attempts and errors remain visible. Hypotheses are labeled separately from measured outcomes; waiting heartbeats do not imply token streaming.
 
 After all registered descendant slots, final selection includes the seed. A distinct selected native program improving on seed permits the frozen fresh comparison against corrected 5+1 and the selected constant. Interim rankings do not trigger early finalization or fresh testing. New mechanisms, scenario coverage and ablations belong to later versioned experiments, not silent amendments to this campaign.
 

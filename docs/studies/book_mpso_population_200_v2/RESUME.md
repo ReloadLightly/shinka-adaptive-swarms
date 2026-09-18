@@ -1,5 +1,12 @@
 # Resume the corrected 200-peak population campaign
 
+**18 September 2026 update:** [Session 2](SESSION_002.md) was launched at 08:18:43
+UTC from generation 7. Attach to its log/WebUI while it runs; do not execute the
+`--new-session` command concurrently. The current research cutoff is 10:58:43 UTC.
+Its terminal log is `operations/session_002-terminal.log` under the live run.
+The instructions below remain the procedure for subsequent explicitly launched
+sessions after a published pause, or recovery of the current session as indicated.
+
 This procedure resumes the same campaign, database, immutable task snapshot and
 four development histories. Session 1 is an interim checkpoint, not a six-slot
 scientific study. A later session requires a new user launch.
